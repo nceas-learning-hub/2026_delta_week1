@@ -1,0 +1,10 @@
+.quarto-title-block .quarto-title-banner {
+  background-image: url(logo_nceas.svg),
+                    url(logo_delta_hex.png),
+                    linear-gradient(to top right, #4db84a, #0e6a37, #005d99, #1d2859);
+  background-size: 75px, 75px, 100% 100px;
+  background-position: 10%, 90%, left;
+  background-repeat: no-repeat, no-repeat;
+  background-origin: content-box;
+  height: 100px;
+}

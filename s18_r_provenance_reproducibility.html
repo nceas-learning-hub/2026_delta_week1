@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Provenance and Reproducibility – 2026 Delta Synthesis Working Groups week 1 (April 2026)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./logo_lh_hex.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-cecc5a39c142b520f22a6de88e6152ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #44444444;
+      }
+</style>
+
+
+<link rel="stylesheet" href="site_libs/quarto-contrib/quarto-project/nceas-learning-hub/theme/banner/banner.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">2026 Delta Synthesis Working Groups week 1 (April 2026)</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-instructors" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Instructors</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-instructors">    
+        <li>
+    <a class="dropdown-item" href="https://www.oharascience.com/">
+ <span class="dropdown-text">Casey O’Hara</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/nceas-learning-hub/2026_delta_week1"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Provenance and Reproducibility</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title d-none d-lg-block">Provenance and Reproducibility</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+        <div class="sidebar-tools-collapse tools-wide">
+    <a href="https://www.nceas.ucsb.edu/learning-hub" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-door-fill"></i></a>
+    <a href="https://twitter.com/ucsb_nceas" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
+    <a href="./nceas-learning-hub.github.io/2026_delta_week1" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Delta Workshop Materials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Day 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s01_r_rstudio_server_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. RStudio Server Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s02_git_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git and GitHub Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s03_r_quarto_literate_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Literate Analysis with Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s04_activity_reproducibility_lego.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reproducibility: a Lego Activity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s05_blank_placeholder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blank placeholder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s06_blank_placeholder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blank placeholder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s07_blank_placeholder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blank placeholder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s08_blank_placeholder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blank placeholder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s09_blank_placeholder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blank placeholder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Day 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s10_github_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git and GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s11_lecture_data_mgmt_reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Management and Reproducibility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s17_blank_placeholder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blank placeholder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Day 4</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s13_r_tidyverse_clean_wrangle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cleaning and Wrangling Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s14_r_practice_clean_wrangle_visualize.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice Session: Collaborative Report</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s15_r_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s16_r_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating R Packages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s17_blank_placeholder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blank placeholder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Day 5</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s18_r_provenance_reproducibility.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Provenance and Reproducibility</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides"><span class="header-section-number">1</span> Slides</a></li>
+  <li><a href="#more-on-reproducible-workflows" id="toc-more-on-reproducible-workflows" class="nav-link" data-scroll-target="#more-on-reproducible-workflows"><span class="header-section-number">2</span> More on Reproducible Workflows</a></li>
+  <li><a href="#reproducible-research-recap" id="toc-reproducible-research-recap" class="nav-link" data-scroll-target="#reproducible-research-recap"><span class="header-section-number">3</span> Reproducible Research: Recap</a></li>
+  <li><a href="#computational-provenance-and-workflows" id="toc-computational-provenance-and-workflows" class="nav-link" data-scroll-target="#computational-provenance-and-workflows"><span class="header-section-number">4</span> Computational Provenance and Workflows</a></li>
+  <li><a href="#from-provenance-to-reproducibility" id="toc-from-provenance-to-reproducibility" class="nav-link" data-scroll-target="#from-provenance-to-reproducibility"><span class="header-section-number">5</span> From Provenance to Reproducibility</a></li>
+  <li><a href="#data-citation-and-transitive-credit" id="toc-data-citation-and-transitive-credit" class="nav-link" data-scroll-target="#data-citation-and-transitive-credit"><span class="header-section-number">6</span> Data Citation and Transitive Credit</a></li>
+  <li><a href="#reproducible-papers-with-rrtools" id="toc-reproducible-papers-with-rrtools" class="nav-link" data-scroll-target="#reproducible-papers-with-rrtools"><span class="header-section-number">7</span> Reproducible Papers with <code>rrtools</code></a>
+  <ul class="collapse">
+  <li><a href="#creating-a-git-and-github-repository-with-usethis" id="toc-creating-a-git-and-github-repository-with-usethis" class="nav-link" data-scroll-target="#creating-a-git-and-github-repository-with-usethis"><span class="header-section-number">7.1</span> Creating a <code>git</code> and GitHub repository with <code>usethis</code></a></li>
+  </ul></li>
+  <li><a href="#rmarkdown-templates-with-rticles" id="toc-rmarkdown-templates-with-rticles" class="nav-link" data-scroll-target="#rmarkdown-templates-with-rticles"><span class="header-section-number">8</span> RMarkdown templates with <code>rticles</code></a></li>
+  <li><a href="#workflow-in-a-nutshell" id="toc-workflow-in-a-nutshell" class="nav-link" data-scroll-target="#workflow-in-a-nutshell"><span class="header-section-number">9</span> Workflow in a nutshell</a></li>
+  <li><a href="#adding-renv-to-conserve-your-environment" id="toc-adding-renv-to-conserve-your-environment" class="nav-link" data-scroll-target="#adding-renv-to-conserve-your-environment"><span class="header-section-number">10</span> Adding <code>renv</code> to conserve your environment</a></li>
+  <li><a href="#conserve-your-computational-environement-with-docker" id="toc-conserve-your-computational-environement-with-docker" class="nav-link" data-scroll-target="#conserve-your-computational-environement-with-docker"><span class="header-section-number">11</span> Conserve your computational environement with Docker</a></li>
+  <li><a href="#the-5th-generation-of-reproducible-papers" id="toc-the-5th-generation-of-reproducible-papers" class="nav-link" data-scroll-target="#the-5th-generation-of-reproducible-papers"><span class="header-section-number">12</span> The 5th Generation of Reproducible Papers</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">13</span> Resources</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Introduce the concept of reproducibility</li>
+<li>Understand reproducibility best practices: File system structure, file organization, robust file paths</li>
+<li>Discuss the concept of reproducible workflows including computational reproducibility and provenance metadata</li>
+<li>Learn how to use R to package your work by building a reproducible paper in RMarkdown/Quarto</li>
+<li>Introduce tools and techniques for reproducibility supported by the NCEAS and DataONE</li>
+</ul>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/r_provenance_reproducibility/reproducibility_alibi_horst.png" class="img-fluid figure-img"></p>
+<figcaption>By Allison Horst</figcaption>
+</figure>
+</div>
+<p><br></p>
+<section id="slides" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="slides"><span class="header-section-number">1</span> Slides</h2>
+<iframe width="560" height="380" src="https://docs.google.com/presentation/d/1Zgvx2YCf-HeqkSty-fdnyJnSV_jhYjWOw5bAIo4ioEs/preview" allowfullscreen="">
+</iframe>
+</section>
+<section id="more-on-reproducible-workflows" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="more-on-reproducible-workflows"><span class="header-section-number">2</span> More on Reproducible Workflows</h2>
+<ul>
+<li><a href="https://utrechtuniversity.github.io/workshop-computational-reproducibility/">Best Practices for Writing Reproducible Code, University of Utrecht</a></li>
+<li><a href="https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf">A Guide to Reproducible Code in Ecology and Evolution, British Ecological Society</a></li>
+<li><a href="https://lter.github.io/ssecr/mod_reproducibility.html">Reproducibility Lesson, LTER Synthesis Skills for Early Career Researchers</a></li>
+<li>EDS 221 (2023), <a href="https://docs.google.com/presentation/d/e/2PACX-1vQ9-fDLw5exrrp6tteMXld4ds2aT8dze9XrzgEMuAwgMo-onIVO4lI_vIaE0xXIckacWB1fqXMOF3hl/pub?start=false&amp;loop=false&amp;delayms=3000&amp;slide=id.p">Lesson 1</a> and <a href="https://docs.google.com/presentation/d/e/2PACX-1vQ9-fDLw5exrrp6tteMXld4ds2aT8dze9XrzgEMuAwgMo-onIVO4lI_vIaE0xXIckacWB1fqXMOF3hl/pub?start=false&amp;loop=false&amp;delayms=3000&amp;slide=id.ge50e8d8fef_0_373">Lesson 2</a>, UCSB MEDS, By Allison Horst</li>
+<li><a href="https://docs.google.com/presentation/d/1geUN-dv-NMx6IgeCwMRVmTO8nZaauIl26tZDOrkLW_E/edit">GitHub Clinic, Openscapes</a></li>
+<li><a href="https://raps-with-r.dev/">Building reproducible analytical pipelines with R, Bruno Rodrigues</a></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this lesson, we will be leveraging RMarkdown instead of Quarto so that we can use a very cool R package called <code>rticles</code>. Quarto has the same functionality as RMarkdown with <code>rticles</code> - making journal formatted articles from a code notebook - but it is done from the command line without additional R packages. See <a href="https://quarto.org/docs/journals/">the Quarto documentation</a> for details</p>
+</div>
+</div>
+</section>
+<section id="reproducible-research-recap" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="reproducible-research-recap"><span class="header-section-number">3</span> Reproducible Research: Recap</h2>
+<p>Working in a reproducible manner:</p>
+<ul>
+<li>Increases research efficiency, accelerating the pace of your research and collaborations.</li>
+<li>Provides transparency by capturing and communicating scientific workflows.</li>
+<li>Enables research to stand on the shoulders of giants (build on work that came before).</li>
+<li>Allows credit for secondary usage and supports easy attribution.</li>
+<li>Increases trust in science.</li>
+</ul>
+<p>To enable others to fully interpret, reproduce or build upon our research, we need to provide more comprehensive information than is typically included in a figure or publication. The <strong>methods sections of papers are typically inadequate to fully reproduce the work described in the paper</strong>.</p>
+<p><img src="images/r_provenance_reproducibility/Smith-et-al.png" class="img-fluid"></p>
+<p>For example, the figure above conveys multiple messages. But, by looking at the figure we don’t get the full story of the process the scientist used to make this plot. What data were used in this study? What methods were applied? What were the parameter settings? What documentation or code are available to us to evaluate the results? Can we trust these data and methods? Are the results reproducible?</p>
+<p><strong>Computational reproducibility</strong> is the ability to document data, analyses, and models sufficiently for other researchers to be able to understand and ideally re-execute the computations that led to scientific results and conclusions.</p>
+<p>Practically speaking, reproducibility includes:</p>
+<ul>
+<li>Preserving the data</li>
+<li>Preserving the software workflow</li>
+<li>Documenting what you did</li>
+<li>Describing how to interpret it all</li>
+</ul>
+<p>A recent study of publicly-available datasets in the Harvard Database repository containing R files found that only 26% of R files ran without error in the initial execution. 44% were able to be run after code cleaning, showing the importance of good programming practice <span class="citation" data-cites="trisovic2022">[@trisovic2022]</span>. The figure below from Trisovic et al.&nbsp;shows a <em>sankey diagram</em> of how code cleaning was able to fix common errors.</p>
+<p><img src="images/r_provenance_reproducibility/code-reproducibility-trisovic.png" class="img-fluid"></p>
+</section>
+<section id="computational-provenance-and-workflows" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="computational-provenance-and-workflows"><span class="header-section-number">4</span> Computational Provenance and Workflows</h2>
+<p>Computational provenance refers to the origin and processing history of data including:</p>
+<ul>
+<li>Input data</li>
+<li>Workflow/scripts</li>
+<li>Output data</li>
+<li>Figures</li>
+<li>Methods, dataflow, and dependencies</li>
+</ul>
+<p>When we put these all together with formal documentation, we create a <strong>computational workflow</strong> that captures all of the steps from initial data cleaning and integration, through analysis, modeling, and visualization. In other words, <strong>computational provenance is a formalized description of a workflow from the origin of the data to its final outcome</strong>.</p>
+<p>Here’s an example of a computational workflow from Mark Carls: <a href="https://search.dataone.org/view/urn%3Auuid%3A3249ada0-afe3-4dd6-875e-0f7928a4c171">Mark Carls. Analysis of hydrocarbons following the Exxon Valdez oil spill, Gulf of Alaska, 1989 - 2014. Gulf of Alaska Data Portal. urn:uuid:3249ada0-afe3-4dd6-875e-0f7928a4c171.</a>, that represents a three step workflow comprising four source data files and two output visualizations.</p>
+<p><img src="images/r_provenance_reproducibility/comp-workflow-1.png" class="img-fluid"></p>
+<p><img src="images/r_provenance_reproducibility/provenance.png" class="img-fluid"></p>
+<p>This image is a screenshot of an interactive user interface of a workflow built by DataONE. You can clearly see which data files were inputs to the process, the scripts that are used to process and visualize the data, and the final output objects that are produced, in this case two graphical maps of Prince William Sound in Alaska.</p>
+</section>
+<section id="from-provenance-to-reproducibility" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="from-provenance-to-reproducibility"><span class="header-section-number">5</span> From Provenance to Reproducibility</h2>
+<p><img src="images/r_provenance_reproducibility/Prov-History.png" class="img-fluid"></p>
+<p>DataONE provides a tool to track and visualize provenance. It facilitates reproducible science through provenance by:</p>
+<ul>
+<li>Tracking <strong>data derivation</strong> history</li>
+<li>Tracking data <strong>input</strong>s and <strong>outputs</strong> of analyses</li>
+<li>Preserving and documenting software <strong>workflows</strong></li>
+<li>Tracking analysis and model <strong>executions</strong></li>
+<li>Linking all of these to <strong>publications</strong></li>
+</ul>
+<!---
+**Introducing [ProvONE](http://purl.dataone.org/provone-v1-dev)**, an extension of W3C PROV
+
+![](images/r_provenance_reproducibility/Prov_ONE.png)
+
+ProvONE provides the fundamental information required to understand and analyze scientific workflow-based computational experiments. It covers the main aspects that have been identified as relevant in the provenance literature including **data structure**. This addresses the most relevant aspects of how the data, both used and produced by a computational process, is organized and represented. For scientific workflows this implies the inputs and outputs of the various tasks that form part of the workflow.
+-->
+<p>One way to illustrate this is to look into the structure of a data package. A <strong>data package</strong> is the unit of publication of your data, including datasets, metadata, software and provenance. The image below represents a data package and all its components and how these components relate to one another.</p>
+<p><img src="images/r_provenance_reproducibility/data-package.png" class="img-fluid"></p>
+<!--### Data Citation  {-}
+
+Data citation best practices are focused on providing credit where credit is due and indexing and exposing data citations across international repository networks. In 2014, Force 11 established a [Joint Declaration of Data Citation Principles](https://doi.org/10.25490/a97f-egyk) that includes:
+
+- Importance of data citation
+- Credit and Attribution
+- Evidence
+- Unique Identification
+- Access
+- Persistence
+- Specificity and Verifiability
+- Interoperability and Flexibility -->
+</section>
+<section id="data-citation-and-transitive-credit" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="data-citation-and-transitive-credit"><span class="header-section-number">6</span> Data Citation and Transitive Credit</h2>
+<p>We want to move towards a model such that when a user cites a research publication we will also know:</p>
+<ul>
+<li><strong>Which data</strong> produced it</li>
+<li><strong>What software</strong> produced it</li>
+<li>What was <strong>derived</strong> from it</li>
+<li><strong>Who to credit</strong> down the attribution stack</li>
+</ul>
+<p><img src="images/r_provenance_reproducibility/Transitive-Credit.png" class="img-fluid"></p>
+<p>This is transitive credit. And it changes the way in which we think about science communication and traditional publications.</p>
+</section>
+<section id="reproducible-papers-with-rrtools" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="reproducible-papers-with-rrtools"><span class="header-section-number">7</span> Reproducible Papers with <code>rrtools</code></h2>
+<p>A great overview of this approach to reproducible papers comes from:</p>
+<blockquote class="blockquote">
+<p>Ben Marwick, Carl Boettiger &amp; Lincoln Mullen (2018) <strong>Packaging Data Analytical Work Reproducibly Using R (and Friends)</strong>, The American Statistician, 72:1, 80-88, <a href="https://doi.org/10.1080/00031305.2017.1375986">doi:10.1080/00031305.2017.1375986</a></p>
+</blockquote>
+<p>The key idea in Marwick et al.&nbsp;(2018) is that of the <em>research compendium</em>: A single container for not just the journal article associated with your research but also the underlying analysis, data, and even the required software environment required to reproduce your work.</p>
+<p>Research compendium makes it easy for researchers to do their work but also for others to inspect or even reproduce the work because all necessary materials are readily at hand due to being kept in one place. Rather than a constrained set of rules, the research compendium is a scaffold upon which to conduct reproducible research using open science tools such as:</p>
+<ul>
+<li><a href="https://www.r-project.org/">R</a></li>
+<li><a href="https://rmarkdown.rstudio.com/">RMarkdown</a></li>
+<li><a href="https://quarto.org/">Quarto</a></li>
+<li><a href="https://git-scm.com/">git</a> and <a href="https://github.com">GitHub</a></li>
+</ul>
+<p>Fortunately for us, Ben Marwick (and others) have written an R package called <a href="https://github.com/benmarwick/rrtools">rrtools</a> that helps us create a research compendium from scratch.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Set up
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To start a reproducible paper with <code>rrtools</code>:</p>
+<ol type="1">
+<li><p>Close your <code>username-training</code> project. Go to the project switcher dropdown, just click “close project.” This will set your working directory back to your home directory.</p></li>
+<li><p>In console run the following line of code</p></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## "mypaper" is the name of the Rproj with my research compendia</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rrtools<span class="sc">::</span><span class="fu">use_compendium</span>(<span class="st">"mypaper"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>rrtools</code> has created the beginnings of a research compendium for us. The structure of this compendium is similar to the one needed to built an R package. That’s because it uses the same underlying folder structure and metadata and therefore it technically is an R package (called <code>mypaper</code>). And this means our research compendium could be easy to install in someone elses’ computer, similar to an R package.</p>
+<ol start="3" type="1">
+<li><code>rrtools</code> also helps you set up some key information:</li>
+</ol>
+<ul>
+<li>Set up a README file in the RMarkdown format</li>
+<li>Create an <code>analysis</code> folder to hold our reproducible paper</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rrtools<span class="sc">::</span><span class="fu">use_readme_rmd</span>()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>rrtools<span class="sc">::</span><span class="fu">use_analysis</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This creates a standard, predictable layout for our code and data and outputs that multiple people can understand. At this point, we’re technically ready to start writing the paper. But.. What about GitHub?</p>
+</div>
+</div>
+<section id="creating-a-git-and-github-repository-with-usethis" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="creating-a-git-and-github-repository-with-usethis"><span class="header-section-number">7.1</span> Creating a <code>git</code> and GitHub repository with <code>usethis</code></h3>
+<blockquote class="blockquote">
+<p><code>usethis</code> is a package that facilitates interactive workflows for R project creation and development. It automates repetitive tasks that arise during project setup and development.</p>
+</blockquote>
+<p>We are going to use two functions to start tracking our work in <code>git</code>, create a remote repository in GitHub and be able to push and pull between the local version and the remote. To learn more about this package checkout the <a href="https://usethis.r-lib.org/">package documentation</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Set up
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Make sure your are in “mypaper” Rproj.</p></li>
+<li><p>In the Console run <code>usethis::use_git()</code> to create a local git repo. Choose yes to both questions when prompted (to commit files, and to restart R).</p></li>
+<li><p>Then, in the Console, run <code>usethis::use_github()</code> to create an upstream remote repo (in GitHub).</p></li>
+</ol>
+<p>And that’s it! Now your have your research compendium in your local computer and your changes are being tracked by <code>git</code> and your can pull and push to GitHub.</p>
+</div>
+</div>
+<p>Let’s explore the structure <code>rrtools</code> has put in place for us. Inside the analysis folder we have 5 folders. Different parts of our project will go into this different folders. Our data into the <code>data</code> folder, when the time comes to save any figure, we should save them into the <code>figures</code> folder, and so on.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/r_provenance_reproducibility/compendia.png" class="img-fluid figure-img"></p>
+<figcaption>Research compendia from Marwick et al.</figcaption>
+</figure>
+</div>
+<p>You’ll notice a <code>analysis/templates</code> directory that contains journal citation style language (CSL) files which set the style of citations and reference list for the journal (the Journal of Archaeological Science, in this example). The template.Rmd renders into the template.docx. This document is called in the paper.qmd YAML to style the output of the paper created in paper.qmd.</p>
+<p>What if I want a template from another journal, different from the Journal of Archeological Science? We can create other journal’s template with the <code>rticles</code> package. This package will provide the templates and necessary information to render your paper in the journal of your choice (note: not all journal are in the <code>rticles</code> package). With that in mind, we will delete the existing <code>paper</code> directory and create a new one shortly.</p>
+</section>
+</section>
+<section id="rmarkdown-templates-with-rticles" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="rmarkdown-templates-with-rticles"><span class="header-section-number">8</span> RMarkdown templates with <code>rticles</code></h2>
+<p>The <a href="https://github.com/rstudio/rticles%20B"><code>rticles</code></a> package provides a lot of other great templates for formatting your paper specifically to the requirements of many journals. In addition to a custom CSL file for reference customization, <code>rticles</code> supports custom LATeX templates that fit the formatting requirements of each journals.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Tinytex and rendering to PDF
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To be able to render your document to PDF you need to have <code>tinytex</code> installed in your machine.</p>
+<p>In the console run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>) <span class="do">## this package is already installed in our server</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>() <span class="do">## this may take several minutes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Set up
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>If you do not have <code>rticle</code> installed, go ahead and install calling the following function in the console: <code>install.packages('rticles')</code> Restart your RStudio session.</p></li>
+<li><p>To create a new file from <code>rticles</code>custom templates, got to <code>File | New File | R Markdown...</code> menu, which shows the following dialog:</p></li>
+</ol>
+<p><img src="images/r_provenance_reproducibility/rticles-new.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li><p>Go to “From Template” in the left side menu.</p></li>
+<li><p>Select the “PNAS” template, give the file a name and set the location of the files to be <code>mypaper/analysis</code>, and click “OK”.</p></li>
+<li><p>You can now Knit the Rmd file to see a highly-targeted article format, like this one for PNAS:</p></li>
+</ol>
+<p><img src="images/r_provenance_reproducibility/rticles-pnas.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="workflow-in-a-nutshell" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="workflow-in-a-nutshell"><span class="header-section-number">9</span> Workflow in a nutshell</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Use <code>rrtools</code> to generate the core directory layout and approach to data handling.</li>
+<li>Then use <code>rticles</code> to create the structure of the paper itself. The combination is incredibly flexible.</li>
+</ul>
+</div>
+</div>
+<p>Things we can do with our research compendium:</p>
+<ul>
+<li>Edit <code>./analysis/paper/paper.Rmd</code> to begin writing your paper and your analysis in the same document</li>
+<li>Add any citations to <code>./analysis/paper/pnas-sample.bib</code></li>
+<li>Add any longer R scripts that don’t fit in your paper in an <code>R</code> folder at the top level</li>
+<li>Add raw data to <code>./data/raw_data</code></li>
+<li>Write out any derived data (generated in <code>paper.Rmd</code>) to <code>./data/derived_data</code></li>
+<li>Write out any figures in <code>./analysis/figures</code></li>
+</ul>
+<p>You can then write all of your R code in your RMarkdown/Quarto, and generate your manuscript all in the format needed for your journal (using its .csl file, stored in the paper directory).</p>
+</section>
+<section id="adding-renv-to-conserve-your-environment" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="adding-renv-to-conserve-your-environment"><span class="header-section-number">10</span> Adding <code>renv</code> to conserve your environment</h2>
+<ul>
+<li><p><code>rrtools</code> has a couple more tricks up its sleeve to help your compendium be as reproducible and portable as possible.</p></li>
+<li><p>To capture the R packages and versions this project depends on, we can use the <code>renv</code> package.</p></li>
+<li><p>Running <code>renv::init()</code>, will initiate tracking of the R packages in your project.</p></li>
+<li><p>This action will create a new folder called <code>renv</code> in your top directory.</p></li>
+<li><p><code>renv::init()</code> automatically detects dependencies in your code (by looking for library calls, at the DESCRIPTION file, etc.) and installs them to a private project specific library. This means that your project <code>mypaper</code> can use a different version of <code>dplyr</code> than another project which may need an older version without any hassle.</p></li>
+<li><p><code>renv</code> also write the package dependencies to a special file in the repository called <code>renv.lock</code>.</p></li>
+<li><p>If any of your packages you are using is updated, while your are working on your project, you can run <code>renv::snapshot()</code> to update the <code>renv.lock</code> file and your project-installed packages.</p></li>
+<li><p>You can read the <code>renv.lock</code> file using <code>renv::restore()</code>, when needed. This will install the versions of the packages needed.</p></li>
+</ul>
+</section>
+<section id="conserve-your-computational-environement-with-docker" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="conserve-your-computational-environement-with-docker"><span class="header-section-number">11</span> Conserve your computational environement with Docker</h2>
+<ul>
+<li>The <code>rrtools</code> package then uses this <code>renv.lock</code> file to build what is called a Dockerfile.</li>
+<li><strong><a href="http://www.docker.com">Docker</a> allows you to build containers, a standard unit of software that packages up code and all its dependencies so an application runs quickly and reliably from one computing environment to another.</strong></li>
+<li>A container is an “image” of all the software specified, and this image can be run on other computers such that the software stack looks exactly as you specify.</li>
+<li>This is important when it comes to reproducibility, because when running someone else code, you may get different results or errors if you are using different versions of software (like an old version of <code>dplyr</code>).</li>
+<li>A Dockerfile contains the instructions for how to recreate the computational environment where your analysis was run.</li>
+</ul>
+<p><strong>In practice</strong></p>
+<ul>
+<li><p>Once you have your research compendium, you can called <code>rrtools::use_dockerfile()</code>. If needed, re-install <code>rrtools</code> directly from GitHub <code>remotes::install_github("benmarwick/rrtools")</code></p></li>
+<li><p>This first creates a Dockerfile that loads a standard image for using R with the tidyverse.</p></li>
+<li><p>And then has more instructions for how to create the environment so that it has the very specific R packages and versions you need.</p></li>
+<li><p>If we look at the Dockerfile (example below), it calls to <code>renv::restore()</code>, as described above.</p></li>
+<li><p>The last line of the docker file renders our Quarto/RMarkdown reproducible paper!</p></li>
+</ul>
+<pre><code># get the base image, the rocker/verse has R, RStudio and pandoc
+FROM rocker/verse:4.2.2
+
+# required
+MAINTAINER Your Name &lt;your_email@somewhere.com&gt;
+
+COPY . /&lt;REPO&gt;
+
+# go into the repo directory
+RUN . /etc/environment \
+  # Install linux depedendencies here
+  # e.g. need this for ggforce::geom_sina
+  &amp;&amp; sudo apt-get update \
+  &amp;&amp; sudo apt-get install libudunits2-dev -y \
+  # build this compendium package
+  &amp;&amp; R -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))" \
+  &amp;&amp; R -e "remotes::install_github(c('rstudio/renv', 'quarto-dev/quarto-r'))" \
+  # install pkgs we need
+  &amp;&amp; R -e "renv::restore()" \
+  # render the manuscript into a docx, you'll need to edit this if you've
+  # customised the location and name of your main qmd file
+  &amp;&amp; R -e "quarto::quarto_render('/&lt;REPO&gt;/analysis/paper/paper.qmd')"</code></pre>
+<ul>
+<li>After running <code>rrtools::use_dockerfile()</code>, the package also sets up GitHub Actions for you.</li>
+<li>Actions are processes that are triggered in GitHub events (like a push) and run automatically.</li>
+<li>In this case, the Action that is set up will build your Docker image on GitHub.</li>
+<li>This means that the code that knits your paper is run, and an updated version of your paper is knit.</li>
+<li>This is called <strong>continuous integration,</strong> and is extremely convenient for developing products like this, since the build step can be taken care of automatically as you push to your repository.</li>
+</ul>
+<p><img src="images/r_provenance_reproducibility/github-actions.png" class="img-fluid"></p>
+</section>
+<section id="the-5th-generation-of-reproducible-papers" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="the-5th-generation-of-reproducible-papers"><span class="header-section-number">12</span> The 5th Generation of Reproducible Papers</h2>
+<p><img src="images/r_provenance_reproducibility/Living-paper.png" class="img-fluid"></p>
+<p><strong>Whole Tale</strong> is a project that aims to simplify computational reproducibility. It enables researchers to easily package and share ‘Tales’. Tales are executable research objects captured in a standards-based tale format complete with metadata. They can contain:</p>
+<ul>
+<li>Data (references)</li>
+<li>Code (computational methods)</li>
+<li>Narrative (traditional science story)</li>
+<li>Compute environment (e.g.&nbsp;RStudio, Jupyter)</li>
+</ul>
+<p><img src="images/r_provenance_reproducibility/whole-tale-container.png" class="img-fluid"></p>
+<p>By combining data, code and the compute environment, Tales allow researchers to:</p>
+<ul>
+<li>Re-create the computational results from a scientific study</li>
+<li>Achieve computational reproducibility</li>
+<li>“Set the default to reproducible.”</li>
+</ul>
+<p><strong>Full circle reproducibility can be achieved by publishing data, code AND the computational environment.</strong></p>
+</section>
+<section id="resources" class="level2" data-number="13">
+<h2 data-number="13" class="anchored" data-anchor-id="resources"><span class="header-section-number">13</span> Resources</h2>
+<ul>
+<li><a href="https://github.com/benmarwick/rrtools"><code>rrtools</code> documentation</a></li>
+<li>The <a href="https://github.com/rstudio/rticles%20B"><code>rticles</code></a></li>
+<li><a href="https://usethis.r-lib.org/"><code>usethis</code> documentation</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/nceas-learning-hub\.github\.io\/2026_delta_week1\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright © 2025, NCEAS</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -46,6 +46,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-cecc5a39c142b520f22a6de88e6152ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -338,6 +340,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Delta Workshop Materials</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./groups.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Synthesis Working Groups</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -514,15 +522,59 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="learning-objectives" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2</span> Learning Objectives</h2>
-<p>{{&lt; fa person-digging &gt;}} Under construction; check back later!</p>
+<p><i class="fa-solid fa-person-digging" aria-label="person-digging"></i> Under construction; check back later!</p>
 </section>
 <section id="course-schedule" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="course-schedule"><span class="header-section-number">3</span> Course Schedule</h2>
-<p>{{&lt; fa screwdriver-wrench &gt;}} TBD</p>
+<p><i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> TBD</p>
 </section>
 <section id="pre-workshop-preparation" class="level2 page-columns page-full" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="pre-workshop-preparation"><span class="header-section-number">4</span> Pre-Workshop Preparation</h2>
-<!-- {{< include content/prep.qmd >}} -->
+<p>If you are participating in this workshop series, we are so excited to help you acquire new or hone existing technical and interpersonal skills in the realm of synthesis science! To ensure that you get the most out of this workshop series, <strong>we recommend that you take the following steps <em><u>before</u></em> the first week.</strong></p>
+<details>
+<summary>
+Note on Organization-Owned Computers
+</summary>
+If your organization has a dedicated IT team that has sole power to install software on your computer, you will need to contact them before the workshop to do the installation bits of the preparation steps we outline below.
+</details>
+<section id="install-r" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="install-r"><span class="header-section-number">4.1</span> Install R</h3>
+<p>“R” is the coding language we’ll use throughout the workshop series. Follow the relevant instructions for your operating system here: <a href="https://www.r-project.org/">r-project.org</a></p>
+</section>
+<section id="install-positron" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="install-positron"><span class="header-section-number">4.2</span> Install Positron</h3>
+<p>“Positron” is the <u>i</u>ntegrated <u>d</u>evelopment <u>e</u>nvironment (IDE) we’ll use to write code to support the synthesis work you all will be accomplishing during (and after!) the workshop series. Follow the relevant instructions for your operating system here: <a href="https://positron.posit.co/">positron.posit.co</a></p>
+</section>
+<section id="install-git" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="install-git"><span class="header-section-number">4.3</span> Install Git</h3>
+<p>“Git” is the name of the software that we can use to do “version control” for the code files we’ll develop. We’ll get into this more later but for now, it is enough to know this is analogous to Microsoft Word’s “track changes” feature but with some extra features that are great for code files.</p>
+<p>Installing Git differs slightly depending on your computer’s operating system so check out the tabs below for the right option for you. These instructions are modified from Jennifer Bryan’s excellent “<a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a>” ebook.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><i class="fa-brands fa-windows" aria-label="windows"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href=""><i class="fa-brands fa-linux" aria-label="linux"></i> Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Run the following <i class="fa-solid fa-terminal" aria-label="terminal"></i> command line code.</p>
+<pre><code>xcode-select --install</code></pre>
+<p>For more detailed instructions, see <a href="https://happygitwithr.com/install-git#macos">here</a>.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><a href="https://gitforwindows.org/">Install Git for Windows</a> (a.k.a. “Git Bash”). When asked about “Adjusting your PATH environment”, <strong>select “Git from the command line and also from 3rd-party software”</strong>.</p>
+<p>For more detailed instructions, see <a href="https://happygitwithr.com/install-git#install-git-windows">here</a>.</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Install Git via your distro’s package manager (in the <i class="fa-solid fa-terminal" aria-label="terminal"></i> Terminal).</p>
+<p>If you use Ubuntu or Debian Linux that <i class="fa-solid fa-terminal" aria-label="terminal"></i> code is as follows:</p>
+<pre><code>sudo apt-get install git</code></pre>
+<p>If instead you use Fedora or RedHat Linux the <i class="fa-solid fa-terminal" aria-label="terminal"></i> code is instead:</p>
+<pre><code>sudo yum install git</code></pre>
+<p>For more detailed instructions, see <a href="https://happygitwithr.com/install-git#linux">here</a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="make-a-github-account" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="make-a-github-account"><span class="header-section-number">4.4</span> Make a GitHub Account</h3>
+<p>“GitHub” is a nice web interface for collaborating with other people who use Git. Later in the lifecycle of a project, GitHub is also useful for sharing and publicizing your code beyond of your team. Please make a profile at <a href="https://github.com/">github.com</a> and consider adding a profile photo (it’ll make you stand out relative to the default ‘space invader’ image your account will start with).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -542,8 +594,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </div>
-<section id="weeks-schedule" class="level3 page-columns page-full" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="weeks-schedule"><span class="header-section-number">4.1</span> Week’s Schedule</h3>
+</section>
+<section id="weeks-schedule" class="level3 page-columns page-full" data-number="4.5">
+<h3 data-number="4.5" class="anchored" data-anchor-id="weeks-schedule"><span class="header-section-number">4.5</span> Week’s Schedule</h3>
 <div class="column-body-outset">
 <!-- ![](images/schedule.png) -->
 </div>

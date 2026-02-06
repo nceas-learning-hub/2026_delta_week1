@@ -1,0 +1,21 @@
+title: NCEAS Learning Hub Quarto Stylesheet
+author: "Casey O'Hara"
+version: 0.0.1
+quarto-required: ">=1.2.0"
+contributes:
+  formats:
+    html:
+      theme:
+        light: theme_light.scss
+        dark: theme_dark.scss
+      css: banner/banner.css
+      toc: true
+      number-sections: true
+      code-overflow: wrap
+      code-line-numbers: false
+      code-copy: hover
+      link-external-newwindow: true
+      link-external-icon: false
+      title-block-banner: "#44444444"
+  filters:
+    - callout_exercise.lua

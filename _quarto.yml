@@ -1,0 +1,57 @@
+project:
+  type: website
+  output-dir: docs
+
+filters:
+- nceas-learning-hub/theme
+exercises: ### for custom theme callouts
+  number: false ### see https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html but does not work
+editor: source
+execute:
+  freeze: auto
+
+format:
+  theme-html
+
+website:
+  title: "2026 Delta Synthesis Working Groups week 1 (April 2026)"
+  reader-mode: false
+  repo-url: https://github.com/nceas-learning-hub/2026_delta_week1
+
+  favicon: logo_lh_hex.png # learning hub logo on browser tab
+
+  bread-crumbs: false
+  navbar:
+    right:
+      - text: "Instructors"
+        menu:
+          - text: "Casey O'Hara"
+            href: https://www.oharascience.com/
+      - icon: github
+        href: https://github.com/nceas-learning-hub/2026_delta_week1
+        aria-label: GitHub
+
+  sidebar:
+    title: "Training Materials"
+    style: "floating"
+    search: true
+    tools:
+      - icon: house-door-fill
+        href: https://www.nceas.ucsb.edu/learning-hub
+      - icon: twitter
+        href: https://twitter.com/ucsb_nceas
+      - icon: github
+        href: nceas-learning-hub.github.io/2026_delta_week1
+    contents:
+      - index.qmd # preface
+      # START SESSIONS
+      # SESSION_LINKS
+      # END SESSIONS
+
+  page-footer:
+    center: "Copyright \u00a9 2025, NCEAS"
+    ### NCEAS main website footer:
+    # center: "\u00a9 The Regents of the University of California, All Rights Reserved"
+    # could also include license info?
+
+

@@ -1,0 +1,259 @@
+/*-- scss:defaults --*/
+
+// Colors (gradients from https://www.colors.tools/lighten-and-darken)
+/* source: https://coolors.co/palettes/trending */
+$lh-red-4: #4e1b11;
+$lh-red-3: #A23923; // from LH style guide
+$lh-red-2: #da6951;
+$lh-red-1: #fcd2c5;
+$lh-yel-4: #855f16;
+$lh-yel-3: #DB9D26; // from LH style guide
+$lh-yel-2: #eac57d;
+$lh-yel-1: #f8ece5;
+$lh-yel-0: #DB9D2622; // semi transparent
+$lh-grn-4: #0C4537;
+$lh-grn-3: #167B62; // from NCEAS LH header
+$lh-grn-2: #a1cac0;
+$lh-grn-1: #f3f8f7;
+$lh-grn-0: #0C453744; // semi-transparent
+$lh-pur-4: #4B0055; // viridis purple
+$lh-pur-3: #bc40d4;
+$lh-pur-2: #eb85ff;
+$lh-pur-1: #fae4ff;
+$lh-pur-0: #bc40d422; // semi-transparent
+$lh-blu-4: #00304b;
+$lh-blu-3: #00588B; // viridis blue
+$lh-blu-2: #4bcdce;
+$lh-blu-1: #ddecee;
+$lh-blu-0: #00588B22; // semi transparent
+$lh-cream: #F4F3EE;
+$lh-gray-0: #d6d6d622; // semi transparent
+$lh-gray-1: #BCB8B1;
+$lh-gray-2: #8A817C;
+$lh-gray-3: #222823;
+$lh-gray-4: #191919;
+$lh-black:  #08090A;
+
+
+
+/////////////////////////////
+//          Fonts          //
+/////////////////////////////
+
+/* NCEAS Learning Hub site uses Avenir... some free options on Google Fonts:
+// Sen, Figtree, Manrope, Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+// Font Awesome:
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+
+$font-family-sans-serif: Figtree, Arial, sans-serif;
+$font-family-serif: serif;
+$font-size: 25px;
+
+/////////////////////////////
+//        Doc colors       //
+/////////////////////////////
+
+// Base document colors
+$navbar-bg: $lh-grn-4;  // navbar
+$navbar-fg: $lh-cream;  // navbar foreground elements
+$navbar-hl: $lh-grn-1;  // highlight color when on a page
+$sidebar-bg: $lh-grn-0; // sidebar bg for "docked" style
+$sidebar-fg: $lh-cream;
+$body-bg:    $lh-black; // page background
+$body-color: $lh-cream; // page text
+$footer-bg:  $lh-grn-4; // footer
+$link-color: $lh-blu-2; // hyperlinks
+
+// Override default callout colors
+$callout-color-note:      $lh-blu-3;
+$callout-color-tip:       $lh-grn-3;
+$callout-color-caution:   $lh-yel-3;
+$callout-color-warning:   $lh-yel-3;
+$callout-color-important: $lh-red-3;
+
+// Inline code
+$code-bg:    $lh-gray-0; // inline code background color
+$code-color: $lh-pur-2; // inline code text color
+
+// Code blocks
+$code-block-bg: $lh-gray-0; // code block background color
+
+/*-- scss:rules --*/
+
+/////////////////////////////
+//  Navbar & Title Block   //
+/////////////////////////////
+
+// Navbar size and text height
+.navbar {
+  height: 30px;
+}
+.navbar-brand { /* Just the course name - not other nav elements */
+  font-size: 16px;
+}
+
+.quarto-title-block .title, .subtitle {
+  /* in elements with quarto-title-block class, change color for classes
+  // title and subtitle */
+  color: white;
+}
+
+.quarto-title-block code {
+  // in elements with quarto-title-block class, change code color
+  color: $lh-pur-1;
+}
+
+// Active tabset panel (tab then tab content)
+.nav-tabs .nav-link.active {
+  background-color: #FFF;
+  color: $lh-black;
+}
+.tab-content { background-color:  #FFF; }
+
+// Navbar dropdown elements
+.dropdown-menu{
+  --bs-dropdown-link-hover-color: #F4F3EE;
+  --bs-dropdown-link-hover-bg: #01BAEF;
+}
+
+/////////////////////////////
+//      Other doc text     //
+/////////////////////////////
+
+body {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  color: $lh-yel-2;
+}
+
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+.exercise {
+  background-color: #a6bddb;
+  padding: 1em;
+}
+.setup {
+  background-color: #bae4bc;
+  padding: 1em;
+}
+.aside {
+  background-color: #bfbdbd;
+  padding: 1em;
+}
+
+// Code chunk output
+pre code:not(.sourceCode) {
+  background-color: $lh-gray-0;
+  color: white;
+}
+
+
+/////////////////////////////
+//       Slide embeds      //
+/////////////////////////////
+
+.slide-deck{
+  border: 3px solid #dee2e6;
+  width: 100%;
+  height: 475px;
+}
+
+
+/////////////////////////////
+//     Callout styling     //
+/////////////////////////////
+
+// from https://github.com/cambiotraining/quarto-course-template/tree/main/_extensions/courseformat
+
+// this is here due to a styling bug where a callout within a callout adds an
+// unecessary padding at the bottom by default
+// in our case this would affect answer callout within an exercise callout
+.callout.callout-titled .callout-body > :last-child:not(.sourceCode), .callout.callout-titled .callout-body > div > :last-child:not(.sourceCode) {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+// this is here so there's some padding for a callout within a callout
+// again this mostly affects our answer callout within an exercise callout
+.callout.callout-style-default .callout-body {
+  padding-bottom: 0.5rem;
+}
+
+// Exercise callout styling
+div.callout-exercise.callout {
+  border-left-color: $lh-blu-3;
+}
+
+div.callout-exercise.callout-style-default > .callout-header {
+  background-color: $lh-blu-0;
+}
+
+.callout-exercise > .callout-header::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f303"; // pencil
+  margin-right: 10px;
+}
+
+// Answer callout styling
+.callout-answer > .callout-header::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f084"; // key
+  margin-right: 10px;
+}
+
+div.callout-answer.callout {
+  border-left-color: $lh-blu-4;
+}
+
+div.callout-answer.callout-style-default > .callout-header {
+  background-color: $lh-blu-0;
+}
+
+// Hint callout styling
+.callout-hint > .callout-header::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f12e"; // puzzle
+  margin-right: 10px;
+}
+
+div.callout-hint.callout {
+  border-left-color: $lh-yel-4;
+}
+
+div.callout-hint.callout-style-default > .callout-header {
+  background-color: $lh-yel-0;
+}
+
+// Example callout styling
+.callout-example > .callout-header::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f002";
+  margin-right: 10px;
+}
+
+div.callout-example.callout {
+  border-left-color: $lh-pur-4;
+}
+
+div.callout-example.callout-style-default > .callout-header {
+  background-color: $lh-pur-0;
+}

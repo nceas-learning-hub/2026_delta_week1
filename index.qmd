@@ -23,7 +23,7 @@ The [Delta Science Program](https://deltacouncil.ca.gov/delta-science-program/) 
 
 ## Pre-Workshop Preparation
 
-{{< include content/prep.qmd >}}
+<!-- {{< include content/prep.qmd >}} -->
 
 
 

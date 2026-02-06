@@ -1,0 +1,106 @@
+---
+title: Blank placeholder
+---
+
+:::{.callout-tip}
+### Learning Objectives
+
+-   bullet pointed learning objectives
+:::
+
+
+## Use level 2 headers for sections
+
+## Images
+
+The file path for images in the final course will be `images/<folder with same base name as lesson>/<image file>`.  When you rename this blank placeholder, rename (or make a copy if you're using multiple placeholders) the folder in `images` from `blank_placeholder` to the base name of your lesson.
+
+![Alt text](images/blank_placeholder/allison-horst-code-kitchen.png)
+
+
+## Callouts
+
+Quarto offers some built-in [callout blocks](https://quarto.org/docs/authoring/callouts.html) to set content off against the normal body text.  Note that we've customized the colors of our callouts to better match our course styling (see the `lh_theme` extension).  
+
+### Standard callouts
+
+There are five built-in callouts signalling different levels of urgency:
+
+* tip `{.callout-tip}`
+* note `{.callout-note}`
+* caution `{.callout-caution}`
+* warning `{.callout-warning}`
+* important `{.callout-important}`
+
+See the [callout reference](https://quarto.org/docs/authoring/callouts.html) for how to create these.
+
+Based on the color and icons, here are recommendations on when and how to use these, in descending order of urgency:
+
+::: {.callout-important}
+Use `{.callout-important}` to highlight things that the reader _must_ pay attention to, or essential ideas and concepts.
+:::
+
+::: {.callout-warning}
+Use `{.callout-warning}` to highlight common "gotchas" such as common user errors or unexpected behavior.
+:::
+
+::: {.callout-caution}
+Use `{.callout-caution}` to indicate materials under development; consider using `{.callout-warning}` for other cases.
+:::
+
+::: {.callout-note}
+Use `{.callout-note}` to communicate deeper ideas or understandings that are not critical to understanding the lesson at hand.  The instructor might skip over these while teaching.  If the reader does not read this, they may miss out, but nothing bad will happen.
+:::
+
+::: {.callout-tip}
+Use `{.callout-tip}` to communicate learning objectives, key points, and helpful tips and tricks.
+:::
+
+
+### Custom callouts
+
+There are currently four custom callouts for different types of tasks:
+
+* exercise `{.callout-exercise}`
+* hint `{.callout-hint}`
+* answer `{.callout-answer}`
+* example `{.callout-example}`
+
+
+These custom callouts work thanks to [Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/](https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html).  Unfortunately, the title is not responsive to the `title` argument in the callout or to the header-style titling that the built-in callouts can use.  The collapse option also seems to be unresponsive currently.
+
+::: {.callout-exercise}
+Use `{.callout-exercise}` for exercises.  The current default numbers exercises within a given page.  Click on the _hint_ and _answer_ callouts below to reveal the information in them.
+
+::: {.callout-hint}
+Use `{.callout-hint}` for hints to the exercise - defaults to `collapse=true` for obvious reasons.  Note they can be nested within an exercise, or stand-alone.
+:::
+
+::: {.callout-answer}
+Use `{.callout-answer}` for answers to the exercise - defaults to `collapse=true` for obvious reasons.  Note they can be nested within an exercise, or stand-alone.
+:::
+
+:::
+
+::: {.callout-example}
+Use `{.callout-example}` for examples, e.g., example data or example.
+:::
+
+## Slides
+
+Slides should when possible be created as Quarto slide decks.  Slide decks for a lesson should be created in the folder `slides/<lesson base name>/<slide deck name.html>` folder as qmd files (note, the link in the lesson must point to the html, not the qmd).  When you create a new lesson, you should rename the `slides/blank_placeholder` folder to match the base name of your lesson.
+
+You can call your slide deck quarto docs whatever you like, and have multiple slide decks.  You can also include images in your deck, perhaps with an `images` folder in the `slides` folder (NOTE: this is separate from images that show up in the main site page), and images can be referenced with relative file paths.  E.g., `slides/blank_placeholder/slides1.qmd` might have an image at `slides/blank_placeholder/images/tidyverse_hex.jpg`, so in the qmd, you could just point to `![](images/tidyverse_hex.jpg)`.
+
+There is a default .scss file in the slides folder, use it or modify it as you like.
+
+[Full Screen](slides/blank_placeholder/slides1.html)
+
+```{=html}
+<iframe class="slide-deck" src="slides/blank_placeholder/slides1.html" style="border: 1px solid #2e3846;"></iframe>
+```
+
+
+## Data
+
+If you have specific data that your lesson requires to knit successfully, put it in the `data/blank_placeholder` folder.  It is probably best to avoid this though, use data from packages or online if possible, or create toy datasets directly in the .qmd.

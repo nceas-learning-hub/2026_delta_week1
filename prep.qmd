@@ -1,0 +1,62 @@
+
+If you are participating in this workshop series, we are so excited to help you acquire new or hone existing technical and interpersonal skills in the realm of synthesis science! To ensure that you get the most out of this workshop series, **we recommend that you take the following steps _<u>before</u>_ the first week.**
+
+<details>
+<summary>Note on Organization-Owned Computers</summary>
+If your organization has a dedicated IT team that has sole power to install software on your computer, you will need to contact them before the workshop to do the installation bits of the preparation steps we outline below.
+</details>
+
+### Install R
+
+"R" is the coding language we'll use throughout the workshop series. Follow the relevant instructions for your operating system here: [r-project.org](https://www.r-project.org/)
+
+### Install Positron
+
+"Positron" is the <u>i</u>ntegrated <u>d</u>evelopment <u>e</u>nvironment (IDE) we'll use to write code to support the synthesis work you all will be accomplishing during (and after!) the workshop series. Follow the relevant instructions for your operating system here: [positron.posit.co](https://positron.posit.co/)
+
+### Install Git
+
+"Git" is the name of the software that we can use to do "version control" for the code files we'll develop. We'll get into this more later but for now, it is enough to know this is analogous to Microsoft Word's "track changes" feature but with some extra features that are great for code files.
+
+Installing Git differs slightly depending on your computer's operating system so check out the tabs below for the right option for you. These instructions are modified from Jennifer Bryan's excellent "[Happy Git and GitHub for the useR](https://happygitwithr.com/)" ebook.
+
+:::{.panel-tabset}
+#### {{< fa brands apple >}} Mac
+
+Run the following {{< fa terminal >}} command line code.
+
+```
+xcode-select --install
+```
+
+For more detailed instructions, see [here](https://happygitwithr.com/install-git#macos).
+
+#### {{< fa brands windows >}} Windows
+
+[Install Git for Windows](https://gitforwindows.org/) (a.k.a. "Git Bash"). When asked about "Adjusting your PATH environment", **select "Git from the command line and also from 3rd-party software"**.
+
+For more detailed instructions, see [here](https://happygitwithr.com/install-git#install-git-windows).
+
+#### {{< fa brands linux >}} Linux
+
+Install Git via your distro's package manager (in the {{< fa terminal >}} Terminal).
+
+If you use Ubuntu or Debian Linux that {{< fa terminal >}} code is as follows:
+
+```
+sudo apt-get install git
+```
+
+If instead you use Fedora or RedHat Linux the {{< fa terminal >}} code is instead:
+
+```
+sudo yum install git
+```
+
+For more detailed instructions, see [here](https://happygitwithr.com/install-git#linux).
+
+:::
+
+### Make a GitHub Account
+
+"GitHub" is a nice web interface for collaborating with other people who use Git. Later in the lifecycle of a project, GitHub is also useful for sharing and publicizing your code beyond of your team. Please make a profile at [github.com](https://github.com/) and consider adding a profile photo (it'll make you stand out relative to the default 'space invader' image your account will start with).

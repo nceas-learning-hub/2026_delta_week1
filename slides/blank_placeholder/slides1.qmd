@@ -1,0 +1,26 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme:
+      - lh_slides_style.scss ### this lives in folder with slide qmd file
+execute:
+  echo: true
+  code-line-numbers: false
+---
+
+## {#title-slide data-menu-title="Title Slide"} 
+
+[Welcome to R & RStudio]{.custom-title}
+
+[An introduction to programming in R]{.custom-subtitle}
+
+<hr class="hr-red">
+
+
+[**NCEAS Learning Hub**]{.custom-subtitle2}
+
+![](images/tidyverse_hex.jpg)

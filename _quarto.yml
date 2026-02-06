@@ -45,7 +45,26 @@ website:
     contents:
       - index.qmd # preface
       # START SESSIONS
-      # SESSION_LINKS
+      - section: "Day 1"
+        contents:
+        - s01_r_rstudio_server_setup.qmd
+        - s02_git_setup.qmd
+        - s03_r_quarto_literate_analysis.qmd
+        - s04_activity_reproducibility_lego.qmd
+        - s05_blank_placeholder.qmd
+      - section: "Day 3"
+        contents:
+        - s06_github_introduction.qmd
+        - s07_lecture_data_mgmt_reproducibility.qmd
+      - section: "Day 4"
+        contents:
+        - s08_r_tidyverse_clean_wrangle.qmd
+        - s09_r_practice_clean_wrangle_visualize.qmd
+        - s10_r_functions.qmd
+        - s11_r_packages.qmd
+      - section: "Day 5"
+        contents:
+        - s12_r_provenance_reproducibility.qmd
       # END SESSIONS
 
   page-footer:

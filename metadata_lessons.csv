@@ -1,0 +1,13 @@
+module,lesson,lesson_file_package,lesson_file_course,package,pkg_version
+Day 1,r_rstudio_server_setup,r_rstudio_server_setup.qmd,s01_r_rstudio_server_setup.qmd,lhLessons,2024.11.07
+Day 1,git_setup,git_setup.qmd,s02_git_setup.qmd,lhLessons,2024.11.07
+Day 1,r_quarto_literate_analysis,r_quarto_literate_analysis.qmd,s03_r_quarto_literate_analysis.qmd,lhLessons,2024.11.07
+Day 1,activity_reproducibility_lego,activity_reproducibility_lego.qmd,s04_activity_reproducibility_lego.qmd,lhLessons,2024.11.07
+Day 1,blank_placeholder,blank_placeholder.qmd,s05_blank_placeholder.qmd,lhLessons,2024.11.07
+Day 1,github_introduction,github_introduction.qmd,s06_github_introduction.qmd,lhLessons,2024.11.07
+Day 1,lecture_data_mgmt_reproducibility,lecture_data_mgmt_reproducibility.qmd,s07_lecture_data_mgmt_reproducibility.qmd,lhLessons,2024.11.07
+Day 1,r_tidyverse_clean_wrangle,r_tidyverse_clean_wrangle.qmd,s08_r_tidyverse_clean_wrangle.qmd,lhLessons,2024.11.07
+Day 1,r_practice_clean_wrangle_visualize,r_practice_clean_wrangle_visualize.qmd,s09_r_practice_clean_wrangle_visualize.qmd,lhLessons,2024.11.07
+Day 1,r_functions,r_functions.qmd,s10_r_functions.qmd,lhLessons,2024.11.07
+Day 1,r_packages,r_packages.qmd,s11_r_packages.qmd,lhLessons,2024.11.07
+Day 1,r_provenance_reproducibility,r_provenance_reproducibility.qmd,s12_r_provenance_reproducibility.qmd,lhLessons,2024.11.07

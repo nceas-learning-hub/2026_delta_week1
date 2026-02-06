@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "index.html#delta-stewardship-council-index.qmd",
+    "href": "index.html#delta-stewardship-council-index.qmd",
+    "title": "About the course",
+    "section": "1 Delta Stewardship Council index.qmd",
+    "text": "1 Delta Stewardship Council index.qmd",
+    "crumbs": [
+      "About the course"
+    ]
+  },
+  {
+    "objectID": "index.html#nceas-expertise",
+    "href": "index.html#nceas-expertise",
+    "title": "About the course",
+    "section": "2 NCEAS Expertise",
+    "text": "2 NCEAS Expertise\nThe National Center for Ecological Analysis and Synthesis (NCEAS), a research affiliate of UCSB, is a leading expert on interdisciplinary data science and works collaboratively to answer the world’s largest and most complex questions. The NCEAS approach leverages existing data and employs a team science philosophy to squeeze out all potential insights and solutions efficiently - this is called synthesis science.\nNCEAS has over 25 years of success with this model among working groups and environmental professionals. Together with the Delta Science Program and the Delta Stewardship Council we are excited to pass along skills, workflows, mindsets learn throughout the years.\n\n\n\n\n\n\nLearning Objectives\n\n\n\n\nEffectively manage data using tidy data practices\nImplement reproducible scientific workflows throughout all aspects of a project\nEstablish best practices and utilize tools like Git & GitHub to optimize your collaboration\nBetter communicate scientific analyses and results using Markdown, GitHub webpages, and R packages like ggplot2 and Shiny\nIncrease your familiarity and confidence with data science tools\n\n\n\n\n2.1 Week’s Schedule",
+    "crumbs": [
+      "About the course"
+    ]
+  },
+  {
+    "objectID": "index.html#code-of-conduct",
+    "href": "index.html#code-of-conduct",
+    "title": "About the course",
+    "section": "3 Code of Conduct",
+    "text": "3 Code of Conduct\nBy participating in this activity you agree to abide by the NCEAS Code of Conduct.",
+    "crumbs": [
+      "About the course"
+    ]
+  },
+  {
+    "objectID": "index.html#about-this-book",
+    "href": "index.html#about-this-book",
+    "title": "About the course",
+    "section": "4 About this book",
+    "text": "4 About this book\nThese written materials are the result of a continuous and collaborative effort at NCEAS to help researchers make their work more transparent and reproducible. This work began in the early 2000’s, and reflects the expertise and diligence of many, many individuals. The primary authors are listed in the citation below, with additional contributors recognized for their role in developing previous iterations of these or similar materials.\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\nCitation: Camila Vargas Poulsen & Angel Chen (2024), NCEAS coreR for Delta Science Program, June 2024, NCEAS Learning Hub. URL https://learning.nceas.ucsb.edu/2024-06-delta.\nAdditional contributors: Ben Bolker, Amber E. Budden, Julien Brun, Samantha Csik, Halina Do-Linh, Natasha Haycock-Chavez, S. Jeanette Clark, Julie Lowndes, Stephanie Hampton, Matt Jone, Samanta Katz, Erin McLean, Bryce Mecum, Deanna Pennington, Karthik Ram, Jim Regetz, Tracy Teal, Daphne Virlar-Knight, Leah Wasser.\nThis is a Quarto book. To learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "About the course"
+    ]
+  }
+]

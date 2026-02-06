@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Delta Workshop Materials – 2026 Delta Synthesis Working Groups week 1 (April 2026)</title>
+<title>Data Management and Reproducibility – 2026 Delta Synthesis Working Groups week 1 (April 2026)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -46,8 +46,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-cecc5a39c142b520f22a6de88e6152ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="site_libs/quarto-contrib/quarto-project/nceas-learning-hub/theme/banner/banner.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -302,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Delta Workshop Materials</h1>
+          <h1 class="quarto-secondary-nav-title">Data Management and Reproducibility</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -314,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Delta Workshop Materials</h1>
+      <h1 class="title d-none d-lg-block">Data Management and Reproducibility</h1>
                       </div>
   </div>
     
@@ -344,7 +342,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Delta Workshop Materials</span></a>
   </div>
 </li>
@@ -441,7 +439,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./s10_lecture_data_mgmt_reproducibility.html" class="sidebar-item-text sidebar-link">
+  <a href="./s10_lecture_data_mgmt_reproducibility.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data Management and Reproducibility</span></a>
   </div>
 </li>
@@ -510,116 +508,63 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#workshop-description" id="toc-workshop-description" class="nav-link active" data-scroll-target="#workshop-description">Workshop Description</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
 
-
-<div class="no-row-height column-margin column-container"><div class="">
-
-</div></div><section id="overview" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
-<p>The <a href="https://deltacouncil.ca.gov/delta-science-program/">Delta Science Program</a> is once again partnering with the <a href="https://www.nceas.ucsb.edu/">National Center for Ecological Analysis and Synthesis</a> (NCEAS) to convene a collaborative data synthesis working group in the spring of 2026. Delta Synthesis Working Groups receive advanced data science and statistics training with immediate opportunities to use those newly acquired skills to analyze available data and produce relevant research and data products. The upcoming working group will be the third cohort held through this partnership.</p>
+<iframe width="560" height="380" src="https://docs.google.com/presentation/d/1LKanKcsnhOHunpeKuoS2__TQQ4wR7Gt2VBH-8qD-PJM/preview" allowfullscreen="">
+</iframe>
+<section id="workshop-description" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="workshop-description">Workshop Description</h3>
+<p>Computational tools make it easier than ever to collect, analyze, and share data and results in transparent and reproducible ways. To achieve reproducibility, it is important to set systems in place and manage data thoroughly. Data management is the process of handling, organizing, documenting, and preserving data used in a project/research. It helps your research outcomes be transparent, maximizing your work’s practical use and value. This lesson provides an overview of all the meaningful steps in a research project and dives into how to plan for successful data management. We will also discuss tools and systems to help you organize and document your work for better reproducibility, to make your analysis robust, and to facilitate collaboration (including with yourself).</p>
 </section>
-<section id="learning-objectives" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2</span> Learning Objectives</h2>
-<p><i class="fa-solid fa-person-digging" aria-label="person-digging"></i> Under construction; check back later!</p>
-</section>
-<section id="course-schedule" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="course-schedule"><span class="header-section-number">3</span> Course Schedule</h2>
-<p><i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> TBD</p>
-</section>
-<section id="pre-workshop-preparation" class="level2 page-columns page-full" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="pre-workshop-preparation"><span class="header-section-number">4</span> Pre-Workshop Preparation</h2>
-<p>If you are participating in this workshop series, we are so excited to help you acquire new or hone existing technical and interpersonal skills in the realm of synthesis science! To ensure that you get the most out of this workshop series, <strong>we recommend that you take the following steps <em><u>before</u></em> the first week.</strong></p>
-<details>
-<summary>
-Note on Organization-Owned Computers
-</summary>
-If your organization has a dedicated IT team that has sole power to install software on your computer, you will need to contact them before the workshop to do the installation bits of the preparation steps we outline below.
-</details>
-<section id="install-r" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="install-r"><span class="header-section-number">4.1</span> Install R</h3>
-<p>“R” is the coding language we’ll use throughout the workshop series. Follow the relevant instructions for your operating system here: <a href="https://www.r-project.org/">r-project.org</a></p>
-</section>
-<section id="install-positron" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="install-positron"><span class="header-section-number">4.2</span> Install Positron</h3>
-<p>“Positron” is the <u>i</u>ntegrated <u>d</u>evelopment <u>e</u>nvironment (IDE) we’ll use to write code to support the synthesis work you all will be accomplishing during (and after!) the workshop series. Follow the relevant instructions for your operating system here: <a href="https://positron.posit.co/">positron.posit.co</a></p>
-</section>
-<section id="install-git" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="install-git"><span class="header-section-number">4.3</span> Install Git</h3>
-<p>“Git” is the name of the software that we can use to do “version control” for the code files we’ll develop. We’ll get into this more later but for now, it is enough to know this is analogous to Microsoft Word’s “track changes” feature but with some extra features that are great for code files.</p>
-<p>Installing Git differs slightly depending on your computer’s operating system so check out the tabs below for the right option for you. These instructions are modified from Jennifer Bryan’s excellent “<a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a>” ebook.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><i class="fa-brands fa-windows" aria-label="windows"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href=""><i class="fa-brands fa-linux" aria-label="linux"></i> Linux</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Run the following <i class="fa-solid fa-terminal" aria-label="terminal"></i> command line code.</p>
-<pre><code>xcode-select --install</code></pre>
-<p>For more detailed instructions, see <a href="https://happygitwithr.com/install-git#macos">here</a>.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><a href="https://gitforwindows.org/">Install Git for Windows</a> (a.k.a. “Git Bash”). When asked about “Adjusting your PATH environment”, <strong>select “Git from the command line and also from 3rd-party software”</strong>.</p>
-<p>For more detailed instructions, see <a href="https://happygitwithr.com/install-git#install-git-windows">here</a>.</p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Install Git via your distro’s package manager (in the <i class="fa-solid fa-terminal" aria-label="terminal"></i> Terminal).</p>
-<p>If you use Ubuntu or Debian Linux that <i class="fa-solid fa-terminal" aria-label="terminal"></i> code is as follows:</p>
-<pre><code>sudo apt-get install git</code></pre>
-<p>If instead you use Fedora or RedHat Linux the <i class="fa-solid fa-terminal" aria-label="terminal"></i> code is instead:</p>
-<pre><code>sudo yum install git</code></pre>
-<p>For more detailed instructions, see <a href="https://happygitwithr.com/install-git#linux">here</a>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="make-a-github-account" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="make-a-github-account"><span class="header-section-number">4.4</span> Make a GitHub Account</h3>
-<p>“GitHub” is a nice web interface for collaborating with other people who use Git. Later in the lifecycle of a project, GitHub is also useful for sharing and publicizing your code beyond of your team. Please make a profile at <a href="https://github.com/">github.com</a> and consider adding a profile photo (it’ll make you stand out relative to the default ‘space invader’ image your account will start with).</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<section id="learning-objectives" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
+<ul>
+<li>Understand the importance and benefits of data management and data management plans.</li>
+<li>Apply the Data Life Cycle steps to organize and plan a research project.</li>
+<li>Introduce tools and techniques for establishing reproducible analytical workflows.</li>
+<li>Discuss why we should aim for reproducibility and its importance for collaboration.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Learning Objectives
+<span class="screen-reader-only">Important</span>Missed the training?
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Find the video recording of this workshop in this <a href="https://drive.google.com/file/d/1M2c09WULjgGuHW26740YIMBm0vpriSFC/view?usp=sharing">link</a>.</p>
+</div>
+</div>
+</section>
+<section id="resources" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="resources">Resources</h3>
 <ul>
-<li>Effectively manage data using <code>tidy</code> data practices</li>
-<li>Implement reproducible scientific workflows throughout all aspects of a project</li>
-<li>Establish best practices and utilize tools like Git &amp; GitHub to optimize your collaboration</li>
-<li>Better communicate scientific analyses and results using Markdown, GitHub webpages, and R packages like <code>ggplot2</code> and <code>Shiny</code></li>
-<li>Increase your familiarity and confidence with data science tools</li>
+<li><a href="https://caltechlibrary.github.io/RDMworkbook/">The Research Data Management Workbook</a> by Kristin Briney</li>
+<li>Data inventory <a href="https://docs.google.com/spreadsheets/d/1mftmoNPzGMhQehC7iVD5B0D0-Hfh_PNjbY7d9UTh98Y/edit?gid=0#gid=0">spreadsheet template</a></li>
+<li>Documenting Things: Openly for Future Us, by Julia Stewart Lowndes at posit::conf(2023). <a href="https://openscapes.github.io/documenting-things/#/title-slide">Slides</a> &amp; <a href="https://www.youtube.com/watch?v=OVM5Ok7W1NQ">Recording</a></li>
+<li>Ocean Health Index Documentation: <a href="https://oceanhealthindex.org/images/htmls/Supplement.html#1_Introduction_to_the_global_Ocean_Health_Index_(OHI)_assessment">Methods</a> and <a href="https://ohi-science.org/ohiprep_v2023/Reference/SOP_dataOrganization/dataOrganization_SOP.html">SOP for data management</a></li>
+<li>Arctic Data Center <a href="https://docs.google.com/document/d/16wNpk9vJiWqQQStmaEG66YgawU39hGC8x9KnbUqbyO4/edit#heading=h.gnbwiz3v0o8z">data policy template</a></li>
+<li>LTER Working Group <a href="https://github.com/lter/lterwg-template">README template</a></li>
 </ul>
-</div>
-</div>
-</section>
-<section id="weeks-schedule" class="level3 page-columns page-full" data-number="4.5">
-<h3 data-number="4.5" class="anchored" data-anchor-id="weeks-schedule"><span class="header-section-number">4.5</span> Week’s Schedule</h3>
-<div class="column-body-outset">
-<!-- ![](images/schedule.png) -->
-</div>
-</section>
-</section>
-<section id="code-of-conduct" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="code-of-conduct"><span class="header-section-number">5</span> Code of Conduct</h2>
-<p>By participating in this activity you agree to abide by the <a href="https://www.nceas.ucsb.edu/sites/default/files/2021-11/NCEAS_Code-of-Conduct_Nov2021_0.pdf">NCEAS Code of Conduct</a>.</p>
-</section>
-<section id="about-this-book" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="about-this-book"><span class="header-section-number">6</span> About this book</h2>
-<p>These written materials are the result of a continuous and collaborative effort at NCEAS to help researchers make their work more transparent and reproducible. This work began in the early 2000’s, and reflects the expertise and diligence of many, many individuals. The primary authors are listed in the citation below, with additional contributors recognized for their role in developing previous iterations of these or similar materials.</p>
-<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-<p><strong>Citation:</strong> Camila Vargas Poulsen &amp; Angel Chen (2024), NCEAS coreR for Delta Science Program, June 2024, NCEAS Learning Hub. URL <a href="https://learning.nceas.ucsb.edu/2024-06-delta" class="uri">https://learning.nceas.ucsb.edu/2024-06-delta</a>.</p>
-<p><strong>Additional contributors:</strong> Ben Bolker, Amber E. Budden, Julien Brun, Samantha Csik, Halina Do-Linh, Natasha Haycock-Chavez, S. Jeanette Clark, Julie Lowndes, Stephanie Hampton, Matt Jone, Samanta Katz, Erin McLean, Bryce Mecum, Deanna Pennington, Karthik Ram, Jim Regetz, Tracy Teal, Daphne Virlar-Knight, Leah Wasser.</p>
-<p>This is a Quarto book. To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
 
 
 </section>

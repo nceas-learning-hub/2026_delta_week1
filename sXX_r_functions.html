@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="site_libs/quarto-contrib/quarto-project/nceas-learning-hub/theme/banner/banner.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -314,8 +314,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-instructors">    
         <li>
+    <a class="dropdown-item" href="https://njlyon0.github.io/">
+ <span class="dropdown-text">Nick Lyon</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="https://www.oharascience.com/">
  <span class="dropdown-text">Casey O’Hara</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/regetz/">
+ <span class="dropdown-text">Jim Regetz</span></a>
   </li>  
     </ul>
   </li>
@@ -331,25 +339,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Writing Functions</h1>
-        </a>     
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Writing Functions</h1>
+      <h1 class="title">Writing Functions</h1>
                       </div>
   </div>
     
@@ -364,187 +359,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-        <div class="sidebar-tools-collapse tools-wide">
-    <a href="https://www.nceas.ucsb.edu/learning-hub" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-door-fill"></i></a>
-    <a href="https://twitter.com/ucsb_nceas" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
-    <a href="./nceas-learning-hub.github.io/2026_delta_week1" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Delta Workshop Materials</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./groups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Synthesis Working Groups</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Day 1</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s01_r_rstudio_server_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. RStudio Server Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s02_git_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Git and GitHub Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s03_r_quarto_literate_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Literate Analysis with Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s04_activity_reproducibility_lego.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reproducibility: a Lego Activity</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s05_blank_placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blank placeholder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s06_blank_placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blank placeholder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s07_blank_placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blank placeholder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s08_blank_placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blank placeholder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s09_blank_placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blank placeholder</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Day 3</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s10_github_introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Git and GitHub</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s11_lecture_data_mgmt_reproducibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Management and Reproducibility</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s17_blank_placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blank placeholder</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Day 4</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s13_r_tidyverse_clean_wrangle.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cleaning and Wrangling Data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s14_r_practice_clean_wrangle_visualize.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Practice Session: Collaborative Report</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s15_r_functions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Writing Functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s16_r_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating R Packages</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s17_blank_placeholder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blank placeholder</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Day 5</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s18_r_provenance_reproducibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Provenance and Reproducibility</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -809,8 +623,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-8be79ab14e201ab9b10a" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-8be79ab14e201ab9b10a">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"],[-100,-90,-80,-70,-60,-50,-40,-30,-20,-10,0,10,20,30,40,50,60,70,80,90,100],[-73.33333333333333,-67.77777777777777,-62.22222222222222,-56.66666666666666,-51.11111111111111,-45.55555555555556,-40,-34.44444444444444,-28.88888888888889,-23.33333333333333,-17.77777777777778,-12.22222222222222,-6.666666666666667,-1.111111111111111,4.444444444444445,10,15.55555555555556,21.11111111111111,26.66666666666667,32.22222222222222,37.77777777777778],[199.8166666666667,205.3722222222222,210.9277777777777,216.4833333333333,222.0388888888889,227.5944444444444,233.15,238.7055555555555,244.2611111111111,249.8166666666666,255.3722222222222,260.9277777777777,266.4833333333333,272.0388888888889,277.5944444444444,283.15,288.7055555555555,294.2611111111111,299.8166666666667,305.3722222222222,310.9277777777777]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>fahr<\/th>\n      <th>celsius<\/th>\n      <th>kelvin<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"fahr","targets":1},{"name":"celsius","targets":2},{"name":"kelvin","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-bab8a0501d4a90642a24" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bab8a0501d4a90642a24">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"],[-100,-90,-80,-70,-60,-50,-40,-30,-20,-10,0,10,20,30,40,50,60,70,80,90,100],[-73.33333333333333,-67.77777777777777,-62.22222222222222,-56.66666666666666,-51.11111111111111,-45.55555555555556,-40,-34.44444444444444,-28.88888888888889,-23.33333333333333,-17.77777777777778,-12.22222222222222,-6.666666666666667,-1.111111111111111,4.444444444444445,10,15.55555555555556,21.11111111111111,26.66666666666667,32.22222222222222,37.77777777777778],[199.8166666666667,205.3722222222222,210.9277777777777,216.4833333333333,222.0388888888889,227.5944444444444,233.15,238.7055555555555,244.2611111111111,249.8166666666666,255.3722222222222,260.9277777777777,266.4833333333333,272.0388888888889,277.5944444444444,283.15,288.7055555555555,294.2611111111111,299.8166666666667,305.3722222222222,310.9277777777777]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>fahr<\/th>\n      <th>celsius<\/th>\n      <th>kelvin<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"fahr","targets":1},{"name":"celsius","targets":2},{"name":"kelvin","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Once we have a dataset like that, we might want to plot it. One thing that we do repeatedly is set a consistent set of display elements for creating graphs and plots. By using a function to create a custom <code>ggplot</code> theme, we can enable to keep key parts of the formatting flexible. For example, in the <code>custom_theme</code> function, we provide a <code>base_size</code> argument that defaults to using a font size of 9 points. Because it has a default set, it can safely be omitted. But if it is provided, then that value is used to set the base font size for the plot.</p>
@@ -872,7 +686,7 @@ font family not found in Windows font database</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="s15_r_functions_files/figure-html/func-custom-theme-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="sXX_r_functions_files/figure-html/func-custom-theme-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -916,7 +730,7 @@ font family not found in Windows font database</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="s15_r_functions_files/figure-html/func-call-sp-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="sXX_r_functions_files/figure-html/func-call-sp-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

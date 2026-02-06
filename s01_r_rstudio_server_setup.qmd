@@ -1,5 +1,5 @@
 ---
-title: 1. RStudio Server Setup
+title: RStudio Server Setup
 ---
 
 :::{.callout-tip}

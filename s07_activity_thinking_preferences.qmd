@@ -1,5 +1,5 @@
 ---
-title: Blank placeholder
+title: Thinking Preferences or other "Get to know your peer" Activity
 ---
 
 :::{.callout-tip}

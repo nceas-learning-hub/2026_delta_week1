@@ -1,5 +1,5 @@
 ---
-title: Blank placeholder
+title: Crafting Synthesis Project Ideas
 ---
 
 :::{.callout-tip}

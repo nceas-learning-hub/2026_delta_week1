@@ -1,5 +1,5 @@
 ---
-title: Blank placeholder
+title: "Synthesis Work: Planning Next Steps"
 ---
 
 :::{.callout-tip}

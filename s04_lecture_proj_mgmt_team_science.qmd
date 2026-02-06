@@ -1,5 +1,5 @@
 ---
-title: Blank placeholder
+title: Project Management & Team Science Facilitation
 ---
 
 :::{.callout-tip}

@@ -1,0 +1,110 @@
+---
+title: GitHub for Project Management
+---
+
+:::{.callout-tip}
+## Learning Objectives
+
+- Utilize GitHub's project management tools to organize and manage projects
+- Practice creating issues in GitHub
+- Craft informative READMEs for Git repositories
+:::
+
+
+## Slides {.unnumbered}
+
+<iframe width="560" height="380"src="https://docs.google.com/presentation/d/1ehw-Mg-i1QfXpz0MTLwIlaXNKRp42NB5TboZOhuTqtI/preview"allowfullscreen></iframe>
+
+
+
+## Exercise: GitHub Issues
+
+Get back together with your partner that you collaborate for the Lobster Report.
+
+
+::: {.callout-exercise}
+### Step 1
+Owner creates a new Issue and tags collaborator.
+::: 
+
+<details>
+<summary>Steps</summary>
+- Navigate to the Lobster Report repository
+- Go to the "Issue" tab of the repository
+- Click on "New Issue"
+- Give the Issue a title (Eg: Choose which plot to include in final report)
+- Describe the issue and tag your collaborator by adding `@` followed by their username (Practice Markdown syntax when writing the issue)
+- Click on Submit New Issue
+
+</details> 
+
+::: {.callout-exercise}
+### Step 2
+Collaborator responds to Issue and creates a checklist
+::: 
+
+<details>
+<summary>Steps</summary>
+- Collaborator navigates to issue (either from the email notification or going into the Issue tab in the Lobster Report repo)
+- Respond Issue and include a To Do list indicating next steps (tip: Markdown syntax for list is /- [ ])
+- Submit your response
+
+</details> 
+
+::: {.callout-exercise}
+### Step 3
+Collaborator create a GitHub Issues referencing code on one of the `.qmd` files
+::: 
+
+<details>
+<summary>Steps</summary>
+- Navigate to a script in the Lobster Report Report repository
+- Hover over the line you want to reference in the Issue
+- Click on the line number (on the left), then click on the three dots right next to the number
+- Choose the option "Reference in new issue"
+- Write a description of the "issue" you want to address
+- Submit Issue
+- Assign Issue to Owner
+
+
+</details> 
+    
+
+::: {.callout-exercise}
+### Step 4
+Owner reacts to issue with an emoji and adds a label
+::: 
+
+<details>
+<summary>Steps</summary>
+- Owner navigates to issue (either from the email notification or going into the Issue tab in the Lobster Report repo)
+- Add an emoji to issue submitted by Collaborator
+- Add a label
+    - On the right side menu click on Label
+    - Either choose one of the default labels or create your own by selecting "Edit labels"
+
+</details> 
+
+
+## Exercise: Practice creating informative READMEs
+
+You can do this either for the `training_<username>` repo, or the Lobster Report repo (make sure just one of you edits this one) or edit a personal repo from one of your projects. Make sure to include the 6 core elements:
+
+- [ ] A short, but descriptive title
+- [ ] A brief explanation of the repository’s purpose
+- [ ] A concise description of what’s housed in the repository
+- [ ] Details regarding data access
+- [ ] A list of authors or contributors (for collaborative work)
+- [ ] References / acknowledgements
+
+::: {.callout-note}
+### README Examples
+
+-  [A shiny dashboard for exploring my personal Strava data, by Sam Csik](https://github.com/samanthacsik/strava-dashboard?tab=readme-ov-file#a-shiny-dashboard-for-exploring-my-personal-strava-data)
+
+- [Thomas Fire Data Analysis by Anna Ramji](https://github.com/annaramji/thomas-fire?tab=readme-ov-file#thomas-fire-data-analysis)
+
+- [Art of README by Kira Oakley](https://github.com/hackergrrl/art-of-readme?tab=readme-ov-file#readme)
+
+:::
+

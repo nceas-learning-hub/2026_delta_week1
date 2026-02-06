@@ -1,5 +1,5 @@
 ---
-title: Blank placeholder
+title: Data Management & Data Discovery
 ---
 
 :::{.callout-tip}

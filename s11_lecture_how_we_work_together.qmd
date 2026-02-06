@@ -1,5 +1,5 @@
 ---
-title: Blank placeholder
+title: How We Work Together
 ---
 
 :::{.callout-tip}

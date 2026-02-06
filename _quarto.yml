@@ -26,8 +26,12 @@ website:
     right:
       - text: "Instructors"
         menu:
+          - text: "Nick Lyon"
+            href: https://njlyon0.github.io/
           - text: "Casey O'Hara"
             href: https://www.oharascience.com/
+          - text: "Jim Regetz"
+            href: https://github.com/regetz/
       - icon: github
         href: https://github.com/nceas-learning-hub/2026_delta_week1
         aria-label: GitHub
@@ -51,28 +55,31 @@ website:
         contents:
         - s01_r_rstudio_server_setup.qmd
         - s02_git_setup.qmd
-        - s03_r_quarto_literate_analysis.qmd
-        - s04_activity_reproducibility_lego.qmd
-        - s05_blank_placeholder.qmd
-        - s06_blank_placeholder.qmd
-        - s07_blank_placeholder.qmd
-        - s08_blank_placeholder.qmd
-        - s09_blank_placeholder.qmd
+        - s03_synthesis_crafting_project_ideas.qmd
+        # - s04_activity_reproducibility_lego.qmd
+        - s04_lecture_proj_mgmt_team_science.qmd
+      - section: "Day 2"
+        contents:
+        - s05_lecture_data_mgmt_discovery.qmd
+        - s06_github_introduction.qmd
+        - s07_activity_thinking_preferences.qmd ### or lego activity?
+        - s08_synthesis_logic_models.qmd
       - section: "Day 3"
         contents:
-        - s10_github_introduction.qmd
-        - s11_lecture_data_mgmt_reproducibility.qmd
-        - s17_blank_placeholder.qmd
+        - s09_r_quarto_literate_analysis.qmd
+        - s10_lecture_data_mgmt_reproducibility.qmd
+        - s11_lecture_how_we_work_together.qmd
       - section: "Day 4"
         contents:
+        - s12_lecture_tidy_data.qmd
         - s13_r_tidyverse_clean_wrangle.qmd
         - s14_r_practice_clean_wrangle_visualize.qmd
-        - s15_r_functions.qmd
-        - s16_r_packages.qmd
-        - s17_blank_placeholder.qmd
+        # - s15_r_functions.qmd
+        # - s16_r_packages.qmd
       - section: "Day 5"
         contents:
-        - s18_r_provenance_reproducibility.qmd
+        - s15_github_project_management.qmd
+        - s16_synthesis_next_steps.qmd
       # END SESSIONS
 
   page-footer:

@@ -1,0 +1,42 @@
+---
+title: "Synthesis Working Groups"
+---
+
+## California Salmon Strategy
+
+The California Salmon Strategy for a Hotter, Drier Future specifically calls for
+stronger partnerships, protection of water flows and quality, and transformation of
+technology and management systems for climate adaptability. Supporting this strategy also
+contributes to key Delta Plan strategies and state and federal targets to double salmon
+populations. An example research question that the Delta Synthesis Working Group could
+explore is how pulse flows have or have not created beneficial salmon conditions.
+
+For more information, see the following:
+
+- {{< fa file-pdf >}} [California Salmon Strategy for a Hotter, Drier Future: Restoring Aquatic Ecosystems in the  Age of Climate Change](https://www.gov.ca.gov/wp-content/uploads/2024/01/Salmon-Strategy-for-a-Hotter-Drier-Future.pdf)
+
+## California's Natural & Working Lands (NWL) Climate Smart Strategy 
+
+California's NWL Climate Smart Strategy highlights the important role that land
+management in the Delta can play in reducing future emissions and increasing carbon
+sequestration. An example project focus for the Delta Synthesis Working Group could be to
+expand and enhance the use of open data and open science practices to evaluate how land
+management and future land management influence the greenhouse gas budget and
+other ecosystem benefits of the Delta.
+
+For more information, see the following:
+
+- {{< fa file-pdf >}} [Natural and Working Lands Climate Smart Strategy](https://resources.ca.gov/-/media/CNRA-Website/Files/Initiatives/Expanding-Nature-Based-Solutions/CNRA-Report-2022---Final_Accessible.pdf)
+
+## Cyanobacteria Harmful Algal Bloom (CHAB) Monitoring Strategy
+
+The CHAB Monitoring Strategy for the Sacramento-San Joaquin Delta and various
+other interagency efforts are addressing CHAB monitoring, prediction, and management in
+the Delta. One key barrier to addressing CHAB in the Delta are the many different CHAB
+data streams. An example effort for the Delta Synthesis Working Group could be to start
+integrating some different data streams together to inform the development of a CHAB
+data management framework.
+
+For more information, see the following:
+
+- {{< fa file-pdf >}} [Cyanobacteria Harmful Algal Bloom Monitoring Strategy for the Sacramento- San Joaquin Delta](https://deltacouncil.ca.gov/pdf/science-program/2024-10-21-final-delta-chabs-monitoring-strategy.pdf)

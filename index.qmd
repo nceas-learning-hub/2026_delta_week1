@@ -1,5 +1,5 @@
 ---
-title: About the course
+title: Delta Workshop Materials
 format:
   theme-html:
     toc: false
@@ -9,13 +9,22 @@ format:
 
 :::
 
-## Delta Stewardship Council index.qmd
+## Overview
 
-## NCEAS Expertise
+The [Delta Science Program](https://deltacouncil.ca.gov/delta-science-program/) is once again partnering with the [National Center for Ecological Analysis and Synthesis](https://www.nceas.ucsb.edu/) (NCEAS) to convene a collaborative data synthesis working group in the spring of 2026. Delta Synthesis Working Groups receive advanced data science and statistics training with immediate opportunities to use those newly acquired skills to analyze available data and produce relevant research and data products. The upcoming working group will be the third cohort held through this partnership.
 
-The [National Center for Ecological Analysis and Synthesis (NCEAS)](https://www.nceas.ucsb.edu/), a research affiliate of UCSB, is a leading expert on interdisciplinary data science and works collaboratively to answer the world's largest and most complex questions. The NCEAS approach leverages existing data and employs a team science philosophy to squeeze out all potential insights and solutions efficiently - this is called [synthesis science](https://www.nceas.ucsb.edu/our-approach).
+## Learning Objectives
 
-NCEAS has over 25 years of success with this model among working groups and environmental professionals. Together with the Delta Science Program and the Delta Stewardship Council we are excited to pass along skills, workflows, mindsets learn throughout the years.
+{{< fa person-digging >}} Under construction; check back later!
+
+## Course Schedule
+
+{{< fa screwdriver-wrench >}} TBD
+
+## Pre-Workshop Preparation
+
+{{< include content/prep.qmd >}}
+
 
 
 :::{.callout-tip}

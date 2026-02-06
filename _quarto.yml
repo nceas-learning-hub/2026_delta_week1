@@ -4,6 +4,7 @@ project:
 
 filters:
 - nceas-learning-hub/theme
+- quarto-ext/fontawesome
 exercises: ### for custom theme callouts
   number: false ### see https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html but does not work
 editor: source
@@ -43,7 +44,8 @@ website:
       - icon: github
         href: nceas-learning-hub.github.io/2026_delta_week1
     contents:
-      - index.qmd # preface
+      - index.qmd  # preface
+      - groups.qmd # additional preface page
       # START SESSIONS
       - section: "Day 1"
         contents:

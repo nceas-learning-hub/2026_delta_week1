@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
 
 filters:
 - nceas-learning-hub/theme

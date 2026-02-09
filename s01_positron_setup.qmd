@@ -35,6 +35,54 @@ Positron should open your folder automatically at this point. One way to check t
 
 ## Effective Project Organization
 
+When starting a new research project, one of the first things I do is make a folder for it and link that to Positron (just like we have here!). The next step is to then populate that project folder with relevant sub-folders. The goal is to organize your project so that it is a compendium of your research. This means that the project has all of the digital parts needed to replicate your analysis, including code, figures, manuscript drafts, and data.
+
+Some common directories are: 
+
+:::: columns
+::: {.column width="55%"}
+- `data`: where we store our data (often contains subdirectories for raw and processed data, as well as metadata)
+- `docs`: summaries or reports of analysis or other relevant project information
+- `plots` or `figs`: generated plots, graphs, and figures
+- `scripts:` has all scripts where you clean and wrangle data and run your analysis.
+- `tools`: contains scripts with your custom functions
+
+Directory organization will vary from project to project, but **the ultimate goal is to create a well-organized project for both reproducibility and collaboration.**
+:::
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+
+{{< fa folder >}} training_ohara  
+&nbsp;|--&nbsp; {{< fa file >}} README.md  
+&nbsp;|--&nbsp; {{< fa folder >}} data  
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa folder >}} raw  
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; {{< fa folder >}} processed  
+&nbsp;|--&nbsp; {{< fa folder >}} plots   
+&nbsp;|--&nbsp; {{< fa folder >}} scripts   
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa file-code >}} 01_harmonize.r  
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa file-code >}} 02_wrangle.r  
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; {{< fa file-code >}} 03_analyze.r  
+&nbsp;|--&nbsp; {{< fa folder >}} docs   
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; {{< fa file-pdf >}} 2026-04_results.pdf  
+&nbsp;L&nbsp;&nbsp; {{< fa folder >}} tools   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; {{< fa file-code >}} calc-diversity.r
+
+:::
+::::
+
+::: {.callout-tip}
+## Project Sub-Directories
+For this week we are going to create 3 folders (a.k.a. "directories") in our `training_{USERNAME}` folder.
+
+1. In your file manager ({{< fa brands apple >}} "Finder" | {{< fa brands windows >}} "File Explorer"), make three new folders: `data`, `plots`, `scripts`
+2. Go to the "Explorer" tab of Positron (top left; has an icon like this: {{< fa copy >}})
+3. Confirm that your new folders are visible to Positron
+
+Note that if you prefer, you can make new folders directly from the "Explorer" tab of Positron (by clicking the small button of a folder with a plus sign)
+:::
+
 
 
 ## Using File Paths in an Positron Folder
@@ -45,39 +93,8 @@ Positron should open your folder automatically at this point. One way to check t
 
 Still updating this session from here on down!
 
-### Organizing an R Project
 
 
-When starting a new research project, one of the first things I do is create an R Project for it (just like we have here!). The next step is to then populate that project with relevant directories. There are many tools out there that can do this automatically. Some examples are `rrtools` or `usethis::create_package()`. The goal is to organize your project so that it is a compendium of your research. This means that the project has all of the digital parts needed to replicate your analysis, like code, figures, the manuscript, and data access.
-
-Some common directories are:
-
-::: columns
-
-::: {.column width="55%"}
-- `data`: where we store our data (often contains subdirectories for raw, processed, and metadata data)
-- `R`: contains scripts with your custom R functions, etc. (some find this name misleading if their work has other scripts beyond the R programming language, in which case they call this directory `scripts`)
-- `plots` or `figs`: generated plots, graphs, and figures
-- `docs`: summaries or reports of analysis or other relevant project information
-- `scripts:` has all scripts where you clean and wrangle data and run your analysis.
-
-Directory organization will vary from project to project, but the ultimate goal is to create a well organized project for both reproducibility and collaboration.
-:::
-
-::: {.column width="45%"}
-![](images/positron_setup/rproj-basic-organization.png)
-:::
-:::
-
-
-::: {.callout-tip}
-## Project Sub-directories
-For this week we are going to create 3 folder (directories) in our `training_{USERNAME}` Rproject.
-
-- In the files pane in RStudio (bottom right), click on Folder button (with a green circle and plus sign) and create 3 new folders: `data`, `plots`, `scripts`.
-
-The idea here is treat this RProject as an example of how to organize our work.
-:::
 
 
 

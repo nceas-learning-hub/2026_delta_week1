@@ -44,8 +44,11 @@ vignettes/*.pdf
 # Secret Quarto directory
 /.quarto/
 
+# R project file
+*.Rproj
+
 # Folders
 docs/
 
-# R project file
-*.Rproj
+# Files
+## TBD

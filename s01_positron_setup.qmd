@@ -111,6 +111,12 @@ For example, if I want to read in a file from the data directory within my train
 
 This is a time-saver for you when you work alone (because you're not typing the absolute path every time) but when working in teams it is the key to the same code files being run-able by everyone in the project! For example, a collaborator with the same relative path can use `read.csv("data/samples.csv")` without editing the code while they would need to make several edits to the absolute path for it to work for them.
 
+### File Paths Across Operating Systems
+
+If your team includes both Apple and Windows users, even relative paths will fail because the two operating systems use a different direction of slash to separate pieces of the file path.
+
+Fortunately, the `file.path()` function can automatically detect the computer's operating system and insert the correct slash type for that computer! So your code would go from `read.csv("data/samples.csv")` to `read.csv(file.path("data", "samples.csv"))`.
+
 ### Avoid Manually Setting your Working Directory!
 
 Note that once you start working in Positron folders you should basically never need to run the `setwd()` command. If you are in the habit of doing this, stop and take a look at where and why you do it. Could leveraging the working directory eliminate this need? Almost definitely!

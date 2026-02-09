@@ -33,7 +33,19 @@ Consider your current data analysis workflow. Where do you import you data? Wher
 Positron should open your folder automatically at this point. One way to check this is by looking at the top right corner and checking that your folder's name is next to the folder icon.
 :::
 
-## Organizing an R Project
+## Effective Project Organization
+
+
+
+## Using File Paths in an Positron Folder
+
+---
+
+## BASEMENT
+
+Still updating this session from here on down!
+
+### Organizing an R Project
 
 
 When starting a new research project, one of the first things I do is create an R Project for it (just like we have here!). The next step is to then populate that project with relevant directories. There are many tools out there that can do this automatically. Some examples are `rrtools` or `usethis::create_package()`. The goal is to organize your project so that it is a compendium of your research. This means that the project has all of the digital parts needed to replicate your analysis, like code, figures, the manuscript, and data access.

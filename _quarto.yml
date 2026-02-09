@@ -52,6 +52,8 @@ website:
     contents:
       - index.qmd  # preface
       - groups.qmd # additional preface page
+      - text: "Project Milestones"
+        href: benchmarks.qmd
       # START SESSIONS
       - section: "Day 1"
         contents:

@@ -1,0 +1,38 @@
+---
+title: "Working Group Project Milestones"
+format:
+  theme-html:
+    toc: false
+---
+
+::: column-margin
+:::
+
+## Overview
+
+There are no universal benchmarks for how quickly a synthesis working group will proceed through the phases of a project's lifecycle. That said, the milestones below may prove helpful as a general 'how are we doing?' temperature check. If your group does not accomplish all of these--or proceeds beyond them--don't worry too much!
+
+## Week 1 Benchmarks
+
+:::{.panel-tabset}
+### Before <u>Week 1</u>
+
+Before arriving for the in-person component of the first week, <u>you</u> should have:
+
+- Installed all necessary software
+    - See the "Workshop Preparation" section of the [week 1 homepage](https://nceas-learning-hub.github.io/2026_delta_week1/)
+- Made a profile on [github.com](https://github.com/)
+
+### At the End of Week 1
+
+After the first week, <u>your group</u> should have done (at least some of) the following:
+
+{{< fa person-digging >}} TBD; check back later!
+
+### Before <u>Week 2</u>
+
+Between the first and second weeks of the workshop, <u>your group</u> should have done (at least some of) the following:
+
+{{< fa person-digging >}} TBD; check back later!
+
+:::

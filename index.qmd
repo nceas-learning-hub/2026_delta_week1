@@ -43,6 +43,10 @@ If your organization has a dedicated IT team that has sole power to install soft
 
 "Positron" is the <u>i</u>ntegrated <u>d</u>evelopment <u>e</u>nvironment (IDE) we'll use to write code to support the synthesis work you all will be accomplishing during (and after!) the workshop series. Follow the relevant instructions for your operating system here: [positron.posit.co](https://positron.posit.co/)
 
+### Install Quarto
+
+"Quarto" is the software we'll use to create computational notebook files. You may have previously worked with other types of notebook files (e.g., R Markdown files, Jupyter notebooks), but Quarto offers a number of advantages that make using it worthwhile. Follow the relevant instructions for your operating system here: [quarto.org/docs/get-started](https://quarto.org/docs/get-started/)
+
 ### Install Git
 
 "Git" is the name of the software that we can use to do "version control" for the code files we'll develop. We'll get into this more later but for now, it is enough to know this is analogous to Microsoft Word's "track changes" feature but with some extra features that are great for code files.
@@ -88,7 +92,9 @@ For more detailed instructions, see [here](https://happygitwithr.com/install-git
 
 ### Make a GitHub Account
 
-"GitHub" is a nice web interface for collaborating with other people who use Git. Later in the lifecycle of a project, GitHub is also useful for sharing and publicizing your code beyond of your team. Please make a profile at [github.com](https://github.com/) and consider adding a profile photo (it'll make you stand out relative to the default 'space invader' image your account will start with).
+"GitHub" is a nice web interface for collaborating with other people who use Git. Later in the lifecycle of a project, GitHub is also useful for sharing and publicizing your code beyond of your team. 
+
+**Please make a profile at [github.com](https://github.com/)** and consider adding a profile photo. Doing so will make you stand out relative to the default 'space invader' image your account will start with.
 
 ### Week's Schedule
 

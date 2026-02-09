@@ -46,6 +46,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-cecc5a39c142b520f22a6de88e6152ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -519,10 +521,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logon-to-the-rstudio-server" id="toc-logon-to-the-rstudio-server" class="nav-link active" data-scroll-target="#logon-to-the-rstudio-server"><span class="header-section-number">1</span> Logon to the RStudio Server</a></li>
-  <li><a href="#create-an-r-project" id="toc-create-an-r-project" class="nav-link" data-scroll-target="#create-an-r-project"><span class="header-section-number">2</span> Create an R Project</a></li>
-  <li><a href="#organizing-an-r-project" id="toc-organizing-an-r-project" class="nav-link" data-scroll-target="#organizing-an-r-project"><span class="header-section-number">3</span> Organizing an R Project</a></li>
-  <li><a href="#moving-in-an-r-project-using-paths-working-directories" id="toc-moving-in-an-r-project-using-paths-working-directories" class="nav-link" data-scroll-target="#moving-in-an-r-project-using-paths-working-directories"><span class="header-section-number">4</span> Moving in an R Project using Paths &amp; Working Directories</a></li>
+  <li><a href="#link-a-folder-to-positron" id="toc-link-a-folder-to-positron" class="nav-link active" data-scroll-target="#link-a-folder-to-positron"><span class="header-section-number">1</span> Link a Folder to Positron</a></li>
+  <li><a href="#effective-project-organization" id="toc-effective-project-organization" class="nav-link" data-scroll-target="#effective-project-organization"><span class="header-section-number">2</span> Effective Project Organization</a></li>
+  <li><a href="#using-file-paths-in-an-positron-folder" id="toc-using-file-paths-in-an-positron-folder" class="nav-link" data-scroll-target="#using-file-paths-in-an-positron-folder"><span class="header-section-number">3</span> Using File Paths in an Positron Folder</a></li>
+  <li><a href="#basement" id="toc-basement" class="nav-link" data-scroll-target="#basement"><span class="header-section-number">4</span> BASEMENT</a>
+  <ul class="collapse">
+  <li><a href="#organizing-an-r-project" id="toc-organizing-an-r-project" class="nav-link" data-scroll-target="#organizing-an-r-project"><span class="header-section-number">4.1</span> Organizing an R Project</a></li>
+  </ul></li>
+  <li><a href="#moving-in-an-r-project-using-paths-working-directories" id="toc-moving-in-an-r-project-using-paths-working-directories" class="nav-link" data-scroll-target="#moving-in-an-r-project-using-paths-working-directories"><span class="header-section-number">5</span> Moving in an R Project using Paths &amp; Working Directories</a></li>
   </ul>
 </nav>
     </div>
@@ -544,71 +550,55 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>After completing this session, you will be able to:</p>
 <ul>
-<li>Practice creating an R Project</li>
-<li>Organize an R Project for effective project management</li>
-<li>Understand how to move in an R Project using paths and working directories</li>
+<li>Define critical Positron vocabulary (e.g., “absolute file path”, “working directory”)</li>
+<li>Describe tenets of effective project organization</li>
+<li>Create a practice Positron folder that is well-organized</li>
+<li>Explain how file paths operate within a working directory</li>
 </ul>
 </div>
 </div>
-<section id="logon-to-the-rstudio-server" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="logon-to-the-rstudio-server"><span class="header-section-number">1</span> Logon to the RStudio Server</h2>
-<p>To prevent us from spending most of this lesson troubleshooting the myriad of issues that can arise when setting up the R, RStudio, and git environments, we have chosen to have everyone work on a remote server with all of the software you need installed. We will be using a special kind of RStudio just for servers called RStudio Server. If you have never worked on a remote server before, you can think of it like working on a different computer via the internet. Note that the server has no knowledge of the files on your local filesystem, but it is easy to transfer files from the server to your local computer, and vice-versa, using the RStudio server interface.</p>
+<section id="link-a-folder-to-positron" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="link-a-folder-to-positron"><span class="header-section-number">1</span> Link a Folder to Positron</h2>
+<p>In this course, we are going to be using Positron to practice technical skills and work in your synthesis working groups. Positron allows you to link it with a folder (a.k.a. “directory”) on your local computer. In a moment, we’ll talk about ways you can make that folder as organized as possible (and keep it that way!), but for now, let’s link Positron to an empty folder.</p>
+<p><strong>The Big Idea:</strong> keeping your work for separate projects in separate folders–and linking each of those <em>separately</em> to Positron–is a reproducible research best practice because it implicitly sets a “working directory” to that folder. This means that file paths within each project’s folder ‘just know’ your computer’s organization “upstream” of the project folder. That means that collaborators with different folder structures can all still run the same code if you have the same folder structure <em>within the project folder.</em> This is the power of a “relative file path” (i.e., a file path that is relative to the working directory) versus an “absolute file path” (i.e., a file path that includes all user-specific folders from the hard drive all the way down to the project folder).</p>
+<p>Consider your current data analysis workflow. Where do you import you data? Where do you clean and wrangle it? Where do you create graphs, and ultimately, a final report? Are you going back and forth between multiple software tools like Microsoft Excel, JMP, and Google Docs? Linking Positron to a folder and being intentional about organization within that folder will consolidate this process because you can manage everything from a single software tool: Positron!</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Server Setup
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You should have received an email prompting you to change your password for your server account. If you did not, please put up a post-it and someone will help you.</p>
-<p>After you have successfully changed your password log in at: <a href="https://included-crab.nceas.ucsb.edu/">https://included-crab.nceas.ucsb.edu/</a></p>
-<p><a href="https://included-crab.nceas.ucsb.edu/"><img src="images/positron_setup/included-crab-login.png" class="img-fluid"></a></p>
-</div>
-</div>
-</section>
-<section id="create-an-r-project" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="create-an-r-project"><span class="header-section-number">2</span> Create an R Project</h2>
-<p>In this course, we are going to be using an R project to organize our work. An R project is tied to a directory on your local computer, and makes organizing your work and collaborating with others easier.</p>
-<p><strong>The Big Idea:</strong> using an R project is a reproducible research best practice because it bundles all your work within a working directory. Consider your current data analysis workflow. Where do you import you data? Where do you clean and wrangle it? Where do you create graphs, and ultimately, a final report? Are you going back and forth between multiple software tools like Microsoft Excel, JMP, and Google Docs? An R project and the tools in R that we will talk about today will consolidate this process because it can all be done (and updated) in using one software tool, RStudio, and within one R project.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>R Project Setup
+<span class="screen-reader-only">Tip</span>Positron Folder Setup
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>In the “File” menu, select “New Project”</li>
-<li>Click “New Directory”</li>
-<li>Click “New Project”</li>
-<li>Under “Directory name” type: <code>training_{USERNAME}</code> (i.e.&nbsp;<code>training_vargas</code>)</li>
-<li>Leave “Create Project as subdirectory of:” set to <code>~</code></li>
-<li>Click “Create Project”</li>
+<li>In your file manager (<i class="fa-brands fa-apple" aria-label="apple"></i> “Finder” | <i class="fa-brands fa-windows" aria-label="windows"></i> “File Explorer”), make a folder in your “Documents” folder
+<ul>
+<li>Name that folder <code>training_{surname}</code> (e.g., <code>training_ohara</code>)</li>
+</ul></li>
+<li>In Positron, click the folder icon in the top right</li>
+<li>Click “Open Folder…”</li>
+<li>In the resulting pop-up, find your <code>training_{surname}</code> folder, select it, then click “Open”</li>
 </ol>
-<p>RStudio should open your new project automatically after creating it. One way to check this is by looking at the top right corner and checking for the project name.</p>
+<p>Positron should open your folder automatically at this point. One way to check this is by looking at the top right corner and checking that your folder’s name is next to the folder icon.</p>
 </div>
 </div>
-<!-- ::: {.callout-tip} -->
-<!-- ## Sharing your project -->
-<!-- To share your project with the instructor team, locate the “project switcher” dropdown menu in the upper right of your RStudio window. This dropdown has the name of your project (eg: training_vargas), and a dropdown arrow. Click the dropdown menu, then “Share Project.” When the dialog box pops up, add the following usernames to your project: -->
-<!-- -   jclark -->
-<!-- -   mmklope -->
-<!-- -   achen -->
-<!-- -   jeakadi -->
-<!-- -   agarcia -->
-<!-- -   vargas-pouslen -->
-<!-- Once those names show up in the list, click “OK”. -->
-<!-- ::: -->
 </section>
-<section id="organizing-an-r-project" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="organizing-an-r-project"><span class="header-section-number">3</span> Organizing an R Project</h2>
+<section id="effective-project-organization" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="effective-project-organization"><span class="header-section-number">2</span> Effective Project Organization</h2>
+</section>
+<section id="using-file-paths-in-an-positron-folder" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="using-file-paths-in-an-positron-folder"><span class="header-section-number">3</span> Using File Paths in an Positron Folder</h2>
+<hr>
+</section>
+<section id="basement" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="basement"><span class="header-section-number">4</span> BASEMENT</h2>
+<p>Still updating this session from here on down!</p>
+<section id="organizing-an-r-project" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="organizing-an-r-project"><span class="header-section-number">4.1</span> Organizing an R Project</h3>
 <p>When starting a new research project, one of the first things I do is create an R Project for it (just like we have here!). The next step is to then populate that project with relevant directories. There are many tools out there that can do this automatically. Some examples are <code>rrtools</code> or <code>usethis::create_package()</code>. The goal is to organize your project so that it is a compendium of your research. This means that the project has all of the digital parts needed to replicate your analysis, like code, figures, the manuscript, and data access.</p>
 <p>Some common directories are:</p>
 <div class="columns">
@@ -643,8 +633,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="moving-in-an-r-project-using-paths-working-directories" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="moving-in-an-r-project-using-paths-working-directories"><span class="header-section-number">4</span> Moving in an R Project using Paths &amp; Working Directories</h2>
+</section>
+<section id="moving-in-an-r-project-using-paths-working-directories" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="moving-in-an-r-project-using-paths-working-directories"><span class="header-section-number">5</span> Moving in an R Project using Paths &amp; Working Directories</h2>
 <p><img src="images/positron_setup/allison-horst-pathways.png" class="img-fluid" alt="Artwork by Allison Horst. A cartoon of a cracked glass cube looking frustrated with casts on its arm and leg, with bandaids on it, containing “setwd,” looks on at a metal riveted cube labeled “R Proj” holding a skateboard looking sympathetic, and a smaller cube with a helmet on labeled “here” doing a trick on a skateboard."></p>
 <p>Now that we have your project created (and notice we know it’s an R Project because we see a <code>.Rproj</code> file in our Files pane), let’s learn how to move in a project. We do this using <strong>paths</strong>.</p>
 <p>There are two types of paths in computing: <strong>absolute paths</strong> and <strong>relative paths</strong>.</p>

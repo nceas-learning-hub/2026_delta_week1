@@ -21,7 +21,7 @@ website:
   reader-mode: false
   repo-url: https://github.com/nceas-learning-hub/2026_delta_week1
 
-  favicon: logo_lh_hex.png # learning hub logo on browser tab
+  favicon: _extensions/nceas-learning-hub/theme/banner/logo_lh_hex.png # learning hub logo on browser tab
 
   bread-crumbs: false
   navbar:

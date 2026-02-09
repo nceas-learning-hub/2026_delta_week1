@@ -57,7 +57,7 @@ website:
       # START SESSIONS
       - section: "Day 1"
         contents:
-        - s01_r_rstudio_server_setup.qmd
+        - s01_positron_setup.qmd
         - s02_git_setup.qmd
         - s03_synthesis_crafting_project_ideas.qmd
         # - s04_activity_reproducibility_lego.qmd

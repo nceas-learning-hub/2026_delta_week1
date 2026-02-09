@@ -10,19 +10,6 @@ title: Positron Setup
 - Understand how to move in an R Project using paths and working directories
 :::
 
-## Logon to the RStudio Server
-
-To prevent us from spending most of this lesson troubleshooting the myriad of issues that can arise when setting up the R, RStudio, and git environments, we have chosen to have everyone work on a remote server with all of the software you need installed. We will be using a special kind of RStudio just for servers called RStudio Server. If you have never worked on a remote server before, you can think of it like working on a different computer via the internet. Note that the server has no knowledge of the files on your local filesystem, but it is easy to transfer files from the server to your local computer, and vice-versa, using the RStudio server interface.
-
-::: {.callout-tip}
-## Server Setup
-You should have received an email prompting you to change your password for your server account. If you did not, please put up a post-it and someone will help you.
-
-After you have successfully changed your password log in at: [https://included-crab.nceas.ucsb.edu/](https://included-crab.nceas.ucsb.edu/)
-
-[![](images/positron_setup/included-crab-login.png)](https://included-crab.nceas.ucsb.edu/)
-:::
-
 ## Create an R Project
 
 In this course, we are going to be using an R project to organize our work. An R project is tied to a directory on your local computer, and makes organizing your work and collaborating with others easier.

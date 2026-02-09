@@ -523,12 +523,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#link-a-folder-to-positron" id="toc-link-a-folder-to-positron" class="nav-link active" data-scroll-target="#link-a-folder-to-positron"><span class="header-section-number">1</span> Link a Folder to Positron</a></li>
   <li><a href="#effective-project-organization" id="toc-effective-project-organization" class="nav-link" data-scroll-target="#effective-project-organization"><span class="header-section-number">2</span> Effective Project Organization</a></li>
-  <li><a href="#using-file-paths-in-an-positron-folder" id="toc-using-file-paths-in-an-positron-folder" class="nav-link" data-scroll-target="#using-file-paths-in-an-positron-folder"><span class="header-section-number">3</span> Using File Paths in an Positron Folder</a></li>
-  <li><a href="#basement" id="toc-basement" class="nav-link" data-scroll-target="#basement"><span class="header-section-number">4</span> BASEMENT</a>
+  <li><a href="#using-file-paths-in-an-positron-folder" id="toc-using-file-paths-in-an-positron-folder" class="nav-link" data-scroll-target="#using-file-paths-in-an-positron-folder"><span class="header-section-number">3</span> Using File Paths in an Positron Folder</a>
   <ul class="collapse">
-  <li><a href="#organizing-an-r-project" id="toc-organizing-an-r-project" class="nav-link" data-scroll-target="#organizing-an-r-project"><span class="header-section-number">4.1</span> Organizing an R Project</a></li>
+  <li><a href="#file-paths-across-operating-systems" id="toc-file-paths-across-operating-systems" class="nav-link" data-scroll-target="#file-paths-across-operating-systems"><span class="header-section-number">3.1</span> File Paths Across Operating Systems</a></li>
+  <li><a href="#avoid-manually-setting-your-working-directory" id="toc-avoid-manually-setting-your-working-directory" class="nav-link" data-scroll-target="#avoid-manually-setting-your-working-directory"><span class="header-section-number">3.2</span> Avoid Manually Setting your Working Directory!</a></li>
   </ul></li>
-  <li><a href="#moving-in-an-r-project-using-paths-working-directories" id="toc-moving-in-an-r-project-using-paths-working-directories" class="nav-link" data-scroll-target="#moving-in-an-r-project-using-paths-working-directories"><span class="header-section-number">5</span> Moving in an R Project using Paths &amp; Working Directories</a></li>
   </ul>
 </nav>
     </div>
@@ -589,30 +588,35 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="effective-project-organization" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="effective-project-organization"><span class="header-section-number">2</span> Effective Project Organization</h2>
-</section>
-<section id="using-file-paths-in-an-positron-folder" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="using-file-paths-in-an-positron-folder"><span class="header-section-number">3</span> Using File Paths in an Positron Folder</h2>
-<hr>
-</section>
-<section id="basement" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="basement"><span class="header-section-number">4</span> BASEMENT</h2>
-<p>Still updating this session from here on down!</p>
-<section id="organizing-an-r-project" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="organizing-an-r-project"><span class="header-section-number">4.1</span> Organizing an R Project</h3>
-<p>When starting a new research project, one of the first things I do is create an R Project for it (just like we have here!). The next step is to then populate that project with relevant directories. There are many tools out there that can do this automatically. Some examples are <code>rrtools</code> or <code>usethis::create_package()</code>. The goal is to organize your project so that it is a compendium of your research. This means that the project has all of the digital parts needed to replicate your analysis, like code, figures, the manuscript, and data access.</p>
+<p>When starting a new research project, one of the first things I do is make a folder for it and link that to Positron (just like we have here!). The next step is to then populate that project folder with relevant sub-folders. The goal is to organize your project so that it is a compendium of your research. This means that the project has all of the digital parts needed to replicate your analysis, including code, figures, manuscript drafts, and data.</p>
 <p>Some common directories are:</p>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><code>data</code>: where we store our data (often contains subdirectories for raw, processed, and metadata data)</li>
-<li><code>R</code>: contains scripts with your custom R functions, etc. (some find this name misleading if their work has other scripts beyond the R programming language, in which case they call this directory <code>scripts</code>)</li>
-<li><code>plots</code> or <code>figs</code>: generated plots, graphs, and figures</li>
+<li><code>data</code>: where we store our data (often contains subdirectories for raw and processed data, as well as metadata)</li>
 <li><code>docs</code>: summaries or reports of analysis or other relevant project information</li>
+<li><code>plots</code> or <code>figs</code>: generated plots, graphs, and figures</li>
 <li><code>scripts:</code> has all scripts where you clean and wrangle data and run your analysis.</li>
+<li><code>tools</code>: contains scripts with your custom functions</li>
 </ul>
-<p>Directory organization will vary from project to project, but the ultimate goal is to create a well organized project for both reproducibility and collaboration.</p>
-</div><div class="column" style="width:45%;">
-<p><img src="images/positron_setup/rproj-basic-organization.png" class="img-fluid"></p>
+<p>Directory organization will vary from project to project, but <strong>the ultimate goal is to create a well-organized project for both reproducibility and collaboration.</strong></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<p><i class="fa-solid fa-folder" aria-label="folder"></i> training_ohara<br>
+&nbsp;|–&nbsp; <i class="fa-solid fa-file" aria-label="file"></i> README.md<br>
+&nbsp;|–&nbsp; <i class="fa-solid fa-folder" aria-label="folder"></i> data<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|–&nbsp; <i class="fa-solid fa-folder" aria-label="folder"></i> raw<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; <i class="fa-solid fa-folder" aria-label="folder"></i> processed<br>
+&nbsp;|–&nbsp; <i class="fa-solid fa-folder" aria-label="folder"></i> plots<br>
+&nbsp;|–&nbsp; <i class="fa-solid fa-folder" aria-label="folder"></i> scripts<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|–&nbsp; <i class="fa-solid fa-file-code" aria-label="file-code"></i> 01_harmonize.r<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|–&nbsp; <i class="fa-solid fa-file-code" aria-label="file-code"></i> 02_wrangle.r<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; <i class="fa-solid fa-file-code" aria-label="file-code"></i> 03_analyze.r<br>
+&nbsp;|–&nbsp; <i class="fa-solid fa-folder" aria-label="folder"></i> docs<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; <i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i> 2026-04_results.pdf<br>
+&nbsp;L&nbsp;&nbsp; <i class="fa-solid fa-folder" aria-label="folder"></i> tools<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; <i class="fa-solid fa-file-code" aria-label="file-code"></i> calc-diversity.r</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -621,34 +625,55 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Project Sub-directories
+<span class="screen-reader-only">Tip</span>Project Sub-Directories
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For this week we are going to create 3 folder (directories) in our <code>training_{USERNAME}</code> Rproject.</p>
-<ul>
-<li>In the files pane in RStudio (bottom right), click on Folder button (with a green circle and plus sign) and create 3 new folders: <code>data</code>, <code>plots</code>, <code>scripts</code>.</li>
-</ul>
-<p>The idea here is treat this RProject as an example of how to organize our work.</p>
+<p>For this week we are going to create 3 folders (a.k.a. “directories”) in our <code>training_{USERNAME}</code> folder.</p>
+<ol type="1">
+<li>In your file manager (<i class="fa-brands fa-apple" aria-label="apple"></i> “Finder” | <i class="fa-brands fa-windows" aria-label="windows"></i> “File Explorer”), make three new folders: <code>data</code>, <code>plots</code>, <code>scripts</code></li>
+<li>Go to the “Explorer” tab of Positron (top left; has an icon like this: <i class="fa-solid fa-copy" aria-label="copy"></i>)</li>
+<li>Confirm that your new folders are visible to Positron</li>
+</ol>
+<p>Note that if you prefer, you can make new folders directly from the “Explorer” tab of Positron (by clicking the small button of a folder with a plus sign)</p>
 </div>
 </div>
 </section>
+<section id="using-file-paths-in-an-positron-folder" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="using-file-paths-in-an-positron-folder"><span class="header-section-number">3</span> Using File Paths in an Positron Folder</h2>
+<p>Now that we have your project folder created and linked with Positron, let’s learn how to move in a project. We do this using “paths”.</p>
+<p>In computing, there are two types of path: “<strong>absolute</strong>” and “<strong>relative</strong>”.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Absolute Path</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Relative Path</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>An absolute path always starts with the root of your file system and locates files from there. <strong>No two users will have the same absolute file path!</strong></p>
+<p><u>Example:</u><br>
+<code>Users/lyon/Documents/iowa-state/ms-chap-01/data/raw-butterflies-2017.xlsx</code></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>A relative path starts from some location in your file system that is below the root (i.e., it is the file path <em>relative to</em> some folder in your computer). Relative paths are combined with the path to that location to locate files on your system. Some coding languages refer to the location where the relative path starts as our “<strong>working directory</strong>”.</p>
+<p><u>Example:</u><br>
+<code>data/raw-butterflies-2017.xlsx</code></p>
+</div>
+</div>
+</div>
+<p><strong>Positron</strong> automatically sets the working directory to the folder you linked! This means that you can reference files from within the project without worrying about where the project directory itself is.</p>
+<p>For example, if I want to read in a file from the data directory within my training project, I can simply type <code>read.csv("data/samples.csv")</code> as opposed to <code>read.csv("Users/lyon/Documents/delta/training_ohara/data/samples.csv")</code>.</p>
+<p>This is a time-saver for you when you work alone (because you’re not typing the absolute path every time) but when working in teams it is the key to the same code files being run-able by everyone in the project! For example, a collaborator with the same relative path can use <code>read.csv("data/samples.csv")</code> without editing the code while they would need to make several edits to the absolute path for it to work for them.</p>
+<section id="file-paths-across-operating-systems" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="file-paths-across-operating-systems"><span class="header-section-number">3.1</span> File Paths Across Operating Systems</h3>
+<p>If your team includes both Apple and Windows users, even relative paths will fail because the two operating systems use a different direction of slash to separate pieces of the file path.</p>
+<p>Fortunately, the <code>file.path()</code> function can automatically detect the computer’s operating system and insert the correct slash type for that computer! So your code would go from <code>read.csv("data/samples.csv")</code> to <code>read.csv(file.path("data", "samples.csv"))</code>.</p>
 </section>
-<section id="moving-in-an-r-project-using-paths-working-directories" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="moving-in-an-r-project-using-paths-working-directories"><span class="header-section-number">5</span> Moving in an R Project using Paths &amp; Working Directories</h2>
-<p><img src="images/positron_setup/allison-horst-pathways.png" class="img-fluid" alt="Artwork by Allison Horst. A cartoon of a cracked glass cube looking frustrated with casts on its arm and leg, with bandaids on it, containing “setwd,” looks on at a metal riveted cube labeled “R Proj” holding a skateboard looking sympathetic, and a smaller cube with a helmet on labeled “here” doing a trick on a skateboard."></p>
-<p>Now that we have your project created (and notice we know it’s an R Project because we see a <code>.Rproj</code> file in our Files pane), let’s learn how to move in a project. We do this using <strong>paths</strong>.</p>
-<p>There are two types of paths in computing: <strong>absolute paths</strong> and <strong>relative paths</strong>.</p>
-<ul>
-<li><p>An <strong>absolute path</strong> always starts with the root of your file system and locates files from there. The absolute path to my project directory is: <code>/home/vargas-poulsen/training_vargas</code></p></li>
-<li><p><strong>Relative paths</strong> start from some location in your file system that is below the root. Relative paths are combined with the path of that location to locate files on your system. R (and some other languages like MATLAB) refer to the location where the relative path starts as our <strong>working directory</strong>.</p></li>
-</ul>
-<p><strong>RStudio projects automatically set the working directory to the directory of the project</strong>. This means that you can reference files from within the project without worrying about where the project directory itself is. If I want to read in a file from the data directory within my project, I can simply type <code>read.csv("data/samples.csv")</code> as opposed to <code>read.csv("/home/vargas-poulsen/training_vargas/data/samples.csv")</code>.</p>
-<p>This is not only convenient for you, but also when working collaboratively. We will talk more about this later, but if Matt makes a copy of my R project that I have published on GitHub, and I am using relative paths, he can run my code exactly as I have written it, without going back and changing <code>/home/vargas-poulsen/training_vargas/data/samples.csv</code> to <code>/home/jones/training_jones/data/samples.csv</code>.</p>
-<p>Note that once you start working in projects you should basically never need to run the <code>setwd()</code> command. If you are in the habit of doing this, stop and take a look at where and why you do it. Could leveraging the working directory concept of R projects eliminate this need? Almost definitely!</p>
+<section id="avoid-manually-setting-your-working-directory" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="avoid-manually-setting-your-working-directory"><span class="header-section-number">3.2</span> Avoid Manually Setting your Working Directory!</h3>
+<p>Note that once you start working in Positron folders you should basically never need to run the <code>setwd()</code> command. If you are in the habit of doing this, stop and take a look at where and why you do it. Could leveraging the working directory eliminate this need? Almost definitely!</p>
 <p>Similarly, think about how you work with absolute paths. Could you leverage the working directory of your R project to replace these with relative paths and make your code more portable? Probably!</p>
+<p><img src="images/positron_setup/allison-horst-pathways.png" class="img-fluid" alt="Artwork by Allison Horst. A cartoon of a cracked glass cube looking frustrated with casts on its arm and leg, with bandaids on it, containing “setwd,” looks on at a metal riveted cube labeled “R Proj” holding a skateboard looking sympathetic, and a smaller cube with a helmet on labeled “here” doing a trick on a skateboard."></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

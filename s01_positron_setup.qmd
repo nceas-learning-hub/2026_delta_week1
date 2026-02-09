@@ -20,7 +20,7 @@ You should have received an email prompting you to change your password for your
 
 After you have successfully changed your password log in at: [https://included-crab.nceas.ucsb.edu/](https://included-crab.nceas.ucsb.edu/)
 
-[![](images/included-crab-login.png)](https://included-crab.nceas.ucsb.edu/)
+[![](images/positron_setup/included-crab-login.png)](https://included-crab.nceas.ucsb.edu/)
 :::
 
 ## Create an R Project
@@ -78,7 +78,7 @@ Directory organization will vary from project to project, but the ultimate goal 
 :::
 
 ::: {.column width="45%"}
-![](images/rproj-basic-organization.png)
+![](images/positron_setup/rproj-basic-organization.png)
 :::
 :::
 
@@ -96,7 +96,7 @@ The idea here is treat this RProject as an example of how to organize our work.
 
 ## Moving in an R Project using Paths & Working Directories
 
-![](images/allison-horst-pathways.png){fig-alt="Artwork by Allison Horst. A cartoon of a cracked glass cube looking frustrated with casts on its arm and leg, with bandaids on it, containing “setwd,” looks on at a metal riveted cube labeled “R Proj” holding a skateboard looking sympathetic, and a smaller cube with a helmet on labeled “here” doing a trick on a skateboard."}
+![](images/positron_setup/allison-horst-pathways.png){fig-alt="Artwork by Allison Horst. A cartoon of a cracked glass cube looking frustrated with casts on its arm and leg, with bandaids on it, containing “setwd,” looks on at a metal riveted cube labeled “R Proj” holding a skateboard looking sympathetic, and a smaller cube with a helmet on labeled “here” doing a trick on a skateboard."}
 
 Now that we have your project created (and notice we know it’s an R Project because we see a `.Rproj` file in our Files pane), let’s learn how to move in a project. We do this using **paths**.
 

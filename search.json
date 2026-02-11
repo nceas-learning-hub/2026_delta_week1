@@ -826,62 +826,18 @@
     "href": "s03_synthesis_crafting_project_ideas.html",
     "title": "Crafting Synthesis Project Ideas",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\n\nbullet pointed learning objectives",
+    "text": "TipLearning Objectives\n\n\n\nAfter completing this session, you will be able to:\n\nbullet pointed learning objectives",
     "crumbs": [
       "Day 1",
       "Crafting Synthesis Project Ideas"
     ]
   },
   {
-    "objectID": "s03_synthesis_crafting_project_ideas.html#use-level-2-headers-for-sections",
-    "href": "s03_synthesis_crafting_project_ideas.html#use-level-2-headers-for-sections",
+    "objectID": "s03_synthesis_crafting_project_ideas.html#formatting-basement",
+    "href": "s03_synthesis_crafting_project_ideas.html#formatting-basement",
     "title": "Crafting Synthesis Project Ideas",
-    "section": "1 Use level 2 headers for sections",
-    "text": "1 Use level 2 headers for sections",
-    "crumbs": [
-      "Day 1",
-      "Crafting Synthesis Project Ideas"
-    ]
-  },
-  {
-    "objectID": "s03_synthesis_crafting_project_ideas.html#images",
-    "href": "s03_synthesis_crafting_project_ideas.html#images",
-    "title": "Crafting Synthesis Project Ideas",
-    "section": "2 Images",
-    "text": "2 Images\nThe file path for images in the final course will be images/&lt;folder with same base name as lesson&gt;/&lt;image file&gt;. When you rename this blank placeholder, rename (or make a copy if you’re using multiple placeholders) the folder in images from blank_placeholder to the base name of your lesson.\n\n\n\nAlt text",
-    "crumbs": [
-      "Day 1",
-      "Crafting Synthesis Project Ideas"
-    ]
-  },
-  {
-    "objectID": "s03_synthesis_crafting_project_ideas.html#callouts",
-    "href": "s03_synthesis_crafting_project_ideas.html#callouts",
-    "title": "Crafting Synthesis Project Ideas",
-    "section": "3 Callouts",
-    "text": "3 Callouts\nQuarto offers some built-in callout blocks to set content off against the normal body text. Note that we’ve customized the colors of our callouts to better match our course styling (see the lh_theme extension).\n\n3.1 Standard callouts\nThere are five built-in callouts signalling different levels of urgency:\n\ntip {.callout-tip}\nnote {.callout-note}\ncaution {.callout-caution}\nwarning {.callout-warning}\nimportant {.callout-important}\n\nSee the callout reference for how to create these.\nBased on the color and icons, here are recommendations on when and how to use these, in descending order of urgency:\n\n\n\n\n\n\nImportant\n\n\n\nUse {.callout-important} to highlight things that the reader must pay attention to, or essential ideas and concepts.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nUse {.callout-warning} to highlight common “gotchas” such as common user errors or unexpected behavior.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nUse {.callout-caution} to indicate materials under development; consider using {.callout-warning} for other cases.\n\n\n\n\n\n\n\n\nNote\n\n\n\nUse {.callout-note} to communicate deeper ideas or understandings that are not critical to understanding the lesson at hand. The instructor might skip over these while teaching. If the reader does not read this, they may miss out, but nothing bad will happen.\n\n\n\n\n\n\n\n\nTip\n\n\n\nUse {.callout-tip} to communicate learning objectives, key points, and helpful tips and tricks.\n\n\n\n\n3.2 Custom callouts\nThere are currently four custom callouts for different types of tasks:\n\nexercise {.callout-exercise}\nhint {.callout-hint}\nanswer {.callout-answer}\nexample {.callout-example}\n\nThese custom callouts work thanks to Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/. Unfortunately, the title is not responsive to the title argument in the callout or to the header-style titling that the built-in callouts can use. The collapse option also seems to be unresponsive currently.\n\n\n\n\n\n\nExerciseExercise 1\n\n\n\n\n\n\nUse {.callout-exercise} for exercises. The current default numbers exercises within a given page. Click on the hint and answer callouts below to reveal the information in them.\n\n\n\n\n\n\nHintHint\n\n\n\n\n\n\nUse {.callout-hint} for hints to the exercise - defaults to collapse=true for obvious reasons. Note they can be nested within an exercise, or stand-alone.\n\n\n\n\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\nUse {.callout-answer} for answers to the exercise - defaults to collapse=true for obvious reasons. Note they can be nested within an exercise, or stand-alone.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExampleExample\n\n\n\n\n\n\nUse {.callout-example} for examples, e.g., example data or example.",
-    "crumbs": [
-      "Day 1",
-      "Crafting Synthesis Project Ideas"
-    ]
-  },
-  {
-    "objectID": "s03_synthesis_crafting_project_ideas.html#slides",
-    "href": "s03_synthesis_crafting_project_ideas.html#slides",
-    "title": "Crafting Synthesis Project Ideas",
-    "section": "4 Slides",
-    "text": "4 Slides\nSlides should when possible be created as Quarto slide decks. Slide decks for a lesson should be created in the folder slides/&lt;lesson base name&gt;/&lt;slide deck name.html&gt; folder as qmd files (note, the link in the lesson must point to the html, not the qmd). When you create a new lesson, you should rename the slides/blank_placeholder folder to match the base name of your lesson.\nYou can call your slide deck quarto docs whatever you like, and have multiple slide decks. You can also include images in your deck, perhaps with an images folder in the slides folder (NOTE: this is separate from images that show up in the main site page), and images can be referenced with relative file paths. E.g., slides/blank_placeholder/slides1.qmd might have an image at slides/blank_placeholder/images/tidyverse_hex.jpg, so in the qmd, you could just point to ![](images/tidyverse_hex.jpg).\nThere is a default .scss file in the slides folder, use it or modify it as you like.\nFull Screen",
-    "crumbs": [
-      "Day 1",
-      "Crafting Synthesis Project Ideas"
-    ]
-  },
-  {
-    "objectID": "s03_synthesis_crafting_project_ideas.html#data",
-    "href": "s03_synthesis_crafting_project_ideas.html#data",
-    "title": "Crafting Synthesis Project Ideas",
-    "section": "5 Data",
-    "text": "5 Data\nIf you have specific data that your lesson requires to knit successfully, put it in the data/blank_placeholder folder. It is probably best to avoid this though, use data from packages or online if possible, or create toy datasets directly in the .qmd.",
+    "section": "1 Formatting Basement",
+    "text": "1 Formatting Basement\n\n1.1 Use level 2 headers for sections\n\n\n1.2 Images\nThe file path for images in the final course will be images/&lt;folder with same base name as lesson&gt;/&lt;image file&gt;. When you rename this blank placeholder, rename (or make a copy if you’re using multiple placeholders) the folder in images from blank_placeholder to the base name of your lesson.\n\n\n\nAlt text\n\n\n\n\n1.3 Callouts\nQuarto offers some built-in callout blocks to set content off against the normal body text. Note that we’ve customized the colors of our callouts to better match our course styling (see the lh_theme extension).\n\n\n1.4 Standard callouts\nThere are five built-in callouts signalling different levels of urgency:\n\ntip {.callout-tip}\nnote {.callout-note}\ncaution {.callout-caution}\nwarning {.callout-warning}\nimportant {.callout-important}\n\nSee the callout reference for how to create these.\nBased on the color and icons, here are recommendations on when and how to use these, in descending order of urgency:\n\n\n\n\n\n\nImportant\n\n\n\nUse {.callout-important} to highlight things that the reader must pay attention to, or essential ideas and concepts.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nUse {.callout-warning} to highlight common “gotchas” such as common user errors or unexpected behavior.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nUse {.callout-caution} to indicate materials under development; consider using {.callout-warning} for other cases.\n\n\n\n\n\n\n\n\nNote\n\n\n\nUse {.callout-note} to communicate deeper ideas or understandings that are not critical to understanding the lesson at hand. The instructor might skip over these while teaching. If the reader does not read this, they may miss out, but nothing bad will happen.\n\n\n\n\n\n\n\n\nTip\n\n\n\nUse {.callout-tip} to communicate learning objectives, key points, and helpful tips and tricks.\n\n\n\n1.4.1 Custom callouts\nThere are currently four custom callouts for different types of tasks:\n\nexercise {.callout-exercise}\nhint {.callout-hint}\nanswer {.callout-answer}\nexample {.callout-example}\n\nThese custom callouts work thanks to Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/. Unfortunately, the title is not responsive to the title argument in the callout or to the header-style titling that the built-in callouts can use. The collapse option also seems to be unresponsive currently.\n\n\n\n\n\n\nExerciseExercise 1\n\n\n\n\n\n\nUse {.callout-exercise} for exercises. The current default numbers exercises within a given page. Click on the hint and answer callouts below to reveal the information in them.\n\n\n\n\n\n\nHintHint\n\n\n\n\n\n\nUse {.callout-hint} for hints to the exercise - defaults to collapse=true for obvious reasons. Note they can be nested within an exercise, or stand-alone.\n\n\n\n\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\nUse {.callout-answer} for answers to the exercise - defaults to collapse=true for obvious reasons. Note they can be nested within an exercise, or stand-alone.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExampleExample\n\n\n\n\n\n\nUse {.callout-example} for examples, e.g., example data or example.\n\n\n\n\n\n\n\n1.5 Slides\nSlides should when possible be created as Quarto slide decks. Slide decks for a lesson should be created in the folder slides/&lt;lesson base name&gt;/&lt;slide deck name.html&gt; folder as qmd files (note, the link in the lesson must point to the html, not the qmd). When you create a new lesson, you should rename the slides/blank_placeholder folder to match the base name of your lesson.\nYou can call your slide deck quarto docs whatever you like, and have multiple slide decks. You can also include images in your deck, perhaps with an images folder in the slides folder (NOTE: this is separate from images that show up in the main site page), and images can be referenced with relative file paths. E.g., slides/blank_placeholder/slides1.qmd might have an image at slides/blank_placeholder/images/tidyverse_hex.jpg, so in the qmd, you could just point to ![](images/tidyverse_hex.jpg).\nThere is a default .scss file in the slides folder, use it or modify it as you like.\nFull Screen\n\n\n\n1.6 Data\nIf you have specific data that your lesson requires to knit successfully, put it in the data/blank_placeholder folder. It is probably best to avoid this though, use data from packages or online if possible, or create toy datasets directly in the .qmd.",
     "crumbs": [
       "Day 1",
       "Crafting Synthesis Project Ideas"

@@ -2,13 +2,14 @@
 title: Git and GitHub
 ---
 
-
 :::{.callout-tip}
 ## Learning Objectives
 
--   Apply the principles of Git to track and manage changes of a project
--   Utilize the Git workflow including pulling changes, staging modified files, committing changes, pulling again to incorporate remote changes, and pushing changes to a remote repository
--   Create and configure Git repositories using different workflows
+After completing this session, you will be able to:
+
+- Apply the principles of Git to track and manage changes of a project
+- Perform each step of the Git workflow, including pulling remote changes, staging modified files, committing changes, pulling again to ensure remote changes are reflected locally, and pushing changes to a remote repository
+- Create and configure Git repositories using different workflows
 :::
 
 ## Introduction to Version Control

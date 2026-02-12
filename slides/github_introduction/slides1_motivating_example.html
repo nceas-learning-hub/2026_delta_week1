@@ -140,23 +140,29 @@
 <div class="body-text">
 <p>You’re working on an analysis in R and you’ve got it into a state you’re pretty happy with.</p>
 <p>We’ll call this version 1.</p>
-<p><img data-src="images/git-intro-slide01.png" style="width:70.0%"></p>
 </div>
+<p align="center">
+<img src="git-intro-slide01.png" alt="Cartoon graphic of a script called 'analysis.r' containing a simple linear model" width="70%">
+</p>
 </section>
 <section class="slide level2">
 
 <div class="body-text">
 <p>The next day, you have an email from your boss, “Hey, you know what this model needs?”</p>
 </div>
-
-<img data-src="images/git-intro-slide02.png" class="r-stretch"></section>
+<p align="center">
+<img src="git-intro-slide02.png" alt="Cartoon graphic of a script called 'analysis.r' containing a simple linear model with a person with a speech bubble saying 'hey, you know what this model needs'?" width="70%">
+</p>
+</section>
 <section class="slide level2">
 
 <div class="body-text">
 <p>You’re not sure what she means but you figure there’s only one thing she could be talking about: more cowbell. So you add it to the model.</p>
 <p>But you’re worried about losing the old model. Instead of editing the code, you comment out the old code and put a <strong>serious warning</strong> in a comment above it.</p>
-<p><img data-src="images/git-intro-slide03.png"></p>
 </div>
+<p align="center">
+<img src="git-intro-slide03.png" alt="Cartoon graphic of a script called 'analysis.r' containing a more complicated linear model with a person with a speech bubble saying 'hey, you know what this model needs'? and another person with their face in their hands" width="70%">
+</p>
 </section>
 <section class="slide level2">
 
@@ -164,51 +170,66 @@
 <p>Commenting out code is common, but it’s hard to understand why you did this when you come back years later or you when you send your script to a colleague.</p>
 <p>Luckily, there’s a better way: Version control.</p>
 <p>Instead of commenting out the old code, we can change the code and tell Git to commit our change. So now we have two distinct versions of our analysis and we can always see what the previous version(s) look like.</p>
-<p><img data-src="images/git-intro-slide04.png"> We can also describe the change in the commit message. Git also tracks who, when, and where the change was made.</p>
+<p>We can also describe the change in the commit message. Git also tracks who, when, and where the change was made.</p>
 </div>
+<p align="center">
+<img src="git-intro-slide04.png" alt="Cartoon graphic of two versions of a script called 'analysis.r' containing a more simple and more complicated linear model respectively with the Git commit message used when the second version was committed" width="85%">
+</p>
 </section>
 <section class="slide level2">
 
 <div class="body-text">
 <p>After some time, you’ve committed a 3rd version of your analysis (v3), and a colleague has an idea…</p>
-<p><img data-src="images/git-intro-slide05.png"></p>
 </div>
+<p align="center">
+<img src="git-intro-slide05.png" alt="Cartoon graphic of a person with a speech bubble saying 'what if we used machine learning?'" width="70%">
+</p>
 </section>
 <section class="slide level2">
 
 <div class="body-text">
 <p>You’re not sure the idea will work - this is where Git shines. Without a tool like Git, we might copy analysis.R to another file called analysis-ml.R which might end up having mostly the same code except for a few lines. This isn’t particularly problematic until you want to make a change to a bit of shared code and now you have to make changes in two files, if you even remember to.</p>
 <p>Instead, with Git, we can start a branch. Branches allow us to confidently experiment on our code, all while leaving the old code intact and recoverable.</p>
-<p><img data-src="images/git-intro-slide06.png"></p>
 </div>
+<p align="center">
+<img src="git-intro-slide06.png" alt="Cartoon graphic of a person with a speech bubble saying 'what if we used machine learning?' over six numbered circles, the first three just with numbers, the last three with a preceding lowercase 'b' and the number with a text label saying 'branch 'maybethiswontwork'" width="90%">
+</p>
 </section>
 <section class="slide level2">
 
 <div class="body-text">
 <p>You’ve been working in a branch, made a few commits, and your boss emails again asking you to update the model. Without Git, you might panic because you’ve rewritten much of your analysis to use a different method but your boss wants change to the old method.</p>
-<p><img data-src="images/git-intro-slide07.png"></p>
 </div>
+<p align="center">
+<img src="git-intro-slide07.png" alt="Cartoon graphic of a person with a speech bubble saying 'we just got some new data. update the model.' over six numbered circles, the first three just with numbers, the last three with a preceding lowercase 'b' and the number with a text label saying 'branch 'maybethiswontwork'. There is a second person with a thought bubble with a screaming face sitting at their laptop in the bottom corner" width="100%">
+</p>
 </section>
 <section class="slide level2">
 
 <div class="body-text">
 <p>With Git and branches, we can continue developing our main analysis at the same time as we are working on any experimental branches. Branches are great for experiments but also great for organizing your work generally.</p>
-<p><img data-src="images/git-intro-slide08.png"></p>
 </div>
+<p align="center">
+<img src="git-intro-slide08.png" alt="Cartoon graphic of seven numbered circles, the first four just with numbers, the last three with a preceding lowercase 'b' and the number with a text label saying 'branch 'maybethiswontwork' and '4' and 'b1' are  both connected to '3' by arrows" width="100%">
+</p>
 </section>
 <section class="slide level2">
 
 <div class="body-text">
 <p>After all that hard work on the machine learning experiment, you decide to scrap it. It’s perfectly fine to leave branches around and switch back to the main line of development but we can also delete them to tidy up.</p>
-<p><img data-src="images/git-intro-slide09.png"></p>
 </div>
+<p align="center">
+<img src="git-intro-slide09.png" alt="Cartoon graphic of seven numbered circles, the first four just with numbers, the last three with a preceding lowercase 'b' and the number with a text label saying 'branch 'maybethiswontwork' and '4' and 'b1' are  both connected to '3' by arrows. A red 'x' covers all of the 'b' circles and a person with a speech bubble says 'nevermind, this was a bad idea...'" width="100%">
+</p>
 </section>
 <section class="slide level2">
 
 <div class="body-text">
 <p>If, instead, you decided you liked the machine learning experiment, you could also merge the branch with your main development line. Merging branches is analogous to accepting a change in Word’s Track Changes feature but way more powerful and useful.</p>
-<p><img data-src="images/git-intro-slide10.png"></p>
 </div>
+<p align="center">
+<img src="git-intro-slide10.png" alt="Cartoon graphic of eight numbered circles, the first four and last one just with numbers, the penultimate three with a preceding lowercase 'b' and the number with a text label saying 'branch 'maybethiswontwork' and '4' and 'b1' are  both connected to '3' by arrows. '4' and 'b3' both connect to '5' and a person with a speech bubble says 'that was a great idea!'" width="100%">
+</p>
 </section>
 <section class="slide level2">
 
@@ -217,7 +238,7 @@
 <p>Another really powerful feature of Git is <strong>tags</strong> which allow us to record a particular state of our analysis with a meaningful name.</p>
 <p>In this case, we tagged the version of our code we used to run the analysis for the paper. Even if we continued to develop the work after we submitted our manuscript, we can always go back and run the analysis as it was in the past.</p>
 </div>
-<p><a href="http://nceas-learning-hub.github.io/duke_data_sci/github_introduction.html#introduction-to-git-github">Return to Original Page</a></p>
+<p><a href="https://nceas-learning-hub.github.io/2026_delta_week1/s06_github_introduction.html">Return to Original Page</a></p>
 
 
 </section>

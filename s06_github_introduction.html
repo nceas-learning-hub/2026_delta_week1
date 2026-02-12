@@ -119,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="site_libs/quarto-contrib/quarto-project/nceas-learning-hub/theme/banner/banner.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -591,20 +591,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>After completing this session, you will be able to:</p>
 <ul>
 <li>Apply the principles of Git to track and manage changes of a project</li>
-<li>Utilize the Git workflow including pulling changes, staging modified files, committing changes, pulling again to incorporate remote changes, and pushing changes to a remote repository</li>
+<li>Perform each step of the Git workflow to edit files locally and sync them with a remote repository</li>
 <li>Create and configure Git repositories using different workflows</li>
 </ul>
 </div>
 </div>
 <section id="introduction-to-version-control" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction-to-version-control"><span class="header-section-number">1</span> Introduction to Version Control</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/github_introduction/phd_comics_final.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
-</figure>
-</div>
+<p align="center">
+<img src="images/github_introduction/phd_comics_final.png" alt="Comic of a grad student naming a document 'final' before needing to iteratively revise resulting in a series of progressively less interpretable 'final' filenames" width="70%">
+</p>
 <p>Every file changes throughout the scientific process. Manuscripts are edited. Figures get revised. Code gets fixed when bugs are discovered. Sometimes those fixes lead to even more bugs, leading to more changes in the code base. Data files get combined. Those same files are split and combined again. In just one research project, we can expect thousands of changes!</p>
 <p>These changes are important to track, and yet, we often use simplistic file names to do so. Many of us have experienced renaming a document or script multiple times with the disingenuous addition of “final” to the file name.</p>
 <p>A better way: <strong>version control</strong></p>
@@ -634,10 +633,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Multiple individuals can work on the same analysis concurrently</strong> on their own computers, with the ability to merge everyone’s changes together.</li>
 </ul>
 </section>
-<section id="what-exactly-are-git-and-github" class="level3 page-columns page-full" data-number="2.1">
+<section id="what-exactly-are-git-and-github" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="what-exactly-are-git-and-github"><span class="header-section-number">2.1</span> What exactly are Git and GitHub?</h3>
-<section id="git-an-open-source-version-control-software" class="level4 unnumbered page-columns page-full">
+<section id="git-an-open-source-version-control-software" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="git-an-open-source-version-control-software">Git: an open-source <strong>version control</strong> software</h4>
+<p><img src="images/github_introduction/git-intro.png" alt="Cartoon of a desktop computer containing the Git logo" width="30%" align="right"></p>
 <ul>
 <li>designed to manage the versioning and tracking of files and project history</li>
 <li><strong>operates locally</strong> on your computer, allowing you to create repositories and track changes</li>
@@ -645,12 +645,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>works directly with the files on your computer and does not require a network connection for most operations</li>
 <li>primarily used through the command-line interface (CLI, e.g.&nbsp;Terminal), but also has various GUI tools available (e.g.&nbsp;RStudio IDE)</li>
 </ul>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><img src="images/github_introduction/git-intro.png" class="img-fluid"></p>
-</div></div></section>
-<section id="github-an-online-platform-and-service-built-around-git" class="level4 unnumbered page-columns page-full">
+</section>
+<section id="github-an-online-platform-and-service-built-around-git" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="github-an-online-platform-and-service-built-around-git">GitHub: an <strong>online platform</strong> and service built around Git</h4>
+<p><img src="images/github_introduction/github-intro.png" alt="Cartoon of a cloud labeled 'GitHub' with the GitHub logo" width="30%" align="right"></p>
 <ul>
 <li>provides a <strong>centralized hosting platform for Git repositories</strong></li>
 <li>allows us to store, manage, and collaborate on Git repositories in the cloud</li>
@@ -658,12 +656,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>enables easy sharing of code with others, facilitating collaboration and contribution to open source projects</li>
 <li>provides a social aspect, allowing users to follow projects, star repositories, and discover new code</li>
 </ul>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><img src="images/github_introduction/github-intro.png" class="img-fluid"></p>
-</div></div></section>
 </section>
-<section id="how-local-files-git-and-github-work-together" class="level3 page-columns page-full" data-number="2.2">
+</section>
+<section id="how-local-files-git-and-github-work-together" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="how-local-files-git-and-github-work-together"><span class="header-section-number">2.2</span> How local files, Git, and GitHub work together</h3>
 <p>It can be daunting to understand the moving parts of the Git / GitHub life cycle (i.e.&nbsp;how file changes are tracked locally within repositories, then stored for safe-keeping and collaboration on remote repositories, then brought back down to a local machine(s) for continued development). It gets easier with practice, but here’s a high-level overview of how things work:</p>
 <section id="what-is-the-difference-between-a-normal-folder-vs.-a-git-repository" class="level4" data-number="2.2.1">
@@ -672,17 +667,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Git allows you to turn any “normal” folder, like <code>myFolder/</code>, into a <strong>Git repository</strong> – this is often referenced as “initializing a Git repository”. When you initialize a folder on your local computer as a Git repository, a hidden <code>.git/</code> folder is created <em>within</em> that folder (e.g.&nbsp;<code>myFolder/.git/</code>). This <code>.git/</code> folder <em>is</em> the <strong>Git repository</strong>.</p>
 <p>As you use Git commands to capture versions or “snapshots” of your work, those versions (and their associated metadata) get stored within the <code>.git/</code> folder. This allows you to access and/or recover any previous versions of your work. If you delete <code>.git/</code>, you delete your project’s history.</p>
 <p>Here is our example folder / Git repository represented visually:</p>
-<p><br></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/github_introduction/git-repo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><br></p>
+<p align="center">
+<img src="images/github_introduction/git-repo.png" alt="Diagram of a local Git repository with a CSV, R script, and '.git' folder in the project directory" width="100%">
+</p>
 </section>
 <section id="how-do-i-tell-git-to-preserve-versions-of-my-local-working-files" class="level4" data-number="2.2.2">
 <h4 data-number="2.2.2" class="anchored" data-anchor-id="how-do-i-tell-git-to-preserve-versions-of-my-local-working-files"><span class="header-section-number">2.2.2</span> How do I tell Git to preserve versions of my local working files?</h4>
@@ -694,32 +681,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Commit the file(s) using <code>git commit -m "a message describing my changes"</code>. This records those changes (along with a descriptive message) as a “snapshot” or version in the local repository (i.e.&nbsp;the <code>.git/</code> folder).</li>
 </ul>
 </section>
-<section id="how-do-i-send-work-from-my-local-computer-to-github" class="level4 page-columns page-full" data-number="2.2.3">
+<section id="how-do-i-send-work-from-my-local-computer-to-github" class="level4" data-number="2.2.3">
 <h4 data-number="2.2.3" class="anchored" data-anchor-id="how-do-i-send-work-from-my-local-computer-to-github"><span class="header-section-number">2.2.3</span> How do I send work from my local computer to GitHub?</h4>
 <p>The last step is synchronizing the changes made to our local repository with a remote repository (this remote repository is often stored on GitHub). The <code>git push</code> command is used to send local commits up to a remote repository. The <code>git pull</code> command is used to fetch changes from a remote repository and merge them into the local repository – <strong>pull</strong>ing will become a regular part of your workflow when collaborating with others, or even when working alone but on different machines (e.g.&nbsp;a laptop at home and a desktop at the office).</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">A basic git workflow represented as two islands, one with “local repo” and “working directory”, and another with “remote repo.” Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled “PUSH”) and from the remote repo to the working directory (labeled “PULL”).</span></div></div>
-<!--# ![](images/github_introduction/git-flowchart.png) -->
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://twitter.com/allison_horst"><img src="images/github_introduction/allison-horst-git-workflow.png" class="img-fluid figure-img"></a></p>
-<figcaption>Artwork by Allison Horst</figcaption>
-</figure>
-</div>
+<p align="center">
+<img src="images/github_introduction/allison-horst-git-workflow.png" alt="A basic git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled PULL')" width="90%">
+</p><figcaption>
+Artwork by Allison Horst
+</figcaption>
+<p></p>
 </section>
 </section>
 <section id="lets-look-at-a-github-repository" class="level3 page-columns page-full" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="lets-look-at-a-github-repository"><span class="header-section-number">2.3</span> Let’s Look at a GitHub Repository</h3>
 <p>This screen shows the copy of a repository stored on GitHub, with its list of files, when the files and directories were last modified, and some information on who made the most recent changes.</p>
 <div class="column-page">
-<p><img src="images/github_introduction/ss3sim-github.png" class="img-fluid"></p>
+<p align="center">
+<img src="images/github_introduction/ss3sim-github.png" alt="Screen capture of a GitHub repository's landing page" width="100%">
+</p>
 </div>
 <p>If we drill into the “commits” for the repository, we can see the history of changes made to all of the files. Looks like <code>kellijohnson</code> was working on the project and fixing errors in December:</p>
 <div class="column-page">
-<p><img src="images/github_introduction/ss3sim-commits.png" class="img-fluid"></p>
+<p align="center">
+<img src="images/github_introduction/ss3sim-commits.png" alt="Screen capture of a GitHub repository's page showing the history of the commits in the repository" width="100%">
+</p>
 </div>
-<p>And finally, if we drill into one of the changes made on December 20, we can see exactly what was changed in each file:</p>
+<p>And finally, if we drill into a particular commit, we can see exactly what was changed in each file that was included in that commit:</p>
 <div class="column-page">
-<p><img src="images/github_introduction/ss3sim-diff.png" class="img-fluid"></p>
+<p align="center">
+<img src="images/github_introduction/ss3sim-diff.png" alt="Screen capture of a GitHub repository's page showing the 'diff' of files edited in a particular commit" width="100%">
+</p>
 </div>
 <p>Tracking these changes, how they relate to released versions of software and files is exactly what Git and GitHub are good for. And we will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow.</p>
 </section>
@@ -870,7 +861,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Git has a rich set of commands and features, and there are many more terms beyond either table. Learn more by visiting the <a href="https://git-scm.com/docs">git documentation</a>.</p>
 </section>
 </section>
-<section id="exercise-1-create-a-remote-repository-on-github" class="level2 page-columns page-full" data-number="3">
+<section id="exercise-1-create-a-remote-repository-on-github" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="exercise-1-create-a-remote-repository-on-github"><span class="header-section-number">3</span> Exercise 1: Create a remote repository on GitHub</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -895,9 +886,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>If you were successful, it should look something like this:</p>
 <p><br></p>
-<div class="column-body-outset">
-<p><img src="images/github_introduction/new-repo-github.png" class="img-fluid"></p>
-</div>
+<p align="center">
+<img src="images/github_introduction/new-repo-github.png" alt="Screen capture of the page on GitHub that allows a user to create a new repository" width="100%">
+</p>
 <p><br></p>
 <p>You’ve now created your first repository! It has a couple of files that GitHub created for you: <code>README.md</code>, <code>LICENSE</code>, and <code>.gitignore</code>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -913,10 +904,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You should always add a <code>README.md</code> to the root directory of your repository – it is a markdown file that is rendered as HTML and displayed on the landing page of your repository. This is a common place to include any pertinent information about what your repository contains, how to use it, etc.</p>
 </div>
 </div>
-<p><br></p>
-<div class="column-body-outset">
-<p><img src="images/github_introduction/github-test-repo.png" class="img-fluid"> <!--![](images/github_introduction/github-test-repo-sam.png)---></p>
-</div>
+<p><img src="images/github_introduction/github-test-repo.png" alt="Screen capture of the main landing page for a brand new GitHub repository" width="100%"></p>
 <p>For simple changes to text files, such as the <code>README.md</code>, you can make edits directly in the GitHub web interface.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -932,15 +920,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><br></p>
-<!-- :::{.column-page} -->
-<p><img src="images/github_introduction/github-test-edit.png" class="img-fluid"></p>
-<!-- ::: -->
+<p><img src="images/github_introduction/github-test-edit.png" alt="Screen capture of the page in GitHub that appears when you edit a file in a repository directly through GitHub's web interface" width="100%"></p>
 <p><br></p>
 <p>Congratulations, you’ve now authored your first versioned commit! If you navigate back to the GitHub page for the repository, you’ll see your commit listed there, as well as the rendered <code>README.md</code> file.</p>
 <p><br></p>
-<!-- :::{.column-page} -->
-<p><img src="images/github_introduction/github-test-displayed.png" class="img-fluid"></p>
-<!-- ::: -->
+<p><img src="images/github_introduction/github-test-displayed.png" alt="Screen capture of the landing page of a GitHub repository after the README has been edited to include non-template content" width="100%"></p>
 <p><br></p>
 <p>The GitHub repository landing page provides us with lots of useful information. To start, we see:</p>
 <ul>
@@ -974,7 +958,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="exercise-2-clone-your-repository-and-use-git-locally-in-rstudio" class="level2 page-columns page-full" data-number="4">
+<section id="exercise-2-clone-your-repository-and-use-git-locally-in-rstudio" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="exercise-2-clone-your-repository-and-use-git-locally-in-rstudio"><span class="header-section-number">4</span> Exercise 2: <code>clone</code> your repository and use Git locally in RStudio</h2>
 <p>Currently, our repository just exists on GitHub as a remote repository. It’s easy enough to make changes to things like our <code>README.md</code> file (as demonstrated above), from the web browser, but that becomes a lot harder (and discouraged) for scripts and other code files. In this exercise, we’ll bring a copy of this remote repository down to our local computer (aka <strong>clone</strong> this repository) so that we can work comfortably in RStudio.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="An important distinction">
@@ -991,13 +975,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Start by clicking the green <strong>Code</strong> button (top right of your file listing) and copying the URL to your clipboard (this URL represents the repository location):</p>
-<div class="page-columns page-full">
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="images/github_introduction/github-test-clone-url.png" class="img-fluid quarto-figure quarto-figure-center figure-img column-body-outset" style="width:70.0%"></p>
-</figure>
-</div>
-</div>
+<p align="center">
+<img src="images/github_introduction/github-test-clone-url.png" alt="Screen capture of the dropdown menu in GitHub that appears when you click the 'code' button" width="70%">
+</p>
 <p>RStudio makes working with Git and version controlled files easy – to do so, you’ll need to be working within an R project folder. The following steps will look similar to those you followed when first creating an R Project, with a slight difference. Follow the instructions in the Setup box below to clone your remote repository to your local computer in RStudio:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1014,24 +994,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Select <strong>Version Control</strong> and paste the remote repository URL (which should be copied to your clipboard) in the <strong>Repository URL</strong> field</li>
 <li>Press <strong>Tab</strong>, which will auto-fill the <strong>Project directory name</strong> field with the same name as that of your remote repo – while you can name the local copy of the repository anything, it’s typical (and highly recommended) to use the same name as the GitHub repository to maintain the correspondence</li>
 </ul>
-<!-- ![](images/github_introduction/rstudio-clone-repo.png){width="90%" fig-align="center"} -->
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/github_introduction/rstudio-clone-repo-sam.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
-</figure>
-</div>
+<p align="center">
+<img src="images/github_introduction/rstudio-clone-repo-sam.png" alt="Screen capture of RStudio's dialogue menu for cloning a new repository from GitHub" width="90%">
+</p>
 </div>
 </div>
 <p>Once you click <strong>Create Project</strong>, a new RStudio window will open with all of the files from the remote repository copied locally. Depending on how your version of RStudio is configured, the location and size of the panes may differ, but they should all be present – you should see a <strong>Git</strong> tab, as well as the <strong>Files</strong> tab, where you can view all of the files copied from the remote repo to this local repo.</p>
-<div class="column-body-outset">
-<!-- ![](images/github_introduction/github-rstudio-test.png) -->
-<p><img src="images/github_introduction/github-rstudio-test-sam.png" class="img-fluid"></p>
-</div>
+<p align="center">
+<img src="images/github_introduction/github-rstudio-test-sam.png" alt="Screen capture of RStudio after successfully cloning a new repository from GitHub" width="100%">
+</p>
 <p>You’ll note that there is one new file <code>sam_test.Rproj</code>, and three files that we created earlier on GitHub (<code>.gitignore</code>, <code>LICENSE</code>, and <code>README.md</code>).</p>
 <p>In the <strong>Git</strong> tab, you’ll note that the one new file, <code>sam_test.Rproj</code>, is listed. This <strong>Git</strong> tab is the status pane that shows the current modification status of all of the files in the repository. Here, we see <code>sam_test.Rproj</code> is preceded by a <strong>??</strong> symbol to indicate that the file is currently untracked by Git. This means that we have not yet committed this file using Git (i.e.&nbsp;Git knows nothing about the file; hang tight, we’ll commit this file soon so that it’s tracked by Git). As you make version control decisions in RStudio, these icons will change to reflect the current version status of each of the files.</p>
 <p>Inspect the history. Click on the <strong>History</strong> button in the <strong>Git</strong> tab to show the log of changes that have occurred – these changes will be identical to what we viewed on GitHub. By clicking on each row of the history, you can see exactly what was added and changed in each of the two commits in this repository.</p>
-<!-- ![](images/github_introduction/rstudio-history-1.png) -->
-<p><img src="images/github_introduction/rstudio-history-1-sam.png" class="img-fluid"></p>
+<p align="center">
+<img src="images/github_introduction/rstudio-history-1-sam.png" alt="Screen capture of RStudio page showing the Git history of a local repository" width="100%">
+</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1049,23 +1026,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Once you save, you’ll immediately see the <code>README.md</code> file show up in the <strong>Git</strong> tab, marked as a modification. Select the file in the <strong>Git</strong> tab, and click <strong>Diff</strong> to see the changes that you saved (but which are not yet committed to your local repository). Newly made changes are highlighted in green.</p>
-<!-- ![](images/github_introduction/rstudio-status-pane.png) -->
-<p><img src="images/github_introduction/rstudio-status-pane-sam.png" class="img-fluid"></p>
-<!-- And here's what the newly made changes look like compared to the original file. New lines are highlighted in green, while removed lines are in red. -->
-<!-- ![](images/github_introduction/rstudio-diff.png) -->
+<p align="center">
+<img src="images/github_introduction/rstudio-status-pane-sam.png" alt="Screen capture of RStudio diff/commit window where edits to the README are shown with new lines highlighted green" width="100%">
+</p>
 <p><strong>Commit the changes.</strong> To commit the changes you made to the <code>README.md</code> file using RStudio’s GUI (Graphical User Interface), rather than the command line:</p>
 <ol type="1">
 <li><strong>Stage</strong> (aka add) <code>README.md</code> by clicking the check box next to the file name – this tells Git which changes you want included in the commit and <em>is analogous to using the git command, <code>git add README.md</code>, in the command line</em></li>
 <li><strong>Commit</strong> <code>README.md</code> by clicking the <strong>Commit</strong> button and providing a descriptive commit message in the dialog box. Press the <strong>Commit</strong> button once you’re satisfied with your message. <em>This is analogous to using the git command, <code>git commit -m "my commit message"</code>, in the command line</em>.</li>
 </ol>
-<p><img src="images/github_introduction/rstudio-commit-1.png" class="img-fluid"></p>
+<p><img src="images/github_introduction/rstudio-commit-1.png" alt="Screen capture of RStudio's diff/commit window where an edited README is staged (by checking the box next to the file's name) and a commit message has been entered into the respective window" width="100%"></p>
 <p>A few notes about our local repository’s state:</p>
 <ul>
 <li>We still have a file, <code>sam_test.Rproj</code>, that is listed as untracked (denoted by <strong>??</strong> in the <strong>Git</strong> tab).</li>
 <li>You should see a message at the top of the <strong>Git</strong> tab that says, <code>Your branch is ahead of ‘origin/main’ by 1 commit.</code>, which tells us that we have 1 commit in the local repository, but that commit has not yet been pushed up to the <code>origin</code> repository (aka remote repository on GitHub).</li>
 </ul>
 <p><strong>Commit the remaining project file</strong> by staging/adding and committing it with an informative commit message.</p>
-<p><img src="images/github_introduction/rstudio-commit-2.png" class="img-fluid"></p>
+<p><img src="images/github_introduction/rstudio-commit-2.png" alt="Screen capture of RStudio's diff/commit window after a commit has been made and the .Rproj file has been staged with a commit message entered" width="100%"></p>
 <p>When finished, you’ll see that no changes remain in the <strong>Git</strong> tab, and the repository is clean.</p>
 <p><strong>Inspect the history.</strong> Note that under <strong>Changes</strong>, the message now says:</p>
 <p><code>Your branch is ahead of ‘origin/main’ by 2 commits.</code></p>
@@ -1082,15 +1058,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>it’s a good indicator that you did not set your GitHub Personal Access Token (PAT) correctly. You can redo the steps outlined in the <a href="https://learning.nceas.ucsb.edu/2024-06-delta/session_03.html#github-authentication">GitHub Authentication section</a> to (re)set your PAT, then <strong>Push</strong> again.</p>
+<p>it’s a good indicator that you did not set your GitHub Personal Access Token (PAT) correctly. You can redo the steps outlined in the <a href="https://nceas-learning-hub.github.io/2026_delta_week1/s02_git_setup.html#github-authentication">GitHub Authentication section</a> to (re)set your PAT, then <strong>Push</strong> again.</p>
 </div>
 </div>
-<div class="column-body-outset">
-<p><img src="images/github_introduction/rstudio-history-3.png" class="img-fluid"> &lt;–<img src="images/github_introduction/rstudio-history-3-sam.png" class="img-fluid">–&gt;</p>
-</div>
+<p><img src="images/github_introduction/rstudio-history-3.png" alt="Screen capture of RStudio's Git history page showing four total commits (the initial one and three follow-up custom commits)" width="100%"></p>
 <p>If you look at the History pane again, you’ll notice that the labels next to the most recent commit indicate that both the local repository (<code>HEAD</code>) and the remote repository (<code>origin/HEAD</code>) are pointing at the same version in the history. If we look at the commit history on GitHub, all the commits will be shown there as well.</p>
 <!-- :::{.column-page} -->
-<p><img src="images/github_introduction/github-history.png" class="img-fluid"></p>
+<p><img src="images/github_introduction/github-history.png" alt="Screen capture of a GitHub repository's commit history showing four total commits (the initial one and three follow-up custom commits)" width="100%"></p>
 <section id="defining-merge-method" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="defining-merge-method"><span class="header-section-number">4.1</span> Defining Merge Method</h3>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -1132,15 +1106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><strong>Initialize <code>training_{USERNAME}</code> as a Git repository</strong> by running <code>usethis::use_git()</code> in the Console. Choose <strong>yes</strong> when asked if it’s okay to commit any uncommitted files. Choose <strong>yes</strong> again if asked to restart R. Once complete, you should see the <strong>Git</strong> tab appear in your top left pane in RStudio and a <code>.gitignore</code> file appear in your <strong>Files</strong> tab.</li>
 </ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/github_introduction/use_git.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+<p><img src="images/github_introduction/use_git.png" alt="Screen capture of RStudio with the 'Git' pane circled in red and the '.gitignore' file in the 'Files' pane boxed by a red rectangle" width="100%"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1172,15 +1138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="2" type="1">
 <li><strong>Create an upstream remote repository on GitHub</strong> by running <code>usethis::use_github()</code> in the Console. Your web browser should open up to your new GitHub repository, with the same name as your local Git repo/R Project.</li>
 </ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/github_introduction/use_github.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+<p><img src="images/github_introduction/use_github.png" alt="Screen capture of a GitHub repository containing all of the files that were present in the previous screen capture of RStudio" width="100%"></p>
 <ol start="3" type="1">
 <li><p><strong>Ensure that your default branch is named <code>main</code> rather than <code>master</code></strong> by:</p>
 <ol type="a">
@@ -1246,15 +1204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Once complete, you should see the <strong>Git</strong> tab appear in your top left pane in RStudio and a <code>.gitignore</code> file appear in your <strong>Files</strong> tab.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/github_introduction/use_git.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+<p><img src="images/github_introduction/use_git.png" alt="Screen capture of RStudio with the 'Git' pane circled in red and the '.gitignore' file in the 'Files' pane boxed by a red rectangle" width="100%"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1317,50 +1267,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="3" type="1">
 <li><strong>Stage/Add your files</strong>. It’s helpful to first run <code>git status</code> to check the state of your local repository (particularly if you aren’t using RStudio / have access to a GUI with a <strong>Git</strong> tab-esque feature) – this will tell you which files have been modified or are untracked and that are currently unstaged (in red). What appears here should look just like what appears in the <strong>Git</strong> tab:</li>
 </ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/github_introduction/git_status_unstaged.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+<p><img src="images/github_introduction/git_status_unstaged.png" alt="Screen capture of RStudio with a number of files in the 'Git' pane showing as untracked enclosed in a red rectangleand the command line code that initialized the Git repository also enclosed in a red rectangle" width="100%"></p>
 <p>Run <code>git add .</code> in the Terminal to stage all files at once (or <code>git add {FILENAME}</code> to stage individual files). Running <code>git status</code> again will show you which files have been staged (in green). You may have to refresh your <strong>Git</strong> tab to see the change in state reflected in the GUI.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/github_introduction/git_status_staged.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+<p><img src="images/github_introduction/git_status_staged.png" alt="Screen capture of RStudio with a number of files in the 'Git' pane staged to be committed enclosed in a red rectangle and the command line code that will make that commit also enclosed in a red rectangle" width="100%"></p>
 <ol start="4" type="1">
 <li><strong>Commit your files</strong> by running <code>git commit -m "an informative commit message"</code> in the Terminal. Refreshing your <strong>Git</strong> tab will cause them to disappear (just as they do when you commit using RStudio’s GUI buttons). You can run <code>git log</code> in the Terminal to see a history of your past commits (currently, we only have this one).</li>
 </ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/github_introduction/git_commit.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+<p><img src="images/github_introduction/git_commit.png" alt="Screen capture of RStudio with the successful commit dialogue in the Terminal pane enclosed by a red rectangle with the message 'commit your files with an informative commit message' and some addiitonal metadata about the commit enclosed in a blue rectangle with the message 'use `git log` to see your commit history" width="100%"></p>
 <ol start="5" type="1">
 <li><p><strong>Create an empty remote repository</strong> by logging into <a href="https://github.com/">GitHub</a> and creating a new repository, following the same steps as in Exercise 1. <strong>IMPORTANTLY,</strong> <em>DO NOT</em> initialize your remote repo with a <code>README</code> license, or <code>.gitignore</code> file – doing so now can lead to merge conflicts. We can add them after our local and remote repos are linked. <strong>Name your remote repository the same as your local repository (i.e.&nbsp;<code>training_{USERNAME}</code>).</strong></p></li>
 <li><p><strong>Link your remote (GitHub) repository to your local Git repository.</strong> Your empty GitHub repo conveniently includes instructions for doing so. Copy the code under <strong>push an existing repository from the command line</strong> to your clipboard, paste into your RStudio Terminal, and press return/enter.</p></li>
 </ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/github_introduction/setup-empty-repo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+<p><img src="images/github_introduction/setup-empty-repo.png" alt="Screen capture of an empty GitHub repository with helpful command line code for connecting an existing local Git repository with an empty GitHub repository" width="100%"></p>
 <p>These commands do three things:</p>
 <ul>
 <li>Adds the GitHub repository as the remote repository (i.e.&nbsp;links your local repo to the remote repo)</li>

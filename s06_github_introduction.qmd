@@ -8,13 +8,15 @@ title: Git and GitHub
 After completing this session, you will be able to:
 
 - Apply the principles of Git to track and manage changes of a project
-- Perform each step of the Git workflow, including pulling remote changes, staging modified files, committing changes, pulling again to ensure remote changes are reflected locally, and pushing changes to a remote repository
+- Perform each step of the Git workflow to edit files locally and sync them with a remote repository
 - Create and configure Git repositories using different workflows
 :::
 
 ## Introduction to Version Control
 
-![](images/github_introduction/phd_comics_final.png){width="70%" fig-align="center"}
+<p align="center">
+<img src="images/github_introduction/phd_comics_final.png" alt="Comic of a grad student naming a document 'final' before needing to iteratively revise resulting in a series of progressively less interpretable 'final' filenames" width="70%"/>
+</p>
 
 Every file changes throughout the scientific process. Manuscripts are edited. Figures get revised. Code gets fixed when bugs are discovered. Sometimes those fixes lead to even more bugs, leading to more changes in the code base. Data files get combined. Those same files are split and combined again. In just one research project, we can expect thousands of changes!
 
@@ -57,28 +59,23 @@ Let's start with a motivating example that's representative of the types of prob
 
 #### Git: an open-source **version control** software {.unnumbered}
 
+<img src="images/github_introduction/git-intro.png" alt="Cartoon of a desktop computer containing the Git logo" width="30%" align="right"/>
+
 -  designed to manage the versioning and tracking of files and project history
 -  **operates locally** on your computer, allowing you to create repositories and track changes
 -  provides features such as committing changes, branching and merging code, reverting to previous versions, and managing project history
 -  works directly with the files on your computer and does not require a network connection for most operations
 - primarily used through the command-line interface (CLI, e.g. Terminal), but also has various GUI tools available (e.g. RStudio IDE)
 
-::: {.column-margin}
-![](images/github_introduction/git-intro.png)
-:::
-
 #### GitHub: an **online platform** and service built around Git {.unnumbered}
+
+<img src="images/github_introduction/github-intro.png" alt="Cartoon of a cloud labeled 'GitHub' with the GitHub logo" width="30%" align="right"/>
 
 -  provides a **centralized hosting platform for Git repositories**
 -  allows us to store, manage, and collaborate on Git repositories in the cloud
 -  offers additional features on top of Git, including a web-based interface, issue tracking, project management tools, pull requests, code review, and collaboration features
 -  enables easy sharing of code with others, facilitating collaboration and contribution to open source projects
 -  provides a social aspect, allowing users to follow projects, star repositories, and discover new code
-
-
-::: {.column-margin}
-![](images/github_introduction/github-intro.png)
-:::
 
 ### How local files, Git, and GitHub work together
 
@@ -94,17 +91,9 @@ As you use Git commands to capture versions or "snapshots" of your work, those v
 
 Here is our example folder / Git repository represented visually:
 
-<br>
-
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-knitr::include_graphics("images/github_introduction/git-repo.png")
-```
-
-<br>
+<p align="center">
+<img src="images/github_introduction/git-repo.png" alt="Diagram of a local Git repository with a CSV, R script, and '.git' folder in the project directory" width="100%"/>
+</p>
 
 #### How do I tell Git to preserve versions of my local working files?
 
@@ -120,30 +109,35 @@ Generally, that workflow looks something like this:
 
 The last step is synchronizing the changes made to our local repository with a remote repository (this remote repository is often stored on GitHub). The `git push` command is used to send local commits up to a remote repository. The `git pull` command is used to fetch changes from a remote repository and merge them into the local repository -- **pull**ing will become a regular part of your workflow when collaborating with others, or even when working alone but on different machines (e.g. a laptop at home and a desktop at the office).
 
-[A basic git workflow represented as two islands, one with "local repo" and "working directory", and another with "remote repo." Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled "PUSH") and from the remote repo to the working directory (labeled "PULL").]{.aside}
-
-<!--# ![](images/github_introduction/git-flowchart.png) -->
-
-[![Artwork by Allison Horst](images/github_introduction/allison-horst-git-workflow.png)](https://twitter.com/allison_horst)
+<p align="center">
+<img src="images/github_introduction/allison-horst-git-workflow.png" alt="A basic git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled PULL')" width="90%"/>
+<figcaption>Artwork by Allison Horst</figcaption>
+</p>
 
 ### Let's Look at a GitHub Repository
 
 This screen shows the copy of a repository stored on GitHub, with its list of files, when the files and directories were last modified, and some information on who made the most recent changes.
 
 :::{.column-page}
-![](images/github_introduction/ss3sim-github.png)
+<p align="center">
+<img src="images/github_introduction/ss3sim-github.png" alt="Screen capture of a GitHub repository's landing page" width="100%"/>
+</p>
 :::
 
 If we drill into the "commits" for the repository, we can see the history of changes made to all of the files. Looks like `kellijohnson` was working on the project and fixing errors in December:
 
 :::{.column-page}
-![](images/github_introduction/ss3sim-commits.png)
+<p align="center">
+<img src="images/github_introduction/ss3sim-commits.png" alt="Screen capture of a GitHub repository's page showing the history of the commits in the repository" width="100%"/>
+</p>
 :::
 
-And finally, if we drill into one of the changes made on December 20, we can see exactly what was changed in each file:
+And finally, if we drill into a particular commit, we can see exactly what was changed in each file that was included in that commit:
 
 :::{.column-page}
-![](images/github_introduction/ss3sim-diff.png)
+<p align="center">
+<img src="images/github_introduction/ss3sim-diff.png" alt="Screen capture of a GitHub repository's page showing the 'diff' of files edited in a particular commit" width="100%"/>
+</p>
 :::
 
 Tracking these changes, how they relate to released versions of software and files is exactly what Git and GitHub are good for. And we will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow.
@@ -208,10 +202,9 @@ If you were successful, it should look something like this:
 
 <br>
 
-
-:::{.column-body-outset}
-![](images/github_introduction/new-repo-github.png)
-:::
+<p align="center">
+<img src="images/github_introduction/new-repo-github.png" alt="Screen capture of the page on GitHub that allows a user to create a new repository" width="100%"/>
+</p>
 
 <br>
 
@@ -222,14 +215,7 @@ You've now created your first repository! It has a couple of files that GitHub c
 You should always add a `README.md` to the root directory of your repository -- it is a markdown file that is rendered as HTML and displayed on the landing page of your repository. This is a common place to include any pertinent information about what your repository contains, how to use it, etc.
 :::
 
-<br>
-
-
-:::{.column-body-outset}
-![](images/github_introduction/github-test-repo.png)
-<!--![](images/github_introduction/github-test-repo-sam.png)--->
-:::
-
+<img src="images/github_introduction/github-test-repo.png" alt="Screen capture of the main landing page for a brand new GitHub repository" width="100%"/>
 
 For simple changes to text files, such as the `README.md`, you can make edits directly in the GitHub web interface.
 
@@ -241,11 +227,7 @@ Navigate to the `README.md` file in the file listing, and edit it by clicking on
 
 <br>
 
-<!-- :::{.column-page} -->
-
-![](images/github_introduction/github-test-edit.png)
-
-<!-- ::: -->
+<img src="images/github_introduction/github-test-edit.png" alt="Screen capture of the page in GitHub that appears when you edit a file in a repository directly through GitHub's web interface" width="100%"/>
 
 <br>
 
@@ -253,11 +235,7 @@ Congratulations, you've now authored your first versioned commit! If you navigat
 
 <br>
 
-<!-- :::{.column-page} -->
-
-![](images/github_introduction/github-test-displayed.png)
-
-<!-- ::: -->
+<img src="images/github_introduction/github-test-displayed.png" alt="Screen capture of the landing page of a GitHub repository after the README has been edited to include non-template content" width="100%"/>
 
 <br>
 
@@ -305,9 +283,9 @@ We refer to the **remote copy** of the repository that is on GitHub as the **ori
 
 Start by clicking the green **Code** button (top right of your file listing) and copying the URL to your clipboard (this URL represents the repository location):
 
-:::{.column-body-outset}
-![](images/github_introduction/github-test-clone-url.png){width="70%" fig-align="center"}
-:::
+<p align="center">
+<img src="images/github_introduction/github-test-clone-url.png" alt="Screen capture of the dropdown menu in GitHub that appears when you click the 'code' button" width="70%"/>
+</p>
 
 RStudio makes working with Git and version controlled files easy -- to do so, you'll need to be working within an R project folder. The following steps will look similar to those you followed when first creating an R Project, with a slight difference. Follow the instructions in the Setup box below to clone your remote repository to your local computer in RStudio:
 
@@ -319,16 +297,16 @@ RStudio makes working with Git and version controlled files easy -- to do so, yo
 -   Select **Version Control** and paste the remote repository URL (which should be copied to your clipboard) in the **Repository URL** field
 -   Press **Tab**, which will auto-fill the **Project directory name** field with the same name as that of your remote repo -- while you can name the local copy of the repository anything, it's typical (and highly recommended) to use the same name as the GitHub repository to maintain the correspondence
 
-<!-- ![](images/github_introduction/rstudio-clone-repo.png){width="90%" fig-align="center"} -->
-![](images/github_introduction/rstudio-clone-repo-sam.png){width="90%" fig-align="center"}
+<p align="center">
+<img src="images/github_introduction/rstudio-clone-repo-sam.png" alt="Screen capture of RStudio's dialogue menu for cloning a new repository from GitHub" width="90%"/>
+</p>
 :::
 
 Once you click **Create Project**, a new RStudio window will open with all of the files from the remote repository copied locally. Depending on how your version of RStudio is configured, the location and size of the panes may differ, but they should all be present -- you should see a **Git** tab, as well as the **Files** tab, where you can view all of the files copied from the remote repo to this local repo. 
 
-:::{.column-body-outset}
-<!-- ![](images/github_introduction/github-rstudio-test.png) -->
-![](images/github_introduction/github-rstudio-test-sam.png)
-:::
+<p align="center">
+<img src="images/github_introduction/github-rstudio-test-sam.png" alt="Screen capture of RStudio after successfully cloning a new repository from GitHub" width="100%"/>
+</p>
 
 You'll note that there is one new file `sam_test.Rproj`, and three files that we created earlier on GitHub (`.gitignore`, `LICENSE`, and `README.md`).
 
@@ -336,8 +314,9 @@ In the **Git** tab, you'll note that the one new file, `sam_test.Rproj`, is list
 
 Inspect the history. Click on the **History** button in the **Git** tab to show the log of changes that have occurred -- these changes will be identical to what we viewed on GitHub. By clicking on each row of the history, you can see exactly what was added and changed in each of the two commits in this repository.
 
-<!-- ![](images/github_introduction/rstudio-history-1.png) -->
-![](images/github_introduction/rstudio-history-1-sam.png)
+<p align="center">
+<img src="images/github_introduction/rstudio-history-1-sam.png" alt="Screen capture of RStudio page showing the Git history of a local repository" width="100%"/>
+</p>
 
 ::: callout-note
 ## Challenge
@@ -348,19 +327,16 @@ Inspect the history. Click on the **History** button in the **Git** tab to show 
 
 Once you save, you'll immediately see the `README.md` file show up in the **Git** tab, marked as a modification. Select the file in the **Git** tab, and click **Diff** to see the changes that you saved (but which are not yet committed to your local repository). Newly made changes are highlighted in green.
 
-<!-- ![](images/github_introduction/rstudio-status-pane.png) -->
-![](images/github_introduction/rstudio-status-pane-sam.png)
-
-<!-- And here's what the newly made changes look like compared to the original file. New lines are highlighted in green, while removed lines are in red. -->
-
-<!-- ![](images/github_introduction/rstudio-diff.png) -->
+<p align="center">
+<img src="images/github_introduction/rstudio-status-pane-sam.png" alt="Screen capture of RStudio diff/commit window where edits to the README are shown with new lines highlighted green" width="100%"/>
+</p>
 
 **Commit the changes.** To commit the changes you made to the `README.md` file using RStudio's GUI (Graphical User Interface), rather than the command line:
 
 1. **Stage** (aka add) `README.md` by clicking the check box next to the file name -- this tells Git which changes you want included in the commit and *is analogous to using the git command, `git add README.md`, in the command line*
 2. **Commit** `README.md` by clicking the **Commit** button and providing a descriptive commit message in the dialog box. Press the **Commit** button once you're satisfied with your message. *This is analogous to using the git command, `git commit -m "my commit message"`, in the command line*.
 
-![](images/github_introduction/rstudio-commit-1.png)
+<img src="images/github_introduction/rstudio-commit-1.png" alt="Screen capture of RStudio's diff/commit window where an edited README is staged (by checking the box next to the file's name) and a commit message has been entered into the respective window" width="100%"/>
 
 A few notes about our local repository's state:
 
@@ -369,10 +345,9 @@ A few notes about our local repository's state:
 
 **Commit the remaining project file** by staging/adding and committing it with an informative commit message.
 
-![](images/github_introduction/rstudio-commit-2.png)
+<img src="images/github_introduction/rstudio-commit-2.png" alt="Screen capture of RStudio's diff/commit window after a commit has been made and the .Rproj file has been staged with a commit message entered" width="100%"/>
 
 When finished, you'll see that no changes remain in the **Git** tab, and the repository is clean.
-
 
 **Inspect the history.** Note that under **Changes**, the message now says:
 
@@ -388,19 +363,16 @@ Click on the **History** button to see a total of four commits in the local repo
 
 ::: {.callout-note}
 ## If you are prompted to provide your GitHub username and password when **Push**ing...
-it's a good indicator that you did not set your GitHub Personal Access Token (PAT) correctly. You can redo the steps outlined in the [GitHub Authentication section](https://learning.nceas.ucsb.edu/2024-06-delta/session_03.html#github-authentication) to (re)set your PAT, then **Push** again.
+it's a good indicator that you did not set your GitHub Personal Access Token (PAT) correctly. You can redo the steps outlined in the [GitHub Authentication section](https://nceas-learning-hub.github.io/2026_delta_week1/s02_git_setup.html#github-authentication) to (re)set your PAT, then **Push** again.
 :::
 
-:::{.column-body-outset}
-![](images/github_introduction/rstudio-history-3.png)
-<--![](images/github_introduction/rstudio-history-3-sam.png)-->
-:::
+<img src="images/github_introduction/rstudio-history-3.png" alt="Screen capture of RStudio's Git history page showing four total commits (the initial one and three follow-up custom commits)" width="100%"/>
 
 If you look at the History pane again, you'll notice that the labels next to the most recent commit indicate that both the local repository (`HEAD`) and the remote repository (`origin/HEAD`) are pointing at the same version in the history. If we look at the commit history on GitHub, all the commits will be shown there as well.
 
 <!-- :::{.column-page} -->
 
-![](images/github_introduction/github-history.png)
+<img src="images/github_introduction/github-history.png" alt="Screen capture of a GitHub repository's commit history showing four total commits (the initial one and three follow-up custom commits)" width="100%"/>
 
 ### Defining Merge Method
 
@@ -446,13 +418,7 @@ install.packages("usethis")
 
 1. **Initialize `training_{USERNAME}` as a Git repository** by running `usethis::use_git()` in the Console. Choose **yes** when asked if it’s okay to commit any uncommitted files. Choose **yes** again if asked to restart R. Once complete, you should see the **Git** tab appear in your top left pane in RStudio and a `.gitignore` file appear in your **Files** tab.
 
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-knitr::include_graphics("images/github_introduction/use_git.png")
-```
+<img src="images/github_introduction/use_git.png" alt="Screen capture of RStudio with the 'Git' pane circled in red and the '.gitignore' file in the 'Files' pane boxed by a red rectangle" width="100%"/>
 
 ::: {.callout-note}
 ## `.gitignore` files allow you to specify which files/folders you *don't* want Git to track
@@ -483,13 +449,7 @@ If this file is currently untracked by Git, it should appear in my **Git** tab. 
 
 2. **Create an upstream remote repository on GitHub** by running `usethis::use_github()` in the Console. Your web browser should open up to your new GitHub repository, with the same name as your local Git repo/R Project.
 
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-knitr::include_graphics("images/github_introduction/use_github.png")
-```
+<img src="images/github_introduction/use_github.png" alt="Screen capture of a GitHub repository containing all of the files that were present in the previous screen capture of RStudio" width="100%"/>
 
 3. **Ensure that your default branch is named `main` rather than `master`** by:
 
@@ -541,13 +501,7 @@ You'll likely need to help `included-crab` along in recognizing that this R Proj
 
 Once complete, you should see the **Git** tab appear in your top left pane in RStudio and a `.gitignore` file appear in your **Files** tab.
 
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-knitr::include_graphics("images/github_introduction/use_git.png")
-```
+<img src="images/github_introduction/use_git.png" alt="Screen capture of RStudio with the 'Git' pane circled in red and the '.gitignore' file in the 'Files' pane boxed by a red rectangle" width="100%"/>
 
 ::: {.callout-note}
 ## `.gitignore` files allow you to specify which files/folders you *don't* want Git to track
@@ -605,46 +559,21 @@ There is a push across platforms and software to update this historical default 
 
 3. **Stage/Add your files**. It's helpful to first run `git status` to check the state of your local repository (particularly if you aren't using RStudio / have access to a GUI with a **Git** tab-esque feature) -- this will tell you which files have been modified or are untracked and that are currently unstaged (in red). What appears here should look just like what appears in the **Git** tab:
 
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-knitr::include_graphics("images/github_introduction/git_status_unstaged.png")
-```
+<img src="images/github_introduction/git_status_unstaged.png" alt="Screen capture of RStudio with a number of files in the 'Git' pane showing as untracked enclosed in a red rectangleand the command line code that initialized the Git repository also enclosed in a red rectangle" width="100%"/>
 
 Run `git add .` in the Terminal to stage all files at once (or `git add {FILENAME}` to stage individual files). Running `git status` again will show you which files have been staged (in green). You may have to refresh your **Git** tab to see the change in state reflected in the GUI.
 
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-knitr::include_graphics("images/github_introduction/git_status_staged.png")
-```
+<img src="images/github_introduction/git_status_staged.png" alt="Screen capture of RStudio with a number of files in the 'Git' pane staged to be committed enclosed in a red rectangle and the command line code that will make that commit also enclosed in a red rectangle" width="100%"/>
 
 4. **Commit your files** by running `git commit -m "an informative commit message"` in the Terminal. Refreshing your **Git** tab will cause them to disappear (just as they do when you commit using RStudio's GUI buttons). You can run `git log` in the Terminal to see a history of your past commits (currently, we only have this one).
 
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-knitr::include_graphics("images/github_introduction/git_commit.png")
-```
+<img src="images/github_introduction/git_commit.png" alt="Screen capture of RStudio with the successful commit dialogue in the Terminal pane enclosed by a red rectangle with the message 'commit your files with an informative commit message' and some addiitonal metadata about the commit enclosed in a blue rectangle with the message 'use `git log` to see your commit history" width="100%"/>
 
 5. **Create an empty remote repository** by logging into [GitHub](https://github.com/) and creating a new repository, following the same steps as in Exercise 1. **IMPORTANTLY,** *DO NOT* initialize your remote repo with a `README` license, or `.gitignore` file -- doing so now can lead to merge conflicts. We can add them after our local and remote repos are linked. **Name your remote repository the same as your local repository (i.e. `training_{USERNAME}`).**
 
 6. **Link your remote (GitHub) repository to your local Git repository.**  Your empty GitHub repo conveniently includes instructions for doing so. Copy the code under **push an existing repository from the command line** to your clipboard, paste into your RStudio Terminal, and press return/enter.
 
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-
-knitr::include_graphics("images/github_introduction/setup-empty-repo.png")
-```
+<img src="images/github_introduction/setup-empty-repo.png" alt="Screen capture of an empty GitHub repository with helpful command line code for connecting an existing local Git repository with an empty GitHub repository" width="100%"/>
 
 These commands do three things:
 

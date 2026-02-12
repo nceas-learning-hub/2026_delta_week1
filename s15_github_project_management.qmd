@@ -5,8 +5,10 @@ title: GitHub for Project Management
 :::{.callout-tip}
 ## Learning Objectives
 
+After completing this session, you will be able to:
+
 - Utilize GitHub's project management tools to organize and manage projects
-- Practice creating issues in GitHub
+- Create issues in GitHub for documentation and to track specific, actionable tasks
 - Craft informative READMEs for Git repositories
 :::
 

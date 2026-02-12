@@ -27,12 +27,26 @@ Before arriving for the in-person component of the first week, <u>you</u> should
 
 After the first week, <u>your group</u> should have done (at least some of) the following:
 
-{{< fa person-digging >}} TBD; check back later!
+- Defined the project's primary hypothesis
+- Discussed and created formal documentation for:
+    - Intellectual credit
+    - Group interpersonal norms (e.g., code of conduct, distribution of administrative/logistical tasks)
+- Identified (A) specific datasets relevant to the project and/or (B) data repositories likely to contain such data
+- Drafted a project management plan with specific, actionable tasks for getting started on the project
+- Begun collaborating (in GitHub) on code to harmonize, do quality control on, visualize, or perform preliminary analysis on relevant data
+- Discussed the above actions with your project mentor(s)
 
 ### Before <u>Week 2</u>
 
 Between the first and second weeks of the workshop, <u>your group</u> should have done (at least some of) the following:
 
-{{< fa person-digging >}} TBD; check back later!
+- Written code (version-controlled and stored in GitHub) to:
+    - Harmonize at least 5 datasets
+    - Perform quality control on the harmonized dataset
+    - Perform preliminary visualization of individual or synthesized datasets
+- Documented scientific judgement calls made up to this point in a clear, human-readable manner
+    - E.g., data in/exclusion criteria, data transformation(s), project question or scope changes
+- Updated your project management system with specific, actionable tasks that _have not yet been done_ but need to be completed in the near future
+- Identified areas of confusion (e.g., scientific, code-related) to discuss with workshop instructors and/or project mentors during week 2
 
 :::

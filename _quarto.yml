@@ -65,7 +65,7 @@ website:
       - section: "Day 2"
         contents:
         - s05_lecture_data_mgmt_discovery.qmd
-        - s06_github_introduction.qmd
+        - s06_github_introduction_positron.qmd
         - s07_activity_thinking_preferences.qmd ### or lego activity?
         - s08_synthesis_logic_models.qmd
       - section: "Day 3"

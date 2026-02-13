@@ -569,7 +569,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#cloning-a-repository" id="toc-cloning-a-repository" class="nav-link" data-scroll-target="#cloning-a-repository"><span class="header-section-number">4.1</span> Cloning a Repository</a></li>
   <li><a href="#making-a-commit" id="toc-making-a-commit" class="nav-link" data-scroll-target="#making-a-commit"><span class="header-section-number">4.2</span> Making a Commit</a></li>
-  <li><a href="#defining-merge-method" id="toc-defining-merge-method" class="nav-link" data-scroll-target="#defining-merge-method"><span class="header-section-number">4.3</span> Defining Merge Method</a></li>
   </ul></li>
   <li><a href="#exercise-3-setting-up-git-on-an-existing-project" id="toc-exercise-3-setting-up-git-on-an-existing-project" class="nav-link" data-scroll-target="#exercise-3-setting-up-git-on-an-existing-project"><span class="header-section-number">5</span> Exercise 3: Setting up Git on an existing project</a></li>
   <li><a href="#go-further-with-git" id="toc-go-further-with-git" class="nav-link" data-scroll-target="#go-further-with-git"><span class="header-section-number">6</span> Go further with Git</a></li>
@@ -624,8 +623,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introduction-to-git-github" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="introduction-to-git-github"><span class="header-section-number">2</span> Introduction to Git + GitHub</h2>
 <p>Let’s start with a motivating example that’s representative of the types of problems Git can help us solve.</p>
-<p><a href="slides/github_introduction_positron/slides1_motivating_example.html">Full Screen</a></p>
-<iframe class="slide-deck" src="slides/github_introduction_positron/slides1_motivating_example.html" style="border: 1px solid #2e3846;"></iframe>
+<p><a href="slides/github_introduction/slides1_motivating_example.html">Full Screen</a></p>
+<iframe class="slide-deck" src="slides/github_introduction/slides1_motivating_example.html" style="border: 1px solid #2e3846;"></iframe>
 <section id="with-git-we-can-enhance-our-workflow" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="with-git-we-can-enhance-our-workflow">With Git we can enhance our workflow:</h4>
 <ul>
@@ -1078,27 +1077,6 @@ Artwork by Allison Horst
 </div>
 </div>
 </section>
-<section id="defining-merge-method" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="defining-merge-method"><span class="header-section-number">4.3</span> Defining Merge Method</h3>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Some Git configuration to surpress warning messages
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Git version 2.27 includes a new feature that allows users to specify the default method for integrating changes from a remote repository into a local repository, without receiving a warning (this warning is informative, but can get annoying). To suppress this warning <em>for this repository only</em> we need to configure Git by running this line of code in the Terminal:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config pull.rebase false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><code>pull.rebase false</code> is a default strategy for pulling where Git will first try to auto-merge the files. If auto-merging is not possible, it will indicate a merge conflict (more on resolving merge conflicts in <a href="https://learning.nceas.ucsb.edu/2024-06-delta/session_09.html">Collaborating with Git and GitHub</a>).</p>
-<p><strong>Note:</strong> Unlike when we first configured Git, we do not include the <code>--global</code> flag here (e.g.&nbsp;<code>git config --global pull.rebase false</code>). This sets this default strategy for this repository only (rather than globally for all your repositories). We do this because your chosen/default method of grabbing changes from a remote repository (e.g.&nbsp;<a href="https://git-scm.com/docs/git-pull">pulling</a> vs.&nbsp;<a href="https://git-scm.com/docs/git-rebase">rebasing</a>) may change depending on collaborator/workflow preference.</p>
-</div>
-</div>
-</section>
 </section>
 <section id="exercise-3-setting-up-git-on-an-existing-project" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="exercise-3-setting-up-git-on-an-existing-project"><span class="header-section-number">5</span> Exercise 3: Setting up Git on an existing project</h2>
@@ -1114,7 +1092,7 @@ Artwork by Allison Horst
 <li><strong>Install the <code>{usethis}</code> package</strong> (if you haven’t done so already) by running the following in your Console:</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol type="1">
 <li><strong>Initialize <code>training_{USERNAME}</code> as a Git repository</strong> by running <code>usethis::use_git()</code> in the Console. Choose <strong>yes</strong> when asked if it’s okay to commit any uncommitted files. Choose <strong>yes</strong> again if asked to restart R. Once complete, you should see the <strong>Git</strong> tab appear in your top left pane in RStudio and a <code>.gitignore</code> file appear in your <strong>Files</strong> tab.</li>
@@ -1134,16 +1112,16 @@ Artwork by Allison Horst
 <p><strong>Why is this useful?</strong> For many reasons, but possibly the greatest use-case is adding large files (GitHub has a file size limit of 2 GB) or files with sensitive information (e.g.&nbsp;keys, tokens) that you don’t want to accidentally push to GitHub.</p>
 <p><strong>How do I do this?</strong> Let’s say I create a file with sensitive information that I don’t want to push to GitHub. I can add a line to my <code>.gitignore</code> file:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># added by default when I initalized my RProj as a Git Repository</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rdata</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.httr-oauth</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">.quarto</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add file so that it doesn't get pushed to the remote repo (on GitHub); </span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ex">contains_sensitive_info.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># added by default when I initalized my RProj as a Git Repository</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rdata</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.httr-oauth</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">.quarto</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add file so that it doesn't get pushed to the remote repo (on GitHub); </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">contains_sensitive_info.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If this file is currently untracked by Git, it should appear in my <strong>Git</strong> tab. Once I add it to the <code>.gitignore</code> <em>and</em> save the modified <code>.gitignore</code> file, you should see <code>contains_sensitive_info.R</code> disappear from the <strong>Git</strong> tab, and a modified <code>.gitignore</code> (denoted by a blue <strong>M</strong>) appear. Stage/commit/push this modified <code>.gitignore</code> file.</p>
 </div>
@@ -1160,7 +1138,7 @@ Artwork by Allison Horst
 </ol></li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_rename</span>(<span class="at">from =</span> <span class="st">"master"</span>, <span class="at">to =</span> <span class="st">"main"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_rename</span>(<span class="at">from =</span> <span class="st">"master"</span>, <span class="at">to =</span> <span class="st">"main"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can verify that your update worked by running <code>git branch</code> once more in the Terminal.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1201,7 +1179,7 @@ Artwork by Allison Horst
 <li><strong>Initialize <code>training_{USERNAME}</code> as a Git repository</strong> by running <code>git init</code> in the Terminal. You should get a message that says something like:</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Initialized</span> empty Git repository in /home/username/training_username/.git/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Initialized</span> empty Git repository in /home/username/training_username/.git/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1232,16 +1210,16 @@ Artwork by Allison Horst
 <p><strong>Why is this useful?</strong> For many reasons, but possibly the greatest use-case is adding large files (GitHub has a file size limit of 2 GB) or files with sensitive information (e.g.&nbsp;keys, tokens) that you don’t want to accidentally push to GitHub.</p>
 <p><strong>How do I do this?</strong> Let’s say I create a file with sensitive information that I don’t want to push to GitHub. I can add a line to my <code>.gitignore</code> file:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># added by default when I initalized my RProj as a Git Repository</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rdata</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.httr-oauth</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ex">.quarto</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add file so that it doesn't get pushed to the remote repo (on GitHub); </span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ex">contains_sensitive_info.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># added by default when I initalized my RProj as a Git Repository</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rdata</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.httr-oauth</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ex">.quarto</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add file so that it doesn't get pushed to the remote repo (on GitHub); </span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ex">contains_sensitive_info.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If this file is currently untracked by Git, it should appear in my <strong>Git</strong> tab. Once I add it to the <code>.gitignore</code> <em>and</em> save the modified <code>.gitignore</code> file, you should see <code>contains_sensitive_info.R</code> disappear from the <strong>Git</strong> tab, and a modified <code>.gitignore</code> (denoted by a blue <strong>M</strong>) appear. Stage/commit/push this modified <code>.gitignore</code> file.</p>
 </div>
@@ -1254,13 +1232,13 @@ Artwork by Allison Horst
 </ol></li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for Git version 2.28+ (check by running `git --version`)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this sets the default branch name to `main` for any new repos moving forward</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># for older versions of Git</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># this sets the default branch name to `main` ONLY for this repo </span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> master main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for Git version 2.28+ (check by running `git --version`)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this sets the default branch name to `main` for any new repos moving forward</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># for older versions of Git</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># this sets the default branch name to `main` ONLY for this repo </span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> master main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can verify that your update worked by running <code>git branch</code> once more in the Terminal.</p>
 <div class="callout callout-style-default callout-note callout-titled">

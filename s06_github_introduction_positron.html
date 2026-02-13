@@ -711,148 +711,169 @@ Artwork by Allison Horst
 <section id="git-vocabulary-commands" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="git-vocabulary-commands"><span class="header-section-number">2.4</span> Git Vocabulary &amp; Commands</h3>
 <p>We know the world of Git and GitHub can be daunting. Use these tables as references while you use Git and GitHub, and we encourage you to build upon this list as you become more comfortable with these tools.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Essential Git Commands</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Advanced Git Commands</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">GitHub Terms</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>This table contains essential terms and commands that complement intro to Git skills. They will get you far on personal and individual projects.</p>
 <table class="caption-top table">
-<caption>Essential Git Commands</caption>
 <colgroup>
 <col style="width: 13%">
-<col style="width: 17%">
-<col style="width: 68%">
+<col style="width: 16%">
+<col style="width: 70%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Term</th>
-<th>Git Command(s)</th>
-<th>Definition</th>
+<th style="text-align: center;">Term</th>
+<th style="text-align: left;">Git Command(s)</th>
+<th style="text-align: left;">Definition</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Add/Stage</td>
-<td><code>git add [file]</code></td>
-<td>Staging marks a modified file in its current version to go into your next commit snapshot. You can also stage all modified files at the same time using <code>git add .</code></td>
+<td style="text-align: center;">Add/Stage</td>
+<td style="text-align: left;"><code>git add [file]</code></td>
+<td style="text-align: left;">Staging marks a modified file in its current version to go into your next commit snapshot. You can also stage all modified files at the same time using <code>git add .</code></td>
 </tr>
 <tr class="even">
-<td>Commit</td>
-<td><code>git commit</code></td>
-<td>Records changes to the repository.</td>
+<td style="text-align: center;">Commit</td>
+<td style="text-align: left;"><code>git commit</code></td>
+<td style="text-align: left;">Records changes to the repository</td>
 </tr>
 <tr class="odd">
-<td>Commit Message</td>
-<td><code>git commit -m "my commit message"</code></td>
-<td>Records changes to the repository and include a descriptive message (you should always include a commit message!).</td>
+<td style="text-align: center;">Commit Message</td>
+<td style="text-align: left;"><code>git commit -m "my commit message"</code></td>
+<td style="text-align: left;">Records changes to the repository and include a descriptive message (you should always include a commit message!)</td>
 </tr>
 <tr class="even">
-<td>Fetch</td>
-<td><code>git fetch</code></td>
-<td>Retrieves changes from a remote repository but does not merge them into your local working file(s).</td>
+<td style="text-align: center;">Fetch</td>
+<td style="text-align: left;"><code>git fetch</code></td>
+<td style="text-align: left;">Retrieves changes from a remote repository but does not merge them into your local working file(s).</td>
 </tr>
 <tr class="odd">
-<td>Pull</td>
-<td><code>git pull</code></td>
-<td>Retrieves changes from a remote repository <em>and</em> merges them into your local working file(s).</td>
+<td style="text-align: center;">Pull</td>
+<td style="text-align: left;"><code>git pull</code></td>
+<td style="text-align: left;">Retrieves changes from a remote repository <em>and</em> merges them into your local working file(s)</td>
 </tr>
 <tr class="even">
-<td>Push</td>
-<td><code>git push</code></td>
-<td>Sends local commits to a remote repository.</td>
+<td style="text-align: center;">Push</td>
+<td style="text-align: left;"><code>git push</code></td>
+<td style="text-align: left;">Sends local commits to a remote repository</td>
 </tr>
 <tr class="odd">
-<td>Status</td>
-<td><code>git status</code></td>
-<td>Shows the current status of the repository, including (un)staged files and branch information.</td>
+<td style="text-align: center;">Status</td>
+<td style="text-align: left;"><code>git status</code></td>
+<td style="text-align: left;">Shows the current status of the repository, including (un)staged files and branch information</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>This table includes more advanced Git terms and commands that are commonly used in both individual and collaborative projects.</p>
 <table class="caption-top table">
-<caption>Advanced Git Commands</caption>
 <colgroup>
 <col style="width: 13%">
-<col style="width: 17%">
-<col style="width: 68%">
+<col style="width: 16%">
+<col style="width: 70%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Term</th>
-<th>Git Command(s)</th>
-<th>Definition</th>
+<th style="text-align: center;">Term</th>
+<th style="text-align: left;">Git Command(s)</th>
+<th style="text-align: left;">Definition</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Branch</td>
-<td><code>git branch</code></td>
-<td>Lists existing branches or creates a new branch.</td>
+<td style="text-align: center;">Branch</td>
+<td style="text-align: left;"><code>git branch</code></td>
+<td style="text-align: left;">Lists existing branches or creates a new branch</td>
 </tr>
 <tr class="even">
-<td>Checkout</td>
-<td><code>git checkout [branch]</code></td>
-<td>Switches to a different branch or restores files from a specific commit.</td>
+<td style="text-align: center;">Checkout</td>
+<td style="text-align: left;"><code>git checkout [branch]</code></td>
+<td style="text-align: left;">Switches to a different branch or restores files from a specific commit</td>
 </tr>
 <tr class="odd">
-<td>Clone</td>
-<td><code>git clone [repository]</code></td>
-<td>Creates a local copy of a remote repository.</td>
+<td style="text-align: center;">Clone</td>
+<td style="text-align: left;"><code>git clone [repository]</code></td>
+<td style="text-align: left;">Creates a local copy of a remote repository</td>
 </tr>
 <tr class="even">
-<td>Diff</td>
-<td><code>git diff</code></td>
-<td>Shows differences between files, commits, or branches.</td>
+<td style="text-align: center;">Diff</td>
+<td style="text-align: left;"><code>git diff</code></td>
+<td style="text-align: left;">Shows differences between files, commits, or branches</td>
 </tr>
 <tr class="odd">
-<td>Fork</td>
-<td>-</td>
-<td>Creates a personal copy of a repository under your GitHub account for independent development.</td>
+<td style="text-align: center;">Log</td>
+<td style="text-align: left;"><code>git log</code></td>
+<td style="text-align: left;">Displays the commit history of the repository</td>
 </tr>
 <tr class="even">
-<td>Log</td>
-<td><code>git log</code></td>
-<td>Displays the commit history of the repository.</td>
+<td style="text-align: center;">Merge</td>
+<td style="text-align: left;"><code>git merge [branch]</code></td>
+<td style="text-align: left;">Integrates changes from one branch into another branch</td>
 </tr>
 <tr class="odd">
-<td>Merge</td>
-<td><code>git merge [branch]</code></td>
-<td>Integrates changes from one branch into another branch.</td>
+<td style="text-align: center;">Rebase</td>
+<td style="text-align: left;"><code>git rebase</code></td>
+<td style="text-align: left;">Integrates changes from one branch onto another by modifying commit history</td>
 </tr>
 <tr class="even">
-<td>Merge Conflict</td>
-<td>-</td>
-<td>Occurs when Git cannot automatically merge changes from different branches, requiring manual resolution.</td>
+<td style="text-align: center;">Remote</td>
+<td style="text-align: left;"><code>git remote</code></td>
+<td style="text-align: left;">Manages remote repositories linked to the local repository</td>
 </tr>
 <tr class="odd">
-<td>Pull Request (PR)</td>
-<td>-</td>
-<td>A request to merge changes from a branch into another branch, typically in a collaborative project.</td>
+<td style="text-align: center;">Repository</td>
+<td style="text-align: left;"><code>git init</code></td>
+<td style="text-align: left;">A directory where Git tracks and manages files and their versions</td>
 </tr>
 <tr class="even">
-<td>Rebase</td>
-<td><code>git rebase</code></td>
-<td>Integrates changes from one branch onto another by modifying commit history.</td>
+<td style="text-align: center;">Stash</td>
+<td style="text-align: left;"><code>git stash</code></td>
+<td style="text-align: left;">Temporarily saves changes that are not ready to be committed</td>
 </tr>
 <tr class="odd">
-<td>Remote</td>
-<td><code>git remote</code></td>
-<td>Manages remote repositories linked to the local repository.</td>
-</tr>
-<tr class="even">
-<td>Repository</td>
-<td><code>git init</code></td>
-<td>A directory where Git tracks and manages files and their versions.</td>
-</tr>
-<tr class="odd">
-<td>Stash</td>
-<td><code>git stash</code></td>
-<td>Temporarily saves changes that are not ready to be committed.</td>
-</tr>
-<tr class="even">
-<td>Tag</td>
-<td><code>git tag</code></td>
-<td>Assigns a label or tag to a specific commit.</td>
+<td style="text-align: center;">Tag</td>
+<td style="text-align: left;"><code>git tag</code></td>
+<td style="text-align: left;">Assigns a label or tag to a specific commit</td>
 </tr>
 </tbody>
 </table>
 <p>Git has a rich set of commands and features, and there are many more terms beyond either table. Learn more by visiting the <a href="https://git-scm.com/docs">git documentation</a>.</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>This table includes terms for which there are not specific Git commands.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Term</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Fork</td>
+<td style="text-align: left;">Creates a personal copy of a repository under your GitHub account for independent development</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Merge Conflict</td>
+<td style="text-align: left;">Occurs when Git cannot automatically merge changes from different branches, requiring manual resolution</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pull Request (PR)</td>
+<td style="text-align: left;">A request to merge changes from a branch into another branch, typically in a collaborative project</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="exercise-1-create-a-remote-repository-on-github" class="level2" data-number="3">
@@ -1088,9 +1109,9 @@ Artwork by Allison Horst
 <p>First, switch to your <code>training_{USERNAME}</code> project using the RStudio project dropdown menu. The project drop down menu is in the upper right corner of your RStudio pane. Click the drop down next to your project name (<code>{FIRSTNAME}_test</code>), and then select the <code>training_{USERNAME}</code> project from the <strong>RECENT PROJECTS</strong> list.</p>
 <p>There are a few approaches for turning an existing project folder into a Git repository, then sending it to GitHub – if you’re an R-user, the simplest way is to use the <a href="https://usethis.r-lib.org/"><code>{usethis}</code> package</a>, which is built to automate tasks involved with project setup and development. However, you can also initialize a local git repository and set the remote repository from the command line (a language-agnostic workflow). Steps for both approaches are included below (demonstrated using your <code>training_{USERNAME}</code> project):</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Using R &amp; <code>{usethis}</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Using the command line</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Using R &amp; <code>{usethis}</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Using the command line</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <ol start="0" type="1">
 <li><strong>Install the <code>{usethis}</code> package</strong> (if you haven’t done so already) by running the following in your Console:</li>
 </ol>
@@ -1176,7 +1197,7 @@ Artwork by Allison Horst
 </div>
 </div>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>While we’ll be using the RStudio Terminal here, you can use any command-line interface (e.g.&nbsp;Mac Terminal, Git Bash, etc.) that allows for git interactions (if you plan to use a command-line interface that <em>is not</em> the RStudio Terminal, make sure to navigate to your project directory (e.g.&nbsp;using <code>cd file/path/to/project/directory</code>) before initializing your repository.</p>
 <ol type="1">
 <li><strong>Initialize <code>training_{USERNAME}</code> as a Git repository</strong> by running <code>git init</code> in the Terminal. You should get a message that says something like:</li>

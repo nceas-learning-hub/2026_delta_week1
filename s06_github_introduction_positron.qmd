@@ -204,13 +204,10 @@ This table includes terms for which there are not specific Git commands.
 
 If you were successful, it should look something like this:
 
-<br>
-
 <p align="center">
-<img src="images/github_introduction/new-repo-github.png" alt="Screen capture of the page on GitHub that allows a user to create a new repository" width="100%"/>
+<img src="images/github_introduction_positron/new-repo_p1.png" alt="Screen capture of the top half of the page on GitHub that allows a user to create a new repository" width="100%"/>
+<img src="images/github_introduction_positron/new-repo_p2.png" alt="Screen capture of the bottom half of the page on GitHub that allows a user to create a new repository" width="100%"/>
 </p>
-
-<br>
 
 You've now created your first repository! It has a couple of files that GitHub created for you: `README.md`, `LICENSE`, and `.gitignore`. 
 
@@ -219,7 +216,7 @@ You've now created your first repository! It has a couple of files that GitHub c
 You should always add a `README.md` to the root directory of your repository -- it is a markdown file that is rendered as HTML and displayed on the landing page of your repository. This is a common place to include any pertinent information about what your repository contains, how to use it, etc.
 :::
 
-<img src="images/github_introduction/github-test-repo.png" alt="Screen capture of the main landing page for a brand new GitHub repository" width="100%"/>
+<img src="images/github_introduction_positron/new-repo_home.png" alt="Screen capture of the main landing page for a brand new GitHub repository" width="100%"/>
 
 For simple changes to text files, such as the `README.md`, you can make edits directly in the GitHub web interface.
 
@@ -229,19 +226,11 @@ For simple changes to text files, such as the `README.md`, you can make edits di
 Navigate to the `README.md` file in the file listing, and edit it by clicking on the **pencil icon** (top right of file). This is a regular Markdown file, so you can add markdown text. Add a new level-2 header called "Purpose" and add some bullet points describing the purpose of the repo. When done, add a commit message, and hit the **Commit changes** button.
 :::
 
-<br>
-
-<img src="images/github_introduction/github-test-edit.png" alt="Screen capture of the page in GitHub that appears when you edit a file in a repository directly through GitHub's web interface" width="100%"/>
-
-<br>
+<img src="images/github_introduction_positron/new-repo_test-edit.png" alt="Screen capture of the page in GitHub that appears when you edit a file in a repository directly through GitHub's web interface" width="100%"/>
 
 Congratulations, you've now authored your first versioned commit! If you navigate back to the GitHub page for the repository, you'll see your commit listed there, as well as the rendered `README.md` file.
 
-<br>
-
-<img src="images/github_introduction/github-test-displayed.png" alt="Screen capture of the landing page of a GitHub repository after the README has been edited to include non-template content" width="100%"/>
-
-<br>
+<img src="images/github_introduction_positron/new-repo_test-displayed.png" alt="Screen capture of the landing page of a GitHub repository after the README has been edited to include non-template content" width="100%"/>
 
 The GitHub repository landing page provides us with lots of useful information. To start, we see: 
 
@@ -274,7 +263,6 @@ Here are some guidelines for writing effective Git commit messages:
 
 8. **Reference relevant issues**: If the commit is related to a specific issue or task, include a reference to it. For example, you can mention the issue number or use keywords like "Fixes," "Closes," or "Resolves" followed by the issue number.
 :::
-
 
 ## Exercise 2: `clone` your repository and use Git locally in RStudio
 

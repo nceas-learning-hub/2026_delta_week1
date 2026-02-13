@@ -1,5 +1,8 @@
 ---
 title: Git and GitHub Introduction
+format:
+  theme-html:
+    code-annotations: hover  
 ---
 
 :::{.callout-tip}
@@ -389,194 +392,155 @@ Now that we're in the right folder, **run `git init` <u>in the Terminal</u>**. T
 
 ### Tell Git What to Ignore
 
-An absolutely critical component of version control with Git is what Git _doesn't_ track, not just what it _does_ track. This is useful for many reasons but in particular the .gitignore will be a useful guardrail against tracking (A) large files or (B) files with sensitive information (e.g., passwords, private data).
+An absolutely critical component of version control with Git is what Git _doesn't_ track, not just what it _does_ track. **Git repositories each use a file called ".gitignore" to 'decide' what not to track.** This is useful for many reasons but in particular the .gitignore will be a useful guardrail against tracking (A) large files or (B) files with sensitive information (e.g., passwords, private data).
 
 Any file or folder named in the .gitignore won't show up in the Source Control of Positron (or its equivalents in other IDEs). This means that you don't need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!
 
-In our earlier exercises, we've started repositories in GitHub with the template ".gitignore" file for R users but when adding Git tracking to an existing folder, we'll need to add the ".gitignore" manually. To do this with Positron, do the following:
+In our earlier exercises, we've started repositories in GitHub with the template ".gitignore" file for R users but when adding Git tracking to an existing folder, we'll need to add the ".gitignore" manually. In the Terminal, follow the instructions below based on your computer's operating system
 
-1. Enter the **File** menu in the top of the screen
-2. Choose **New Text File**
-3. Save that file as ".gitignore"
+:::{.panel-tabset}
+#### {{< fa brands apple >}} Mac / {{< fa brands linux >}} Linux
 
-<details>
-<summary>Possible Warning on Step 3</summary>
-When you save the empty text file as ".gitignore" you may get a warning about creating a file that starts with a period. **Ignore that warning and click whatever button will let you continue** (in the example below it is **Use "."**).
+```{r make-yaml_mac}
+#| eval: false
 
-Files and folders that start with a period will be hidden from most file explorer software (e.g., Finder on Mac), but for Git to interpret this file correctly it must be named _exactly_ ".gitignore".
+touch .gitignore # <1>
+```
+1. `touch` is command line for 'create this file'
+
+#### {{< fa brands windows >}} Windows
+
+```{r make-yaml_win}
+#| eval: false
+
+copy NUL .gitignore # <1>
+```
+1. This is command line for 'create this file'
+
+If `copy NUL` does not work, try `touch` instead.
+
+:::
+
+Once you've created a ".gitignore" file, it will appear in Positron's Explorer tab and you can:
+
+1. Double click that file to open it
+2. Go to the GitHub repository you made for Exercise 2
+    - Likely `https://github.com/github-username/{firstname}_test`
+3. Click the .gitignore file in that repository
+4. Click the **Copy raw file** button 
+    - Top right corner, just to the left of the pencil icon used to edit files directly in GitHub
+5. Return to the .gitignore in Positron
+6. Paste the contents of the `{firstname}_test` GitHub repository's .gitignore into the new .gitignore that you just created
+
+:::{.callout-note}
+#### .gitignore Templates
+The .gitignore templates curated by GitHub are generally pretty good so copy/pasting that content will usually set you up for success. Note that as you work more with Git/GitHub, you may develop your own template for a .gitignore that ignores files or folders you consistently use across projects. In that case, feel free to copy that .gitignore's content instead of the generic GitHub template for your coding language.
+:::
+
+Once you've done that, you should see the .gitignore register in Positron as another untracked file.
 
 <p align="center">
-<img src="images/github_introduction_positron/folder-first-git_03-gitignore-warning.png" alt="Screen capture of Mac warning message about creating a file with a period at the start of the file name" width="40%"/>
+<img src="images/github_introduction_positron/folder-first-git_03-gitignore-content.png" alt="Screen capture of Positron's 'explorer' tab where an untracked '.gitignore' file is present" width="80%"/>
 </p>
 
-</details>
+### Double Check Git's Status
 
-4. Once you have the .gitignore, go ahead and add the following lines to it:
+Because we're using the Terminal inside of Positron, we have some helpful visuals to know that things have been going smoothly. However, if you were following these instructions outside of an IDE, you wouldn't have those handy <u>g</u>raphical <u>u</u>ser <u>i</u>nterface (GUI) elements.
+
+In that case you would want to **run `git status` to make sure that the setup tasks you've taken so far are working as desired.** If everything is going smoothly, you should get a message like the following:
 
 ```
-# Ignore Mac "Desktop Services" files
-.DS_Store
+On branch main
 
-# Ignore certain file types
-*.csv
-*.pdf
-*.png
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        01_wrangle.r
+        02_filter.r
+        03_analyze.r
+
+nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-This means that the you won't be able to commit and CSVs, PDFs, or PNGs (as long as those lines are still in your .gitignore anyway!).
+### Stage/Commit Your Files
 
-## BASEMENT
+Now that we're confident Git is set up correctly, we want to start Git tracking on the files that are in our folder. In this case, because we want to track all the files, we can **run `git add .`** to stage all the files. If we only wanted to stage certain files, we could instead run `git add 01_harmonize.r` to stage one file at a time.
 
-In this last exercise, we will practice this workflow using your `training_{USERNAME}` folder. Switch to your `training_{USERNAME}` folder using the Positron folder dropdown menu. The folder dropdown menu is in the upper right corner of Positron. Click the dropdown next to your current folder name (`{FIRSTNAME}_test`), and then select the `training_{USERNAME}` project from the list of recent folders you've opened in Positron.
+Without Positron's GUI, we could again run `git status` if we want to check whether staging worked as desired.
 
+<p align="center">
+<img src="images/github_introduction_positron/folder-first-git_04-stage.png" alt="Screen capture of Positron's 'explorer' tab where all untracked files are staged" width="80%"/>
+</p>
+
+Once we've staged the files that we want to be included in this first commit, we can **commit all staged files by running `git commit -m "initial commit"` in the Terminal.** Note that it's good practice to replace "initial commit" with something that is more informative and specific.
+
+Once we've made that commit, Positron's GUI will remove the "U" next to all of the files that were commmitted (in this case, that's all of the files in the folder).
+
+<p align="center">
+<img src="images/github_introduction_positron/folder-first-git_05-commit.png" alt="Screen capture of Positron's 'explorer' tab where all files are tracked by Git with no changes since the last commit" width="80%"/>
+</p>
+
+Without an IDE, you can run `git log` in the Terminal to see a history of your past commits. Here's the log for this repository so far:
+
+```
+commit 49245b6433ba49fedb46d09e737e7d239837e11c (HEAD -> main)
+Author: njlyon0 <{redacted}@gmail.com>
+Date:   Fri Feb 13 15:52:44 2026 -0500
+
+    feat: first commit of core scripts
+```
+### Connect Git and GitHub
+
+Now that we've got our local Git repository all nicely set up, it's time to lay the groundwork to get it talking with a remote repository hosted in GitHub. However, **there is an important difference between this GitHub repository and the ones we made earlier: <span style="color:red"><u>it needs to be COMPLETELY EMPTY!</u></span>** 
+
+If you put anything in the GitHub repo when you make it, that counts as a commit. That means your local Git repository's first commit and the first commit of the remote GitHub repository are different and will create a horrible conflict that is a pain to fix. So, when you create this GitHub repository <u>**do not** include a README, .gitignore, or LICENSE file!</u>
+
+If you create a completely empty GitHub repository the landing page will look something like the following:
+
+<img src="images/github_introduction_positron/folder-first-git_06-empty-gh-repo.png" alt="Screen capture of a GitHub repository when it is created with nothing in it" width="95%">
+
+Once you've made your <u>completely empty</u> GitHub repository:
+
+1. Scroll down to the **...or push an existing repository from the command line** section
+2. Copy the whole code chunk beneath that heading
+3. Run that code in Positron's Terminal
+
+After you've done that, if you refresh the page on the GitHub repository, you should see the files you just committed!
+
+<img src="images/github_introduction_positron/folder-first-git_07-gh-repo.png" alt="Screen capture of a GitHub repository with a number of files added in a single commit" width="100%">
+
+Similarly, your Positron Source Control tab will now look like it did in the previous exercises and will include the commit we made via the command line.
+
+<p align="center">
+<img src="images/github_introduction_positron/folder-first-git_08-positron.png" alt="Screen capture of Positron's 'source control' tab with no files showing as being changed" width="60%"/>
+</p>
 
 ::: {.callout-caution icon=false}
-## Challenge: add a `README.md` file to `training_{USERNAME}`
+## Challenge: Add a `README.md` file to `training_{USERNAME}`
 
 GitHub provides a button on your repo's landing page for quickly adding a `README.md` file. Click the **Add a README** button and use markdown syntax to create a `README.md`. Commit the changes to your repository.
 
-Go to your local repository (in RStudio) and pull the changes you made.
+Go to your local repository and pull the changes you made.
 :::
 
-
-## SUB-BASEMENT
-
-There are a few approaches for connecting an existing local folder to Git/GitHub but we'll focus on two: (1) an R-language specific approach using the [`usethis` R package](https://usethis.r-lib.org/) and (2) a language-agnostic method using the command line.
-
-
-
-
-
-
-
-
-### Use the Command Line
-
-
-
-
-
-1. **Initialize `training_{USERNAME}` as a Git repository** by running `git init` in the Terminal. You should get a message that says something like:
-
-```{bash}
-#| eval: false
-#| echo: true
-
-Initialized empty Git repository in /home/username/training_username/.git/
-```
-
-::: {.callout-important}
-## You may have to quit and reopen your RStudio session on the server for the Git tab to appear
-You'll likely need to help `included-crab` along in recognizing that this R Project has been initialized as a git repository -- click **Session** > **Quit Session...** > **New Session** > choose `training_{USERNAME}` to reopen your project.
-:::
-
-Once complete, you should see the **Git** tab appear in your top left pane in RStudio and a `.gitignore` file appear in your **Files** tab.
-
-<img src="images/github_introduction_positron/use_git.png" alt="Screen capture of RStudio with the 'Git' pane circled in red and the '.gitignore' file in the 'Files' pane boxed by a red rectangle" width="100%"/>
-
-::: {.callout-note}
-## `.gitignore` files allow you to specify which files/folders you *don't* want Git to track
-A `.gitignore` file is automatically created in the root directory of your project when you initialize it as a Git repository. You'll notice that there are already some R / R Project-specific files that have been added by default.
-
-**Why is this useful?** For many reasons, but possibly the greatest use-case is adding large files (GitHub has a file size limit of 2 GB) or files with sensitive information (e.g. keys, tokens) that you don't want to accidentally push to GitHub. 
-
-**How do I do this?** Let's say I create a file with sensitive information that I don't want to push to GitHub. I can add a line to my `.gitignore` file:
-
-```{bash}
-#| eval: false
-#| echo: true
-
-# added by default when I initalized my RProj as a Git Repository
-.Rproj.user
-.Rhistory
-.Rdata
-.httr-oauth
-.DS_Store
-.quarto
-
-# add file so that it doesn't get pushed to the remote repo (on GitHub); 
-contains_sensitive_info.R
-```
-
-If this file is currently untracked by Git, it should appear in my **Git** tab. Once I add it to the `.gitignore` *and* save the modified `.gitignore` file, you should see `contains_sensitive_info.R` disappear from the **Git** tab, and a modified `.gitignore` (denoted by a blue **M**) appear. Stage/commit/push this modified `.gitignore` file.
-:::
-
-2. **Ensure that your default branch is named `main` rather than `master`** by:
-
-    a. running `git branch` in the Terminal to list all your branches (you should currently only have one, which is your default)
-    b. if it's named `master`, run the following line in the Terminal to update it
-    
-```{bash}
-#| eval: false
-#| echo: true
-
-# for Git version 2.28+ (check by running `git --version`)
-# this sets the default branch name to `main` for any new repos moving forward
-git config --global init.defaultBranch main
-
-# for older versions of Git
-# this sets the default branch name to `main` ONLY for this repo 
-git branch -m master main
-```
-
-You can verify that your update worked by running `git branch` once more in the Terminal.
-
-
-3. **Stage/Add your files**. It's helpful to first run `git status` to check the state of your local repository (particularly if you aren't using RStudio / have access to a GUI with a **Git** tab-esque feature) -- this will tell you which files have been modified or are untracked and that are currently unstaged (in red). What appears here should look just like what appears in the **Git** tab:
-
-<img src="images/github_introduction_positron/git_status_unstaged.png" alt="Screen capture of RStudio with a number of files in the 'Git' pane showing as untracked enclosed in a red rectangleand the command line code that initialized the Git repository also enclosed in a red rectangle" width="100%"/>
-
-Run `git add .` in the Terminal to stage all files at once (or `git add {FILENAME}` to stage individual files). Running `git status` again will show you which files have been staged (in green). You may have to refresh your **Git** tab to see the change in state reflected in the GUI.
-
-<img src="images/github_introduction_positron/git_status_staged.png" alt="Screen capture of RStudio with a number of files in the 'Git' pane staged to be committed enclosed in a red rectangle and the command line code that will make that commit also enclosed in a red rectangle" width="100%"/>
-
-4. **Commit your files** by running `git commit -m "an informative commit message"` in the Terminal. Refreshing your **Git** tab will cause them to disappear (just as they do when you commit using RStudio's GUI buttons). You can run `git log` in the Terminal to see a history of your past commits (currently, we only have this one).
-
-<img src="images/github_introduction_positron/git_commit.png" alt="Screen capture of RStudio with the successful commit dialogue in the Terminal pane enclosed by a red rectangle with the message 'commit your files with an informative commit message' and some addiitonal metadata about the commit enclosed in a blue rectangle with the message 'use `git log` to see your commit history" width="100%"/>
-
-5. **Create an empty remote repository** by logging into [GitHub](https://github.com/) and creating a new repository, following the same steps as in Exercise 1. **IMPORTANTLY,** *DO NOT* initialize your remote repo with a `README` license, or `.gitignore` file -- doing so now can lead to merge conflicts. We can add them after our local and remote repos are linked. **Name your remote repository the same as your local repository (i.e. `training_{USERNAME}`).**
-
-6. **Link your remote (GitHub) repository to your local Git repository.**  Your empty GitHub repo conveniently includes instructions for doing so. Copy the code under **push an existing repository from the command line** to your clipboard, paste into your RStudio Terminal, and press return/enter.
-
-<img src="images/github_introduction_positron/setup-empty-repo.png" alt="Screen capture of an empty GitHub repository with helpful command line code for connecting an existing local Git repository with an empty GitHub repository" width="100%"/>
-
-These commands do three things:
-
--   Adds the GitHub repository as the remote repository (i.e. links your local repo to the remote repo)
--   Renames the default branch to `main`
--   Pushes the `main` branch to the remote GitHub repository
-
-Head back to your browser and refresh your GitHub repository page to see your files appear!
-
-7. You’re now ready to edit, stage/add, commit, and push files to GitHub as practiced earlier!
-
-::: {.callout-caution icon=false}
-## Challenge: add a `README.md` file to `training_{USERNAME}`
-
-GitHub provides a button on your repo's landing page for quickly adding a `README.md` file. Click the **Add a README** button and use markdown syntax to create a `README.md`. Commit the changes to your repository.
-
-Go to your local repository (in RStudio) and pull the changes you made.
-:::
-
-## Go further with Git
+## Go Further With Git
 
 There's a lot we haven't covered in this brief tutorial. There are some great and much longer tutorials that cover advanced topics, such as:
 
--   Using Git on the command line
--   Resolving conflicts
--   Branching and merging
--   Pull requests versus direct contributions for collaboration
--   Using `.gitignore` to protect sensitive data
--   GitHub Issues - how to use them for project management and collaboration
+- Resolving conflicts
+- Branching and merging
+- Pull requests versus direct contributions for collaboration
+- Using GitHub issues for collaborative project management
 
 and much, much more.
 
-## Git resources
+## Git Resources
 
 - [Pro Git Book](https://git-scm.com/book/en/v2)
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/)
--   [GitHub Documentation](https://docs.github.com/en/get-started/quickstart/set-up-git)
--   [Learn Git Branching](https://learngitbranching.js.org/) is an interactive tool to learn Git on the command line
--   [Software Carpentry Version Control with Git](https://swcarpentry.github.io/git-novice/)
--   Bitbucket's tutorials on [Git Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
-
+- [GitHub Documentation](https://docs.github.com/en/get-started/quickstart/set-up-git)
+- [Learn Git Branching](https://learngitbranching.js.org/) is an interactive tool to learn Git on the command line
+- [Software Carpentry Version Control with Git](https://swcarpentry.github.io/git-novice/)
+- Bitbucket's tutorials on [Git Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)

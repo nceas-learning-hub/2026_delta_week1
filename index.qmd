@@ -3,6 +3,7 @@ title: Delta Workshop Materials
 format:
   theme-html:
     toc: false
+    code-annotations: hover
 ---
 
 ::: column-margin
@@ -42,6 +43,17 @@ If your organization has a dedicated IT team that has sole power to install soft
 ### Install Positron
 
 "Positron" is the <u>i</u>ntegrated <u>d</u>evelopment <u>e</u>nvironment (IDE) we'll use to write code to support the synthesis work you all will be accomplishing during (and after!) the workshop series. Follow the relevant instructions for your operating system here: [positron.posit.co](https://positron.posit.co/)
+
+### Install Necessary R Packages
+
+So-called "base R" contains some useful, fundamental operations from the moment you install it. However, there are a variety of external packages that contain more specific tools that can also be extremely useful to you. Most of these we will provide installation instructions for in the lessons that use them, but there are a few that it will benefit you to install now. In the "Console" pane of Positron, run the following code:
+
+```{r home-libs}
+#| eval: false
+install.packages("librarian")
+librarian::shelf(usethis, gitcreds) # <1>
+```
+1. The `shelf` function will automatically install the packages that you don't already have and then load all the identified libraries
 
 ### Install Quarto
 

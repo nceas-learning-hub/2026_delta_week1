@@ -654,7 +654,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>operates locally</strong> on your computer, allowing you to create repositories and track changes</li>
 <li>provides features such as committing changes, branching and merging code, reverting to previous versions, and managing project history</li>
 <li>works directly with the files on your computer and does not require a network connection for most operations</li>
-<li>primarily used through the command-line interface (CLI, e.g.&nbsp;Terminal), but also has various GUI tools available (e.g.&nbsp;RStudio IDE)</li>
+<li>primarily used through the command-line interface (CLI, e.g.&nbsp;Terminal), but also has various GUI tools available (e.g.&nbsp;Positron IDE)</li>
 </ul>
 </section>
 <section id="github-an-online-platform-and-service-built-around-git" class="level4 unnumbered">
@@ -684,7 +684,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="how-do-i-tell-git-to-preserve-versions-of-my-local-working-files" class="level4" data-number="2.2.2">
 <h4 data-number="2.2.2" class="anchored" data-anchor-id="how-do-i-tell-git-to-preserve-versions-of-my-local-working-files"><span class="header-section-number">2.2.2</span> How do I tell Git to preserve versions of my local working files?</h4>
-<p>Git was built as a command-line tool, meaning we can use Git commands in the command line (e.g.&nbsp;Terminal, Git Bash, etc.) to take “snapshots” of our local working files. Alternatively, RStudio provides buttons that easily execute these Git commands.</p>
+<p>Git was built as a command-line tool, meaning we can use Git commands in the command line (e.g.&nbsp;Terminal, Git Bash, etc.) to take “snapshots” of our local working files. Alternatively, Positron provides buttons that easily execute these Git commands.</p>
 <p>Generally, that workflow looks something like this:</p>
 <ul>
 <li>Make changes to a file(s) (e.g.&nbsp;<code>myAnalysis.R</code>) in your working directory.</li>
@@ -696,7 +696,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 data-number="2.2.3" class="anchored" data-anchor-id="how-do-i-send-work-from-my-local-computer-to-github"><span class="header-section-number">2.2.3</span> How do I send work from my local computer to GitHub?</h4>
 <p>The last step is synchronizing the changes made to our local repository with a remote repository (this remote repository is often stored on GitHub). The <code>git push</code> command is used to send local commits up to a remote repository. The <code>git pull</code> command is used to fetch changes from a remote repository and merge them into the local repository – <strong>pull</strong>ing will become a regular part of your workflow when collaborating with others, or even when working alone but on different machines (e.g.&nbsp;a laptop at home and a desktop at the office).</p>
 <p align="center">
-<img src="images/github_introduction_positron/allison-horst-git-workflow.png" alt="A basic git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled PULL')" width="90%">
+<img src="images/github_introduction_positron/allison-horst-git-workflow.png" alt="A basic Git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled PULL')" width="90%">
 </p><figcaption>
 Artwork by Allison Horst
 </figcaption>
@@ -852,7 +852,7 @@ Artwork by Allison Horst
 </tr>
 </tbody>
 </table>
-<p>Git has a rich set of commands and features, and there are many more terms beyond either table. Learn more by visiting the <a href="https://git-scm.com/docs">git documentation</a>.</p>
+<p>Git has a rich set of commands and features, and there are many more terms beyond either table. Learn more by visiting the <a href="https://git-scm.com/docs">Git documentation</a>.</p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>This table includes terms for which there are not specific Git commands.</p>
@@ -1047,8 +1047,8 @@ Artwork by Allison Horst
 <p align="center">
 <img src="images/github_introduction_positron/positron-commit_02-source-control.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%">
 </p>
-<p>Once you are there, <strong>hover your mouse over the README and a plus sign button will appear, click it.</strong> Note that the button is not visible unless your mouse is over some part of the “Changes” list. <em>Clicking that button is analogous to using the git command, <code>git add README.md</code>, in the command line.</em></p>
-<p>After you click the plus sign, the README will move under a new list titled “Staged Changes”. You can now add a commit message and then click the “Commit” button when you’re ready to do so. <em>This is analogous to using the git command, <code>git commit -m "my commit message"</code>, in the command line.</em></p>
+<p>Once you are there, <strong>hover your mouse over the README and a plus sign button will appear, click it.</strong> Note that the button is not visible unless your mouse is over some part of the “Changes” list. <em>Clicking that button is analogous to using the Git command, <code>git add README.md</code>, in the command line.</em></p>
+<p>After you click the plus sign, the README will move under a new list titled “Staged Changes”. You can now add a commit message and then click the “Commit” button when you’re ready to do so. <em>This is analogous to using the Git command, <code>git commit -m "my commit message"</code>, in the command line.</em></p>
 <p align="center">
 <img src="images/github_introduction_positron/positron-commit_03-stage.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'staged changes' heading and an informative commit message in the respective text field" width="70%">
 </p>
@@ -1079,7 +1079,7 @@ Artwork by Allison Horst
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Make a change to the <code>README.md</code> file – this time from RStudio – then commit the <code>README.md</code> change</li>
+<li>Make a change to the <code>README.md</code> file – this time from Positron – then commit the <code>README.md</code> change</li>
 <li>Add a new section to your <code>README.md</code> called “Creator” using a level-2 header. Under it include some information about yourself. <strong>Bonus:</strong> Add some contact information and link your email using Markdown syntax.</li>
 </ol>
 </div>

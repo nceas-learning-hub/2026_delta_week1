@@ -361,27 +361,6 @@ If you navigate back to your remote repository on GitHub, you should see the edi
 2.  Add a new section to your `README.md` called "Creator" using a level-2 header. Under it include some information about yourself. **Bonus:** Add some contact information and link your email using Markdown syntax.
 :::
 
-
-
-### Defining Merge Method
-
-::: callout-caution
-## Some Git configuration to surpress warning messages
-
-Git version 2.27 includes a new feature that allows users to specify the default method for integrating changes from a remote repository into a local repository, without receiving a warning (this warning is informative, but can get annoying). To suppress this warning *for this repository only* we need to configure Git by running this line of code in the Terminal:
-
-```{bash}
-#| eval: false
-#| echo: true
-
-git config pull.rebase false
-```
-
-`pull.rebase false` is a default strategy for pulling where Git will first try to auto-merge the files. If auto-merging is not possible, it will indicate a merge conflict (more on resolving merge conflicts in [Collaborating with Git and GitHub](https://learning.nceas.ucsb.edu/2024-06-delta/session_09.html)).
-
-**Note:** Unlike when we first configured Git, we do not include the `--global` flag here (e.g. `git config --global pull.rebase false`). This sets this default strategy for this repository only (rather than globally for all your repositories). We do this because your chosen/default method of grabbing changes from a remote repository (e.g. [pulling](https://git-scm.com/docs/git-pull) vs. [rebasing](https://git-scm.com/docs/git-rebase)) may change depending on collaborator/workflow preference.
-:::
-
 ## Exercise 3: Setting up Git on an existing project
 
 There are a number of different workflows for creating version-controlled repositories that are stored on GitHub. We started with Exercise 1 and Exercise 2 using one common approach: **creating a remote repository on GitHub first, *then* cloning that repository to your local computer (you used your `{FIRSTNAME}_test` repo).**

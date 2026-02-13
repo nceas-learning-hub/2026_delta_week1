@@ -118,27 +118,21 @@ The last step is synchronizing the changes made to our local repository with a r
 
 This screen shows the copy of a repository stored on GitHub, with its list of files, when the files and directories were last modified, and some information on who made the most recent changes.
 
-:::{.column-page}
 <p align="center">
-<img src="images/github_introduction/ss3sim-github.png" alt="Screen capture of a GitHub repository's landing page" width="100%"/>
+<img src="images/github_introduction_positron/gh-repo_home.png" alt="Screen capture of a GitHub repository's landing page" width="100%"/>
 </p>
-:::
 
-If we drill into the "commits" for the repository, we can see the history of changes made to all of the files. Looks like `kellijohnson` was working on the project and fixing errors in December:
+If we drill into the "commits" for the repository (by clicking the "Commits" button just beneath the colored "Code" dropdown menu), we can see the history of changes made to all of the files. Looks like `kellijohnson` was working on the project and fixing errors in December:
 
-:::{.column-page}
 <p align="center">
-<img src="images/github_introduction/ss3sim-commits.png" alt="Screen capture of a GitHub repository's page showing the history of the commits in the repository" width="100%"/>
+<img src="images/github_introduction_positron/gh-repo_commits.png" alt="Screen capture of a GitHub repository's page showing the history of the commits in the repository" width="100%"/>
 </p>
-:::
 
 And finally, if we drill into a particular commit, we can see exactly what was changed in each file that was included in that commit:
 
-:::{.column-page}
 <p align="center">
-<img src="images/github_introduction/ss3sim-diff.png" alt="Screen capture of a GitHub repository's page showing the 'diff' of files edited in a particular commit" width="100%"/>
+<img src="images/github_introduction_positron/gh-repo_diff.png" alt="Screen capture of a GitHub repository's page showing the 'diff' of files edited in a particular commit" width="100%"/>
 </p>
-:::
 
 Tracking these changes, how they relate to released versions of software and files is exactly what Git and GitHub are good for. And we will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow.
 

@@ -140,43 +140,53 @@ Tracking these changes, how they relate to released versions of software and fil
 
 We know the world of Git and GitHub can be daunting. Use these tables as references while you use Git and GitHub, and we encourage you to build upon this list as you become more comfortable with these tools.
 
+:::{.panel-tabset}
+#### Essential Git Commands 
+
 This table contains essential terms and commands that complement intro to Git skills. They will get you far on personal and individual projects.
 
-| Term               | Git Command(s)           | Definition                                                                                         |
-|--------------------|--------------------------|----------------------------------------------------------------------------------------------------|
-| Add/Stage                | `git add [file]`         | Staging marks a modified file in its current version to go into your next commit snapshot. You can also stage all modified files at the same time using `git add .`                                              |
-| Commit             | `git commit`             | Records changes to the repository.                                      |
-| Commit Message     | `git commit -m "my commit message"`                        | Records changes to the repository and include a descriptive message (you should always include a commit message!).                               |
-| Fetch              | `git fetch`              | Retrieves changes from a remote repository but does not merge them into your local working file(s).                                |
-| Pull               | `git pull`               | Retrieves changes from a remote repository *and* merges them into your local working file(s).                        |
-| Push               | `git push`               | Sends local commits to a remote repository.                                                        |
-| Status             | `git status`             | Shows the current status of the repository, including (un)staged files and branch information.               |
+| Term | Git Command(s) | Definition |
+|:---:|:-----|:-------------------------|
+| Add/Stage | `git add [file]` | Staging marks a modified file in its current version to go into your next commit snapshot. You can also stage all modified files at the same time using `git add .` |
+| Commit | `git commit` | Records changes to the repository |
+| Commit Message | `git commit -m "my commit message"` | Records changes to the repository and include a descriptive message (you should always include a commit message!) |
+| Fetch | `git fetch` | Retrieves changes from a remote repository but does not merge them into your local working file(s). |
+| Pull | `git pull` | Retrieves changes from a remote repository _and_ merges them into your local working file(s) |
+| Push | `git push` | Sends local commits to a remote repository |
+| Status | `git status` | Shows the current status of the repository, including (un)staged files and branch information |
 
-: Essential Git Commands 
-
+#### Advanced Git Commands
 
 This table includes more advanced Git terms and commands that are commonly used in both individual and collaborative projects.
 
-| Term               | Git Command(s)           | Definition                                                                                         |
-|--------------------|--------------------------|----------------------------------------------------------------------------------------------------|
-| Branch             | `git branch`             | Lists existing branches or creates a new branch.                                                   |
-| Checkout           | `git checkout [branch]`  | Switches to a different branch or restores files from a specific commit.                            |
-| Clone              | `git clone [repository]` | Creates a local copy of a remote repository.                                                       |
-| Diff               | `git diff`               | Shows differences between files, commits, or branches.                                             |
-| Fork               | -                        | Creates a personal copy of a repository under your GitHub account for independent development.      |
-| Log                | `git log`                | Displays the commit history of the repository.                                                     |
-| Merge              | `git merge [branch]`     | Integrates changes from one branch into another branch.                                            |
-| Merge Conflict     | -                        | Occurs when Git cannot automatically merge changes from different branches, requiring manual resolution. |
-| Pull Request (PR)  | -                        | A request to merge changes from a branch into another branch, typically in a collaborative project. |
-| Rebase             | `git rebase`             | Integrates changes from one branch onto another by modifying commit history.                       |
-| Remote             | `git remote`             | Manages remote repositories linked to the local repository.                                        |
-| Repository         | `git init`               | A directory where Git tracks and manages files and their versions.                                 |
-| Stash              | `git stash`              | Temporarily saves changes that are not ready to be committed.                                      |
-| Tag                | `git tag`                | Assigns a label or tag to a specific commit.                                                       |
-
-: Advanced Git Commands
+ Term | Git Command(s) | Definition |
+|:---:|:-----|:-------------------------|
+| Branch | `git branch` | Lists existing branches or creates a new branch |
+| Checkout | `git checkout [branch]` | Switches to a different branch or restores files from a specific commit |
+| Clone | `git clone [repository]` | Creates a local copy of a remote repository |
+| Diff | `git diff` | Shows differences between files, commits, or branches |
+| Log | `git log` | Displays the commit history of the repository |
+| Merge | `git merge [branch]` | Integrates changes from one branch into another branch |
+| Rebase | `git rebase` | Integrates changes from one branch onto another by modifying commit history |
+| Remote | `git remote` | Manages remote repositories linked to the local repository |
+| Repository | `git init` | A directory where Git tracks and manages files and their versions |
+| Stash | `git stash` | Temporarily saves changes that are not ready to be committed |
+| Tag | `git tag` | Assigns a label or tag to a specific commit |
 
 Git has a rich set of commands and features, and there are many more terms beyond either table. Learn more by visiting the [git documentation](https://git-scm.com/docs).
+
+#### GitHub Terms
+
+This table includes terms for which there are not specific Git commands.
+
+ Term | Definition |
+|:---:|:-------------------------|
+| Fork  | Creates a personal copy of a repository under your GitHub account for independent development |
+| Merge Conflict | Occurs when Git cannot automatically merge changes from different branches, requiring manual resolution |
+| Pull Request (PR) | A request to merge changes from a branch into another branch, typically in a collaborative project |
+
+:::
+
 
 ## Exercise 1: Create a remote repository on GitHub
 

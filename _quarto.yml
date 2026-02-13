@@ -14,7 +14,8 @@ execute:
   freeze: auto
 
 format:
-  theme-html
+  theme-html:
+    code-annotations: hover
 
 website:
   title: "2026 Delta Synthesis Working Groups week 1 (April 2026)"

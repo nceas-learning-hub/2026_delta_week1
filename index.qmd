@@ -3,7 +3,6 @@ title: Delta Workshop Materials
 format:
   theme-html:
     toc: false
-    code-annotations: hover
 ---
 
 ::: column-margin

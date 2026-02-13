@@ -570,9 +570,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#cloning-a-repository" id="toc-cloning-a-repository" class="nav-link" data-scroll-target="#cloning-a-repository"><span class="header-section-number">4.1</span> Cloning a Repository</a></li>
   <li><a href="#making-a-commit" id="toc-making-a-commit" class="nav-link" data-scroll-target="#making-a-commit"><span class="header-section-number">4.2</span> Making a Commit</a></li>
   </ul></li>
-  <li><a href="#exercise-3-setting-up-git-on-an-existing-project" id="toc-exercise-3-setting-up-git-on-an-existing-project" class="nav-link" data-scroll-target="#exercise-3-setting-up-git-on-an-existing-project"><span class="header-section-number">5</span> Exercise 3: Setting up Git on an existing project</a></li>
-  <li><a href="#go-further-with-git" id="toc-go-further-with-git" class="nav-link" data-scroll-target="#go-further-with-git"><span class="header-section-number">6</span> Go further with Git</a></li>
-  <li><a href="#git-resources" id="toc-git-resources" class="nav-link" data-scroll-target="#git-resources"><span class="header-section-number">7</span> Git resources</a></li>
+  <li><a href="#exercise-3-starting-git-on-an-existing-folder" id="toc-exercise-3-starting-git-on-an-existing-folder" class="nav-link" data-scroll-target="#exercise-3-starting-git-on-an-existing-folder"><span class="header-section-number">5</span> Exercise 3: Starting Git on an Existing Folder</a>
+  <ul class="collapse">
+  <li><a href="#open-the-folder-in-positron" id="toc-open-the-folder-in-positron" class="nav-link" data-scroll-target="#open-the-folder-in-positron"><span class="header-section-number">5.1</span> Open the Folder in Positron</a></li>
+  <li><a href="#start-git" id="toc-start-git" class="nav-link" data-scroll-target="#start-git"><span class="header-section-number">5.2</span> Start Git</a></li>
+  <li><a href="#tell-git-what-to-ignore" id="toc-tell-git-what-to-ignore" class="nav-link" data-scroll-target="#tell-git-what-to-ignore"><span class="header-section-number">5.3</span> Tell Git What to Ignore</a></li>
+  <li><a href="#double-check-gits-status" id="toc-double-check-gits-status" class="nav-link" data-scroll-target="#double-check-gits-status"><span class="header-section-number">5.4</span> Double Check Git’s Status</a></li>
+  <li><a href="#stagecommit-your-files" id="toc-stagecommit-your-files" class="nav-link" data-scroll-target="#stagecommit-your-files"><span class="header-section-number">5.5</span> Stage/Commit Your Files</a></li>
+  <li><a href="#connect-git-and-github" id="toc-connect-git-and-github" class="nav-link" data-scroll-target="#connect-git-and-github"><span class="header-section-number">5.6</span> Connect Git and GitHub</a></li>
+  </ul></li>
+  <li><a href="#go-further-with-git" id="toc-go-further-with-git" class="nav-link" data-scroll-target="#go-further-with-git"><span class="header-section-number">6</span> Go Further With Git</a></li>
+  <li><a href="#git-resources" id="toc-git-resources" class="nav-link" data-scroll-target="#git-resources"><span class="header-section-number">7</span> Git Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -904,7 +912,7 @@ Artwork by Allison Horst
 </div>
 <p>If you were successful, it should look something like this:</p>
 <p align="center">
-<img src="images/github_introduction_positron/new-repo_p1.png" alt="Screen capture of the top half of the page on GitHub that allows a user to create a new repository" width="100%"> <img src="images/github_introduction_positron/new-repo_p2.png" alt="Screen capture of the bottom half of the page on GitHub that allows a user to create a new repository" width="100%">
+<img src="images/github_introduction_positron/new-repo_p1.png" alt="Screen capture of the top half of the page on GitHub that allows a user to create a new repository" width="80%"> <img src="images/github_introduction_positron/new-repo_p2.png" alt="Screen capture of the bottom half of the page on GitHub that allows a user to create a new repository" width="80%">
 </p>
 <p>You’ve now created your first repository! It has a couple of files that GitHub created for you: <code>README.md</code>, <code>LICENSE</code>, and <code>.gitignore</code>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1078,241 +1086,179 @@ Artwork by Allison Horst
 </div>
 </section>
 </section>
-<section id="exercise-3-setting-up-git-on-an-existing-project" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="exercise-3-setting-up-git-on-an-existing-project"><span class="header-section-number">5</span> Exercise 3: Setting up Git on an existing project</h2>
-<p>There are a number of different workflows for creating version-controlled repositories that are stored on GitHub. We started with Exercise 1 and Exercise 2 using one common approach: <strong>creating a remote repository on GitHub first, <em>then</em> cloning that repository to your local computer (you used your <code>{FIRSTNAME}_test</code> repo).</strong></p>
-<p>However, you may find yourself in the situation where you <strong>have an existing directory (i.e.&nbsp;a “normal” folder) of code that you want to make a Git repository out of, <em>and then</em> send it to GitHub.</strong> In this last exercise, we will practice this workflow using your <code>training_{USERNAME}</code> project.</p>
-<p>First, switch to your <code>training_{USERNAME}</code> project using the RStudio project dropdown menu. The project drop down menu is in the upper right corner of your RStudio pane. Click the drop down next to your project name (<code>{FIRSTNAME}_test</code>), and then select the <code>training_{USERNAME}</code> project from the <strong>RECENT PROJECTS</strong> list.</p>
-<p>There are a few approaches for turning an existing project folder into a Git repository, then sending it to GitHub – if you’re an R-user, the simplest way is to use the <a href="https://usethis.r-lib.org/"><code>{usethis}</code> package</a>, which is built to automate tasks involved with project setup and development. However, you can also initialize a local git repository and set the remote repository from the command line (a language-agnostic workflow). Steps for both approaches are included below (demonstrated using your <code>training_{USERNAME}</code> project):</p>
+<section id="exercise-3-starting-git-on-an-existing-folder" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="exercise-3-starting-git-on-an-existing-folder"><span class="header-section-number">5</span> Exercise 3: Starting Git on an Existing Folder</h2>
+<p>There are a number of different workflows for creating version-controlled repositories that are stored on GitHub. We started with Exercise 1 and Exercise 2 using one common approach: create a remote repository on GitHub first, <em>then</em> clone that repository to your local computer. However, you may find yourself in the situation where you <strong>have an <em>existing</em> folder of content that you want to <em>start</em> tracking with Git and host in GitHub.</strong></p>
+<p>There are a few approaches for connecting an existing local folder to Git/GitHub but we’ll focus on how you can do this via the command line. This has the advantage of being both coding language agnostic and IDE software agnostic.</p>
+<p>While the tutorial below will be using the Terminal in Positron, you could use any command-line interface (e.g.&nbsp;Mac Terminal, Git Bash, etc.) that allows for Git interactions. The advantage of Positron (and comparable IDEs) is that the Terminal is already ‘looking’ at your working directory while other command line interfaces would require you to navigate to the project directory (i.e., by using the <code>cd</code> command).</p>
+<section id="open-the-folder-in-positron" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="open-the-folder-in-positron"><span class="header-section-number">5.1</span> Open the Folder in Positron</h3>
+<p>In this last exercise, we will practice this workflow using your <code>training_{USERNAME}</code> folder. Switch to your <code>training_{USERNAME}</code> folder using the Positron folder dropdown menu. The folder dropdown menu is in the upper right corner of Positron. Click the dropdown next to your current folder name (<code>{FIRSTNAME}_test</code>), and then select <code>training_{USERNAME}</code> from the list of recent folders you’ve opened in Positron. If you’ve never opened the <code>training_{USERNAME}</code> folder with Positron, click <strong>Open Folder…</strong> instead and navigate to that folder.</p>
+<p>In my case, I have some scripts that are empty but their names reflect steps in my code workflow that I think are likely enough to warrant making placeholder scripts. In the Explorer tab of Positron we can see those files are all just loose in the folder I’m using for this project.</p>
+<p align="center">
+<img src="images/github_introduction_positron/folder-first-git_01-folder.png" alt="Screen capture of Positron's 'explorer' tab with three files" width="60%">
+</p>
+</section>
+<section id="start-git" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="start-git"><span class="header-section-number">5.2</span> Start Git</h3>
+<p>Now that we’re in the right folder, <strong>run <code>git init</code> <u>in the Terminal</u></strong>. This will return a message (also in the Terminal) saying something along the lines of <code>Initialized empty Git repository in...</code> followed by the absolute path to your chosen folder. Additionally, all the files listed in Positron’s Explorer tab will turn green and get an uppercase “U” next to them for “untracked.”</p>
+<p align="center">
+<img src="images/github_introduction_positron/folder-first-git_02-git-init.png" alt="Screen capture of Positron's 'explorer' tab with three files that are registering as untracked by Git" width="60%">
+</p>
+</section>
+<section id="tell-git-what-to-ignore" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="tell-git-what-to-ignore"><span class="header-section-number">5.3</span> Tell Git What to Ignore</h3>
+<p>An absolutely critical component of version control with Git is what Git <em>doesn’t</em> track, not just what it <em>does</em> track. <strong>Git repositories each use a file called “.gitignore” to ‘decide’ what not to track.</strong> This is useful for many reasons but in particular the .gitignore will be a useful guardrail against tracking (A) large files or (B) files with sensitive information (e.g., passwords, private data).</p>
+<p>Any file or folder named in the .gitignore won’t show up in the Source Control of Positron (or its equivalents in other IDEs). This means that you don’t need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!</p>
+<p>In our earlier exercises, we’ve started repositories in GitHub with the template “.gitignore” file for R users but when adding Git tracking to an existing folder, we’ll need to add the “.gitignore” manually. In the Terminal, follow the instructions below based on your computer’s operating system</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Using R &amp; <code>{usethis}</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Using the command line</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> Mac / <i class="fa-brands fa-linux" aria-label="linux"></i> Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><i class="fa-brands fa-windows" aria-label="windows"></i> Windows</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<ol start="0" type="1">
-<li><strong>Install the <code>{usethis}</code> package</strong> (if you haven’t done so already) by running the following in your Console:</li>
-</ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ol type="1">
-<li><strong>Initialize <code>training_{USERNAME}</code> as a Git repository</strong> by running <code>usethis::use_git()</code> in the Console. Choose <strong>yes</strong> when asked if it’s okay to commit any uncommitted files. Choose <strong>yes</strong> again if asked to restart R. Once complete, you should see the <strong>Git</strong> tab appear in your top left pane in RStudio and a <code>.gitignore</code> file appear in your <strong>Files</strong> tab.</li>
-</ol>
-<p><img src="images/github_introduction_positron/use_git.png" alt="Screen capture of RStudio with the 'Git' pane circled in red and the '.gitignore' file in the 'Files' pane boxed by a red rectangle" width="100%"></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><code>.gitignore</code> files allow you to specify which files/folders you <em>don’t</em> want Git to track
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <code>.gitignore</code> file is automatically created in the root directory of your project when you initialize it as a Git repository. You’ll notice that there are already some R / R Project-specific files that have been added by default.</p>
-<p><strong>Why is this useful?</strong> For many reasons, but possibly the greatest use-case is adding large files (GitHub has a file size limit of 2 GB) or files with sensitive information (e.g.&nbsp;keys, tokens) that you don’t want to accidentally push to GitHub.</p>
-<p><strong>How do I do this?</strong> Let’s say I create a file with sensitive information that I don’t want to push to GitHub. I can add a line to my <code>.gitignore</code> file:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># added by default when I initalized my RProj as a Git Repository</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rdata</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.httr-oauth</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">.quarto</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add file so that it doesn't get pushed to the remote repo (on GitHub); </span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">contains_sensitive_info.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>If this file is currently untracked by Git, it should appear in my <strong>Git</strong> tab. Once I add it to the <code>.gitignore</code> <em>and</em> save the modified <code>.gitignore</code> file, you should see <code>contains_sensitive_info.R</code> disappear from the <strong>Git</strong> tab, and a modified <code>.gitignore</code> (denoted by a blue <strong>M</strong>) appear. Stage/commit/push this modified <code>.gitignore</code> file.</p>
-</div>
-</div>
-<ol start="2" type="1">
-<li><strong>Create an upstream remote repository on GitHub</strong> by running <code>usethis::use_github()</code> in the Console. Your web browser should open up to your new GitHub repository, with the same name as your local Git repo/R Project.</li>
-</ol>
-<p><img src="images/github_introduction_positron/use_github.png" alt="Screen capture of a GitHub repository containing all of the files that were present in the previous screen capture of RStudio" width="100%"></p>
-<ol start="3" type="1">
-<li><p><strong>Ensure that your default branch is named <code>main</code> rather than <code>master</code></strong> by:</p>
-<ol type="a">
-<li>running <code>git branch</code> in the Terminal to list all your branches (you should currently only have one, which is your default)</li>
-<li>if it’s named <code>master</code>, run the following line in the Console to update it</li>
-</ol></li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_rename</span>(<span class="at">from =</span> <span class="st">"master"</span>, <span class="at">to =</span> <span class="st">"main"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>You can verify that your update worked by running <code>git branch</code> once more in the Terminal.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Why are we doing this?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The racist “master” terminology for git branches motivates us to update our default branch to “main” instead.</p>
-<p>There is a push across platforms and software to update this historical default branch name from <code>master</code> to <code>main</code>. GitHub has already done so – you may have noticed that creating a <em>remote repository first</em> (like we did in Exercises 1 &amp; 2) results in a default branch named <code>main</code>. Depending on your version of Git, however, you may need to set update the name manually when creating a <em>local git repository first</em> (as we’re doing here).</p>
-</div>
-</div>
-<ol start="4" type="1">
-<li>You’re now ready to edit, stage/add, commit, and push files to GitHub as practiced earlier!</li>
-</ol>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Challenge: add a <code>README.md</code> file to <code>training_{USERNAME}</code>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>GitHub provides a button on your repo’s landing page for quickly adding a <code>README.md</code> file. Click the <strong>Add a README</strong> button and use markdown syntax to create a <code>README.md</code>. Commit the changes to your repository.</p>
-<p>Go to your local repository (in RStudio) and pull the changes you made.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a>touch .gitignore</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1"><code>touch</code> is command line for ‘create this file’</span>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>While we’ll be using the RStudio Terminal here, you can use any command-line interface (e.g.&nbsp;Mac Terminal, Git Bash, etc.) that allows for git interactions (if you plan to use a command-line interface that <em>is not</em> the RStudio Terminal, make sure to navigate to your project directory (e.g.&nbsp;using <code>cd file/path/to/project/directory</code>) before initializing your repository.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>copy NUL .gitignore</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">This is command line for ‘create this file’</span>
+</dd>
+</dl>
+</div>
+</div>
+<p>If <code>copy NUL</code> does not work, try <code>touch</code> instead.</p>
+</div>
+</div>
+</div>
+<p>Once you’ve created a “.gitignore” file, it will appear in Positron’s Explorer tab and you can:</p>
 <ol type="1">
-<li><strong>Initialize <code>training_{USERNAME}</code> as a Git repository</strong> by running <code>git init</code> in the Terminal. You should get a message that says something like:</li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Initialized</span> empty Git repository in /home/username/training_username/.git/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>You may have to quit and reopen your RStudio session on the server for the Git tab to appear
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You’ll likely need to help <code>included-crab</code> along in recognizing that this R Project has been initialized as a git repository – click <strong>Session</strong> &gt; <strong>Quit Session…</strong> &gt; <strong>New Session</strong> &gt; choose <code>training_{USERNAME}</code> to reopen your project.</p>
-</div>
-</div>
-<p>Once complete, you should see the <strong>Git</strong> tab appear in your top left pane in RStudio and a <code>.gitignore</code> file appear in your <strong>Files</strong> tab.</p>
-<p><img src="images/github_introduction_positron/use_git.png" alt="Screen capture of RStudio with the 'Git' pane circled in red and the '.gitignore' file in the 'Files' pane boxed by a red rectangle" width="100%"></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><code>.gitignore</code> files allow you to specify which files/folders you <em>don’t</em> want Git to track
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <code>.gitignore</code> file is automatically created in the root directory of your project when you initialize it as a Git repository. You’ll notice that there are already some R / R Project-specific files that have been added by default.</p>
-<p><strong>Why is this useful?</strong> For many reasons, but possibly the greatest use-case is adding large files (GitHub has a file size limit of 2 GB) or files with sensitive information (e.g.&nbsp;keys, tokens) that you don’t want to accidentally push to GitHub.</p>
-<p><strong>How do I do this?</strong> Let’s say I create a file with sensitive information that I don’t want to push to GitHub. I can add a line to my <code>.gitignore</code> file:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># added by default when I initalized my RProj as a Git Repository</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rdata</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.httr-oauth</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ex">.quarto</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add file so that it doesn't get pushed to the remote repo (on GitHub); </span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ex">contains_sensitive_info.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>If this file is currently untracked by Git, it should appear in my <strong>Git</strong> tab. Once I add it to the <code>.gitignore</code> <em>and</em> save the modified <code>.gitignore</code> file, you should see <code>contains_sensitive_info.R</code> disappear from the <strong>Git</strong> tab, and a modified <code>.gitignore</code> (denoted by a blue <strong>M</strong>) appear. Stage/commit/push this modified <code>.gitignore</code> file.</p>
-</div>
-</div>
-<ol start="2" type="1">
-<li><p><strong>Ensure that your default branch is named <code>main</code> rather than <code>master</code></strong> by:</p>
-<ol type="a">
-<li>running <code>git branch</code> in the Terminal to list all your branches (you should currently only have one, which is your default)</li>
-<li>if it’s named <code>master</code>, run the following line in the Terminal to update it</li>
-</ol></li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for Git version 2.28+ (check by running `git --version`)</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this sets the default branch name to `main` for any new repos moving forward</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># for older versions of Git</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># this sets the default branch name to `main` ONLY for this repo </span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> master main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>You can verify that your update worked by running <code>git branch</code> once more in the Terminal.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Why are we doing this?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The racist “master” terminology for git branches motivates us to update our default branch to “main” instead.</p>
-<p>There is a push across platforms and software to update this historical default branch name from <code>master</code> to <code>main</code>. GitHub has already done so – you may have noticed that creating a <em>remote repository first</em> (like we did in Exercises 1 &amp; 2) results in a default branch named <code>main</code>. Depending on your version of Git, however, you may need to set update the name manually when creating a <em>local git repository first</em> (as we’re doing here).</p>
-</div>
-</div>
-<ol start="3" type="1">
-<li><strong>Stage/Add your files</strong>. It’s helpful to first run <code>git status</code> to check the state of your local repository (particularly if you aren’t using RStudio / have access to a GUI with a <strong>Git</strong> tab-esque feature) – this will tell you which files have been modified or are untracked and that are currently unstaged (in red). What appears here should look just like what appears in the <strong>Git</strong> tab:</li>
-</ol>
-<p><img src="images/github_introduction_positron/git_status_unstaged.png" alt="Screen capture of RStudio with a number of files in the 'Git' pane showing as untracked enclosed in a red rectangleand the command line code that initialized the Git repository also enclosed in a red rectangle" width="100%"></p>
-<p>Run <code>git add .</code> in the Terminal to stage all files at once (or <code>git add {FILENAME}</code> to stage individual files). Running <code>git status</code> again will show you which files have been staged (in green). You may have to refresh your <strong>Git</strong> tab to see the change in state reflected in the GUI.</p>
-<p><img src="images/github_introduction_positron/git_status_staged.png" alt="Screen capture of RStudio with a number of files in the 'Git' pane staged to be committed enclosed in a red rectangle and the command line code that will make that commit also enclosed in a red rectangle" width="100%"></p>
-<ol start="4" type="1">
-<li><strong>Commit your files</strong> by running <code>git commit -m "an informative commit message"</code> in the Terminal. Refreshing your <strong>Git</strong> tab will cause them to disappear (just as they do when you commit using RStudio’s GUI buttons). You can run <code>git log</code> in the Terminal to see a history of your past commits (currently, we only have this one).</li>
-</ol>
-<p><img src="images/github_introduction_positron/git_commit.png" alt="Screen capture of RStudio with the successful commit dialogue in the Terminal pane enclosed by a red rectangle with the message 'commit your files with an informative commit message' and some addiitonal metadata about the commit enclosed in a blue rectangle with the message 'use `git log` to see your commit history" width="100%"></p>
-<ol start="5" type="1">
-<li><p><strong>Create an empty remote repository</strong> by logging into <a href="https://github.com/">GitHub</a> and creating a new repository, following the same steps as in Exercise 1. <strong>IMPORTANTLY,</strong> <em>DO NOT</em> initialize your remote repo with a <code>README</code> license, or <code>.gitignore</code> file – doing so now can lead to merge conflicts. We can add them after our local and remote repos are linked. <strong>Name your remote repository the same as your local repository (i.e.&nbsp;<code>training_{USERNAME}</code>).</strong></p></li>
-<li><p><strong>Link your remote (GitHub) repository to your local Git repository.</strong> Your empty GitHub repo conveniently includes instructions for doing so. Copy the code under <strong>push an existing repository from the command line</strong> to your clipboard, paste into your RStudio Terminal, and press return/enter.</p></li>
-</ol>
-<p><img src="images/github_introduction_positron/setup-empty-repo.png" alt="Screen capture of an empty GitHub repository with helpful command line code for connecting an existing local Git repository with an empty GitHub repository" width="100%"></p>
-<p>These commands do three things:</p>
+<li>Double click that file to open it</li>
+<li>Go to the GitHub repository you made for Exercise 2
 <ul>
-<li>Adds the GitHub repository as the remote repository (i.e.&nbsp;links your local repo to the remote repo)</li>
-<li>Renames the default branch to <code>main</code></li>
-<li>Pushes the <code>main</code> branch to the remote GitHub repository</li>
-</ul>
-<p>Head back to your browser and refresh your GitHub repository page to see your files appear!</p>
-<ol start="7" type="1">
-<li>You’re now ready to edit, stage/add, commit, and push files to GitHub as practiced earlier!</li>
+<li>Likely <code>https://github.com/github-username/{firstname}_test</code></li>
+</ul></li>
+<li>Click the .gitignore file in that repository</li>
+<li>Click the <strong>Copy raw file</strong> button
+<ul>
+<li>Top right corner, just to the left of the pencil icon used to edit files directly in GitHub</li>
+</ul></li>
+<li>Return to the .gitignore in Positron</li>
+<li>Paste the contents of the <code>{firstname}_test</code> GitHub repository’s .gitignore into the new .gitignore that you just created</li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>.gitignore Templates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The .gitignore templates curated by GitHub are generally pretty good so copy/pasting that content will usually set you up for success. Note that as you work more with Git/GitHub, you may develop your own template for a .gitignore that ignores files or folders you consistently use across projects. In that case, feel free to copy that .gitignore’s content instead of the generic GitHub template for your coding language.</p>
+</div>
+</div>
+<p>Once you’ve done that, you should see the .gitignore register in Positron as another untracked file.</p>
+<p align="center">
+<img src="images/github_introduction_positron/folder-first-git_03-gitignore-content.png" alt="Screen capture of Positron's 'explorer' tab where an untracked '.gitignore' file is present" width="80%">
+</p>
+</section>
+<section id="double-check-gits-status" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="double-check-gits-status"><span class="header-section-number">5.4</span> Double Check Git’s Status</h3>
+<p>Because we’re using the Terminal inside of Positron, we have some helpful visuals to know that things have been going smoothly. However, if you were following these instructions outside of an IDE, you wouldn’t have those handy <u>g</u>raphical <u>u</u>ser <u>i</u>nterface (GUI) elements.</p>
+<p>In that case you would want to <strong>run <code>git status</code> to make sure that the setup tasks you’ve taken so far are working as desired.</strong> If everything is going smoothly, you should get a message like the following:</p>
+<pre><code>On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+        .gitignore
+        01_wrangle.r
+        02_filter.r
+        03_analyze.r
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+</section>
+<section id="stagecommit-your-files" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="stagecommit-your-files"><span class="header-section-number">5.5</span> Stage/Commit Your Files</h3>
+<p>Now that we’re confident Git is set up correctly, we want to start Git tracking on the files that are in our folder. In this case, because we want to track all the files, we can <strong>run <code>git add .</code></strong> to stage all the files. If we only wanted to stage certain files, we could instead run <code>git add 01_harmonize.r</code> to stage one file at a time.</p>
+<p>Without Positron’s GUI, we could again run <code>git status</code> if we want to check whether staging worked as desired.</p>
+<p align="center">
+<img src="images/github_introduction_positron/folder-first-git_04-stage.png" alt="Screen capture of Positron's 'explorer' tab where all untracked files are staged" width="80%">
+</p>
+<p>Once we’ve staged the files that we want to be included in this first commit, we can <strong>commit all staged files by running <code>git commit -m "initial commit"</code> in the Terminal.</strong> Note that it’s good practice to replace “initial commit” with something that is more informative and specific.</p>
+<p>Once we’ve made that commit, Positron’s GUI will remove the “U” next to all of the files that were commmitted (in this case, that’s all of the files in the folder).</p>
+<p align="center">
+<img src="images/github_introduction_positron/folder-first-git_05-commit.png" alt="Screen capture of Positron's 'explorer' tab where all files are tracked by Git with no changes since the last commit" width="80%">
+</p>
+<p>Without an IDE, you can run <code>git log</code> in the Terminal to see a history of your past commits. Here’s the log for this repository so far:</p>
+<pre><code>commit 49245b6433ba49fedb46d09e737e7d239837e11c (HEAD -&gt; main)
+Author: njlyon0 &lt;{redacted}@gmail.com&gt;
+Date:   Fri Feb 13 15:52:44 2026 -0500
+
+    feat: first commit of core scripts</code></pre>
+</section>
+<section id="connect-git-and-github" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="connect-git-and-github"><span class="header-section-number">5.6</span> Connect Git and GitHub</h3>
+<p>Now that we’ve got our local Git repository all nicely set up, it’s time to lay the groundwork to get it talking with a remote repository hosted in GitHub. However, <strong>there is an important difference between this GitHub repository and the ones we made earlier: <span style="color:red"><u>it needs to be COMPLETELY EMPTY!</u></span></strong></p>
+<p>If you put anything in the GitHub repo when you make it, that counts as a commit. That means your local Git repository’s first commit and the first commit of the remote GitHub repository are different and will create a horrible conflict that is a pain to fix. So, when you create this GitHub repository <u><strong>do not</strong> include a README, .gitignore, or LICENSE file!</u></p>
+<p>If you create a completely empty GitHub repository the landing page will look something like the following:</p>
+<p><img src="images/github_introduction_positron/folder-first-git_06-empty-gh-repo.png" alt="Screen capture of a GitHub repository when it is created with nothing in it" width="95%"></p>
+<p>Once you’ve made your <u>completely empty</u> GitHub repository:</p>
+<ol type="1">
+<li>Scroll down to the <strong>…or push an existing repository from the command line</strong> section</li>
+<li>Copy the whole code chunk beneath that heading</li>
+<li>Run that code in Positron’s Terminal</li>
+</ol>
+<p>After you’ve done that, if you refresh the page on the GitHub repository, you should see the files you just committed!</p>
+<p><img src="images/github_introduction_positron/folder-first-git_07-gh-repo.png" alt="Screen capture of a GitHub repository with a number of files added in a single commit" width="100%"></p>
+<p>Similarly, your Positron Source Control tab will now look like it did in the previous exercises and will include the commit we made via the command line.</p>
+<p align="center">
+<img src="images/github_introduction_positron/folder-first-git_08-positron.png" alt="Screen capture of Positron's 'source control' tab with no files showing as being changed" width="60%">
+</p>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Challenge: add a <code>README.md</code> file to <code>training_{USERNAME}</code>
+<span class="screen-reader-only">Caution</span>Challenge: Add a <code>README.md</code> file to <code>training_{USERNAME}</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>GitHub provides a button on your repo’s landing page for quickly adding a <code>README.md</code> file. Click the <strong>Add a README</strong> button and use markdown syntax to create a <code>README.md</code>. Commit the changes to your repository.</p>
-<p>Go to your local repository (in RStudio) and pull the changes you made.</p>
-</div>
-</div>
-</div>
+<p>Go to your local repository and pull the changes you made.</p>
 </div>
 </div>
 </section>
+</section>
 <section id="go-further-with-git" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="go-further-with-git"><span class="header-section-number">6</span> Go further with Git</h2>
+<h2 data-number="6" class="anchored" data-anchor-id="go-further-with-git"><span class="header-section-number">6</span> Go Further With Git</h2>
 <p>There’s a lot we haven’t covered in this brief tutorial. There are some great and much longer tutorials that cover advanced topics, such as:</p>
 <ul>
-<li>Using Git on the command line</li>
 <li>Resolving conflicts</li>
 <li>Branching and merging</li>
 <li>Pull requests versus direct contributions for collaboration</li>
-<li>Using <code>.gitignore</code> to protect sensitive data</li>
-<li>GitHub Issues - how to use them for project management and collaboration</li>
+<li>Using GitHub issues for collaborative project management</li>
 </ul>
 <p>and much, much more.</p>
 </section>
 <section id="git-resources" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="git-resources"><span class="header-section-number">7</span> Git resources</h2>
+<h2 data-number="7" class="anchored" data-anchor-id="git-resources"><span class="header-section-number">7</span> Git Resources</h2>
 <ul>
 <li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a></li>
 <li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></li>
@@ -1685,25 +1631,64 @@ Artwork by Allison Horst
           }
         };
       }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
+        const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+        for (let i=0; i<annoteTargets.length; i++) {
+          const annoteTarget = annoteTargets[i];
+          const targetCell = annoteTarget.getAttribute("data-target-cell");
+          const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+          const contentFn = () => {
+            const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            if (content) {
+              const tipContent = content.cloneNode(true);
+              tipContent.classList.add("code-annotation-tip-content");
+              return tipContent.outerHTML;
             }
-          });
+          }
+          const config = {
+            allowHTML: true,
+            content: contentFn,
+            onShow: (instance) => {
+              selectCodeLines(instance.reference);
+              instance.reference.classList.add('code-annotation-active');
+              window.tippy.hideAll();
+            },
+            onHide: (instance) => {
+              unselectCodeLines();
+              instance.reference.classList.remove('code-annotation-active');
+            },
+            maxWidth: 300,
+            delay: [50, 0],
+            duration: [200, 0],
+            offset: [5, 10],
+            arrow: true,
+            appendTo: function(el) {
+              return el.parentElement.parentElement.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'quarto',
+            placement: 'right',
+            popperOptions: {
+              modifiers: [
+              {
+                name: 'flip',
+                options: {
+                  flipVariations: false, // true by default
+                  allowedAutoPlacements: ['right'],
+                  fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+                },
+              },
+              {
+                name: 'preventOverflow',
+                options: {
+                  mainAxis: false,
+                  altAxis: false
+                }
+              }
+              ]        
+            }      
+          };
+          window.tippy(annoteTarget, config); 
         }
     const findCites = (el) => {
       const parentEl = el.parentElement;

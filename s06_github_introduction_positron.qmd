@@ -68,7 +68,7 @@ Let's start with a motivating example that's representative of the types of prob
 -  **operates locally** on your computer, allowing you to create repositories and track changes
 -  provides features such as committing changes, branching and merging code, reverting to previous versions, and managing project history
 -  works directly with the files on your computer and does not require a network connection for most operations
-- primarily used through the command-line interface (CLI, e.g. Terminal), but also has various GUI tools available (e.g. RStudio IDE)
+- primarily used through the command-line interface (CLI, e.g. Terminal), but also has various GUI tools available (e.g. Positron IDE)
 
 #### GitHub: an **online platform** and service built around Git {.unnumbered}
 
@@ -100,7 +100,7 @@ Here is our example folder / Git repository represented visually:
 
 #### How do I tell Git to preserve versions of my local working files?
 
-Git was built as a command-line tool, meaning we can use Git commands in the command line (e.g. Terminal, Git Bash, etc.) to take "snapshots" of our local working files. Alternatively, RStudio provides buttons that easily execute these Git commands.
+Git was built as a command-line tool, meaning we can use Git commands in the command line (e.g. Terminal, Git Bash, etc.) to take "snapshots" of our local working files. Alternatively, Positron provides buttons that easily execute these Git commands.
 
 Generally, that workflow looks something like this:
 
@@ -113,7 +113,7 @@ Generally, that workflow looks something like this:
 The last step is synchronizing the changes made to our local repository with a remote repository (this remote repository is often stored on GitHub). The `git push` command is used to send local commits up to a remote repository. The `git pull` command is used to fetch changes from a remote repository and merge them into the local repository -- **pull**ing will become a regular part of your workflow when collaborating with others, or even when working alone but on different machines (e.g. a laptop at home and a desktop at the office).
 
 <p align="center">
-<img src="images/github_introduction_positron/allison-horst-git-workflow.png" alt="A basic git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled PULL')" width="90%"/>
+<img src="images/github_introduction_positron/allison-horst-git-workflow.png" alt="A basic Git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled PULL')" width="90%"/>
 <figcaption>Artwork by Allison Horst</figcaption>
 </p>
 
@@ -176,7 +176,7 @@ This table includes more advanced Git terms and commands that are commonly used 
 | Stash | `git stash` | Temporarily saves changes that are not ready to be committed |
 | Tag | `git tag` | Assigns a label or tag to a specific commit |
 
-Git has a rich set of commands and features, and there are many more terms beyond either table. Learn more by visiting the [git documentation](https://git-scm.com/docs).
+Git has a rich set of commands and features, and there are many more terms beyond either table. Learn more by visiting the [Git documentation](https://git-scm.com/docs).
 
 #### GitHub Terms
 
@@ -328,9 +328,9 @@ If you head over to the Source Control tab, you'll see that the README now appea
 <img src="images/github_introduction_positron/positron-commit_02-source-control.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%"/>
 </p>
 
-Once you are there, **hover your mouse over the README and a plus sign button will appear, click it.** Note that the button is not visible unless your mouse is over some part of the "Changes" list. _Clicking that button is analogous to using the git command, `git add README.md`, in the command line._
+Once you are there, **hover your mouse over the README and a plus sign button will appear, click it.** Note that the button is not visible unless your mouse is over some part of the "Changes" list. _Clicking that button is analogous to using the Git command, `git add README.md`, in the command line._
 
-After you click the plus sign, the README will move under a new list titled "Staged Changes". You can now add a commit message and then click the "Commit" button when you're ready to do so. _This is analogous to using the git command, `git commit -m "my commit message"`, in the command line._
+After you click the plus sign, the README will move under a new list titled "Staged Changes". You can now add a commit message and then click the "Commit" button when you're ready to do so. _This is analogous to using the Git command, `git commit -m "my commit message"`, in the command line._
 
 <p align="center">
 <img src="images/github_introduction_positron/positron-commit_03-stage.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'staged changes' heading and an informative commit message in the respective text field" width="70%"/>
@@ -360,7 +360,7 @@ If you navigate back to your remote repository on GitHub, you should see the edi
 ::: callout-note
 ## Challenge
 
-1.  Make a change to the `README.md` file -- this time from RStudio -- then commit the `README.md` change
+1.  Make a change to the `README.md` file -- this time from Positron -- then commit the `README.md` change
 2.  Add a new section to your `README.md` called "Creator" using a level-2 header. Under it include some information about yourself. **Bonus:** Add some contact information and link your email using Markdown syntax.
 :::
 
@@ -544,3 +544,4 @@ and much, much more.
 - [Learn Git Branching](https://learngitbranching.js.org/) is an interactive tool to learn Git on the command line
 - [Software Carpentry Version Control with Git](https://swcarpentry.github.io/git-novice/)
 - Bitbucket's tutorials on [Git Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
+

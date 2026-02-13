@@ -39,10 +39,10 @@ The version control system we'll be diving into is Git, the most widely used mod
 
 Let's start with a motivating example that's representative of the types of problems Git can help us solve.
 
-[Full Screen](slides/github_introduction_positron/slides1_motivating_example.html)
+[Full Screen](slides/github_introduction/slides1_motivating_example.html)
 
 ```{=html}
-<iframe class="slide-deck" src="slides/github_introduction_positron/slides1_motivating_example.html" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src="slides/github_introduction/slides1_motivating_example.html" style="border: 1px solid #2e3846;"></iframe>
 ```
 
 

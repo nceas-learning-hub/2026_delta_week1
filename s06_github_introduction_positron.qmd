@@ -264,51 +264,108 @@ Here are some guidelines for writing effective Git commit messages:
 8. **Reference relevant issues**: If the commit is related to a specific issue or task, include a reference to it. For example, you can mention the issue number or use keywords like "Fixes," "Closes," or "Resolves" followed by the issue number.
 :::
 
-## Exercise 2: `clone` your repository and use Git locally in RStudio
+## Exercise 2: Clone Your Repository with Positron
 
-Currently, our repository just exists on GitHub as a remote repository. It's easy enough to make changes to things like our `README.md` file (as demonstrated above), from the web browser, but that becomes a lot harder (and discouraged) for scripts and other code files. In this exercise, we'll bring a copy of this remote repository down to our local computer (aka **clone** this repository) so that we can work comfortably in RStudio.
+Currently, our repository just exists on GitHub as a remote repository. It's easy enough to make changes to things like our `README.md` file (as demonstrated above), from the web browser, but that becomes a lot harder (and discouraged) for scripts and other code files. In this exercise, we'll bring a copy of this remote repository down to our local computer (aka **clone** this repository) so that we can work comfortably in Positron.
 
 ::: {.callout-important title="An important distinction"}
 We refer to the **remote copy** of the repository that is on GitHub as the **origin repository** (the one that we cloned from), and the copy on our local computer as the **local repository**.
 :::
 
+Positron makes working with Git and version controlled files easy -- to do so, you'll need to tell Positron the folder in which you want it to clone your origin repository. For RStudio users, the following steps will look similar to the process of making an R Project, albeit very streamlined.
 
-Start by clicking the green **Code** button (top right of your file listing) and copying the URL to your clipboard (this URL represents the repository location):
-
-<p align="center">
-<img src="images/github_introduction_positron/github-test-clone-url.png" alt="Screen capture of the dropdown menu in GitHub that appears when you click the 'code' button" width="70%"/>
-</p>
-
-RStudio makes working with Git and version controlled files easy -- to do so, you'll need to be working within an R project folder. The following steps will look similar to those you followed when first creating an R Project, with a slight difference. Follow the instructions in the Setup box below to clone your remote repository to your local computer in RStudio:
-
+### Cloning a Repository
 
 ::: callout-tip
-## Setup
+## Positron Clone Process
 
--   Click **File** > **New Project**
--   Select **Version Control** and paste the remote repository URL (which should be copied to your clipboard) in the **Repository URL** field
--   Press **Tab**, which will auto-fill the **Project directory name** field with the same name as that of your remote repo -- while you can name the local copy of the repository anything, it's typical (and highly recommended) to use the same name as the GitHub repository to maintain the correspondence
+1. Start by copying the link to your GitHub repository from the address bar of your web browser
+    - Should be something like "https://github.com/`github-username`/`repository-name`"
+2. Click the folder icon in the top right corner of Positron
+3. Select **New Folder from Git...**
+4. In the **Git repository URL** field, paste in the link you copied in step 1
+5. Choose which folder you want to clone this repository to
+    - We recommend _not_ cloning into a local sync of a cloud storage service (e.g., OneDrive, Dropbox) as that service's form of version control and Git's may cause problems for you
+6. Click OK
 
 <p align="center">
-<img src="images/github_introduction_positron/rstudio-clone-repo-sam.png" alt="Screen capture of RStudio's dialogue menu for cloning a new repository from GitHub" width="90%"/>
+<img src="images/github_introduction_positron/new-repo_clone-dialog-positron.png" alt="Screen capture of Positron's dialogue menu for cloning a new repository from GitHub" width="65%"/>
 </p>
 :::
 
-Once you click **Create Project**, a new RStudio window will open with all of the files from the remote repository copied locally. Depending on how your version of RStudio is configured, the location and size of the panes may differ, but they should all be present -- you should see a **Git** tab, as well as the **Files** tab, where you can view all of the files copied from the remote repo to this local repo. 
+Once you click **OK**, your Positron window will refresh and the "Explorer" tab (in the left sidebar) will show that all files from the remote repository have been copied locally. Note that the folder icon in the top right corner will now have the name of your repository from GitHub.
 
 <p align="center">
-<img src="images/github_introduction_positron/github-rstudio-test-sam.png" alt="Screen capture of RStudio after successfully cloning a new repository from GitHub" width="100%"/>
+<img src="images/github_introduction_positron/new-repo_clone-positron.png" alt="Screen capture of Positron after successfully cloning a new repository from GitHub" width="100%"/>
 </p>
 
-You'll note that there is one new file `sam_test.Rproj`, and three files that we created earlier on GitHub (`.gitignore`, `LICENSE`, and `README.md`).
-
-In the **Git** tab, you'll note that the one new file, `sam_test.Rproj`, is listed. This **Git** tab is the status pane that shows the current modification status of all of the files in the repository. Here, we see `sam_test.Rproj` is preceded by a **??** symbol to indicate that the file is currently untracked by Git. This means that we have not yet committed this file using Git (i.e. Git knows nothing about the file; hang tight, we'll commit this file soon so that it's tracked by Git). As you make version control decisions in RStudio, these icons will change to reflect the current version status of each of the files.
-
-Inspect the history. Click on the **History** button in the **Git** tab to show the log of changes that have occurred -- these changes will be identical to what we viewed on GitHub. By clicking on each row of the history, you can see exactly what was added and changed in each of the two commits in this repository.
+If you click the "Source Control" tab (its symbol looks like this: {{< fa code-branch >}}) you will see that there are no changes because we haven't done anything to the local copy yet! However, both the commits (the initial commit and the test edit made directly in GitHub) are shown in the bottom left corner in reverse chronological order (i.e., most recent at the top).
 
 <p align="center">
-<img src="images/github_introduction_positron/rstudio-history-1-sam.png" alt="Screen capture of RStudio page showing the Git history of a local repository" width="100%"/>
+<img src="images/github_introduction_positron/new-repo_source-control_no-changes.png" alt="Screen capture of Positron's 'source control' pane after cloning a new repository from GitHub before editing it" width="60%"/>
 </p>
+
+We can actually interact with particular commits to get more detailed information on what was changed directly through Positron! Click the top commit to expand it and see the files that were changed as part of that commit. Now click the README file (the only one edited as part of that commit). A file will now open in the main window of Positron showing the README file with new lines highlighted in green and deleted lines highlighted in red.
+
+<img src="images/github_introduction_positron/new-repo_source-control_diff-history.png" alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened" width="100%"/>
+
+### Making a Commit
+
+Now that we have seen the changes from the past, let's go ahead and make some new changes in Positron. Close the diff file we had open then click back to the "File Explorer" tab and double click the README file to open it. While adding the purpose statement was nice addition, the top of the README is still looking very template-y, let's customize it a bit.
+
+Go ahead and give the README a more informative title (that's the text after a single `#`) and expand the first line of the description to add some more context. After you've done this your README should look something like the following.
+
+<img src="images/github_introduction_positron/positron-commit_01-edit.png" alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified" width="100%"/>
+
+Note that once you edit and save the README, the file's name (both in the Explorer tab list and in the top of Positron) will turn orange and have a capital "M" to the right of the filename. This is Git letting you know that the file has been modified from the most recent version. Additionally, the Source Control tab will get a red circle with a "1," indicating that the state of one file in the version controlled repository has changed.
+
+If you head over to the Source Control tab, you'll see that the README now appears under the "Changes" list.
+
+<p align="center">
+<img src="images/github_introduction_positron/positron-commit_02-source-control.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%"/>
+</p>
+
+Once you are there, **hover your mouse over the README and a plus sign button will appear, click it.** Note that the button is not visible unless your mouse is over some part of the "Changes" list. _Clicking that button is analogous to using the git command, `git add README.md`, in the command line._
+
+After you click the plus sign, the README will move under a new list titled "Staged Changes". You can now add a commit message and then click the "Commit" button when you're ready to do so. _This is analogous to using the git command, `git commit -m "my commit message"`, in the command line._
+
+<p align="center">
+<img src="images/github_introduction_positron/positron-commit_03-stage.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'staged changes' heading and an informative commit message in the respective text field" width="70%"/>
+</p>
+
+Once you do that, a few things will happen simultaneously:
+
+- The "Commit" button will automatically change into a "Sync Changes" button.
+- Both the "Changes" and "Staged Changes" lists will disappear
+- The README file tab will go back to the default color and the "M" next to it will vanish
+- The commit history diagram in the bottom left corner will show your new commit (in a different color than the prior commits)
+
+:::{.callout-important}
+#### A Critical Caveat
+There is a noteable exception to the above: <u>only when _all_ of the changed files are committed will the "Commit" button become a "Sync" button.</u> So, if you have edited several files but only commit the changes to one, you won't see the "Sync" button.
+
+However, you can still sync your changes without needing to commit all changes to all your files! You just need to do the following:
+
+1. Hover over the "Changes" heading <u>above the commit message field</u>.
+2. Click the ellipsis (`...`)
+3. Navigate to the **Pull, Push** option
+4. Click **Sync**
+
+:::
+
+<p align="center">
+<img src="images/github_introduction_positron/positron-commit_04-commit.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%"/>
+</p>
+
+Go ahead and click the Sync button. It will become a grayed-out Commit button again and your commit history (bottom left) will go back to all being one color as the commit that was previously only on your local repository is synced with the remote repository.
+
+<p align="center">
+<img src="images/github_introduction_positron/positron-commit_05-sync.png" alt="Screen capture of Positron's 'source control' tab where no files are showing as changed or staged" width="70%"/>
+</p>
+
+If you navigate back to your remote repository on GitHub, you should see the edits to your README and the most recent commit will be the one you just made. Note that sometimes you have to refresh the page or wait a few seconds for those updates to be visible on GitHub.
+
+<img src="images/github_introduction_positron/positron-commit_06-updated-remote.png" alt="Screen capture of a GitHub repository's landing page with a new commit" width="100%"/>
 
 ::: callout-note
 ## Challenge
@@ -317,54 +374,7 @@ Inspect the history. Click on the **History** button in the **Git** tab to show 
 2.  Add a new section to your `README.md` called "Creator" using a level-2 header. Under it include some information about yourself. **Bonus:** Add some contact information and link your email using Markdown syntax.
 :::
 
-Once you save, you'll immediately see the `README.md` file show up in the **Git** tab, marked as a modification. Select the file in the **Git** tab, and click **Diff** to see the changes that you saved (but which are not yet committed to your local repository). Newly made changes are highlighted in green.
 
-<p align="center">
-<img src="images/github_introduction_positron/rstudio-status-pane-sam.png" alt="Screen capture of RStudio diff/commit window where edits to the README are shown with new lines highlighted green" width="100%"/>
-</p>
-
-**Commit the changes.** To commit the changes you made to the `README.md` file using RStudio's GUI (Graphical User Interface), rather than the command line:
-
-1. **Stage** (aka add) `README.md` by clicking the check box next to the file name -- this tells Git which changes you want included in the commit and *is analogous to using the git command, `git add README.md`, in the command line*
-2. **Commit** `README.md` by clicking the **Commit** button and providing a descriptive commit message in the dialog box. Press the **Commit** button once you're satisfied with your message. *This is analogous to using the git command, `git commit -m "my commit message"`, in the command line*.
-
-<img src="images/github_introduction_positron/rstudio-commit-1.png" alt="Screen capture of RStudio's diff/commit window where an edited README is staged (by checking the box next to the file's name) and a commit message has been entered into the respective window" width="100%"/>
-
-A few notes about our local repository's state:
-
-- We still have a file, `sam_test.Rproj`, that is listed as untracked (denoted by **??** in the **Git** tab). 
-- You should see a message at the top of the **Git** tab that says, `Your branch is ahead of ‘origin/main’ by 1 commit.`, which tells us that we have 1 commit in the local repository, but that commit has not yet been pushed up to the `origin` repository (aka remote repository on GitHub). 
-
-**Commit the remaining project file** by staging/adding and committing it with an informative commit message.
-
-<img src="images/github_introduction_positron/rstudio-commit-2.png" alt="Screen capture of RStudio's diff/commit window after a commit has been made and the .Rproj file has been staged with a commit message entered" width="100%"/>
-
-When finished, you'll see that no changes remain in the **Git** tab, and the repository is clean.
-
-**Inspect the history.** Note that under **Changes**, the message now says:
-
-`Your branch is ahead of ‘origin/main’ by 2 commits.`
-
-These are the two commits that we just made, but have not yet been pushed to GitHub. 
-
-Click on the **History** button to see a total of four commits in the local repository (the two we made directly to GitHub via the web browser and the two we made in RStudio).
-
-
-
-**Push these changes to GitHub.** Now that we've made and committed changes locally, we can push those changes to GitHub using the **Push** button. This sends your changes to the remote repository (on GitHub) leaving your repository in a totally clean and synchronized state (meaning your local repository and remote repository should look the same). 
-
-::: {.callout-note}
-## If you are prompted to provide your GitHub username and password when **Push**ing...
-it's a good indicator that you did not set your GitHub Personal Access Token (PAT) correctly. You can redo the steps outlined in the [GitHub Authentication section](https://nceas-learning-hub.github.io/2026_delta_week1/s02_git_setup.html#github-authentication) to (re)set your PAT, then **Push** again.
-:::
-
-<img src="images/github_introduction_positron/rstudio-history-3.png" alt="Screen capture of RStudio's Git history page showing four total commits (the initial one and three follow-up custom commits)" width="100%"/>
-
-If you look at the History pane again, you'll notice that the labels next to the most recent commit indicate that both the local repository (`HEAD`) and the remote repository (`origin/HEAD`) are pointing at the same version in the history. If we look at the commit history on GitHub, all the commits will be shown there as well.
-
-<!-- :::{.column-page} -->
-
-<img src="images/github_introduction_positron/github-history.png" alt="Screen capture of a GitHub repository's commit history showing four total commits (the initial one and three follow-up custom commits)" width="100%"/>
 
 ### Defining Merge Method
 

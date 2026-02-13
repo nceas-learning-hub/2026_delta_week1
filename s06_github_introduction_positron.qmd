@@ -340,19 +340,6 @@ Once you do that, a few things will happen simultaneously:
 - The README file tab will go back to the default color and the "M" next to it will vanish
 - The commit history diagram in the bottom left corner will show your new commit (in a different color than the prior commits)
 
-:::{.callout-important}
-#### A Critical Caveat
-There is a noteable exception to the above: <u>only when _all_ of the changed files are committed will the "Commit" button become a "Sync" button.</u> So, if you have edited several files but only commit the changes to one, you won't see the "Sync" button.
-
-However, you can still sync your changes without needing to commit all changes to all your files! You just need to do the following:
-
-1. Hover over the "Changes" heading <u>above the commit message field</u>.
-2. Click the ellipsis (`...`)
-3. Navigate to the **Pull, Push** option
-4. Click **Sync**
-
-:::
-
 <p align="center">
 <img src="images/github_introduction_positron/positron-commit_04-commit.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%"/>
 </p>

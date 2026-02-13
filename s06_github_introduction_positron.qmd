@@ -35,7 +35,7 @@ Benefits to using a version control software include:
 
 The version control system we'll be diving into is Git, the most widely used modern version control system in the world.
 
-## Introduction to Git + GitHub
+## Introduction to Git & GitHub
 
 Let's start with a motivating example that's representative of the types of problems Git can help us solve.
 
@@ -44,7 +44,6 @@ Let's start with a motivating example that's representative of the types of prob
 ```{=html}
 <iframe class="slide-deck" src="slides/github_introduction/slides1_motivating_example.html" style="border: 1px solid #2e3846;"></iframe>
 ```
-
 
 #### With Git we can enhance our workflow: {.unnumbered}
 
@@ -55,7 +54,7 @@ Let's start with a motivating example that's representative of the types of prob
 - **Assign meaningful tags** to specific versions of our code.
 - **Multiple individuals can work on the same analysis concurrently** on their own computers, with the ability to merge everyone's changes together.
 
-### What exactly are Git and GitHub?
+### What _Exactly_ are Git and GitHub?
 
 #### Git: an open-source **version control** software {.unnumbered}
 
@@ -77,11 +76,11 @@ Let's start with a motivating example that's representative of the types of prob
 -  enables easy sharing of code with others, facilitating collaboration and contribution to open source projects
 -  provides a social aspect, allowing users to follow projects, star repositories, and discover new code
 
-### How local files, Git, and GitHub work together
+### How Local Files, Git, and GitHub Work Together
 
 It can be daunting to understand the moving parts of the Git / GitHub life cycle (i.e. how file changes are tracked locally within repositories, then stored for safe-keeping and collaboration on remote repositories, then brought back down to a local machine(s) for continued development). It gets easier with practice, but here's a high-level overview of how things work:
 
-#### What is the difference between a "normal" folder vs. a Git repository?
+#### What is the Difference Between a "Normal" Folder and a Git Repository?
 
 Let's pretend that we create a folder, called `myFolder/`, and add two files: `myData.csv` and `myAnalysis.R`. The contents of this folder are not currently version-controlled -- meaning, for example, that if we make changes to `myAnalysis.R` that don't work out, we have no way of accessing or reverting back to a previous version of `myAnalysis.R` (without remembering or rewriting things, of course).
 
@@ -95,7 +94,7 @@ Here is our example folder / Git repository represented visually:
 <img src="images/github_introduction_positron/git-repo.png" alt="Diagram of a local Git repository with a CSV, R script, and '.git' folder in the project directory" width="100%"/>
 </p>
 
-#### How do I tell Git to preserve versions of my local working files?
+#### How Do I Tell Git to Preserve Versions of My Local Working Files?
 
 Git was built as a command-line tool, meaning we can use Git commands in the command line (e.g. Terminal, Git Bash, etc.) to take "snapshots" of our local working files. Alternatively, Positron provides buttons that easily execute these Git commands.
 
@@ -105,7 +104,7 @@ Generally, that workflow looks something like this:
 - Stage the file(s) using `git add myAnalysis.R` (or `git add .` to stage multiple changed files at once). This lets Git know that you'd like to include the file(s) in your next commit.
 - Commit the file(s) using `git commit -m "a message describing my changes"`. This records those changes (along with a descriptive message) as a "snapshot" or version in the local repository (i.e. the `.git/` folder).
 
-#### How do I send work from my local computer to GitHub?
+#### How Do I Send Work From My Local Computer to GitHub?
 
 The last step is synchronizing the changes made to our local repository with a remote repository (this remote repository is often stored on GitHub). The `git push` command is used to send local commits up to a remote repository. The `git pull` command is used to fetch changes from a remote repository and merge them into the local repository -- **pull**ing will become a regular part of your workflow when collaborating with others, or even when working alone but on different machines (e.g. a laptop at home and a desktop at the office).
 
@@ -175,20 +174,20 @@ This table includes more advanced Git terms and commands that are commonly used 
 
 Git has a rich set of commands and features, and there are many more terms beyond either table. Learn more by visiting the [Git documentation](https://git-scm.com/docs).
 
-#### GitHub Terms
+#### Other Terms
 
 This table includes terms for which there are not specific Git commands.
 
  Term | Definition |
 |:---:|:-------------------------|
+| Sync | Fetches, merges, and pushes (in that order) commits to/from a local repository |
 | Fork  | Creates a personal copy of a repository under your GitHub account for independent development |
 | Merge Conflict | Occurs when Git cannot automatically merge changes from different branches, requiring manual resolution |
 | Pull Request (PR) | A request to merge changes from a branch into another branch, typically in a collaborative project |
 
 :::
 
-
-## Exercise 1: Create a remote repository on GitHub
+## Exercise 1: Create a Remote Repository on GitHub
 
 ::: callout-tip
 ## Setup

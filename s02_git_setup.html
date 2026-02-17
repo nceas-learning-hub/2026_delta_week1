@@ -556,9 +556,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-gits-global-options" id="toc-set-gits-global-options" class="nav-link active" data-scroll-target="#set-gits-global-options"><span class="header-section-number">1</span> Set Git’s Global Options</a></li>
+  <li><a href="#set-gits-global-options" id="toc-set-gits-global-options" class="nav-link active" data-scroll-target="#set-gits-global-options"><span class="header-section-number">1</span> Set Git’s Global Options</a>
+  <ul class="collapse">
+  <li><a href="#configure-github-username-and-email" id="toc-configure-github-username-and-email" class="nav-link" data-scroll-target="#configure-github-username-and-email"><span class="header-section-number">1.1</span> Configure GitHub Username and Email</a></li>
+  <li><a href="#configure-strategy-for-integrating-changes-across-branches" id="toc-configure-strategy-for-integrating-changes-across-branches" class="nav-link" data-scroll-target="#configure-strategy-for-integrating-changes-across-branches"><span class="header-section-number">1.2</span> Configure Strategy for Integrating Changes Across Branches</a></li>
+  </ul></li>
   <li><a href="#github-authentication" id="toc-github-authentication" class="nav-link" data-scroll-target="#github-authentication"><span class="header-section-number">2</span> GitHub Authentication</a></li>
-  <li><a href="#strategy-for-integrating-changes-across-branches" id="toc-strategy-for-integrating-changes-across-branches" class="nav-link" data-scroll-target="#strategy-for-integrating-changes-across-branches"><span class="header-section-number">3</span> Strategy for Integrating Changes Across Branches</a></li>
   </ul>
 </nav>
     </div>
@@ -583,7 +586,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>After completing this session, you will be able to:</p>
 <ul>
 <li>Recognize how to set Git defaults for your local computer</li>
-<li>Create a <u>p</u>ersonal <u>a</u>ccess <u>t</u>oken (PAT)</li>
+<li>Create a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT)</li>
 <li>Paraphrase how to tell Git how to reconcile differences between branches</li>
 </ul>
 </div>
@@ -619,6 +622,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Most of our Git operations will be done with R code, but there are some situations where you <em>must</em> work in the Terminal and use command line. It may be daunting to code in the Terminal, but as your comfort increases over time, you might find you prefer it. Either way, it’s beneficial to learn <em>enough</em> command line and to not be intimidated in the Terminal.</p>
 </div>
 </div>
+<section id="configure-github-username-and-email" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="configure-github-username-and-email"><span class="header-section-number">1.1</span> Configure GitHub Username and Email</h3>
 <p>To introduce ourselves to git we are going to update our global options with our GitHub user name and email information. We’ll use the R code tab below but check out the terminal tab if doing this via command line is of interest.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -630,7 +635,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When you add your username and email to the global options <u>you <strong>must</strong> use the exact same spelling and casing that you used on GitHub</u>, otherwise Git won’t be able to sync to your account.</p>
+<p>When you add your <code>user.email</code> to the global options <u>you <strong>must</strong> use an address linked to your GitHub account</u>, otherwise Git won’t be able to sync to your account.</p>
+<p>Your <code>user.name</code> is not used for matching Git to GitHub - it is just for helping identify you on the commits you write. We recommend using your GitHub user name (e.g., <code>oharac</code>) but you can also use your human name (e.g, <code>Casey O'Hara</code>).</p>
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -639,17 +645,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p><strong>Step 1:</strong> Tell Git (1) your GitHub username, (2) your GitHub-associated email address, and (3) how you want Git to reconcile differences between your local work and a GitHub repository.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"my_user_name"</span>,</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">user.email =</span> <span class="st">"my_email@nceas.ucsb.edu"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"my_user_name"</span>,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2">2</button><span id="annotated-cell-1-2" class="code-annotation-target"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">user.email =</span> <span class="st">"my_email@nceas.ucsb.edu"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">Add you exact same GitHub user name. Case and spelling matters!</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">Add your GitHub username (recommended) or human name.</span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="2">Set up your email address associated to you GitHub account.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="2">Add your email address associated to you GitHub account.</span>
 </dd>
 </dl>
 </div>
@@ -664,7 +670,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><strong>Step 1:</strong> Tell Git your GitHub username. Note that <u>if the code runs successfully, it will look like nothing happened</u>. We will check at the end to make sure it worked.</p>
+<p><strong>Step 1:</strong> Tell Git your GitHub username (recommended) or human name. Note that <u>if the code runs successfully, it will look like nothing happened</u>. We will check at the end to make sure it worked.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"my_user_name"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Step 2:</strong> Tell Git your GitHub-associated email address.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"my_email@nceas.ucsb.edu"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -688,6 +694,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Previously, the default branch name was “master” and this terminology for Git branches is problematic, which motivates us to update our default branch to “main” instead.</p>
 </div>
 </div>
+</section>
+<section id="configure-strategy-for-integrating-changes-across-branches" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="configure-strategy-for-integrating-changes-across-branches"><span class="header-section-number">1.2</span> Configure Strategy for Integrating Changes Across Branches</h3>
+<p>When you’re working on the same GitHub repository as the rest of your team, what happens when you and a teammate edit the same file at the same time? How does Git ‘know’ how to reconcile those differences? Simply put, we tell Git how we want it to make that judgement call!</p>
+<p>There are three options, “merge,” “rebase,” and “fast forward.” <strong>We recommend that you choose the “merge” strategy</strong> as it will seamlessly handle easy situations where human oversight isn’t needed but will flag more nuanced problems (called “merge conflicts”) for you to resolve manually. For more information on “merge” versus “rebase”, see <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">here</a>. You can always revisit this decision later using essentially the same code below!</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Console <i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Terminal <i class="fa-solid fa-terminal" aria-label="terminal"></i></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Set the default strategy for reconciling differences.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">pull.rebase =</span> <span class="st">"false"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Set the default strategy for reconciling differences.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> pull.rebase false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Note: The <code>--global</code> option will set this as default for all repos on your computer. If you forget this, it will only set for the current repo.</p>
+</div>
+</div>
+</div>
+<!-- It is important to highlight too that this configuration can be repository specific. This means you can configure how you want Git to reconcile two branches at a repository level instead of doing so for all repositories in which you work. This allows you to control how Git weaves things in when collaborating with others in a project-specific fashion. -->
+<!-- If you don't define a merge strategy globally, you will have to define it for each repository that you create. If you have differences between branches and try to sync your local computer with the GitHub repository, you will likely get the following error message. Note that the error message itself gives you the terminal code that you'd need to fix it! -->
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Why did I get this error?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you forget to set your pull.rebase option, you will get the following error message when you try to sync your local computer with GitHub. Note, it gives you the terminal code to fix it!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-10"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> You have divergent branches and need to specify how to reconcile them.</span>
+<span id="annotated-cell-10-2"><a href="#annotated-cell-10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> You can do so by running one of the following commands sometime before</span>
+<span id="annotated-cell-10-3"><a href="#annotated-cell-10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> your next pull:</span>
+<span id="annotated-cell-10-4"><a href="#annotated-cell-10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1">1</button><span id="annotated-cell-10-5" class="code-annotation-target"><a href="#annotated-cell-10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span>    git config pull.rebase false <span class="co"># merge (the default strategy)</span></span>
+<span id="annotated-cell-10-6"><a href="#annotated-cell-10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span>    git config pull.rebase true  <span class="co"># rebase</span></span>
+<span id="annotated-cell-10-7"><a href="#annotated-cell-10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span>    git config pull.ff only      <span class="co"># fast-forward only</span></span>
+<span id="annotated-cell-10-8"><a href="#annotated-cell-10-8" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> </span>
+<span id="annotated-cell-10-9"><a href="#annotated-cell-10-9" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> You can replace <span class="st">"git config"</span> with <span class="st">"git config --global"</span> to set a default</span>
+<span id="annotated-cell-10-10"><a href="#annotated-cell-10-10" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> preference for all repositories. You can also pass <span class="at">--rebase,</span> <span class="at">--norebase,</span> </span>
+<span id="annotated-cell-10-11"><a href="#annotated-cell-10-11" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> or <span class="at">--ff-only</span> on the command line to override the configured default per</span>
+<span id="annotated-cell-10-12"><a href="#annotated-cell-10-12" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> invocation.</span>
+<span id="annotated-cell-10-13"><a href="#annotated-cell-10-13" aria-hidden="true" tabindex="-1"></a><span class="ex">fatal:</span> Need to specify how to reconcile divergent branches</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="5" data-code-annotation="1">This is the Terminal code to set the “merge” strategy, though we recommend you set this globally using the <code>--global</code> option.</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
 </section>
 <section id="github-authentication" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="github-authentication"><span class="header-section-number">2</span> GitHub Authentication</h2>
@@ -716,41 +778,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Congrats! Now you’ve setup your authentication you should be able to work with GitHub in Positron now.</p>
-</section>
-<section id="strategy-for-integrating-changes-across-branches" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="strategy-for-integrating-changes-across-branches"><span class="header-section-number">3</span> Strategy for Integrating Changes Across Branches</h2>
-<p>There is one more piece of setup to which we need to attend before we can move on. When you’re working on the same GitHub repository as the rest of your team, what happens when you and a teammate edit the same file at the same time? How does Git ‘know’ how to reconcile those differences? Simply put, we tell Git how we want it to make that judgement call!</p>
-<p>There are three options, “merge,” “rebase,” and “fast forward.” <strong>We recommend that you choose the “merge” strategy</strong> as it will seamlessly handle easy situations where human oversight isn’t needed but will flag more nuanced problems (called “merge conflicts”) for you to resolve manually. For more information on “merge” versus “rebase”, see <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">here</a>, but for the moment, trust us about the merge strategy. Note that you could always revisit this decision later using essentially the same code we provide below!</p>
-<p>It is important to highlight too that this configuration can be repository specific. This means you can configure how you want Git to reconcile two branches at a repository level instead of doing so for all repositories in which you work. This allows you to control how Git weaves things in when collaborating with others in a project-specific fashion.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Console <i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Terminal <i class="fa-solid fa-terminal" aria-label="terminal"></i></a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>Set the default strategy for reconciling differences.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">pull.rebase =</span> <span class="st">"false"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Set the default strategy for reconciling differences.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> pull.rebase false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<p>If you don’t define a merge stratgy globally, you will have to define it for each repository that you create. If you have differences between branches and try to sync your local computer with the GitHub repository, you will likely get the following error message. Note that the error message itself gives you the terminal code that you’d need to fix it!</p>
-<pre><code>hint: You have divergent branches and need to specify how to reconcile them.
-hint: You can do so by running one of the following commands sometime before
-hint: your next pull:
-hint: 
-hint:    git config pull.rebase false # merge (the default strategy)
-hint:    git config pull.rebase true  # rebase
-hint:    git config pull.ff only      # fast-forward only
-hint: 
-hint: You can replace "git config" with "git config --global" to set a default
-hint: preference for all repositories. You can also pass --rebase, --norebase, 
-hint: or --ff-only on the command line to override the configured default per
-hint: invocation.
-fatal: Need to specify how to reconcile divergent branches</code></pre>
 
 
 </section>

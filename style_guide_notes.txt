@@ -1,0 +1,9 @@
+Style guide preferences:
+
+* Snake case for file names and variable names
+* Title case for headings and titles
+    * This includes titles for callouts?
+* Learning objectives:
+    * For content driven lessons (most things) use verbs from Bloom's Taxonomy
+        * https://en.wikipedia.org/wiki/Bloom%27s_taxonomy#/media/File:Bloom%E2%80%99s_Taxonomy_Verbs.png
+    * For setup lessons (just accomplish a task) OK to use more direct actions as verbs (e.g., set, configure, define)

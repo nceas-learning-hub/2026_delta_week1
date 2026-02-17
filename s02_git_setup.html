@@ -556,12 +556,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-gits-global-options" id="toc-set-gits-global-options" class="nav-link active" data-scroll-target="#set-gits-global-options"><span class="header-section-number">1</span> Set Git’s Global Options</a>
+  <li><a href="#set-up-a-github-account" id="toc-set-up-a-github-account" class="nav-link active" data-scroll-target="#set-up-a-github-account"><span class="header-section-number">1</span> Set up a GitHub Account</a></li>
+  <li><a href="#set-gits-global-options" id="toc-set-gits-global-options" class="nav-link" data-scroll-target="#set-gits-global-options"><span class="header-section-number">2</span> Set Git’s Global Options</a>
   <ul class="collapse">
-  <li><a href="#configure-github-username-and-email" id="toc-configure-github-username-and-email" class="nav-link" data-scroll-target="#configure-github-username-and-email"><span class="header-section-number">1.1</span> Configure GitHub Username and Email</a></li>
-  <li><a href="#configure-strategy-for-integrating-changes-across-branches" id="toc-configure-strategy-for-integrating-changes-across-branches" class="nav-link" data-scroll-target="#configure-strategy-for-integrating-changes-across-branches"><span class="header-section-number">1.2</span> Configure Strategy for Integrating Changes Across Branches</a></li>
+  <li><a href="#configure-github-username-and-email" id="toc-configure-github-username-and-email" class="nav-link" data-scroll-target="#configure-github-username-and-email"><span class="header-section-number">2.1</span> Configure GitHub Username and Email</a></li>
+  <li><a href="#configure-strategy-for-integrating-changes-across-branches" id="toc-configure-strategy-for-integrating-changes-across-branches" class="nav-link" data-scroll-target="#configure-strategy-for-integrating-changes-across-branches"><span class="header-section-number">2.2</span> Configure Strategy for Integrating Changes Across Branches</a></li>
   </ul></li>
-  <li><a href="#github-authentication" id="toc-github-authentication" class="nav-link" data-scroll-target="#github-authentication"><span class="header-section-number">2</span> GitHub Authentication</a></li>
+  <li><a href="#github-authentication" id="toc-github-authentication" class="nav-link" data-scroll-target="#github-authentication"><span class="header-section-number">3</span> GitHub Authentication</a></li>
   </ul>
 </nav>
     </div>
@@ -585,14 +586,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p>After completing this session, you will be able to:</p>
 <ul>
-<li>Recognize how to set Git defaults for your local computer</li>
-<li>Create a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT)</li>
-<li>Paraphrase how to tell Git how to reconcile differences between branches</li>
+<li>Set up a GitHub account</li>
+<li>Set Git defaults for your local computer</li>
+<li>Tell Git how to reconcile differences between branches</li>
+<li>Create a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT) so your computer can communicate automatically with GitHub</li>
 </ul>
 </div>
 </div>
-<section id="set-gits-global-options" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="set-gits-global-options"><span class="header-section-number">1</span> Set Git’s Global Options</h2>
+<section id="set-up-a-github-account" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="set-up-a-github-account"><span class="header-section-number">1</span> Set up a GitHub Account</h2>
+<p>If you do not currently have a GitHub account, you can set one up for free at https://github.com.</p>
+<ul>
+<li>Click “Sign up for GitHub” and use your preferred email address
+<ul>
+<li>if you have a .edu address, we recommend using that, as an educational account gives free access to certain privileges (you can always link an edu account later)</li>
+<li>Alternatively, you should be able to access through Google: click “Continue with Google”</li>
+</ul></li>
+<li>Follow the instructions and verify your email address</li>
+<li>Now you’re good to go!</li>
+</ul>
+</section>
+<section id="set-gits-global-options" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="set-gits-global-options"><span class="header-section-number">2</span> Set Git’s Global Options</h2>
 <p>Before using Git, you need to tell it who you are, also known as setting the <strong>global options</strong>. You can do this either with command line code or with the R package <code>usethis</code>. For this lesson we will use the <code>usethis</code> package. However, you can also find the command line code to reference in the future.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -604,7 +619,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Technically, the “Terminal” is an interface for the shell, a computer program. To put that simply, we use the Terminal to tell a computer what to do. This is different from the “Console” in Positron, which interprets R code and returns a value.</p>
+<p>Technically, the “Terminal” is an interface for the shell, a computer program. We use the Terminal to directly tell a computer what to do outside of R. This is different from the “Console” in Positron, which interprets R code and returns a value.</p>
 <p>The Terminal should be visible by default in Positron, but if it is not, you can open it by clicking “Terminal” <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> “New Terminal”</p>
 <p>A Terminal tab should now be open right next to the Console tab.</p>
 </div>
@@ -622,8 +637,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Most of our Git operations will be done with R code, but there are some situations where you <em>must</em> work in the Terminal and use command line. It may be daunting to code in the Terminal, but as your comfort increases over time, you might find you prefer it. Either way, it’s beneficial to learn <em>enough</em> command line and to not be intimidated in the Terminal.</p>
 </div>
 </div>
-<section id="configure-github-username-and-email" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="configure-github-username-and-email"><span class="header-section-number">1.1</span> Configure GitHub Username and Email</h3>
+<section id="configure-github-username-and-email" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="configure-github-username-and-email"><span class="header-section-number">2.1</span> Configure GitHub Username and Email</h3>
 <p>To introduce ourselves to git we are going to update our global options with our GitHub user name and email information. We’ll use the R code tab below but check out the terminal tab if doing this via command line is of interest.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -695,8 +710,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="configure-strategy-for-integrating-changes-across-branches" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="configure-strategy-for-integrating-changes-across-branches"><span class="header-section-number">1.2</span> Configure Strategy for Integrating Changes Across Branches</h3>
+<section id="configure-strategy-for-integrating-changes-across-branches" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="configure-strategy-for-integrating-changes-across-branches"><span class="header-section-number">2.2</span> Configure Strategy for Integrating Changes Across Branches</h3>
 <p>When you’re working on the same GitHub repository as the rest of your team, what happens when you and a teammate edit the same file at the same time? How does Git ‘know’ how to reconcile those differences? Simply put, we tell Git how we want it to make that judgement call!</p>
 <p>There are three options, “merge,” “rebase,” and “fast forward.” <strong>We recommend that you choose the “merge” strategy</strong> as it will seamlessly handle easy situations where human oversight isn’t needed but will flag more nuanced problems (called “merge conflicts”) for you to resolve manually. For more information on “merge” versus “rebase”, see <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">here</a>. You can always revisit this decision later using essentially the same code below!</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -751,8 +766,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="github-authentication" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="github-authentication"><span class="header-section-number">2</span> GitHub Authentication</h2>
+<section id="github-authentication" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="github-authentication"><span class="header-section-number">3</span> GitHub Authentication</h2>
 <p>While you will use your GitHub password to log in to your account on a web browser, in order to actually send code you write from your local computer up to GitHub, you’ll need to “authenticate” in a different, more secure way.</p>
 <p>The book <a href="https://happygitwithr.com/index.html">Happy Git and GitHub for the useR</a> has a wealth of information related to working with Git in R, and the instructions below are based off of <a href="https://happygitwithr.com/https-pat.html">Chapter 9: Personal access token for HTTPS</a> in that book.</p>
 <p>We will be using a <strong>Personal Access Token (PAT)</strong> in this course. For better security and long term use, we recommend taking the extra steps to set up SSH keys (check out <a href="https://happygitwithr.com/ssh-keys.html">Chapter 10 Set up Keys for SSH</a>).</p>

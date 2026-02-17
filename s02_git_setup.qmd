@@ -8,7 +8,7 @@ title: Git and GitHub Setup
 After completing this session, you will be able to:
 
 - Recognize how to set Git defaults for your local computer
-- Create a <u>p</u>ersonal <u>a</u>ccess <u>t</u>oken (PAT)
+- Create a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT)
 - Paraphrase how to tell Git how to reconcile differences between branches
 :::
 
@@ -33,12 +33,16 @@ Most of our Git operations will be done with R code, but there are some situatio
 
 :::
 
+### Configure GitHub Username and Email
+
 To introduce ourselves to git we are going to update our global options with our GitHub user name and email information. We'll use the R code tab below but check out the terminal tab if doing this via command line is of interest.
 
 ::: {.callout-important}
 ## Case and Spelling Matter!
 
-When you add your username and email to the global options <u>you **must** use the exact same spelling and casing that you used on GitHub</u>, otherwise Git won't be able to sync to your account.
+When you add your `user.email` to the global options <u>you **must** use an address linked to your GitHub account</u>, otherwise Git won't be able to sync to your account.  
+
+Your `user.name` is not used for matching Git to GitHub - it is just for helping identify you on the commits you write.  We recommend using your GitHub user name (e.g., `oharac`) but you can also use your human name (e.g, `Casey O'Hara`).
 :::
 
 ::: {.panel-tabset}
@@ -51,9 +55,8 @@ When you add your username and email to the global options <u>you **must** use t
 usethis::use_git_config(user.name = "my_user_name", # <1>
                         user.email = "my_email@nceas.ucsb.edu") # <2>
 ```
-
-1. Add you exact same GitHub user name. Case and spelling matters!
-2. Set up your email address associated to you GitHub account.
+1. Add your GitHub username (recommended) or human name.
+2. Add your email address associated to you GitHub account.
 
 **Step 2:** Define the default name for a branch that gets created when you make the first commit in a new Git repository (a.k.a. "repo").
 
@@ -71,7 +74,7 @@ usethis::git_sitrep()
 
 #### Terminal {{< fa terminal >}}
 
-**Step 1:** Tell Git your GitHub username. Note that <u>if the code runs successfully, it will look like nothing happened</u>. We will check at the end to make sure it worked.
+**Step 1:** Tell Git your GitHub username (recommended) or human name. Note that <u>if the code runs successfully, it will look like nothing happened</u>. We will check at the end to make sure it worked.
 
 ```bash
 git config --global user.name "my_user_name"
@@ -104,6 +107,61 @@ Previously, the default branch name was "master" and this terminology for Git br
 
 :::
 
+### Configure Strategy for Integrating Changes Across Branches
+
+When you're working on the same GitHub repository as the rest of your team, what happens when you and a teammate edit the same file at the same time? How does Git 'know' how to reconcile those differences? Simply put, we tell Git how we want it to make that judgement call!
+
+There are three options, "merge," "rebase," and "fast forward." **We recommend that you choose the "merge" strategy** as it will seamlessly handle easy situations where human oversight isn't needed but will flag more nuanced problems (called "merge conflicts") for you to resolve manually. For more information on "merge" versus "rebase", see [here](https://www.atlassian.com/git/tutorials/merging-vs-rebasing).  You can always revisit this decision later using essentially the same code below!
+
+::: {.panel-tabset}
+#### Console {{< fa brands r-project >}}
+
+Set the default strategy for reconciling differences.
+
+```{r}
+#| eval: false
+usethis::use_git_config(pull.rebase = "false")
+```
+
+#### Terminal {{< fa terminal >}}
+
+Set the default strategy for reconciling differences.
+
+```bash
+git config --global pull.rebase false
+```
+
+Note: The `--global` option will set this as default for all repos on your computer.  If you forget this, it will only set for the current repo.
+:::
+
+<!-- It is important to highlight too that this configuration can be repository specific. This means you can configure how you want Git to reconcile two branches at a repository level instead of doing so for all repositories in which you work. This allows you to control how Git weaves things in when collaborating with others in a project-specific fashion. -->
+
+<!-- If you don't define a merge strategy globally, you will have to define it for each repository that you create. If you have differences between branches and try to sync your local computer with the GitHub repository, you will likely get the following error message. Note that the error message itself gives you the terminal code that you'd need to fix it! -->
+
+::: {.callout-warning}
+
+#### Why did I get this error?
+
+If you forget to set your pull.rebase option, you will get the following error message when you try to sync your local computer with GitHub.  Note, it gives you the terminal code to fix it!
+
+```bash
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:    git config pull.rebase false # merge (the default strategy) # <1>
+hint:    git config pull.rebase true  # rebase
+hint:    git config pull.ff only      # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --norebase, 
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches
+```
+1. This is the Terminal code to set the "merge" strategy, though we recommend you set this globally using the `--global` option.
+:::
+
 ## GitHub Authentication
 
 While you will use your GitHub password to log in to your account on a web browser, in order to actually send code you write from your local computer up to GitHub, you'll need to "authenticate" in a different, more secure way.
@@ -128,50 +186,4 @@ If you see `<unset>` instead of `<discovered>` means your PAT is not correctly s
 :::
 
 Congrats! Now you've setup your authentication you should be able to work with GitHub in Positron now.
-
-## Strategy for Integrating Changes Across Branches
-
-There is one more piece of setup to which we need to attend before we can move on. When you're working on the same GitHub repository as the rest of your team, what happens when you and a teammate edit the same file at the same time? How does Git 'know' how to reconcile those differences? Simply put, we tell Git how we want it to make that judgement call!
-
-There are three options, "merge," "rebase," and "fast forward." **We recommend that you choose the "merge" strategy** as it will seamlessly handle easy situations where human oversight isn't needed but will flag more nuanced problems (called "merge conflicts") for you to resolve manually. For more information on "merge" versus "rebase", see [here](https://www.atlassian.com/git/tutorials/merging-vs-rebasing), but for the moment, trust us about the merge strategy. Note that you could always revisit this decision later using essentially the same code we provide below!
-
-It is important to highlight too that this configuration can be repository specific. This means you can configure how you want Git to reconcile two branches at a repository level instead of doing so for all repositories in which you work. This allows you to control how Git weaves things in when collaborating with others in a project-specific fashion.
-
-::: {.panel-tabset}
-#### Console {{< fa brands r-project >}}
-
-Set the default strategy for reconciling differences.
-
-```{r}
-#| eval: false
-usethis::use_git_config(pull.rebase = "false")
-```
-
-#### Terminal {{< fa terminal >}}
-
-Set the default strategy for reconciling differences.
-
-```bash
-git config --global pull.rebase false
-```
-
-:::
-
-If you don't define a merge stratgy globally, you will have to define it for each repository that you create. If you have differences between branches and try to sync your local computer with the GitHub repository, you will likely get the following error message. Note that the error message itself gives you the terminal code that you'd need to fix it!
-
-```
-hint: You have divergent branches and need to specify how to reconcile them.
-hint: You can do so by running one of the following commands sometime before
-hint: your next pull:
-hint: 
-hint:    git config pull.rebase false # merge (the default strategy)
-hint:    git config pull.rebase true  # rebase
-hint:    git config pull.ff only      # fast-forward only
-hint: 
-hint: You can replace "git config" with "git config --global" to set a default
-hint: preference for all repositories. You can also pass --rebase, --norebase, 
-hint: or --ff-only on the command line to override the configured default per
-hint: invocation.
-fatal: Need to specify how to reconcile divergent branches
-```
 

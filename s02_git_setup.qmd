@@ -7,10 +7,21 @@ title: Git and GitHub Setup
 
 After completing this session, you will be able to:
 
-- Recognize how to set Git defaults for your local computer
-- Create a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT)
-- Paraphrase how to tell Git how to reconcile differences between branches
+- Set up a GitHub account
+- Set Git defaults for your local computer
+- Tell Git how to reconcile differences between branches
+- Create a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT) so your computer can communicate automatically with GitHub
 :::
+
+## Set up a GitHub Account
+
+If you do not currently have a GitHub account, you can set one up for free at https://github.com.
+
+* Click "Sign up for GitHub" and use your preferred email address 
+    * if you have a .edu address, we recommend using that, as an educational account gives free access to certain privileges (you can always link an edu account later)
+    * Alternatively, you should be able to access through Google: click "Continue with Google"
+* Follow the instructions and verify your email address
+* Now you're good to go!
 
 ## Set Git's Global Options
 
@@ -19,7 +30,7 @@ Before using Git, you need to tell it who you are, also known as setting the **g
 ::: {.callout-note}
 ## What's the Terminal?
 
-Technically, the "Terminal" is an interface for the shell, a computer program. To put that simply, we use the Terminal to tell a computer what to do. This is different from the "Console" in Positron, which interprets R code and returns a value.
+Technically, the "Terminal" is an interface for the shell, a computer program. We use the Terminal to directly tell a computer what to do outside of R. This is different from the "Console" in Positron, which interprets R code and returns a value.
 
 The Terminal should be visible by default in Positron, but if it is not, you can open it by clicking "Terminal" {{< fa arrow-right >}} "New Terminal"
 

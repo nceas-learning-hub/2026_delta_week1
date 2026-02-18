@@ -556,7 +556,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-up-a-github-account" id="toc-set-up-a-github-account" class="nav-link active" data-scroll-target="#set-up-a-github-account"><span class="header-section-number">1</span> Set up a GitHub Account</a></li>
+  <li><a href="#install-software-first" id="toc-install-software-first" class="nav-link active" data-scroll-target="#install-software-first"><span class="header-section-number">1</span> Install Software First!</a></li>
   <li><a href="#set-gits-global-options" id="toc-set-gits-global-options" class="nav-link" data-scroll-target="#set-gits-global-options"><span class="header-section-number">2</span> Set Git’s Global Options</a>
   <ul class="collapse">
   <li><a href="#configure-github-username-and-email" id="toc-configure-github-username-and-email" class="nav-link" data-scroll-target="#configure-github-username-and-email"><span class="header-section-number">2.1</span> Configure GitHub Username and Email</a></li>
@@ -580,31 +580,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Learning objectives
+<span class="screen-reader-only">Tip</span>Tasks To Do
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After completing this session, you will be able to:</p>
+<p>While completing this session, you will accomplish the following tasks:</p>
 <ul>
-<li>Set up a GitHub account</li>
 <li>Set Git defaults for your local computer</li>
 <li>Tell Git how to reconcile differences between branches</li>
 <li>Create a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT) so your computer can communicate automatically with GitHub</li>
 </ul>
 </div>
 </div>
-<section id="set-up-a-github-account" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="set-up-a-github-account"><span class="header-section-number">1</span> Set up a GitHub Account</h2>
-<p>If you do not currently have a GitHub account, you can set one up for free at https://github.com.</p>
-<ul>
-<li>Click “Sign up for GitHub” and use your preferred email address
-<ul>
-<li>if you have a .edu address, we recommend using that, as an educational account gives free access to certain privileges (you can always link an edu account later)</li>
-<li>Alternatively, you should be able to access through Google: click “Continue with Google”</li>
-</ul></li>
-<li>Follow the instructions and verify your email address</li>
-<li>Now you’re good to go!</li>
-</ul>
+<section id="install-software-first" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="install-software-first"><span class="header-section-number">1</span> Install Software First!</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before starting this lesson, make sure you have followed all the setup instructions on the <a href="index.html">course home page</a>!</p>
+</div>
+</div>
 </section>
 <section id="set-gits-global-options" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="set-gits-global-options"><span class="header-section-number">2</span> Set Git’s Global Options</h2>
@@ -619,8 +621,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Technically, the “Terminal” is an interface for the shell, a computer program. We use the Terminal to directly tell a computer what to do outside of R. This is different from the “Console” in Positron, which interprets R code and returns a value.</p>
-<p>The Terminal should be visible by default in Positron, but if it is not, you can open it by clicking “Terminal” <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> “New Terminal”</p>
+<p>Technically, the “Terminal” is an interface for the shell, a computer program. We use the Terminal to directly tell a computer what to do outside of R. This is different from the “Console” in your IDE (Positron, RStudio), which interprets R code and returns a value.</p>
+<p>The Terminal should be visible by default in your IDE, but if it is not, you can open it by clicking “Terminal” <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> “New Terminal”</p>
 <p>A Terminal tab should now be open right next to the Console tab.</p>
 </div>
 </div>
@@ -650,15 +652,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When you add your <code>user.email</code> to the global options <u>you <strong>must</strong> use an address linked to your GitHub account</u>, otherwise Git won’t be able to sync to your account.</p>
-<p>Your <code>user.name</code> is not used for matching Git to GitHub - it is just for helping identify you on the commits you write. We recommend using your GitHub user name (e.g., <code>oharac</code>) but you can also use your human name (e.g, <code>Casey O'Hara</code>).</p>
+<p>When you add your <code>user.email</code> to the global options you <strong>must</strong> use an address linked to your GitHub account, otherwise Git won’t be able to sync to your account.</p>
+<p>Your <code>user.name</code> is not used for matching Git to GitHub - it is just for helping other people identify you on the commits you write. We recommend using your GitHub user name (e.g., <code>oharac</code>) but you can also use your human name (e.g, <code>Casey O'Hara</code>).</p>
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Console <i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Terminal <i class="fa-solid fa-terminal" aria-label="terminal"></i></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><strong>Step 1:</strong> Tell Git (1) your GitHub username, (2) your GitHub-associated email address, and (3) how you want Git to reconcile differences between your local work and a GitHub repository.</p>
+<p><strong>Step 1:</strong> Tell Git (1) your GitHub username, (2) your GitHub-associated email address.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"my_user_name"</span>,</span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2">2</button><span id="annotated-cell-1-2" class="code-annotation-target"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">user.email =</span> <span class="st">"my_email@nceas.ucsb.edu"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -742,7 +744,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you forget to set your pull.rebase option, you will get the following error message when you try to sync your local computer with GitHub. Note, it gives you the terminal code to fix it!</p>
+<p>If you forget to set your <code>pull.rebase</code> option, you will get the following error message when you try to sync your local computer with GitHub. Note, the error message gives you the terminal code to fix it!</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-10"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> You have divergent branches and need to specify how to reconcile them.</span>
 <span id="annotated-cell-10-2"><a href="#annotated-cell-10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> You can do so by running one of the following commands sometime before</span>
 <span id="annotated-cell-10-3"><a href="#annotated-cell-10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">hint:</span> your next pull:</span>
@@ -785,14 +787,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Run <code>usethis::create_github_token()</code> in the Console.</li>
 <li>A new browser window should open up to GitHub, showing all the “scopes” options. You can review the scopes, but you don’t need to worry about which ones to select this time. The previous function automatically pre-selects some recommended scopes. <strong>Go ahead and scroll to the bottom and click “Generate Token”</strong>.</li>
 <li><u>Copy the generated token.</u> You will not be able to see this token again (ever) when you leave this page!</li>
-<li>Back in the Console of Positron, run <code>gitcreds::gitcreds_set()</code>.</li>
+<li>Back in the Console of your IDE, run <code>gitcreds::gitcreds_set()</code>.</li>
 <li>Paste your PAT when the prompt asks for it.</li>
 <li>Run <code>usethis::git_sitrep()</code> in the Console to check your Git configuration and that you’ve successful stored your PAT. <strong>Note:</strong> look for <code>Personal access token for 'https://github.com': '&lt;discovered&gt;'</code></li>
 </ol>
 <p>If you see <code>&lt;unset&gt;</code> instead of <code>&lt;discovered&gt;</code> means your PAT is not correctly set. You’ll need to troubleshoot.</p>
 </div>
 </div>
-<p>Congrats! Now you’ve setup your authentication you should be able to work with GitHub in Positron now.</p>
+<p>Congrats! Now you’ve setup your authentication you should be able to work with GitHub in your IDE now.</p>
 
 
 </section>

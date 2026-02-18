@@ -3,25 +3,21 @@ title: Git and GitHub Setup
 ---
 
 :::{.callout-tip}
-## Learning objectives
+#### Tasks To Do
 
-After completing this session, you will be able to:
+While completing this session, you will accomplish the following tasks:
 
-- Set up a GitHub account
 - Set Git defaults for your local computer
 - Tell Git how to reconcile differences between branches
 - Create a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT) so your computer can communicate automatically with GitHub
 :::
 
-## Set up a GitHub Account
+## Install Software First!
 
-If you do not currently have a GitHub account, you can set one up for free at https://github.com.
+:::{.callout-important}
+Before starting this lesson, make sure you have followed all the setup instructions on the [course home page](index.html)!
+:::
 
-* Click "Sign up for GitHub" and use your preferred email address 
-    * if you have a .edu address, we recommend using that, as an educational account gives free access to certain privileges (you can always link an edu account later)
-    * Alternatively, you should be able to access through Google: click "Continue with Google"
-* Follow the instructions and verify your email address
-* Now you're good to go!
 
 ## Set Git's Global Options
 
@@ -30,9 +26,9 @@ Before using Git, you need to tell it who you are, also known as setting the **g
 ::: {.callout-note}
 ## What's the Terminal?
 
-Technically, the "Terminal" is an interface for the shell, a computer program. We use the Terminal to directly tell a computer what to do outside of R. This is different from the "Console" in Positron, which interprets R code and returns a value.
+Technically, the "Terminal" is an interface for the shell, a computer program. We use the Terminal to directly tell a computer what to do outside of R. This is different from the "Console" in your IDE (Positron, RStudio), which interprets R code and returns a value.
 
-The Terminal should be visible by default in Positron, but if it is not, you can open it by clicking "Terminal" {{< fa arrow-right >}} "New Terminal"
+The Terminal should be visible by default in your IDE, but if it is not, you can open it by clicking "Terminal" {{< fa arrow-right >}} "New Terminal"
 
 A Terminal tab should now be open right next to the Console tab.
 :::
@@ -51,15 +47,15 @@ To introduce ourselves to git we are going to update our global options with our
 ::: {.callout-important}
 ## Case and Spelling Matter!
 
-When you add your `user.email` to the global options <u>you **must** use an address linked to your GitHub account</u>, otherwise Git won't be able to sync to your account.  
+When you add your `user.email` to the global options you **must** use an address linked to your GitHub account, otherwise Git won't be able to sync to your account.
 
-Your `user.name` is not used for matching Git to GitHub - it is just for helping identify you on the commits you write.  We recommend using your GitHub user name (e.g., `oharac`) but you can also use your human name (e.g, `Casey O'Hara`).
+Your `user.name` is not used for matching Git to GitHub - it is just for helping other people identify you on the commits you write.  We recommend using your GitHub user name (e.g., `oharac`) but you can also use your human name (e.g, `Casey O'Hara`).
 :::
 
 ::: {.panel-tabset}
 #### Console {{< fa brands r-project >}}
 
-**Step 1:** Tell Git (1) your GitHub username, (2) your GitHub-associated email address, and (3) how you want Git to reconcile differences between your local work and a GitHub repository.
+**Step 1:** Tell Git (1) your GitHub username, (2) your GitHub-associated email address.
 
 ```{r}
 #| eval: false
@@ -153,7 +149,7 @@ Note: The `--global` option will set this as default for all repos on your compu
 
 #### Why did I get this error?
 
-If you forget to set your pull.rebase option, you will get the following error message when you try to sync your local computer with GitHub.  Note, it gives you the terminal code to fix it!
+If you forget to set your `pull.rebase` option, you will get the following error message when you try to sync your local computer with GitHub.  Note, the error message gives you the terminal code to fix it!
 
 ```bash
 hint: You have divergent branches and need to specify how to reconcile them.
@@ -187,7 +183,7 @@ We will be using a **Personal Access Token (PAT)** in this course. For better se
 1. Run `usethis::create_github_token()` in the Console.
 2. A new browser window should open up to GitHub, showing all the "scopes" options. You can review the scopes, but you don't need to worry about which ones to select this time. The previous function automatically pre-selects some recommended scopes. **Go ahead and scroll to the bottom and click "Generate Token"**.
 3. <u>Copy the generated token.</u> You will not be able to see this token again (ever) when you leave this page!
-4. Back in the Console of Positron, run `gitcreds::gitcreds_set()`.
+4. Back in the Console of your IDE, run `gitcreds::gitcreds_set()`.
 5. Paste your PAT when the prompt asks for it.
 6. Run `usethis::git_sitrep()` in the Console to check your Git configuration and that you've successful stored your PAT. 
 **Note:** look for `Personal access token for 'https://github.com': '<discovered>'`
@@ -196,5 +192,5 @@ If you see `<unset>` instead of `<discovered>` means your PAT is not correctly s
 
 :::
 
-Congrats! Now you've setup your authentication you should be able to work with GitHub in Positron now.
+Congrats! Now you've setup your authentication you should be able to work with GitHub in your IDE now.
 

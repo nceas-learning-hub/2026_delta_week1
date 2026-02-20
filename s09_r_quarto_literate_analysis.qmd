@@ -5,29 +5,39 @@ title: Literate Analysis with Quarto
 :::{.callout-tip}
 ## Learning Objectives
 
--   Introduce literate analysis using Quarto (an extension of RMarkdown's features)
--   Learn markdown syntax and run R code using Quarto
+After completing this session, you will be able to:
+
+-   Describe the concept of literate analysis and how it supports reproducible data science
+-   Apply Markdown syntax to format and structure prose (non-code) text in a Quarto document
+-   Incorporate functional code chunks into a Quarto document and customize their output
 -   Build and render an example analysis
 :::
 
 ## Introduction to Literate Programming
 
-All too often, computational methods are written in such a way as to be borderline incomprehensible even to the person who originally wrote the code! The reason for this is obvious, computers interpret information very differently than people do. In 1984, Donald Knuth proposed a reversal of the programming paradigm by introducing the concept of *Literate Programming* ([Knuth 1984](http://www.literateprogramming.com/knuthweb.pdf)).
-
-### Here is some important stuff!
-
-blah
+All too often, computational methods are written in such a way as to be borderline incomprehensible even to the person who originally wrote the code! The reason for this is obvious: computers interpret information very differently than people do. In 1984, Donald Knuth proposed a reversal of the programming paradigm by introducing the concept of *Literate Programming* ([Knuth 1984](http://www.literateprogramming.com/knuthweb.pdf)).
 
 > *"Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do."*
 
 If our aim is to make scientific research more transparent, the appeal of this paradigm reversal is immediately apparent. By switching to a literate analysis model, **you help enable human understanding of what the computer is doing**. As Knuth describes, in the literate analysis model, the author is an "*essayist*" who chooses variable names carefully, explains what they mean, and introduces concepts in the analysis in a way that facilitates understanding.
 
-Quarto and RMarkdown are an excellent way to generate literate analysis, and a reproducible workflow. These types of files, combine R the programming language, and **markdown, a set of text formatting directives**.
+In practice, literate programming is achieved by interleaving sections of natural language prose that describe the goals, methods, and interpretation of an analysis, with sections of code that perform the analysis, generate figures, and save results.  The resulting document is usually rendered as a nicely-formatted report in HTML, MS Word, or PDF format.  Contrast this with a more traditional script, which includes only functional code with (hopefully) a few brief explanatory comments.
 
-In an R script, the language assumes that you are writing R code, unless you specify that you are writing prose (using a comment, designated by `#`). The paradigm shift of literate analysis comes in the switch to RMarkdown or Quarto, where instead of assuming you are writing code, they assume that you are writing prose unless you specify that you are writing code. This, along with the formatting provided by markdown, encourages the "essayist" to write understandable prose to accompany the code that explains to the human-beings reading the document what the author told the computer to do. This is in contrast to writing just R code, where the author telling to the computer what to do with maybe a smattering of terse comments explaining the code to a reader.
+## Quarto and Literate Programming
 
+***Quarto*** (and its predecessor RMarkdown) is an open-source scientific publishing system excellent way to generate literate analysis and a reproducible workflow. Quarto files interleave sections of formatted prose and sections of functional code ("code chunks") that can be rendered to create a complete record of an analysis, including the code, the results, and the interpretation of the results.
 
-Before we dive in deeper, let's look at an example of what a rendered literate analysis can look like using a real example. [Here is an example](https://nceas.github.io/sasap-training/materials/reproducible_research_in_r_fairbanks/example-brood-table-analysis.html) of an analysis workflow written using RMarkdown. Note that if this analysis would be in Quarto, the render version it would be similar, except for formatting and layout (eg: the default font in Quarto is different).  
+:::{.callout-tip}
+### Coding languages in Quarto
+
+We will focus on using Quarto with R code, but it is designed to work seamlessly with other coding languages as well, including Python, Julia, and Observable JavaScript. You can even use multiple languages in the same document to integrate different tools into a single workflow.
+:::
+
+<!-- In an R script, the language assumes that you are writing R code, unless you specify that you are writing prose (using a comment, designated by `#`). The paradigm shift of literate analysis comes in the switch to RMarkdown or Quarto, where instead of assuming you are writing code, they assume that you are writing prose unless you specify that you are writing code. This, along with the formatting provided by markdown, encourages the "essayist" to write understandable prose to accompany the code that explains to the human-beings reading the document what the author told the computer to do. This is in contrast to writing just R code, where the author telling to the computer what to do with maybe a smattering of terse comments explaining the code to a reader. -->
+
+### Example: Literate Analysis From Quarto
+
+Let's look at an example of what a rendered literate analysis looks like using a real example. [Here is an example](https://nceas.github.io/sasap-training/materials/reproducible_research_in_r_fairbanks/example-brood-table-analysis.html) of an analysis workflow written using RMarkdown. Note that if this analysis would be in Quarto, the render version it would be similar, except for formatting and layout (eg: the default font in Quarto is different).  
 
 There are a few things to notice about this document, which assembles a set of similar data sources on salmon brood tables with different formatting into a single data source.
 
@@ -42,7 +52,7 @@ In addition to achieving literate analysis, this document also represents a **re
 ::: callout-important
 ## A note on reproducibility
 
-Reproducible analysis allow you to automatize how the figures and the statistics in your analysis are generated. This process also helps your collaborators, your readers and your future self to follow your code trail the leads to the original data, increasing the transparency of your science.
+Reproducible analysis allow you to automatize how the figures and the statistics in your analysis are generated from raw data to final results.  This process also helps your collaborators, your readers, and your future self to follow your code trail the leads to the original data, increasing the transparency of your science.
 
 Literate analysis help reduce the mistakes from copying and pasting across software, keeps results and models in sync, and allows you to provide interested readers with more information about the different approaches and analyses you tried before coming up with the final results (@britecolsoc2017). 
 :::
@@ -79,11 +89,8 @@ Today we are going to use Quarto to run some analysis on data. We are specifical
 Is the document's metadata which sets guidelines on how your want the output of your document to look like. It is located at the top of your file, delineated by three dashes (`---`) at the top and at the bottom of it. It can be used to specify:
 
 -   Characteristics of your documents such at title, author, date of creation.
-
 -   Argument to pass on the building process to control the format of the output.
-
 -   Add additional information such as the bibliography file (and formatting of the references)
-
 -   Specific parameters for your report (eg: just used a subset of the data).
 :::
 

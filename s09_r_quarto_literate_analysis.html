@@ -78,9 +78,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e631fe4e4ba653b14c35b310e15db931.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-3697dd4d56af9a751d85c836bcd41f3c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-e631fe4e4ba653b14c35b310e15db931.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-cecc5a39c142b520f22a6de88e6152ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -554,28 +556,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-literate-programming" id="toc-introduction-to-literate-programming" class="nav-link active" data-scroll-target="#introduction-to-literate-programming"><span class="header-section-number">1</span> Introduction to Literate Programming</a>
+  <li><a href="#introduction-to-literate-programming" id="toc-introduction-to-literate-programming" class="nav-link active" data-scroll-target="#introduction-to-literate-programming"><span class="header-section-number">1</span> Introduction to Literate Programming</a></li>
+  <li><a href="#quarto-and-literate-programming" id="toc-quarto-and-literate-programming" class="nav-link" data-scroll-target="#quarto-and-literate-programming"><span class="header-section-number">2</span> Quarto and Literate Programming</a>
   <ul class="collapse">
-  <li><a href="#here-is-some-important-stuff" id="toc-here-is-some-important-stuff" class="nav-link" data-scroll-target="#here-is-some-important-stuff"><span class="header-section-number">1.1</span> Here is some important stuff!</a></li>
+  <li><a href="#why-does-this-matter-for-reproducibility" id="toc-why-does-this-matter-for-reproducibility" class="nav-link" data-scroll-target="#why-does-this-matter-for-reproducibility"><span class="header-section-number">2.1</span> Why does this matter for reproducibility?</a></li>
+  <li><a href="#example-literate-analysis-from-quarto" id="toc-example-literate-analysis-from-quarto" class="nav-link" data-scroll-target="#example-literate-analysis-from-quarto"><span class="header-section-number">2.2</span> Example: Literate Analysis From Quarto</a></li>
   </ul></li>
-  <li><a href="#rmarkdown-and-quarto" id="toc-rmarkdown-and-quarto" class="nav-link" data-scroll-target="#rmarkdown-and-quarto"><span class="header-section-number">2</span> RMarkdown and Quarto</a></li>
-  <li><a href="#a-quarto-document" id="toc-a-quarto-document" class="nav-link" data-scroll-target="#a-quarto-document"><span class="header-section-number">3</span> A Quarto Document</a></li>
-  <li><a href="#markdown-syntax" id="toc-markdown-syntax" class="nav-link" data-scroll-target="#markdown-syntax"><span class="header-section-number">4</span> Markdown Syntax</a></li>
-  <li><a href="#the-visual-editor" id="toc-the-visual-editor" class="nav-link" data-scroll-target="#the-visual-editor"><span class="header-section-number">5</span> The Visual Editor</a>
+  <li><a href="#structure-of-a-quarto-document" id="toc-structure-of-a-quarto-document" class="nav-link" data-scroll-target="#structure-of-a-quarto-document"><span class="header-section-number">3</span> Structure of a Quarto Document</a></li>
+  <li><a href="#lets-create-a-quarto-document" id="toc-lets-create-a-quarto-document" class="nav-link" data-scroll-target="#lets-create-a-quarto-document"><span class="header-section-number">4</span> Let’s Create A Quarto Document</a>
   <ul class="collapse">
-  <li><a href="#adding-citations" id="toc-adding-citations" class="nav-link" data-scroll-target="#adding-citations"><span class="header-section-number">5.1</span> Adding citations</a></li>
-  <li><a href="#adding-table-in-markdown" id="toc-adding-table-in-markdown" class="nav-link" data-scroll-target="#adding-table-in-markdown"><span class="header-section-number">5.2</span> Adding table in markdown</a></li>
+  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header"><span class="header-section-number">4.1</span> YAML header</a></li>
+  <li><a href="#markdown-syntax" id="toc-markdown-syntax" class="nav-link" data-scroll-target="#markdown-syntax"><span class="header-section-number">4.2</span> Markdown Syntax</a></li>
+  <li><a href="#visual-vs.-source-editor" id="toc-visual-vs.-source-editor" class="nav-link" data-scroll-target="#visual-vs.-source-editor"><span class="header-section-number">4.3</span> Visual vs.&nbsp;Source Editor</a></li>
+  <li><a href="#code-chunks-in-quarto" id="toc-code-chunks-in-quarto" class="nav-link" data-scroll-target="#code-chunks-in-quarto"><span class="header-section-number">4.4</span> Code Chunks in Quarto</a></li>
   </ul></li>
-  <li><a href="#code-chunks-in-quarto" id="toc-code-chunks-in-quarto" class="nav-link" data-scroll-target="#code-chunks-in-quarto"><span class="header-section-number">6</span> Code Chunks in Quarto</a></li>
-  <li><a href="#practice-literate-analysis-with-ocean-water-samples" id="toc-practice-literate-analysis-with-ocean-water-samples" class="nav-link" data-scroll-target="#practice-literate-analysis-with-ocean-water-samples"><span class="header-section-number">7</span> Practice: Literate Analysis with ocean water samples</a>
+  <li><a href="#practice-literate-analysis-with-ocean-water-samples" id="toc-practice-literate-analysis-with-ocean-water-samples" class="nav-link" data-scroll-target="#practice-literate-analysis-with-ocean-water-samples"><span class="header-section-number">5</span> Practice: Literate Analysis with ocean water samples</a>
   <ul class="collapse">
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><span class="header-section-number">7.1</span> Getting Started</a></li>
-  <li><a href="#read-in-the-data" id="toc-read-in-the-data" class="nav-link" data-scroll-target="#read-in-the-data"><span class="header-section-number">7.2</span> Read in the data</a></li>
-  <li><a href="#calculate-summary-statistics" id="toc-calculate-summary-statistics" class="nav-link" data-scroll-target="#calculate-summary-statistics"><span class="header-section-number">7.3</span> Calculate Summary Statistics</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><span class="header-section-number">5.1</span> Getting Started</a></li>
+  <li><a href="#read-in-the-data" id="toc-read-in-the-data" class="nav-link" data-scroll-target="#read-in-the-data"><span class="header-section-number">5.2</span> Read in the data</a></li>
+  <li><a href="#calculate-summary-statistics" id="toc-calculate-summary-statistics" class="nav-link" data-scroll-target="#calculate-summary-statistics"><span class="header-section-number">5.3</span> Calculate Summary Statistics</a></li>
   </ul></li>
-  <li><a href="#quarto-and-environments" id="toc-quarto-and-environments" class="nav-link" data-scroll-target="#quarto-and-environments"><span class="header-section-number">8</span> Quarto and Environments</a></li>
-  <li><a href="#additional-quarto-resources" id="toc-additional-quarto-resources" class="nav-link" data-scroll-target="#additional-quarto-resources"><span class="header-section-number">9</span> Additional Quarto Resources</a></li>
-  <li><a href="#troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf" id="toc-troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf" class="nav-link" data-scroll-target="#troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf"><span class="header-section-number">10</span> Troubleshooting: My RMarkdown/Quarto doc Won’t Knit to PDF</a></li>
+  <li><a href="#quarto-and-environments" id="toc-quarto-and-environments" class="nav-link" data-scroll-target="#quarto-and-environments"><span class="header-section-number">6</span> Quarto and Environments</a></li>
+  <li><a href="#additional-quarto-resources" id="toc-additional-quarto-resources" class="nav-link" data-scroll-target="#additional-quarto-resources"><span class="header-section-number">7</span> Additional Quarto Resources</a></li>
+  <li><a href="#troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf" id="toc-troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf" class="nav-link" data-scroll-target="#troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf"><span class="header-section-number">8</span> Troubleshooting: My RMarkdown/Quarto doc Won’t Knit to PDF</a></li>
   </ul>
 </nav>
     </div>
@@ -597,26 +600,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>After completing this session, you will be able to:</p>
 <ul>
-<li>Introduce literate analysis using Quarto (an extension of RMarkdown’s features)</li>
-<li>Learn markdown syntax and run R code using Quarto</li>
-<li>Build and render an example analysis</li>
+<li>Describe the concept of literate analysis and how it supports reproducible data science</li>
+<li>Format prose (non-code) text in a Quarto document using Markdown syntax</li>
+<li>Incorporate functional code chunks into a Quarto document and customize their output</li>
+<li>Build and render a complete example analysis</li>
 </ul>
 </div>
 </div>
 <section id="introduction-to-literate-programming" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction-to-literate-programming"><span class="header-section-number">1</span> Introduction to Literate Programming</h2>
-<p>All too often, computational methods are written in such a way as to be borderline incomprehensible even to the person who originally wrote the code! The reason for this is obvious, computers interpret information very differently than people do. In 1984, Donald Knuth proposed a reversal of the programming paradigm by introducing the concept of <em>Literate Programming</em> (<a href="http://www.literateprogramming.com/knuthweb.pdf">Knuth 1984</a>).</p>
-<section id="here-is-some-important-stuff" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="here-is-some-important-stuff"><span class="header-section-number">1.1</span> Here is some important stuff!</h3>
-<p>blah</p>
+<p>Traditional code is written for computers - it can be hard for humans to follow, even the person who wrote it. In 1984, computer science pioneer Donald Knuth proposed flipping this around: rather than instructing a computer, write code that <em>explains your thinking to other people</em>.</p>
 <blockquote class="blockquote">
-<p><em>“Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.”</em></p>
+<p>“Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.” - Donald Knuth, 1984</p>
 </blockquote>
-<p>If our aim is to make scientific research more transparent, the appeal of this paradigm reversal is immediately apparent. By switching to a literate analysis model, <strong>you help enable human understanding of what the computer is doing</strong>. As Knuth describes, in the literate analysis model, the author is an “<em>essayist</em>” who chooses variable names carefully, explains what they mean, and introduces concepts in the analysis in a way that facilitates understanding.</p>
-<p>Quarto and RMarkdown are an excellent way to generate literate analysis, and a reproducible workflow. These types of files, combine R the programming language, and <strong>markdown, a set of text formatting directives</strong>.</p>
-<p>In an R script, the language assumes that you are writing R code, unless you specify that you are writing prose (using a comment, designated by <code>#</code>). The paradigm shift of literate analysis comes in the switch to RMarkdown or Quarto, where instead of assuming you are writing code, they assume that you are writing prose unless you specify that you are writing code. This, along with the formatting provided by markdown, encourages the “essayist” to write understandable prose to accompany the code that explains to the human-beings reading the document what the author told the computer to do. This is in contrast to writing just R code, where the author telling to the computer what to do with maybe a smattering of terse comments explaining the code to a reader.</p>
-<p>Before we dive in deeper, let’s look at an example of what a rendered literate analysis can look like using a real example. <a href="https://nceas.github.io/sasap-training/materials/reproducible_research_in_r_fairbanks/example-brood-table-analysis.html">Here is an example</a> of an analysis workflow written using RMarkdown. Note that if this analysis would be in Quarto, the render version it would be similar, except for formatting and layout (eg: the default font in Quarto is different).</p>
+<p>In a <strong>literate analysis</strong>, we weave together natural-language prose (describing your goals, methods, and interpretations) with functional code (that actually performs the analysis). The result renders into a polished HTML, PDF, or Word report - a single document that is both human-readable and fully reproducible.</p>
+<!-- All too often, computational methods are written in such a way as to be borderline incomprehensible even to the person who originally wrote the code! The reason for this is obvious: computers interpret information very differently than people do. In 1984, Donald Knuth proposed a reversal of the programming paradigm by introducing the concept of *Literate Programming* ([Knuth 1984](http://www.literateprogramming.com/knuthweb.pdf)). -->
+<!-- > *"Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do."* -->
+<!-- If our aim is to make scientific research more transparent, the appeal of this paradigm reversal is immediately apparent. By switching to a literate analysis model, **you help enable human understanding of what the computer is doing**. As Knuth describes, in the literate analysis model, the author is an "*essayist*" who chooses variable names carefully, explains what they mean, and introduces concepts in the analysis in a way that facilitates understanding. -->
+<!-- In practice, literate programming is achieved by interleaving sections of natural language prose that describe the goals, methods, and interpretation of an analysis, with sections of code that perform the analysis, generate figures, and save results.  The resulting document is usually rendered as a nicely-formatted report in HTML, MS Word, or PDF format.  Contrast this with a more traditional script, which includes only functional code with (hopefully) a few brief explanatory comments. -->
+</section>
+<section id="quarto-and-literate-programming" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="quarto-and-literate-programming"><span class="header-section-number">2</span> Quarto and Literate Programming</h2>
+<p><strong>Quarto</strong> is an open-source publishing system that makes literate analysis straightforward. A Quarto file (<code>.qmd</code>) mixes formatted prose with executable <strong>code chunks</strong>, and renders them together into a complete report.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Coding languages in Quarto
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will focus on using Quarto with R code, but it is designed to work seamlessly with other coding languages as well, including Python, Julia, and Observable JavaScript. You can even use multiple languages in the same document.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Quarto vs.&nbsp;RMarkdown
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you’ve used RMarkdown (<code>.Rmd</code>) before, Quarto (<code>.qmd</code>) will feel familiar. The main differences are that Quarto has richer multi-language support and improved formatting options. Both formats share the same three-part structure: YAML, prose, and code chunks.</p>
+</div>
+</div>
+<section id="why-does-this-matter-for-reproducibility" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="why-does-this-matter-for-reproducibility"><span class="header-section-number">2.1</span> Why does this matter for reproducibility?</h3>
+<p>When your entire analysis - data loading, cleaning, statistics, and figures - lives in one Quarto document, you can re-run everything with a single click. If the data updates, so does your report. This eliminates error-prone copy-pasting between scripts, spreadsheets, and documents, and gives collaborators (and your future self!) a clear trail from raw data to final results.</p>
+<!-- In an R script, the language assumes that you are writing R code, unless you specify that you are writing prose (using a comment, designated by `#`). The paradigm shift of literate analysis comes in the switch to RMarkdown or Quarto, where instead of assuming you are writing code, they assume that you are writing prose unless you specify that you are writing code. This, along with the formatting provided by markdown, encourages the "essayist" to write understandable prose to accompany the code that explains to the human-beings reading the document what the author told the computer to do. This is in contrast to writing just R code, where the author telling to the computer what to do with maybe a smattering of terse comments explaining the code to a reader. -->
+</section>
+<section id="example-literate-analysis-from-quarto" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="example-literate-analysis-from-quarto"><span class="header-section-number">2.2</span> Example: Literate Analysis From Quarto</h3>
+<p>Let’s look at an example of what a rendered literate analysis looks like using a real example. <a href="https://nceas.github.io/sasap-training/materials/reproducible_research_in_r_fairbanks/example-brood-table-analysis.html">Here is an example</a> of an analysis workflow written using RMarkdown. Note that if this analysis would be in Quarto, the render version it would be similar, except for formatting and layout (eg: the default font in Quarto is different).</p>
 <p>There are a few things to notice about this document, which assembles a set of similar data sources on salmon brood tables with different formatting into a single data source.</p>
 <ul>
 <li>It introduces the data sources using in-line images, links, interactive tables, and interactive maps.</li>
@@ -626,261 +667,378 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Simple analysis and plots are shown.</li>
 </ul>
 <p>In addition to achieving literate analysis, this document also represents a <strong>reproducible analysis</strong>. Because the entire merging and quality control of the data is done using the R code in the Quarto file, if a new data source and formatting script are added, the document can be run all at once with a single click to re-generate the quality control, plots, and analysis of the updated data.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
+</section>
+</section>
+<section id="structure-of-a-quarto-document" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="structure-of-a-quarto-document"><span class="header-section-number">3</span> Structure of a Quarto Document</h2>
+<p>Every Quarto document has three components:</p>
+<ul>
+<li><strong>YAML header</strong> - metadata at the very top of the file, enclosed in <code>---</code>. It controls the document title, author, output format, and a lot more.</li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Analysis"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Prose</strong> - plain text written in Markdown (the white areas of the document).</li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon callout-empty-content">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Code chunks</strong> - executable code blocks (the grey areas), opened with <code>```{r}</code> and closed with <code>```</code>.</li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">"Hello world!"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!--NOTE: the double curly braces mean this will *display* as an R code chunk including header and footer, but not execute -->
+</div>
+</div>
+</div>
+</section>
+<section id="lets-create-a-quarto-document" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="lets-create-a-quarto-document"><span class="header-section-number">4</span> Let’s Create A Quarto Document</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">RStudio</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Positron</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ol type="1">
+<li>In RStudio, go to <strong>File</strong> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>New File</strong> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>Quarto Document</strong>.</li>
+<li>Give it a title (e.g., “Introduction to Quarto”), leave the other options as-is, then click <strong>Create</strong>.</li>
+<li>Look at what you get: a YAML header at the top, with title and format, and a blank canvas below.</li>
+</ol>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ol type="1">
+<li>In Positron, go to <strong>File</strong> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>New File</strong> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>Quarto Document</strong>.</li>
+<li>Look at what you get: a YAML header at the top for title and format, and a blank canvas below.</li>
+<li>Fill in the title (e.g., “Introduction to Quarto”)</li>
+</ol>
+</div>
+</div>
+</div>
+<p>Below the YAML header, let’s add some content. Type or copy/paste so your document looks like this:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>A note on reproducibility
+<span class="screen-reader-only">Note</span>Expand this block and add this code to your Quarto document
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Reproducible analysis allow you to automatize how the figures and the statistics in your analysis are generated. This process also helps your collaborators, your readers and your future self to follow your code trail the leads to the original data, increasing the transparency of your science.</p>
-<p>Literate analysis help reduce the mistakes from copying and pasting across software, keeps results and models in sync, and allows you to provide interested readers with more information about the different approaches and analyses you tried before coming up with the final results (<span class="citation" data-cites="britecolsoc2017">@britecolsoc2017</span>).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## Quarto
+
+### Markdown section
+In this section, include prose text formatted using Markdown syntax.
+
+### Code chunks
+
+You can also include code chunks:</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r basic math}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## Including Plots
+
+You can also embed plots, for example:</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r pressure plot}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-</section>
-</section>
-<section id="rmarkdown-and-quarto" class="level2 page-columns page-full" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="rmarkdown-and-quarto"><span class="header-section-number">2</span> RMarkdown and Quarto</h2>
-<p>You can identify a Quarto file with the <code>.qmd</code> extension. On the other hand, an RMarkdown file has a <code>.Rmd</code> extension. Both have similar structures and both combine prose with code.Quarto provides a rich support to languages other than R such as Python, Observable, and Julia. It also excels in formatting and layout. Allowing users to customize in details the looks of the rendered documents. On the other hand, RMarkdown is compatible with some languages that Quarto is not, for example bash. Quarto and Rmarkdown are amazing tools to use for collaborative research. During this course e will spend some time learning and using the basics of Quarto and provide some comparisons to RMarkdown.</p>
-<p><img src="images/r_quarto_literate_analysis/quarto-rmd-logo.png" class="img-fluid" alt="Bui &amp; Csik, 2023, SORTEE"></p>
-<p>Now, let’s take a look at the structure of each of these files. The both look for the most part the same with minor differences.</p>
-<div class="column-page">
-<p><img src="images/r_quarto_literate_analysis/quarto-rmd-structure.png" class="img-fluid" alt="Bui &amp; Csik, 2023, SORTEE"></p>
-<p>Finally, lets compare each of these files when knitted/rendered.</p>
-<p><img src="images/r_quarto_literate_analysis/quarto-rmd-rendered.png" class="img-fluid" alt="Bui &amp; Csik, 2023, SORTEE"></p>
 </div>
-<p>Again, we see similar outcomes, with minor differences mainly in formatting (font, style of showing code chunks, etc.)</p>
-<p>Both type of documents have three main components:</p>
+<p>Click the <strong>Render</strong> button. You will be asked to save first - give it a useful name (e.g., <code>quarto_test.qmd</code>) and save it in your <code>scripts/</code> folder.</p>
+<p>You’ll see an HTML file appear in your browser. Notice:</p>
 <ul>
-<li>YAML metadata to guide the document’s build process</li>
-<li>Code chunks to run</li>
-<li>Prose (Text to display)</li>
+<li>The first code chunk (<code>1 + 1</code>) runs and displays its result.</li>
+<li>The second chunk shows the result but not the code - that’s because it includes the code chunk option <code>#| echo: false</code>. More on these later!</li>
 </ul>
-<p>Today we are going to use Quarto to run some analysis on data. We are specifically going to focus on the code chunk and text components. We will discuss more about the how the YAML works in an Quarto later in the course.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>The YAML
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Is the document’s metadata which sets guidelines on how your want the output of your document to look like. It is located at the top of your file, delineated by three dashes (<code>---</code>) at the top and at the bottom of it. It can be used to specify:</p>
-<ul>
-<li><p>Characteristics of your documents such at title, author, date of creation.</p></li>
-<li><p>Argument to pass on the building process to control the format of the output.</p></li>
-<li><p>Add additional information such as the bibliography file (and formatting of the references)</p></li>
-<li><p>Specific parameters for your report (eg: just used a subset of the data).</p></li>
-</ul>
-</div>
-</div>
+<section id="yaml-header" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="yaml-header"><span class="header-section-number">4.1</span> YAML header</h3>
+<p>???</p>
 </section>
-<section id="a-quarto-document" class="level2 page-columns page-full" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="a-quarto-document"><span class="header-section-number">3</span> A Quarto Document</h2>
-<p>Let’s open an Quarto file following the instructions below.</p>
+<section id="markdown-syntax" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="markdown-syntax"><span class="header-section-number">4.2</span> Markdown Syntax</h3>
+<p>The prose sections of a Quarto document use <strong>Markdown</strong>, a lightweight formatting language with only ~15 rules to learn. Markdown is also used in GitHub READMEs, Slack, and many other tools, so it’s well worth knowing.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Syntax</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code># Heading 1</code></td>
+<td>Large top-level header</td>
+</tr>
+<tr class="even">
+<td><code>## Heading 2</code></td>
+<td>Smaller sub-header</td>
+</tr>
+<tr class="odd">
+<td><code>**bold**</code></td>
+<td><strong>bold</strong></td>
+</tr>
+<tr class="even">
+<td><code>*italic*</code></td>
+<td><em>italic</em></td>
+</tr>
+<tr class="odd">
+<td><code>[link text](url)</code></td>
+<td>Hyperlink</td>
+</tr>
+<tr class="even">
+<td><code>* item</code></td>
+<td>Bullet list</td>
+</tr>
+<tr class="odd">
+<td><code>1. item</code></td>
+<td>Numbered list</td>
+</tr>
+</tbody>
+</table>
+<p>For a full reference, see https://www.markdownguide.org/cheat-sheet/.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Setup
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>Open a new Quarto file using the following prompts: File &gt; New File &gt; Quarto Document</li>
-<li>A popup window will appear.</li>
-<li>Give your file a new title, e.g “Introduction to Quarto”.</li>
-<li>Leave the output format as HTML and Engine set to Knitr.</li>
-<li>Then click the “Create” button.</li>
-</ul>
+<p>The <code>#</code> symbol means something different in R code (a comment) vs. Markdown (a header). In Markdown, the number of <code>#</code> symbols you use matters: <code>#</code> is the biggest header, <code>###</code> up to <code>######</code> are consecutively smaller and nested below it.</p>
 </div>
 </div>
-<p>Let’s have a look at this file — As we saw in the examples above, it looks a little different than a R script. It’s not blank; there is some initial text already provided for you. Lets identify the three main components we introduces before. We have the YAML a the top, in between the two sets of dashed lines. Then we also see white and grey sections. The gray sections are R code chunks and the white sections are plain text.</p>
-<p>Let’s go ahead and render this file by clicking the “Render” button, next to the blue arrow at the top of the Quarto file. When you first click this button, RStudio will prompt you to save this file. Save it in into your <code>scripts</code> folder, and name it something that you will remember (like <code>quarto-intro.Rmd</code>).</p>
-<div class="column-page">
-<p><img src="images/r_quarto_literate_analysis/quarto-side-by-side.png" class="img-fluid"></p>
-</div>
-<p>What do you notice between the two?</p>
-<p>First, the render process produced a second file (an HTML file) that popped up in a second window in the browser. You’ll also see this file in your directory with the same name as your qmd, but with the .html extension. In it’s simplest format, Quarto files come in pairs (same than RMarkdown files) the Quarto document, and its rendered version. In this case, we are rendering, the file into HTML. You can also knit to PDF or Word files and others.</p>
-<p>Notice how the grey <strong>R code chunks</strong> are surrounded by 3 back-ticks and <code>{r LABEL}</code>. The first chunk, in this case <code>1+1</code>, is evaluated and return the output number (2). Notice the line in the second chunk that says <code>#| echo: false</code>? This is a code chunk option that indicates not to print the code. In the rendered version, we can see the outcome of <code>2*2</code> but not the executed code that created the outcome.</p>
-<p>The table below show some of the options available to customizing outputs (<a href="https://quarto.org/docs/computations/execution-options.html">Quarto.org</a>).</p>
-<table class="caption-top table">
-<caption>Code chunk options</caption>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 66%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>#| eval:</code></td>
-<td>Evaluate the code chunk (if <code>false</code>, just echos the code into the output).</td>
-</tr>
-<tr class="even">
-<td><code>#| echo:</code></td>
-<td>Include the source code in output</td>
-</tr>
-<tr class="odd">
-<td><code>#| warning:</code></td>
-<td>Include warnings in the output.</td>
-</tr>
-<tr class="even">
-<td><code>#| error:</code></td>
-<td>Include warnings in the output.</td>
-</tr>
-<tr class="odd">
-<td><code>#| include:</code></td>
-<td>Catch all for preventing any output (code or results) from being included (e.g.<code>include: false</code> suppresses all output from the code block).</td>
-</tr>
-</tbody>
-</table>
-<p>Note that you can also combine these options by adding more than one to a code chunk.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+<span class="screen-reader-only">Exercise</span>Exercise 1
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>One important difference between Quarto documents and RMarkdown documents is that in Quarto, chunk options are written in special comment format (<code>#|</code>) at the top of code chunks rather than within the wiggly brackets next to ```<code>{r}</code> at the begging of the chunk. For example:</p>
-<section id="quarto-code-options-syntax" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="quarto-code-options-syntax">Quarto code options syntax</h4>
-<p><img src="images/r_quarto_literate_analysis/quarto-code-options.png" class="img-fluid" style="width:60.0%"></p>
-</section>
-<section id="rmarkdown-code-options-syntax" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="rmarkdown-code-options-syntax">RMarkdown code options syntax</h4>
-<p><img src="images/r_quarto_literate_analysis/rmd-code-options.png" class="img-fluid" style="width:60.0%"></p>
-</section>
+<div class="callout-exercise">
+<p>Add some italic text, a numbered list, and a sub-header to your document. Try a few other Markdown syntax options. Re-render and check the output.</p>
 </div>
 </div>
-<p>It is important to emphasize one more time that in an Quarto (and RMarkdown) document, the gray areas of the document are <em>code</em>, in this case R code because that is what it is indicated in the ```<code>{r}</code> syntax at the start of this gray area. And the white areas of a qmd are in markdown language.</p>
+</div>
+</div>
 </section>
-<section id="markdown-syntax" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="markdown-syntax"><span class="header-section-number">4</span> Markdown Syntax</h2>
-<p>Let’s start by talking about markdown. <strong>Markdown is a formatting language for plain text</strong>, and there are only around 15 rules to know.</p>
-<p>Notice the syntax in the document we just knitted:</p>
+<section id="visual-vs.-source-editor" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="visual-vs.-source-editor"><span class="header-section-number">4.3</span> Visual vs.&nbsp;Source Editor</h3>
+<p>Quarto includes a <strong>Visual Editor</strong> that lets you format text visually, like a word processor. While we recommend learning raw Markdown (<strong>Source Editor</strong>) - since you’ll use it in many other contexts - the Visual Editor has two genuinely useful features:</p>
 <ul>
-<li><strong>Headers</strong> get rendered at multiple levels: <code>#</code>, <code>##</code></li>
-<li><strong>Bold</strong>: <code>**word**</code></li>
+<li><strong>Citations:</strong> Go to <strong>Insert &gt; Citation</strong>, choose a source (e.g., paste a DOI), and Quarto automatically formats the citation, creates a <code>references.bib</code> file, and updates your YAML header. Done.</li>
+<li><strong>Tables:</strong> Markdown tables are tedious to type by hand. Use the <strong>Table</strong> menu to insert and edit them visually.</li>
 </ul>
-<p>There are some good <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">cheatsheets</a> to get you started, and here is one built into RStudio: Go to Help &gt; Markdown Quick Reference.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
+<p>To toggle between Visual Editor and Source Editor mode:</p>
+<ul>
+<li>RStudio: Click the “Visual” button (vs.&nbsp;“Source”) at the top right of the editor pane.</li>
+<li>Positron: Command-Shift-F4 (Mac) or Ctrl-Shift-F4 (Windows).</li>
+</ul>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+<span class="screen-reader-only">Exercise</span>Exercise 2
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p><strong>The hash symbol # is used differently in markdown and in R</strong></p>
-<ul>
-<li>In an R script or inside an R code chunk, a hash indicates a comment that will not be evaluated. You can use as many as you want: <code>#</code> is equivalent to <code>######</code>. It’s just a matter of style.</li>
-<li>In markdown, a hash indicates a level of a header. And the number you use matters: <code>#</code> is a “level one header”, meaning the biggest font and the top of the hierarchy. <code>###</code> is a level three header, and will show up nested below the <code>#</code> and <code>##</code> headers.</li>
-</ul>
-<p><img src="images/r_quarto_literate_analysis/rmarkdown_headers.png" class="img-fluid"></p>
+<div class="callout-exercise">
+<p>Enable Visual Editor mode.</p>
+<p>Add a citation (e.g., DOI 10.1038/s41467-020-17726-z) into a section of prose in your Quarto document, using the Visual Editor.</p>
+<p>Add a table into your Quarto document using the Visual Editor.</p>
+<p>Toggle back to Source Editor mode. Look at the raw Markdown and BibTeX that was generated for your citation and table.</p>
+<p>Render the document and check the differences in the output.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>In markdown, Write some italic text, make a numbered list, and add a few sub-headers. Use the Markdown Quick Reference (in the menu bar: Help &gt; Markdown Quick Reference).</li>
-<li>Re-knit your html file and observe your edits.</li>
-</ol>
 </div>
 </div>
 </section>
-<section id="the-visual-editor" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="the-visual-editor"><span class="header-section-number">5</span> The Visual Editor</h2>
-<p>Quarto has a “what you see is what you mean” (WYSIWYM) editor or Visual editor, which can be a nice way to write markdown without remembering all of the markdown rules. Since there aren’t many rules for markdown, we recommend just learning them especially since markdown is used in many, many other contexts besides Quarto and RMarkdown. For example, formatting GitHub comments and README files.</p>
-<p>To access the editor, click the Visual button in the upper left hand corner of your editor pane. You’ll notice that your document is now formatted as you type, and you can change elements of the formatting using the row of icons in the top of the editor pane. Although we don’t really recommend doing all of your markdown composition in the Visual editor, there are two features to this editor that we believe are <strong>immensely</strong> helpful, adding citations, and adding tables.</p>
-<section id="adding-citations" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="adding-citations"><span class="header-section-number">5.1</span> Adding citations</h3>
-<p>To add a citation, go to the visual editor and in the insert drop down, select “Citation.” In the window that appears, there are several options in the left hand panel for the source of your citation. If you have a citation manager, such as Zotero, installed, this would be included in that list. For now, select “From DOI”, and in the search bar enter a DOI of your choice (e.g.: 10.1038/s41467-020-17726-z), then select “Insert.”</p>
-<p><img src="images/r_quarto_literate_analysis/markdown-citation.png" class="img-fluid"></p>
-<p>After selecting insert, a couple of things happen. First, the citation reference is inserted into your markdown text as <code>[@oke2020]</code>. Second, a file called references.bib containing the BibTex format of the citation is created. Third, that file is added to the YAML header of your Quarto document (<code>bibliography: references.bib</code>). Adding another citation will automatically update your <code>references.bib</code> file. So easy!</p>
-</section>
-<section id="adding-table-in-markdown" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="adding-table-in-markdown"><span class="header-section-number">5.2</span> Adding table in markdown</h3>
-<p>The second task that the visual editor is convenient for is generating tables. Markdown tables are a bit finicky and annoying to type, and there are a number of formatting options that are difficult to remember if you don’t use them often. In the top icon bar, the “Table” drop down gives several options for inserting, editing, and formatting tables. Experiment with this menu to insert a small table.</p>
-</section>
-</section>
-<section id="code-chunks-in-quarto" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="code-chunks-in-quarto"><span class="header-section-number">6</span> Code Chunks in Quarto</h2>
-<p>Every time when opening a new Quarto document we should start by deleting all template text (everything except for the YAML). Then we save the document into the most convenient folder of our project. Now we are ready to start our work.</p>
-<p>You can create a new chunk in your Quarto in one of these ways:</p>
+<section id="code-chunks-in-quarto" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="code-chunks-in-quarto"><span class="header-section-number">4.4</span> Code Chunks in Quarto</h3>
+<p>Code chunks contain functional code to be executed. Markdown syntax will not work here! A code chunk You can create a new chunk in your Quarto in one of these ways:</p>
 <ul>
 <li>Go to Code in the top menu bar, click “Insert Chunk”</li>
-<li>Type by hand <code>{r}</code></li>
 <li>Use the keyboard shortcut
 <ul>
-<li>Mac:<code>command</code> + <code>option</code> + <code>i</code></li>
-<li>Windows: <code>Ctrl</code> + <code>Alt</code> + <code>i</code></li>
+<li>RStudio: Mac: Command-Option-i or Windows: Ctrl-Alt-i</li>
+<li>Positron: Mac: Command-Shift-i or Windows: Ctrl-Shift-i</li>
 </ul></li>
+<li>Type by hand:</li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>About code chunks
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Each code chunk needs to have an opening syntax ```<code>{r}</code> and a closing syntax ```. Everything in between these lines will be identified as R code.</p>
-</div>
-</div>
-<p>If I want to write some R code, this is how it would look like.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">*</span> <span class="dv">8</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>hights_ft <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">5.2</span>, <span class="fl">6.0</span>, <span class="fl">5.7</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>coef <span class="ot">&lt;-</span> <span class="fl">3.14</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Hitting return does not execute this command; remember, it’s just a text file. To execute it, we need to get what we typed in the the R chunk (the grey R code) down into the console. How do we do it? There are several ways (let’s do each of them):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="executing-code-chunks-in-interactive-mode" class="level4" data-number="4.4.1">
+<h4 data-number="4.4.1" class="anchored" data-anchor-id="executing-code-chunks-in-interactive-mode"><span class="header-section-number">4.4.1</span> Executing Code Chunks in Interactive Mode</h4>
+<p>All the R code in your Quarto document will execute when you Render the document, but you can also run it on the fly (“interactive” mode) to test and debug it as you write.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">RStudio</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Positron</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Multiple options to run code; here are a few:</p>
 <ol type="1">
-<li>Copy-paste this line into the console (generally not recommended as a primary method)</li>
 <li>Select the line (or simply put the cursor there), and click “Run”. This is available from:
 <ol type="a">
 <li>the bar above the file (green arrow)</li>
 <li>the menu bar: Code &gt; Run Selected Line(s)</li>
-<li>keyboard shortcut: command-return</li>
+<li>keyboard shortcut: Command-Enter or Ctrl-Enter</li>
 </ol></li>
-<li>Click the green arrow at the right of the code chunk</li>
+<li>Click the green arrow at the right of the code chunk to run the entire chunk.</li>
 </ol>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Multiple options to run code; here are a few:</p>
+<ol type="1">
+<li>Select the line (or simply put the cursor there), and use the keyboard shortcut: Command-Enter or Ctrl-Enter</li>
+<li>Click the Run Cell arrow above the code chunk to run the entire chunk.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Exercise</span>Exercise 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p>Add a code chunk to your Quarto document:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">*</span> <span class="dv">8</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>hights_ft <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">5.2</span>, <span class="fl">6.0</span>, <span class="fl">5.7</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>coef <span class="ot">&lt;-</span> <span class="fl">3.14</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Run the code in interactive mode, and examine the values in the Environment pane (RStudio) or Session Variables pane (Positron).</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="practice-literate-analysis-with-ocean-water-samples" class="level2 page-columns page-full" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="practice-literate-analysis-with-ocean-water-samples"><span class="header-section-number">7</span> Practice: Literate Analysis with ocean water samples</h2>
+<section id="code-chunk-options" class="level4" data-number="4.4.2">
+<h4 data-number="4.4.2" class="anchored" data-anchor-id="code-chunk-options"><span class="header-section-number">4.4.2</span> Code chunk options</h4>
+<p>Here are some common options available to customize code chunk outputs.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>#| eval: false</code></td>
+<td>Don’t run the code (just display it)</td>
+</tr>
+<tr class="even">
+<td><code>#| echo: false</code></td>
+<td>Run the code, but hide it from the output</td>
+</tr>
+<tr class="odd">
+<td><code>#| message: false</code></td>
+<td>Suppress diagnostic messages</td>
+</tr>
+<tr class="even">
+<td><code>#| warning: false</code></td>
+<td>Suppress warning messages</td>
+</tr>
+<tr class="odd">
+<td><code>#| include: false</code></td>
+<td>Run the code silently - no output shown at all</td>
+</tr>
+<tr class="even">
+<td><code>#| fig-width: 6</code></td>
+<td>Set the width (or height) of a plot (in inches)</td>
+</tr>
+<tr class="odd">
+<td><code>#| fig-align: center</code></td>
+<td>Set the alignment of a plot (left, right, center)</td>
+</tr>
+</tbody>
+</table>
+<p>Options can be combined. For example, an exploratory chunk you don’t want in your final report:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode markdown code-annotation-code code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="annotated-cell-2-4"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my_data)</span>
+<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="1">Don’t evaluate/run the code</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="2">Don’t show the code in the rendered output</span>
+</dd>
+</dl>
+<p>Many more code chunk options can be found at <a href="https://quarto.org/docs/computations/execution-options.html">Quarto.org</a>.</p>
+</section>
+</section>
+</section>
+<section id="practice-literate-analysis-with-ocean-water-samples" class="level2 page-columns page-full" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="practice-literate-analysis-with-ocean-water-samples"><span class="header-section-number">5</span> Practice: Literate Analysis with ocean water samples</h2>
 <p>Now that we have gone over the basics, let’s go a little deeper by building a simple, Quarto document that represents a literate analysis using real data. We are going to work with the seawater chemistry data. We are going to use the <code>BGchem2008data.csv</code> data we downloaded in our previous session.</p>
 <!-- download a file named `BGchem2008data.csv` from the Arctic Data Center repository. Please follow the steps below to download the data and then upload to your RStudio Server `data` folder. -->
-<section id="getting-started" class="level3" data-number="7.1">
-<h3 data-number="7.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">7.1</span> Getting Started</h3>
+<section id="getting-started" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">5.1</span> Getting Started</h3>
 <!-- ::: callout-tip -->
 <!-- #### Set up -->
 <!-- 1.  Navigate to this dataset by Craig Tweedie that is published on the Arctic Data Center. [Craig Tweedie. 2009. North Pole Environmental Observatory Bottle Chemistry. Arctic Data Center. doi:10.18739/A25T3FZ8X.](http://doi.org/10.18739/A25T3FZ8X) -->
@@ -927,8 +1085,8 @@ Important
 </div>
 </div>
 </section>
-<section id="read-in-the-data" class="level3 page-columns page-full" data-number="7.2">
-<h3 data-number="7.2" class="anchored" data-anchor-id="read-in-the-data"><span class="header-section-number">7.2</span> Read in the data</h3>
+<section id="read-in-the-data" class="level3 page-columns page-full" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="read-in-the-data"><span class="header-section-number">5.2</span> Read in the data</h3>
 <p>Now that we have outlined our document, we can start writing code! To read the data into our environment, we will use a function from the <code>readr</code> package.</p>
 <p>To use a package in our analysis, we need to first make sure it is installed (you can install a package by running <code>install.package("name-of-package")</code>). Once installed you need to load it into our environment using <code>library(package_name)</code>. Even though we have installed it, we haven’t yet told our R session to access it. Because there are so many packages (many with conflicting namespaces) R cannot automatically load every single package you have installed. Instead, you load only the ones you need for a particular analysis. <strong>Loading the package is a key part of the <em>reproducible</em> aspect of our literate analysis</strong>, so we will include it as an R chunk as part of our Setup.</p>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -947,8 +1105,8 @@ Important
 <p>The server should have already installed the two packages we need for now: <code>readr</code> and <code>here</code>. Let’s add a new R chunk below your Setup header that calls these libraries, and run it.</p>
 <p>It should look like this:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -980,7 +1138,7 @@ date  (1): Date
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>bg_chem <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/BGchem2008data.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>bg_chem <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/BGchem2008data.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -1007,39 +1165,39 @@ date  (1): Date
 </div>
 </div>
 </section>
-<section id="calculate-summary-statistics" class="level3" data-number="7.3">
-<h3 data-number="7.3" class="anchored" data-anchor-id="calculate-summary-statistics"><span class="header-section-number">7.3</span> Calculate Summary Statistics</h3>
+<section id="calculate-summary-statistics" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="calculate-summary-statistics"><span class="header-section-number">5.3</span> Calculate Summary Statistics</h3>
 <p>As our “analysis” we are going to calculate some very simple summary statistics and generate a single plot. Using water samples from the Arctic Ocean, we will examine the ratio of nitrogen to phosphate to see how closely the data match the Redfield ratio, which is the consistent 16:1 ratio of nitrogen to phosphorous atoms found in marine phytoplankton.</p>
 <p>Let’s start by exploring the data we just read. Every time we read a new data set, it is important to familiarize yourself with it and make sure that the data looks as expected. Below some useful functions for exploring your data.</p>
 <p>Let’s start by creating a new R chunk and run the following functions. Because this just an exploration and we do not want this chunk to be part of our report, we will indicate that by adding <code>#|eval: false</code> and <code>#| echo: false</code> in the setup of the chunk, that way, the code in this chunk will not run and not be displayed when I knit the final document.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Prints the column names of my data frame</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg_chem)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">## General structure of the data frame - shows class of each column</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(bg_chem)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="do">## First 6 lines of the data frame</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_chem)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Summary of each column of data</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bg_chem)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Prints unique values in a column (in this case Date)</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(bg_chem<span class="sc">$</span>Date)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Prints the column names of my data frame</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg_chem)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="do">## General structure of the data frame - shows class of each column</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(bg_chem)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="do">## First 6 lines of the data frame</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_chem)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Summary of each column of data</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bg_chem)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Prints unique values in a column (in this case Date)</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(bg_chem<span class="sc">$</span>Date)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To peek out data frame, we can type <code>View(bg_chem)</code> in the console. This will open a tab with our data frame in a tabular format.</p>
 <p>Now that we know a more about the data set we are working with lets do some analyses. Under the appropriate bullet point in your analysis section, create a new R chunk, and use it to calculate the mean nitrate (NO3), nitrite (NO2), ammonium (NH4), and phosphorous (P) measured.</p>
 <p>Save these mean values as new variables with easily understandable names, and write a (brief) description of your operation using markdown above the chunk. Remember that the <code>$</code> (aka the subset operator) indicates which column of your data to look into.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nitrate <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO3)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>nitrite <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO2)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>amm <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NH4)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>phos <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>P)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>nitrate <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO3)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>nitrite <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO2)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>amm <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NH4)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>phos <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>P)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In another chunk, use those variables to calculate the nitrogen: phosphate ratio (Redfield ratio).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> (nitrate <span class="sc">+</span> nitrite <span class="sc">+</span> amm)<span class="sc">/</span>phos</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> (nitrate <span class="sc">+</span> nitrite <span class="sc">+</span> amm)<span class="sc">/</span>phos</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can access this variable in your markdown text by using R in-line in your text. The syntax to call R in-line (as opposed to as a chunk) is a single back tick `, followed by the letter “r”, then whatever your simple R command is — here we will use <code>round(ratio)</code> to print the calculated ratio, and finally a closing back tick `. This allows us to access the value stored in this variable in our explanatory text without resorting to the evaluate-copy-paste method so commonly used for this type of task.</p>
 <p>So, the text in you Quarto document should look like this:</p>
@@ -1048,11 +1206,11 @@ date  (1): Date
 <p>The Redfield ratio for this dataset is approximately 6.</p>
 <p>Finally, create a simple plot using base R that plots the ratio of the individual measurements, as opposed to looking at mean ratio.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bg_chem<span class="sc">$</span>P, bg_chem<span class="sc">$</span>NO2 <span class="sc">+</span> bg_chem<span class="sc">$</span>NO3 <span class="sc">+</span> bg_chem<span class="sc">$</span>NH4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bg_chem<span class="sc">$</span>P, bg_chem<span class="sc">$</span>NO2 <span class="sc">+</span> bg_chem<span class="sc">$</span>NO3 <span class="sc">+</span> bg_chem<span class="sc">$</span>NH4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="s09_r_quarto_literate_analysis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="s09_r_quarto_literate_analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1086,8 +1244,8 @@ date  (1): Date
 </div>
 </section>
 </section>
-<section id="quarto-and-environments" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="quarto-and-environments"><span class="header-section-number">8</span> Quarto and Environments</h2>
+<section id="quarto-and-environments" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="quarto-and-environments"><span class="header-section-number">6</span> Quarto and Environments</h2>
 <p>Let’s walk through an exercise with the document we just created to demonstrate how Quarto handles environments. We will be deliberately inducing some errors here for demonstration purposes.</p>
 <p>First, follow these steps:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1180,8 +1338,8 @@ date  (1): Date
 </div>
 </div>
 </section>
-<section id="additional-quarto-resources" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="additional-quarto-resources"><span class="header-section-number">9</span> Additional Quarto Resources</h2>
+<section id="additional-quarto-resources" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="additional-quarto-resources"><span class="header-section-number">7</span> Additional Quarto Resources</h2>
 <ul>
 <li>Posit (the organization that developed Quarto) has great documentation, check out <a href="https://quarto.org/">Quarto.org</a></li>
 <li>R for Data Science (2e) (Wickham et al, 2023), this is an awesome book for all R related things. Chapter <a href="https://r4ds.hadley.nz/quarto.html">29 and 30</a> are specific to Quarto.</li>
@@ -1189,8 +1347,8 @@ date  (1): Date
 <li><a href="https://openscapes.org/blog/2022-08-10-quarto-keynote/">Hello Quarto: share, collaborate, teach, reimagine</a>. A talk by Julia Stewart Lowndes and Mine Cetinkaya-Runde.</li>
 </ul>
 </section>
-<section id="troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf" class="level2" data-number="10">
-<h2 data-number="10" class="anchored" data-anchor-id="troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf"><span class="header-section-number">10</span> Troubleshooting: My RMarkdown/Quarto doc Won’t Knit to PDF</h2>
+<section id="troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf"><span class="header-section-number">8</span> Troubleshooting: My RMarkdown/Quarto doc Won’t Knit to PDF</h2>
 <p>If you get an error when trying to knit to PDF that says your computer doesn’t have a LaTeX installation, one of two things is likely happening:</p>
 <ul>
 <li>Your computer doesn’t have LaTeX installed</li>
@@ -1200,11 +1358,11 @@ date  (1): Date
 <p>If you fall in the first category - you are sure you don’t have LaTeX installed - can use the R package <code>tinytex</code> to easily get an installation recognized by RStudio, as long as you have administrative rights to your computer.</p>
 <p>To install <code>tinytex</code> run:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If you get an error that looks like destination /usr/local/bin not writable, you need to give yourself permission to write to this directory (again, only possible if you have administrative rights). To do this, run this command in the terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="kw">`</span><span class="fu">whoami</span><span class="kw">`</span>:admin /usr/local/bin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="kw">`</span><span class="fu">whoami</span><span class="kw">`</span>:admin /usr/local/bin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>and then try the above install instructions again. Learn more about <code>tinytex</code> from <a href="https://yihui.org/tinytex/">Yihui Xie’s online book <em>TinyTeX</em></a>. ````</p>
 
 

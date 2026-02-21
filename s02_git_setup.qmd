@@ -28,7 +28,7 @@ Before using Git, you need to tell it who you are, also known as setting the **g
 
 Technically, the "Terminal" is an interface for the shell, a computer program. We use the Terminal to directly tell a computer what to do outside of R. This is different from the "Console" in your IDE (Positron, RStudio), which interprets R code and returns a value.
 
-The Terminal should be visible by default in your IDE, but if it is not, you can open it by clicking "Terminal" {{< fa arrow-right >}} "New Terminal"
+The Terminal should be visible by default in your IDE, but if it is not, you can open it by clicking **Terminal** {{< fa arrow-right >}} **New Terminal**
 
 A Terminal tab should now be open right next to the Console tab.
 :::

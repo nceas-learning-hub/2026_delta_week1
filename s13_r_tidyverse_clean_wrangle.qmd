@@ -474,31 +474,22 @@ If you had written your code so that it didn't rely on column order, but instead
 This is an example of a **defensive coding strategy, where you try to anticipate issues _before_ they arise, and write your code in such a way as to keep the issues from happening.**
 ::: 
 
+## Adding Columns Using `mutate()`
 
+Now let's use `mutate()` again to create a new column called `catch` with units of fish (instead of thousands of fish). While we're at it, let's also use `select()` to remove the column with catch in thousands because we're not necessarily interested in it at this point. This further highlights how we can take advantage of the pipe operator to group together a similar set of statements, which all aim to clean up the `catch_clean` data frame.
 
-## Adding columns using `mutate()`
-
-Now let's use `mutate()` again to create a new column called `catch` with units of fish (instead of thousands of fish).
-
-```{r}
-#| eval: false
+```{r mutate-ex_add-col}
 catch_long <- catch_long %>%
-    mutate(catch = catch_thousands * 1000)
+    # Convert to actual fish numbers
+    dplyr::mutate(catch = catch_thousands * 1000) %>% 
+    # Remove the superseded column
+    dplyr::select(-catch_thousands)
 
-head(catch_long)
+# Check the result
+dplyr::glimpse(catch_long)
 ```
 
-Let's remove the `catch_thousands` column for now since we don't need it. Note that here we have added to the expression we wrote above by adding another function call (mutate) to our expression. This takes advantage of the pipe operator by grouping together a similar set of statements, which all aim to clean up the `catch_clean` data frame.
-
-```{r}
-catch_long <- catch_long %>%
-    mutate(catch = catch_thousands * 1000) %>%
-    select(-catch_thousands)
-
-head(catch_long)
-```
-
-We're now ready to start analyzing the data.
+We're now ready to start analyzing the data!
 
 ## Summary statistics using `group_by()` and `summarize()`
 

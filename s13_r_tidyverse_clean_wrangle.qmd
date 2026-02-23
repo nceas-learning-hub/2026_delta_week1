@@ -740,38 +740,50 @@ dates_df %>%
 1. Note that you don't specify an argument for the columns that you want to combine with `unite()`!
 2. This specifies whether you want to remove the original columns
 
-## Now, all together!
+## Putting it All Together!
 
-We just ran through the various things we can do with `dplyr` and `tidyr` but if you're wondering how this might look in a real analysis. Let's look at that now:
+We just ran through the various things we can do with `dplyr`, `tidyr`, and the pipe but if you're wondering how this might look in a real analysis. Let's look at that now:
 
-```{r}
-#| catch: true
-#| message: false
-catch_original <- read_csv("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1")
+```{r all-together-ex}
+# Grab the data
+catch_original <- readr::read_csv(file = "https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1",
+    show_col_types = F)
 
+# Do desired wrangling
 mean_region <- catch_original %>%
-  select(-All, -notesRegCode) %>% 
-  mutate(Chinook = if_else(Chinook == "I", "1", Chinook)) %>% 
-  mutate(Chinook = as.numeric(Chinook)) %>% 
-  pivot_longer(-c(Region, Year), 
-               names_to = "species", 
-               values_to = "catch") %>%
-  mutate(catch = catch*1000) %>% 
-  group_by(Region) %>% 
-  summarize(mean_catch = mean(catch)) %>% 
-  arrange(desc(mean_catch))
+    # Drop unwanted columns
+    dplyr::select(-All, -notesRegCode) %>% 
+    # Fix the typo in the Chinook data
+    dplyr::mutate(
+        Chinook = dplyr::if_else(Chinook == "I", 
+            true = "1", false = Chinook),
+        Chinook = as.numeric(Chinook)) %>% 
+    # Reshape to long format
+    tidyr::pivot_longer(-c(Region, Year), 
+        names_to = "species", 
+        values_to = "catch") %>%
+    # Transform catch into number of fish
+    dplyr::mutate(catch = catch*1000) %>% 
+    # Summarize within region
+    dplyr::group_by(Region) %>% 
+    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+        .groups = "drop") %>% 
+    # Sort by mean catch in descending order
+    dplyr::arrange(dplyr::desc(mean_catch))
 
+# Check the result
 head(mean_region)
 ```
 
+We have completed our lesson on Cleaning and Wrangling data. Before we break, let's practice our Git workflow!
 
-We have completed our lesson on Cleaning and Wrangling data. Before we break, let's practice our Git workflow.
-
-::: {.callout-tip icon=false}
-## Steps
-
-1. Save the `.qmd` you have been working on for this lesson.
-2. Render the Quarto file. This is a way to test everything in your code is working.
-
-3. ```Stage (Add) > Commit > Pull > Push```
+::: {.callout-exercise}
+1. Render the Quarto file
+    - This is a way to test everything in your code is working
+    - If rendering fails, edit and re-render as needed until it succeeds
+2. Save your changes to the `.qmd` file
+3. Stage the changes
+4. Commit them (with a nice commit message!)
+5. For Positron users, sync your changes
+    - Or for RStudio users, pull then push your changes
 :::

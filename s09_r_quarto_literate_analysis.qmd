@@ -36,79 +36,41 @@ code (that actually performs the analysis). The result renders into a
 polished HTML, PDF, or Word report - a single document that is both
 human-readable and fully reproducible.
 
-<!-- All too often, computational methods are written in such a way as to be borderline incomprehensible even to the person who originally wrote the code! The reason for this is obvious: computers interpret information very differently than people do. In 1984, Donald Knuth proposed a reversal of the programming paradigm by introducing the concept of *Literate Programming* ([Knuth 1984](http://www.literateprogramming.com/knuthweb.pdf)). -->
-
-<!-- > *"Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do."* -->
-
-<!-- If our aim is to make scientific research more transparent, the appeal of this paradigm reversal is immediately apparent. By switching to a literate analysis model, **you help enable human understanding of what the computer is doing**. As Knuth describes, in the literate analysis model, the author is an "*essayist*" who chooses variable names carefully, explains what they mean, and introduces concepts in the analysis in a way that facilitates understanding. -->
-
-<!-- In practice, literate programming is achieved by interleaving sections of natural language prose that describe the goals, methods, and interpretation of an analysis, with sections of code that perform the analysis, generate figures, and save results.  The resulting document is usually rendered as a nicely-formatted report in HTML, MS Word, or PDF format.  Contrast this with a more traditional script, which includes only functional code with (hopefully) a few brief explanatory comments. -->
-
 ## Quarto and Literate Programming
 
-**Quarto** is an open-source publishing system that makes literate
-analysis straightforward. A Quarto file (`.qmd`) mixes formatted prose
-with executable **code chunks**, and renders them together into a
-complete report.
+**Quarto** is an open-source publishing system that makes literate analysis straightforward. A Quarto file (`.qmd`) mixes formatted prose with executable **code chunks**, and renders them together into a complete report.
 
 ::: callout-tip
 ### Coding languages in Quarto
 
-We will focus on using Quarto with R code, but it is designed to work
-seamlessly with other coding languages as well, including Python, Julia,
-and Observable JavaScript. You can even use multiple languages in the
-same document.
+We will focus on using Quarto with R code, but it is designed to work seamlessly with other coding languages as well, including Python, Julia, and Observable JavaScript. You can even use multiple languages in the same document.
 :::
 
 ::: callout-note
 ### Quarto vs. RMarkdown
 
-If you've used RMarkdown (`.Rmd`) before, Quarto (`.qmd`) will feel
-familiar. The main differences are that Quarto has richer multi-language
-support and improved formatting options. Both formats share the same
-three-part structure: YAML, prose, and code chunks.
+If you've used RMarkdown (`.Rmd`) before, Quarto (`.qmd`) will feel familiar. The main differences are that Quarto has richer multi-language support and improved formatting options. Both formats share the same three-part structure: YAML, prose, and code chunks.
 :::
 
 ### Why does this matter for reproducibility?
 
-When your entire analysis - data loading, cleaning, statistics, and
-figures - lives in one Quarto document, you can re-run everything with a
-single click. If the data updates, so does your report. This eliminates
-error-prone copy-pasting between scripts, spreadsheets, and documents,
-and gives collaborators (and your future self!) a clear trail from raw
-data to final results.
+When your entire analysis - data loading, cleaning, statistics, and figures - lives in one Quarto document, you can re-run everything with a single click. If the data updates, so does your report. This eliminates error-prone copy-pasting between scripts, spreadsheets, and documents, and gives collaborators (and your future self!) a clear trail from raw data to final results.
 
-<!-- In an R script, the language assumes that you are writing R code, unless you specify that you are writing prose (using a comment, designated by `#`). The paradigm shift of literate analysis comes in the switch to RMarkdown or Quarto, where instead of assuming you are writing code, they assume that you are writing prose unless you specify that you are writing code. This, along with the formatting provided by markdown, encourages the "essayist" to write understandable prose to accompany the code that explains to the human-beings reading the document what the author told the computer to do. This is in contrast to writing just R code, where the author telling to the computer what to do with maybe a smattering of terse comments explaining the code to a reader. -->
+<!-- ### Example: Literate Analysis From Quarto -->
 
-### Example: Literate Analysis From Quarto
+<!-- Let's look at an example of what a rendered literate analysis looks like using a real example. [Here is an -->
+<!-- example](https://nceas.github.io/sasap-training/materials/reproducible_research_in_r_fairbanks/example-brood-table-analysis.html) of an analysis workflow written using RMarkdown. Note that if this analysis would be in Quarto, the render version it would be similar, except for formatting and layout (eg: the default font in Quarto is -->
+<!-- different). -->
 
-Let's look at an example of what a rendered literate analysis looks like
-using a real example. [Here is an
-example](https://nceas.github.io/sasap-training/materials/reproducible_research_in_r_fairbanks/example-brood-table-analysis.html)
-of an analysis workflow written using RMarkdown. Note that if this
-analysis would be in Quarto, the render version it would be similar,
-except for formatting and layout (eg: the default font in Quarto is
-different).
+<!-- There are a few things to notice about this document, which assembles a set of similar data sources on salmon brood tables with different formatting into a single data source. -->
 
-There are a few things to notice about this document, which assembles a
-set of similar data sources on salmon brood tables with different
-formatting into a single data source.
+<!-- -   It introduces the data sources using in-line images, links,  interactive tables, and interactive maps. -->
+<!-- -   An example of data formatting from one source using R is shown. -->
+<!-- -   The document executes a set of formatting scripts in a directory to  generate a single merged file. -->
+<!-- -   Some simple quality checks are performed (and their output shown) on  the merged data. -->
+<!-- -   Simple analysis and plots are shown. -->
 
--   It introduces the data sources using in-line images, links,
-    interactive tables, and interactive maps.
--   An example of data formatting from one source using R is shown.
--   The document executes a set of formatting scripts in a directory to
-    generate a single merged file.
--   Some simple quality checks are performed (and their output shown) on
-    the merged data.
--   Simple analysis and plots are shown.
-
-In addition to achieving literate analysis, this document also
-represents a **reproducible analysis**. Because the entire merging and
-quality control of the data is done using the R code in the Quarto file,
-if a new data source and formatting script are added, the document can
-be run all at once with a single click to re-generate the quality
-control, plots, and analysis of the updated data.
+<!-- In addition to achieving literate analysis, this document also represents a **reproducible analysis**. Because the entire merging and quality control of the data is done using the R code in the Quarto file, if a new data source and formatting script are added, the document can be run all at once with a single click to re-generate the quality control, plots, and analysis of the updated data. -->
 
 ## Structure of a Quarto Document
 
@@ -221,10 +183,7 @@ You'll see an HTML file appear in your browser. Notice:
 
 ### Markdown Syntax
 
-The prose sections of a Quarto document use **Markdown**, a lightweight
-formatting language with only \~15 rules to learn. Markdown is also used
-in GitHub READMEs, Slack, and many other tools, so it's well worth
-knowing.
+The prose sections of a Quarto document use **Markdown**, a lightweight formatting language with only a few basic rules to learn. Markdown is also used in GitHub READMEs, Slack, and many other tools, so it's well worth knowing.
 
 | Syntax             | Result                 |
 |--------------------|------------------------|
@@ -239,30 +198,19 @@ knowing.
 For a full reference, see https://www.markdownguide.org/cheat-sheet/.
 
 ::: callout-tip
-The `#` symbol means something different in R code (a comment) vs.
-Markdown (a header). In Markdown, the number of `#` symbols you use
-matters: `#` is the biggest header, `###` up to `######` are
-consecutively smaller and nested below it.
+The `#` symbol means something different in R code (a comment) vs. Markdown (a header). In Markdown, the number of `#` symbols you use matters: `#` is the biggest header, `###` up to `######` are consecutively smaller and nested below it.
 :::
 
 ::: callout-exercise
-Add some italic text, a numbered list, and a sub-header to your
-document. Try a few other Markdown syntax options. Re-render and check
-the output.
+Add some italic text, a numbered list, and a sub-header to your document. Try a few other Markdown syntax options. Re-render and check the output.
 :::
 
 ### Visual vs. Source Editor
 
-Quarto includes a **Visual Editor** that lets you format text visually, like a
-word processor. While we recommend learning raw Markdown (**Source
-Editor**) - since you'll use it in many other contexts - the Visual
-Editor has two genuinely useful features:
+Quarto includes a **Visual Editor** that lets you format text visually, like a word processor. While we recommend learning raw Markdown (**Source Editor**) - since you'll use it in many other contexts - the Visual Editor has two genuinely useful features:
 
--   **Citations:** Go to **Insert \> Citation**, choose a source (e.g.,
-    paste a DOI), and Quarto automatically formats the citation, creates
-    a `references.bib` file, and updates your YAML header. Done.
--   **Tables:** Markdown tables are tedious to type by hand. Use the
-    **Table** menu to insert and edit them visually.
+-   **Citations:** Go to **Insert \> Citation**, choose a source (e.g., paste a DOI), and Quarto automatically formats the citation, creates a `references.bib` file, and updates your YAML header. Done.
+-   **Tables:** Markdown tables are tedious to type by hand. Use the **Table** menu to insert and edit them visually.
 
 To toggle between Visual Editor and Source Editor mode:
 
@@ -272,8 +220,7 @@ To toggle between Visual Editor and Source Editor mode:
 ::: callout-exercise
 Enable Visual Editor mode.
 
-Add a citation (e.g., DOI 10.1038/s41467-020-17726-z) into a section of
-prose in your Quarto document, using the Visual Editor.
+Add a citation (e.g., DOI 10.1038/s41467-020-17726-z) into a section of prose in your Quarto document, using the Visual Editor.
 
 Add a table into your Quarto document using the Visual Editor.
 
@@ -284,8 +231,7 @@ Render the document and check the differences in the output.
 
 ### Code Chunks in Quarto
 
-Code chunks contain functional code to be executed.  Markdown syntax will not work here!  A code chunk 
-You can create a new chunk in your Quarto in one of these ways:
+Code chunks contain functional code to be executed.  Markdown syntax will not work here! You can create a new chunk in your Quarto in one of these ways:
 
 -   Go to Code in the top menu bar, click "Insert Chunk"
 -   Use the keyboard shortcut
@@ -305,8 +251,7 @@ All the R code in your Quarto document will execute when you Render the document
 
 Multiple options to run code; here are a few:
 
-1.  Select the line (or simply put the cursor there), and click "Run".
-    This is available from:
+1.  Select the line (or simply put the cursor there), and click "Run". This is available from:
     a.  the bar above the file (green arrow)
     b.  the menu bar: Code \> Run Selected Line(s)
     c.  keyboard shortcut: Command-Enter or Ctrl-Enter
@@ -349,8 +294,7 @@ Here are some common options available to customize code chunk outputs.
 | `#| fig-width: 6`   | Set the width (or height) of a plot (in inches)|
 | `#| fig-align: center` | Set the alignment of a plot (left, right, center) |
 
-Options can be combined. For example, an exploratory chunk you don't
-want in your final report:
+Options can be combined. For example, an exploratory chunk you don't want in your final report:
 
 ```{{r}}
 #| eval: false # <1>
@@ -358,18 +302,14 @@ want in your final report:
 summary(my_data)
 ```
 1. Don't evaluate/run the code
-2. Don't show the code in the rendered output
+2. Don't display the code in the rendered output
 
-Many more code chunk options can be found at
-[Quarto.org](https://quarto.org/docs/computations/execution-options.html).
+Many more code chunk options can be found at [Quarto.org](https://quarto.org/docs/computations/execution-options.html).
 
 ## Practice: Literate Analysis with ocean water samples
 
-Now that we have gone over the basics, let's go a little deeper by
-building a simple, Quarto document that represents a literate analysis
-using real data. We are going to work with the seawater chemistry data.
-We are going to use the `BGchem2008data.csv` data we downloaded in our
-previous session.
+!!! Make this standalone - include directions on downloading the data!
+Let's build a simple but complete literate analysis in Quarto using real data. We are going to work with the seawater chemistry data. We are going to use the `BGchem2008data.csv` data we downloaded in our previous session.
 
 <!-- download a file named `BGchem2008data.csv` from the Arctic Data Center repository. Please follow the steps below to download the data and then upload to your RStudio Server `data` folder. -->
 
@@ -389,421 +329,174 @@ previous session.
 
 <!-- 4. Check your file was successfully uploaded by navigating into your `data` folder in the **Files** pane. -->
 
-<!-- ::: -->
+### A better workflow for writing literate analyses
 
-Experienced R users who have never used Quarto (or RMarkdown) often
-struggle a bit in the transition to developing analysis in Prose+Code
-format --- which makes sense! It is switching the code paradigm to a new
-way of thinking.
+Experienced R users sometimes struggle to transition to Quarto because writing prose *and* code at the same time feels unfamiliar. A helpful approach:
 
-Rather than starting an R chunk and putting all of your code in that
-single chunk, below we describe what we think is a better way.
+1. Block out your high-level sections as Markdown headers.
+2. Add bullet points as pseudo-code for what each section needs to do.
+3. Fill in the actual code under each bullet, then convert the bullets to prose.
 
-1.  Open a document and block out the high-level sections you know
-    you'll need to include using top level headers.
-2.  Add bullet points for some high level pseudo-code steps you know
-    you'll need to take.
-3.  Start filling in under each bullet point the code that accomplishes
-    each step. As you write your code, transform your bullet points into
-    prose, and add new bullet points or sections as needed.
+:::{.callout-exercise}
+For this analysis, structure your document like this, using Markdown headers below the YAML header:
 
-For this mini-analysis, we will have the following sections and code
-steps:
+* Introduction
+    * About the Data
+* Setup
+    * Read in data
+* Analysis
+    * Summary Statistics
+    * Redfield Ratio
+    * Plot
+* Conclusion
 
-1.  Introduction
-    a.  About the data
-    b.  Setup
-    c.  Read in data
-2.  Analysis
-    a.  Calculate summary statistics
-    b.  Calculate mean Redfield ratio
-    c.  Plot Redfield ratio
-3.  Conclusion
-
-::: callout-note
-## Exercise
-
-Under "About the data", write a sentence saying where the data set came
-from, including a hyperlink ti the data. Also mention when was the data
-downloaded.
-
-Hint: Navigate to Help \> Markdown Quick Reference to look-up the
-hyperlink syntax.
+Under "About the Data", write a sentence describing the dataset with a hyperlink to its source, and note when it was downloaded.
 :::
 
-### Read in the data
+### Setup: Loading packages
 
-Now that we have outlined our document, we can start writing code! To
-read the data into our environment, we will use a function from the
-`readr` package.
+Add a code chunk under your Setup header to load the packages you'll need:
 
-To use a package in our analysis, we need to first make sure it is
-installed (you can install a package by running
-`install.package("name-of-package")`). Once installed you need to load
-it into our environment using `library(package_name)`. Even though we
-have installed it, we haven't yet told our R session to access it.
-Because there are so many packages (many with conflicting namespaces) R
-cannot automatically load every single package you have installed.
-Instead, you load only the ones you need for a particular analysis.
-**Loading the package is a key part of the *reproducible* aspect of our
-literate analysis**, so we will include it as an R chunk as part of our
-Setup.
-
-::: {.callout-caution icon="false"}
-## Best Practice
-
-It is generally good practice to include all of your `library()` calls
-in a single, dedicated R chunk near the top of your document. This lets
-collaborators know what packages they might need to install before they
-start running your code.
-:::
-
-The server should have already installed the two packages we need for
-now: `readr` and `here`. Let's add a new R chunk below your Setup header
-that calls these libraries, and run it.
-
-It should look like this:
-
-```{r}
-#| eval: false
-
-library(readr)
-library(here)
+```{{r setup}}
+library(readr) # <1>
+library(here)  # <2>
 ```
+1. `readr` package to read files, including `read_csv()`
+2. `here` package to build file paths relative to your project root
 
-::: {.callout-caution icon="false"}
-## Quarto file path and the `here()` function
+:::{.callout-tip}
+## Best Practice! 
 
-Quarto has a special way of handling relative paths that can be very
-handy. When working in an Quarto document, **R will set all paths
-relative to the location of the Quarto file**. This can make things
-easier to read in data if your Quarto document is stored in the same
-directory or "near" by. However, more often that not, your `.qmd` file
-will be stored in a a folder (e.g `scripts`) and your data in a `data`
-folder, (both folder in the main project directory).
-
-The `here()` function helps navigate this file path mix up in a straight
-forward and reproducible way. This function sets the file path to the
-project's directory and builds the rest of the file path from there.
-Making it easier to find files inside different folders in a project. In
-this case, because the `.qmd` file lives in the script folder, `here()`
-makes is easy to navigate back into the project's directory and then
-into the `data` folder to read in our file.
+Put all `library()` calls (or other package management, e.g., `librarian::shelf()`) in one chunk near the top of your document so collaborators immediately know what packages to install.
 :::
 
-Now, under "Read data", add a code chunk that uses the `read_csv()` with
-the `here()` function to read in your data file.
+:::{.callout-tip}
+## Another Best Practice!
 
-```{r load data for quarto book}
-#| echo: false
-library(readr)
+Name your code chunks for easy searching (such as `{r setup}` above), and R will display the names so you can track progress as the Quarto document renders!
+:::
 
-### Quarto book structure: script-specific data in script-specific folder
-bg_chem <- read_csv("data/r_quarto_literate_analysis/BGchem2008data.csv")
-```
+### Reading in data
 
-```{r demonstrate how to load data from student repo}
-#| eval: false
+Use `read_csv()` with `here()` to load your data. The `here()` function builds file paths relative to your project root, which keeps things reproducible regardless of where your `.qmd` file lives within the project (including if you move it to a new location within the project!).
 
+```r
 bg_chem <- read_csv(here::here("data/BGchem2008data.csv"))
 ```
 
-::: column-margin
-**Why `read_csv()` over `read.csv()`?**
+:::{.callout-exercise}
+`read_csv()` prints a column specification message when it runs. How would you suppress this from appearing in your rendered output? 
 
-We chose to show `read_csv()` from the `readr` package to introduce the
-concept of packages, to show you how to load packages, and `read_csv()`
-has several advantages over `read.csv()` from base R, including:
-
--   More reasonable function defaults (no `stringsAsFactors`!)
--   Smarter column type parsing, especially for dates
--   `read_csv()` is much faster than `read.csv()`, which is helpful for
-    large files
+::::{.callout-hint}
+Check the code chunk options above!  Alternately, check the documentation for `read_csv()` (`?read_csv`) to see an option for suppressing this behavior!
+::::
 :::
 
-Once you run this line in your document, you should see the `bg_chem`
-object populate in your environment pane. It also spits out lots of text
-explaining what types the function parsed each column into. This text is
-important, and should be examined, but we might not want it in our final
-document.
+### Exploring your data
 
-::: callout-note
-## Exercise
+Before any analysis, get familiar with the data. Create a chunk with `#| eval: false` and `#| echo: false` for exploratory code you don't want in the final report:
 
-How would you suppress the warnings (so they don't show in our output
-file) form a specific code chunk?
-
-**Hint:** Code chunk options
-:::
-
-### Calculate Summary Statistics
-
-As our "analysis" we are going to calculate some very simple summary
-statistics and generate a single plot. Using water samples from the
-Arctic Ocean, we will examine the ratio of nitrogen to phosphate to see
-how closely the data match the Redfield ratio, which is the consistent
-16:1 ratio of nitrogen to phosphorous atoms found in marine
-phytoplankton.
-
-Let's start by exploring the data we just read. Every time we read a new
-data set, it is important to familiarize yourself with it and make sure
-that the data looks as expected. Below some useful functions for
-exploring your data.
-
-Let's start by creating a new R chunk and run the following functions.
-Because this just an exploration and we do not want this chunk to be
-part of our report, we will indicate that by adding `#|eval: false` and
-`#| echo: false` in the setup of the chunk, that way, the code in this
-chunk will not run and not be displayed when I knit the final document.
-
-```{r}
+```r
 #| eval: false
-
-## Prints the column names of my data frame
+#| echo: false
 colnames(bg_chem)
-
-## General structure of the data frame - shows class of each column
 str(bg_chem)
-
-## First 6 lines of the data frame
 head(bg_chem)
-
-## Summary of each column of data
 summary(bg_chem)
-
-## Prints unique values in a column (in this case Date)
-unique(bg_chem$Date)
 ```
 
-To peek out data frame, we can type `View(bg_chem)` in the console. This
-will open a tab with our data frame in a tabular format.
+You can also type `View(bg_chem)` directly in the console to browse the data in a table.
 
-Now that we know a more about the data set we are working with lets do
-some analyses. Under the appropriate bullet point in your analysis
-section, create a new R chunk, and use it to calculate the mean nitrate
-(NO3), nitrite (NO2), ammonium (NH4), and phosphorous (P) measured.
+### Calculate summary statistics
 
-Save these mean values as new variables with easily understandable
-names, and write a (brief) description of your operation using markdown
-above the chunk. Remember that the `$` (aka the subset operator)
-indicates which column of your data to look into.
+The **Redfield ratio** is the consistent 16:1 ratio of nitrogen to phosphorous found in marine phytoplankton. Let's see how our Arctic data compare.
 
-```{r}
+First, calculate mean values for the key variables:
+
+```r
 nitrate <- mean(bg_chem$NO3)
 nitrite <- mean(bg_chem$NO2)
-amm <- mean(bg_chem$NH4)
-phos <- mean(bg_chem$P)
+amm     <- mean(bg_chem$NH4)
+phos    <- mean(bg_chem$P)
 ```
 
-In another chunk, use those variables to calculate the nitrogen:
-phosphate ratio (Redfield ratio).
+Then calculate the ratio:
 
-```{r}
-ratio <- (nitrate + nitrite + amm)/phos
+```r
+ratio <- (nitrate + nitrite + amm) / phos
 ```
 
-You can access this variable in your markdown text by using R in-line in
-your text. The syntax to call R in-line (as opposed to as a chunk) is a
-single back tick \`, followed by the letter "r", then whatever your
-simple R command is --- here we will use `round(ratio)` to print the
-calculated ratio, and finally a closing back tick \`. This allows us to
-access the value stored in this variable in our explanatory text without
-resorting to the evaluate-copy-paste method so commonly used for this
-type of task.
+### Inline R code
 
-So, the text in you Quarto document should look like this:
+You can embed R results directly in your prose using backtick syntax: `` `r round(ratio)` ``. For example, write this in your document:
 
-The Redfield ratio for this dataset is approximately: \`r
-`round(ratio)`\`
-
-And the rendered text like this:
-
+```
 The Redfield ratio for this dataset is approximately `r round(ratio)`.
+```
 
-Finally, create a simple plot using base R that plots the ratio of the
-individual measurements, as opposed to looking at mean ratio.
+It will render as: *The Redfield ratio for this dataset is approximately 6.*
 
-```{r}
+This is much better than evaluating code, copying a number, and pasting it into your text — especially when data changes.
+
+### Plot the data
+
+Finally, create a simple plot of individual measurements:
+
+```r
 plot(bg_chem$P, bg_chem$NO2 + bg_chem$NO3 + bg_chem$NH4)
 ```
 
-::: callout-note
-## Exercise
-
-Decide whether or not you want the plotting code above to show up in
-your knitted document along with the plot, and implement your decision
-as a chunk option.
-
-Render your Quarto document (by pressing the Render button) and observe
-the results.
+:::{.callout-exercise}
+Decide whether you want the plot code to appear in the rendered output alongside the figure, and add the appropriate chunk option. Then render your document.
 :::
 
-::: callout-important
-## How do I decide when to make a new code chunk?
+## FAQ style section?
 
-Like many of life's great questions, there is no clear cut answer. A
-rule of thumb is to have one chunk per functional unit of analysis. This
-functional unit could be 50 lines of code or it could be 1 line, but
-typically it only does one "thing." This could be reading in data,
-making a plot, or defining a function. It could also mean calculating a
-series of related summary statistics (as we'll see below). Ultimately,
-the choice is one related to personal preference and style, but
-generally you should ensure that code is divided up such that it is
-easily explainable in a literate analysis as the code is run.
-:::
+### Quarto and Environments
 
-## Quarto and Environments
+Quarto renders documents in a **fresh R environment** — completely separate from your interactive RStudio session. This is what makes Quarto so powerful for reproducibility, but it can also cause confusion.
 
-Let's walk through an exercise with the document we just created to
-demonstrate how Quarto handles environments. We will be deliberately
-inducing some errors here for demonstration purposes.
+**Try this:**
 
-First, follow these steps:
+1. Restart your R session (**Session > Restart R**).
+2. Try running just the last code chunk (the plot). You'll get an error because `bg_chem` doesn't exist yet.
+3. Now use **Run > Run All** to run chunks in order — this works.
+4. Finally, click **Render**. Notice that the environment pane is empty afterward, even though the document rendered successfully.
 
-::: callout-tip
-## Setup
+When you press Render, RStudio spins up a fresh session, runs everything top-to-bottom, generates the output, then closes. This is a feature: it forces your document to be self-contained. A common gotcha is running `library()` in the console during development but forgetting to include it in the document — Render will fail because the fresh environment doesn't have that package loaded.
 
--   Restart your R session (Session \> Restart R)
--   Run the last chunk in your Quarto document by pressing the play
-    button on the chunk
-:::
+**Rule of thumb:** If your document renders successfully, it's reproducible. Get into the habit of rendering regularly during development.
 
-Perhaps not surprisingly, we get an error:
+### When to Use R Scripts vs. Quarto
 
-```         
-Error in plot(bg_chem$P, bg_chem$NO2 + bg_chem$NO3 + bg_chem$NH4) : 
-  object 'bg_chem' not found
-```
+Quarto doesn't replace R scripts — both have their place.
 
-This is because we have not run the chunk of code that reads in the
-`bg_chem` data. The R part of Quarto works just like a regular R script.
-You have to execute the code, and the order that you run it in matters.
-It is relatively easy to get mixed up in a large Quarto document ---
-running chunks out of order, or forgetting to run chunks.
+Use **Quarto** for analyses you want to explain, share, or publish: the code, results, and interpretation all belong together.
 
-To resolve this, follow the next step:
+Use **R scripts** for reusable utility functions, repetitive data cleaning steps that don't need much explanation, or code you'll `source()` from multiple projects.
 
-::: callout-tip
-## Setup continued
+In practice, a single project often has both: helper scripts stored in a folder, and a primary `.qmd` that sources those scripts and presents the analysis narratively.
 
--   Select from the "Run" menu (top right of the editor pane) "Run All."
--   Observe the `bg_chem` variable in your environment
-:::
+### Additional Resources
 
-This is a great way to reset and re-run code when things seem to have
-gone sideways. It is great practice to do periodically since it helps
-ensure you are writing code that actually runs and it's reproducible.
+- [Quarto.org](https://quarto.org) — official documentation
+- [R for Data Science (2e)](https://r4ds.hadley.nz), Chapters 29–30 — Quarto in depth
+- [Quarto Gallery](https://quarto.org/docs/gallery/) — examples of different output types
+- [Hello Quarto](https://mine.quarto.pub/hello-quarto/) — talk by Julia Stewart Lowndes and Mine Çetinkaya-Rundel
 
-::: callout-tip
-## For the next exercise:
+### Troubleshooting: Can't Render to PDF?
 
--   Clean your environment by clicking the broom in the environment pane
--   Restart your R session (Session \> Restart R)
--   Press "Render" to run all of the code in your document
--   Observe the state of your environment pane
+PDF rendering requires a LaTeX installation. If you don't have one, the easiest fix is `tinytex`:
 
-Assuming your document rendered and produced an html page, your code
-ran. Yet, the environment pane is empty. What happened?
-:::
-
-The Render button is rather special --- it doesn't just run all of the
-code in your document. It actually spins up a fresh R environment
-separate from the one you have been working in, runs all of the code in
-your document, generates the output, and then closes the environment.
-This is one of the best ways Quarto (or RMarkdown) helps ensure you have
-built a reproducible workflow. If, while you were developing your code,
-you ran a line in the console as opposed to adding it to your Quarto
-document, the code you develop while working actively in your
-environment will still work. However, when you knit your document, the
-environment RStudio spins up doesn't know anything about that working
-environment you were in. Thus, your code may error because it doesn't
-have that extra piece of information. Commonly, `library()` calls are
-the source of this kind of frustration when the author runs it in the
-console, but forgets to add it to the script.
-
-To further clarify the point on environments, perform the following
-steps:
-
-::: callout-tip
-## Setup continued
-
--   Select from the "Run" menu (top right of editor pane) "Run All"
--   Observe all of the variables in your environment
-:::
-
-::: callout-important
-## What about all my R Scripts?
-
-Some pieces of R code are better suited for R scripts than Quarto or
-RMarkdown. A function you wrote yourself that you use in many different
-analyses is probably better to define in an R script than repeated
-across many Quarto or RMarkdown documents. Some analyses have mundane or
-repetitive tasks that don't need to be explained very much. For example,
-in the document shown in the beginning of this lesson, 15 different
-excel files needed to be reformatted in slightly different, mundane
-ways, like renaming columns and removing header text. Instead of
-including these tasks in the primary Quarto document, the authors chose
-to write one R script per file and stored them all in a directory. Then,
-took the contents of one script and included it in the literate
-analysis, using it as an example to explain what the scripts did, and
-then used the `source()` function to run them all from within the Quarto
-document.
-
-So, just because you know Quarto now, doesn't mean you won't be using R
-scripts anymore. Both `.R` and `.qmd` have their roles to play in
-analysis. With practice, it will become more clear what works well in
-Quarto or RMarkdown, and what belongs in a regular R script.
-:::
-
-## Additional Quarto Resources
-
--   Posit (the organization that developed Quarto) has great
-    documentation, check out [Quarto.org](https://quarto.org/)
--   R for Data Science (2e) (Wickham et al, 2023), this is an awesome
-    book for all R related things. Chapter [29 and
-    30](https://r4ds.hadley.nz/quarto.html) are specific to Quarto.
--   [Quarto Gallery:](https://quarto.org/docs/gallery/) Example of
-    different outputs created using Quarto
--   [Hello Quarto: share, collaborate, teach,
-    reimagine](https://openscapes.org/blog/2022-08-10-quarto-keynote/).
-    A talk by Julia Stewart Lowndes and Mine Cetinkaya-Runde.
-
-## Troubleshooting: My RMarkdown/Quarto doc Won't Knit to PDF
-
-If you get an error when trying to knit to PDF that says your computer
-doesn't have a LaTeX installation, one of two things is likely
-happening:
-
--   Your computer doesn't have LaTeX installed
--   You have an installation of LaTeX but RStudio cannot find it (it is
-    not on the path)
-
-If you already use LaTeX (like to write papers), you fall in the second
-category. Solving this requires directing RStudio to your installation -
-and isn't covered here.
-
-If you fall in the first category - you are sure you don't have LaTeX
-installed - can use the R package `tinytex` to easily get an
-installation recognized by RStudio, as long as you have administrative
-rights to your computer.
-
-To install `tinytex` run:
-
-```{r}
-#| eval: false
+```r
 install.packages("tinytex")
 tinytex::install_tinytex()
 ```
 
-If you get an error that looks like destination /usr/local/bin not
-writable, you need to give yourself permission to write to this
-directory (again, only possible if you have administrative rights). To
-do this, run this command in the terminal:
+If you get a permissions error (`destination /usr/local/bin not writable`), run this in the Terminal first:
 
-``` bash
+```bash
 sudo chown -R `whoami`:admin /usr/local/bin
 ```
 
-and then try the above install instructions again. Learn more about
-`tinytex` from [Yihui Xie's online book
-*TinyTeX*](https://yihui.org/tinytex/). \`\`\`\`
+Then try the install again. See [TinyTeX's documentation](https://yihui.org/tinytex/) for more.

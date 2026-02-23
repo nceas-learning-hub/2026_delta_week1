@@ -5,15 +5,6 @@ title: Cleaning & Wrangling Data
 :::{.callout-tip}
 ### Learning Objectives
 
-- Introduce `dplyr` and `tidyr` functions to clean and wrangle data for analysis
-- Learn about the Split-Apply-Combine strategy and how it applies to data wrangling
-- Describe the difference between wide vs. long table formats and how to convert between them
-
-:::
-
-:::{.callout-tip}
-### Learning Objectives (V2)
-
 After completing this session, you will be able to:
 
 - Identify some common `dplyr` and `tidyr` functions
@@ -22,6 +13,7 @@ After completing this session, you will be able to:
 - Paraphrase how `mutate()` can be used to do quality control operations
 - Explain what "shape" means in the context of data and how data of one shape can be converted to another
 - Describe how defensive coding strategies benefit you in the long run and how `rename()` is a good example of such strategies 
+- Explain how `group_by()` and `summarize()` relate to the "Split-Apply-Combine" strategy
 
 :::
 
@@ -573,170 +565,216 @@ catch_year_sp <- catch_long %>%
 :::
 :::
 
-## Filtering rows using `filter()`
+## Conditionally Filter Rows Using `filter()`
 
-We use the `filter()` function to filter our `data.frame` to rows matching some condition. It's similar to `subset()` from base R.
+We use the `filter()` function to filter our data set to only rows that match some condition. It's similar to `subset()` from base R. Let's go back to our long-form data set and do some filtering with `filter()`.
 
-Let's go back to our original `data.frame` and do some `filter()`ing:
+::: {.callout-hint}
+If you need a quick reminder of some core "conditional operators" in R, look below!
 
-```{r}
-sse_catch <- catch_long %>%
-    filter(Region == "SSE")
+| Conditional Operator | Separates | What Does it Test? |
+|:--:|:---:|:-------------------------------|
+| `==` | Values | Is the value on the left _exactly equal to_ the value on the right? | 
+| `!=` | Values | Is the value on the left _not equal to_ the value on the right? |
+| `>/<` | Values | Is the value on the left _greater than/less than_ the value on the right? |  
+| `>=/<=` | Values | Is the value on the left _greater than or equal to/less than or equal to_ the value on the right? | 
+| `%in%` | Values | Is the value on the left _one of the set of values_ on the right? |  
+| `|` | Conditions | Is _either_ of the conditions `TRUE`? | 
+| `&` | Conditions | Are _all_ of the conditions `TRUE`? | 
 
-head(sse_catch)
-```
-
-::: {.callout-note icon=false}
-## Exercise
-
-- Filter to just catches of over one million fish
-- Filter to just Chinook from the SSE region
-
-```{r}
-#| code-fold: true
-#| code-summary: "Answer"
-#| eval: false
-
-## Catches over a million fish
-catch_million <- catch_long %>%
-    filter(catch > 1000000)
-
-## Chinook from SSE data
-chinook_see <- catch_long %>%
-    filter(Region == "SSE",
-           species == "Chinook")
-
-## OR
-chinook_see <- catch_long %>%
-    filter(Region == "SSE" & species == "Chinook")
-```
 :::
 
+```{r filter-ex-01}
+sse_catch <- catch_long %>%
+    dplyr::filter(Region == "SSE")
 
-## Sorting your data using `arrange()`
+# Check the result
+unique(sse_catch$Region) 
+```
 
-The `arrange()` function is used to sort the rows of a `data.frame`. Two common cases to use `arrange()` are:
+::: {.callout-exercise}
+- Filter to just catches of over one million fish
+- Filter to just the SSE region
+- Filter to only Chinook
 
-- To calculate a cumulative sum (with `cumsum()`) so row order matters
-- To display a table (like in an `.qmd` document) in sorted order
+::: {.callout-answer}
+```{r filter-exercise-01_answer-01}
+#| eval: false
+catch_sub <- catch_long %>%
+    # Filter catch
+    dplyr::filter(catch > 10^6) # <1>
+    # Filter region
+    dplyr::filter(Region == "SSE") %>% 
+    # Filter species
+    dplyr::filter(species == "Chinook")
+```
+1. Using exponents for big numbers can be a nice way of making sure you don't have typos in the number of zeros.
 
-Let's re-calculate mean catch by region, and then `arrange()` the output by mean catch:
+Note that you could re-write the above more simply like so:
 
-```{r}
+```{r filter-exercise-01_answer-02}
+#| eval: false
+
+# Do desired filtering
+catch_sub <- catch_long %>%
+    dplyr::filter(catch > 10^6 & Region == "SSE" & species == "Chinook")
+```
+:::
+:::
+
+## Sorting Data with `arrange()`
+
+The `arrange()` function can be used to sort the rows of a data set. For a lot of R functions, row order does not matter, _however_ if you wanted to calculate a cumulative sum (e.g., with `base::cumsum()`), or display a table with sorted rows (e.g., in a Quarto report), it can be helpful to know how to use code to re-order your rows.
+
+Let's re-calculate mean catch by region, and then use `arrange()` to sort the output by mean catch.
+
+```{r arrange-ex_default}
 mean_region <- catch_long %>%
-    group_by(Region) %>%
-    summarize(mean_catch = mean(catch)) %>%
-    arrange(mean_catch)
+    # Summarize by region
+    dplyr::group_by(Region) %>%
+    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+        .groups = "drop") %>%
+    # Order by the mean catch
+    dplyr::arrange(mean_catch)
 
+# Check the result
 head(mean_region)
 ```
 
+The default sorting order of `arrange()` is to sort in ascending order. To reverse the sort order, wrap the column name inside `dplyr`'s `desc()` function:
 
-The default sorting order of `arrange()` is to sort in ascending order. To reverse the sort order, wrap the column name inside the `desc()` function:
-
-```{r}
+```{r arrange-ex_desc}
 mean_region <- catch_long %>%
-    group_by(Region) %>%
-    summarize(mean_catch = mean(catch)) %>%
-    arrange(desc(mean_catch))
+    # Summarize by region
+    dplyr::group_by(Region) %>%
+    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+        .groups = "drop") %>%
+    # Order by descending mean catch
+    dplyr::arrange(dplyr::desc(mean_catch))
 
+# Check the result
 head(mean_region)
 ```
 
-## Splitting a column using `separate_wider_delim()` and `unite()`
+## Splitting or Combining Columns
 
-The `separate_wider_delim()` function allow us to easily split a single column into numerous. Its complement, the `unite()` function, allows us to combine multiple columns into a single one.
+### Separate Columns with `separate_wider_delim()`
+
+The `separate_wider_delim()` function allow us to easily split a single column into numerous columns based on some "delimiter" character in the values of that column. Its complement, the `unite()` function, allows us to combine multiple columns into a single one.
 
 This can come in really handy when we need to split a column into two pieces by a consistent separator (like a dash).
 
 Let's make a new `data.frame` with fake data to illustrate this. Here we have a set of site identification codes with information about the island where the site is (the first 3 letters) and a site number (the 3 numbers). If we want to group and summarize by island, we need a column with just the island information.
 
-```{r}
-sites_df <- data.frame(site = c("HAW-101",
-                                "HAW-103",
-                                "OAH-320",
-                                "OAH-219",
-                                "MAU-039"))
+```{r separate_make-data}
+sites_df <- data.frame(site = c("HAW-101", "HAW-103", "OAH-320", "OAH-219", "MAU-039"))
 
-sites_df %>%
-    separate_wider_delim(cols = site, names = c("island", "site_number"), delim = "-")
+# Check that out
+head(sites_df)
 ```
 
-::: {.callout-note icon=false}
-## Exercise
+```{r separate-ex}
+# Split site by the dash between the site letters and its code
+sites_df %>%
+    tidyr::separate_wider_delim(cols = site, delim = "-",
+        names = c("island", "site_number"), cols_remove = F)
+```
 
-Split the `city` column in the data frame `cities_df` into `city` and `state_code` columns
+Note that `separate_wider_delim()` has _a lot_ of arguments you may want to use in some circumstances. Run `?tidyr::separate_wider_delim` in the Console to check them out.
 
-```{r}
-## create `cities_df`
+::: {.callout-exercise}
+
+1. Make a fake city data set
+
+```{r separate_exercise-data}
 cities_df <- data.frame(city = c("Juneau AK",
                                  "Sitka AK",
                                  "Anchorage AK"))
 ```
 
-```{r}
-#| code-fold: true
-#| code-summary: "Answer"
+2. Split the `city` column into `city_name` and `state_code` columns using the space
+
+::: {.callout-answer}
+```{r separate_exercise-answer}
 #| eval: false
-colnames(cities_df)
-
 cities_clean <- cities_df %>%
-    separate_wider_delim(city, c("city", "state_code"), " ")
-
+    tidyr::separate_wider_delim(cols = city, delim = " ",
+        names = c("city_name", "state_code")) # <1>
 ```
+1. By excluding the `cols_remove` argument, it will default to `TRUE` and we'll lose the original `city` column
+:::
 :::
 
-The `unite()` function does just the reverse of `separate_wider_delim()`. If we have a `data.frame` that contains columns for year, month, and day, we might want to unite these into a single date column.
+### Unite Columns with `unite()`
 
-```{r}
+The `unite()` function does the reverse of `separate_wider_delim()`; if we have a `data.frame` that contains separate columns, we can combine these into one column where all the values in the original columns are pasted together. For example, we might have a data set with columns for year, month, and day, and we might want to unite these into a single date column.
+
+```{r unite_make-data}
 dates_df <- data.frame(
-    year = c("1930",
-             "1930",
-             "1930"),
-    month = c("12",
-              "12",
-              "12"),
-    day = c("14",
-            "15",
-            "16")
-)
+    year = rep(x = "1930", times = 3),
+    month = rep(x = "12", times = 3),
+    day = 14:16)
 
-dates_df %>%
-    unite(date, year, month, day, sep = "-")
+# Check that
+dates_df
 ```
 
-## Now, all together!
 
-We just ran through the various things we can do with `dplyr` and `tidyr` but if you're wondering how this might look in a real analysis. Let's look at that now:
+```{r unite-ex}
+# Combine those columns into a single 'date' column
+dates_df %>%
+    tidyr::unite(col = date, 
+        year, month, day,  # <1>
+        sep = "-", 
+        remove = F) # <2>
+```
+1. Note that you don't specify an argument for the columns that you want to combine with `unite()`!
+2. This specifies whether you want to remove the original columns
 
-```{r}
-#| catch: true
-#| message: false
-catch_original <- read_csv("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1")
+## Putting it All Together!
 
+We just ran through the various things we can do with `dplyr`, `tidyr`, and the pipe but if you're wondering how this might look in a real analysis. Let's look at that now:
+
+```{r all-together-ex}
+# Grab the data
+catch_original <- readr::read_csv(file = "https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1",
+    show_col_types = F)
+
+# Do desired wrangling
 mean_region <- catch_original %>%
-  select(-All, -notesRegCode) %>% 
-  mutate(Chinook = if_else(Chinook == "I", "1", Chinook)) %>% 
-  mutate(Chinook = as.numeric(Chinook)) %>% 
-  pivot_longer(-c(Region, Year), 
-               names_to = "species", 
-               values_to = "catch") %>%
-  mutate(catch = catch*1000) %>% 
-  group_by(Region) %>% 
-  summarize(mean_catch = mean(catch)) %>% 
-  arrange(desc(mean_catch))
+    # Drop unwanted columns
+    dplyr::select(-All, -notesRegCode) %>% 
+    # Fix the typo in the Chinook data
+    dplyr::mutate(
+        Chinook = dplyr::if_else(Chinook == "I", 
+            true = "1", false = Chinook),
+        Chinook = as.numeric(Chinook)) %>% 
+    # Reshape to long format
+    tidyr::pivot_longer(-c(Region, Year), 
+        names_to = "species", 
+        values_to = "catch") %>%
+    # Transform catch into number of fish
+    dplyr::mutate(catch = catch*1000) %>% 
+    # Summarize within region
+    dplyr::group_by(Region) %>% 
+    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+        .groups = "drop") %>% 
+    # Sort by mean catch in descending order
+    dplyr::arrange(dplyr::desc(mean_catch))
 
+# Check the result
 head(mean_region)
 ```
 
+We have completed our lesson on Cleaning and Wrangling data. Before we break, let's practice our Git workflow!
 
-We have completed our lesson on Cleaning and Wrangling data. Before we break, let's practice our Git workflow.
-
-::: {.callout-tip icon=false}
-## Steps
-
-1. Save the `.qmd` you have been working on for this lesson.
-2. Render the Quarto file. This is a way to test everything in your code is working.
-
-3. ```Stage (Add) > Commit > Pull > Push```
+::: {.callout-exercise}
+1. Render the Quarto file
+    - This is a way to test everything in your code is working
+    - If rendering fails, edit and re-render as needed until it succeeds
+2. Save your changes to the `.qmd` file
+3. Stage the changes
+4. Commit them (with a nice commit message!)
+5. For Positron users, sync your changes
+    - Or for RStudio users, pull then push your changes
 :::

@@ -22,6 +22,7 @@ After completing this session, you will be able to:
 - Paraphrase how `mutate()` can be used to do quality control operations
 - Explain what "shape" means in the context of data and how data of one shape can be converted to another
 - Describe how defensive coding strategies benefit you in the long run and how `rename()` is a good example of such strategies 
+- Explain how `group_by()` and `summarize()` relate to the "Split-Apply-Combine" strategy
 
 :::
 
@@ -573,43 +574,61 @@ catch_year_sp <- catch_long %>%
 :::
 :::
 
-## Filtering rows using `filter()`
+## Conditionally Filter Rows Using `filter()`
 
-We use the `filter()` function to filter our `data.frame` to rows matching some condition. It's similar to `subset()` from base R.
+We use the `filter()` function to filter our data set to only rows that match some condition. It's similar to `subset()` from base R. Let's go back to our long-form data set and do some filtering with `filter()`.
 
-Let's go back to our original `data.frame` and do some `filter()`ing:
+::: {.callout-hint}
+If you need a quick reminder of some core "conditional operators" in R, look below!
 
-```{r}
+| Conditional Operator | Separates | What Does it Test? |
+|:--:|:---:|:-------------------------------|
+| `==` | Values | Is the value on the left _exactly equal to_ the value on the right? | 
+| `!=` | Values | Is the value on the left _not equal to_ the value on the right? |
+| `>/<` | Values | Is the value on the left _greater than/less than_ the value on the right? |  
+| `>=/<=` | Values | Is the value on the left _greater than or equal to/less than or equal to_ the value on the right? | 
+| `%in%` | Values | Is the value on the left _one of the set of values_ on the right? |  
+| `|` | Conditions | Is _either_ of the conditions `TRUE`? | 
+| `&` | Conditions | Are _all_ of the conditions `TRUE`? | 
+
+:::
+
+```{r filter-ex-01}
 sse_catch <- catch_long %>%
-    filter(Region == "SSE")
+    dplyr::filter(Region == "SSE")
 
-head(sse_catch)
+# Check the result
+unique(sse_catch$Region) 
 ```
 
-::: {.callout-note icon=false}
-## Exercise
-
+::: {.callout-exercise}
 - Filter to just catches of over one million fish
-- Filter to just Chinook from the SSE region
+- Filter to just the SSE region
+- Filter to only Chinook
 
-```{r}
-#| code-fold: true
-#| code-summary: "Answer"
+::: {.callout-answer}
+```{r filter-exercise-01_answer-01}
+#| eval: false
+catch_sub <- catch_long %>%
+    # Filter catch
+    dplyr::filter(catch > 10^6) # <1>
+    # Filter region
+    dplyr::filter(Region == "SSE") %>% 
+    # Filter species
+    dplyr::filter(species == "Chinook")
+```
+1. Using exponents for big numbers can be a nice way of making sure you don't have typos in the number of zeros.
+
+Note that you could re-write the above more simply like so:
+
+```{r filter-exercise-01_answer-02}
 #| eval: false
 
-## Catches over a million fish
-catch_million <- catch_long %>%
-    filter(catch > 1000000)
-
-## Chinook from SSE data
-chinook_see <- catch_long %>%
-    filter(Region == "SSE",
-           species == "Chinook")
-
-## OR
-chinook_see <- catch_long %>%
-    filter(Region == "SSE" & species == "Chinook")
+# Do desired filtering
+catch_sub <- catch_long %>%
+    dplyr::filter(catch > 10^6 & Region == "SSE" & species == "Chinook")
 ```
+:::
 :::
 
 

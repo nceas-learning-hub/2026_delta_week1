@@ -1,12 +1,13 @@
 ---
-title: Cleaning and Wrangling Data
+title: Cleaning & Wrangling Data
 ---
 
 :::{.callout-tip}
-## Learning Objectives
+### Learning Objectives
 - Introduce `dplyr` and `tidyr` functions to clean and wrangle data for analysis
 - Learn about the Split-Apply-Combine strategy and how it applies to data wrangling
 - Describe the difference between wide vs. long table formats and how to convert between them
+
 :::
 
 
@@ -20,8 +21,7 @@ Learning these tools well will greatly increase your efficiency as an analyst.
 
 Let's look at two motivating examples. 
 
-::: {.callout-note appearance="minimal" icon=false}
-## Example 1
+:::: {.callout-example}
 Suppose you have the following `data.frame` called `length_data` with data about salmon length and want to calculate the average length per year. 
 
 |  year|  length\_cm|
@@ -33,25 +33,23 @@ Suppose you have the following `data.frame` called `length_data` with data about
 |  1992|    5.597777|
 |  1992|    4.900052|
 
-Before thinking about the code, let's think about the steps we need to take to get to the answer (aka pseudocode).
+Before thinking about the code, let's think about the steps we need to take to get to the answer (a.k.a. pseudocode). Now, how would we code this?
 
-Now, how would we code this? The `dplyr` R library provides a fast and powerful way to do this calculation in a few lines of code:
+:::{.callout-answer}
+The `dplyr` R library provides a fast and powerful way to do this calculation in a few lines of code:
 
 ```{r}
 #| eval: false
-#| code-fold: true
-#| code-summary: "Answer"
-
 length_data %>% 
   group_by(year) %>% 
   summarize(mean_length_cm = mean(length_cm))
 ```
 :::
 
+::::
 
-::: {.callout-note appearance="minimal" icon=false}
-## Example 2
- Another process we often need to do is to "reshape" our data. Consider the following table that is in what we call "wide" format:
+:::: {.callout-example}
+Another process we often need to do is to "reshape" our data. Consider the following table that is in what we call "wide" format:
 
 | site   | 1990 | 1991 | ... | 1993 |
 |--------|------|------|-----|------|
@@ -68,13 +66,12 @@ But this won't work on our wide data because `lm()` needs `length` and `year` to
 
 What steps would you take to get this data frame in a long format?
 
+
+::: {.callout-answer}
 The `tidyr` package allows us to quickly switch between wide format and long format using the `pivot_longer()` function:
 
 ```{r}
 #| eval: false
-#| code-fold: true
-#| code-summary: "Answer"
-
 site_data %>% 
   pivot_longer(-site, 
                names_to = "year", 
@@ -89,6 +86,7 @@ site_data %>%
 | ...    | ...  |     ...|
 | dredge | 1993 |     145|
 :::
+::::
 
 This lesson will cover examples to learn about the functions you'll most commonly use from the `dplyr` and `tidyr` packages:
 

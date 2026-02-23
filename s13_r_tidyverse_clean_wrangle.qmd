@@ -4,12 +4,20 @@ title: Cleaning & Wrangling Data
 
 :::{.callout-tip}
 ### Learning Objectives
+
 - Introduce `dplyr` and `tidyr` functions to clean and wrangle data for analysis
 - Learn about the Split-Apply-Combine strategy and how it applies to data wrangling
 - Describe the difference between wide vs. long table formats and how to convert between them
 
 :::
 
+:::{.callout-tip}
+### Learning Objectives (V2)
+
+- Identify some common `dplyr` and `tidyr` functions
+- Define "namespace" in the context of R functions
+
+:::
 
 ## Introduction
 
@@ -120,15 +128,15 @@ The `dplyr` and `tidyr` packages are two particularly powerful and often-used pa
 : {tbl-colwidths="[25,75]"}
 :::
 
-## Data cleaning basics
+## Data Cleaning Fundamentals
 
-To demonstrate, we'll be working with a tidied up version of a data set from [Alaska Department of Fish & Game containing commercial catch data from 1878-1997](https://knb.ecoinformatics.org/#view/df35b.304.2). The data set and reference to the original source can be found at its [public archive](https://knb.ecoinformatics.org/#view/df35b.304.2).
+To demonstrate, we'll be working with a tidied up version of a data set from the Alaska Department of Fish & Game containing commercial catch data from 1878-1997. The data set and reference to the original source can be found at its [public archive](https://knb.ecoinformatics.org/#view/df35b.304.2).
 
-::: {.callout-tip icon=false}
-## Setup
+::: {.callout-tip}
+### Setup
 First, open a new Quarto document. Delete everything below the setup chunk, and add a library chunk that calls `dplyr`, `tidyr`, and `readr`
 
-```{r}
+```{r load-libs}
 #| message: false
 
 library(dplyr)
@@ -139,8 +147,7 @@ library(readr)
 :::
 
 ::: {.callout-important}
-
-### A note on loading packages
+### Note on Loading Packages
 
 You may have noticed the following messages pop up when you ran your library chunk.
 
@@ -156,55 +163,54 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 ```
 
-These are important messages. They are letting you know that certain functions from the `stats` and `base` packages (which are loaded by default when you start R) are masked by *different functions* with the same name in the `dplyr` package. It turns out, the order that you load the packages in matters. Since we loaded `dplyr` after `stats`, R will assume that if you call `filter()`, you mean the `dplyr` version unless you specify otherwise.
+These are important messages. They are letting you know that certain functions from the `stats` and `base` packages (which are loaded by default when you start R) are masked by _different functions_ with the same name in the `dplyr` package. It turns out, the order that you load the packages in matters. Since we loaded `dplyr` after `stats`, R will assume that if you call `filter()`, you mean the `dplyr` version unless you specify otherwise.
 
-Being specific about which version of `filter()`, for example, you call is easy. 
-To explicitly call a function by its unambiguous name, we use the syntax `package_name::function_name(...)`. 
-So, if we wanted to call the `stats` version of `filter()` in this Rmarkdown document, I would use the syntax `stats::filter(...)`.
+**You can easily specify which package's version of a function you want to use by "namespacing" that function.** To namespace a function, we use the syntax `package_name::function_name(...)`. 
+So, if we wanted to call the `stats` version of `filter()` in this Quarto document, we would use the syntax `stats::filter(...)`.
 :::
 
+::: {.callout-caution}
+### Remove Messages and Warnings
 
-
-::: {.callout-caution icon=false}
-### Remove messages and warnings
-
-Messages and warnings are important, but we might not want them in our final document. After you have read the packages in, **adjust the chunk settings in your library chunk** to suppress warnings and messages by adding `#| message: false` or `#| warning: false`. Both of these chunk options, when set to false, prevents messages or warnings from appearing in the rendered file.
+Messages and warnings are important, but we might not want them in our final document. After you have read the packages in, **adjust the chunk settings in your library chunk** to suppress warnings and messages by adding `#| message: false` or `#| warning: false`. These chunk options, when set to `false`, prevent messages or warnings respectively from appearing in the rendered file.
 :::
 
 Now that we have introduced some data wrangling libraries, let's get the data that we are going to use for this lesson.
 
-::: {.callout-tip icon=false}
-## Setup
+:::: {.callout-tip}
+### Setup
 
-1. Go to [KNB Data Package Alaska commercial salmon catches by management region (1886- 1997)](https://knb.ecoinformatics.org/view/df35b.304.2)
+1. Go to KNB Data Package for Alaska commercial salmon catches by management region (1886-1997)
+    -  The link is here: [knb.ecoinformatics.org/view/df35b.304.2](https://knb.ecoinformatics.org/view/df35b.304.2)
+2. Find the data file "byerlySalmonByRegion.csv". Right click the "Download" button and select "Copy Link Address"
+3. Paste the copied URL into the `read_csv()` function in quotes
 
-2. Find the data file `df35b.302.1`. Right click the "Download" button and select "Copy Link Address"
-
-3. Paste the copied URL into the `read_csv()` function
+::: {.callout-answer}
+:::{.panel-tabset}
+### {{< fa brands apple >}} Mac Answer
 
 The code chunk you use to read in the data should look something like this:
 
-```{r}
+```{r read-salmon-df_mac}
 #| message: false
-catch_original <- read_csv("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1")
+catch_original <- readr::read_csv(file = "https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1")
 ```
 
-**Note for Windows users:** Keep in mind, if you want to replicate this workflow in your local computer you also need to use the `url()` function here with the argument `method = "libcurl"`. 
+### {{< fa brands windows >}} Windows Answer
 
-It would look like this:
+To replicate this workflow for {{< fa brands windows >}} Windows users you also need to use the `url()` function here with the argument `method = "libcurl"`. It would look like this:
 
-```{r}
+```{r read-salmon-df_win}
 #| eval: false
-catch_original <- read.csv(url("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1", method = "libcurl"))
+catch_original <- base::read.csv(file = base::url("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1", method = "libcurl"))
 ```
-
 :::
+:::
+::::
 
 This data set is relatively clean and easy to interpret as-is. While it may be clean, it's in a shape that makes it hard to use for some types of analyses so we'll want to fix that first.
 
-::: {.callout-note icon=false}
-## Exercise
-
+::: {.callout-exercise}
 Before we get too much further, spend a minute or two outlining your Quarto document so that it includes the following sections and steps:
 
 - Data Sources
@@ -222,6 +228,10 @@ Before we get too much further, spend a minute or two outlining your Quarto docu
   - Sort data using `arrange()`
   - Split and combine values in columns with `separate_wider_delim()` and `unite()`
   
+::: {.callout-hint}
+Recall that you can use `#` to create headings in a Quarto doc (more `#` for a _smaller_ heading)!
+:::
+
 :::
 
 ## Data exploration
@@ -297,7 +307,7 @@ RStudio has a keyboard shortcut for `%>%`
 
 ## Selecting or removing columns using `select()`
 
-We're ready to go back to our salmon dataset. 
+We're ready to go back to our salmon data set. 
 The first issue is the extra columns `All` and `notesRegCode`. Let's select only the columns we want, and assign this to a variable called `catch_data`.
 
 ```{r}

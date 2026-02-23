@@ -1145,7 +1145,7 @@
     "href": "s13_r_tidyverse_clean_wrangle.html",
     "title": "Cleaning & Wrangling Data",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\n\nIntroduce dplyr and tidyr functions to clean and wrangle data for analysis\nLearn about the Split-Apply-Combine strategy and how it applies to data wrangling\nDescribe the difference between wide vs. long table formats and how to convert between them",
+    "text": "TipLearning Objectives\n\n\n\nAfter completing this session, you will be able to:\n\nIdentify some common dplyr and tidyr functions\nDefine “namespace” in the context of R functions\nExplain how the pipe operator (%&gt;%) can be used to streamline code operations\nParaphrase how mutate() can be used to do quality control operations\nExplain what “shape” means in the context of data and how data of one shape can be converted to another\nDescribe how defensive coding strategies benefit you in the long run and how rename() is a good example of such strategies\nExplain how group_by() and summarize() relate to the “Split-Apply-Combine” strategy",
     "crumbs": [
       "Day 4",
       "Cleaning & Wrangling Data"

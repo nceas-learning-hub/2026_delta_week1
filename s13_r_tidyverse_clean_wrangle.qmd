@@ -307,27 +307,30 @@ Depending on your settings, those hot keys may put a pipe operator that looks li
 :::
 :::
 
-## Selecting or removing columns using `select()`
+## Selecting or Removing Columns Using `select()`
 
-We're ready to go back to our salmon data set. 
-The first issue is the extra columns `All` and `notesRegCode`. Let's select only the columns we want, and assign this to a variable called `catch_data`.
+We're ready to go back to our salmon data set. The first issue is the extra columns `All` and `notesRegCode`. Let's select only the columns we want (implicitly removing those that we do not), and assign this to a variable called `catch_data`.
 
-```{r}
+```{r select-ex_include}
+# Select only desired columns
 catch_data <- catch_original %>%
-    select(Region, Year, Chinook, Sockeye, Coho, Pink, Chum)
+    dplyr::select(Region, Year, Chinook, Sockeye, Coho, Pink, Chum)
 
+# Check the result
 head(catch_data)
 ```
 
-Much better!
+Much better! The `select()` function also allows you to instead say which columns you _don't_ want, by passing column names preceded by a minus sign (`-`):
 
-The `select()` function also allows you to say which columns you *don't* want, by passing unquoted column names preceded by minus (`-`) signs:
-
-```{r}
+```{r select-ex_exclude}
 #| eval: false
 catch_data <- catch_original %>%
-    select(-All,-notesRegCode)
+    dplyr::select(-All, -notesRegCode)
 ```
+
+::: {.callout-warning}
+In each use of `select()`, you must choose **either** which columns to include **or** which to exclude! You can't both include and exclude columns in the same `select()` call.
+:::
 
 ## Quality check 
 

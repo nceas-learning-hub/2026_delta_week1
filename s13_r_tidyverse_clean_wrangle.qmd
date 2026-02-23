@@ -665,67 +665,80 @@ mean_region <- catch_long %>%
 head(mean_region)
 ```
 
-## Splitting or Combine Columns Using `separate_wider_delim()` and `unite()`
+## Splitting or Combining Columns
 
-The `separate_wider_delim()` function allow us to easily split a single column into numerous. Its complement, the `unite()` function, allows us to combine multiple columns into a single one.
+### Separate Columns with `separate_wider_delim()`
+
+The `separate_wider_delim()` function allow us to easily split a single column into numerous columns based on some "delimiter" character in the values of that column. Its complement, the `unite()` function, allows us to combine multiple columns into a single one.
 
 This can come in really handy when we need to split a column into two pieces by a consistent separator (like a dash).
 
 Let's make a new `data.frame` with fake data to illustrate this. Here we have a set of site identification codes with information about the island where the site is (the first 3 letters) and a site number (the 3 numbers). If we want to group and summarize by island, we need a column with just the island information.
 
-```{r}
-sites_df <- data.frame(site = c("HAW-101",
-                                "HAW-103",
-                                "OAH-320",
-                                "OAH-219",
-                                "MAU-039"))
+```{r separate_make-data}
+sites_df <- data.frame(site = c("HAW-101", "HAW-103", "OAH-320", "OAH-219", "MAU-039"))
 
-sites_df %>%
-    separate_wider_delim(cols = site, names = c("island", "site_number"), delim = "-")
+# Check that out
+head(sites_df)
 ```
 
-::: {.callout-note icon=false}
-## Exercise
+```{r separate-ex}
+# Split site by the dash between the site letters and its code
+sites_df %>%
+    tidyr::separate_wider_delim(cols = site, delim = "-",
+        names = c("island", "site_number"), cols_remove = F)
+```
 
-Split the `city` column in the data frame `cities_df` into `city` and `state_code` columns
+Note that `separate_wider_delim()` has _a lot_ of arguments you may want to use in some circumstances. Run `?tidyr::separate_wider_delim` in the Console to check them out.
 
-```{r}
-## create `cities_df`
+::: {.callout-exercise}
+
+1. Make a fake city data set
+
+```{r separate_exercise-data}
 cities_df <- data.frame(city = c("Juneau AK",
                                  "Sitka AK",
                                  "Anchorage AK"))
 ```
 
-```{r}
-#| code-fold: true
-#| code-summary: "Answer"
+2. Split the `city` column into `city_name` and `state_code` columns using the space
+
+::: {.callout-answer}
+```{r separate_exercise-answer}
 #| eval: false
-colnames(cities_df)
-
 cities_clean <- cities_df %>%
-    separate_wider_delim(city, c("city", "state_code"), " ")
-
+    tidyr::separate_wider_delim(cols = city, delim = " ",
+        names = c("city_name", "state_code")) # <1>
 ```
+1. By excluding the `cols_remove` argument, it will default to `TRUE` and we'll lose the original `city` column
+:::
 :::
 
-The `unite()` function does just the reverse of `separate_wider_delim()`. If we have a `data.frame` that contains columns for year, month, and day, we might want to unite these into a single date column.
+### Unite Columns with `unite()`
 
-```{r}
+The `unite()` function does the reverse of `separate_wider_delim()`; if we have a `data.frame` that contains separate columns, we can combine these into one column where all the values in the original columns are pasted together. For example, we might have a data set with columns for year, month, and day, and we might want to unite these into a single date column.
+
+```{r unite_make-data}
 dates_df <- data.frame(
-    year = c("1930",
-             "1930",
-             "1930"),
-    month = c("12",
-              "12",
-              "12"),
-    day = c("14",
-            "15",
-            "16")
-)
+    year = rep(x = "1930", times = 3),
+    month = rep(x = "12", times = 3),
+    day = 14:16)
 
-dates_df %>%
-    unite(date, year, month, day, sep = "-")
+# Check that
+dates_df
 ```
+
+
+```{r unite-ex}
+# Combine those columns into a single 'date' column
+dates_df %>%
+    tidyr::unite(col = date, 
+        year, month, day,  # <1>
+        sep = "-", 
+        remove = F) # <2>
+```
+1. Note that you don't specify an argument for the columns that you want to combine with `unite()`!
+2. This specifies whether you want to remove the original columns
 
 ## Now, all together!
 

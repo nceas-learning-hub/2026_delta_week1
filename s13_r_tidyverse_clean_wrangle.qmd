@@ -235,17 +235,13 @@ Recall that you can use `#` to create headings in a Quarto doc (more `#` for a _
 :::
 
 ## Data Exploration
-Similar to what we did in our "Literate Analysis with Quarto" lesson, it is good practice to skim through the data you just read in. 
+Similar to what we did in our "Literate Analysis with Quarto" lesson, it is good practice to skim through the data you just read in. Doing so is important to make sure the data is read as you were expecting and to familiarize yourself with the data. Some of the basic ways to explore your data are:
 
-Doing so is important to make sure the data is read as you were expecting and to familiarize yourself with the data.
-
-Some of the basic ways to explore your data are:
-
-```{r}
+```{r data-exp-basics}
 #| eval: false
 
 ## Prints the column names of my data frame
-colnames(catch_original)
+colnames(catch_original) # <1>
 
 ## First 6 lines of the data frame
 head(catch_original)
@@ -257,10 +253,10 @@ summary(catch_original)
 unique(catch_original$Region)
 
 ## Opens data frame in its own tab to see each row and column of the data (do in console)
-View(catch_original)
-
+View(catch_original) # <2>
 ```
-
+1. The `names()` function will return the same result (in this case)
+2. Note that the "V" is capitalized!
 
 
 ## About the pipe (`%>%`) operator

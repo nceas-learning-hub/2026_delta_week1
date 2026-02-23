@@ -349,48 +349,56 @@ The Chinook catch data are `character` class (abbreviated by `glimpse()` as "chr
 :::
 :::
 
-## Changing column content using `mutate()`
+## Changing Columns Using `mutate()`
 
 We can use the `mutate()` function to change a column, or to create a new column. 
-First, let's try to convert the Chinook catch values to `numeric` type using the `as.numeric()` function, and overwrite the old Chinook column.
+First, let's try to convert the Chinook catch values to `numeric` type using the base R `as.numeric()` function, and overwrite the old Chinook column. This kind of operation is sometimes known as "coercing" data into a different class.
 
-```{r}
+```{r mutate-ex_force-numeric}
+# Make the Chinook column numeric
 catch_clean <- catch_data %>%
-    mutate(Chinook = as.numeric(Chinook))
+    dplyr::mutate(Chinook = as.numeric(Chinook))
 
-head(catch_clean)
+# Check the structure
+dplyr::glimpse(catch_clean)
 ```
 
-We get a warning ``"NAs introduced by coercion"`` which is R telling us that it couldn't convert every value to an integer and, for those values it couldn't convert, it put an `NA` in its place. This is behavior we commonly experience when cleaning data sets and it's important to have the skills to deal with it when it comes up.
+We get a warning `"NAs introduced by coercion"` which is R telling us that it couldn't convert every value to a number and, for those values it couldn't convert, it put an `NA` in its place. This is behavior we commonly experience when cleaning data sets and it's important to have the skills to deal with it when it comes up.
 
 To investigate, let's isolate the issue. We can find out which values are `NA`s with a combination of `is.na()` and `which()`, and save that to a variable called `i`.
 
-```{r}
-i <- which(is.na(catch_clean$Chinook))
-i
-
+```{r mutate-ex_find-bad-row}
+(i <- which(is.na(catch_clean$Chinook))) # <1>
 ```
+1. By wrapping the entire line in parentheses, we can make the code "echo" in the Console!
 
 It looks like there is only one problem row, lets have a look at it in the original data.
 
-```{r}
+```{r mutate-ex_examine-bad-row}
 catch_data[i,]
 ```
 
-Well that's odd: The value in `Chinook` is the letter `I`. It turns out that this data set is from a PDF which was automatically converted into a `csv` and this value of `I` is actually a 1.
+Well that's odd; the problem value in `Chinook` is the letter `I`. It turns out that this data set is from a PDF which was automatically converted into a CSV and this value of `I` is actually a 1.
 
-Let's fix it by incorporating the `if_else()` function to our `mutate()` call, which will change the value of the `Chinook` column to 1 if the value is equal to `I`, then will use `as.numeric()` to turn the character representations of numbers into numeric typed values.
+Let's fix it by incorporating the `if_else()` function (also from `dplyr`) to our `mutate()` call, which will change the value of the `Chinook` column to 1 if the value is equal to `I`. Once we've done that, we can use `as.numeric()` to turn the character representations of numbers into numeric values without coercing anything to `NA`.
 
-```{r}
+```{r mutate-ex_fix-bad-row}
 catch_clean <- catch_data %>%
-    mutate(Chinook = if_else(condition = Chinook == "I", 
-                             true = "1", 
-                             false = Chinook),
-           Chinook = as.numeric(Chinook))
+    dplyr::mutate(
+        # Use a conditional to fix the bad value
+        Chinook = dplyr::if_else(condition = Chinook == "I", 
+            true = "1", # <1>
+            false = Chinook), # <2>
+        # Make the fixed column numeric
+        Chinook = as.numeric(Chinook))
 
-##check
+## Check the result
 catch_clean[i, ]
 ```
+1. What to return if the condition _is_ true
+2. What to return if the condition _is not_ true
+
+Looks like that worked! Another hint that worked is that we no longer get the `"NAs introduced by coercion"` warning.
 
 ## Changing shape using `pivot_longer()` and `pivot_wider()`
 

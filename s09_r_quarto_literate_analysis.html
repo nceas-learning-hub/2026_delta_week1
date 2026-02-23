@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="site_libs/quarto-contrib/quarto-project/nceas-learning-hub/theme/banner/banner.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -560,7 +560,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#quarto-and-literate-programming" id="toc-quarto-and-literate-programming" class="nav-link" data-scroll-target="#quarto-and-literate-programming"><span class="header-section-number">2</span> Quarto and Literate Programming</a>
   <ul class="collapse">
   <li><a href="#why-does-this-matter-for-reproducibility" id="toc-why-does-this-matter-for-reproducibility" class="nav-link" data-scroll-target="#why-does-this-matter-for-reproducibility"><span class="header-section-number">2.1</span> Why does this matter for reproducibility?</a></li>
-  <li><a href="#example-literate-analysis-from-quarto" id="toc-example-literate-analysis-from-quarto" class="nav-link" data-scroll-target="#example-literate-analysis-from-quarto"><span class="header-section-number">2.2</span> Example: Literate Analysis From Quarto</a></li>
   </ul></li>
   <li><a href="#structure-of-a-quarto-document" id="toc-structure-of-a-quarto-document" class="nav-link" data-scroll-target="#structure-of-a-quarto-document"><span class="header-section-number">3</span> Structure of a Quarto Document</a></li>
   <li><a href="#lets-create-a-quarto-document" id="toc-lets-create-a-quarto-document" class="nav-link" data-scroll-target="#lets-create-a-quarto-document"><span class="header-section-number">4</span> Let’s Create A Quarto Document</a>
@@ -573,17 +572,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#practice-literate-analysis-with-ocean-water-samples" id="toc-practice-literate-analysis-with-ocean-water-samples" class="nav-link" data-scroll-target="#practice-literate-analysis-with-ocean-water-samples"><span class="header-section-number">5</span> Practice: Literate Analysis with ocean water samples</a>
   <ul class="collapse">
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><span class="header-section-number">5.1</span> Getting Started</a></li>
-  <li><a href="#read-in-the-data" id="toc-read-in-the-data" class="nav-link" data-scroll-target="#read-in-the-data"><span class="header-section-number">5.2</span> Read in the data</a></li>
-  <li><a href="#calculate-summary-statistics" id="toc-calculate-summary-statistics" class="nav-link" data-scroll-target="#calculate-summary-statistics"><span class="header-section-number">5.3</span> Calculate Summary Statistics</a></li>
+  <li><a href="#a-better-workflow-for-writing-literate-analyses" id="toc-a-better-workflow-for-writing-literate-analyses" class="nav-link" data-scroll-target="#a-better-workflow-for-writing-literate-analyses"><span class="header-section-number">5.2</span> A better workflow for writing literate analyses</a></li>
+  <li><a href="#setup-loading-packages" id="toc-setup-loading-packages" class="nav-link" data-scroll-target="#setup-loading-packages"><span class="header-section-number">5.3</span> Setup: Loading packages</a></li>
+  <li><a href="#reading-in-data" id="toc-reading-in-data" class="nav-link" data-scroll-target="#reading-in-data"><span class="header-section-number">5.4</span> Reading in data</a></li>
+  <li><a href="#exploring-your-data" id="toc-exploring-your-data" class="nav-link" data-scroll-target="#exploring-your-data"><span class="header-section-number">5.5</span> Exploring your data</a></li>
+  <li><a href="#calculate-summary-statistics" id="toc-calculate-summary-statistics" class="nav-link" data-scroll-target="#calculate-summary-statistics"><span class="header-section-number">5.6</span> Calculate summary statistics</a></li>
+  <li><a href="#inline-r-code" id="toc-inline-r-code" class="nav-link" data-scroll-target="#inline-r-code"><span class="header-section-number">5.7</span> Inline R code</a></li>
+  <li><a href="#plot-the-data" id="toc-plot-the-data" class="nav-link" data-scroll-target="#plot-the-data"><span class="header-section-number">5.8</span> Plot the data</a></li>
   </ul></li>
-  <li><a href="#quarto-and-environments" id="toc-quarto-and-environments" class="nav-link" data-scroll-target="#quarto-and-environments"><span class="header-section-number">6</span> Quarto and Environments</a></li>
-  <li><a href="#additional-quarto-resources" id="toc-additional-quarto-resources" class="nav-link" data-scroll-target="#additional-quarto-resources"><span class="header-section-number">7</span> Additional Quarto Resources</a></li>
-  <li><a href="#troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf" id="toc-troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf" class="nav-link" data-scroll-target="#troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf"><span class="header-section-number">8</span> Troubleshooting: My RMarkdown/Quarto doc Won’t Knit to PDF</a></li>
+  <li><a href="#faq-style-section" id="toc-faq-style-section" class="nav-link" data-scroll-target="#faq-style-section"><span class="header-section-number">6</span> FAQ style section?</a>
+  <ul class="collapse">
+  <li><a href="#quarto-and-environments" id="toc-quarto-and-environments" class="nav-link" data-scroll-target="#quarto-and-environments"><span class="header-section-number">6.1</span> Quarto and Environments</a></li>
+  <li><a href="#when-to-use-r-scripts-vs.-quarto" id="toc-when-to-use-r-scripts-vs.-quarto" class="nav-link" data-scroll-target="#when-to-use-r-scripts-vs.-quarto"><span class="header-section-number">6.2</span> When to Use R Scripts vs.&nbsp;Quarto</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">6.3</span> Additional Resources</a></li>
+  <li><a href="#troubleshooting-cant-render-to-pdf" id="toc-troubleshooting-cant-render-to-pdf" class="nav-link" data-scroll-target="#troubleshooting-cant-render-to-pdf"><span class="header-section-number">6.4</span> Troubleshooting: Can’t Render to PDF?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
@@ -616,10 +624,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>“Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.” - Donald Knuth, 1984</p>
 </blockquote>
 <p>In a <strong>literate analysis</strong>, we weave together natural-language prose (describing your goals, methods, and interpretations) with functional code (that actually performs the analysis). The result renders into a polished HTML, PDF, or Word report - a single document that is both human-readable and fully reproducible.</p>
-<!-- All too often, computational methods are written in such a way as to be borderline incomprehensible even to the person who originally wrote the code! The reason for this is obvious: computers interpret information very differently than people do. In 1984, Donald Knuth proposed a reversal of the programming paradigm by introducing the concept of *Literate Programming* ([Knuth 1984](http://www.literateprogramming.com/knuthweb.pdf)). -->
-<!-- > *"Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do."* -->
-<!-- If our aim is to make scientific research more transparent, the appeal of this paradigm reversal is immediately apparent. By switching to a literate analysis model, **you help enable human understanding of what the computer is doing**. As Knuth describes, in the literate analysis model, the author is an "*essayist*" who chooses variable names carefully, explains what they mean, and introduces concepts in the analysis in a way that facilitates understanding. -->
-<!-- In practice, literate programming is achieved by interleaving sections of natural language prose that describe the goals, methods, and interpretation of an analysis, with sections of code that perform the analysis, generate figures, and save results.  The resulting document is usually rendered as a nicely-formatted report in HTML, MS Word, or PDF format.  Contrast this with a more traditional script, which includes only functional code with (hopefully) a few brief explanatory comments. -->
 </section>
 <section id="quarto-and-literate-programming" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="quarto-and-literate-programming"><span class="header-section-number">2</span> Quarto and Literate Programming</h2>
@@ -653,20 +657,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="why-does-this-matter-for-reproducibility" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="why-does-this-matter-for-reproducibility"><span class="header-section-number">2.1</span> Why does this matter for reproducibility?</h3>
 <p>When your entire analysis - data loading, cleaning, statistics, and figures - lives in one Quarto document, you can re-run everything with a single click. If the data updates, so does your report. This eliminates error-prone copy-pasting between scripts, spreadsheets, and documents, and gives collaborators (and your future self!) a clear trail from raw data to final results.</p>
-<!-- In an R script, the language assumes that you are writing R code, unless you specify that you are writing prose (using a comment, designated by `#`). The paradigm shift of literate analysis comes in the switch to RMarkdown or Quarto, where instead of assuming you are writing code, they assume that you are writing prose unless you specify that you are writing code. This, along with the formatting provided by markdown, encourages the "essayist" to write understandable prose to accompany the code that explains to the human-beings reading the document what the author told the computer to do. This is in contrast to writing just R code, where the author telling to the computer what to do with maybe a smattering of terse comments explaining the code to a reader. -->
-</section>
-<section id="example-literate-analysis-from-quarto" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="example-literate-analysis-from-quarto"><span class="header-section-number">2.2</span> Example: Literate Analysis From Quarto</h3>
-<p>Let’s look at an example of what a rendered literate analysis looks like using a real example. <a href="https://nceas.github.io/sasap-training/materials/reproducible_research_in_r_fairbanks/example-brood-table-analysis.html">Here is an example</a> of an analysis workflow written using RMarkdown. Note that if this analysis would be in Quarto, the render version it would be similar, except for formatting and layout (eg: the default font in Quarto is different).</p>
-<p>There are a few things to notice about this document, which assembles a set of similar data sources on salmon brood tables with different formatting into a single data source.</p>
-<ul>
-<li>It introduces the data sources using in-line images, links, interactive tables, and interactive maps.</li>
-<li>An example of data formatting from one source using R is shown.</li>
-<li>The document executes a set of formatting scripts in a directory to generate a single merged file.</li>
-<li>Some simple quality checks are performed (and their output shown) on the merged data.</li>
-<li>Simple analysis and plots are shown.</li>
-</ul>
-<p>In addition to achieving literate analysis, this document also represents a <strong>reproducible analysis</strong>. Because the entire merging and quality control of the data is done using the R code in the Quarto file, if a new data source and formatting script are added, the document can be run all at once with a single click to re-generate the quality control, plots, and analysis of the updated data.</p>
+<!-- ### Example: Literate Analysis From Quarto -->
+<!-- Let's look at an example of what a rendered literate analysis looks like using a real example. [Here is an -->
+<!-- example](https://nceas.github.io/sasap-training/materials/reproducible_research_in_r_fairbanks/example-brood-table-analysis.html) of an analysis workflow written using RMarkdown. Note that if this analysis would be in Quarto, the render version it would be similar, except for formatting and layout (eg: the default font in Quarto is -->
+<!-- different). -->
+<!-- There are a few things to notice about this document, which assembles a set of similar data sources on salmon brood tables with different formatting into a single data source. -->
+<!-- -   It introduces the data sources using in-line images, links,  interactive tables, and interactive maps. -->
+<!-- -   An example of data formatting from one source using R is shown. -->
+<!-- -   The document executes a set of formatting scripts in a directory to  generate a single merged file. -->
+<!-- -   Some simple quality checks are performed (and their output shown) on  the merged data. -->
+<!-- -   Simple analysis and plots are shown. -->
+<!-- In addition to achieving literate analysis, this document also represents a **reproducible analysis**. Because the entire merging and quality control of the data is done using the R code in the Quarto file, if a new data source and formatting script are added, the document can be run all at once with a single click to re-generate the quality control, plots, and analysis of the updated data. -->
 </section>
 </section>
 <section id="structure-of-a-quarto-document" class="level2" data-number="3">
@@ -792,7 +793,7 @@ You can also embed plots, for example:</code></pre>
 </section>
 <section id="markdown-syntax" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="markdown-syntax"><span class="header-section-number">4.2</span> Markdown Syntax</h3>
-<p>The prose sections of a Quarto document use <strong>Markdown</strong>, a lightweight formatting language with only ~15 rules to learn. Markdown is also used in GitHub READMEs, Slack, and many other tools, so it’s well worth knowing.</p>
+<p>The prose sections of a Quarto document use <strong>Markdown</strong>, a lightweight formatting language with only a few basic rules to learn. Markdown is also used in GitHub READMEs, Slack, and many other tools, so it’s well worth knowing.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -842,7 +843,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The <code>#</code> symbol means something different in R code (a comment) vs. Markdown (a header). In Markdown, the number of <code>#</code> symbols you use matters: <code>#</code> is the biggest header, <code>###</code> up to <code>######</code> are consecutively smaller and nested below it.</p>
+<p>The <code>#</code> symbol means something different in R code (a comment) vs.&nbsp;Markdown (a header). In Markdown, the number of <code>#</code> symbols you use matters: <code>#</code> is the biggest header, <code>###</code> up to <code>######</code> are consecutively smaller and nested below it.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
@@ -901,7 +902,7 @@ Tip
 </section>
 <section id="code-chunks-in-quarto" class="level3" data-number="4.4">
 <h3 data-number="4.4" class="anchored" data-anchor-id="code-chunks-in-quarto"><span class="header-section-number">4.4</span> Code Chunks in Quarto</h3>
-<p>Code chunks contain functional code to be executed. Markdown syntax will not work here! A code chunk You can create a new chunk in your Quarto in one of these ways:</p>
+<p>Code chunks contain functional code to be executed. Markdown syntax will not work here! You can create a new chunk in your Quarto in one of these ways:</p>
 <ul>
 <li>Go to Code in the top menu bar, click “Insert Chunk”</li>
 <li>Use the keyboard shortcut
@@ -1026,16 +1027,16 @@ Tip
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="2">Don’t show the code in the rendered output</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="2">Don’t display the code in the rendered output</span>
 </dd>
 </dl>
 <p>Many more code chunk options can be found at <a href="https://quarto.org/docs/computations/execution-options.html">Quarto.org</a>.</p>
 </section>
 </section>
 </section>
-<section id="practice-literate-analysis-with-ocean-water-samples" class="level2 page-columns page-full" data-number="5">
+<section id="practice-literate-analysis-with-ocean-water-samples" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="practice-literate-analysis-with-ocean-water-samples"><span class="header-section-number">5</span> Practice: Literate Analysis with ocean water samples</h2>
-<p>Now that we have gone over the basics, let’s go a little deeper by building a simple, Quarto document that represents a literate analysis using real data. We are going to work with the seawater chemistry data. We are going to use the <code>BGchem2008data.csv</code> data we downloaded in our previous session.</p>
+<p>!!! Make this standalone - include directions on downloading the data! Let’s build a simple but complete literate analysis in Quarto using real data. We are going to work with the seawater chemistry data. We are going to use the <code>BGchem2008data.csv</code> data we downloaded in our previous session.</p>
 <!-- download a file named `BGchem2008data.csv` from the Arctic Data Center repository. Please follow the steps below to download the data and then upload to your RStudio Server `data` folder. -->
 <section id="getting-started" class="level3" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">5.1</span> Getting Started</h3>
@@ -1046,326 +1047,232 @@ Tip
 <!-- 3. Click the "Upload" button in your RStudio server file browser. -->
 <!-- 3. In the dialog box, make sure the destination directory is the `data` directory in your R project, click "Choose File," and locate the `BGchem2008data.csv` file. Press "OK" to upload the file. -->
 <!-- 4. Check your file was successfully uploaded by navigating into your `data` folder in the **Files** pane. -->
-<!-- ::: -->
-<p>Experienced R users who have never used Quarto (or RMarkdown) often struggle a bit in the transition to developing analysis in Prose+Code format — which makes sense! It is switching the code paradigm to a new way of thinking.</p>
-<p>Rather than starting an R chunk and putting all of your code in that single chunk, below we describe what we think is a better way.</p>
+</section>
+<section id="a-better-workflow-for-writing-literate-analyses" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="a-better-workflow-for-writing-literate-analyses"><span class="header-section-number">5.2</span> A better workflow for writing literate analyses</h3>
+<p>Experienced R users sometimes struggle to transition to Quarto because writing prose <em>and</em> code at the same time feels unfamiliar. A helpful approach:</p>
 <ol type="1">
-<li>Open a document and block out the high-level sections you know you’ll need to include using top level headers.</li>
-<li>Add bullet points for some high level pseudo-code steps you know you’ll need to take.</li>
-<li>Start filling in under each bullet point the code that accomplishes each step. As you write your code, transform your bullet points into prose, and add new bullet points or sections as needed.</li>
+<li>Block out your high-level sections as Markdown headers.</li>
+<li>Add bullet points as pseudo-code for what each section needs to do.</li>
+<li>Fill in the actual code under each bullet, then convert the bullets to prose.</li>
 </ol>
-<p>For this mini-analysis, we will have the following sections and code steps:</p>
-<ol type="1">
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Exercise</span>Exercise 4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p>For this analysis, structure your document like this, using Markdown headers below the YAML header:</p>
+<ul>
 <li>Introduction
-<ol type="a">
-<li>About the data</li>
-<li>Setup</li>
+<ul>
+<li>About the Data</li>
+</ul></li>
+<li>Setup
+<ul>
 <li>Read in data</li>
-</ol></li>
+</ul></li>
 <li>Analysis
-<ol type="a">
-<li>Calculate summary statistics</li>
-<li>Calculate mean Redfield ratio</li>
-<li>Plot Redfield ratio</li>
-</ol></li>
+<ul>
+<li>Summary Statistics</li>
+<li>Redfield Ratio</li>
+<li>Plot</li>
+</ul></li>
 <li>Conclusion</li>
+</ul>
+<p>Under “About the Data”, write a sentence describing the dataset with a hyperlink to its source, and note when it was downloaded.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="setup-loading-packages" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="setup-loading-packages"><span class="header-section-number">5.3</span> Setup: Loading packages</h3>
+<p>Add a code chunk under your Setup header to load the packages you’ll need:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode markdown code-annotation-code code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-2" class="code-annotation-target"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2">2</button><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="2" data-code-annotation="1"><code>readr</code> package to read files, including <code>read_csv()</code></span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="2"><code>here</code> package to build file paths relative to your project root</span>
+</dd>
+</dl>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Best Practice!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Put all <code>library()</code> calls (or other package management, e.g., <code>librarian::shelf()</code>) in one chunk near the top of your document so collaborators immediately know what packages to install.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Another Best Practice!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Name your code chunks for easy searching (such as <code>{r setup}</code> above), and R will display the names so you can track progress as the Quarto document renders!</p>
+</div>
+</div>
+</section>
+<section id="reading-in-data" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="reading-in-data"><span class="header-section-number">5.4</span> Reading in data</h3>
+<p>Use <code>read_csv()</code> with <code>here()</code> to load your data. The <code>here()</code> function builds file paths relative to your project root, which keeps things reproducible regardless of where your <code>.qmd</code> file lives within the project (including if you move it to a new location within the project!).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bg_chem <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/BGchem2008data.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Exercise</span>Exercise 5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p><code>read_csv()</code> prints a column specification message when it runs. How would you suppress this from appearing in your rendered output?</p>
+<div class="callout callout-style-default callout-hint no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hint</span>Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-hint">
+<p>Check the code chunk options above! Alternately, check the documentation for <code>read_csv()</code> (<code>?read_csv</code>) to see an option for suppressing this behavior!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exploring-your-data" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="exploring-your-data"><span class="header-section-number">5.5</span> Exploring your data</h3>
+<p>Before any analysis, get familiar with the data. Create a chunk with <code>#| eval: false</code> and <code>#| echo: false</code> for exploratory code you don’t want in the final report:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg_chem)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(bg_chem)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_chem)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bg_chem)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can also type <code>View(bg_chem)</code> directly in the console to browse the data in a table.</p>
+</section>
+<section id="calculate-summary-statistics" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="calculate-summary-statistics"><span class="header-section-number">5.6</span> Calculate summary statistics</h3>
+<p>The <strong>Redfield ratio</strong> is the consistent 16:1 ratio of nitrogen to phosphorous found in marine phytoplankton. Let’s see how our Arctic data compare.</p>
+<p>First, calculate mean values for the key variables:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nitrate <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO3)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>nitrite <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO2)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>amm     <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NH4)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>phos    <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>P)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then calculate the ratio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> (nitrate <span class="sc">+</span> nitrite <span class="sc">+</span> amm) <span class="sc">/</span> phos</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="inline-r-code" class="level3" data-number="5.7">
+<h3 data-number="5.7" class="anchored" data-anchor-id="inline-r-code"><span class="header-section-number">5.7</span> Inline R code</h3>
+<p>You can embed R results directly in your prose using backtick syntax: <code>`r round(ratio)`</code>. For example, write this in your document:</p>
+<pre><code>The Redfield ratio for this dataset is approximately `r round(ratio)`.</code></pre>
+<p>It will render as: <em>The Redfield ratio for this dataset is approximately 6.</em></p>
+<p>This is much better than evaluating code, copying a number, and pasting it into your text — especially when data changes.</p>
+</section>
+<section id="plot-the-data" class="level3" data-number="5.8">
+<h3 data-number="5.8" class="anchored" data-anchor-id="plot-the-data"><span class="header-section-number">5.8</span> Plot the data</h3>
+<p>Finally, create a simple plot of individual measurements:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bg_chem<span class="sc">$</span>P, bg_chem<span class="sc">$</span>NO2 <span class="sc">+</span> bg_chem<span class="sc">$</span>NO3 <span class="sc">+</span> bg_chem<span class="sc">$</span>NH4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Exercise</span>Exercise 6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p>Decide whether you want the plot code to appear in the rendered output alongside the figure, and add the appropriate chunk option. Then render your document.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="faq-style-section" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="faq-style-section"><span class="header-section-number">6</span> FAQ style section?</h2>
+<section id="quarto-and-environments" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="quarto-and-environments"><span class="header-section-number">6.1</span> Quarto and Environments</h3>
+<p>Quarto renders documents in a <strong>fresh R environment</strong> — completely separate from your interactive RStudio session. This is what makes Quarto so powerful for reproducibility, but it can also cause confusion.</p>
+<p><strong>Try this:</strong></p>
+<ol type="1">
+<li>Restart your R session (<strong>Session &gt; Restart R</strong>).</li>
+<li>Try running just the last code chunk (the plot). You’ll get an error because <code>bg_chem</code> doesn’t exist yet.</li>
+<li>Now use <strong>Run &gt; Run All</strong> to run chunks in order — this works.</li>
+<li>Finally, click <strong>Render</strong>. Notice that the environment pane is empty afterward, even though the document rendered successfully.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Under “About the data”, write a sentence saying where the data set came from, including a hyperlink ti the data. Also mention when was the data downloaded.</p>
-<p>Hint: Navigate to Help &gt; Markdown Quick Reference to look-up the hyperlink syntax.</p>
-</div>
-</div>
+<p>When you press Render, RStudio spins up a fresh session, runs everything top-to-bottom, generates the output, then closes. This is a feature: it forces your document to be self-contained. A common gotcha is running <code>library()</code> in the console during development but forgetting to include it in the document — Render will fail because the fresh environment doesn’t have that package loaded.</p>
+<p><strong>Rule of thumb:</strong> If your document renders successfully, it’s reproducible. Get into the habit of rendering regularly during development.</p>
 </section>
-<section id="read-in-the-data" class="level3 page-columns page-full" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="read-in-the-data"><span class="header-section-number">5.2</span> Read in the data</h3>
-<p>Now that we have outlined our document, we can start writing code! To read the data into our environment, we will use a function from the <code>readr</code> package.</p>
-<p>To use a package in our analysis, we need to first make sure it is installed (you can install a package by running <code>install.package("name-of-package")</code>). Once installed you need to load it into our environment using <code>library(package_name)</code>. Even though we have installed it, we haven’t yet told our R session to access it. Because there are so many packages (many with conflicting namespaces) R cannot automatically load every single package you have installed. Instead, you load only the ones you need for a particular analysis. <strong>Loading the package is a key part of the <em>reproducible</em> aspect of our literate analysis</strong>, so we will include it as an R chunk as part of our Setup.</p>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Best Practice
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It is generally good practice to include all of your <code>library()</code> calls in a single, dedicated R chunk near the top of your document. This lets collaborators know what packages they might need to install before they start running your code.</p>
-</div>
-</div>
-<p>The server should have already installed the two packages we need for now: <code>readr</code> and <code>here</code>. Let’s add a new R chunk below your Setup header that calls these libraries, and run it.</p>
-<p>It should look like this:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Quarto file path and the <code>here()</code> function
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Quarto has a special way of handling relative paths that can be very handy. When working in an Quarto document, <strong>R will set all paths relative to the location of the Quarto file</strong>. This can make things easier to read in data if your Quarto document is stored in the same directory or “near” by. However, more often that not, your <code>.qmd</code> file will be stored in a a folder (e.g <code>scripts</code>) and your data in a <code>data</code> folder, (both folder in the main project directory).</p>
-<p>The <code>here()</code> function helps navigate this file path mix up in a straight forward and reproducible way. This function sets the file path to the project’s directory and builds the rest of the file path from there. Making it easier to find files inside different folders in a project. In this case, because the <code>.qmd</code> file lives in the script folder, <code>here()</code> makes is easy to navigate back into the project’s directory and then into the <code>data</code> folder to read in our file.</p>
-</div>
-</div>
-<p>Now, under “Read data”, add a code chunk that uses the <code>read_csv()</code> with the <code>here()</code> function to read in your data file.</p>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 70 Columns: 19
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr   (1): Station
-dbl  (16): Latitude, Longitude, Target_Depth, CTD_Depth, CTD_Salinity, CTD_T...
-dttm  (1): Time
-date  (1): Date
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>bg_chem <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/BGchem2008data.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><strong>Why <code>read_csv()</code> over <code>read.csv()</code>?</strong></p>
-<p>We chose to show <code>read_csv()</code> from the <code>readr</code> package to introduce the concept of packages, to show you how to load packages, and <code>read_csv()</code> has several advantages over <code>read.csv()</code> from base R, including:</p>
-<ul>
-<li>More reasonable function defaults (no <code>stringsAsFactors</code>!)</li>
-<li>Smarter column type parsing, especially for dates</li>
-<li><code>read_csv()</code> is much faster than <code>read.csv()</code>, which is helpful for large files</li>
-</ul>
-</div></div><p>Once you run this line in your document, you should see the <code>bg_chem</code> object populate in your environment pane. It also spits out lots of text explaining what types the function parsed each column into. This text is important, and should be examined, but we might not want it in our final document.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>How would you suppress the warnings (so they don’t show in our output file) form a specific code chunk?</p>
-<p><strong>Hint:</strong> Code chunk options</p>
-</div>
-</div>
+<section id="when-to-use-r-scripts-vs.-quarto" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="when-to-use-r-scripts-vs.-quarto"><span class="header-section-number">6.2</span> When to Use R Scripts vs.&nbsp;Quarto</h3>
+<p>Quarto doesn’t replace R scripts — both have their place.</p>
+<p>Use <strong>Quarto</strong> for analyses you want to explain, share, or publish: the code, results, and interpretation all belong together.</p>
+<p>Use <strong>R scripts</strong> for reusable utility functions, repetitive data cleaning steps that don’t need much explanation, or code you’ll <code>source()</code> from multiple projects.</p>
+<p>In practice, a single project often has both: helper scripts stored in a folder, and a primary <code>.qmd</code> that sources those scripts and presents the analysis narratively.</p>
 </section>
-<section id="calculate-summary-statistics" class="level3" data-number="5.3">
-<h3 data-number="5.3" class="anchored" data-anchor-id="calculate-summary-statistics"><span class="header-section-number">5.3</span> Calculate Summary Statistics</h3>
-<p>As our “analysis” we are going to calculate some very simple summary statistics and generate a single plot. Using water samples from the Arctic Ocean, we will examine the ratio of nitrogen to phosphate to see how closely the data match the Redfield ratio, which is the consistent 16:1 ratio of nitrogen to phosphorous atoms found in marine phytoplankton.</p>
-<p>Let’s start by exploring the data we just read. Every time we read a new data set, it is important to familiarize yourself with it and make sure that the data looks as expected. Below some useful functions for exploring your data.</p>
-<p>Let’s start by creating a new R chunk and run the following functions. Because this just an exploration and we do not want this chunk to be part of our report, we will indicate that by adding <code>#|eval: false</code> and <code>#| echo: false</code> in the setup of the chunk, that way, the code in this chunk will not run and not be displayed when I knit the final document.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Prints the column names of my data frame</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg_chem)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="do">## General structure of the data frame - shows class of each column</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(bg_chem)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="do">## First 6 lines of the data frame</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_chem)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Summary of each column of data</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bg_chem)</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Prints unique values in a column (in this case Date)</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(bg_chem<span class="sc">$</span>Date)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>To peek out data frame, we can type <code>View(bg_chem)</code> in the console. This will open a tab with our data frame in a tabular format.</p>
-<p>Now that we know a more about the data set we are working with lets do some analyses. Under the appropriate bullet point in your analysis section, create a new R chunk, and use it to calculate the mean nitrate (NO3), nitrite (NO2), ammonium (NH4), and phosphorous (P) measured.</p>
-<p>Save these mean values as new variables with easily understandable names, and write a (brief) description of your operation using markdown above the chunk. Remember that the <code>$</code> (aka the subset operator) indicates which column of your data to look into.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>nitrate <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO3)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>nitrite <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO2)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>amm <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NH4)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>phos <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>P)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>In another chunk, use those variables to calculate the nitrogen: phosphate ratio (Redfield ratio).</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> (nitrate <span class="sc">+</span> nitrite <span class="sc">+</span> amm)<span class="sc">/</span>phos</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>You can access this variable in your markdown text by using R in-line in your text. The syntax to call R in-line (as opposed to as a chunk) is a single back tick `, followed by the letter “r”, then whatever your simple R command is — here we will use <code>round(ratio)</code> to print the calculated ratio, and finally a closing back tick `. This allows us to access the value stored in this variable in our explanatory text without resorting to the evaluate-copy-paste method so commonly used for this type of task.</p>
-<p>So, the text in you Quarto document should look like this:</p>
-<p>The Redfield ratio for this dataset is approximately: `r <code>round(ratio)</code>`</p>
-<p>And the rendered text like this:</p>
-<p>The Redfield ratio for this dataset is approximately 6.</p>
-<p>Finally, create a simple plot using base R that plots the ratio of the individual measurements, as opposed to looking at mean ratio.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bg_chem<span class="sc">$</span>P, bg_chem<span class="sc">$</span>NO2 <span class="sc">+</span> bg_chem<span class="sc">$</span>NO3 <span class="sc">+</span> bg_chem<span class="sc">$</span>NH4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="s09_r_quarto_literate_analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Decide whether or not you want the plotting code above to show up in your knitted document along with the plot, and implement your decision as a chunk option.</p>
-<p>Render your Quarto document (by pressing the Render button) and observe the results.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>How do I decide when to make a new code chunk?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Like many of life’s great questions, there is no clear cut answer. A rule of thumb is to have one chunk per functional unit of analysis. This functional unit could be 50 lines of code or it could be 1 line, but typically it only does one “thing.” This could be reading in data, making a plot, or defining a function. It could also mean calculating a series of related summary statistics (as we’ll see below). Ultimately, the choice is one related to personal preference and style, but generally you should ensure that code is divided up such that it is easily explainable in a literate analysis as the code is run.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="quarto-and-environments" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="quarto-and-environments"><span class="header-section-number">6</span> Quarto and Environments</h2>
-<p>Let’s walk through an exercise with the document we just created to demonstrate how Quarto handles environments. We will be deliberately inducing some errors here for demonstration purposes.</p>
-<p>First, follow these steps:</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Setup
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<section id="additional-resources" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">6.3</span> Additional Resources</h3>
 <ul>
-<li>Restart your R session (Session &gt; Restart R)</li>
-<li>Run the last chunk in your Quarto document by pressing the play button on the chunk</li>
-</ul>
-</div>
-</div>
-<p>Perhaps not surprisingly, we get an error:</p>
-<pre><code>Error in plot(bg_chem$P, bg_chem$NO2 + bg_chem$NO3 + bg_chem$NH4) : 
-  object 'bg_chem' not found</code></pre>
-<p>This is because we have not run the chunk of code that reads in the <code>bg_chem</code> data. The R part of Quarto works just like a regular R script. You have to execute the code, and the order that you run it in matters. It is relatively easy to get mixed up in a large Quarto document — running chunks out of order, or forgetting to run chunks.</p>
-<p>To resolve this, follow the next step:</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Setup continued
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Select from the “Run” menu (top right of the editor pane) “Run All.”</li>
-<li>Observe the <code>bg_chem</code> variable in your environment</li>
-</ul>
-</div>
-</div>
-<p>This is a great way to reset and re-run code when things seem to have gone sideways. It is great practice to do periodically since it helps ensure you are writing code that actually runs and it’s reproducible.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>For the next exercise:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Clean your environment by clicking the broom in the environment pane</li>
-<li>Restart your R session (Session &gt; Restart R)</li>
-<li>Press “Render” to run all of the code in your document</li>
-<li>Observe the state of your environment pane</li>
-</ul>
-<p>Assuming your document rendered and produced an html page, your code ran. Yet, the environment pane is empty. What happened?</p>
-</div>
-</div>
-<p>The Render button is rather special — it doesn’t just run all of the code in your document. It actually spins up a fresh R environment separate from the one you have been working in, runs all of the code in your document, generates the output, and then closes the environment. This is one of the best ways Quarto (or RMarkdown) helps ensure you have built a reproducible workflow. If, while you were developing your code, you ran a line in the console as opposed to adding it to your Quarto document, the code you develop while working actively in your environment will still work. However, when you knit your document, the environment RStudio spins up doesn’t know anything about that working environment you were in. Thus, your code may error because it doesn’t have that extra piece of information. Commonly, <code>library()</code> calls are the source of this kind of frustration when the author runs it in the console, but forgets to add it to the script.</p>
-<p>To further clarify the point on environments, perform the following steps:</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Setup continued
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Select from the “Run” menu (top right of editor pane) “Run All”</li>
-<li>Observe all of the variables in your environment</li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>What about all my R Scripts?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Some pieces of R code are better suited for R scripts than Quarto or RMarkdown. A function you wrote yourself that you use in many different analyses is probably better to define in an R script than repeated across many Quarto or RMarkdown documents. Some analyses have mundane or repetitive tasks that don’t need to be explained very much. For example, in the document shown in the beginning of this lesson, 15 different excel files needed to be reformatted in slightly different, mundane ways, like renaming columns and removing header text. Instead of including these tasks in the primary Quarto document, the authors chose to write one R script per file and stored them all in a directory. Then, took the contents of one script and included it in the literate analysis, using it as an example to explain what the scripts did, and then used the <code>source()</code> function to run them all from within the Quarto document.</p>
-<p>So, just because you know Quarto now, doesn’t mean you won’t be using R scripts anymore. Both <code>.R</code> and <code>.qmd</code> have their roles to play in analysis. With practice, it will become more clear what works well in Quarto or RMarkdown, and what belongs in a regular R script.</p>
-</div>
-</div>
-</section>
-<section id="additional-quarto-resources" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="additional-quarto-resources"><span class="header-section-number">7</span> Additional Quarto Resources</h2>
-<ul>
-<li>Posit (the organization that developed Quarto) has great documentation, check out <a href="https://quarto.org/">Quarto.org</a></li>
-<li>R for Data Science (2e) (Wickham et al, 2023), this is an awesome book for all R related things. Chapter <a href="https://r4ds.hadley.nz/quarto.html">29 and 30</a> are specific to Quarto.</li>
-<li><a href="https://quarto.org/docs/gallery/">Quarto Gallery:</a> Example of different outputs created using Quarto</li>
-<li><a href="https://openscapes.org/blog/2022-08-10-quarto-keynote/">Hello Quarto: share, collaborate, teach, reimagine</a>. A talk by Julia Stewart Lowndes and Mine Cetinkaya-Runde.</li>
+<li><a href="https://quarto.org">Quarto.org</a> — official documentation</li>
+<li><a href="https://r4ds.hadley.nz">R for Data Science (2e)</a>, Chapters 29–30 — Quarto in depth</li>
+<li><a href="https://quarto.org/docs/gallery/">Quarto Gallery</a> — examples of different output types</li>
+<li><a href="https://mine.quarto.pub/hello-quarto/">Hello Quarto</a> — talk by Julia Stewart Lowndes and Mine Çetinkaya-Rundel</li>
 </ul>
 </section>
-<section id="troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="troubleshooting-my-rmarkdownquarto-doc-wont-knit-to-pdf"><span class="header-section-number">8</span> Troubleshooting: My RMarkdown/Quarto doc Won’t Knit to PDF</h2>
-<p>If you get an error when trying to knit to PDF that says your computer doesn’t have a LaTeX installation, one of two things is likely happening:</p>
-<ul>
-<li>Your computer doesn’t have LaTeX installed</li>
-<li>You have an installation of LaTeX but RStudio cannot find it (it is not on the path)</li>
-</ul>
-<p>If you already use LaTeX (like to write papers), you fall in the second category. Solving this requires directing RStudio to your installation - and isn’t covered here.</p>
-<p>If you fall in the first category - you are sure you don’t have LaTeX installed - can use the R package <code>tinytex</code> to easily get an installation recognized by RStudio, as long as you have administrative rights to your computer.</p>
-<p>To install <code>tinytex</code> run:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>If you get an error that looks like destination /usr/local/bin not writable, you need to give yourself permission to write to this directory (again, only possible if you have administrative rights). To do this, run this command in the terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="kw">`</span><span class="fu">whoami</span><span class="kw">`</span>:admin /usr/local/bin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>and then try the above install instructions again. Learn more about <code>tinytex</code> from <a href="https://yihui.org/tinytex/">Yihui Xie’s online book <em>TinyTeX</em></a>. ````</p>
+<section id="troubleshooting-cant-render-to-pdf" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="troubleshooting-cant-render-to-pdf"><span class="header-section-number">6.4</span> Troubleshooting: Can’t Render to PDF?</h3>
+<p>PDF rendering requires a LaTeX installation. If you don’t have one, the easiest fix is <code>tinytex</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you get a permissions error (<code>destination /usr/local/bin not writable</code>), run this in the Terminal first:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="kw">`</span><span class="fu">whoami</span><span class="kw">`</span>:admin /usr/local/bin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then try the install again. See <a href="https://yihui.org/tinytex/">TinyTeX’s documentation</a> for more.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -19,8 +19,9 @@ After completing this session, you will be able to:
 - Identify some common `dplyr` and `tidyr` functions
 - Define "namespace" in the context of R functions
 - Explain how the pipe operator (`%>%`) can be used to streamline code operations
-- Paraphrase how `mutate` can be used to do quality control operations
+- Paraphrase how `mutate()` can be used to do quality control operations
 - Explain what "shape" means in the context of data and how data of one shape can be converted to another
+- Describe how defensive coding strategies benefit you in the long run and how `rename()` is a good example of such strategies 
 
 :::
 
@@ -441,36 +442,36 @@ head(catch_wide)
 
 As before, if you need to remind yourself of what goes to what argument (or even just the argument names themselves), run `?tidyr::pivot_wider` in the Console.
 
-## Renaming columns with `rename()`
+## Renaming Columns with `rename()`
 
-If you scan through the data, you may notice the values in the `catch` column are very small (these are supposed to be annual catches). 
-If we look at [the metadata](https://knb.ecoinformatics.org/#view/df35b.304.2) we can see that the `catch` column is in thousands of fish, so let's convert it before moving on.
+If you scan through the (long format) data, you may notice the values in the `catch` column are very small (these are supposed to be annual catches). If we look at [the metadata](https://knb.ecoinformatics.org/#view/df35b.304.2) we can see that the `catch` column is in thousands of fish, so let's convert it before moving on.
 
 Let's first rename the `catch` column to be called `catch_thousands`:
 
-```{r}
+```{r rename-ex}
 catch_long <- catch_long %>%
-    rename(catch_thousands = catch)
+    # Rename the column descriptively
+    dplyr::rename(catch_thousands = catch)
 
-head(catch_long)
+# Check the result
+dplyr::glimpse(catch_long)
 ```
 
-::: callout-important
-
-## `names()` versus `rename()`
+::: {.callout-important}
+### `names()` versus `rename()`
 
 Many people use the base R function `names()` to rename columns, often in combination with column indexing that relies on columns being in a particular order. Column indexing is often also used to select columns instead of the `select()` function from `dplyr`. 
-Although these methods work just fine, they do have one major drawback: in most implementations they rely on you knowing exactly the column order your data is in.
+Although these methods work just fine in some cases, they do have one major drawback: they rely on you knowing the _exact_ order of columns in the data.
 
 **To illustrate why your knowledge of column order isn't reliable enough for these operations, considering the following scenario:**
 
 Your colleague emails you letting you know that she has an updated version of the conductivity-temperature-depth data from this year's research cruise, and sends it along. Excited, you re-run your scripts that use this data for your phytoplankton research. You run the script and suddenly all of your numbers seem off. You spend hours trying to figure out what is going on.
 
-Unbeknownst to you, your colleagues bought a new sensor this year that measures dissolved oxygen. Because of the new variables in the data set, the column order is different. Your script which previously renamed the fourth column, `SAL_PSU` to `salinity` now renames the fourth column, `O2_MGpL` to `salinity`. No wonder your results looked so weird, good thing you caught it!
+Unbeknownst to you, your colleague bought a new sensor this year that measures dissolved oxygen. Because of the new variables in the data set, the column order is different. Your script which previously renamed the fourth column, `SAL_PSU` to `salinity` now renames the fourth column, `O2_MGpL` to `salinity`. No wonder your results looked so weird, good thing you caught it but a shame you had to waste so many hours finding the issue!
 
-If you had written your code so that it doesn't rely on column order, but instead renames columns using the `rename()` function, the code would have run just fine (assuming the name of the original salinity column didn't change, in which case the code would have thrown an error in an obvious way). 
-This is an example of a *defensive coding strategy*, where you try to anticipate issues before they arise, and write your code in such a way as to keep the issues from happening.
+If you had written your code so that it didn't rely on column order, but instead renames columns using the `rename()` function, the code would have run just fine (assuming the name of the original salinity column didn't change, in which case the code would have thrown an error in an obvious way). 
 
+This is an example of a **defensive coding strategy, where you try to anticipate issues _before_ they arise, and write your code in such a way as to keep the issues from happening.**
 ::: 
 
 

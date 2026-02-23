@@ -18,7 +18,10 @@ After completing this session, you will be able to:
 
 - Identify some common `dplyr` and `tidyr` functions
 - Define "namespace" in the context of R functions
-- Explain how the pipe operator (`%>%`) can be used to streamline wrangling code
+- Explain how the pipe operator (`%>%`) can be used to streamline code operations
+- Paraphrase how `mutate` can be used to do quality control operations
+- Explain what "shape" means in the context of data and how data of one shape can be converted to another
+
 :::
 
 ## Introduction
@@ -400,43 +403,43 @@ catch_clean[i, ]
 
 Looks like that worked! Another hint that worked is that we no longer get the `"NAs introduced by coercion"` warning.
 
-## Changing shape using `pivot_longer()` and `pivot_wider()`
+## Changing Shape Using `pivot_longer()` and `pivot_wider()`
 
-The next issue is that the data are in a wide format and we want the data in a long format instead. 
+The next issue is that the "shape" of the data is not appropriate for our needs! Currently the data are in "wide" format where one variable (fish species) is spread into separate columns. We want the data to be in **"long" format (a.k.a. "tidy format") where each column is only one variable and each row is a single observation!**
+
 The function `pivot_longer()` from the `tidyr` package helps us do  this conversion. 
-If you do not remember all the arguments that go into `pivot_longer()` you can always call the `help` page by typing `?pivot_longer` in the console.
+If you do not remember all the arguments that go into `pivot_longer()` you can always check out the help page by typing `?tidyr::pivot_longer` in the Console.
 
-```{r}
+```{r pivot-long-ex}
 catch_long <- catch_clean %>% 
-    #pivot longer all columns except Region and Year
-    pivot_longer(
-        cols = -c(Region, Year),
-        names_to = "species",
-        values_to = "catch"
-    )
+    # Pivot all columns except Region and Year into long format
+    tidyr::pivot_longer(cols = -c(Region, Year),
+        names_to = "species", # <1>
+        values_to = "catch") # <2>
 
+# Check the result
 head(catch_long)
 ```
+1. What should the name of the column that holds the old column names be?
+2. What should the name of the column that holds all the values be?
 
-The syntax we used above for `pivot_longer()` might be a bit confusing so let's walk though it.
-
-- The first argument to `pivot_longer` is the columns over which we are pivoting. You can select these by listing either the names of the columns you do want to pivot, or in this case, the names of the columns you are not pivoting over. 
-
-- The `names_to` argument: this is the name of the column that you are creating from the column **names** of the columns you are pivoting over. 
-
-- The `values_to` argument: the name of the column that you are creating from the **values** in the columns you are pivoting over.
-
+Note that--just like with `select()`--the `cols` argument of `pivot_longer()` can accept _either_ column names _to_ pivot or names _not to_ pivot.
 The opposite of `pivot_longer()` is the `pivot_wider()` function. It works in a similar declarative fashion:
 
-```{r}
+```{r pivot-wide-ex}
 catch_wide <- catch_long %>%
-    pivot_wider(names_from = species,
-                values_from = catch)
+    # Pivot the data back into wide format
+    tidyr::pivot_wider(names_from = species, # <1>
+        values_from = catch,
+        values_fill = 0) # <2>
 
+# Check the result
 head(catch_wide)
 ```
+1. Note that here the columns are **not** quoted. That's because now that they actually are column names, they use normal Tidyverse style for referencing columns (i.e., not quoted)
+2. If flipping to wide format makes new row/column combinations, we can specify the value to go there! Default is `NA`
 
-Same than we did above we can pull up the documentation of the function to remind ourselves what goes in which argument. Type `?pivot_wider` in the console.
+As before, if you need to remind yourself of what goes to what argument (or even just the argument names themselves), run `?tidyr::pivot_wider` in the Console.
 
 ## Renaming columns with `rename()`
 

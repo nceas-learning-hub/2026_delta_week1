@@ -89,6 +89,8 @@ tidyr::pivot_longer(data = site_date,
 :::
 ::::
 
+## `dplyr` and `tidyr`
+
 This lesson will cover examples to learn about the functions you'll most commonly use from the `dplyr` and `tidyr` packages:
 
 | Function name   | Description |
@@ -109,7 +111,7 @@ This lesson will cover examples to learn about the functions you'll most commonl
 | `pivot_longer()`  | transforms data from a wide to a long format |   
 | `pivot_wider()`  | transforms data from a long to a wide format |
 | `unite()` | Unite multiple columns into one by pasting strings together |
-|  `separate()` | Separate a character column into multiple columns with a regular expression or numeric locations |
+|  `separate_wider_delim()` | Separate a character column into multiple columns with a regular expression or numeric locations |
 
 : Common `tidyr` functions {tbl-colwidths="[25,75]"}
 
@@ -213,7 +215,7 @@ Before we get too much further, spend a minute or two outlining your Quarto docu
   - Summary stats using `group_by()` and `summarize()`
   - Filtering rows using `filter()`
   - Sort data using `arrange()`
-  - Split and combine values in columns with `separate()` and `unite()`
+  - Split and combine values in columns with `separate_wider_delim()` and `unite()`
   
 :::
 
@@ -626,9 +628,9 @@ mean_region <- catch_long %>%
 head(mean_region)
 ```
 
-## Splitting a column using `separate()` and `unite()`
+## Splitting a column using `separate_wider_delim()` and `unite()`
 
-The `separate()` function allow us to easily split a single column into numerous. Its complement, the `unite()` function, allows us to combine multiple columns into a single one.
+The `separate_wider_delim()` function allow us to easily split a single column into numerous. Its complement, the `unite()` function, allows us to combine multiple columns into a single one.
 
 This can come in really handy when we need to split a column into two pieces by a consistent separator (like a dash).
 
@@ -642,7 +644,7 @@ sites_df <- data.frame(site = c("HAW-101",
                                 "MAU-039"))
 
 sites_df %>%
-    separate(site, c("island", "site_number"), "-")
+    separate_wider_delim(cols = site, names = c("island", "site_number"), delim = "-")
 ```
 
 ::: {.callout-note icon=false}
@@ -664,12 +666,12 @@ cities_df <- data.frame(city = c("Juneau AK",
 colnames(cities_df)
 
 cities_clean <- cities_df %>%
-    separate(city, c("city", "state_code"), " ")
+    separate_wider_delim(city, c("city", "state_code"), " ")
 
 ```
 :::
 
-The `unite()` function does just the reverse of `separate()`. If we have a `data.frame` that contains columns for year, month, and day, we might want to unite these into a single date column.
+The `unite()` function does just the reverse of `separate_wider_delim()`. If we have a `data.frame` that contains columns for year, month, and day, we might want to unite these into a single date column.
 
 ```{r}
 dates_df <- data.frame(

@@ -38,11 +38,13 @@ Before thinking about the code, let's think about the steps we need to take to g
 :::{.callout-answer}
 The `dplyr` R library provides a fast and powerful way to do this calculation in a few lines of code:
 
-```{r}
+```{r motivate-ex-01}
 #| eval: false
 length_data %>% 
-  group_by(year) %>% 
-  summarize(mean_length_cm = mean(length_cm))
+  dplyr::group_by(year) %>% 
+  dplyr::summarize(mean_length_cm = mean(length_cm),
+    .groups = "keep") %>% 
+  dplyr::ungroup()
 ```
 :::
 
@@ -66,16 +68,15 @@ But this won't work on our wide data because `lm()` needs `length` and `year` to
 
 What steps would you take to get this data frame in a long format?
 
-
 ::: {.callout-answer}
 The `tidyr` package allows us to quickly switch between wide format and long format using the `pivot_longer()` function:
 
-```{r}
+```{r motivate-ex-02}
 #| eval: false
-site_data %>% 
-  pivot_longer(-site, 
-               names_to = "year", 
-               values_to = "length")
+tidyr::pivot_longer(data = site_date, 
+    cols = -site, 
+    names_to = "year", 
+    values_to = "length")
 ```
 
 | site   | year |  length|

@@ -332,24 +332,21 @@ catch_data <- catch_original %>%
 In each use of `select()`, you must choose **either** which columns to include **or** which to exclude! You can't both include and exclude columns in the same `select()` call.
 :::
 
-## Quality check 
+## Quality Check 
 
-Now that we have the data we are interested in using, we should do a little quality check to see that everything seems as expected. 
-One nice way of doing this is the `glimpse()` function.
+Now that we have the data we are interested in using, we should do a little quality check to see that everything seems as expected. One nice way of doing this is the `glimpse()` function from `dplyr`.
 
-```{r}
+```{r glimpse-ex}
+# Check structure of data
 dplyr::glimpse(catch_data)
 ```
 
-::: {.callout-note icon=false}
-## Exercise
-
+::: {.callout-exercise}
 Examine the output of the `glimpse()` function call. Does anything seem amiss with this data set that might warrant fixing?
 
-<details>
-  <summary>**Answer:**</summary>
-  The Chinook catch data are `character` class. Let's fix it using the function `mutate()` before moving on.
-</details>
+::: {.callout-answer}
+The Chinook catch data are `character` class (abbreviated by `glimpse()` as "chr"). Let's fix it using the function `mutate()` before moving on.
+:::
 :::
 
 ## Changing column content using `mutate()`

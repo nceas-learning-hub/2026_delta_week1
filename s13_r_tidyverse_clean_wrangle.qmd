@@ -91,29 +91,34 @@ tidyr::pivot_longer(data = site_date,
 
 ## `dplyr` and `tidyr`
 
-This lesson will cover examples to learn about the functions you'll most commonly use from the `dplyr` and `tidyr` packages:
+The `dplyr` and `tidyr` packages are two particularly powerful and often-used packages for data wrangling. This lesson will cover examples to learn about some of the functions you'll most commonly use from those packages. See the tabs below for a brief overview of those tools.
+
+:::{.panel-tabset}
+### Common `dplyr` Functions
 
 | Function name   | Description |
 |--------|------|
-| `mutate()`  | Creates modify and deletes columns |   
+| `mutate()`  | Creates and modifies columns |   
 | `group_by()`  | Groups data by one or more variables |
-| `summarise()` | Summaries each group down to one row |
+| `summarize()` | Summarizes each group down to one row |
 |  `select()` | Keep or drop columns using their names  |
-| `filter()`  | Keeps rows that matches conditions |
-| `arrange()`  | order rows using columns variable |
+| `filter()`  | Keeps rows that match conditions |
+| `arrange()`  | Order rows by one or more columns |
 | `rename()`  | Rename a column |
 
-: Common `dplyr` functions {tbl-colwidths="[25,75]"}
+: {tbl-colwidths="[25,75]"}
 
+### Common `tidyr` Functions
 
 | Function name   | Description |
 |--------|------|
-| `pivot_longer()`  | transforms data from a wide to a long format |   
-| `pivot_wider()`  | transforms data from a long to a wide format |
+| `pivot_longer()`  | Reshapes data from a wide to a long format |   
+| `pivot_wider()`  | Reshapes data from a long to a wide format |
 | `unite()` | Unite multiple columns into one by pasting strings together |
-|  `separate_wider_delim()` | Separate a character column into multiple columns with a regular expression or numeric locations |
+|  `separate_wider_delim()` | Separate one column into multiple columns based on a delimiter (e.g., `_`, `-`, `.`) |
 
-: Common `tidyr` functions {tbl-colwidths="[25,75]"}
+: {tbl-colwidths="[25,75]"}
+:::
 
 ## Data cleaning basics
 

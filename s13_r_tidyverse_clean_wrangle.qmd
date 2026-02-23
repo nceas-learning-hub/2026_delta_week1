@@ -491,31 +491,24 @@ dplyr::glimpse(catch_long)
 
 We're now ready to start analyzing the data!
 
-## Summary statistics using `group_by()` and `summarize()`
+## Calculating Summary Statistics with `dplyr`
 
-Suppose we are now interested in getting the average catch per region. 
-In our initial data exploration we saw there are 18 regions, we can easily see their names again:
+Suppose we are now interested in getting the average catch per region. In our initial data exploration we saw there are 18 regions, we can easily see their names again:
 
-```{r}
-unique(catch_original$Region)
+```{r unique-region}
+unique(catch_long$Region)
 ```
 
 Think about how we would calculate the average catch per region "by hand". It would be something like this: 
 
-0. We start with our table and notice there are multiple regions in the "Regions" column. 
+1. We start with our table and notice there are multiple regions in the "Regions" column. 
+2. We split our original table to group all observations from the same region together. 
+3. We calculate the average catch for each of the groups we form. 
+4. Then we combine the values for average catch per region into a single table. 
 
-
-1. We split our original table to group all observations from the same region together. 
-
-
-2. We calculate the average catch for each of the groups we form. 
-
-
-3. Then we combine the values for average catch per region into a single table. 
-
-:::{.column-body-outset}
-![](images/r_tidyverse_clean_wrangle/regions-split-apply-combine.png){ fig-align="center"}
-:::
+<p align="center">
+<img src="images/r_tidyverse_clean_wrangle/regions-split-apply-combine.png" alt="Diagram of a data set being split into separate tables, each with a subset of the total rows, based on a group column. A summary statistic is then computed for each 'sub-table' and they are re-combined into a single data set at the end." width="100%"/>
+</p>
 
 Analyses like this conform to what is known as the **Split-Apply-Combine strategy**. This strategy follows the three steps we explained above:
 
@@ -523,60 +516,62 @@ Analyses like this conform to what is known as the **Split-Apply-Combine strateg
 2. **Apply**: Calculate some summary statistic on each group (e.g. mean catch *by* year, number of individuals *per* species)
 3. **Combine**: Combine the statistic calculated on each group back together into a single table
 
-The `dplyr` library lets us easily employ the Split-Apply-Combine strategy by using the `group_by()` and `summarize()` functions:
+The `dplyr` library lets us easily employ the Split-Apply-Combine strategy by using the `group_by()` and `summarize()` functions!
 
-```{r}
+```{r summarize-ex_average}
 mean_region <- catch_long %>%
-    group_by(Region) %>%
-    summarize(mean_catch = mean(catch))
+    # Group by region
+    dplyr::group_by(Region) %>%
+    # Calculate averages within the established groups
+    dplyr::summarize(mean_catch = mean(catch, na.rm = TRUE),
+        .groups = "drop")# <1>
 
-head(mean_region)
+# Check the result
+dplyr::glimpse(mean_region)
 ```
+1. Specifies whether we want to keep the grouping structure in the data
+
+::: {.callout-warning}
+The `.groups` argument is not _strictly_ necessary but it's good practice to include! Without it, your data will stay grouped which can lead to some bizarre behavior down the line depending on what further operations you're doing.
+
+If you're curious, change it to `.groups = "keep"` and see how the result returned by `glimpse()` differs from the example above.
+:::
 
 Let's see how the previous code implements the Split-Apply-Combine strategy:
 
 1. `group_by(Region)`: this is telling R to **split** the dataframe and create a group for each different value in the column `Region`. R just keeps track of the groups, it doesn't return separate dataframes per region. 
+2. `mean(catch, na.rm = TRUE)`: here `mean` is the function we want to **apply** to the column `catch` in each group.
+3. `summarize(mean_catch = mean(catch, na.rm = TRUE)` the function `summarize()` is used to **combine** the results of `mean()` from each group into a single table. The argument `mean_catch = mean(...)` indicates what the column having the results of `mean()` will be named.
 
+Another common use of `group_by()` followed by `summarize()` is to count the number of rows in each group. We have to use the `n()` function from `dplyr`.
 
-2. `mean(catch)`: here `mean` is the function we want to **apply** to the column `catch` in each group.
-
-
-3. `summarize(catch = mean(catch))` the function `summarize()` is used to **combine** the results of `mean(catch)` in each group into a single table. The argument `mean_catch = mean(catch)` indicates that the column having the results of `mean(catch)` will be named `mean_catch`. 
-
-Another common use of `group_by()` followed by `summarize()` is to count the number of rows in each group. We have to use a special function from `dplyr`, `n()`.
-
-```{r}
+```{r summarize-ex_count}
 n_region <- catch_long %>%
-    group_by(Region) %>%
-    summarize(n = n())
+    dplyr::group_by(Region) %>%
+    # Count rows per region
+    dplyr::summarize(count = dplyr::n(), 
+        .groups = "drop")
 
+# Check the result
 head(n_region)
 ```
 
-::: {.callout-caution icon=false}
-## Try using `count()`
-
-If you are finding that you are reaching for this combination of `group_by()`, `summarize()` and `n()` a lot, there is a helpful `dplyr` function `count()` that accomplishes this in one function!
-:::
-
-::: {.callout-note icon=false}
-## Exercise
-
+:::{.callout-exercise}
 - Find another grouping and statistic to calculate for each group.
 - Find out if you can group by multiple variables.
 
-```{r}
-#| code-fold: true
-#| code-summary: "Answer"
+:::{.callout-answer}
+For example:
+```{r summary-exercise-answer}
 #| eval: false
 
-## for example:
 catch_year_sp <- catch_long %>%
-    group_by(Year, species) %>%
-    summarize(total_year = sum(catch, na.rm = T))
+    dplyr::group_by(Year, species) %>%
+    dplyr::summarize(total_year = sum(catch, na.rm = T),
+        .groups = "drop")
 ```
 :::
-
+:::
 
 ## Filtering rows using `filter()`
 

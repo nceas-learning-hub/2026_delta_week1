@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Cleaning and Wrangling Data – 2026 Delta Synthesis Working Groups week 1 (April 2026)</title>
+<title>Cleaning &amp; Wrangling Data – 2026 Delta Synthesis Working Groups week 1 (April 2026)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,6 +81,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-cecc5a39c142b520f22a6de88e6152ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -335,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Cleaning and Wrangling Data</h1>
+          <h1 class="quarto-secondary-nav-title">Cleaning &amp; Wrangling Data</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -347,7 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Cleaning and Wrangling Data</h1>
+      <h1 class="title d-none d-lg-block">Cleaning &amp; Wrangling Data</h1>
                       </div>
   </div>
     
@@ -510,7 +512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./s13_r_tidyverse_clean_wrangle.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Cleaning and Wrangling Data</span></a>
+ <span class="menu-text">Cleaning &amp; Wrangling Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -555,20 +557,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#data-cleaning-basics" id="toc-data-cleaning-basics" class="nav-link" data-scroll-target="#data-cleaning-basics"><span class="header-section-number">2</span> Data cleaning basics</a></li>
-  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration"><span class="header-section-number">3</span> Data exploration</a></li>
-  <li><a href="#about-the-pipe-operator" id="toc-about-the-pipe-operator" class="nav-link" data-scroll-target="#about-the-pipe-operator"><span class="header-section-number">4</span> About the pipe (<code>%&gt;%</code>) operator</a></li>
-  <li><a href="#selecting-or-removing-columns-using-select" id="toc-selecting-or-removing-columns-using-select" class="nav-link" data-scroll-target="#selecting-or-removing-columns-using-select"><span class="header-section-number">5</span> Selecting or removing columns using <code>select()</code></a></li>
-  <li><a href="#quality-check" id="toc-quality-check" class="nav-link" data-scroll-target="#quality-check"><span class="header-section-number">6</span> Quality check</a></li>
-  <li><a href="#changing-column-content-using-mutate" id="toc-changing-column-content-using-mutate" class="nav-link" data-scroll-target="#changing-column-content-using-mutate"><span class="header-section-number">7</span> Changing column content using <code>mutate()</code></a></li>
-  <li><a href="#changing-shape-using-pivot_longer-and-pivot_wider" id="toc-changing-shape-using-pivot_longer-and-pivot_wider" class="nav-link" data-scroll-target="#changing-shape-using-pivot_longer-and-pivot_wider"><span class="header-section-number">8</span> Changing shape using <code>pivot_longer()</code> and <code>pivot_wider()</code></a></li>
-  <li><a href="#renaming-columns-with-rename" id="toc-renaming-columns-with-rename" class="nav-link" data-scroll-target="#renaming-columns-with-rename"><span class="header-section-number">9</span> Renaming columns with <code>rename()</code></a></li>
-  <li><a href="#adding-columns-using-mutate" id="toc-adding-columns-using-mutate" class="nav-link" data-scroll-target="#adding-columns-using-mutate"><span class="header-section-number">10</span> Adding columns using <code>mutate()</code></a></li>
-  <li><a href="#summary-statistics-using-group_by-and-summarize" id="toc-summary-statistics-using-group_by-and-summarize" class="nav-link" data-scroll-target="#summary-statistics-using-group_by-and-summarize"><span class="header-section-number">11</span> Summary statistics using <code>group_by()</code> and <code>summarize()</code></a></li>
-  <li><a href="#filtering-rows-using-filter" id="toc-filtering-rows-using-filter" class="nav-link" data-scroll-target="#filtering-rows-using-filter"><span class="header-section-number">12</span> Filtering rows using <code>filter()</code></a></li>
-  <li><a href="#sorting-your-data-using-arrange" id="toc-sorting-your-data-using-arrange" class="nav-link" data-scroll-target="#sorting-your-data-using-arrange"><span class="header-section-number">13</span> Sorting your data using <code>arrange()</code></a></li>
-  <li><a href="#splitting-a-column-using-separate-and-unite" id="toc-splitting-a-column-using-separate-and-unite" class="nav-link" data-scroll-target="#splitting-a-column-using-separate-and-unite"><span class="header-section-number">14</span> Splitting a column using <code>separate()</code> and <code>unite()</code></a></li>
-  <li><a href="#now-all-together" id="toc-now-all-together" class="nav-link" data-scroll-target="#now-all-together"><span class="header-section-number">15</span> Now, all together!</a></li>
+  <li><a href="#the-dplyr-and-tidyr-packages" id="toc-the-dplyr-and-tidyr-packages" class="nav-link" data-scroll-target="#the-dplyr-and-tidyr-packages"><span class="header-section-number">2</span> The <code>dplyr</code> and <code>tidyr</code> Packages</a></li>
+  <li><a href="#data-cleaning-fundamentals" id="toc-data-cleaning-fundamentals" class="nav-link" data-scroll-target="#data-cleaning-fundamentals"><span class="header-section-number">3</span> Data Cleaning Fundamentals</a></li>
+  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration"><span class="header-section-number">4</span> Data Exploration</a></li>
+  <li><a href="#about-the-pipe-operator" id="toc-about-the-pipe-operator" class="nav-link" data-scroll-target="#about-the-pipe-operator"><span class="header-section-number">5</span> About the Pipe Operator (<code>%&gt;%</code>)</a></li>
+  <li><a href="#selecting-or-removing-columns-using-select" id="toc-selecting-or-removing-columns-using-select" class="nav-link" data-scroll-target="#selecting-or-removing-columns-using-select"><span class="header-section-number">6</span> Selecting or Removing Columns Using <code>select()</code></a></li>
+  <li><a href="#quality-check" id="toc-quality-check" class="nav-link" data-scroll-target="#quality-check"><span class="header-section-number">7</span> Quality check</a></li>
+  <li><a href="#changing-column-content-using-mutate" id="toc-changing-column-content-using-mutate" class="nav-link" data-scroll-target="#changing-column-content-using-mutate"><span class="header-section-number">8</span> Changing column content using <code>mutate()</code></a></li>
+  <li><a href="#changing-shape-using-pivot_longer-and-pivot_wider" id="toc-changing-shape-using-pivot_longer-and-pivot_wider" class="nav-link" data-scroll-target="#changing-shape-using-pivot_longer-and-pivot_wider"><span class="header-section-number">9</span> Changing shape using <code>pivot_longer()</code> and <code>pivot_wider()</code></a></li>
+  <li><a href="#renaming-columns-with-rename" id="toc-renaming-columns-with-rename" class="nav-link" data-scroll-target="#renaming-columns-with-rename"><span class="header-section-number">10</span> Renaming columns with <code>rename()</code></a></li>
+  <li><a href="#adding-columns-using-mutate" id="toc-adding-columns-using-mutate" class="nav-link" data-scroll-target="#adding-columns-using-mutate"><span class="header-section-number">11</span> Adding columns using <code>mutate()</code></a></li>
+  <li><a href="#summary-statistics-using-group_by-and-summarize" id="toc-summary-statistics-using-group_by-and-summarize" class="nav-link" data-scroll-target="#summary-statistics-using-group_by-and-summarize"><span class="header-section-number">12</span> Summary statistics using <code>group_by()</code> and <code>summarize()</code></a></li>
+  <li><a href="#filtering-rows-using-filter" id="toc-filtering-rows-using-filter" class="nav-link" data-scroll-target="#filtering-rows-using-filter"><span class="header-section-number">13</span> Filtering rows using <code>filter()</code></a></li>
+  <li><a href="#sorting-your-data-using-arrange" id="toc-sorting-your-data-using-arrange" class="nav-link" data-scroll-target="#sorting-your-data-using-arrange"><span class="header-section-number">14</span> Sorting your data using <code>arrange()</code></a></li>
+  <li><a href="#splitting-a-column-using-separate_wider_delim-and-unite" id="toc-splitting-a-column-using-separate_wider_delim-and-unite" class="nav-link" data-scroll-target="#splitting-a-column-using-separate_wider_delim-and-unite"><span class="header-section-number">15</span> Splitting a column using <code>separate_wider_delim()</code> and <code>unite()</code></a></li>
+  <li><a href="#now-all-together" id="toc-now-all-together" class="nav-link" data-scroll-target="#now-all-together"><span class="header-section-number">16</span> Now, all together!</a></li>
   </ul>
 </nav>
     </div>
@@ -597,20 +600,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Objectives (V2)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After completing this session, you will be able to:</p>
+<ul>
+<li>Identify some common <code>dplyr</code> and <code>tidyr</code> functions</li>
+<li>Define “namespace” in the context of R functions</li>
+<li>Explain how the pipe operator (<code>%&gt;%</code>) can be used to streamline wrangling code</li>
+</ul>
+</div>
+</div>
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>The data we get to work with are rarely, if ever, in the format we need to do our analyses. It’s often the case that one package requires data in one format, while another package requires the data to be in another format. To be efficient analysts, we should have good tools for reformatting data for our needs so we can do further work like making plots and fitting models. The <code>dplyr</code> and <code>tidyr</code> R packages provide a fairly complete and extremely powerful set of functions for us to do this reformatting quickly. Learning these tools well will greatly increase your efficiency as an analyst.</p>
 <p>Let’s look at two motivating examples.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example 1
+<span class="screen-reader-only">Example</span>Example
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
+<div class="callout-example">
 <p>Suppose you have the following <code>data.frame</code> called <code>length_data</code> with data about salmon length and want to calculate the average length per year.</p>
 <table class="caption-top table">
 <thead>
@@ -646,28 +670,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>Before thinking about the code, let’s think about the steps we need to take to get to the answer (aka pseudocode).</p>
-<p>Now, how would we code this? The <code>dplyr</code> R library provides a fast and powerful way to do this calculation in a few lines of code:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Answer</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>length_data <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_length_cm =</span> <span class="fu">mean</span>(length_cm))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<p>Before thinking about the code, let’s think about the steps we need to take to get to the answer (a.k.a. pseudocode). Now, how would we code this?</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example 2
+<span class="screen-reader-only">Answer</span>Answer
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div class="callout-answer">
+<p>The <code>dplyr</code> R library provides a fast and powerful way to do this calculation in a few lines of code:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>length_data <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">mean_length_cm =</span> <span class="fu">mean</span>(length_cm),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"keep"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Example</span>Example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-example">
 <p>Another process we often need to do is to “reshape” our data. Consider the following table that is in what we call “wide” format:</p>
 <table class="caption-top table">
 <thead>
@@ -712,15 +757,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>You are probably familiar with data in the above format, where values of the variable being observed are spread out across columns. In this example we have a different column per year. This wide format works well for data entry and sometimes works well for analysis but we quickly outgrow it when using R (and know it is not tidy data!). For example, how would you fit a model with year as a predictor variable? In an ideal world, we’d be able to just run <code>lm(length ~ year)</code>. But this won’t work on our wide data because <code>lm()</code> needs <code>length</code> and <code>year</code> to be columns in our table.</p>
 <p>What steps would you take to get this data frame in a long format?</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Answer</span>Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
 <p>The <code>tidyr</code> package allows us to quickly switch between wide format and long format using the <code>pivot_longer()</code> function:</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Answer</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="sc">%&gt;%</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>site, </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"year"</span>, </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"length"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="at">data =</span> site_date, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">-</span>site, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"length"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <table class="caption-top table">
 <thead>
@@ -760,9 +815,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>This lesson will cover examples to learn about the functions you’ll most commonly use from the <code>dplyr</code> and <code>tidyr</code> packages:</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-dplyr-and-tidyr-packages" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-dplyr-and-tidyr-packages"><span class="header-section-number">2</span> The <code>dplyr</code> and <code>tidyr</code> Packages</h2>
+<p>The <code>dplyr</code> and <code>tidyr</code> packages are two particularly powerful and often-used packages for data wrangling. This lesson will cover examples to learn about some of the functions you’ll most commonly use from those packages. See the tabs below for a brief overview of those tools.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Common <code>dplyr</code> Functions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Common <code>tidyr</code> Functions</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <table class="caption-top table">
-<caption>Common <code>dplyr</code> functions</caption>
 <colgroup>
 <col style="width: 25%">
 <col style="width: 75%">
@@ -776,15 +843,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td><code>mutate()</code></td>
-<td>Creates modify and deletes columns</td>
+<td>Creates and modifies columns</td>
 </tr>
 <tr class="even">
 <td><code>group_by()</code></td>
 <td>Groups data by one or more variables</td>
 </tr>
 <tr class="odd">
-<td><code>summarise()</code></td>
-<td>Summaries each group down to one row</td>
+<td><code>summarize()</code></td>
+<td>Summarizes each group down to one row</td>
 </tr>
 <tr class="even">
 <td><code>select()</code></td>
@@ -792,11 +859,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td><code>filter()</code></td>
-<td>Keeps rows that matches conditions</td>
+<td>Keeps rows that match conditions</td>
 </tr>
 <tr class="even">
 <td><code>arrange()</code></td>
-<td>order rows using columns variable</td>
+<td>Order rows by one or more columns</td>
 </tr>
 <tr class="odd">
 <td><code>rename()</code></td>
@@ -804,8 +871,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <table class="caption-top table">
-<caption>Common <code>tidyr</code> functions</caption>
 <colgroup>
 <col style="width: 25%">
 <col style="width: 75%">
@@ -819,30 +887,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td><code>pivot_longer()</code></td>
-<td>transforms data from a wide to a long format</td>
+<td>Reshapes data from a wide to a long format</td>
 </tr>
 <tr class="even">
 <td><code>pivot_wider()</code></td>
-<td>transforms data from a long to a wide format</td>
+<td>Reshapes data from a long to a wide format</td>
 </tr>
 <tr class="odd">
 <td><code>unite()</code></td>
 <td>Unite multiple columns into one by pasting strings together</td>
 </tr>
 <tr class="even">
-<td><code>separate()</code></td>
-<td>Separate a character column into multiple columns with a regular expression or numeric locations</td>
+<td><code>separate_wider_delim()</code></td>
+<td>Separate one column into multiple columns based on a delimiter (e.g., <code>_</code>, <code>-</code>, <code>.</code>)</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
 </section>
-<section id="data-cleaning-basics" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="data-cleaning-basics"><span class="header-section-number">2</span> Data cleaning basics</h2>
-<p>To demonstrate, we’ll be working with a tidied up version of a data set from <a href="https://knb.ecoinformatics.org/#view/df35b.304.2">Alaska Department of Fish &amp; Game containing commercial catch data from 1878-1997</a>. The data set and reference to the original source can be found at its <a href="https://knb.ecoinformatics.org/#view/df35b.304.2">public archive</a>.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<section id="data-cleaning-fundamentals" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="data-cleaning-fundamentals"><span class="header-section-number">3</span> Data Cleaning Fundamentals</h2>
+<p>To demonstrate, we’ll be working with a tidied up version of a data set from the Alaska Department of Fish &amp; Game containing commercial catch data from 1878-1997. The data set and reference to the original source can be found at its <a href="https://knb.ecoinformatics.org/#view/df35b.304.2">public archive</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Setup
@@ -853,7 +924,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -863,7 +935,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>A note on loading packages
+<span class="screen-reader-only">Important</span>Note on Loading Packages
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -878,27 +950,27 @@ The following objects are masked from ‘package:base’:
 
     intersect, setdiff, setequal, union</code></pre>
 <p>These are important messages. They are letting you know that certain functions from the <code>stats</code> and <code>base</code> packages (which are loaded by default when you start R) are masked by <em>different functions</em> with the same name in the <code>dplyr</code> package. It turns out, the order that you load the packages in matters. Since we loaded <code>dplyr</code> after <code>stats</code>, R will assume that if you call <code>filter()</code>, you mean the <code>dplyr</code> version unless you specify otherwise.</p>
-<p>Being specific about which version of <code>filter()</code>, for example, you call is easy. To explicitly call a function by its unambiguous name, we use the syntax <code>package_name::function_name(...)</code>. So, if we wanted to call the <code>stats</code> version of <code>filter()</code> in this Rmarkdown document, I would use the syntax <code>stats::filter(...)</code>.</p>
+<p><strong>You can easily specify which package’s version of a function you want to use by “namespacing” that function.</strong> To namespace a function, we use the syntax <code>package_name::function_name(...)</code>. So, if we wanted to call the <code>stats</code> version of <code>filter()</code> in this Quarto document, we would use the syntax <code>stats::filter(...)</code>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Remove messages and warnings
+<span class="screen-reader-only">Caution</span>Remove Messages and Warnings
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Messages and warnings are important, but we might not want them in our final document. After you have read the packages in, <strong>adjust the chunk settings in your library chunk</strong> to suppress warnings and messages by adding <code>#| message: false</code> or <code>#| warning: false</code>. Both of these chunk options, when set to false, prevents messages or warnings from appearing in the rendered file.</p>
+<p>Messages and warnings are important, but we might not want them in our final document. After you have read the packages in, <strong>adjust the chunk settings in your library chunk</strong> to suppress warnings and messages by adding <code>#| message: false</code> or <code>#| warning: false</code>. These chunk options, when set to <code>false</code>, prevent messages or warnings respectively from appearing in the rendered file.</p>
 </div>
 </div>
 <p>Now that we have introduced some data wrangling libraries, let’s get the data that we are going to use for this lesson.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Setup
@@ -906,32 +978,63 @@ The following objects are masked from ‘package:base’:
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Go to <a href="https://knb.ecoinformatics.org/view/df35b.304.2">KNB Data Package Alaska commercial salmon catches by management region (1886- 1997)</a></p></li>
-<li><p>Find the data file <code>df35b.302.1</code>. Right click the “Download” button and select “Copy Link Address”</p></li>
-<li><p>Paste the copied URL into the <code>read_csv()</code> function</p></li>
+<li>Go to KNB Data Package for Alaska commercial salmon catches by management region (1886-1997)
+<ul>
+<li>The link is here: <a href="https://knb.ecoinformatics.org/view/df35b.304.2">knb.ecoinformatics.org/view/df35b.304.2</a></li>
+</ul></li>
+<li>Find the data file “byerlySalmonByRegion.csv”. Right click the “Download” button and select “Copy Link Address”</li>
+<li>Paste the copied URL into the <code>read_csv()</code> function in quotes</li>
 </ol>
-<p>The code chunk you use to read in the data should look something like this:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>catch_original <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Note for Windows users:</strong> Keep in mind, if you want to replicate this workflow in your local computer you also need to use the <code>url()</code> function here with the argument <code>method = "libcurl"</code>.</p>
-<p>It would look like this:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>catch_original <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1"</span>, <span class="at">method =</span> <span class="st">"libcurl"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<p>This data set is relatively clean and easy to interpret as-is. While it may be clean, it’s in a shape that makes it hard to use for some types of analyses so we’ll want to fix that first.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise
+<span class="screen-reader-only">Answer</span>Answer
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div class="callout-answer">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> Mac Answer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><i class="fa-brands fa-windows" aria-label="windows"></i> Windows Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>The code chunk you use to read in the data should look something like this:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>catch_original <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>To replicate this workflow for <i class="fa-brands fa-windows" aria-label="windows"></i> Windows users you also need to use the <code>url()</code> function here with the argument <code>method = "libcurl"</code>. It would look like this:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>catch_original <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">read.csv</span>(<span class="at">file =</span> base<span class="sc">::</span><span class="fu">url</span>(<span class="st">"https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1"</span>, <span class="at">method =</span> <span class="st">"libcurl"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This data set is relatively clean and easy to interpret as-is. While it may be clean, it’s in a shape that makes it hard to use for some types of analyses so we’ll want to fix that first.</p>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Exercise</span>Exercise 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
 <p>Before we get too much further, spend a minute or two outlining your Quarto document so that it includes the following sections and steps:</p>
 <ul>
 <li>Data Sources
@@ -950,82 +1053,135 @@ The following objects are masked from ‘package:base’:
 <li>Summary stats using <code>group_by()</code> and <code>summarize()</code></li>
 <li>Filtering rows using <code>filter()</code></li>
 <li>Sort data using <code>arrange()</code></li>
-<li>Split and combine values in columns with <code>separate()</code> and <code>unite()</code></li>
+<li>Split and combine values in columns with <code>separate_wider_delim()</code> and <code>unite()</code></li>
 </ul></li>
 </ul>
-</div>
-</div>
-</section>
-<section id="data-exploration" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="data-exploration"><span class="header-section-number">3</span> Data exploration</h2>
-<p>Similar to what we did in our <a href="https://learning.nceas.ucsb.edu/2024-10-coreR/session_05.html">Literate Analysis</a> lesson, it is good practice to skim through the data you just read in.</p>
-<p>Doing so is important to make sure the data is read as you were expecting and to familiarize yourself with the data.</p>
-<p>Some of the basic ways to explore your data are:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Prints the column names of my data frame</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(catch_original)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="do">## First 6 lines of the data frame</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_original)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Summary of each column of data</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(catch_original)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Prints unique values in a column (in this case, the region)</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(catch_original<span class="sc">$</span>Region)</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Opens data frame in its own tab to see each row and column of the data (do in console)</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(catch_original)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="about-the-pipe-operator" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="about-the-pipe-operator"><span class="header-section-number">4</span> About the pipe (<code>%&gt;%</code>) operator</h2>
-<p>Before we jump into learning <code>tidyr</code> and <code>dplyr</code>, we first need to explain the pipeline operator <code>%&gt;%</code>.</p>
-<p>Both the <code>tidyr</code> and the <code>dplyr</code> packages use the pipe operator (<code>%&gt;%</code>), which may look unfamiliar. The pipe is a powerful way to efficiently chain together operations. The pipe will take the output of a previous statement, and use it as the input to the next statement.</p>
-<p>Say you want to both <code>filter()</code> out rows of a data set, and <code>select()</code> certain columns.</p>
-<p>Instead of writing:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(df, ...)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df_selected <span class="ot">&lt;-</span> <span class="fu">select</span>(df_filtered, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>You can write:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(...) <span class="sc">%&gt;%</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>If you think of the assignment operator (<code>&lt;-</code>) as reading like “gets”, then the pipe operator would read like “then”.</p>
-<p>So you might think of the above chunk being translated as:</p>
-<blockquote class="blockquote">
-<p>The cleaned data frame gets the original data, and then a filter (of the original data), and then a select (of the filtered data).</p>
-</blockquote>
-<p>The benefits to using pipes are that you don’t have to keep track of (or overwrite) intermediate data frames. The drawbacks are that it can be more difficult to explain the reasoning behind each step, especially when many operations are chained together. It is good to strike a balance between writing efficient code (chaining operations), while ensuring that you are still clearly explaining, both to your future self and others, what you are doing and why you are doing it.</p>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-hint no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Quick Tip
+<span class="screen-reader-only">Hint</span>Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-hint">
+<p>Recall that you can use <code>#</code> to create headings in a Quarto doc (more <code>#</code> for a <em>smaller</em> heading)!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-exploration" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="data-exploration"><span class="header-section-number">4</span> Data Exploration</h2>
+<p>Similar to what we did in our “Literate Analysis with Quarto” lesson, it is good practice to skim through the data you just read in. Doing so is important to make sure the data is read as you were expecting and to familiarize yourself with the data. Some of the basic ways to explore your data are:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Prints the column names of my data frame</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-2" class="code-annotation-target"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(catch_original)</span>
+<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## First 6 lines of the data frame</span></span>
+<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_original)</span>
+<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Summary of each column of data</span></span>
+<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(catch_original)</span>
+<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-10"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Prints unique values in a column (in this case, the region)</span></span>
+<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(catch_original<span class="sc">$</span>Region)</span>
+<span id="annotated-cell-1-12"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Opens data frame in its own tab to see each row and column of the data (do in console)</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2">2</button><span id="annotated-cell-1-14" class="code-annotation-target"><a href="#annotated-cell-1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(catch_original)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="1">The <code>names()</code> function will return the same result (in this case)</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="14" data-code-annotation="2">Note that the “V” is capitalized!</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="about-the-pipe-operator" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="about-the-pipe-operator"><span class="header-section-number">5</span> About the Pipe Operator (<code>%&gt;%</code>)</h2>
+<p>Before we jump into learning <code>tidyr</code> and <code>dplyr</code>, we first need to explain the pipe operator <code>%&gt;%</code>. Coding in the style of the Tidyverse requires using the pipe operator (<code>%&gt;%</code>), which may look unfamiliar. The pipe is a powerful way to efficiently chain together operations. <strong>The pipe will take the output of a previous statement, and use it as the input to the next statement.</strong></p>
+<p>While it may look strange, the pipe operator is actually just a special format of R function! It comes from the <code>magrittr</code> package. Let’s look at an example to make this clearer. Say you want to both <code>filter()</code> out rows of a data set, and <code>select()</code> certain columns.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Without a Pipe</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">With the Pipe</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Without using the pipe operator, you might write something like the following:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(df, ...)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df_selected <span class="ot">&lt;-</span> <span class="fu">select</span>(df_filtered, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>If you did use the pipe, you might write something like the following instead:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(...) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If you think of the assignment operator (<code>&lt;-</code>) as reading like “gets”, then the pipe operator would read like “then”.</p>
+<p>So you might think of the above chunk being translated as:</p>
+<blockquote class="blockquote">
+<p>The cleaned data frame <strong>gets</strong> the original data, and <strong>then</strong> a filter (of the original data), and <strong>then</strong> a select (of the filtered data).</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>The benefits to using pipes are that you don’t have to keep track of (or overwrite) intermediate data frames. The drawbacks are that it can be more difficult to explain the reasoning behind each step, especially when many operations are chained together. It is good to strike a balance between writing efficient code (chaining operations), while ensuring that you are still clearly explaining, both to your future self and others, what you are doing and why you are doing it.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>RStudio has a keyboard shortcut for <code>%&gt;%</code></p>
+<p>Positron and RStudio both have a keyboard shortcut for <code>%&gt;%</code></p>
 <ul>
 <li>Windows: <code>Ctrl</code> + <code>Shift</code> + <code>M</code></li>
 <li>Mac: <code>cmd</code> + <code>shift</code> + <code>M</code></li>
 </ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Depending on your settings, those hot keys may put a pipe operator that looks like <code>|&gt;</code>. This operator is called the “native pipe,” and <strong>it is <em>not the same as</em> <code>%&gt;%</code>.</strong> Go into your IDE’s settings and change it to <code>%&gt;%</code> if those hot keys result in the native pipe instead of the one with percent symbols (search “pipe” in Positron’s settings).</p>
+</div>
+</div>
 </div>
 </div>
 </section>
-<section id="selecting-or-removing-columns-using-select" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="selecting-or-removing-columns-using-select"><span class="header-section-number">5</span> Selecting or removing columns using <code>select()</code></h2>
-<p>We’re ready to go back to our salmon dataset. The first issue is the extra columns <code>All</code> and <code>notesRegCode</code>. Let’s select only the columns we want, and assign this to a variable called <code>catch_data</code>.</p>
+<section id="selecting-or-removing-columns-using-select" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="selecting-or-removing-columns-using-select"><span class="header-section-number">6</span> Selecting or Removing Columns Using <code>select()</code></h2>
+<p>We’re ready to go back to our salmon data set. The first issue is the extra columns <code>All</code> and <code>notesRegCode</code>. Let’s select only the columns we want (implicitly removing those that we do not), and assign this to a variable called <code>catch_data</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>catch_data <span class="ot">&lt;-</span> catch_original <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Region, Year, Chinook, Sockeye, Coho, Pink, Chum)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select only desired columns</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>catch_data <span class="ot">&lt;-</span> catch_original <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Year, Chinook, Sockeye, Coho, Pink, Chum)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the result</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
   Region  Year Chinook Sockeye  Coho  Pink  Chum
@@ -1038,18 +1194,30 @@ The following objects are masked from ‘package:base’:
 6 SSE     1891 0           274    24     0     0</code></pre>
 </div>
 </div>
-<p>Much better!</p>
-<p>The <code>select()</code> function also allows you to say which columns you <em>don’t</em> want, by passing unquoted column names preceded by minus (<code>-</code>) signs:</p>
+<p>Much better! The <code>select()</code> function also allows you to instead say which columns you <em>don’t</em> want, by passing column names preceded by a minus sign (<code>-</code>):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>catch_data <span class="ot">&lt;-</span> catch_original <span class="sc">%&gt;%</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>All,<span class="sc">-</span>notesRegCode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>catch_data <span class="ot">&lt;-</span> catch_original <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>All, <span class="sc">-</span>notesRegCode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In each use of <code>select()</code>, you must choose <strong>either</strong> which columns to include <strong>or</strong> which to exclude! You can’t both include and exclude columns in the same <code>select()</code> call.</p>
+</div>
 </div>
 </section>
-<section id="quality-check" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="quality-check"><span class="header-section-number">6</span> Quality check</h2>
+<section id="quality-check" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="quality-check"><span class="header-section-number">7</span> Quality check</h2>
 <p>Now that we have the data we are interested in using, we should do a little quality check to see that everything seems as expected. One nice way of doing this is the <code>glimpse()</code> function.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(catch_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(catch_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 1,708
 Columns: 7
@@ -1082,19 +1250,19 @@ The Chinook catch data are <code>character</code> class. Let’s fix it using th
 </div>
 </div>
 </section>
-<section id="changing-column-content-using-mutate" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="changing-column-content-using-mutate"><span class="header-section-number">7</span> Changing column content using <code>mutate()</code></h2>
+<section id="changing-column-content-using-mutate" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="changing-column-content-using-mutate"><span class="header-section-number">8</span> Changing column content using <code>mutate()</code></h2>
 <p>We can use the <code>mutate()</code> function to change a column, or to create a new column. First, let’s try to convert the Chinook catch values to <code>numeric</code> type using the <code>as.numeric()</code> function, and overwrite the old Chinook column.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>catch_clean <span class="ot">&lt;-</span> catch_data <span class="sc">%&gt;%</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Chinook =</span> <span class="fu">as.numeric</span>(Chinook))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>catch_clean <span class="ot">&lt;-</span> catch_data <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Chinook =</span> <span class="fu">as.numeric</span>(Chinook))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: There was 1 warning in `mutate()`.
 ℹ In argument: `Chinook = as.numeric(Chinook)`.
 Caused by warning:
 ! NAs introduced by coercion</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_clean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_clean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
   Region  Year Chinook Sockeye  Coho  Pink  Chum
@@ -1110,15 +1278,15 @@ Caused by warning:
 <p>We get a warning <code>"NAs introduced by coercion"</code> which is R telling us that it couldn’t convert every value to an integer and, for those values it couldn’t convert, it put an <code>NA</code> in its place. This is behavior we commonly experience when cleaning data sets and it’s important to have the skills to deal with it when it comes up.</p>
 <p>To investigate, let’s isolate the issue. We can find out which values are <code>NA</code>s with a combination of <code>is.na()</code> and <code>which()</code>, and save that to a variable called <code>i</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">is.na</span>(catch_clean<span class="sc">$</span>Chinook))</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>i</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">is.na</span>(catch_clean<span class="sc">$</span>Chinook))</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>i</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 401</code></pre>
 </div>
 </div>
 <p>It looks like there is only one problem row, lets have a look at it in the original data.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>catch_data[i,]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>catch_data[i,]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 7
   Region  Year Chinook Sockeye  Coho  Pink  Chum
@@ -1129,14 +1297,14 @@ Caused by warning:
 <p>Well that’s odd: The value in <code>Chinook</code> is the letter <code>I</code>. It turns out that this data set is from a PDF which was automatically converted into a <code>csv</code> and this value of <code>I</code> is actually a 1.</p>
 <p>Let’s fix it by incorporating the <code>if_else()</code> function to our <code>mutate()</code> call, which will change the value of the <code>Chinook</code> column to 1 if the value is equal to <code>I</code>, then will use <code>as.numeric()</code> to turn the character representations of numbers into numeric typed values.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>catch_clean <span class="ot">&lt;-</span> catch_data <span class="sc">%&gt;%</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Chinook =</span> <span class="fu">if_else</span>(<span class="at">condition =</span> Chinook <span class="sc">==</span> <span class="st">"I"</span>, </span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">true =</span> <span class="st">"1"</span>, </span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">false =</span> Chinook),</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">Chinook =</span> <span class="fu">as.numeric</span>(Chinook))</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="do">##check</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>catch_clean[i, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>catch_clean <span class="ot">&lt;-</span> catch_data <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Chinook =</span> <span class="fu">if_else</span>(<span class="at">condition =</span> Chinook <span class="sc">==</span> <span class="st">"I"</span>, </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">true =</span> <span class="st">"1"</span>, </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">false =</span> Chinook),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">Chinook =</span> <span class="fu">as.numeric</span>(Chinook))</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="do">##check</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>catch_clean[i, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 7
   Region  Year Chinook Sockeye  Coho  Pink  Chum
@@ -1145,19 +1313,19 @@ Caused by warning:
 </div>
 </div>
 </section>
-<section id="changing-shape-using-pivot_longer-and-pivot_wider" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="changing-shape-using-pivot_longer-and-pivot_wider"><span class="header-section-number">8</span> Changing shape using <code>pivot_longer()</code> and <code>pivot_wider()</code></h2>
+<section id="changing-shape-using-pivot_longer-and-pivot_wider" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="changing-shape-using-pivot_longer-and-pivot_wider"><span class="header-section-number">9</span> Changing shape using <code>pivot_longer()</code> and <code>pivot_wider()</code></h2>
 <p>The next issue is that the data are in a wide format and we want the data in a long format instead. The function <code>pivot_longer()</code> from the <code>tidyr</code> package helps us do this conversion. If you do not remember all the arguments that go into <code>pivot_longer()</code> you can always call the <code>help</code> page by typing <code>?pivot_longer</code> in the console.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>catch_long <span class="ot">&lt;-</span> catch_clean <span class="sc">%&gt;%</span> </span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#pivot longer all columns except Region and Year</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(Region, Year),</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">names_to =</span> <span class="st">"species"</span>,</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">values_to =</span> <span class="st">"catch"</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>catch_long <span class="ot">&lt;-</span> catch_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#pivot longer all columns except Region and Year</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(Region, Year),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">names_to =</span> <span class="st">"species"</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">values_to =</span> <span class="st">"catch"</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   Region  Year species catch
@@ -1178,11 +1346,11 @@ Caused by warning:
 </ul>
 <p>The opposite of <code>pivot_longer()</code> is the <code>pivot_wider()</code> function. It works in a similar declarative fashion:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>catch_wide <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> species,</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">values_from =</span> catch)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_wide)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>catch_wide <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> species,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">values_from =</span> catch)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_wide)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
   Region  Year Chinook Sockeye  Coho  Pink  Chum
@@ -1197,15 +1365,15 @@ Caused by warning:
 </div>
 <p>Same than we did above we can pull up the documentation of the function to remind ourselves what goes in which argument. Type <code>?pivot_wider</code> in the console.</p>
 </section>
-<section id="renaming-columns-with-rename" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="renaming-columns-with-rename"><span class="header-section-number">9</span> Renaming columns with <code>rename()</code></h2>
+<section id="renaming-columns-with-rename" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="renaming-columns-with-rename"><span class="header-section-number">10</span> Renaming columns with <code>rename()</code></h2>
 <p>If you scan through the data, you may notice the values in the <code>catch</code> column are very small (these are supposed to be annual catches). If we look at <a href="https://knb.ecoinformatics.org/#view/df35b.304.2">the metadata</a> we can see that the <code>catch</code> column is in thousands of fish, so let’s convert it before moving on.</p>
 <p>Let’s first rename the <code>catch</code> column to be called <code>catch_thousands</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>catch_long <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">catch_thousands =</span> catch)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>catch_long <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">catch_thousands =</span> catch)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   Region  Year species catch_thousands
@@ -1236,22 +1404,22 @@ Caused by warning:
 </div>
 </div>
 </section>
-<section id="adding-columns-using-mutate" class="level2" data-number="10">
-<h2 data-number="10" class="anchored" data-anchor-id="adding-columns-using-mutate"><span class="header-section-number">10</span> Adding columns using <code>mutate()</code></h2>
+<section id="adding-columns-using-mutate" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="adding-columns-using-mutate"><span class="header-section-number">11</span> Adding columns using <code>mutate()</code></h2>
 <p>Now let’s use <code>mutate()</code> again to create a new column called <code>catch</code> with units of fish (instead of thousands of fish).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>catch_long <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">catch =</span> catch_thousands <span class="sc">*</span> <span class="dv">1000</span>)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>catch_long <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">catch =</span> catch_thousands <span class="sc">*</span> <span class="dv">1000</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Let’s remove the <code>catch_thousands</code> column for now since we don’t need it. Note that here we have added to the expression we wrote above by adding another function call (mutate) to our expression. This takes advantage of the pipe operator by grouping together a similar set of statements, which all aim to clean up the <code>catch_clean</code> data frame.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>catch_long <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">catch =</span> catch_thousands <span class="sc">*</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>catch_thousands)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>catch_long <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">catch =</span> catch_thousands <span class="sc">*</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>catch_thousands)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(catch_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   Region  Year species catch
@@ -1266,11 +1434,11 @@ Caused by warning:
 </div>
 <p>We’re now ready to start analyzing the data.</p>
 </section>
-<section id="summary-statistics-using-group_by-and-summarize" class="level2 page-columns page-full" data-number="11">
-<h2 data-number="11" class="anchored" data-anchor-id="summary-statistics-using-group_by-and-summarize"><span class="header-section-number">11</span> Summary statistics using <code>group_by()</code> and <code>summarize()</code></h2>
+<section id="summary-statistics-using-group_by-and-summarize" class="level2 page-columns page-full" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="summary-statistics-using-group_by-and-summarize"><span class="header-section-number">12</span> Summary statistics using <code>group_by()</code> and <code>summarize()</code></h2>
 <p>Suppose we are now interested in getting the average catch per region. In our initial data exploration we saw there are 18 regions, we can easily see their names again:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(catch_original<span class="sc">$</span>Region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(catch_original<span class="sc">$</span>Region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "SSE" "NSE" "YAK" "GSE" "BER" "COP" "PWS" "CKI" "BRB" "KSK" "YUK" "NRS"
 [13] "KTZ" "KOD" "CHG" "SOP" "ALU" "NOP"</code></pre>
@@ -1298,11 +1466,11 @@ Caused by warning:
 </ol>
 <p>The <code>dplyr</code> library lets us easily employ the Split-Apply-Combine strategy by using the <code>group_by()</code> and <code>summarize()</code> functions:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mean_region <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_catch =</span> <span class="fu">mean</span>(catch))</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mean_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>mean_region <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_catch =</span> <span class="fu">mean</span>(catch))</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mean_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   Region mean_catch
@@ -1323,11 +1491,11 @@ Caused by warning:
 </ol>
 <p>Another common use of <code>group_by()</code> followed by <code>summarize()</code> is to count the number of rows in each group. We have to use a special function from <code>dplyr</code>, <code>n()</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>n_region <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(n_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>n_region <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(n_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   Region     n
@@ -1370,24 +1538,24 @@ Caused by warning:
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="do">## for example:</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>catch_year_sp <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Year, species) <span class="sc">%&gt;%</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">total_year =</span> <span class="fu">sum</span>(catch, <span class="at">na.rm =</span> T))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="do">## for example:</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>catch_year_sp <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Year, species) <span class="sc">%&gt;%</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">total_year =</span> <span class="fu">sum</span>(catch, <span class="at">na.rm =</span> T))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
 </div>
 </section>
-<section id="filtering-rows-using-filter" class="level2" data-number="12">
-<h2 data-number="12" class="anchored" data-anchor-id="filtering-rows-using-filter"><span class="header-section-number">12</span> Filtering rows using <code>filter()</code></h2>
+<section id="filtering-rows-using-filter" class="level2" data-number="13">
+<h2 data-number="13" class="anchored" data-anchor-id="filtering-rows-using-filter"><span class="header-section-number">13</span> Filtering rows using <code>filter()</code></h2>
 <p>We use the <code>filter()</code> function to filter our <code>data.frame</code> to rows matching some condition. It’s similar to <code>subset()</code> from base R.</p>
 <p>Let’s go back to our original <code>data.frame</code> and do some <code>filter()</code>ing:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sse_catch <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"SSE"</span>)</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sse_catch)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sse_catch <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"SSE"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sse_catch)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   Region  Year species catch
@@ -1417,25 +1585,25 @@ Caused by warning:
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Catches over a million fish</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>catch_million <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(catch <span class="sc">&gt;</span> <span class="dv">1000000</span>)</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Chinook from SSE data</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>chinook_see <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"SSE"</span>,</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>           species <span class="sc">==</span> <span class="st">"Chinook"</span>)</span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="do">## OR</span></span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>chinook_see <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"SSE"</span> <span class="sc">&amp;</span> species <span class="sc">==</span> <span class="st">"Chinook"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Catches over a million fish</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>catch_million <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(catch <span class="sc">&gt;</span> <span class="dv">1000000</span>)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Chinook from SSE data</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>chinook_see <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"SSE"</span>,</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>           species <span class="sc">==</span> <span class="st">"Chinook"</span>)</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="do">## OR</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>chinook_see <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"SSE"</span> <span class="sc">&amp;</span> species <span class="sc">==</span> <span class="st">"Chinook"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
 </div>
 </section>
-<section id="sorting-your-data-using-arrange" class="level2" data-number="13">
-<h2 data-number="13" class="anchored" data-anchor-id="sorting-your-data-using-arrange"><span class="header-section-number">13</span> Sorting your data using <code>arrange()</code></h2>
+<section id="sorting-your-data-using-arrange" class="level2" data-number="14">
+<h2 data-number="14" class="anchored" data-anchor-id="sorting-your-data-using-arrange"><span class="header-section-number">14</span> Sorting your data using <code>arrange()</code></h2>
 <p>The <code>arrange()</code> function is used to sort the rows of a <code>data.frame</code>. Two common cases to use <code>arrange()</code> are:</p>
 <ul>
 <li>To calculate a cumulative sum (with <code>cumsum()</code>) so row order matters</li>
@@ -1443,12 +1611,12 @@ Caused by warning:
 </ul>
 <p>Let’s re-calculate mean catch by region, and then <code>arrange()</code> the output by mean catch:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mean_region <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_catch =</span> <span class="fu">mean</span>(catch)) <span class="sc">%&gt;%</span></span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(mean_catch)</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mean_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>mean_region <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_catch =</span> <span class="fu">mean</span>(catch)) <span class="sc">%&gt;%</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(mean_catch)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mean_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   Region mean_catch
@@ -1463,12 +1631,12 @@ Caused by warning:
 </div>
 <p>The default sorting order of <code>arrange()</code> is to sort in ascending order. To reverse the sort order, wrap the column name inside the <code>desc()</code> function:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>mean_region <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_catch =</span> <span class="fu">mean</span>(catch)) <span class="sc">%&gt;%</span></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_catch))</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mean_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>mean_region <span class="ot">&lt;-</span> catch_long <span class="sc">%&gt;%</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_catch =</span> <span class="fu">mean</span>(catch)) <span class="sc">%&gt;%</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_catch))</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mean_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   Region mean_catch
@@ -1482,27 +1650,29 @@ Caused by warning:
 </div>
 </div>
 </section>
-<section id="splitting-a-column-using-separate-and-unite" class="level2" data-number="14">
-<h2 data-number="14" class="anchored" data-anchor-id="splitting-a-column-using-separate-and-unite"><span class="header-section-number">14</span> Splitting a column using <code>separate()</code> and <code>unite()</code></h2>
-<p>The <code>separate()</code> function allow us to easily split a single column into numerous. Its complement, the <code>unite()</code> function, allows us to combine multiple columns into a single one.</p>
+<section id="splitting-a-column-using-separate_wider_delim-and-unite" class="level2" data-number="15">
+<h2 data-number="15" class="anchored" data-anchor-id="splitting-a-column-using-separate_wider_delim-and-unite"><span class="header-section-number">15</span> Splitting a column using <code>separate_wider_delim()</code> and <code>unite()</code></h2>
+<p>The <code>separate_wider_delim()</code> function allow us to easily split a single column into numerous. Its complement, the <code>unite()</code> function, allows us to combine multiple columns into a single one.</p>
 <p>This can come in really handy when we need to split a column into two pieces by a consistent separator (like a dash).</p>
 <p>Let’s make a new <code>data.frame</code> with fake data to illustrate this. Here we have a set of site identification codes with information about the island where the site is (the first 3 letters) and a site number (the 3 numbers). If we want to group and summarize by island, we need a column with just the island information.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>sites_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">site =</span> <span class="fu">c</span>(<span class="st">"HAW-101"</span>,</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"HAW-103"</span>,</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"OAH-320"</span>,</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"OAH-219"</span>,</span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"MAU-039"</span>))</span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>sites_df <span class="sc">%&gt;%</span></span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">separate</span>(site, <span class="fu">c</span>(<span class="st">"island"</span>, <span class="st">"site_number"</span>), <span class="st">"-"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>sites_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">site =</span> <span class="fu">c</span>(<span class="st">"HAW-101"</span>,</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"HAW-103"</span>,</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"OAH-320"</span>,</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"OAH-219"</span>,</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"MAU-039"</span>))</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>sites_df <span class="sc">%&gt;%</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">separate_wider_delim</span>(<span class="at">cols =</span> site, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"island"</span>, <span class="st">"site_number"</span>), <span class="at">delim =</span> <span class="st">"-"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  island site_number
-1    HAW         101
-2    HAW         103
-3    OAH         320
-4    OAH         219
-5    MAU         039</code></pre>
+<pre><code># A tibble: 5 × 2
+  island site_number
+  &lt;chr&gt;  &lt;chr&gt;      
+1 HAW    101        
+2 HAW    103        
+3 OAH    320        
+4 OAH    219        
+5 MAU    039        </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1517,38 +1687,38 @@ Caused by warning:
 <div class="callout-body-container callout-body">
 <p>Split the <code>city</code> column in the data frame <code>cities_df</code> into <code>city</code> and <code>state_code</code> columns</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="do">## create `cities_df`</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>cities_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Juneau AK"</span>,</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Sitka AK"</span>,</span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Anchorage AK"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="do">## create `cities_df`</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>cities_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Juneau AK"</span>,</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Sitka AK"</span>,</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Anchorage AK"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cities_df)</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>cities_clean <span class="ot">&lt;-</span> cities_df <span class="sc">%&gt;%</span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">separate</span>(city, <span class="fu">c</span>(<span class="st">"city"</span>, <span class="st">"state_code"</span>), <span class="st">" "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cities_df)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>cities_clean <span class="ot">&lt;-</span> cities_df <span class="sc">%&gt;%</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">separate_wider_delim</span>(city, <span class="fu">c</span>(<span class="st">"city"</span>, <span class="st">"state_code"</span>), <span class="st">" "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
 </div>
-<p>The <code>unite()</code> function does just the reverse of <code>separate()</code>. If we have a <code>data.frame</code> that contains columns for year, month, and day, we might want to unite these into a single date column.</p>
+<p>The <code>unite()</code> function does just the reverse of <code>separate_wider_delim()</code>. If we have a <code>data.frame</code> that contains columns for year, month, and day, we might want to unite these into a single date column.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>dates_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">c</span>(<span class="st">"1930"</span>,</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">"1930"</span>,</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>             <span class="st">"1930"</span>),</span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">month =</span> <span class="fu">c</span>(<span class="st">"12"</span>,</span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"12"</span>,</span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>              <span class="st">"12"</span>),</span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">day =</span> <span class="fu">c</span>(<span class="st">"14"</span>,</span>
-<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"15"</span>,</span>
-<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">"16"</span>)</span>
-<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>dates_df <span class="sc">%&gt;%</span></span>
-<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unite</span>(date, year, month, day, <span class="at">sep =</span> <span class="st">"-"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>dates_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">c</span>(<span class="st">"1930"</span>,</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">"1930"</span>,</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>             <span class="st">"1930"</span>),</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">month =</span> <span class="fu">c</span>(<span class="st">"12"</span>,</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"12"</span>,</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>              <span class="st">"12"</span>),</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">day =</span> <span class="fu">c</span>(<span class="st">"14"</span>,</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"15"</span>,</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">"16"</span>)</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>dates_df <span class="sc">%&gt;%</span></span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unite</span>(date, year, month, day, <span class="at">sep =</span> <span class="st">"-"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        date
 1 1930-12-14
@@ -1557,25 +1727,25 @@ Caused by warning:
 </div>
 </div>
 </section>
-<section id="now-all-together" class="level2" data-number="15">
-<h2 data-number="15" class="anchored" data-anchor-id="now-all-together"><span class="header-section-number">15</span> Now, all together!</h2>
+<section id="now-all-together" class="level2" data-number="16">
+<h2 data-number="16" class="anchored" data-anchor-id="now-all-together"><span class="header-section-number">16</span> Now, all together!</h2>
 <p>We just ran through the various things we can do with <code>dplyr</code> and <code>tidyr</code> but if you’re wondering how this might look in a real analysis. Let’s look at that now:</p>
 <div class="cell" data-catch="true">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>catch_original <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1"</span>)</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>mean_region <span class="ot">&lt;-</span> catch_original <span class="sc">%&gt;%</span></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>All, <span class="sc">-</span>notesRegCode) <span class="sc">%&gt;%</span> </span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Chinook =</span> <span class="fu">if_else</span>(Chinook <span class="sc">==</span> <span class="st">"I"</span>, <span class="st">"1"</span>, Chinook)) <span class="sc">%&gt;%</span> </span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Chinook =</span> <span class="fu">as.numeric</span>(Chinook)) <span class="sc">%&gt;%</span> </span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span><span class="fu">c</span>(Region, Year), </span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"species"</span>, </span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"catch"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">catch =</span> catch<span class="sc">*</span><span class="dv">1000</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span> </span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_catch =</span> <span class="fu">mean</span>(catch)) <span class="sc">%&gt;%</span> </span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_catch))</span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mean_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>catch_original <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1"</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>mean_region <span class="ot">&lt;-</span> catch_original <span class="sc">%&gt;%</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>All, <span class="sc">-</span>notesRegCode) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Chinook =</span> <span class="fu">if_else</span>(Chinook <span class="sc">==</span> <span class="st">"I"</span>, <span class="st">"1"</span>, Chinook)) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Chinook =</span> <span class="fu">as.numeric</span>(Chinook)) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span><span class="fu">c</span>(Region, Year), </span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"species"</span>, </span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"catch"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">catch =</span> catch<span class="sc">*</span><span class="dv">1000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_catch =</span> <span class="fu">mean</span>(catch)) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_catch))</span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mean_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   Region mean_catch

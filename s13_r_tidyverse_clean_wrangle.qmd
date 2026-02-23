@@ -14,9 +14,11 @@ title: Cleaning & Wrangling Data
 :::{.callout-tip}
 ### Learning Objectives (V2)
 
+After completing this session, you will be able to:
+
 - Identify some common `dplyr` and `tidyr` functions
 - Define "namespace" in the context of R functions
-
+- Explain how the pipe operator (`%>%`) can be used to streamline wrangling code
 :::
 
 ## Introduction
@@ -97,7 +99,7 @@ tidyr::pivot_longer(data = site_date,
 :::
 ::::
 
-## `dplyr` and `tidyr`
+## The `dplyr` and `tidyr` Packages
 
 The `dplyr` and `tidyr` packages are two particularly powerful and often-used packages for data wrangling. This lesson will cover examples to learn about some of the functions you'll most commonly use from those packages. See the tabs below for a brief overview of those tools.
 
@@ -142,6 +144,7 @@ First, open a new Quarto document. Delete everything below the setup chunk, and 
 library(dplyr)
 library(tidyr)
 library(readr)
+library(magrittr)
 ```
 
 :::
@@ -258,47 +261,50 @@ View(catch_original) # <2>
 1. The `names()` function will return the same result (in this case)
 2. Note that the "V" is capitalized!
 
+## About the Pipe Operator (`%>%`)
 
-## About the pipe (`%>%`) operator
+Before we jump into learning `tidyr` and `dplyr`, we first need to explain the pipe operator `%>%`. Coding in the style of the Tidyverse requires using the pipe operator (`%>%`), which may look unfamiliar. The pipe is a powerful way to efficiently chain together operations. **The pipe will take the output of a previous statement, and use it as the input to the next statement.**
 
-Before we jump into learning `tidyr` and `dplyr`, we first need to explain the pipeline operator `%>%`.
+While it may look strange, the pipe operator is actually just a special format of R function! It comes from the `magrittr` package. Let's look at an example to make this clearer. Say you want to both `filter()` out rows of a data set, and `select()` certain columns.
 
-Both the `tidyr` and the `dplyr` packages use the pipe operator (`%>%`), which may look unfamiliar. The pipe is a powerful way to efficiently chain together operations. The pipe will take the output of a previous statement, and use it as the input to the next statement.
+:::{.panel-tabset}
+### Without a Pipe
+Without using the pipe operator, you might write something like the following:
 
-Say you want to both `filter()` out rows of a data set, and `select()` certain columns.
-
-Instead of writing:
-
-```{r}
+```{r pipe-ex_without-pipe}
 #| eval: false
 df_filtered <- filter(df, ...)
 df_selected <- select(df_filtered, ...)
 ```
 
-You can write:
+### With the Pipe
+If you did use the pipe, you might write something like the following instead:
 
-```{r}
+```{r pipe-ex_with-pipe}
 #| eval: false
 df_cleaned <- df %>% 
-    filter(...) %>%
-    select(...)
+    dplyr::filter(...) %>%
+    dplyr::select(...)
 ```
 
 If you think of the assignment operator (`<-`) as reading like "gets", then the pipe operator would read like "then".
 
 So you might think of the above chunk being translated as:
 
-> The cleaned data frame gets the original data, and then a filter (of the original data), and then a select (of the filtered data).
+> The cleaned data frame **gets** the original data, and **then** a filter (of the original data), and **then** a select (of the filtered data).
+:::
 
 The benefits to using pipes are that you don't have to keep track of (or overwrite) intermediate data frames. The drawbacks are that it can be more difficult to explain the reasoning behind each step, especially when many operations are chained together. It is good to strike a balance between writing efficient code (chaining operations), while ensuring that you are still clearly explaining, both to your future self and others, what you are doing and why you are doing it.
 
-::: {.callout-caution icon=false}
-
-## Quick Tip
-RStudio has a keyboard shortcut for `%>%`
+::: {.callout-tip}
+Positron and RStudio both have a keyboard shortcut for `%>%`
 
 - Windows: `Ctrl` + `Shift` + `M` 
 - Mac: `cmd` + `shift` + `M`
+
+::: {.callout-warning}
+Depending on your settings, those hot keys may put a pipe operator that looks like `|>`. This operator is called the "native pipe," and **it is _not the same as_ `%>%`.** Go into your IDE's settings and change it to `%>%` if those hot keys result in the native pipe instead of the one with percent symbols (search "pipe" in Positron's settings).
+:::
 :::
 
 ## Selecting or removing columns using `select()`

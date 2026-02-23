@@ -234,8 +234,8 @@ Recall that you can use `#` to create headings in a Quarto doc (more `#` for a _
 
 :::
 
-## Data exploration
-Similar to what we did in our [Literate Analysis](https://learning.nceas.ucsb.edu/2024-10-coreR/session_05.html) lesson, it is good practice to skim through the data you just read in. 
+## Data Exploration
+Similar to what we did in our "Literate Analysis with Quarto" lesson, it is good practice to skim through the data you just read in. 
 
 Doing so is important to make sure the data is read as you were expecting and to familiarize yourself with the data.
 

@@ -631,38 +631,41 @@ catch_sub <- catch_long %>%
 :::
 :::
 
+## Sorting Data with `arrange()`
 
-## Sorting your data using `arrange()`
+The `arrange()` function can be used to sort the rows of a data set. For a lot of R functions, row order does not matter, _however_ if you wanted to calculate a cumulative sum (e.g., with `base::cumsum()`), or display a table with sorted rows (e.g., in a Quarto report), it can be helpful to know how to use code to re-order your rows.
 
-The `arrange()` function is used to sort the rows of a `data.frame`. Two common cases to use `arrange()` are:
+Let's re-calculate mean catch by region, and then use `arrange()` to sort the output by mean catch.
 
-- To calculate a cumulative sum (with `cumsum()`) so row order matters
-- To display a table (like in an `.qmd` document) in sorted order
-
-Let's re-calculate mean catch by region, and then `arrange()` the output by mean catch:
-
-```{r}
+```{r arrange-ex_default}
 mean_region <- catch_long %>%
-    group_by(Region) %>%
-    summarize(mean_catch = mean(catch)) %>%
-    arrange(mean_catch)
+    # Summarize by region
+    dplyr::group_by(Region) %>%
+    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+        .groups = "drop") %>%
+    # Order by the mean catch
+    dplyr::arrange(mean_catch)
 
+# Check the result
 head(mean_region)
 ```
 
+The default sorting order of `arrange()` is to sort in ascending order. To reverse the sort order, wrap the column name inside `dplyr`'s `desc()` function:
 
-The default sorting order of `arrange()` is to sort in ascending order. To reverse the sort order, wrap the column name inside the `desc()` function:
-
-```{r}
+```{r arrange-ex_desc}
 mean_region <- catch_long %>%
-    group_by(Region) %>%
-    summarize(mean_catch = mean(catch)) %>%
-    arrange(desc(mean_catch))
+    # Summarize by region
+    dplyr::group_by(Region) %>%
+    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+        .groups = "drop") %>%
+    # Order by descending mean catch
+    dplyr::arrange(dplyr::desc(mean_catch))
 
+# Check the result
 head(mean_region)
 ```
 
-## Splitting a column using `separate_wider_delim()` and `unite()`
+## Splitting or Combine Columns Using `separate_wider_delim()` and `unite()`
 
 The `separate_wider_delim()` function allow us to easily split a single column into numerous. Its complement, the `unite()` function, allows us to combine multiple columns into a single one.
 

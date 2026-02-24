@@ -1281,16 +1281,12 @@ date  (1): Date
 <h3 data-number="5.6" class="anchored" data-anchor-id="calculate-summary-statistics"><span class="header-section-number">5.6</span> Calculate summary statistics</h3>
 <p>The <strong>Redfield ratio</strong> is the consistent 16:1 ratio of nitrogen to phosphorous found in marine phytoplankton. Let’s see how our Arctic data compare.</p>
 <p>First, calculate mean values for the key variables:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>nitrate <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO3)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>nitrate <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO3)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>nitrite <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO2)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>amm     <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NH4)</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>phos    <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>P)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 <p>Then calculate the ratio:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> (nitrate <span class="sc">+</span> nitrite <span class="sc">+</span> amm) <span class="sc">/</span> phos</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> (nitrate <span class="sc">+</span> nitrite <span class="sc">+</span> amm) <span class="sc">/</span> phos</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="report-result-with-inline-r-code" class="level3" data-number="5.7">
 <h3 data-number="5.7" class="anchored" data-anchor-id="report-result-with-inline-r-code"><span class="header-section-number">5.7</span> Report Result with Inline R code</h3>
@@ -1308,7 +1304,7 @@ date  (1): Date
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="s09_r_quarto_literate_analysis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="s09_r_quarto_literate_analysis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

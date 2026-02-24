@@ -353,15 +353,38 @@ We can actually interact with particular commits to get more detailed informatio
 
 ### Making a Commit
 
-Now that we have seen the changes from the past, let's go ahead and make some new changes in Positron. Close the diff file we had open then click back to the "File Explorer" tab and double click the README file to open it. While adding the purpose statement was nice addition, the top of the README is still looking very template-y, let's customize it a bit.
+Now that we have seen the changes from the past, let's go ahead and make some new changes in our IDE. Close the history file we had open then open the actual README.md file.
 
-Go ahead and give the README a more informative title (that's the text after a single `#`) and expand the first line of the description to add some more context. After you've done this your README should look something like the following.
+:::{.panel-tabset}
+### {{< fa p >}} Positron
+Go to "File Explorer" tab and double click the README file to open it.
 
-<img src="images/github_introduction_positron/positron-commit_01-edit.png" alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified" width="100%"/>
+### {{< fa brands r-project >}} RStudio
+Go to the "Files" pane and click the README to open it.
+:::
+
+While adding the purpose statement was nice addition, the top of the README is still looking very template-y, let's customize it a bit. Go ahead and **(1) give the README a more informative title and (2) expand the first line of the description to add some more context.** After you've done this your README should look something like the following.
+
+::: {.callout-hint}
+Recall that headers are any line that starts with at least one `#`.
+:::
+
+::: {layout-nrow=2}
+
+{{< fa p >}} Positron
+![](images/github_introduction_positron/positron-commit_01-edit.png){.lightbox fig-alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified"}
+
+{{< fa brands r-project >}} RStudio
+![](images/github_introduction_positron/rstudio-commit_01-edit.png){.lightbox fig-alt="Screen capture of RSTudio with the README file opened"}
+
+:::
+
+:::{.panel-tabset}
+### {{< fa p >}} Positron
 
 Note that once you edit and save the README, the file's name (both in the Explorer tab list and in the top of Positron) will turn orange and have a capital "M" to the right of the filename. This is Git letting you know that the file has been modified from the most recent version. Additionally, the Source Control tab will get a red circle with a "1," indicating that the state of one file in the version controlled repository has changed.
 
-If you head over to the Source Control tab, you'll see that the README now appears under the "Changes" list.
+If you **head over to the Source Control tab**, you'll see that the README now appears under the "Changes" list.
 
 <p align="center">
 <img src="images/github_introduction_positron/positron-commit_02-source-control.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%"/>
@@ -392,9 +415,40 @@ Go ahead and click the Sync button. It will become a grayed-out Commit button ag
 <img src="images/github_introduction_positron/positron-commit_05-sync.png" alt="Screen capture of Positron's 'source control' tab where no files are showing as changed or staged" width="70%"/>
 </p>
 
+### {{< fa brands r-project >}} RStudio
+
+If you **head over to the Git pane**, you'll see that the README now appears there with a **<span style="color:blue">blue</span>** "M". That "M" stands for "modified"
+
+<p align="center">
+<img src="images/github_introduction_positron/rstudio-commit_02-git.png" alt="Screen capture of RStudio's 'Git' pane with the README file listed next to blue capital 'M'" width="70%"/>
+</p>
+
+Once you are there, **check the box next to the README** under the "Staged" heading. _Clicking that button is analogous to using the Git command, `git add README.md`, in the command line._
+
+After you check the box, you can **click either of the two left-most buttons in the Git pane.** In the resulting pop-up menu (which looks imilar to the history menu), you can now add a commit message and then click the "Commit" button when you're ready to do so. _This is analogous to using the Git command, `git commit -m "my commit message"`, in the command line._
+
+![](images/github_introduction_positron/rstudio-commit_03-stage.png){.lightbox fig-alt="Screen capture of RStudio's commit menu with the README file staged and an informative commit message in the respective text field"}
+
+Once you do that, you can **close this menu** and two things should become apparent:
+
+- The README is _no longer_ listed in the Git pane
+- There is a new message just beneath the buttons of the Git pane saying something like `Your branch is ahead of 'origin/main' by 1 commit`.
+
+This means that your commit worked!
+
+<p align="center">
+<img src="images/github_introduction_positron/rstudio-commit_04-commit.png" alt="Screen capture of RStudio's 'Git' pane showing that the local repository is one commit ahead of the remote" width="70%"/>
+</p>
+
+Go ahead and **click the Pull button**; it is a downward-facing **<span style="color:blue">blue</span>** arrow (<span style="color:blue">{{< fa down-long >}}</span>). You should get a message that says `Already up to date`. This is because you're working alone but <u>when collaborating _it is important to pull early and often_ to ensure that you're working on the latest version of all files</u>.
+
+Now that you've pulled, you can **click the Push button**; it is an upward-facing **<span style="color:green">green</span>** arrow (<span style="color:green">{{< fa up-long >}}</span>). This button will send your local commit 'up' to your remote repository.
+
+:::
+
 If you navigate back to your remote repository on GitHub, you should see the edits to your README and the most recent commit will be the one you just made. Note that sometimes you have to refresh the page or wait a few seconds for those updates to be visible on GitHub.
 
-<img src="images/github_introduction_positron/positron-commit_06-updated-remote.png" alt="Screen capture of a GitHub repository's landing page with a new commit" width="100%"/>
+![](images/github_introduction_positron/positron-commit_06-updated-remote.png){.lightbox fig-alt="Screen capture of a GitHub repository's landing page with a new commit"}
 
 ::: callout-note
 ## Challenge

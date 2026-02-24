@@ -39,7 +39,7 @@ The version control system we'll be diving into is Git, the most widely used mod
 
 Let's start with a motivating example that's representative of the types of problems Git can help us solve.
 
-[Full Screen](slides/github_introduction/slides1_motivating_example.html)
+[Full Screen](slides/github_introduction/slides1_motivating_example.html){target="_blank"}
 
 ```{=html}
 <iframe class="slide-deck" src="slides/github_introduction/slides1_motivating_example.html" style="border: 1px solid #2e3846;"></iframe>
@@ -54,7 +54,7 @@ Let's start with a motivating example that's representative of the types of prob
 - **Assign meaningful tags** to specific versions of our code.
 - **Multiple individuals can work on the same analysis concurrently** on their own computers, with the ability to merge everyone's changes together.
 
-### What _Exactly_ are Git and GitHub?
+### What Exactly are Git and GitHub?{.tabset}
 
 #### Git: an open-source **version control** software {.unnumbered}
 
@@ -119,7 +119,7 @@ This screen shows the copy of a repository stored on GitHub, with its list of fi
 
 ![](images/github_introduction/gh-repo_home.png){.lightbox fig-alt="Screen capture of a GitHub repository's landing page"}
 
-If we drill into the "commits" for the repository (by clicking the "Commits" button just beneath the colored "Code" dropdown menu), we can see the history of changes made to all of the files. Looks like `kellijohnson` was working on the project and fixing errors in December:
+If we drill into the "commits" for the repository (by clicking the "Commits" button just beneath the colored "Code" dropdown menu), we can see the history of changes made within this repository, including the author, date, and commit message for each commit.
 
 ![](images/github_introduction/gh-repo_commits.png){.lightbox fig-alt="Screen capture of a GitHub repository's page showing the history of the commits in the repository"}
 
@@ -233,7 +233,7 @@ The GitHub repository landing page provides us with lots of useful information. 
 
 Additionally, the header above the file listing shows the most recent commit, along with its commit message, and a unique ID (assigned by Git) called a [SHA](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/about-commits#about-commits). The SHA (aka hash) identifies the specific changes made, when they were made, and by who. If you click on the SHA, it will display the set of changes made in that particular commit.
 
-::: {.callout-caution icon=false}
+::: {.callout-tip}
 ## What should I write in my commit message?
 
 Writing effective Git commit messages is essential for creating a meaningful and helpful version history in your repository. It is crucial to avoid skipping commit messages or resorting to generic phrases like "Updates." When it comes to following best practices, there are several guidelines to enhance the readability and maintainability of the codebase.
@@ -241,19 +241,12 @@ Writing effective Git commit messages is essential for creating a meaningful and
 Here are some guidelines for writing effective Git commit messages:
 
 1. **Be descriptive and concise**: Provide a clear and concise summary of the changes made in the commit. Aim to convey the purpose and impact of the commit in a few words.
-
 2. **Use imperative tense**: Write commit messages in the imperative tense, as if giving a command. For example, use "Add feature" instead of "Added feature" or "Adding feature." This convention aligns with other Git commands and makes the messages more actionable.
-
 3. **Separate subject and body**: Start with a subject line, followed by a blank line, and then provide a more detailed explanation in the body if necessary. The subject line should be a short, one-line summary, while the body can provide additional context, motivation, or details about the changes.
-
 4. **Limit the subject line length**: Keep the subject line within 50 characters or less. This ensures that the commit messages are easily scannable and fit well in tools like Git logs.
-
 5. **Capitalize and punctuate properly**: Begin the subject line with a capital letter and use proper punctuation. This adds clarity and consistency to the commit messages.
-
 6. **Focus on the "what" and "why"**: Explain what changes were made and why they were made. Understanding the motivation behind a commit helps future researchers and collaborators (including you!) comprehend its purpose.
-
 7. **Use present tense for subject, past tense for body**: Write the subject line in present tense as it represents the current state of the codebase. Use past tense in the body to describe what has been done.
-
 8. **Reference relevant issues**: If the commit is related to a specific issue or task, include a reference to it. For example, you can mention the issue number or use keywords like "Fixes," "Closes," or "Resolves" followed by the issue number.
 :::
 
@@ -311,7 +304,7 @@ Start by clicking the **Code** button on your GitHub repository and copying the 
 <img src="images/github_introduction/rstudio-clone_01-github.png" alt="Screen capture of the menu that appears in a GitHub repository when you click the 'Code' button" width="60%"/>
 </p>
 
-**Click the project icon** (looks like the letter "R" in a glass box) in the top right corner of RStudio. Note that if you use RStudio projects already, that button will have the name of the most recent project but if you don't use them it will instead say "Project: (None)". In the r esulting dropdown, click **New Project...**
+**Click the project icon** (looks like the letter "R" in a glass box) in the top right corner of RStudio. Note that if you use RStudio projects already, that button will have the name of the most recent project but if you don't use them it will instead say "Project: (None)". In the resulting dropdown, click **New Project...**
 
 <p align="center">
 <img src="images/github_introduction/rstudio-clone_02-new-proj.png" alt="Screen capture of the project dropdown menu in RStudio" width="50%"/>

@@ -461,80 +461,84 @@ If you navigate back to your remote repository on GitHub, you should see the edi
 
 There are a number of different workflows for creating version-controlled repositories that are stored on GitHub. We started with Exercise 1 and Exercise 2 using one common approach: create a remote repository on GitHub first, _then_ clone that repository to your local computer. However, you may find yourself in the situation where you **have an _existing_ folder of content that you want to _start_ tracking with Git and host in GitHub.**
 
-There are a few approaches for connecting an existing local folder to Git/GitHub but we'll focus on how you can do this via the command line. This has the advantage of being both coding language agnostic and IDE software agnostic. 
+There are a few approaches for connecting an existing local folder to Git/GitHub but **we'll focus on how you can do this via the command line.** This has the advantage of being both coding language agnostic and IDE software agnostic. 
 
-While the tutorial below will be using the Terminal in Positron, you could use any command-line interface (e.g. Mac Terminal, Git Bash, etc.) that allows for Git interactions. The advantage of Positron (and comparable IDEs) is that the Terminal is already 'looking' at your working directory while other command line interfaces would require you to navigate to the project directory (i.e., by using the `cd` command).
+While the tutorial below will be using the Terminal in Positron, you could use any command-line interface (e.g. RStudio Terminal, Mac Terminal, Git Bash, etc.) that allows for Git interactions. The advantage of using an IDE is that the Terminal is already 'looking' at your working directory while other command line interfaces would require you to navigate to the project directory (i.e., by using the `cd` command).
 
-### Open the Folder in Positron
+### Open the Folder in Your IDE
 
-In this last exercise, we will practice this workflow using your `training_{USERNAME}` folder. Switch to your `training_{USERNAME}` folder using the Positron folder dropdown menu. The folder dropdown menu is in the upper right corner of Positron. Click the dropdown next to your current folder name (`{FIRSTNAME}_test`), and then select `training_{USERNAME}` from the list of recent folders you've opened in Positron. If you've never opened the `training_{USERNAME}` folder with Positron, click **Open Folder...** instead and navigate to that folder.
+In this last exercise, we will practice this workflow using your `training_{USERNAME}` folder. Switch to your `training_{USERNAME}` folder using the dropdown menu in the top right corner ({{< fa p >}} Positron: "folder" / {{< fa brands r-project >}} RStudio: "project"). Click the dropdown next to your current folder name (`{FIRSTNAME}_test`), and then select `training_{USERNAME}` from the list of recent folders you've opened in this IDE. If you've never opened the `training_{USERNAME}` folder with this IDE, click **Open Folder...** (in {{< fa p >}} Positron) or **Open Project...** (in {{< fa brands r-project >}} RStudio) instead and navigate to that folder.
 
-In my case, I have some scripts that are empty but their names reflect steps in my code workflow that I think are likely enough to warrant making placeholder scripts. In the Explorer tab of Positron we can see those files are all just loose in the folder I'm using for this project.
+In my case, I have some scripts that are empty but their names reflect steps in my code workflow that I think are likely enough to warrant making placeholder scripts. If we use our IDE to look at the files in the current working directory, we can see those files are all just loose in the folder I'm using for this project.
 
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_01-folder.png" alt="Screen capture of Positron's 'explorer' tab with three files" width="60%"/>
-</p>
+:::{layout-ncol=2}
+
+{{< fa p >}} Positron
+![](images/github_introduction_positron/folder-first-git_01-folder-positron.png){.lightbox fig-alt="Screen capture of Positron's 'explorer' tab with three files"}
+
+{{< fa brands r-project >}} RStudio
+![](images/github_introduction_positron/folder-first-git_01-folder-rstudio.png){.lightbox fig-alt="Screen capture of RStudio's 'files' pane with three files and the .Rproj file"}
+
+:::
 
 ### Start Git
 
-Now that we're in the right folder, **run `git init` <u>in the Terminal</u>**. This will return a message (also in the Terminal) saying something along the lines of `Initialized empty Git repository in...` followed by the absolute path to your chosen folder. Additionally, all the files listed in Positron's Explorer tab will turn green and get an uppercase "U" next to them for "untracked."
+Now that we're in the right folder, **run `git init` <u>in the Terminal</u>**. This will return a message (also in the Terminal) saying something along the lines of `Initialized empty Git repository in...` followed by the absolute path to your chosen folder. Additionally, your IDE's version control window should flag all of the files in the working directory as untracked.
 
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_02-git-init.png" alt="Screen capture of Positron's 'explorer' tab with three files that are registering as untracked by Git" width="60%"/>
-</p>
+::: {.callout-warning}
+{{< fa brands r-project >}} RStudio users may need to quit and re-open RStudio to get the "Git" pane to show up.
+:::
+
+:::{layout-ncol=2}
+
+{{< fa p >}} Positron
+![](images/github_introduction_positron/folder-first-git_02-git-init-positron.png){.lightbox fig-alt="Screen capture of Positron's 'explorer' tab with three files that are registering as untracked by Git"}
+
+{{< fa brands r-project >}} RStudio
+![](images/github_introduction_positron/folder-first-git_02-git-init-rstudio.png){.lightbox fig-alt="Screen capture of RStudio's 'git' pane with three scripts, the .gitignore, and a .Rproj file registering as untracked by Git"}
+
+:::
 
 ### Tell Git What to Ignore
 
 An absolutely critical component of version control with Git is what Git _doesn't_ track, not just what it _does_ track. **Git repositories each use a file called ".gitignore" to 'decide' what not to track.** This is useful for many reasons but in particular the .gitignore will be a useful guardrail against tracking (A) large files or (B) files with sensitive information (e.g., passwords, private data).
 
-Any file or folder named in the .gitignore won't show up in the Source Control of Positron (or its equivalents in other IDEs). This means that you don't need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!
+Any file or folder named in the .gitignore won't show up in the version control window of any IDE. This means that you don't need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!
 
-In our earlier exercises, we've started repositories in GitHub with the template ".gitignore" file for R users but when adding Git tracking to an existing folder, we'll need to add the ".gitignore" manually. In the Terminal, follow the instructions below based on your computer's operating system
+In our earlier exercises, we've started repositories in GitHub with the template ".gitignore" file for R users but there are some slight differences when adding Git tracking to an existing folder.
 
 :::{.panel-tabset}
-#### {{< fa brands apple >}} Mac / {{< fa brands linux >}} Linux
+### {{< fa p >}} Positron
+Positron does not add a ".gitignore" when you create a Git repository in that folder. So we'll need to create one manually.
 
-```{r make-yaml_mac}
-#| eval: false
+In the Terminal, follow the instructions below based on your computer's operating system.
 
-touch .gitignore # <1>
-```
-1. `touch` is command line for 'create this file'
+- For {{< fa brands apple >}} Mac / {{< fa brands linux >}} Linux users: run `touch .gitignore`
+- For {{< fa brands windows >}} Windows users: run `copy NUL .gitignore`
+    - If `copy NUL` does not work, try `touch` instead
 
-#### {{< fa brands windows >}} Windows
+### {{< fa brands r-project >}} RStudio
 
-```{r make-yaml_win}
-#| eval: false
-
-copy NUL .gitignore # <1>
-```
-1. This is command line for 'create this file'
-
-If `copy NUL` does not work, try `touch` instead.
+RStudio does create a ".gitignore" when you create a Git repository in a project but it is _very_ limited relative to what we'd get from the GitHub template for R. So we'll need to flesh it out.
 
 :::
 
-Once you've created a ".gitignore" file, it will appear in Positron's Explorer tab and you can:
+Once you have a ".gitignore" file:
 
-1. Double click that file to open it
+1. Open the file in your IDE as you would any other file
 2. Go to the GitHub repository you made for Exercise 2
     - Likely `https://github.com/github-username/{firstname}_test`
 3. Click the .gitignore file in that repository
 4. Click the **Copy raw file** button 
     - Top right corner, just to the left of the pencil icon used to edit files directly in GitHub
-5. Return to the .gitignore in Positron
-6. Paste the contents of the `{firstname}_test` GitHub repository's .gitignore into the new .gitignore that you just created
+5. Return to the .gitignore in your IDE
+6. Paste the contents of the `{firstname}_test` GitHub repository's .gitignore into your local .gitignore that you have open
+    - Overwriting _all_ current contents if there are any
 
 :::{.callout-note}
 #### .gitignore Templates
 The .gitignore templates curated by GitHub are generally pretty good so copy/pasting that content will usually set you up for success. Note that as you work more with Git/GitHub, you may develop your own template for a .gitignore that ignores files or folders you consistently use across projects. In that case, feel free to copy that .gitignore's content instead of the generic GitHub template for your coding language.
 :::
-
-Once you've done that, you should see the .gitignore register in Positron as another untracked file.
-
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_03-gitignore-content.png" alt="Screen capture of Positron's 'explorer' tab where an untracked '.gitignore' file is present" width="80%"/>
-</p>
 
 ### Double Check Git's Status
 
@@ -561,15 +565,19 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 Now that we're confident Git is set up correctly, we want to start Git tracking on the files that are in our folder. In this case, because we want to track all the files, we can **run `git add .`** to stage all the files. If we only wanted to stage certain files, we could instead run `git add 01_harmonize.r` to stage one file at a time.
 
-Without Positron's GUI, we could again run `git status` if we want to check whether staging worked as desired.
+Without an IDE's <u>G</u>raphical <u>U</u>ser <u>I</u>nterface (GUI), we could again run `git status` if we want to check whether staging worked as desired.
 
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_04-stage.png" alt="Screen capture of Positron's 'explorer' tab where all untracked files are staged" width="80%"/>
-</p>
+:::{layout-ncol=2}
+
+{{< fa p >}} Positron
+![](images/github_introduction_positron/folder-first-git_04-stage.png){.lightbox fig-alt="Screen capture of Positron's 'explorer' tab where all untracked files are staged"}
+
+{{< fa brands r-project >}} RStudio
+![](images/github_introduction_positron/folder-first-git_02-git-init-rstudio.png){.lightbox fig-alt="Screen capture of RStudio's 'git' pane with three scripts, the .gitignore, and a .Rproj file registering as untracked by Git"}
+
+:::
 
 Once we've staged the files that we want to be included in this first commit, we can **commit all staged files by running `git commit -m "initial commit"` in the Terminal.** Note that it's good practice to replace "initial commit" with something that is more informative and specific.
-
-Once we've made that commit, Positron's GUI will remove the "U" next to all of the files that were commmitted (in this case, that's all of the files in the folder).
 
 <p align="center">
 <img src="images/github_introduction_positron/folder-first-git_05-commit.png" alt="Screen capture of Positron's 'explorer' tab where all files are tracked by Git with no changes since the last commit" width="80%"/>
@@ -598,17 +606,23 @@ Once you've made your <u>completely empty</u> GitHub repository:
 
 1. Scroll down to the **...or push an existing repository from the command line** section
 2. Copy the whole code chunk beneath that heading
-3. Run that code in Positron's Terminal
+3. Run that code in the Terminal
 
-After you've done that, if you refresh the page on the GitHub repository, you should see the files you just committed!
+After you've done that, if you refresh the page on the GitHub repository, you should see the files that you just committed!
 
 <img src="images/github_introduction_positron/folder-first-git_07-gh-repo.png" alt="Screen capture of a GitHub repository with a number of files added in a single commit" width="100%">
 
-Similarly, your Positron Source Control tab will now look like it did in the previous exercises and will include the commit we made via the command line.
+Similarly, your IDE's version control window will now look like it did in the previous exercises and will include the commit we made via the command line.
 
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_08-positron.png" alt="Screen capture of Positron's 'source control' tab with no files showing as being changed" width="60%"/>
-</p>
+:::{layout-ncol=2}
+
+{{< fa p >}} Positron
+![](images/github_introduction_positron/folder-first-git_08-positron.png){.lightbox fig-alt="Screen capture of Positron's 'source control' tab with no files showing as being changed"}
+
+{{< fa brands r-project >}} RStudio
+![](images/github_introduction_positron/folder-first-git_08-rstudio.png){.lightbox fig-alt="Screen capture of RStudio's 'git' pane with no files showing as being changed"}
+
+:::
 
 ::: {.callout-caution icon=false}
 ## Challenge: Add a `README.md` file to `training_{USERNAME}`

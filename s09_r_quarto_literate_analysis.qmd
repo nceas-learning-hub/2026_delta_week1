@@ -458,7 +458,7 @@ The **Redfield ratio** is the consistent 16:1 ratio of nitrogen to phosphorous f
 
 First, calculate mean values for the key variables:
 
-```{r}
+```r
 nitrate <- mean(bg_chem$NO3)
 nitrite <- mean(bg_chem$NO2)
 amm     <- mean(bg_chem$NH4)
@@ -467,7 +467,7 @@ phos    <- mean(bg_chem$P)
 
 Then calculate the ratio:
 
-```{r}
+```r
 ratio <- (nitrate + nitrite + amm) / phos
 ```
 

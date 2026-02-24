@@ -170,7 +170,7 @@ Git has a rich set of commands and features, and there are many more terms beyon
 
 #### Other Terms
 
-This table includes terms for which there are not specific Git commands.
+This table includes terms for which there **are not specific Git commands.**
 
  Term | Definition |
 |:---:|:-------------------------|
@@ -257,20 +257,22 @@ Here are some guidelines for writing effective Git commit messages:
 8. **Reference relevant issues**: If the commit is related to a specific issue or task, include a reference to it. For example, you can mention the issue number or use keywords like "Fixes," "Closes," or "Resolves" followed by the issue number.
 :::
 
-## Exercise 2: Clone Your Repository with Positron
+## Exercise 2: Clone Your Repository Locally
 
-Currently, our repository just exists on GitHub as a remote repository. It's easy enough to make changes to things like our `README.md` file (as demonstrated above), from the web browser, but that becomes a lot harder (and discouraged) for scripts and other code files. In this exercise, we'll bring a copy of this remote repository down to our local computer (aka **clone** this repository) so that we can work comfortably in Positron.
+Currently, our repository just exists on GitHub as a remote repository. It's easy enough to make changes to things like our `README.md` file (as demonstrated above) from the web browser, but that becomes a lot harder (and discouraged) for scripts and other code files. In this exercise, we'll bring a copy of this remote repository down to our local computer (aka **clone** this repository) so that we can work comfortably in our local computer.
 
 ::: {.callout-important title="An important distinction"}
 We refer to the **remote copy** of the repository that is on GitHub as the **origin repository** (the one that we cloned from), and the copy on our local computer as the **local repository**.
 :::
 
-Positron makes working with Git and version controlled files easy -- to do so, you'll need to tell Positron the folder in which you want it to clone your origin repository. For RStudio users, the following steps will look similar to the process of making an R Project, albeit very streamlined.
+To clone our remote repository, we'll use an IDE (<u>I</u>ntegrated <u>D</u>evelopment <u>E</u>nvironment). This is a fancy term for any piece of software that lets you write software. You may already be familiar with some IDEs like [RStudio](https://posit.co/download/rstudio-desktop/), [Positron](https://positron.posit.co/), or [Visual Studio Code](https://code.visualstudio.com/). We offer courses that focus either in Positron or RStudio so you may be using either in your training. In the steps below, **follow the instructions for the IDE suggested by your instructors.**
 
-### Cloning a Repository
+### Initial Clone
 
-::: callout-tip
-## Positron Clone Process
+:::{.panel-tabset}
+### {{< fa p >}} Positron 
+
+Positron makes working with Git and version-controlled files easy! To do so, you'll need to **tell Positron the folder in which you want it to clone your origin repository**.
 
 1. Start by copying the link to your GitHub repository from the address bar of your web browser
     - Should be something like "https://github.com/`github-username`/`repository-name`"
@@ -279,28 +281,75 @@ Positron makes working with Git and version controlled files easy -- to do so, y
 4. In the **Git repository URL** field, paste in the link you copied in step 1
 5. Choose which folder you want to clone this repository to
     - We recommend _not_ cloning into a local sync of a cloud storage service (e.g., OneDrive, Dropbox) as that service's form of version control and Git's may cause problems for you
-6. Click OK
+6. Click **OK**
 
 <p align="center">
-<img src="images/github_introduction_positron/new-repo_clone-dialog-positron.png" alt="Screen capture of Positron's dialogue menu for cloning a new repository from GitHub" width="65%"/>
+<img src="images/github_introduction_positron/positron-clone_01-dialog.png" alt="Screen capture of Positron's dialogue menu for cloning a new repository from GitHub" width="65%"/>
 </p>
-:::
 
 Once you click **OK**, your Positron window will refresh and the "Explorer" tab (in the left sidebar) will show that all files from the remote repository have been copied locally. Note that the folder icon in the top right corner will now have the name of your repository from GitHub.
 
-<p align="center">
-<img src="images/github_introduction_positron/new-repo_clone-positron.png" alt="Screen capture of Positron after successfully cloning a new repository from GitHub" width="100%"/>
-</p>
+![](images/github_introduction_positron/positron-clone_02-ide.png){.lightbox fig-alt="Screen capture of Positron after successfully cloning a new repository from GitHub"}
 
 If you click the "Source Control" tab (its symbol looks like this: {{< fa code-branch >}}) you will see that there are no changes because we haven't done anything to the local copy yet! However, both the commits (the initial commit and the test edit made directly in GitHub) are shown in the bottom left corner in reverse chronological order (i.e., most recent at the top).
 
 <p align="center">
-<img src="images/github_introduction_positron/new-repo_source-control_no-changes.png" alt="Screen capture of Positron's 'source control' pane after cloning a new repository from GitHub before editing it" width="60%"/>
+<img src="images/github_introduction_positron/positron-clone_03-source-control.png" alt="Screen capture of Positron's 'source control' pane after cloning a new repository from GitHub before editing it" width="60%"/>
 </p>
 
 We can actually interact with particular commits to get more detailed information on what was changed directly through Positron! Click the top commit to expand it and see the files that were changed as part of that commit. Now click the README file (the only one edited as part of that commit). A file will now open in the main window of Positron showing the README file with new lines highlighted in green and deleted lines highlighted in red.
 
-<img src="images/github_introduction_positron/new-repo_source-control_diff-history.png" alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened" width="100%"/>
+![](images/github_introduction_positron/positron-clone_04-history.png){.lightbox fig-alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened"}
+
+### {{< fa brands r-project >}} RStudio
+
+RStudio makes working with Git and version-controlled files easy! To do so, you'll need to **create a new R Project**.
+
+Start by clicking the **Code** button on your GitHub repository and copying the link from under the **HTTPS** field.
+
+<p align="center">
+<img src="images/github_introduction_positron/rstudio-clone_01-github.png" alt="Screen capture of the menu that appears in a GitHub repository when you click the 'Code' button" width="60%"/>
+</p>
+
+**Click the project icon** (looks like the letter "R" in a glass box) in the top right corner of RStudio. Note that if you use RStudio projects already, that button will have the name of the most recent project but if you don't use them it will instead say "Project: (None)". In the r esulting dropdown, click **New Project...**
+
+<p align="center">
+<img src="images/github_introduction_positron/rstudio-clone_02-new-proj.png" alt="Screen capture of the project dropdown menu in RStudio" width="50%"/>
+</p>
+
+You will now be guided through a set of new project options. Click **Version Control**, then click **Git**. The next dialog is the critical one for getting your local clone set up.
+
+In this dialog, do the following:
+
+1. Paste the link you copied from your remote repository into the **Repository URL** field
+2. Enter the name you want for the folder containing your local repository
+    - Feel free to just re-use the name of the repository
+3. Finally, choose which folder you want to clone this repository to
+    - We recommend not cloning into a local sync of a cloud storage service (e.g., OneDrive, Dropbox) as that service’s form of version control and Git’s may cause problems for you
+
+Once that's all done, click **Create Project**.
+
+<p align="center">
+<img src="images/github_introduction_positron/rstudio-clone_03-dialog.png" alt="Screen capture of the final dialog window in RStudio when cloning a new repository" width="80%"/>
+</p>
+
+After a moment, your RStudio will refresh and you'll see the name you gave to your local repository's folder in the top right corner next to the project icon.
+
+![](images/github_introduction_positron/rstudio-clone_04-ide.png){.lightbox fig-alt="Screen capture of the RStudio when in a project that is version-controlled"}
+
+You may also notice that you have a new tab in RStudio labeled Git. **Click that tab.** You'll see that you have your .Rproj file listed with two **<span style="color:gold">yellow</span>** question marks. RStudio uses this file to define an RProject but because it isn't in your remote repository, Git is flagging it for your attention as a file that is in the tracked folder but is not itself tracked. _Ignore this for now_ as we'll get to more on it later.
+
+<p align="center">
+<img src="images/github_introduction_positron/rstudio-clone_05-git-pane.png" alt="Screen capture of the Git pane in RStudio" width="60%"/>
+</p>
+
+If you click the "History" button in the Git tab (its symbol is a clock {{< fa clock >}}) you will see all of the commits that have been made in this repository. They are shown in the top half of the window in reverse chronological order (i.e., most recent at the top).
+
+We can actually interact with particular commits to get more detailed information on what was changed directly through RStudio! Click the top commit to expand it and see the files that were changed as part of that commit. The bottom half of the window will now show the README file with new lines highlighted in green and deleted lines highlighted in red.
+
+![](images/github_introduction_positron/rstudio-clone_06-history.png){.lightbox fig-alt="Screen capture of RStudio's commit history window with two commits on the repository"}
+
+:::
 
 ### Making a Commit
 

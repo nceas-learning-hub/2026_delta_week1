@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -575,7 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#exercise-3-starting-git-on-an-existing-folder" id="toc-exercise-3-starting-git-on-an-existing-folder" class="nav-link" data-scroll-target="#exercise-3-starting-git-on-an-existing-folder"><span class="header-section-number">5</span> Exercise 3: Starting Git on an Existing Folder</a>
   <ul class="collapse">
-  <li><a href="#open-the-folder-in-positron" id="toc-open-the-folder-in-positron" class="nav-link" data-scroll-target="#open-the-folder-in-positron"><span class="header-section-number">5.1</span> Open the Folder in Positron</a></li>
+  <li><a href="#open-the-folder-in-your-ide" id="toc-open-the-folder-in-your-ide" class="nav-link" data-scroll-target="#open-the-folder-in-your-ide"><span class="header-section-number">5.1</span> Open the Folder in Your IDE</a></li>
   <li><a href="#start-git" id="toc-start-git" class="nav-link" data-scroll-target="#start-git"><span class="header-section-number">5.2</span> Start Git</a></li>
   <li><a href="#tell-git-what-to-ignore" id="toc-tell-git-what-to-ignore" class="nav-link" data-scroll-target="#tell-git-what-to-ignore"><span class="header-section-number">5.3</span> Tell Git What to Ignore</a></li>
   <li><a href="#double-check-gits-status" id="toc-double-check-gits-status" class="nav-link" data-scroll-target="#double-check-gits-status"><span class="header-section-number">5.4</span> Double Check Git’s Status</a></li>
@@ -1188,63 +1153,77 @@ Artwork by Allison Horst
 <section id="exercise-3-starting-git-on-an-existing-folder" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="exercise-3-starting-git-on-an-existing-folder"><span class="header-section-number">5</span> Exercise 3: Starting Git on an Existing Folder</h2>
 <p>There are a number of different workflows for creating version-controlled repositories that are stored on GitHub. We started with Exercise 1 and Exercise 2 using one common approach: create a remote repository on GitHub first, <em>then</em> clone that repository to your local computer. However, you may find yourself in the situation where you <strong>have an <em>existing</em> folder of content that you want to <em>start</em> tracking with Git and host in GitHub.</strong></p>
-<p>There are a few approaches for connecting an existing local folder to Git/GitHub but we’ll focus on how you can do this via the command line. This has the advantage of being both coding language agnostic and IDE software agnostic.</p>
-<p>While the tutorial below will be using the Terminal in Positron, you could use any command-line interface (e.g.&nbsp;Mac Terminal, Git Bash, etc.) that allows for Git interactions. The advantage of Positron (and comparable IDEs) is that the Terminal is already ‘looking’ at your working directory while other command line interfaces would require you to navigate to the project directory (i.e., by using the <code>cd</code> command).</p>
-<section id="open-the-folder-in-positron" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="open-the-folder-in-positron"><span class="header-section-number">5.1</span> Open the Folder in Positron</h3>
-<p>In this last exercise, we will practice this workflow using your <code>training_{USERNAME}</code> folder. Switch to your <code>training_{USERNAME}</code> folder using the Positron folder dropdown menu. The folder dropdown menu is in the upper right corner of Positron. Click the dropdown next to your current folder name (<code>{FIRSTNAME}_test</code>), and then select <code>training_{USERNAME}</code> from the list of recent folders you’ve opened in Positron. If you’ve never opened the <code>training_{USERNAME}</code> folder with Positron, click <strong>Open Folder…</strong> instead and navigate to that folder.</p>
-<p>In my case, I have some scripts that are empty but their names reflect steps in my code workflow that I think are likely enough to warrant making placeholder scripts. In the Explorer tab of Positron we can see those files are all just loose in the folder I’m using for this project.</p>
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_01-folder.png" alt="Screen capture of Positron's 'explorer' tab with three files" width="60%">
-</p>
+<p>There are a few approaches for connecting an existing local folder to Git/GitHub but <strong>we’ll focus on how you can do this via the command line.</strong> This has the advantage of being both coding language agnostic and IDE software agnostic.</p>
+<p>While the tutorial below will be using the Terminal in Positron, you could use any command-line interface (e.g.&nbsp;RStudio Terminal, Mac Terminal, Git Bash, etc.) that allows for Git interactions. The advantage of using an IDE is that the Terminal is already ‘looking’ at your working directory while other command line interfaces would require you to navigate to the project directory (i.e., by using the <code>cd</code> command).</p>
+<section id="open-the-folder-in-your-ide" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="open-the-folder-in-your-ide"><span class="header-section-number">5.1</span> Open the Folder in Your IDE</h3>
+<p>In this last exercise, we will practice this workflow using your <code>training_{USERNAME}</code> folder. Switch to your <code>training_{USERNAME}</code> folder using the dropdown menu in the top right corner (<i class="fa-solid fa-p" aria-label="p"></i> Positron: “folder” / <i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio: “project”). Click the dropdown next to your current folder name (<code>{FIRSTNAME}_test</code>), and then select <code>training_{USERNAME}</code> from the list of recent folders you’ve opened in this IDE. If you’ve never opened the <code>training_{USERNAME}</code> folder with this IDE, click <strong>Open Folder…</strong> (in <i class="fa-solid fa-p" aria-label="p"></i> Positron) or <strong>Open Project…</strong> (in <i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio) instead and navigate to that folder.</p>
+<p>In my case, I have some scripts that are empty but their names reflect steps in my code workflow that I think are likely enough to warrant making placeholder scripts. If we use our IDE to look at the files in the current working directory, we can see those files are all just loose in the folder I’m using for this project.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction_positron/folder-first-git_01-folder-positron.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/github_introduction_positron/folder-first-git_01-folder-positron.png" class="img-fluid" alt="Screen capture of Positron's 'explorer' tab with three files"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction_positron/folder-first-git_01-folder-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/github_introduction_positron/folder-first-git_01-folder-rstudio.png" class="img-fluid" alt="Screen capture of RStudio's 'files' pane with three files and the .Rproj file"></a></p>
+</div>
+</div>
+</div>
 </section>
 <section id="start-git" class="level3" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="start-git"><span class="header-section-number">5.2</span> Start Git</h3>
-<p>Now that we’re in the right folder, <strong>run <code>git init</code> <u>in the Terminal</u></strong>. This will return a message (also in the Terminal) saying something along the lines of <code>Initialized empty Git repository in...</code> followed by the absolute path to your chosen folder. Additionally, all the files listed in Positron’s Explorer tab will turn green and get an uppercase “U” next to them for “untracked.”</p>
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_02-git-init.png" alt="Screen capture of Positron's 'explorer' tab with three files that are registering as untracked by Git" width="60%">
-</p>
+<p>Now that we’re in the right folder, <strong>run <code>git init</code> <u>in the Terminal</u></strong>. This will return a message (also in the Terminal) saying something along the lines of <code>Initialized empty Git repository in...</code> followed by the absolute path to your chosen folder. Additionally, your IDE’s version control window should flag all of the files in the working directory as untracked.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio users may need to quit and re-open RStudio to get the “Git” pane to show up.</p>
+</div>
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction_positron/folder-first-git_02-git-init-positron.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/github_introduction_positron/folder-first-git_02-git-init-positron.png" class="img-fluid" alt="Screen capture of Positron's 'explorer' tab with three files that are registering as untracked by Git"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction_positron/folder-first-git_02-git-init-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/github_introduction_positron/folder-first-git_02-git-init-rstudio.png" class="img-fluid" alt="Screen capture of RStudio's 'git' pane with three scripts, the .gitignore, and a .Rproj file registering as untracked by Git"></a></p>
+</div>
+</div>
+</div>
 </section>
 <section id="tell-git-what-to-ignore" class="level3" data-number="5.3">
 <h3 data-number="5.3" class="anchored" data-anchor-id="tell-git-what-to-ignore"><span class="header-section-number">5.3</span> Tell Git What to Ignore</h3>
 <p>An absolutely critical component of version control with Git is what Git <em>doesn’t</em> track, not just what it <em>does</em> track. <strong>Git repositories each use a file called “.gitignore” to ‘decide’ what not to track.</strong> This is useful for many reasons but in particular the .gitignore will be a useful guardrail against tracking (A) large files or (B) files with sensitive information (e.g., passwords, private data).</p>
-<p>Any file or folder named in the .gitignore won’t show up in the Source Control of Positron (or its equivalents in other IDEs). This means that you don’t need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!</p>
-<p>In our earlier exercises, we’ve started repositories in GitHub with the template “.gitignore” file for R users but when adding Git tracking to an existing folder, we’ll need to add the “.gitignore” manually. In the Terminal, follow the instructions below based on your computer’s operating system</p>
+<p>Any file or folder named in the .gitignore won’t show up in the version control window of any IDE. This means that you don’t need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!</p>
+<p>In our earlier exercises, we’ve started repositories in GitHub with the template “.gitignore” file for R users but there are some slight differences when adding Git tracking to an existing folder.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> Mac / <i class="fa-brands fa-linux" aria-label="linux"></i> Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href=""><i class="fa-brands fa-windows" aria-label="windows"></i> Windows</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a>touch .gitignore</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1"><code>touch</code> is command line for ‘create this file’</span>
-</dd>
-</dl>
-</div>
-</div>
+<p>Positron does not add a “.gitignore” when you create a Git repository in that folder. So we’ll need to create one manually.</p>
+<p>In the Terminal, follow the instructions below based on your computer’s operating system.</p>
+<ul>
+<li>For <i class="fa-brands fa-apple" aria-label="apple"></i> Mac / <i class="fa-brands fa-linux" aria-label="linux"></i> Linux users: run <code>touch .gitignore</code></li>
+<li>For <i class="fa-brands fa-windows" aria-label="windows"></i> Windows users: run <code>copy NUL .gitignore</code>
+<ul>
+<li>If <code>copy NUL</code> does not work, try <code>touch</code> instead</li>
+</ul></li>
+</ul>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>copy NUL .gitignore</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">This is command line for ‘create this file’</span>
-</dd>
-</dl>
-</div>
-</div>
-<p>If <code>copy NUL</code> does not work, try <code>touch</code> instead.</p>
+<p>RStudio does create a “.gitignore” when you create a Git repository in a project but it is <em>very</em> limited relative to what we’d get from the GitHub template for R. So we’ll need to flesh it out.</p>
 </div>
 </div>
 </div>
-<p>Once you’ve created a “.gitignore” file, it will appear in Positron’s Explorer tab and you can:</p>
+<p>Once you have a “.gitignore” file:</p>
 <ol type="1">
-<li>Double click that file to open it</li>
+<li>Open the file in your IDE as you would any other file</li>
 <li>Go to the GitHub repository you made for Exercise 2
 <ul>
 <li>Likely <code>https://github.com/github-username/{firstname}_test</code></li>
@@ -1254,8 +1233,11 @@ Artwork by Allison Horst
 <ul>
 <li>Top right corner, just to the left of the pencil icon used to edit files directly in GitHub</li>
 </ul></li>
-<li>Return to the .gitignore in Positron</li>
-<li>Paste the contents of the <code>{firstname}_test</code> GitHub repository’s .gitignore into the new .gitignore that you just created</li>
+<li>Return to the .gitignore in your IDE</li>
+<li>Paste the contents of the <code>{firstname}_test</code> GitHub repository’s .gitignore into your local .gitignore that you have open
+<ul>
+<li>Overwriting <em>all</em> current contents if there are any</li>
+</ul></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1270,10 +1252,6 @@ Artwork by Allison Horst
 <p>The .gitignore templates curated by GitHub are generally pretty good so copy/pasting that content will usually set you up for success. Note that as you work more with Git/GitHub, you may develop your own template for a .gitignore that ignores files or folders you consistently use across projects. In that case, feel free to copy that .gitignore’s content instead of the generic GitHub template for your coding language.</p>
 </div>
 </div>
-<p>Once you’ve done that, you should see the .gitignore register in Positron as another untracked file.</p>
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_03-gitignore-content.png" alt="Screen capture of Positron's 'explorer' tab where an untracked '.gitignore' file is present" width="80%">
-</p>
 </section>
 <section id="double-check-gits-status" class="level3" data-number="5.4">
 <h3 data-number="5.4" class="anchored" data-anchor-id="double-check-gits-status"><span class="header-section-number">5.4</span> Double Check Git’s Status</h3>
@@ -1295,12 +1273,18 @@ nothing added to commit but untracked files present (use "git add" to track)</co
 <section id="stagecommit-your-files" class="level3" data-number="5.5">
 <h3 data-number="5.5" class="anchored" data-anchor-id="stagecommit-your-files"><span class="header-section-number">5.5</span> Stage/Commit Your Files</h3>
 <p>Now that we’re confident Git is set up correctly, we want to start Git tracking on the files that are in our folder. In this case, because we want to track all the files, we can <strong>run <code>git add .</code></strong> to stage all the files. If we only wanted to stage certain files, we could instead run <code>git add 01_harmonize.r</code> to stage one file at a time.</p>
-<p>Without Positron’s GUI, we could again run <code>git status</code> if we want to check whether staging worked as desired.</p>
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_04-stage.png" alt="Screen capture of Positron's 'explorer' tab where all untracked files are staged" width="80%">
-</p>
+<p>Without an IDE’s <u>G</u>raphical <u>U</u>ser <u>I</u>nterface (GUI), we could again run <code>git status</code> if we want to check whether staging worked as desired.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction_positron/folder-first-git_04-stage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/github_introduction_positron/folder-first-git_04-stage.png" class="img-fluid" alt="Screen capture of Positron's 'explorer' tab where all untracked files are staged"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction_positron/folder-first-git_02-git-init-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/github_introduction_positron/folder-first-git_02-git-init-rstudio.png" class="img-fluid" alt="Screen capture of RStudio's 'git' pane with three scripts, the .gitignore, and a .Rproj file registering as untracked by Git"></a></p>
+</div>
+</div>
+</div>
 <p>Once we’ve staged the files that we want to be included in this first commit, we can <strong>commit all staged files by running <code>git commit -m "initial commit"</code> in the Terminal.</strong> Note that it’s good practice to replace “initial commit” with something that is more informative and specific.</p>
-<p>Once we’ve made that commit, Positron’s GUI will remove the “U” next to all of the files that were commmitted (in this case, that’s all of the files in the folder).</p>
 <p align="center">
 <img src="images/github_introduction_positron/folder-first-git_05-commit.png" alt="Screen capture of Positron's 'explorer' tab where all files are tracked by Git with no changes since the last commit" width="80%">
 </p>
@@ -1321,14 +1305,21 @@ Date:   Fri Feb 13 15:52:44 2026 -0500
 <ol type="1">
 <li>Scroll down to the <strong>…or push an existing repository from the command line</strong> section</li>
 <li>Copy the whole code chunk beneath that heading</li>
-<li>Run that code in Positron’s Terminal</li>
+<li>Run that code in the Terminal</li>
 </ol>
-<p>After you’ve done that, if you refresh the page on the GitHub repository, you should see the files you just committed!</p>
+<p>After you’ve done that, if you refresh the page on the GitHub repository, you should see the files that you just committed!</p>
 <p><img src="images/github_introduction_positron/folder-first-git_07-gh-repo.png" alt="Screen capture of a GitHub repository with a number of files added in a single commit" width="100%"></p>
-<p>Similarly, your Positron Source Control tab will now look like it did in the previous exercises and will include the commit we made via the command line.</p>
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_08-positron.png" alt="Screen capture of Positron's 'source control' tab with no files showing as being changed" width="60%">
-</p>
+<p>Similarly, your IDE’s version control window will now look like it did in the previous exercises and will include the commit we made via the command line.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction_positron/folder-first-git_08-positron.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/github_introduction_positron/folder-first-git_08-positron.png" class="img-fluid" alt="Screen capture of Positron's 'source control' tab with no files showing as being changed"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction_positron/folder-first-git_08-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="images/github_introduction_positron/folder-first-git_08-rstudio.png" class="img-fluid" alt="Screen capture of RStudio's 'git' pane with no files showing as being changed"></a></p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

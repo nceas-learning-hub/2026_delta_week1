@@ -95,6 +95,17 @@ format: html
     document).
     
 :::{.callout-tip appearance="simple" icon=false}
+```
+## Introduction
+
+In this literate analysis, we:
+
+*  Load the data
+*  Calculate summary statistics
+*  Plot the results
+
+... etc
+```
 :::
 
 -   **Code chunks** - executable code blocks (the grey areas), opened

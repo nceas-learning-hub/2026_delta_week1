@@ -120,18 +120,18 @@ y <- 1 + 1
     {{< fa arrow-right >}} **Quarto Document**.
 2.  Give it a title (e.g., "Introduction to Quarto"), leave the other
     options as-is, then click **Create**.
-3.  Look at what you get: a YAML header at the top, with title and format, and a blank canvas below.
+3.  Look at what you get: a YAML header at the top, with title and format, and perhaps some example content below.
     
 #### Positron
 
 1.  In Positron, go to **File** {{< fa arrow-right >}} **New File**
     {{< fa arrow-right >}} **Quarto Document**.
-2.  Look at what you get: a YAML header at the top for title and format, and a blank canvas below.
+2.  Look at what you get: a YAML header at the top for title and format, and perhaps some example content below.
 3.  Fill in the title (e.g., "Introduction to Quarto")
 
 :::
 
-Below the YAML header, let's add some content.  Type or copy/paste so your document looks like this:
+Below the YAML header, if your default is a blank canvas, let's add some content.  Type or copy/paste so your document looks like this:
 
 :::{.callout-note collapse="true"}
 
@@ -146,25 +146,24 @@ format: html
 ```
 ## Quarto
 
-### Markdown section
-In this section, include prose text formatted using Markdown syntax.
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
-### Code chunks
+## Running Code
 
-You can also include code chunks:
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
 ```
-```{{r basic math}}
-x <- 1 + 1
-x
+```{{r}}
+1 + 1
 ```
 ```
-## Including Plots
-
-You can also embed plots, for example:
+You can add options to executable code like this 
 ```
-```{{r pressure plot}}
+```{{r}}
 #| echo: false
-plot(pressure)
+2 * 2
+```
+```
+The `echo: false` option disables the printing of code (only output is displayed).
 ```
 :::
 
@@ -179,7 +178,43 @@ You'll see an HTML file appear in your browser. Notice:
 
 ### YAML header
 
-???
+The YAML header (top of page, everything between the two `---` lines) is metadata with information on the document and instructions on how to render it.  There are way too many options to list, but a few common options include:
+
+```yaml
+---
+title: "My Analysis"
+author: "Your Name"
+format: 
+  html: # <1>
+    toc: true # <2>
+    number-sections: true # <3>
+execute:
+  message: false # <4>
+  warning: false # <5>
+---
+```
+1. Output format (html, pdf, docx, etc.)
+2. Include a table of contents in the HTML output
+3. Number section headers in the HTML output
+4. Suppress messages from all code chunks by default (can be overridden in individual chunks)
+5. Suppress warnings from all code chunks by default (can be overridden in individual chunks)
+
+::: {.callout-warning appearance="simple"}
+
+Unlike in R, indentation is critical in YAML to show which lines are subsets of other lines.  If your document doesn't render because of YAML errors, check the spacing and indents!
+:::
+
+:::{.callout-tip}
+### Standalone HTML Outputs!
+
+By default when rendering a Quarto document as HTML, Quarto tends to save output images separately from the HTML file, along with CSS resources and other information. This can make it difficult to share the HTML file with collaborators, since the images (etc.) won't be included.  In the `format:` portion of the YAML header, use the `embed-resources` option to make a self-contained HTML with all resources embedded, for easier sharing:
+
+```yaml
+format:
+  html:
+    embed-resources: true
+```
+:::
 
 ### Markdown Syntax
 
@@ -306,30 +341,33 @@ summary(my_data)
 
 Many more code chunk options can be found at [Quarto.org](https://quarto.org/docs/computations/execution-options.html).
 
-## Practice: Literate Analysis with ocean water samples
+## Practice: Literate Analysis with Ocean Water Samples
 
-!!! Make this standalone - include directions on downloading the data!
-Let's build a simple but complete literate analysis in Quarto using real data. We are going to work with the seawater chemistry data. We are going to use the `BGchem2008data.csv` data we downloaded in our previous session.
+Let's build a simple but complete literate analysis in Quarto using real data. We are going to work with seawater chemistry data, `BGchem2008data.csv`, downloaded from the Arctic Data Center.
 
-<!-- download a file named `BGchem2008data.csv` from the Arctic Data Center repository. Please follow the steps below to download the data and then upload to your RStudio Server `data` folder. -->
+### Get The Data!
 
-### Getting Started
+If you don't already have this data, download it to the appropriate location:
 
-<!-- ::: callout-tip -->
+::: {.panel-tabset}
 
-<!-- #### Set up -->
+#### Set up: local
 
-<!-- 1.  Navigate to this dataset by Craig Tweedie that is published on the Arctic Data Center. [Craig Tweedie. 2009. North Pole Environmental Observatory Bottle Chemistry. Arctic Data Center. doi:10.18739/A25T3FZ8X.](http://doi.org/10.18739/A25T3FZ8X) -->
+1.  Navigate to this dataset by Craig Tweedie that is published on the Arctic Data Center. [Craig Tweedie. 2009. North Pole Environmental Observatory Bottle Chemistry. Arctic Data Center. doi:10.18739/A25T3FZ8X.](http://doi.org/10.18739/A25T3FZ8X)
+2.  Find the csv file called `BGchem2008data.csv` and click the "download" button next to the file.
+3.  Find the downloaded file on your computer and move it to the `data` directory in your R project.
+4.  Check your file was successfully relocated by navigating into your `data` folder in the **Files** pane.
 
-<!-- 2.  Download the first csv file called `BGchem2008data.csv` by clicking the "download" button next to the file. -->
+#### Set up: server
 
-<!-- 3. Click the "Upload" button in your RStudio server file browser. -->
+1.  Navigate to this dataset by Craig Tweedie that is published on the Arctic Data Center. [Craig Tweedie. 2009. North Pole Environmental Observatory Bottle Chemistry. Arctic Data Center. doi:10.18739/A25T3FZ8X.](http://doi.org/10.18739/A25T3FZ8X)
+2.  Find the csv file called `BGchem2008data.csv` and click the "download" button next to the file.
+3. Click the "Upload" button in your RStudio server file browser.
+4. In the dialog box, make sure the destination directory is the `data` directory in your R project, click "Choose File," and locate the `BGchem2008data.csv` file. Press "OK" to upload the file.
+5. Check your file was successfully uploaded by navigating into your `data` folder in the **Files** pane.
+:::
 
-<!-- 3. In the dialog box, make sure the destination directory is the `data` directory in your R project, click "Choose File," and locate the `BGchem2008data.csv` file. Press "OK" to upload the file. -->
-
-<!-- 4. Check your file was successfully uploaded by navigating into your `data` folder in the **Files** pane. -->
-
-### A better workflow for writing literate analyses
+### A Better Workflow for Writing Literate Analyses
 
 Experienced R users sometimes struggle to transition to Quarto because writing prose *and* code at the same time feels unfamiliar. A helpful approach:
 
@@ -338,7 +376,7 @@ Experienced R users sometimes struggle to transition to Quarto because writing p
 3. Fill in the actual code under each bullet, then convert the bullets to prose.
 
 :::{.callout-exercise}
-For this analysis, structure your document like this, using Markdown headers below the YAML header:
+For this analysis, create a new Quarto document; delete anything below the YAML header and structure your document like this, using Markdown headers:
 
 * Introduction
     * About the Data
@@ -353,7 +391,7 @@ For this analysis, structure your document like this, using Markdown headers bel
 Under "About the Data", write a sentence describing the dataset with a hyperlink to its source, and note when it was downloaded.
 :::
 
-### Setup: Loading packages
+### Setup: Loading Packages
 
 Add a code chunk under your Setup header to load the packages you'll need:
 
@@ -365,34 +403,41 @@ library(here)  # <2>
 2. `here` package to build file paths relative to your project root
 
 :::{.callout-tip}
-## Best Practice! 
+#### Best Practice! 
 
 Put all `library()` calls (or other package management, e.g., `librarian::shelf()`) in one chunk near the top of your document so collaborators immediately know what packages to install.
 :::
 
 :::{.callout-tip}
-## Another Best Practice!
+#### Another Best Practice!
 
 Name your code chunks for easy searching (such as `{r setup}` above), and R will display the names so you can track progress as the Quarto document renders!
 :::
 
-### Reading in data
+### Read In Data
 
-Use `read_csv()` with `here()` to load your data. The `here()` function builds file paths relative to your project root, which keeps things reproducible regardless of where your `.qmd` file lives within the project (including if you move it to a new location within the project!).
+Create a new code chunk under "Read in data" (and give it a helpful name!).  Use `read_csv()` with `here()` to load your data. The `here()` function builds file paths relative to your project root, which keeps things reproducible regardless of where your `.qmd` file lives within the project (including if you move it to a new location within the project!).
 
+<!-- This chunk displays to the reader to point toward their local copy: -->
 ```r
 bg_chem <- read_csv(here::here("data/BGchem2008data.csv"))
+```
+<!-- This chunk reads the data from the right directory for tutorial purposes: -->
+```{r}
+#| echo: false
+library(readr)
+bg_chem <- read_csv(here::here('data/r_quarto_literate_analysis/BGchem2008data.csv'))
 ```
 
 :::{.callout-exercise}
 `read_csv()` prints a column specification message when it runs. How would you suppress this from appearing in your rendered output? 
 
 ::::{.callout-hint}
-Check the code chunk options above!  Alternately, check the documentation for `read_csv()` (`?read_csv`) to see an option for suppressing this behavior!
+Check the code chunk options above!  Alternately, check the documentation for `read_csv()` (i.e., `?read_csv`) to see an option for suppressing this behavior!
 ::::
 :::
 
-### Exploring your data
+### Explore Your Data
 
 Before any analysis, get familiar with the data. Create a chunk with `#| eval: false` and `#| echo: false` for exploratory code you don't want in the final report:
 
@@ -413,7 +458,7 @@ The **Redfield ratio** is the consistent 16:1 ratio of nitrogen to phosphorous f
 
 First, calculate mean values for the key variables:
 
-```r
+```{r}
 nitrate <- mean(bg_chem$NO3)
 nitrite <- mean(bg_chem$NO2)
 amm     <- mean(bg_chem$NH4)
@@ -422,27 +467,28 @@ phos    <- mean(bg_chem$P)
 
 Then calculate the ratio:
 
-```r
+```{r}
 ratio <- (nitrate + nitrite + amm) / phos
 ```
 
-### Inline R code
+### Report Result with Inline R code
 
-You can embed R results directly in your prose using backtick syntax: `` `r round(ratio)` ``. For example, write this in your document:
+You can embed R results directly in your prose using backtick syntax: `` `{{r}} round(ratio)` ``. For example, write this in your document:
 
 ```
-The Redfield ratio for this dataset is approximately `r round(ratio)`.
+The Redfield ratio for this dataset is approximately `{{r}} round(ratio)`.
 ```
 
 It will render as: *The Redfield ratio for this dataset is approximately 6.*
 
-This is much better than evaluating code, copying a number, and pasting it into your text — especially when data changes.
+This is much better than evaluating code, copying a number, and pasting it into your text - especially when data changes.
 
 ### Plot the data
 
 Finally, create a simple plot of individual measurements:
 
-```r
+<!-- This chunk relies on the loaded data from above -->
+```{r}
 plot(bg_chem$P, bg_chem$NO2 + bg_chem$NO3 + bg_chem$NH4)
 ```
 
@@ -450,43 +496,46 @@ plot(bg_chem$P, bg_chem$NO2 + bg_chem$NO3 + bg_chem$NH4)
 Decide whether you want the plot code to appear in the rendered output alongside the figure, and add the appropriate chunk option. Then render your document.
 :::
 
-## FAQ style section?
+## FAQuarto
 
 ### Quarto and Environments
 
-Quarto renders documents in a **fresh R environment** — completely separate from your interactive RStudio session. This is what makes Quarto so powerful for reproducibility, but it can also cause confusion.
+Quarto renders documents in a **fresh R environment** - completely separate from your interactive RStudio session. This is what makes Quarto so powerful for reproducibility, but it can also cause confusion.
 
 **Try this:**
 
 1. Restart your R session (**Session > Restart R**).
 2. Try running just the last code chunk (the plot). You'll get an error because `bg_chem` doesn't exist yet.
-3. Now use **Run > Run All** to run chunks in order — this works.
+3. Now use **Run > Run All** to run chunks in order - this works.
 4. Finally, click **Render**. Notice that the environment pane is empty afterward, even though the document rendered successfully.
 
-When you press Render, RStudio spins up a fresh session, runs everything top-to-bottom, generates the output, then closes. This is a feature: it forces your document to be self-contained. A common gotcha is running `library()` in the console during development but forgetting to include it in the document — Render will fail because the fresh environment doesn't have that package loaded.
+When you press _Render_, RStudio spins up a fresh session, runs everything top-to-bottom, generates the output, then closes. This is a feature: it forces your document to be self-contained. A common gotcha is running `library()` in the console during development but forgetting to include it in the document - _Render_ will fail because the fresh environment doesn't have that package loaded.
 
-**Rule of thumb:** If your document renders successfully, it's reproducible. Get into the habit of rendering regularly during development.
+:::{callout-tip} 
+### Reproducibility!
+
+If your document renders successfully, it's reproducible. Get into the habit of rendering regularly during development.
+:::
 
 ### When to Use R Scripts vs. Quarto
 
-Quarto doesn't replace R scripts — both have their place.
+Quarto doesn't replace R scripts - both have their place.
 
-Use **Quarto** for analyses you want to explain, share, or publish: the code, results, and interpretation all belong together.
-
-Use **R scripts** for reusable utility functions, repetitive data cleaning steps that don't need much explanation, or code you'll `source()` from multiple projects.
+* Use **Quarto** for analyses you want to explain, share, or publish: the code, results, and interpretation all belong together.
+* Use **R scripts** for reusable utility functions, repetitive data cleaning steps that don't need much explanation, or code you'll `source()` from multiple projects.
 
 In practice, a single project often has both: helper scripts stored in a folder, and a primary `.qmd` that sources those scripts and presents the analysis narratively.
 
 ### Additional Resources
 
-- [Quarto.org](https://quarto.org) — official documentation
-- [R for Data Science (2e)](https://r4ds.hadley.nz), Chapters 29–30 — Quarto in depth
-- [Quarto Gallery](https://quarto.org/docs/gallery/) — examples of different output types
-- [Hello Quarto](https://mine.quarto.pub/hello-quarto/) — talk by Julia Stewart Lowndes and Mine Çetinkaya-Rundel
+- [Quarto.org](https://quarto.org) - official documentation
+- [R for Data Science (2e)](https://r4ds.hadley.nz), Chapters 29–30 - Quarto in depth
+- [Quarto Gallery](https://quarto.org/docs/gallery/) - examples of different output types
+- [Hello Quarto](https://mine.quarto.pub/hello-quarto/) - talk by Julia Stewart Lowndes and Mine Çetinkaya-Rundel
 
 ### Troubleshooting: Can't Render to PDF?
 
-PDF rendering requires a LaTeX installation. If you don't have one, the easiest fix is `tinytex`:
+PDF rendering requires a LaTeX installation. If you don't have one, the easiest fix is `tinytex` (type this in the R Console, not a script):
 
 ```r
 install.packages("tinytex")

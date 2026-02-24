@@ -114,7 +114,7 @@ y <- 1 + 1
 
 :::{.panel-tabset}
 
-#### RStudio
+#### {{< fa brands r-project >}} RStudio
 
 1.  In RStudio, go to **File** {{< fa arrow-right >}} **New File**
     {{< fa arrow-right >}} **Quarto Document**.
@@ -122,7 +122,7 @@ y <- 1 + 1
     options as-is, then click **Create**.
 3.  Look at what you get: a YAML header at the top, with title and format, and perhaps some example content below.
     
-#### Positron
+#### {{< fa p >}} Positron
 
 1.  In Positron, go to **File** {{< fa arrow-right >}} **New File**
     {{< fa arrow-right >}} **Quarto Document**.
@@ -249,8 +249,8 @@ Quarto includes a **Visual Editor** that lets you format text visually, like a w
 
 To toggle between Visual Editor and Source Editor mode:
 
-* RStudio: Click the "Visual" button (vs. "Source") at the top right of the editor pane.
-* Positron: Command-Shift-F4 (Mac) or Ctrl-Shift-F4 (Windows).
+* {{< fa brands r-project >}} RStudio: Click the "Visual" button (vs. "Source") at the top right of the editor pane.
+* {{< fa p >}} Positron: Command-Shift-F4 (Mac) or Ctrl-Shift-F4 (Windows).
 
 ::: callout-exercise
 Enable Visual Editor mode.
@@ -270,8 +270,8 @@ Code chunks contain functional code to be executed.  Markdown syntax will not wo
 
 -   Go to Code in the top menu bar, click "Insert Chunk"
 -   Use the keyboard shortcut
-    -   RStudio: Mac: Command-Option-i or  Windows: Ctrl-Alt-i
-    -   Positron: Mac: Command-Shift-i or  Windows: Ctrl-Shift-i
+    -   {{< fa brands r-project >}} RStudio: Mac: Command-Option-i or  Windows: Ctrl-Alt-i
+    -   {{< fa p >}} Positron: Mac: Command-Shift-i or  Windows: Ctrl-Shift-i
 -   Type by hand:
 
 ```{{r}}
@@ -282,7 +282,7 @@ Code chunks contain functional code to be executed.  Markdown syntax will not wo
 All the R code in your Quarto document will execute when you Render the document, but you can also run it on the fly ("interactive" mode) to test and debug it as you write.
 
 ::: {.panel-tabset}
-##### RStudio
+##### {{< fa brands r-project >}} RStudio
 
 Multiple options to run code; here are a few:
 
@@ -292,7 +292,7 @@ Multiple options to run code; here are a few:
     c.  keyboard shortcut: Command-Enter or Ctrl-Enter
 2.  Click the green arrow at the right of the code chunk to run the entire chunk.
 
-##### Positron
+##### {{< fa p >}} Positron
 
 Multiple options to run code; here are a few:
 
@@ -312,7 +312,7 @@ hights_ft <- c(5.2, 6.0, 5.7)
 coef <- 3.14
 ```
 
-Run the code in interactive mode, and examine the values in the Environment pane (RStudio) or Session Variables pane (Positron).
+Run the code in interactive mode, and examine the values in the Environment pane ({{< fa brands r-project >}} RStudio) or Session Variables pane ({{< fa p >}} Positron).
 :::
 
 #### Code chunk options

@@ -1071,11 +1071,55 @@ Artwork by Allison Horst
 </section>
 <section id="making-a-commit" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="making-a-commit"><span class="header-section-number">4.2</span> Making a Commit</h3>
-<p>Now that we have seen the changes from the past, let’s go ahead and make some new changes in Positron. Close the diff file we had open then click back to the “File Explorer” tab and double click the README file to open it. While adding the purpose statement was nice addition, the top of the README is still looking very template-y, let’s customize it a bit.</p>
-<p>Go ahead and give the README a more informative title (that’s the text after a single <code>#</code>) and expand the first line of the description to add some more context. After you’ve done this your README should look something like the following.</p>
-<p><img src="images/github_introduction_positron/positron-commit_01-edit.png" alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified" width="100%"></p>
+<p>Now that we have seen the changes from the past, let’s go ahead and make some new changes in our IDE. Close the history file we had open then open the actual README.md file.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Go to “File Explorer” tab and double click the README file to open it.</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Go to the “Files” pane and click the README to open it.</p>
+</div>
+</div>
+</div>
+<p>While adding the purpose statement was nice addition, the top of the README is still looking very template-y, let’s customize it a bit. Go ahead and <strong>(1) give the README a more informative title and (2) expand the first line of the description to add some more context.</strong> After you’ve done this your README should look something like the following.</p>
+<div class="callout callout-style-default callout-hint no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hint</span>Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-hint">
+<p>Recall that headers are any line that starts with at least one <code>#</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction_positron/positron-commit_01-edit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/github_introduction_positron/positron-commit_01-edit.png" class="img-fluid" alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified"></a></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction_positron/rstudio-commit_01-edit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/github_introduction_positron/rstudio-commit_01-edit.png" class="img-fluid" alt="Screen capture of RSTudio with the README file opened"></a></p>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p>Note that once you edit and save the README, the file’s name (both in the Explorer tab list and in the top of Positron) will turn orange and have a capital “M” to the right of the filename. This is Git letting you know that the file has been modified from the most recent version. Additionally, the Source Control tab will get a red circle with a “1,” indicating that the state of one file in the version controlled repository has changed.</p>
-<p>If you head over to the Source Control tab, you’ll see that the README now appears under the “Changes” list.</p>
+<p>If you <strong>head over to the Source Control tab</strong>, you’ll see that the README now appears under the “Changes” list.</p>
 <p align="center">
 <img src="images/github_introduction_positron/positron-commit_02-source-control.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%">
 </p>
@@ -1098,8 +1142,31 @@ Artwork by Allison Horst
 <p align="center">
 <img src="images/github_introduction_positron/positron-commit_05-sync.png" alt="Screen capture of Positron's 'source control' tab where no files are showing as changed or staged" width="70%">
 </p>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>If you <strong>head over to the Git pane</strong>, you’ll see that the README now appears there with a <strong><span style="color:blue">blue</span></strong> “M”. That “M” stands for “modified”</p>
+<p align="center">
+<img src="images/github_introduction_positron/rstudio-commit_02-git.png" alt="Screen capture of RStudio's 'Git' pane with the README file listed next to blue capital 'M'" width="70%">
+</p>
+<p>Once you are there, <strong>check the box next to the README</strong> under the “Staged” heading. <em>Clicking that button is analogous to using the Git command, <code>git add README.md</code>, in the command line.</em></p>
+<p>After you check the box, you can <strong>click either of the two left-most buttons in the Git pane.</strong> In the resulting pop-up menu (which looks imilar to the history menu), you can now add a commit message and then click the “Commit” button when you’re ready to do so. <em>This is analogous to using the Git command, <code>git commit -m "my commit message"</code>, in the command line.</em></p>
+<p><a href="images/github_introduction_positron/rstudio-commit_03-stage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/github_introduction_positron/rstudio-commit_03-stage.png" class="img-fluid" alt="Screen capture of RStudio's commit menu with the README file staged and an informative commit message in the respective text field"></a></p>
+<p>Once you do that, you can <strong>close this menu</strong> and two things should become apparent:</p>
+<ul>
+<li>The README is <em>no longer</em> listed in the Git pane</li>
+<li>There is a new message just beneath the buttons of the Git pane saying something like <code>Your branch is ahead of 'origin/main' by 1 commit</code>.</li>
+</ul>
+<p>This means that your commit worked!</p>
+<p align="center">
+<img src="images/github_introduction_positron/rstudio-commit_04-commit.png" alt="Screen capture of RStudio's 'Git' pane showing that the local repository is one commit ahead of the remote" width="70%">
+</p>
+<p>Go ahead and <strong>click the Pull button</strong>; it is a downward-facing <strong><span style="color:blue">blue</span></strong> arrow (<span style="color:blue"><i class="fa-solid fa-down-long" aria-label="down-long"></i></span>). You should get a message that says <code>Already up to date</code>. This is because you’re working alone but <u>when collaborating <em>it is important to pull early and often</em> to ensure that you’re working on the latest version of all files</u>.</p>
+<p>Now that you’ve pulled, you can <strong>click the Push button</strong>; it is an upward-facing <strong><span style="color:green">green</span></strong> arrow (<span style="color:green"><i class="fa-solid fa-up-long" aria-label="up-long"></i></span>). This button will send your local commit ‘up’ to your remote repository.</p>
+</div>
+</div>
+</div>
 <p>If you navigate back to your remote repository on GitHub, you should see the edits to your README and the most recent commit will be the one you just made. Note that sometimes you have to refresh the page or wait a few seconds for those updates to be visible on GitHub.</p>
-<p><img src="images/github_introduction_positron/positron-commit_06-updated-remote.png" alt="Screen capture of a GitHub repository's landing page with a new commit" width="100%"></p>
+<p><a href="images/github_introduction_positron/positron-commit_06-updated-remote.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/github_introduction_positron/positron-commit_06-updated-remote.png" class="img-fluid" alt="Screen capture of a GitHub repository's landing page with a new commit"></a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1144,9 +1211,9 @@ Artwork by Allison Horst
 <p>Any file or folder named in the .gitignore won’t show up in the Source Control of Positron (or its equivalents in other IDEs). This means that you don’t need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!</p>
 <p>In our earlier exercises, we’ve started repositories in GitHub with the template “.gitignore” file for R users but when adding Git tracking to an existing folder, we’ll need to add the “.gitignore” manually. In the Terminal, follow the instructions below based on your computer’s operating system</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> Mac / <i class="fa-brands fa-linux" aria-label="linux"></i> Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href=""><i class="fa-brands fa-windows" aria-label="windows"></i> Windows</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> Mac / <i class="fa-brands fa-linux" aria-label="linux"></i> Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href=""><i class="fa-brands fa-windows" aria-label="windows"></i> Windows</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a>touch .gitignore</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
@@ -1159,7 +1226,7 @@ Artwork by Allison Horst
 </div>
 </div>
 </div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>copy NUL .gitignore</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">

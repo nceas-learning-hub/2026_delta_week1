@@ -1013,7 +1013,7 @@
     "href": "s09_r_quarto_literate_analysis.html#structure-of-a-quarto-document",
     "title": "Literate Analysis with Quarto",
     "section": "3 Structure of a Quarto Document",
-    "text": "3 Structure of a Quarto Document\nEvery Quarto document has three components:\n\nYAML header - metadata at the very top of the file, enclosed in ---. It controls the document title, author, output format, and a lot more.\n\n\n\n\n\n\n\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\nformat: html\n---\n\n\n\n\nProse - plain text written in Markdown (the white areas of the document).\n\n\n\n\n\n\n\n\n\n\n\n\nCode chunks - executable code blocks (the grey areas), opened with ```{r} and closed with ```.\n\n\n\n\n\n\n\n```{r}\nx &lt;- \"Hello world!\"\ny &lt;- 1 + 1\n```",
+    "text": "3 Structure of a Quarto Document\nEvery Quarto document has three components:\n\nYAML header - metadata at the very top of the file, enclosed in ---. It controls the document title, author, output format, and a lot more.\n\n\n\n\n\n\n\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\nformat: html\n---\n\n\n\n\nProse - plain text written in Markdown (the white areas of the document).\n\n\n\n\n\n\n\n## Introduction\n\nIn this literate analysis, we:\n\n*  Load the data\n*  Calculate summary statistics\n*  Plot the results\n\n... etc\n\n\n\n\nCode chunks - executable code blocks (the grey areas), opened with ```{r} and closed with ```.\n\n\n\n\n\n\n\n```{r}\nx &lt;- \"Hello world!\"\ny &lt;- 1 + 1\n```",
     "crumbs": [
       "Day 3",
       "Literate Analysis with Quarto"

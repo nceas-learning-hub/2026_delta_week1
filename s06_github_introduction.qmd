@@ -15,7 +15,7 @@ After completing this session, you will be able to:
 ## Introduction to Version Control
 
 <p align="center">
-<img src="images/github_introduction_positron/phd_comics_final.png" alt="Comic of a grad student naming a document 'final' before needing to iteratively revise resulting in a series of progressively less interpretable 'final' filenames" width="70%"/>
+<img src="images/github_introduction/phd_comics_final.png" alt="Comic of a grad student naming a document 'final' before needing to iteratively revise resulting in a series of progressively less interpretable 'final' filenames" width="70%"/>
 </p>
 
 Every file changes throughout the scientific process. Manuscripts are edited. Figures get revised. Code gets fixed when bugs are discovered. Sometimes those fixes lead to even more bugs, leading to more changes in the code base. Data files get combined. Those same files are split and combined again. In just one research project, we can expect thousands of changes!
@@ -39,7 +39,7 @@ The version control system we'll be diving into is Git, the most widely used mod
 
 Let's start with a motivating example that's representative of the types of problems Git can help us solve.
 
-[Full Screen](slides/github_introduction/slides1_motivating_example.html)
+[Full Screen](slides/github_introduction/slides1_motivating_example.html){target="_blank"}
 
 ```{=html}
 <iframe class="slide-deck" src="slides/github_introduction/slides1_motivating_example.html" style="border: 1px solid #2e3846;"></iframe>
@@ -54,11 +54,11 @@ Let's start with a motivating example that's representative of the types of prob
 - **Assign meaningful tags** to specific versions of our code.
 - **Multiple individuals can work on the same analysis concurrently** on their own computers, with the ability to merge everyone's changes together.
 
-### What _Exactly_ are Git and GitHub?
+### What Exactly are Git and GitHub?{.tabset}
 
 #### Git: an open-source **version control** software {.unnumbered}
 
-<img src="images/github_introduction_positron/git-intro.png" alt="Cartoon of a desktop computer containing the Git logo" width="30%" align="right"/>
+<img src="images/github_introduction/git-intro.png" alt="Cartoon of a desktop computer containing the Git logo" width="30%" align="right"/>
 
 -  designed to manage the versioning and tracking of files and project history
 -  **operates locally** on your computer, allowing you to create repositories and track changes
@@ -68,7 +68,7 @@ Let's start with a motivating example that's representative of the types of prob
 
 #### GitHub: an **online platform** and service built around Git {.unnumbered}
 
-<img src="images/github_introduction_positron/github-intro.png" alt="Cartoon of a cloud labeled 'GitHub' with the GitHub logo" width="30%" align="right"/>
+<img src="images/github_introduction/github-intro.png" alt="Cartoon of a cloud labeled 'GitHub' with the GitHub logo" width="30%" align="right"/>
 
 -  provides a **centralized hosting platform for Git repositories**
 -  allows us to store, manage, and collaborate on Git repositories in the cloud
@@ -91,7 +91,7 @@ As you use Git commands to capture versions or "snapshots" of your work, those v
 Here is our example folder / Git repository represented visually:
 
 <p align="center">
-<img src="images/github_introduction_positron/git-repo.png" alt="Diagram of a local Git repository with a CSV, R script, and '.git' folder in the project directory" width="100%"/>
+<img src="images/github_introduction/git-repo.png" alt="Diagram of a local Git repository with a CSV, R script, and '.git' folder in the project directory" width="100%"/>
 </p>
 
 #### How Do I Tell Git to Preserve Versions of My Local Working Files?
@@ -109,7 +109,7 @@ Generally, that workflow looks something like this:
 The last step is synchronizing the changes made to our local repository with a remote repository (this remote repository is often stored on GitHub). The `git push` command is used to send local commits up to a remote repository. The `git pull` command is used to fetch changes from a remote repository and merge them into the local repository -- **pull**ing will become a regular part of your workflow when collaborating with others, or even when working alone but on different machines (e.g. a laptop at home and a desktop at the office).
 
 <p align="center">
-<img src="images/github_introduction_positron/allison-horst-git-workflow.png" alt="A basic Git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled PULL')" width="90%"/>
+<img src="images/github_introduction/allison-horst-git-workflow.png" alt="A basic Git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled PULL')" width="90%"/>
 <figcaption>Artwork by Allison Horst</figcaption>
 </p>
 
@@ -117,21 +117,15 @@ The last step is synchronizing the changes made to our local repository with a r
 
 This screen shows the copy of a repository stored on GitHub, with its list of files, when the files and directories were last modified, and some information on who made the most recent changes.
 
-<p align="center">
-<img src="images/github_introduction_positron/gh-repo_home.png" alt="Screen capture of a GitHub repository's landing page" width="100%"/>
-</p>
+![](images/github_introduction/gh-repo_home.png){.lightbox fig-alt="Screen capture of a GitHub repository's landing page"}
 
-If we drill into the "commits" for the repository (by clicking the "Commits" button just beneath the colored "Code" dropdown menu), we can see the history of changes made to all of the files. Looks like `kellijohnson` was working on the project and fixing errors in December:
+If we drill into the "commits" for the repository (by clicking the "Commits" button just beneath the colored "Code" dropdown menu), we can see the history of changes made within this repository, including the author, date, and commit message for each commit.
 
-<p align="center">
-<img src="images/github_introduction_positron/gh-repo_commits.png" alt="Screen capture of a GitHub repository's page showing the history of the commits in the repository" width="100%"/>
-</p>
+![](images/github_introduction/gh-repo_commits.png){.lightbox fig-alt="Screen capture of a GitHub repository's page showing the history of the commits in the repository"}
 
 And finally, if we drill into a particular commit, we can see exactly what was changed in each file that was included in that commit:
 
-<p align="center">
-<img src="images/github_introduction_positron/gh-repo_diff.png" alt="Screen capture of a GitHub repository's page showing the 'diff' of files edited in a particular commit" width="100%"/>
-</p>
+![](images/github_introduction/gh-repo_diff.png){.lightbox fig-alt="Screen capture of a GitHub repository's page showing the 'diff' of files edited in a particular commit"}
 
 Tracking these changes, how they relate to released versions of software and files is exactly what Git and GitHub are good for. And we will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow.
 
@@ -176,7 +170,7 @@ Git has a rich set of commands and features, and there are many more terms beyon
 
 #### Other Terms
 
-This table includes terms for which there are not specific Git commands.
+This table includes terms for which there **are not specific Git commands.**
 
  Term | Definition |
 |:---:|:-------------------------|
@@ -204,8 +198,8 @@ This table includes terms for which there are not specific Git commands.
 If you were successful, it should look something like this:
 
 <p align="center">
-<img src="images/github_introduction_positron/new-repo_p1.png" alt="Screen capture of the top half of the page on GitHub that allows a user to create a new repository" width="80%"/>
-<img src="images/github_introduction_positron/new-repo_p2.png" alt="Screen capture of the bottom half of the page on GitHub that allows a user to create a new repository" width="80%"/>
+<img src="images/github_introduction/new-repo_p1.png" alt="Screen capture of the top half of the page on GitHub that allows a user to create a new repository" width="80%"/>
+<img src="images/github_introduction/new-repo_p2.png" alt="Screen capture of the bottom half of the page on GitHub that allows a user to create a new repository" width="80%"/>
 </p>
 
 You've now created your first repository! It has a couple of files that GitHub created for you: `README.md`, `LICENSE`, and `.gitignore`. 
@@ -215,7 +209,7 @@ You've now created your first repository! It has a couple of files that GitHub c
 You should always add a `README.md` to the root directory of your repository -- it is a markdown file that is rendered as HTML and displayed on the landing page of your repository. This is a common place to include any pertinent information about what your repository contains, how to use it, etc.
 :::
 
-<img src="images/github_introduction_positron/new-repo_home.png" alt="Screen capture of the main landing page for a brand new GitHub repository" width="100%"/>
+<img src="images/github_introduction/new-repo_home.png" alt="Screen capture of the main landing page for a brand new GitHub repository" width="100%"/>
 
 For simple changes to text files, such as the `README.md`, you can make edits directly in the GitHub web interface.
 
@@ -225,11 +219,11 @@ For simple changes to text files, such as the `README.md`, you can make edits di
 Navigate to the `README.md` file in the file listing, and edit it by clicking on the **pencil icon** (top right of file). This is a regular Markdown file, so you can add markdown text. Add a new level-2 header called "Purpose" and add some bullet points describing the purpose of the repo. When done, add a commit message, and hit the **Commit changes** button.
 :::
 
-<img src="images/github_introduction_positron/new-repo_test-edit.png" alt="Screen capture of the page in GitHub that appears when you edit a file in a repository directly through GitHub's web interface" width="100%"/>
+<img src="images/github_introduction/new-repo_test-edit.png" alt="Screen capture of the page in GitHub that appears when you edit a file in a repository directly through GitHub's web interface" width="100%"/>
 
 Congratulations, you've now authored your first versioned commit! If you navigate back to the GitHub page for the repository, you'll see your commit listed there, as well as the rendered `README.md` file.
 
-<img src="images/github_introduction_positron/new-repo_test-displayed.png" alt="Screen capture of the landing page of a GitHub repository after the README has been edited to include non-template content" width="100%"/>
+<img src="images/github_introduction/new-repo_test-displayed.png" alt="Screen capture of the landing page of a GitHub repository after the README has been edited to include non-template content" width="100%"/>
 
 The GitHub repository landing page provides us with lots of useful information. To start, we see: 
 
@@ -239,7 +233,7 @@ The GitHub repository landing page provides us with lots of useful information. 
 
 Additionally, the header above the file listing shows the most recent commit, along with its commit message, and a unique ID (assigned by Git) called a [SHA](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/about-commits#about-commits). The SHA (aka hash) identifies the specific changes made, when they were made, and by who. If you click on the SHA, it will display the set of changes made in that particular commit.
 
-::: {.callout-caution icon=false}
+::: {.callout-tip}
 ## What should I write in my commit message?
 
 Writing effective Git commit messages is essential for creating a meaningful and helpful version history in your repository. It is crucial to avoid skipping commit messages or resorting to generic phrases like "Updates." When it comes to following best practices, there are several guidelines to enhance the readability and maintainability of the codebase.
@@ -247,36 +241,31 @@ Writing effective Git commit messages is essential for creating a meaningful and
 Here are some guidelines for writing effective Git commit messages:
 
 1. **Be descriptive and concise**: Provide a clear and concise summary of the changes made in the commit. Aim to convey the purpose and impact of the commit in a few words.
-
 2. **Use imperative tense**: Write commit messages in the imperative tense, as if giving a command. For example, use "Add feature" instead of "Added feature" or "Adding feature." This convention aligns with other Git commands and makes the messages more actionable.
-
 3. **Separate subject and body**: Start with a subject line, followed by a blank line, and then provide a more detailed explanation in the body if necessary. The subject line should be a short, one-line summary, while the body can provide additional context, motivation, or details about the changes.
-
 4. **Limit the subject line length**: Keep the subject line within 50 characters or less. This ensures that the commit messages are easily scannable and fit well in tools like Git logs.
-
 5. **Capitalize and punctuate properly**: Begin the subject line with a capital letter and use proper punctuation. This adds clarity and consistency to the commit messages.
-
 6. **Focus on the "what" and "why"**: Explain what changes were made and why they were made. Understanding the motivation behind a commit helps future researchers and collaborators (including you!) comprehend its purpose.
-
 7. **Use present tense for subject, past tense for body**: Write the subject line in present tense as it represents the current state of the codebase. Use past tense in the body to describe what has been done.
-
 8. **Reference relevant issues**: If the commit is related to a specific issue or task, include a reference to it. For example, you can mention the issue number or use keywords like "Fixes," "Closes," or "Resolves" followed by the issue number.
 :::
 
-## Exercise 2: Clone Your Repository with Positron
+## Exercise 2: Clone Your Repository Locally
 
-Currently, our repository just exists on GitHub as a remote repository. It's easy enough to make changes to things like our `README.md` file (as demonstrated above), from the web browser, but that becomes a lot harder (and discouraged) for scripts and other code files. In this exercise, we'll bring a copy of this remote repository down to our local computer (aka **clone** this repository) so that we can work comfortably in Positron.
+Currently, our repository just exists on GitHub as a remote repository. It's easy enough to make changes to things like our `README.md` file (as demonstrated above) from the web browser, but that becomes a lot harder (and discouraged) for scripts and other code files. In this exercise, we'll bring a copy of this remote repository down to our local computer (aka **clone** this repository) so that we can work comfortably in our local computer.
 
 ::: {.callout-important title="An important distinction"}
 We refer to the **remote copy** of the repository that is on GitHub as the **origin repository** (the one that we cloned from), and the copy on our local computer as the **local repository**.
 :::
 
-Positron makes working with Git and version controlled files easy -- to do so, you'll need to tell Positron the folder in which you want it to clone your origin repository. For RStudio users, the following steps will look similar to the process of making an R Project, albeit very streamlined.
+To clone our remote repository, we'll use an IDE (<u>I</u>ntegrated <u>D</u>evelopment <u>E</u>nvironment). This is a fancy term for any piece of software that lets you write software. You may already be familiar with some IDEs like [RStudio](https://posit.co/download/rstudio-desktop/), [Positron](https://positron.posit.co/), or [Visual Studio Code](https://code.visualstudio.com/). We offer courses that focus either in Positron or RStudio so you may be using either in your training. In the steps below, **follow the instructions for the IDE suggested by your instructors.**
 
-### Cloning a Repository
+### Initial Clone
 
-::: callout-tip
-## Positron Clone Process
+:::{.panel-tabset}
+### {{< fa p >}} Positron 
+
+Positron makes working with Git and version-controlled files easy! To do so, you'll need to **tell Positron the folder in which you want it to clone your origin repository**.
 
 1. Start by copying the link to your GitHub repository from the address bar of your web browser
     - Should be something like "https://github.com/`github-username`/`repository-name`"
@@ -285,43 +274,113 @@ Positron makes working with Git and version controlled files easy -- to do so, y
 4. In the **Git repository URL** field, paste in the link you copied in step 1
 5. Choose which folder you want to clone this repository to
     - We recommend _not_ cloning into a local sync of a cloud storage service (e.g., OneDrive, Dropbox) as that service's form of version control and Git's may cause problems for you
-6. Click OK
+6. Click **OK**
 
 <p align="center">
-<img src="images/github_introduction_positron/new-repo_clone-dialog-positron.png" alt="Screen capture of Positron's dialogue menu for cloning a new repository from GitHub" width="65%"/>
+<img src="images/github_introduction/positron-clone_01-dialog.png" alt="Screen capture of Positron's dialogue menu for cloning a new repository from GitHub" width="65%"/>
 </p>
-:::
 
 Once you click **OK**, your Positron window will refresh and the "Explorer" tab (in the left sidebar) will show that all files from the remote repository have been copied locally. Note that the folder icon in the top right corner will now have the name of your repository from GitHub.
 
-<p align="center">
-<img src="images/github_introduction_positron/new-repo_clone-positron.png" alt="Screen capture of Positron after successfully cloning a new repository from GitHub" width="100%"/>
-</p>
+![](images/github_introduction/positron-clone_02-ide.png){.lightbox fig-alt="Screen capture of Positron after successfully cloning a new repository from GitHub"}
 
 If you click the "Source Control" tab (its symbol looks like this: {{< fa code-branch >}}) you will see that there are no changes because we haven't done anything to the local copy yet! However, both the commits (the initial commit and the test edit made directly in GitHub) are shown in the bottom left corner in reverse chronological order (i.e., most recent at the top).
 
 <p align="center">
-<img src="images/github_introduction_positron/new-repo_source-control_no-changes.png" alt="Screen capture of Positron's 'source control' pane after cloning a new repository from GitHub before editing it" width="60%"/>
+<img src="images/github_introduction/positron-clone_03-source-control.png" alt="Screen capture of Positron's 'source control' pane after cloning a new repository from GitHub before editing it" width="60%"/>
 </p>
 
 We can actually interact with particular commits to get more detailed information on what was changed directly through Positron! Click the top commit to expand it and see the files that were changed as part of that commit. Now click the README file (the only one edited as part of that commit). A file will now open in the main window of Positron showing the README file with new lines highlighted in green and deleted lines highlighted in red.
 
-<img src="images/github_introduction_positron/new-repo_source-control_diff-history.png" alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened" width="100%"/>
+![](images/github_introduction/positron-clone_04-history.png){.lightbox fig-alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened"}
+
+### {{< fa brands r-project >}} RStudio
+
+RStudio makes working with Git and version-controlled files easy! To do so, you'll need to **create a new R Project**.
+
+Start by clicking the **Code** button on your GitHub repository and copying the link from under the **HTTPS** field.
+
+<p align="center">
+<img src="images/github_introduction/rstudio-clone_01-github.png" alt="Screen capture of the menu that appears in a GitHub repository when you click the 'Code' button" width="60%"/>
+</p>
+
+**Click the project icon** (looks like the letter "R" in a glass box) in the top right corner of RStudio. Note that if you use RStudio projects already, that button will have the name of the most recent project but if you don't use them it will instead say "Project: (None)". In the resulting dropdown, click **New Project...**
+
+<p align="center">
+<img src="images/github_introduction/rstudio-clone_02-new-proj.png" alt="Screen capture of the project dropdown menu in RStudio" width="50%"/>
+</p>
+
+You will now be guided through a set of new project options. Click **Version Control**, then click **Git**. The next dialog is the critical one for getting your local clone set up.
+
+In this dialog, do the following:
+
+1. Paste the link you copied from your remote repository into the **Repository URL** field
+2. Enter the name you want for the folder containing your local repository
+    - Feel free to just re-use the name of the repository
+3. Finally, choose which folder you want to clone this repository to
+    - We recommend not cloning into a local sync of a cloud storage service (e.g., OneDrive, Dropbox) as that service’s form of version control and Git’s may cause problems for you
+
+Once that's all done, click **Create Project**.
+
+<p align="center">
+<img src="images/github_introduction/rstudio-clone_03-dialog.png" alt="Screen capture of the final dialog window in RStudio when cloning a new repository" width="80%"/>
+</p>
+
+After a moment, your RStudio will refresh and you'll see the name you gave to your local repository's folder in the top right corner next to the project icon.
+
+![](images/github_introduction/rstudio-clone_04-ide.png){.lightbox fig-alt="Screen capture of the RStudio when in a project that is version-controlled"}
+
+You may also notice that you have a new tab in RStudio labeled Git. **Click that tab.** You'll see that you have your .Rproj file listed with two **<span style="color:gold">yellow</span>** question marks. RStudio uses this file to define an RProject but because it isn't in your remote repository, Git is flagging it for your attention as a file that is in the tracked folder but is not itself tracked. _Ignore this for now_ as we'll get to more on it later.
+
+<p align="center">
+<img src="images/github_introduction/rstudio-clone_05-git-pane.png" alt="Screen capture of the Git pane in RStudio" width="60%"/>
+</p>
+
+If you click the "History" button in the Git tab (its symbol is a clock {{< fa clock >}}) you will see all of the commits that have been made in this repository. They are shown in the top half of the window in reverse chronological order (i.e., most recent at the top).
+
+We can actually interact with particular commits to get more detailed information on what was changed directly through RStudio! Click the top commit to expand it and see the files that were changed as part of that commit. The bottom half of the window will now show the README file with new lines highlighted in green and deleted lines highlighted in red.
+
+![](images/github_introduction/rstudio-clone_06-history.png){.lightbox fig-alt="Screen capture of RStudio's commit history window with two commits on the repository"}
+
+:::
 
 ### Making a Commit
 
-Now that we have seen the changes from the past, let's go ahead and make some new changes in Positron. Close the diff file we had open then click back to the "File Explorer" tab and double click the README file to open it. While adding the purpose statement was nice addition, the top of the README is still looking very template-y, let's customize it a bit.
+Now that we have seen the changes from the past, let's go ahead and make some new changes in our IDE. Close the history file we had open then open the actual README.md file.
 
-Go ahead and give the README a more informative title (that's the text after a single `#`) and expand the first line of the description to add some more context. After you've done this your README should look something like the following.
+:::{.panel-tabset}
+### {{< fa p >}} Positron
+Go to "File Explorer" tab and double click the README file to open it.
 
-<img src="images/github_introduction_positron/positron-commit_01-edit.png" alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified" width="100%"/>
+### {{< fa brands r-project >}} RStudio
+Go to the "Files" pane and click the README to open it.
+:::
+
+While adding the purpose statement was nice addition, the top of the README is still looking very template-y, let's customize it a bit. Go ahead and **(1) give the README a more informative title and (2) expand the first line of the description to add some more context.** After you've done this your README should look something like the following.
+
+::: {.callout-hint}
+Recall that headers are any line that starts with at least one `#`.
+:::
+
+::: {layout-nrow=2}
+
+{{< fa p >}} Positron
+![](images/github_introduction/positron-commit_01-edit.png){.lightbox fig-alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified"}
+
+{{< fa brands r-project >}} RStudio
+![](images/github_introduction/rstudio-commit_01-edit.png){.lightbox fig-alt="Screen capture of RSTudio with the README file opened"}
+
+:::
+
+:::{.panel-tabset}
+### {{< fa p >}} Positron
 
 Note that once you edit and save the README, the file's name (both in the Explorer tab list and in the top of Positron) will turn orange and have a capital "M" to the right of the filename. This is Git letting you know that the file has been modified from the most recent version. Additionally, the Source Control tab will get a red circle with a "1," indicating that the state of one file in the version controlled repository has changed.
 
-If you head over to the Source Control tab, you'll see that the README now appears under the "Changes" list.
+If you **head over to the Source Control tab**, you'll see that the README now appears under the "Changes" list.
 
 <p align="center">
-<img src="images/github_introduction_positron/positron-commit_02-source-control.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%"/>
+<img src="images/github_introduction/positron-commit_02-source-control.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%"/>
 </p>
 
 Once you are there, **hover your mouse over the README and a plus sign button will appear, click it.** Note that the button is not visible unless your mouse is over some part of the "Changes" list. _Clicking that button is analogous to using the Git command, `git add README.md`, in the command line._
@@ -329,7 +388,7 @@ Once you are there, **hover your mouse over the README and a plus sign button wi
 After you click the plus sign, the README will move under a new list titled "Staged Changes". You can now add a commit message and then click the "Commit" button when you're ready to do so. _This is analogous to using the Git command, `git commit -m "my commit message"`, in the command line._
 
 <p align="center">
-<img src="images/github_introduction_positron/positron-commit_03-stage.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'staged changes' heading and an informative commit message in the respective text field" width="70%"/>
+<img src="images/github_introduction/positron-commit_03-stage.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'staged changes' heading and an informative commit message in the respective text field" width="70%"/>
 </p>
 
 Once you do that, a few things will happen simultaneously:
@@ -340,18 +399,49 @@ Once you do that, a few things will happen simultaneously:
 - The commit history diagram in the bottom left corner will show your new commit (in a different color than the prior commits)
 
 <p align="center">
-<img src="images/github_introduction_positron/positron-commit_04-commit.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%"/>
+<img src="images/github_introduction/positron-commit_04-commit.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%"/>
 </p>
 
 Go ahead and click the Sync button. It will become a grayed-out Commit button again and your commit history (bottom left) will go back to all being one color as the commit that was previously only on your local repository is synced with the remote repository.
 
 <p align="center">
-<img src="images/github_introduction_positron/positron-commit_05-sync.png" alt="Screen capture of Positron's 'source control' tab where no files are showing as changed or staged" width="70%"/>
+<img src="images/github_introduction/positron-commit_05-sync.png" alt="Screen capture of Positron's 'source control' tab where no files are showing as changed or staged" width="70%"/>
 </p>
+
+### {{< fa brands r-project >}} RStudio
+
+If you **head over to the Git pane**, you'll see that the README now appears there with a **<span style="color:blue">blue</span>** "M". That "M" stands for "modified"
+
+<p align="center">
+<img src="images/github_introduction/rstudio-commit_02-git.png" alt="Screen capture of RStudio's 'Git' pane with the README file listed next to blue capital 'M'" width="70%"/>
+</p>
+
+Once you are there, **check the box next to the README** under the "Staged" heading. _Clicking that button is analogous to using the Git command, `git add README.md`, in the command line._
+
+After you check the box, you can **click either of the two left-most buttons in the Git pane.** In the resulting pop-up menu (which looks imilar to the history menu), you can now add a commit message and then click the "Commit" button when you're ready to do so. _This is analogous to using the Git command, `git commit -m "my commit message"`, in the command line._
+
+![](images/github_introduction/rstudio-commit_03-stage.png){.lightbox fig-alt="Screen capture of RStudio's commit menu with the README file staged and an informative commit message in the respective text field"}
+
+Once you do that, you can **close this menu** and two things should become apparent:
+
+- The README is _no longer_ listed in the Git pane
+- There is a new message just beneath the buttons of the Git pane saying something like `Your branch is ahead of 'origin/main' by 1 commit`.
+
+This means that your commit worked!
+
+<p align="center">
+<img src="images/github_introduction/rstudio-commit_04-commit.png" alt="Screen capture of RStudio's 'Git' pane showing that the local repository is one commit ahead of the remote" width="70%"/>
+</p>
+
+Go ahead and **click the Pull button**; it is a downward-facing **<span style="color:blue">blue</span>** arrow (<span style="color:blue">{{< fa down-long >}}</span>). You should get a message that says `Already up to date`. This is because you're working alone but <u>when collaborating _it is important to pull early and often_ to ensure that you're working on the latest version of all files</u>.
+
+Now that you've pulled, you can **click the Push button**; it is an upward-facing **<span style="color:green">green</span>** arrow (<span style="color:green">{{< fa up-long >}}</span>). This button will send your local commit 'up' to your remote repository.
+
+:::
 
 If you navigate back to your remote repository on GitHub, you should see the edits to your README and the most recent commit will be the one you just made. Note that sometimes you have to refresh the page or wait a few seconds for those updates to be visible on GitHub.
 
-<img src="images/github_introduction_positron/positron-commit_06-updated-remote.png" alt="Screen capture of a GitHub repository's landing page with a new commit" width="100%"/>
+![](images/github_introduction/positron-commit_06-updated-remote.png){.lightbox fig-alt="Screen capture of a GitHub repository's landing page with a new commit"}
 
 ::: callout-note
 ## Challenge
@@ -364,80 +454,84 @@ If you navigate back to your remote repository on GitHub, you should see the edi
 
 There are a number of different workflows for creating version-controlled repositories that are stored on GitHub. We started with Exercise 1 and Exercise 2 using one common approach: create a remote repository on GitHub first, _then_ clone that repository to your local computer. However, you may find yourself in the situation where you **have an _existing_ folder of content that you want to _start_ tracking with Git and host in GitHub.**
 
-There are a few approaches for connecting an existing local folder to Git/GitHub but we'll focus on how you can do this via the command line. This has the advantage of being both coding language agnostic and IDE software agnostic. 
+There are a few approaches for connecting an existing local folder to Git/GitHub but **we'll focus on how you can do this via the command line.** This has the advantage of being both coding language agnostic and IDE software agnostic. 
 
-While the tutorial below will be using the Terminal in Positron, you could use any command-line interface (e.g. Mac Terminal, Git Bash, etc.) that allows for Git interactions. The advantage of Positron (and comparable IDEs) is that the Terminal is already 'looking' at your working directory while other command line interfaces would require you to navigate to the project directory (i.e., by using the `cd` command).
+While the tutorial below will be using the Terminal in Positron, you could use any command-line interface (e.g. RStudio Terminal, Mac Terminal, Git Bash, etc.) that allows for Git interactions. The advantage of using an IDE is that the Terminal is already 'looking' at your working directory while other command line interfaces would require you to navigate to the project directory (i.e., by using the `cd` command).
 
-### Open the Folder in Positron
+### Open the Folder in Your IDE
 
-In this last exercise, we will practice this workflow using your `training_{USERNAME}` folder. Switch to your `training_{USERNAME}` folder using the Positron folder dropdown menu. The folder dropdown menu is in the upper right corner of Positron. Click the dropdown next to your current folder name (`{FIRSTNAME}_test`), and then select `training_{USERNAME}` from the list of recent folders you've opened in Positron. If you've never opened the `training_{USERNAME}` folder with Positron, click **Open Folder...** instead and navigate to that folder.
+In this last exercise, we will practice this workflow using your `training_{USERNAME}` folder. Switch to your `training_{USERNAME}` folder using the dropdown menu in the top right corner ({{< fa p >}} Positron: "folder" / {{< fa brands r-project >}} RStudio: "project"). Click the dropdown next to your current folder name (`{FIRSTNAME}_test`), and then select `training_{USERNAME}` from the list of recent folders you've opened in this IDE. If you've never opened the `training_{USERNAME}` folder with this IDE, click **Open Folder...** (in {{< fa p >}} Positron) or **Open Project...** (in {{< fa brands r-project >}} RStudio) instead and navigate to that folder.
 
-In my case, I have some scripts that are empty but their names reflect steps in my code workflow that I think are likely enough to warrant making placeholder scripts. In the Explorer tab of Positron we can see those files are all just loose in the folder I'm using for this project.
+In my case, I have some scripts that are empty but their names reflect steps in my code workflow that I think are likely enough to warrant making placeholder scripts. If we use our IDE to look at the files in the current working directory, we can see those files are all just loose in the folder I'm using for this project.
 
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_01-folder.png" alt="Screen capture of Positron's 'explorer' tab with three files" width="60%"/>
-</p>
+:::{layout-ncol=2}
+
+{{< fa p >}} Positron
+![](images/github_introduction/folder-first-git_01-folder-positron.png){.lightbox fig-alt="Screen capture of Positron's 'explorer' tab with three files"}
+
+{{< fa brands r-project >}} RStudio
+![](images/github_introduction/folder-first-git_01-folder-rstudio.png){.lightbox fig-alt="Screen capture of RStudio's 'files' pane with three files and the .Rproj file"}
+
+:::
 
 ### Start Git
 
-Now that we're in the right folder, **run `git init` <u>in the Terminal</u>**. This will return a message (also in the Terminal) saying something along the lines of `Initialized empty Git repository in...` followed by the absolute path to your chosen folder. Additionally, all the files listed in Positron's Explorer tab will turn green and get an uppercase "U" next to them for "untracked."
+Now that we're in the right folder, **run `git init` <u>in the Terminal</u>**. This will return a message (also in the Terminal) saying something along the lines of `Initialized empty Git repository in...` followed by the absolute path to your chosen folder. Additionally, your IDE's version control window should flag all of the files in the working directory as untracked.
 
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_02-git-init.png" alt="Screen capture of Positron's 'explorer' tab with three files that are registering as untracked by Git" width="60%"/>
-</p>
+::: {.callout-warning}
+{{< fa brands r-project >}} RStudio users may need to quit and re-open RStudio to get the "Git" pane to show up.
+:::
+
+:::{layout-ncol=2}
+
+{{< fa p >}} Positron
+![](images/github_introduction/folder-first-git_02-git-init-positron.png){.lightbox fig-alt="Screen capture of Positron's 'explorer' tab with three files that are registering as untracked by Git"}
+
+{{< fa brands r-project >}} RStudio
+![](images/github_introduction/folder-first-git_02-git-init-rstudio.png){.lightbox fig-alt="Screen capture of RStudio's 'git' pane with three scripts, the .gitignore, and a .Rproj file registering as untracked by Git"}
+
+:::
 
 ### Tell Git What to Ignore
 
 An absolutely critical component of version control with Git is what Git _doesn't_ track, not just what it _does_ track. **Git repositories each use a file called ".gitignore" to 'decide' what not to track.** This is useful for many reasons but in particular the .gitignore will be a useful guardrail against tracking (A) large files or (B) files with sensitive information (e.g., passwords, private data).
 
-Any file or folder named in the .gitignore won't show up in the Source Control of Positron (or its equivalents in other IDEs). This means that you don't need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!
+Any file or folder named in the .gitignore won't show up in the version control window of any IDE. This means that you don't need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!
 
-In our earlier exercises, we've started repositories in GitHub with the template ".gitignore" file for R users but when adding Git tracking to an existing folder, we'll need to add the ".gitignore" manually. In the Terminal, follow the instructions below based on your computer's operating system
+In our earlier exercises, we've started repositories in GitHub with the template ".gitignore" file for R users but there are some slight differences when adding Git tracking to an existing folder.
 
 :::{.panel-tabset}
-#### {{< fa brands apple >}} Mac / {{< fa brands linux >}} Linux
+### {{< fa p >}} Positron
+Positron does not add a ".gitignore" when you create a Git repository in that folder. So we'll need to create one manually.
 
-```{r make-yaml_mac}
-#| eval: false
+In the Terminal, follow the instructions below based on your computer's operating system.
 
-touch .gitignore # <1>
-```
-1. `touch` is command line for 'create this file'
+- For {{< fa brands apple >}} Mac / {{< fa brands linux >}} Linux users: run `touch .gitignore`
+- For {{< fa brands windows >}} Windows users: run `copy NUL .gitignore`
+    - If `copy NUL` does not work, try `touch` instead
 
-#### {{< fa brands windows >}} Windows
+### {{< fa brands r-project >}} RStudio
 
-```{r make-yaml_win}
-#| eval: false
-
-copy NUL .gitignore # <1>
-```
-1. This is command line for 'create this file'
-
-If `copy NUL` does not work, try `touch` instead.
+RStudio does create a ".gitignore" when you create a Git repository in a project but it is _very_ limited relative to what we'd get from the GitHub template for R. So we'll need to flesh it out.
 
 :::
 
-Once you've created a ".gitignore" file, it will appear in Positron's Explorer tab and you can:
+Once you have a ".gitignore" file:
 
-1. Double click that file to open it
+1. Open the file in your IDE as you would any other file
 2. Go to the GitHub repository you made for Exercise 2
     - Likely `https://github.com/github-username/{firstname}_test`
 3. Click the .gitignore file in that repository
 4. Click the **Copy raw file** button 
     - Top right corner, just to the left of the pencil icon used to edit files directly in GitHub
-5. Return to the .gitignore in Positron
-6. Paste the contents of the `{firstname}_test` GitHub repository's .gitignore into the new .gitignore that you just created
+5. Return to the .gitignore in your IDE
+6. Paste the contents of the `{firstname}_test` GitHub repository's .gitignore into your local .gitignore that you have open
+    - Overwriting _all_ current contents if there are any
 
 :::{.callout-note}
 #### .gitignore Templates
 The .gitignore templates curated by GitHub are generally pretty good so copy/pasting that content will usually set you up for success. Note that as you work more with Git/GitHub, you may develop your own template for a .gitignore that ignores files or folders you consistently use across projects. In that case, feel free to copy that .gitignore's content instead of the generic GitHub template for your coding language.
 :::
-
-Once you've done that, you should see the .gitignore register in Positron as another untracked file.
-
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_03-gitignore-content.png" alt="Screen capture of Positron's 'explorer' tab where an untracked '.gitignore' file is present" width="80%"/>
-</p>
 
 ### Double Check Git's Status
 
@@ -464,19 +558,19 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 Now that we're confident Git is set up correctly, we want to start Git tracking on the files that are in our folder. In this case, because we want to track all the files, we can **run `git add .`** to stage all the files. If we only wanted to stage certain files, we could instead run `git add 01_harmonize.r` to stage one file at a time.
 
-Without Positron's GUI, we could again run `git status` if we want to check whether staging worked as desired.
+Without an IDE's <u>G</u>raphical <u>U</u>ser <u>I</u>nterface (GUI), we could again run `git status` if we want to check whether staging worked as desired.
 
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_04-stage.png" alt="Screen capture of Positron's 'explorer' tab where all untracked files are staged" width="80%"/>
-</p>
+:::{layout-ncol=2}
+
+{{< fa p >}} Positron
+![](images/github_introduction/folder-first-git_04-stage.png){.lightbox fig-alt="Screen capture of Positron's 'explorer' tab where all untracked files are staged"}
+
+{{< fa brands r-project >}} RStudio
+![](images/github_introduction/folder-first-git_02-git-init-rstudio.png){.lightbox fig-alt="Screen capture of RStudio's 'git' pane with three scripts, the .gitignore, and a .Rproj file registering as untracked by Git"}
+
+:::
 
 Once we've staged the files that we want to be included in this first commit, we can **commit all staged files by running `git commit -m "initial commit"` in the Terminal.** Note that it's good practice to replace "initial commit" with something that is more informative and specific.
-
-Once we've made that commit, Positron's GUI will remove the "U" next to all of the files that were commmitted (in this case, that's all of the files in the folder).
-
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_05-commit.png" alt="Screen capture of Positron's 'explorer' tab where all files are tracked by Git with no changes since the last commit" width="80%"/>
-</p>
 
 Without an IDE, you can run `git log` in the Terminal to see a history of your past commits. Here's the log for this repository so far:
 
@@ -495,23 +589,29 @@ If you put anything in the GitHub repo when you make it, that counts as a commit
 
 If you create a completely empty GitHub repository the landing page will look something like the following:
 
-<img src="images/github_introduction_positron/folder-first-git_06-empty-gh-repo.png" alt="Screen capture of a GitHub repository when it is created with nothing in it" width="95%">
+<img src="images/github_introduction/folder-first-git_06-empty-gh-repo.png" alt="Screen capture of a GitHub repository when it is created with nothing in it" width="95%">
 
 Once you've made your <u>completely empty</u> GitHub repository:
 
 1. Scroll down to the **...or push an existing repository from the command line** section
 2. Copy the whole code chunk beneath that heading
-3. Run that code in Positron's Terminal
+3. Run that code in the Terminal
 
-After you've done that, if you refresh the page on the GitHub repository, you should see the files you just committed!
+After you've done that, if you refresh the page on the GitHub repository, you should see the files that you just committed!
 
-<img src="images/github_introduction_positron/folder-first-git_07-gh-repo.png" alt="Screen capture of a GitHub repository with a number of files added in a single commit" width="100%">
+<img src="images/github_introduction/folder-first-git_07-gh-repo.png" alt="Screen capture of a GitHub repository with a number of files added in a single commit" width="100%">
 
-Similarly, your Positron Source Control tab will now look like it did in the previous exercises and will include the commit we made via the command line.
+Similarly, your IDE's version control window will now look like it did in the previous exercises and will include the commit we made via the command line.
 
-<p align="center">
-<img src="images/github_introduction_positron/folder-first-git_08-positron.png" alt="Screen capture of Positron's 'source control' tab with no files showing as being changed" width="60%"/>
-</p>
+:::{layout-ncol=2}
+
+{{< fa p >}} Positron
+![](images/github_introduction/folder-first-git_08-positron.png){.lightbox fig-alt="Screen capture of Positron's 'source control' tab with no files showing as being changed"}
+
+{{< fa brands r-project >}} RStudio
+![](images/github_introduction/folder-first-git_08-rstudio.png){.lightbox fig-alt="Screen capture of RStudio's 'git' pane with no files showing as being changed"}
+
+:::
 
 ::: {.callout-caution icon=false}
 ## Challenge: Add a `README.md` file to `training_{USERNAME}`

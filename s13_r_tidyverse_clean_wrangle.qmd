@@ -1,14 +1,21 @@
 ---
-title: Cleaning and Wrangling Data
+title: Cleaning & Wrangling Data
 ---
 
 :::{.callout-tip}
-## Learning Objectives
-- Introduce `dplyr` and `tidyr` functions to clean and wrangle data for analysis
-- Learn about the Split-Apply-Combine strategy and how it applies to data wrangling
-- Describe the difference between wide vs. long table formats and how to convert between them
-:::
+### Learning Objectives
 
+After completing this session, you will be able to:
+
+- Identify some common `dplyr` and `tidyr` functions
+- Define "namespace" in the context of R functions
+- Explain how the pipe operator (`%>%`) can be used to streamline code operations
+- Paraphrase how `mutate()` can be used to do quality control operations
+- Explain what "shape" means in the context of data and how data of one shape can be converted to another
+- Describe how defensive coding strategies benefit you in the long run and how `rename()` is a good example of such strategies 
+- Explain how `group_by()` and `summarize()` relate to the "Split-Apply-Combine" strategy
+
+:::
 
 ## Introduction
 
@@ -20,8 +27,7 @@ Learning these tools well will greatly increase your efficiency as an analyst.
 
 Let's look at two motivating examples. 
 
-::: {.callout-note appearance="minimal" icon=false}
-## Example 1
+:::: {.callout-example}
 Suppose you have the following `data.frame` called `length_data` with data about salmon length and want to calculate the average length per year. 
 
 |  year|  length\_cm|
@@ -33,25 +39,25 @@ Suppose you have the following `data.frame` called `length_data` with data about
 |  1992|    5.597777|
 |  1992|    4.900052|
 
-Before thinking about the code, let's think about the steps we need to take to get to the answer (aka pseudocode).
+Before thinking about the code, let's think about the steps we need to take to get to the answer (a.k.a. pseudocode). Now, how would we code this?
 
-Now, how would we code this? The `dplyr` R library provides a fast and powerful way to do this calculation in a few lines of code:
+:::{.callout-answer}
+The `dplyr` R library provides a fast and powerful way to do this calculation in a few lines of code:
 
-```{r}
+```{r motivate-ex-01}
 #| eval: false
-#| code-fold: true
-#| code-summary: "Answer"
-
 length_data %>% 
-  group_by(year) %>% 
-  summarize(mean_length_cm = mean(length_cm))
+  dplyr::group_by(year) %>% 
+  dplyr::summarize(mean_length_cm = mean(length_cm),
+    .groups = "keep") %>% 
+  dplyr::ungroup()
 ```
 :::
 
+::::
 
-::: {.callout-note appearance="minimal" icon=false}
-## Example 2
- Another process we often need to do is to "reshape" our data. Consider the following table that is in what we call "wide" format:
+:::: {.callout-example}
+Another process we often need to do is to "reshape" our data. Consider the following table that is in what we call "wide" format:
 
 | site   | 1990 | 1991 | ... | 1993 |
 |--------|------|------|-----|------|
@@ -68,17 +74,15 @@ But this won't work on our wide data because `lm()` needs `length` and `year` to
 
 What steps would you take to get this data frame in a long format?
 
+::: {.callout-answer}
 The `tidyr` package allows us to quickly switch between wide format and long format using the `pivot_longer()` function:
 
-```{r}
+```{r motivate-ex-02}
 #| eval: false
-#| code-fold: true
-#| code-summary: "Answer"
-
-site_data %>% 
-  pivot_longer(-site, 
-               names_to = "year", 
-               values_to = "length")
+tidyr::pivot_longer(data = site_date, 
+    cols = -site, 
+    names_to = "year", 
+    values_to = "length")
 ```
 
 | site   | year |  length|
@@ -89,52 +93,60 @@ site_data %>%
 | ...    | ...  |     ...|
 | dredge | 1993 |     145|
 :::
+::::
 
-This lesson will cover examples to learn about the functions you'll most commonly use from the `dplyr` and `tidyr` packages:
+## The `dplyr` and `tidyr` Packages
+
+The `dplyr` and `tidyr` packages are two particularly powerful and often-used packages for data wrangling. This lesson will cover examples to learn about some of the functions you'll most commonly use from those packages. See the tabs below for a brief overview of those tools.
+
+:::{.panel-tabset}
+### Common `dplyr` Functions
 
 | Function name   | Description |
 |--------|------|
-| `mutate()`  | Creates modify and deletes columns |   
+| `mutate()`  | Creates and modifies columns |   
 | `group_by()`  | Groups data by one or more variables |
-| `summarise()` | Summaries each group down to one row |
+| `summarize()` | Summarizes each group down to one row |
 |  `select()` | Keep or drop columns using their names  |
-| `filter()`  | Keeps rows that matches conditions |
-| `arrange()`  | order rows using columns variable |
+| `filter()`  | Keeps rows that match conditions |
+| `arrange()`  | Order rows by one or more columns |
 | `rename()`  | Rename a column |
 
-: Common `dplyr` functions {tbl-colwidths="[25,75]"}
+: {tbl-colwidths="[25,75]"}
 
+### Common `tidyr` Functions
 
 | Function name   | Description |
 |--------|------|
-| `pivot_longer()`  | transforms data from a wide to a long format |   
-| `pivot_wider()`  | transforms data from a long to a wide format |
+| `pivot_longer()`  | Reshapes data from a wide to a long format |   
+| `pivot_wider()`  | Reshapes data from a long to a wide format |
 | `unite()` | Unite multiple columns into one by pasting strings together |
-|  `separate()` | Separate a character column into multiple columns with a regular expression or numeric locations |
+|  `separate_wider_delim()` | Separate one column into multiple columns based on a delimiter (e.g., `_`, `-`, `.`) |
 
-: Common `tidyr` functions {tbl-colwidths="[25,75]"}
+: {tbl-colwidths="[25,75]"}
+:::
 
-## Data cleaning basics
+## Data Cleaning Fundamentals
 
-To demonstrate, we'll be working with a tidied up version of a data set from [Alaska Department of Fish & Game containing commercial catch data from 1878-1997](https://knb.ecoinformatics.org/#view/df35b.304.2). The data set and reference to the original source can be found at its [public archive](https://knb.ecoinformatics.org/#view/df35b.304.2).
+To demonstrate, we'll be working with a tidied up version of a data set from the Alaska Department of Fish & Game containing commercial catch data from 1878-1997. The data set and reference to the original source can be found at its [public archive](https://knb.ecoinformatics.org/#view/df35b.304.2).
 
-::: {.callout-tip icon=false}
-## Setup
+::: {.callout-tip}
+### Setup
 First, open a new Quarto document. Delete everything below the setup chunk, and add a library chunk that calls `dplyr`, `tidyr`, and `readr`
 
-```{r}
+```{r load-libs}
 #| message: false
 
 library(dplyr)
 library(tidyr)
 library(readr)
+library(magrittr)
 ```
 
 :::
 
 ::: {.callout-important}
-
-### A note on loading packages
+### Note on Loading Packages
 
 You may have noticed the following messages pop up when you ran your library chunk.
 
@@ -150,55 +162,54 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 ```
 
-These are important messages. They are letting you know that certain functions from the `stats` and `base` packages (which are loaded by default when you start R) are masked by *different functions* with the same name in the `dplyr` package. It turns out, the order that you load the packages in matters. Since we loaded `dplyr` after `stats`, R will assume that if you call `filter()`, you mean the `dplyr` version unless you specify otherwise.
+These are important messages. They are letting you know that certain functions from the `stats` and `base` packages (which are loaded by default when you start R) are masked by _different functions_ with the same name in the `dplyr` package. It turns out, the order that you load the packages in matters. Since we loaded `dplyr` after `stats`, R will assume that if you call `filter()`, you mean the `dplyr` version unless you specify otherwise.
 
-Being specific about which version of `filter()`, for example, you call is easy. 
-To explicitly call a function by its unambiguous name, we use the syntax `package_name::function_name(...)`. 
-So, if we wanted to call the `stats` version of `filter()` in this Rmarkdown document, I would use the syntax `stats::filter(...)`.
+**You can easily specify which package's version of a function you want to use by "namespacing" that function.** To namespace a function, we use the syntax `package_name::function_name(...)`. 
+So, if we wanted to call the `stats` version of `filter()` in this Quarto document, we would use the syntax `stats::filter(...)`.
 :::
 
+::: {.callout-caution}
+### Remove Messages and Warnings
 
-
-::: {.callout-caution icon=false}
-### Remove messages and warnings
-
-Messages and warnings are important, but we might not want them in our final document. After you have read the packages in, **adjust the chunk settings in your library chunk** to suppress warnings and messages by adding `#| message: false` or `#| warning: false`. Both of these chunk options, when set to false, prevents messages or warnings from appearing in the rendered file.
+Messages and warnings are important, but we might not want them in our final document. After you have read the packages in, **adjust the chunk settings in your library chunk** to suppress warnings and messages by adding `#| message: false` or `#| warning: false`. These chunk options, when set to `false`, prevent messages or warnings respectively from appearing in the rendered file.
 :::
 
 Now that we have introduced some data wrangling libraries, let's get the data that we are going to use for this lesson.
 
-::: {.callout-tip icon=false}
-## Setup
+:::: {.callout-tip}
+### Setup
 
-1. Go to [KNB Data Package Alaska commercial salmon catches by management region (1886- 1997)](https://knb.ecoinformatics.org/view/df35b.304.2)
+1. Go to KNB Data Package for Alaska commercial salmon catches by management region (1886-1997)
+    -  The link is here: [knb.ecoinformatics.org/view/df35b.304.2](https://knb.ecoinformatics.org/view/df35b.304.2)
+2. Find the data file "byerlySalmonByRegion.csv". Right click the "Download" button and select "Copy Link Address"
+3. Paste the copied URL into the `read_csv()` function in quotes
 
-2. Find the data file `df35b.302.1`. Right click the "Download" button and select "Copy Link Address"
-
-3. Paste the copied URL into the `read_csv()` function
+::: {.callout-answer}
+:::{.panel-tabset}
+### {{< fa brands apple >}} Mac Answer
 
 The code chunk you use to read in the data should look something like this:
 
-```{r}
+```{r read-salmon-df_mac}
 #| message: false
-catch_original <- read_csv("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1")
+catch_original <- readr::read_csv(file = "https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1")
 ```
 
-**Note for Windows users:** Keep in mind, if you want to replicate this workflow in your local computer you also need to use the `url()` function here with the argument `method = "libcurl"`. 
+### {{< fa brands windows >}} Windows Answer
 
-It would look like this:
+To replicate this workflow for {{< fa brands windows >}} Windows users you also need to use the `url()` function here with the argument `method = "libcurl"`. It would look like this:
 
-```{r}
+```{r read-salmon-df_win}
 #| eval: false
-catch_original <- read.csv(url("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1", method = "libcurl"))
+catch_original <- base::read.csv(file = base::url("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1", method = "libcurl"))
 ```
-
 :::
+:::
+::::
 
 This data set is relatively clean and easy to interpret as-is. While it may be clean, it's in a shape that makes it hard to use for some types of analyses so we'll want to fix that first.
 
-::: {.callout-note icon=false}
-## Exercise
-
+::: {.callout-exercise}
 Before we get too much further, spend a minute or two outlining your Quarto document so that it includes the following sections and steps:
 
 - Data Sources
@@ -214,22 +225,22 @@ Before we get too much further, spend a minute or two outlining your Quarto docu
   - Summary stats using `group_by()` and `summarize()`
   - Filtering rows using `filter()`
   - Sort data using `arrange()`
-  - Split and combine values in columns with `separate()` and `unite()`
+  - Split and combine values in columns with `separate_wider_delim()` and `unite()`
   
+::: {.callout-hint}
+Recall that you can use `#` to create headings in a Quarto doc (more `#` for a _smaller_ heading)!
 :::
 
-## Data exploration
-Similar to what we did in our [Literate Analysis](https://learning.nceas.ucsb.edu/2024-10-coreR/session_05.html) lesson, it is good practice to skim through the data you just read in. 
+:::
 
-Doing so is important to make sure the data is read as you were expecting and to familiarize yourself with the data.
+## Data Exploration
+Similar to what we did in our "Literate Analysis with Quarto" lesson, it is good practice to skim through the data you just read in. Doing so is important to make sure the data is read as you were expecting and to familiarize yourself with the data. Some of the basic ways to explore your data are:
 
-Some of the basic ways to explore your data are:
-
-```{r}
+```{r data-exp-basics}
 #| eval: false
 
 ## Prints the column names of my data frame
-colnames(catch_original)
+colnames(catch_original) # <1>
 
 ## First 6 lines of the data frame
 head(catch_original)
@@ -241,260 +252,255 @@ summary(catch_original)
 unique(catch_original$Region)
 
 ## Opens data frame in its own tab to see each row and column of the data (do in console)
-View(catch_original)
-
+View(catch_original) # <2>
 ```
+1. The `names()` function will return the same result (in this case)
+2. Note that the "V" is capitalized!
 
+## About the Pipe Operator (`%>%`)
 
+Before we jump into learning `tidyr` and `dplyr`, we first need to explain the pipe operator `%>%`. Coding in the style of the Tidyverse requires using the pipe operator (`%>%`), which may look unfamiliar. The pipe is a powerful way to efficiently chain together operations. **The pipe will take the output of a previous statement, and use it as the input to the next statement.**
 
-## About the pipe (`%>%`) operator
+While it may look strange, the pipe operator is actually just a special format of R function! It comes from the `magrittr` package. Let's look at an example to make this clearer. Say you want to both `filter()` out rows of a data set, and `select()` certain columns.
 
-Before we jump into learning `tidyr` and `dplyr`, we first need to explain the pipeline operator `%>%`.
+:::{.panel-tabset}
+### Without a Pipe
+Without using the pipe operator, you might write something like the following:
 
-Both the `tidyr` and the `dplyr` packages use the pipe operator (`%>%`), which may look unfamiliar. The pipe is a powerful way to efficiently chain together operations. The pipe will take the output of a previous statement, and use it as the input to the next statement.
-
-Say you want to both `filter()` out rows of a data set, and `select()` certain columns.
-
-Instead of writing:
-
-```{r}
+```{r pipe-ex_without-pipe}
 #| eval: false
 df_filtered <- filter(df, ...)
 df_selected <- select(df_filtered, ...)
 ```
 
-You can write:
+### With the Pipe
+If you did use the pipe, you might write something like the following instead:
 
-```{r}
+```{r pipe-ex_with-pipe}
 #| eval: false
 df_cleaned <- df %>% 
-    filter(...) %>%
-    select(...)
+    dplyr::filter(...) %>%
+    dplyr::select(...)
 ```
 
 If you think of the assignment operator (`<-`) as reading like "gets", then the pipe operator would read like "then".
 
 So you might think of the above chunk being translated as:
 
-> The cleaned data frame gets the original data, and then a filter (of the original data), and then a select (of the filtered data).
+> The cleaned data frame **gets** the original data, and **then** a filter (of the original data), and **then** a select (of the filtered data).
+:::
 
 The benefits to using pipes are that you don't have to keep track of (or overwrite) intermediate data frames. The drawbacks are that it can be more difficult to explain the reasoning behind each step, especially when many operations are chained together. It is good to strike a balance between writing efficient code (chaining operations), while ensuring that you are still clearly explaining, both to your future self and others, what you are doing and why you are doing it.
 
-::: {.callout-caution icon=false}
-
-## Quick Tip
-RStudio has a keyboard shortcut for `%>%`
+::: {.callout-tip}
+Positron and RStudio both have a keyboard shortcut for `%>%`
 
 - Windows: `Ctrl` + `Shift` + `M` 
 - Mac: `cmd` + `shift` + `M`
+
+::: {.callout-warning}
+Depending on your settings, those hot keys may put a pipe operator that looks like `|>`. This operator is called the "native pipe," and **it is _not the same as_ `%>%`.** Go into your IDE's settings and change it to `%>%` if those hot keys result in the native pipe instead of the one with percent symbols (search "pipe" in Positron's settings).
+:::
 :::
 
-## Selecting or removing columns using `select()`
+## Selecting or Removing Columns Using `select()`
 
-We're ready to go back to our salmon dataset. 
-The first issue is the extra columns `All` and `notesRegCode`. Let's select only the columns we want, and assign this to a variable called `catch_data`.
+We're ready to go back to our salmon data set. The first issue is the extra columns `All` and `notesRegCode`. Let's select only the columns we want (implicitly removing those that we do not), and assign this to a variable called `catch_data`.
 
-```{r}
+```{r select-ex_include}
+# Select only desired columns
 catch_data <- catch_original %>%
-    select(Region, Year, Chinook, Sockeye, Coho, Pink, Chum)
+    dplyr::select(Region, Year, Chinook, Sockeye, Coho, Pink, Chum)
 
+# Check the result
 head(catch_data)
 ```
 
-Much better!
+Much better! The `select()` function also allows you to instead say which columns you _don't_ want, by passing column names preceded by a minus sign (`-`):
 
-The `select()` function also allows you to say which columns you *don't* want, by passing unquoted column names preceded by minus (`-`) signs:
-
-```{r}
+```{r select-ex_exclude}
 #| eval: false
 catch_data <- catch_original %>%
-    select(-All,-notesRegCode)
+    dplyr::select(-All, -notesRegCode)
 ```
 
-## Quality check 
+::: {.callout-warning}
+In each use of `select()`, you must choose **either** which columns to include **or** which to exclude! You can't both include and exclude columns in the same `select()` call.
+:::
 
-Now that we have the data we are interested in using, we should do a little quality check to see that everything seems as expected. 
-One nice way of doing this is the `glimpse()` function.
+## Quality Check 
 
-```{r}
+Now that we have the data we are interested in using, we should do a little quality check to see that everything seems as expected. One nice way of doing this is the `glimpse()` function from `dplyr`.
+
+```{r glimpse-ex}
+# Check structure of data
 dplyr::glimpse(catch_data)
 ```
 
-::: {.callout-note icon=false}
-## Exercise
-
+::: {.callout-exercise}
 Examine the output of the `glimpse()` function call. Does anything seem amiss with this data set that might warrant fixing?
 
-<details>
-  <summary>**Answer:**</summary>
-  The Chinook catch data are `character` class. Let's fix it using the function `mutate()` before moving on.
-</details>
+::: {.callout-answer}
+The Chinook catch data are `character` class (abbreviated by `glimpse()` as "chr"). Let's fix it using the function `mutate()` before moving on.
+:::
 :::
 
-## Changing column content using `mutate()`
+## Changing Columns Using `mutate()`
 
 We can use the `mutate()` function to change a column, or to create a new column. 
-First, let's try to convert the Chinook catch values to `numeric` type using the `as.numeric()` function, and overwrite the old Chinook column.
+First, let's try to convert the Chinook catch values to `numeric` type using the base R `as.numeric()` function, and overwrite the old Chinook column. This kind of operation is sometimes known as "coercing" data into a different class.
 
-```{r}
+```{r mutate-ex_force-numeric}
+# Make the Chinook column numeric
 catch_clean <- catch_data %>%
-    mutate(Chinook = as.numeric(Chinook))
+    dplyr::mutate(Chinook = as.numeric(Chinook))
 
-head(catch_clean)
+# Check the structure
+dplyr::glimpse(catch_clean)
 ```
 
-We get a warning ``"NAs introduced by coercion"`` which is R telling us that it couldn't convert every value to an integer and, for those values it couldn't convert, it put an `NA` in its place. This is behavior we commonly experience when cleaning data sets and it's important to have the skills to deal with it when it comes up.
+We get a warning `"NAs introduced by coercion"` which is R telling us that it couldn't convert every value to a number and, for those values it couldn't convert, it put an `NA` in its place. This is behavior we commonly experience when cleaning data sets and it's important to have the skills to deal with it when it comes up.
 
 To investigate, let's isolate the issue. We can find out which values are `NA`s with a combination of `is.na()` and `which()`, and save that to a variable called `i`.
 
-```{r}
-i <- which(is.na(catch_clean$Chinook))
-i
-
+```{r mutate-ex_find-bad-row}
+(i <- which(is.na(catch_clean$Chinook))) # <1>
 ```
+1. By wrapping the entire line in parentheses, we can make the code "echo" in the Console!
 
 It looks like there is only one problem row, lets have a look at it in the original data.
 
-```{r}
+```{r mutate-ex_examine-bad-row}
 catch_data[i,]
 ```
 
-Well that's odd: The value in `Chinook` is the letter `I`. It turns out that this data set is from a PDF which was automatically converted into a `csv` and this value of `I` is actually a 1.
+Well that's odd; the problem value in `Chinook` is the letter `I`. It turns out that this data set is from a PDF which was automatically converted into a CSV and this value of `I` is actually a 1.
 
-Let's fix it by incorporating the `if_else()` function to our `mutate()` call, which will change the value of the `Chinook` column to 1 if the value is equal to `I`, then will use `as.numeric()` to turn the character representations of numbers into numeric typed values.
+Let's fix it by incorporating the `if_else()` function (also from `dplyr`) to our `mutate()` call, which will change the value of the `Chinook` column to 1 if the value is equal to `I`. Once we've done that, we can use `as.numeric()` to turn the character representations of numbers into numeric values without coercing anything to `NA`.
 
-```{r}
+```{r mutate-ex_fix-bad-row}
 catch_clean <- catch_data %>%
-    mutate(Chinook = if_else(condition = Chinook == "I", 
-                             true = "1", 
-                             false = Chinook),
-           Chinook = as.numeric(Chinook))
+    dplyr::mutate(
+        # Use a conditional to fix the bad value
+        Chinook = dplyr::if_else(condition = Chinook == "I", 
+            true = "1", # <1>
+            false = Chinook), # <2>
+        # Make the fixed column numeric
+        Chinook = as.numeric(Chinook))
 
-##check
+## Check the result
 catch_clean[i, ]
 ```
+1. What to return if the condition _is_ true
+2. What to return if the condition _is not_ true
 
-## Changing shape using `pivot_longer()` and `pivot_wider()`
+Looks like that worked! Another hint that worked is that we no longer get the `"NAs introduced by coercion"` warning.
 
-The next issue is that the data are in a wide format and we want the data in a long format instead. 
+## Changing Shape Using `pivot_longer()` and `pivot_wider()`
+
+The next issue is that the "shape" of the data is not appropriate for our needs! Currently the data are in "wide" format where one variable (fish species) is spread into separate columns. We want the data to be in **"long" format (a.k.a. "tidy format") where each column is only one variable and each row is a single observation!**
+
 The function `pivot_longer()` from the `tidyr` package helps us do  this conversion. 
-If you do not remember all the arguments that go into `pivot_longer()` you can always call the `help` page by typing `?pivot_longer` in the console.
+If you do not remember all the arguments that go into `pivot_longer()` you can always check out the help page by typing `?tidyr::pivot_longer` in the Console.
 
-```{r}
+```{r pivot-long-ex}
 catch_long <- catch_clean %>% 
-    #pivot longer all columns except Region and Year
-    pivot_longer(
-        cols = -c(Region, Year),
-        names_to = "species",
-        values_to = "catch"
-    )
+    # Pivot all columns except Region and Year into long format
+    tidyr::pivot_longer(cols = -c(Region, Year),
+        names_to = "species", # <1>
+        values_to = "catch") # <2>
 
+# Check the result
 head(catch_long)
 ```
+1. What should the name of the column that holds the old column names be?
+2. What should the name of the column that holds all the values be?
 
-The syntax we used above for `pivot_longer()` might be a bit confusing so let's walk though it.
-
-- The first argument to `pivot_longer` is the columns over which we are pivoting. You can select these by listing either the names of the columns you do want to pivot, or in this case, the names of the columns you are not pivoting over. 
-
-- The `names_to` argument: this is the name of the column that you are creating from the column **names** of the columns you are pivoting over. 
-
-- The `values_to` argument: the name of the column that you are creating from the **values** in the columns you are pivoting over.
-
+Note that--just like with `select()`--the `cols` argument of `pivot_longer()` can accept _either_ column names _to_ pivot or names _not to_ pivot.
 The opposite of `pivot_longer()` is the `pivot_wider()` function. It works in a similar declarative fashion:
 
-```{r}
+```{r pivot-wide-ex}
 catch_wide <- catch_long %>%
-    pivot_wider(names_from = species,
-                values_from = catch)
+    # Pivot the data back into wide format
+    tidyr::pivot_wider(names_from = species, # <1>
+        values_from = catch,
+        values_fill = 0) # <2>
 
+# Check the result
 head(catch_wide)
 ```
+1. Note that here the columns are **not** quoted. That's because now that they actually are column names, they use normal Tidyverse style for referencing columns (i.e., not quoted)
+2. If flipping to wide format makes new row/column combinations, we can specify the value to go there! Default is `NA`
 
-Same than we did above we can pull up the documentation of the function to remind ourselves what goes in which argument. Type `?pivot_wider` in the console.
+As before, if you need to remind yourself of what goes to what argument (or even just the argument names themselves), run `?tidyr::pivot_wider` in the Console.
 
-## Renaming columns with `rename()`
+## Renaming Columns with `rename()`
 
-If you scan through the data, you may notice the values in the `catch` column are very small (these are supposed to be annual catches). 
-If we look at [the metadata](https://knb.ecoinformatics.org/#view/df35b.304.2) we can see that the `catch` column is in thousands of fish, so let's convert it before moving on.
+If you scan through the (long format) data, you may notice the values in the `catch` column are very small (these are supposed to be annual catches). If we look at [the metadata](https://knb.ecoinformatics.org/#view/df35b.304.2) we can see that the `catch` column is in thousands of fish, so let's convert it before moving on.
 
 Let's first rename the `catch` column to be called `catch_thousands`:
 
-```{r}
+```{r rename-ex}
 catch_long <- catch_long %>%
-    rename(catch_thousands = catch)
+    # Rename the column descriptively
+    dplyr::rename(catch_thousands = catch)
 
-head(catch_long)
+# Check the result
+dplyr::glimpse(catch_long)
 ```
 
-::: callout-important
-
-## `names()` versus `rename()`
+::: {.callout-important}
+### `names()` versus `rename()`
 
 Many people use the base R function `names()` to rename columns, often in combination with column indexing that relies on columns being in a particular order. Column indexing is often also used to select columns instead of the `select()` function from `dplyr`. 
-Although these methods work just fine, they do have one major drawback: in most implementations they rely on you knowing exactly the column order your data is in.
+Although these methods work just fine in some cases, they do have one major drawback: they rely on you knowing the _exact_ order of columns in the data.
 
 **To illustrate why your knowledge of column order isn't reliable enough for these operations, considering the following scenario:**
 
 Your colleague emails you letting you know that she has an updated version of the conductivity-temperature-depth data from this year's research cruise, and sends it along. Excited, you re-run your scripts that use this data for your phytoplankton research. You run the script and suddenly all of your numbers seem off. You spend hours trying to figure out what is going on.
 
-Unbeknownst to you, your colleagues bought a new sensor this year that measures dissolved oxygen. Because of the new variables in the data set, the column order is different. Your script which previously renamed the fourth column, `SAL_PSU` to `salinity` now renames the fourth column, `O2_MGpL` to `salinity`. No wonder your results looked so weird, good thing you caught it!
+Unbeknownst to you, your colleague bought a new sensor this year that measures dissolved oxygen. Because of the new variables in the data set, the column order is different. Your script which previously renamed the fourth column, `SAL_PSU` to `salinity` now renames the fourth column, `O2_MGpL` to `salinity`. No wonder your results looked so weird, good thing you caught it but a shame you had to waste so many hours finding the issue!
 
-If you had written your code so that it doesn't rely on column order, but instead renames columns using the `rename()` function, the code would have run just fine (assuming the name of the original salinity column didn't change, in which case the code would have thrown an error in an obvious way). 
-This is an example of a *defensive coding strategy*, where you try to anticipate issues before they arise, and write your code in such a way as to keep the issues from happening.
+If you had written your code so that it didn't rely on column order, but instead renames columns using the `rename()` function, the code would have run just fine (assuming the name of the original salinity column didn't change, in which case the code would have thrown an error in an obvious way). 
 
+This is an example of a **defensive coding strategy, where you try to anticipate issues _before_ they arise, and write your code in such a way as to keep the issues from happening.**
 ::: 
 
+## Adding Columns Using `mutate()`
 
+Now let's use `mutate()` again to create a new column called `catch` with units of fish (instead of thousands of fish). While we're at it, let's also use `select()` to remove the column with catch in thousands because we're not necessarily interested in it at this point. This further highlights how we can take advantage of the pipe operator to group together a similar set of statements, which all aim to clean up the `catch_clean` data frame.
 
-## Adding columns using `mutate()`
-
-Now let's use `mutate()` again to create a new column called `catch` with units of fish (instead of thousands of fish).
-
-```{r}
-#| eval: false
+```{r mutate-ex_add-col}
 catch_long <- catch_long %>%
-    mutate(catch = catch_thousands * 1000)
+    # Convert to actual fish numbers
+    dplyr::mutate(catch = catch_thousands * 1000) %>% 
+    # Remove the superseded column
+    dplyr::select(-catch_thousands)
 
-head(catch_long)
+# Check the result
+dplyr::glimpse(catch_long)
 ```
 
-Let's remove the `catch_thousands` column for now since we don't need it. Note that here we have added to the expression we wrote above by adding another function call (mutate) to our expression. This takes advantage of the pipe operator by grouping together a similar set of statements, which all aim to clean up the `catch_clean` data frame.
+We're now ready to start analyzing the data!
 
-```{r}
-catch_long <- catch_long %>%
-    mutate(catch = catch_thousands * 1000) %>%
-    select(-catch_thousands)
+## Calculating Summary Statistics with `dplyr`
 
-head(catch_long)
-```
+Suppose we are now interested in getting the average catch per region. In our initial data exploration we saw there are 18 regions, we can easily see their names again:
 
-We're now ready to start analyzing the data.
-
-## Summary statistics using `group_by()` and `summarize()`
-
-Suppose we are now interested in getting the average catch per region. 
-In our initial data exploration we saw there are 18 regions, we can easily see their names again:
-
-```{r}
-unique(catch_original$Region)
+```{r unique-region}
+unique(catch_long$Region)
 ```
 
 Think about how we would calculate the average catch per region "by hand". It would be something like this: 
 
-0. We start with our table and notice there are multiple regions in the "Regions" column. 
+1. We start with our table and notice there are multiple regions in the "Regions" column. 
+2. We split our original table to group all observations from the same region together. 
+3. We calculate the average catch for each of the groups we form. 
+4. Then we combine the values for average catch per region into a single table. 
 
-
-1. We split our original table to group all observations from the same region together. 
-
-
-2. We calculate the average catch for each of the groups we form. 
-
-
-3. Then we combine the values for average catch per region into a single table. 
-
-:::{.column-body-outset}
-![](images/r_tidyverse_clean_wrangle/regions-split-apply-combine.png){ fig-align="center"}
-:::
+<p align="center">
+<img src="images/r_tidyverse_clean_wrangle/regions-split-apply-combine.png" alt="Diagram of a data set being split into separate tables, each with a subset of the total rows, based on a group column. A summary statistic is then computed for each 'sub-table' and they are re-combined into a single data set at the end." width="100%"/>
+</p>
 
 Analyses like this conform to what is known as the **Split-Apply-Combine strategy**. This strategy follows the three steps we explained above:
 
@@ -502,225 +508,273 @@ Analyses like this conform to what is known as the **Split-Apply-Combine strateg
 2. **Apply**: Calculate some summary statistic on each group (e.g. mean catch *by* year, number of individuals *per* species)
 3. **Combine**: Combine the statistic calculated on each group back together into a single table
 
-The `dplyr` library lets us easily employ the Split-Apply-Combine strategy by using the `group_by()` and `summarize()` functions:
+The `dplyr` library lets us easily employ the Split-Apply-Combine strategy by using the `group_by()` and `summarize()` functions!
 
-```{r}
+```{r summarize-ex_average}
 mean_region <- catch_long %>%
-    group_by(Region) %>%
-    summarize(mean_catch = mean(catch))
+    # Group by region
+    dplyr::group_by(Region) %>%
+    # Calculate averages within the established groups
+    dplyr::summarize(mean_catch = mean(catch, na.rm = TRUE),
+        .groups = "drop")# <1>
 
-head(mean_region)
+# Check the result
+dplyr::glimpse(mean_region)
 ```
+1. Specifies whether we want to keep the grouping structure in the data
+
+::: {.callout-warning}
+The `.groups` argument is not _strictly_ necessary but it's good practice to include! Without it, your data will stay grouped which can lead to some bizarre behavior down the line depending on what further operations you're doing.
+
+If you're curious, change it to `.groups = "keep"` and see how the result returned by `glimpse()` differs from the example above.
+:::
 
 Let's see how the previous code implements the Split-Apply-Combine strategy:
 
 1. `group_by(Region)`: this is telling R to **split** the dataframe and create a group for each different value in the column `Region`. R just keeps track of the groups, it doesn't return separate dataframes per region. 
+2. `mean(catch, na.rm = TRUE)`: here `mean` is the function we want to **apply** to the column `catch` in each group.
+3. `summarize(mean_catch = mean(catch, na.rm = TRUE)` the function `summarize()` is used to **combine** the results of `mean()` from each group into a single table. The argument `mean_catch = mean(...)` indicates what the column having the results of `mean()` will be named.
 
+Another common use of `group_by()` followed by `summarize()` is to count the number of rows in each group. We have to use the `n()` function from `dplyr`.
 
-2. `mean(catch)`: here `mean` is the function we want to **apply** to the column `catch` in each group.
-
-
-3. `summarize(catch = mean(catch))` the function `summarize()` is used to **combine** the results of `mean(catch)` in each group into a single table. The argument `mean_catch = mean(catch)` indicates that the column having the results of `mean(catch)` will be named `mean_catch`. 
-
-Another common use of `group_by()` followed by `summarize()` is to count the number of rows in each group. We have to use a special function from `dplyr`, `n()`.
-
-```{r}
+```{r summarize-ex_count}
 n_region <- catch_long %>%
-    group_by(Region) %>%
-    summarize(n = n())
+    dplyr::group_by(Region) %>%
+    # Count rows per region
+    dplyr::summarize(count = dplyr::n(), 
+        .groups = "drop")
 
+# Check the result
 head(n_region)
 ```
 
-::: {.callout-caution icon=false}
-## Try using `count()`
-
-If you are finding that you are reaching for this combination of `group_by()`, `summarize()` and `n()` a lot, there is a helpful `dplyr` function `count()` that accomplishes this in one function!
-:::
-
-::: {.callout-note icon=false}
-## Exercise
-
+:::{.callout-exercise}
 - Find another grouping and statistic to calculate for each group.
 - Find out if you can group by multiple variables.
 
-```{r}
-#| code-fold: true
-#| code-summary: "Answer"
+:::{.callout-answer}
+For example:
+```{r summary-exercise-answer}
 #| eval: false
 
-## for example:
 catch_year_sp <- catch_long %>%
-    group_by(Year, species) %>%
-    summarize(total_year = sum(catch, na.rm = T))
+    dplyr::group_by(Year, species) %>%
+    dplyr::summarize(total_year = sum(catch, na.rm = T),
+        .groups = "drop")
 ```
 :::
+:::
 
+## Conditionally Filter Rows Using `filter()`
 
-## Filtering rows using `filter()`
+We use the `filter()` function to filter our data set to only rows that match some condition. It's similar to `subset()` from base R. Let's go back to our long-form data set and do some filtering with `filter()`.
 
-We use the `filter()` function to filter our `data.frame` to rows matching some condition. It's similar to `subset()` from base R.
+::: {.callout-hint}
+If you need a quick reminder of some core "conditional operators" in R, look below!
 
-Let's go back to our original `data.frame` and do some `filter()`ing:
+| Conditional Operator | Separates | What Does it Test? |
+|:--:|:---:|:-------------------------------|
+| `==` | Values | Is the value on the left _exactly equal to_ the value on the right? | 
+| `!=` | Values | Is the value on the left _not equal to_ the value on the right? |
+| `>/<` | Values | Is the value on the left _greater than/less than_ the value on the right? |  
+| `>=/<=` | Values | Is the value on the left _greater than or equal to/less than or equal to_ the value on the right? | 
+| `%in%` | Values | Is the value on the left _one of the set of values_ on the right? |  
+| `|` | Conditions | Is _either_ of the conditions `TRUE`? | 
+| `&` | Conditions | Are _all_ of the conditions `TRUE`? | 
 
-```{r}
+:::
+
+```{r filter-ex-01}
 sse_catch <- catch_long %>%
-    filter(Region == "SSE")
+    dplyr::filter(Region == "SSE")
 
-head(sse_catch)
+# Check the result
+unique(sse_catch$Region) 
 ```
 
-::: {.callout-note icon=false}
-## Exercise
-
+::: {.callout-exercise}
 - Filter to just catches of over one million fish
-- Filter to just Chinook from the SSE region
+- Filter to just the SSE region
+- Filter to only Chinook
 
-```{r}
-#| code-fold: true
-#| code-summary: "Answer"
+::: {.callout-answer}
+```{r filter-exercise-01_answer-01}
+#| eval: false
+catch_sub <- catch_long %>%
+    # Filter catch
+    dplyr::filter(catch > 10^6) # <1>
+    # Filter region
+    dplyr::filter(Region == "SSE") %>% 
+    # Filter species
+    dplyr::filter(species == "Chinook")
+```
+1. Using exponents for big numbers can be a nice way of making sure you don't have typos in the number of zeros.
+
+Note that you could re-write the above more simply like so:
+
+```{r filter-exercise-01_answer-02}
 #| eval: false
 
-## Catches over a million fish
-catch_million <- catch_long %>%
-    filter(catch > 1000000)
-
-## Chinook from SSE data
-chinook_see <- catch_long %>%
-    filter(Region == "SSE",
-           species == "Chinook")
-
-## OR
-chinook_see <- catch_long %>%
-    filter(Region == "SSE" & species == "Chinook")
+# Do desired filtering
+catch_sub <- catch_long %>%
+    dplyr::filter(catch > 10^6 & Region == "SSE" & species == "Chinook")
 ```
 :::
+:::
 
+## Sorting Data with `arrange()`
 
-## Sorting your data using `arrange()`
+The `arrange()` function can be used to sort the rows of a data set. For a lot of R functions, row order does not matter, _however_ if you wanted to calculate a cumulative sum (e.g., with `base::cumsum()`), or display a table with sorted rows (e.g., in a Quarto report), it can be helpful to know how to use code to re-order your rows.
 
-The `arrange()` function is used to sort the rows of a `data.frame`. Two common cases to use `arrange()` are:
+Let's re-calculate mean catch by region, and then use `arrange()` to sort the output by mean catch.
 
-- To calculate a cumulative sum (with `cumsum()`) so row order matters
-- To display a table (like in an `.qmd` document) in sorted order
-
-Let's re-calculate mean catch by region, and then `arrange()` the output by mean catch:
-
-```{r}
+```{r arrange-ex_default}
 mean_region <- catch_long %>%
-    group_by(Region) %>%
-    summarize(mean_catch = mean(catch)) %>%
-    arrange(mean_catch)
+    # Summarize by region
+    dplyr::group_by(Region) %>%
+    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+        .groups = "drop") %>%
+    # Order by the mean catch
+    dplyr::arrange(mean_catch)
 
+# Check the result
 head(mean_region)
 ```
 
+The default sorting order of `arrange()` is to sort in ascending order. To reverse the sort order, wrap the column name inside `dplyr`'s `desc()` function:
 
-The default sorting order of `arrange()` is to sort in ascending order. To reverse the sort order, wrap the column name inside the `desc()` function:
-
-```{r}
+```{r arrange-ex_desc}
 mean_region <- catch_long %>%
-    group_by(Region) %>%
-    summarize(mean_catch = mean(catch)) %>%
-    arrange(desc(mean_catch))
+    # Summarize by region
+    dplyr::group_by(Region) %>%
+    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+        .groups = "drop") %>%
+    # Order by descending mean catch
+    dplyr::arrange(dplyr::desc(mean_catch))
 
+# Check the result
 head(mean_region)
 ```
 
-## Splitting a column using `separate()` and `unite()`
+## Splitting or Combining Columns
 
-The `separate()` function allow us to easily split a single column into numerous. Its complement, the `unite()` function, allows us to combine multiple columns into a single one.
+### Separate Columns with `separate_wider_delim()`
+
+The `separate_wider_delim()` function allow us to easily split a single column into numerous columns based on some "delimiter" character in the values of that column. Its complement, the `unite()` function, allows us to combine multiple columns into a single one.
 
 This can come in really handy when we need to split a column into two pieces by a consistent separator (like a dash).
 
 Let's make a new `data.frame` with fake data to illustrate this. Here we have a set of site identification codes with information about the island where the site is (the first 3 letters) and a site number (the 3 numbers). If we want to group and summarize by island, we need a column with just the island information.
 
-```{r}
-sites_df <- data.frame(site = c("HAW-101",
-                                "HAW-103",
-                                "OAH-320",
-                                "OAH-219",
-                                "MAU-039"))
+```{r separate_make-data}
+sites_df <- data.frame(site = c("HAW-101", "HAW-103", "OAH-320", "OAH-219", "MAU-039"))
 
-sites_df %>%
-    separate(site, c("island", "site_number"), "-")
+# Check that out
+head(sites_df)
 ```
 
-::: {.callout-note icon=false}
-## Exercise
+```{r separate-ex}
+# Split site by the dash between the site letters and its code
+sites_df %>%
+    tidyr::separate_wider_delim(cols = site, delim = "-",
+        names = c("island", "site_number"), cols_remove = F)
+```
 
-Split the `city` column in the data frame `cities_df` into `city` and `state_code` columns
+Note that `separate_wider_delim()` has _a lot_ of arguments you may want to use in some circumstances. Run `?tidyr::separate_wider_delim` in the Console to check them out.
 
-```{r}
-## create `cities_df`
+::: {.callout-exercise}
+
+1. Make a fake city data set
+
+```{r separate_exercise-data}
 cities_df <- data.frame(city = c("Juneau AK",
                                  "Sitka AK",
                                  "Anchorage AK"))
 ```
 
-```{r}
-#| code-fold: true
-#| code-summary: "Answer"
+2. Split the `city` column into `city_name` and `state_code` columns using the space
+
+::: {.callout-answer}
+```{r separate_exercise-answer}
 #| eval: false
-colnames(cities_df)
-
 cities_clean <- cities_df %>%
-    separate(city, c("city", "state_code"), " ")
-
+    tidyr::separate_wider_delim(cols = city, delim = " ",
+        names = c("city_name", "state_code")) # <1>
 ```
+1. By excluding the `cols_remove` argument, it will default to `TRUE` and we'll lose the original `city` column
+:::
 :::
 
-The `unite()` function does just the reverse of `separate()`. If we have a `data.frame` that contains columns for year, month, and day, we might want to unite these into a single date column.
+### Unite Columns with `unite()`
 
-```{r}
+The `unite()` function does the reverse of `separate_wider_delim()`; if we have a `data.frame` that contains separate columns, we can combine these into one column where all the values in the original columns are pasted together. For example, we might have a data set with columns for year, month, and day, and we might want to unite these into a single date column.
+
+```{r unite_make-data}
 dates_df <- data.frame(
-    year = c("1930",
-             "1930",
-             "1930"),
-    month = c("12",
-              "12",
-              "12"),
-    day = c("14",
-            "15",
-            "16")
-)
+    year = rep(x = "1930", times = 3),
+    month = rep(x = "12", times = 3),
+    day = 14:16)
 
-dates_df %>%
-    unite(date, year, month, day, sep = "-")
+# Check that
+dates_df
 ```
 
-## Now, all together!
 
-We just ran through the various things we can do with `dplyr` and `tidyr` but if you're wondering how this might look in a real analysis. Let's look at that now:
+```{r unite-ex}
+# Combine those columns into a single 'date' column
+dates_df %>%
+    tidyr::unite(col = date, 
+        year, month, day,  # <1>
+        sep = "-", 
+        remove = F) # <2>
+```
+1. Note that you don't specify an argument for the columns that you want to combine with `unite()`!
+2. This specifies whether you want to remove the original columns
 
-```{r}
-#| catch: true
-#| message: false
-catch_original <- read_csv("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1")
+## Putting it All Together!
 
+We just ran through the various things we can do with `dplyr`, `tidyr`, and the pipe but if you're wondering how this might look in a real analysis. Let's look at that now:
+
+```{r all-together-ex}
+# Grab the data
+catch_original <- readr::read_csv(file = "https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1",
+    show_col_types = F)
+
+# Do desired wrangling
 mean_region <- catch_original %>%
-  select(-All, -notesRegCode) %>% 
-  mutate(Chinook = if_else(Chinook == "I", "1", Chinook)) %>% 
-  mutate(Chinook = as.numeric(Chinook)) %>% 
-  pivot_longer(-c(Region, Year), 
-               names_to = "species", 
-               values_to = "catch") %>%
-  mutate(catch = catch*1000) %>% 
-  group_by(Region) %>% 
-  summarize(mean_catch = mean(catch)) %>% 
-  arrange(desc(mean_catch))
+    # Drop unwanted columns
+    dplyr::select(-All, -notesRegCode) %>% 
+    # Fix the typo in the Chinook data
+    dplyr::mutate(
+        Chinook = dplyr::if_else(Chinook == "I", 
+            true = "1", false = Chinook),
+        Chinook = as.numeric(Chinook)) %>% 
+    # Reshape to long format
+    tidyr::pivot_longer(-c(Region, Year), 
+        names_to = "species", 
+        values_to = "catch") %>%
+    # Transform catch into number of fish
+    dplyr::mutate(catch = catch*1000) %>% 
+    # Summarize within region
+    dplyr::group_by(Region) %>% 
+    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+        .groups = "drop") %>% 
+    # Sort by mean catch in descending order
+    dplyr::arrange(dplyr::desc(mean_catch))
 
+# Check the result
 head(mean_region)
 ```
 
+We have completed our lesson on Cleaning and Wrangling data. Before we break, let's practice our Git workflow!
 
-We have completed our lesson on Cleaning and Wrangling data. Before we break, let's practice our Git workflow.
-
-::: {.callout-tip icon=false}
-## Steps
-
-1. Save the `.qmd` you have been working on for this lesson.
-2. Render the Quarto file. This is a way to test everything in your code is working.
-
-3. ```Stage (Add) > Commit > Pull > Push```
+::: {.callout-exercise}
+1. Render the Quarto file
+    - This is a way to test everything in your code is working
+    - If rendering fails, edit and re-render as needed until it succeeds
+2. Save your changes to the `.qmd` file
+3. Stage the changes
+4. Commit them (with a nice commit message!)
+5. For Positron users, sync your changes
+    - Or for RStudio users, pull then push your changes
 :::

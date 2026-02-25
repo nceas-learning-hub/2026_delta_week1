@@ -83,6 +83,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-3e574af5b2e2997ed5180f0827bdcb07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -751,7 +754,7 @@ In this literate analysis, we:
 </div>
 </div>
 </div>
-<p>Below the YAML header, if your default is a blank canvas, let’s add some content. Type or copy/paste so your document looks like this:</p>
+<p>Below the YAML header, if your default is a blank canvas, let’s add some content. Type or copy/paste so your document looks like more or less like this:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -954,7 +957,7 @@ Tip
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<div class="callout-exercise">
+<div class="callout-exercise" data-collapse="true">
 <p>Enable Visual Editor mode.</p>
 <p>Add a citation (e.g., DOI 10.1038/s41467-020-17726-z) into a section of prose in your Quarto document, using the Visual Editor.</p>
 <p>Add a table into your Quarto document using the Visual Editor.</p>
@@ -987,7 +990,7 @@ Tip
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>Multiple options to run code; here are a few:</p>
+<p>Here are a few of the options to run code interactively:</p>
 <ol type="1">
 <li>Select the line (or simply put the cursor there), and click “Run”. This is available from:
 <ol type="a">
@@ -997,13 +1000,15 @@ Tip
 </ol></li>
 <li>Click the green arrow at the right of the code chunk to run the entire chunk.</li>
 </ol>
+<p><a href="images/r_quarto_literate_analysis/execute_code_rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/r_quarto_literate_analysis/execute_code_rstudio.png" style="height:2in" data-align="center"></a></p>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Multiple options to run code; here are a few:</p>
+<p>Here are a few of the options to run code interactively:</p>
 <ol type="1">
 <li>Select the line (or simply put the cursor there), and use the keyboard shortcut: Command-Enter or Ctrl-Enter</li>
 <li>Click the Run Cell arrow above the code chunk to run the entire chunk.</li>
 </ol>
+<p><a href="images/r_quarto_literate_analysis/execute_code_positron.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/r_quarto_literate_analysis/execute_code_positron.png" style="height:2in" data-align="center"></a></p>
 </div>
 </div>
 </div>
@@ -1019,8 +1024,8 @@ Tip
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<div class="callout-exercise">
-<p>Add a code chunk to your Quarto document:</p>
+<div class="callout-exercise" data-collapse="true">
+<p>Add a code chunk to your Quarto document, with some calculations and variable assignments. For example:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">*</span> <span class="dv">8</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1858,6 +1863,38 @@ date  (1): Date
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

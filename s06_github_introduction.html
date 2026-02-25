@@ -540,12 +540,9 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#exercise-3-starting-git-on-an-existing-folder" id="toc-exercise-3-starting-git-on-an-existing-folder" class="nav-link" data-scroll-target="#exercise-3-starting-git-on-an-existing-folder"><span class="header-section-number">5</span> Exercise 3: Starting Git on an Existing Folder</a>
   <ul class="collapse">
-  <li><a href="#open-the-folder-in-your-ide" id="toc-open-the-folder-in-your-ide" class="nav-link" data-scroll-target="#open-the-folder-in-your-ide"><span class="header-section-number">5.1</span> Open the Folder in Your IDE</a></li>
-  <li><a href="#start-git" id="toc-start-git" class="nav-link" data-scroll-target="#start-git"><span class="header-section-number">5.2</span> Start Git</a></li>
-  <li><a href="#tell-git-what-to-ignore" id="toc-tell-git-what-to-ignore" class="nav-link" data-scroll-target="#tell-git-what-to-ignore"><span class="header-section-number">5.3</span> Tell Git What to Ignore</a></li>
-  <li><a href="#double-check-gits-status" id="toc-double-check-gits-status" class="nav-link" data-scroll-target="#double-check-gits-status"><span class="header-section-number">5.4</span> Double Check Git’s Status</a></li>
-  <li><a href="#stagecommit-your-files" id="toc-stagecommit-your-files" class="nav-link" data-scroll-target="#stagecommit-your-files"><span class="header-section-number">5.5</span> Stage/Commit Your Files</a></li>
-  <li><a href="#connect-git-and-github" id="toc-connect-git-and-github" class="nav-link" data-scroll-target="#connect-git-and-github"><span class="header-section-number">5.6</span> Connect Git and GitHub</a></li>
+  <li><a href="#tell-git-what-to-ignore" id="toc-tell-git-what-to-ignore" class="nav-link" data-scroll-target="#tell-git-what-to-ignore"><span class="header-section-number">5.1</span> Tell Git What to Ignore</a></li>
+  <li><a href="#double-check-gits-status" id="toc-double-check-gits-status" class="nav-link" data-scroll-target="#double-check-gits-status"><span class="header-section-number">5.2</span> Double Check Git’s Status</a></li>
+  <li><a href="#stagecommit-your-files" id="toc-stagecommit-your-files" class="nav-link" data-scroll-target="#stagecommit-your-files"><span class="header-section-number">5.3</span> Stage/Commit Your Files</a></li>
   </ul></li>
   <li><a href="#go-further-with-git" id="toc-go-further-with-git" class="nav-link" data-scroll-target="#go-further-with-git"><span class="header-section-number">6</span> Go Further With Git</a></li>
   <li><a href="#git-resources" id="toc-git-resources" class="nav-link" data-scroll-target="#git-resources"><span class="header-section-number">7</span> Git Resources</a></li>
@@ -612,11 +609,18 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Multiple individuals can work on the same analysis concurrently</strong> on their own computers, with the ability to merge everyone’s changes together.</li>
 </ul>
 </section>
-<section id="what-exactly-are-git-and-github" class="level3 tabset" data-number="2.1">
-<h3 class="tabset anchored" data-number="2.1" data-anchor-id="what-exactly-are-git-and-github"><span class="header-section-number">2.1</span> What Exactly are Git and GitHub?</h3>
-<section id="git-an-open-source-version-control-software" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="git-an-open-source-version-control-software">Git: an open-source <strong>version control</strong> software</h4>
-<p><img src="images/github_introduction/git-intro.png" alt="Cartoon of a desktop computer containing the Git logo" width="30%" align="right"></p>
+<section id="what-exactly-are-git-and-github" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="what-exactly-are-git-and-github"><span class="header-section-number">2.1</span> What Exactly are Git and GitHub?</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">What is Git?</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">What is GitHub?</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><strong>Git</strong> is an open-source <strong>version control</strong> software</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github_introduction/git-intro.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Cartoon of a desktop computer containing the Git logo"></p>
+</figure>
+</div>
 <ul>
 <li>designed to manage the versioning and tracking of files and project history</li>
 <li><strong>operates locally</strong> on your computer, allowing you to create repositories and track changes</li>
@@ -624,10 +628,14 @@ ul.task-list li input[type="checkbox"] {
 <li>works directly with the files on your computer and does not require a network connection for most operations</li>
 <li>primarily used through the command-line interface (CLI, e.g.&nbsp;Terminal), but also has various GUI tools available (e.g.&nbsp;Positron IDE)</li>
 </ul>
-</section>
-<section id="github-an-online-platform-and-service-built-around-git" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="github-an-online-platform-and-service-built-around-git">GitHub: an <strong>online platform</strong> and service built around Git</h4>
-<p><img src="images/github_introduction/github-intro.png" alt="Cartoon of a cloud labeled 'GitHub' with the GitHub logo" width="30%" align="right"></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><strong>GitHub</strong> is an <strong>online platform</strong> and service built around Git</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github_introduction/github-intro.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Cartoon of a cloud labeled 'GitHub' with the GitHub logo"></p>
+</figure>
+</div>
 <ul>
 <li>provides a <strong>centralized hosting platform for Git repositories</strong></li>
 <li>allows us to store, manage, and collaborate on Git repositories in the cloud</li>
@@ -635,7 +643,9 @@ ul.task-list li input[type="checkbox"] {
 <li>enables easy sharing of code with others, facilitating collaboration and contribution to open source projects</li>
 <li>provides a social aspect, allowing users to follow projects, star repositories, and discover new code</li>
 </ul>
-</section>
+</div>
+</div>
+</div>
 </section>
 <section id="how-local-files-git-and-github-work-together" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="how-local-files-git-and-github-work-together"><span class="header-section-number">2.2</span> How Local Files, Git, and GitHub Work Together</h3>
@@ -646,9 +656,11 @@ ul.task-list li input[type="checkbox"] {
 <p>Git allows you to turn any “normal” folder, like <code>myFolder/</code>, into a <strong>Git repository</strong> – this is often referenced as “initializing a Git repository”. When you initialize a folder on your local computer as a Git repository, a hidden <code>.git/</code> folder is created <em>within</em> that folder (e.g.&nbsp;<code>myFolder/.git/</code>). This <code>.git/</code> folder <em>is</em> the <strong>Git repository</strong>.</p>
 <p>As you use Git commands to capture versions or “snapshots” of your work, those versions (and their associated metadata) get stored within the <code>.git/</code> folder. This allows you to access and/or recover any previous versions of your work. If you delete <code>.git/</code>, you delete your project’s history.</p>
 <p>Here is our example folder / Git repository represented visually:</p>
-<p align="center">
-<img src="images/github_introduction/git-repo.png" alt="Diagram of a local Git repository with a CSV, R script, and '.git' folder in the project directory" width="100%">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/git-repo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/github_introduction/git-repo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Diagram of a local Git repository with a CSV, R script, and '.git' folder in the project directory"></a></p>
+</figure>
+</div>
 </section>
 <section id="how-do-i-tell-git-to-preserve-versions-of-my-local-working-files" class="level4" data-number="2.2.2">
 <h4 data-number="2.2.2" class="anchored" data-anchor-id="how-do-i-tell-git-to-preserve-versions-of-my-local-working-files"><span class="header-section-number">2.2.2</span> How Do I Tell Git to Preserve Versions of My Local Working Files?</h4>
@@ -663,31 +675,29 @@ ul.task-list li input[type="checkbox"] {
 <section id="how-do-i-send-work-from-my-local-computer-to-github" class="level4" data-number="2.2.3">
 <h4 data-number="2.2.3" class="anchored" data-anchor-id="how-do-i-send-work-from-my-local-computer-to-github"><span class="header-section-number">2.2.3</span> How Do I Send Work From My Local Computer to GitHub?</h4>
 <p>The last step is synchronizing the changes made to our local repository with a remote repository (this remote repository is often stored on GitHub). The <code>git push</code> command is used to send local commits up to a remote repository. The <code>git pull</code> command is used to fetch changes from a remote repository and merge them into the local repository – <strong>pull</strong>ing will become a regular part of your workflow when collaborating with others, or even when working alone but on different machines (e.g.&nbsp;a laptop at home and a desktop at the office).</p>
-<p align="center">
-<img src="images/github_introduction/allison-horst-git-workflow.png" alt="A basic Git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled PULL')" width="90%">
-</p><figcaption>
+<a href="images/github_introduction/allison-horst-git-workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/github_introduction/allison-horst-git-workflow.png" class="img-fluid quarto-figure quarto-figure-center" style="width:70.0%" alt="A basic Git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled PULL')"></a>
+<figcaption>
 Artwork by Allison Horst
 </figcaption>
-<p></p>
 </section>
 </section>
 <section id="lets-look-at-a-github-repository" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="lets-look-at-a-github-repository"><span class="header-section-number">2.3</span> Let’s Look at a GitHub Repository</h3>
 <p>This screen shows the copy of a repository stored on GitHub, with its list of files, when the files and directories were last modified, and some information on who made the most recent changes.</p>
-<p><a href="images/github_introduction/gh-repo_home.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/github_introduction/gh-repo_home.png" class="img-fluid" alt="Screen capture of a GitHub repository's landing page"></a></p>
+<p><a href="images/github_introduction/gh-repo_home.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/github_introduction/gh-repo_home.png" class="img-fluid" alt="Screen capture of a GitHub repository's landing page"></a></p>
 <p>If we drill into the “commits” for the repository (by clicking the “Commits” button just beneath the colored “Code” dropdown menu), we can see the history of changes made within this repository, including the author, date, and commit message for each commit.</p>
-<p><a href="images/github_introduction/gh-repo_commits.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/github_introduction/gh-repo_commits.png" class="img-fluid" alt="Screen capture of a GitHub repository's page showing the history of the commits in the repository"></a></p>
+<p><a href="images/github_introduction/gh-repo_commits.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/github_introduction/gh-repo_commits.png" class="img-fluid" alt="Screen capture of a GitHub repository's page showing the history of the commits in the repository"></a></p>
 <p>And finally, if we drill into a particular commit, we can see exactly what was changed in each file that was included in that commit:</p>
-<p><a href="images/github_introduction/gh-repo_diff.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/github_introduction/gh-repo_diff.png" class="img-fluid" alt="Screen capture of a GitHub repository's page showing the 'diff' of files edited in a particular commit"></a></p>
+<p><a href="images/github_introduction/gh-repo_diff.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/github_introduction/gh-repo_diff.png" class="img-fluid" alt="Screen capture of a GitHub repository's page showing the 'diff' of files edited in a particular commit"></a></p>
 <p>Tracking these changes, how they relate to released versions of software and files is exactly what Git and GitHub are good for. And we will show how they can really be effective for tracking versions of scientific code, figures, and manuscripts to accomplish a reproducible workflow.</p>
 </section>
 <section id="git-vocabulary-commands" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="git-vocabulary-commands"><span class="header-section-number">2.4</span> Git Vocabulary &amp; Commands</h3>
 <p>We know the world of Git and GitHub can be daunting. Use these tables as references while you use Git and GitHub, and we encourage you to build upon this list as you become more comfortable with these tools.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Essential Git Commands</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Advanced Git Commands</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Other Terms</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Essential Git Commands</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Advanced Git Commands</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Other Terms</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>This table contains essential terms and commands that complement intro to Git skills. They will get you far on personal and individual projects.</p>
 <table class="caption-top table">
 <colgroup>
@@ -741,7 +751,7 @@ Artwork by Allison Horst
 </tbody>
 </table>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>This table includes more advanced Git terms and commands that are commonly used in both individual and collaborative projects.</p>
 <table class="caption-top table">
 <colgroup>
@@ -816,7 +826,7 @@ Artwork by Allison Horst
 </table>
 <p>Git has a rich set of commands and features, and there are many more terms beyond either table. Learn more by visiting the <a href="https://git-scm.com/docs">Git documentation</a>.</p>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p>This table includes terms for which there <strong>are not specific Git commands.</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -964,9 +974,9 @@ Artwork by Allison Horst
 <section id="initial-clone" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="initial-clone"><span class="header-section-number">4.1</span> Initial Clone</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>Positron makes working with Git and version-controlled files easy! To do so, you’ll need to <strong>tell Positron the folder in which you want it to clone your origin repository</strong>.</p>
 <ol type="1">
 <li>Start by copying the link to your GitHub repository from the address bar of your web browser
@@ -982,28 +992,36 @@ Artwork by Allison Horst
 </ul></li>
 <li>Click <strong>OK</strong></li>
 </ol>
-<p align="center">
-<img src="images/github_introduction/positron-clone_01-dialog.png" alt="Screen capture of Positron's dialogue menu for cloning a new repository from GitHub" width="65%">
-</p>
-<p>Once you click <strong>OK</strong>, your Positron window will refresh and the “Explorer” tab (in the left sidebar) will show that all files from the remote repository have been copied locally. Note that the folder icon in the top right corner will now have the name of your repository from GitHub.</p>
-<p><a href="images/github_introduction/positron-clone_02-ide.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/github_introduction/positron-clone_02-ide.png" class="img-fluid" alt="Screen capture of Positron after successfully cloning a new repository from GitHub"></a></p>
-<p>If you click the “Source Control” tab (its symbol looks like this: <i class="fa-solid fa-code-branch" aria-label="code-branch"></i>) you will see that there are no changes because we haven’t done anything to the local copy yet! However, both the commits (the initial commit and the test edit made directly in GitHub) are shown in the bottom left corner in reverse chronological order (i.e., most recent at the top).</p>
-<p align="center">
-<img src="images/github_introduction/positron-clone_03-source-control.png" alt="Screen capture of Positron's 'source control' pane after cloning a new repository from GitHub before editing it" width="60%">
-</p>
-<p>We can actually interact with particular commits to get more detailed information on what was changed directly through Positron! Click the top commit to expand it and see the files that were changed as part of that commit. Now click the README file (the only one edited as part of that commit). A file will now open in the main window of Positron showing the README file with new lines highlighted in green and deleted lines highlighted in red.</p>
-<p><a href="images/github_introduction/positron-clone_04-history.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/github_introduction/positron-clone_04-history.png" class="img-fluid" alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/positron-clone_01-dialog.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/github_introduction/positron-clone_01-dialog.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screen capture of Positron's dialogue menu for cloning a new repository from GitHub"></a></p>
+</figure>
 </div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Once you click <strong>OK</strong>, your Positron window will refresh and the “Explorer” tab (in the left sidebar) will show that all files from the remote repository have been copied locally. Note that the folder icon in the top right corner will now have the name of your repository from GitHub.</p>
+<p><a href="images/github_introduction/positron-clone_02-ide.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/github_introduction/positron-clone_02-ide.png" class="img-fluid" alt="Screen capture of Positron after successfully cloning a new repository from GitHub"></a></p>
+<p>If you click the “Source Control” tab (its symbol looks like this: <i class="fa-solid fa-code-branch" aria-label="code-branch"></i>) you will see that there are no changes because we haven’t done anything to the local copy yet! However, both the commits (the initial commit and the test edit made directly in GitHub) are shown in the bottom left corner in reverse chronological order (i.e., most recent at the top).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/positron-clone_03-source-control.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/github_introduction/positron-clone_03-source-control.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screen capture of Positron's 'source control' pane after cloning a new repository from GitHub before editing it"></a></p>
+</figure>
+</div>
+<p>We can actually interact with particular commits to get more detailed information on what was changed directly through Positron! Click the top commit to expand it and see the files that were changed as part of that commit. Now click the README file (the only one edited as part of that commit). A file will now open in the main window of Positron showing the README file with new lines highlighted in green and deleted lines highlighted in red.</p>
+<p><a href="images/github_introduction/positron-clone_04-history.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/github_introduction/positron-clone_04-history.png" class="img-fluid" alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened"></a></p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <p>RStudio makes working with Git and version-controlled files easy! To do so, you’ll need to <strong>create a new R Project</strong>.</p>
 <p>Start by clicking the <strong>Code</strong> button on your GitHub repository and copying the link from under the <strong>HTTPS</strong> field.</p>
-<p align="center">
-<img src="images/github_introduction/rstudio-clone_01-github.png" alt="Screen capture of the menu that appears in a GitHub repository when you click the 'Code' button" width="60%">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/rstudio-clone_01-github.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/github_introduction/rstudio-clone_01-github.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screen capture of the menu that appears in a GitHub repository when you click the 'Code' button"></a></p>
+</figure>
+</div>
 <p><strong>Click the project icon</strong> (looks like the letter “R” in a glass box) in the top right corner of RStudio. Note that if you use RStudio projects already, that button will have the name of the most recent project but if you don’t use them it will instead say “Project: (None)”. In the resulting dropdown, click <strong>New Project…</strong></p>
-<p align="center">
-<img src="images/github_introduction/rstudio-clone_02-new-proj.png" alt="Screen capture of the project dropdown menu in RStudio" width="50%">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/rstudio-clone_02-new-proj.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/github_introduction/rstudio-clone_02-new-proj.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Screen capture of the project dropdown menu in RStudio"></a></p>
+</figure>
+</div>
 <p>You will now be guided through a set of new project options. Click <strong>Version Control</strong>, then click <strong>Git</strong>. The next dialog is the critical one for getting your local clone set up.</p>
 <p>In this dialog, do the following:</p>
 <ol type="1">
@@ -1018,18 +1036,28 @@ Artwork by Allison Horst
 </ul></li>
 </ol>
 <p>Once that’s all done, click <strong>Create Project</strong>.</p>
-<p align="center">
-<img src="images/github_introduction/rstudio-clone_03-dialog.png" alt="Screen capture of the final dialog window in RStudio when cloning a new repository" width="80%">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/rstudio-clone_03-dialog.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/github_introduction/rstudio-clone_03-dialog.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Screen capture of the final dialog window in RStudio when cloning a new repository"></a></p>
+</figure>
+</div>
 <p>After a moment, your RStudio will refresh and you’ll see the name you gave to your local repository’s folder in the top right corner next to the project icon.</p>
-<p><a href="images/github_introduction/rstudio-clone_04-ide.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/github_introduction/rstudio-clone_04-ide.png" class="img-fluid" alt="Screen capture of the RStudio when in a project that is version-controlled"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/rstudio-clone_04-ide.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/github_introduction/rstudio-clone_04-ide.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Screen capture of the RStudio when in a project that is version-controlled"></a></p>
+</figure>
+</div>
 <p>You may also notice that you have a new tab in RStudio labeled Git. <strong>Click that tab.</strong> You’ll see that you have your .Rproj file listed with two <strong><span style="color:gold">yellow</span></strong> question marks. RStudio uses this file to define an RProject but because it isn’t in your remote repository, Git is flagging it for your attention as a file that is in the tracked folder but is not itself tracked. <em>Ignore this for now</em> as we’ll get to more on it later.</p>
 <p align="center">
-<img src="images/github_introduction/rstudio-clone_05-git-pane.png" alt="Screen capture of the Git pane in RStudio" width="60%">
+<img src="images/github_introduction/rstudio-clone_05-git-pane.png" alt="Screen capture of the Git pane in RStudio" width="50%">
 </p>
 <p>If you click the “History” button in the Git tab (its symbol is a clock <i class="fa-solid fa-clock" aria-label="clock"></i>) you will see all of the commits that have been made in this repository. They are shown in the top half of the window in reverse chronological order (i.e., most recent at the top).</p>
 <p>We can actually interact with particular commits to get more detailed information on what was changed directly through RStudio! Click the top commit to expand it and see the files that were changed as part of that commit. The bottom half of the window will now show the README file with new lines highlighted in green and deleted lines highlighted in red.</p>
-<p><a href="images/github_introduction/rstudio-clone_06-history.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/github_introduction/rstudio-clone_06-history.png" class="img-fluid" alt="Screen capture of RStudio's commit history window with two commits on the repository"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/rstudio-clone_06-history.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/github_introduction/rstudio-clone_06-history.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Screen capture of RStudio's commit history window with two commits on the repository"></a></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1038,12 +1066,12 @@ Artwork by Allison Horst
 <h3 data-number="4.2" class="anchored" data-anchor-id="making-a-commit"><span class="header-section-number">4.2</span> Making a Commit</h3>
 <p>Now that we have seen the changes from the past, let’s go ahead and make some new changes in our IDE. Close the history file we had open then open the actual README.md file.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p>Go to “File Explorer” tab and double click the README file to open it.</p>
 </div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <p>Go to the “Files” pane and click the README to open it.</p>
 </div>
 </div>
@@ -1070,29 +1098,33 @@ Artwork by Allison Horst
 <div class="quarto-layout-panel" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction/positron-commit_01-edit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/github_introduction/positron-commit_01-edit.png" class="img-fluid" alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified"></a></p>
+<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction/positron-commit_01-edit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/github_introduction/positron-commit_01-edit.png" class="img-fluid" alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified"></a></p>
 </div>
 </div>
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction/rstudio-commit_01-edit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/github_introduction/rstudio-commit_01-edit.png" class="img-fluid" alt="Screen capture of RSTudio with the README file opened"></a></p>
+<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction/rstudio-commit_01-edit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/github_introduction/rstudio-commit_01-edit.png" class="img-fluid" alt="Screen capture of RSTudio with the README file opened"></a></p>
 </div>
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <p>Note that once you edit and save the README, the file’s name (both in the Explorer tab list and in the top of Positron) will turn orange and have a capital “M” to the right of the filename. This is Git letting you know that the file has been modified from the most recent version. Additionally, the Source Control tab will get a red circle with a “1,” indicating that the state of one file in the version controlled repository has changed.</p>
 <p>If you <strong>head over to the Source Control tab</strong>, you’ll see that the README now appears under the “Changes” list.</p>
-<p align="center">
-<img src="images/github_introduction/positron-commit_02-source-control.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/positron-commit_02-source-control.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/github_introduction/positron-commit_02-source-control.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading"></a></p>
+</figure>
+</div>
 <p>Once you are there, <strong>hover your mouse over the README and a plus sign button will appear, click it.</strong> Note that the button is not visible unless your mouse is over some part of the “Changes” list. <em>Clicking that button is analogous to using the Git command, <code>git add README.md</code>, in the command line.</em></p>
 <p>After you click the plus sign, the README will move under a new list titled “Staged Changes”. You can now add a commit message and then click the “Commit” button when you’re ready to do so. <em>This is analogous to using the Git command, <code>git commit -m "my commit message"</code>, in the command line.</em></p>
-<p align="center">
-<img src="images/github_introduction/positron-commit_03-stage.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'staged changes' heading and an informative commit message in the respective text field" width="70%">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/positron-commit_03-stage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/github_introduction/positron-commit_03-stage.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'staged changes' heading and an informative commit message in the respective text field"></a></p>
+</figure>
+</div>
 <p>Once you do that, a few things will happen simultaneously:</p>
 <ul>
 <li>The “Commit” button will automatically change into a “Sync Changes” button.</li>
@@ -1100,38 +1132,50 @@ Artwork by Allison Horst
 <li>The README file tab will go back to the default color and the “M” next to it will vanish</li>
 <li>The commit history diagram in the bottom left corner will show your new commit (in a different color than the prior commits)</li>
 </ul>
-<p align="center">
-<img src="images/github_introduction/positron-commit_04-commit.png" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading" width="70%">
-</p>
-<p>Go ahead and click the Sync button. It will become a grayed-out Commit button again and your commit history (bottom left) will go back to all being one color as the commit that was previously only on your local repository is synced with the remote repository.</p>
-<p align="center">
-<img src="images/github_introduction/positron-commit_05-sync.png" alt="Screen capture of Positron's 'source control' tab where no files are showing as changed or staged" width="70%">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/positron-commit_04-commit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="images/github_introduction/positron-commit_04-commit.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screen capture of Positron's 'source control' tab with the README file listed under the 'changes' heading"></a></p>
+</figure>
 </div>
-<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>Go ahead and click the Sync button. It will become a grayed-out Commit button again and your commit history (bottom left) will go back to all being one color as the commit that was previously only on your local repository is synced with the remote repository.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/positron-commit_05-sync.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="images/github_introduction/positron-commit_05-sync.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screen capture of Positron's 'source control' tab where no files are showing as changed or staged"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <p>If you <strong>head over to the Git pane</strong>, you’ll see that the README now appears there with a <strong><span style="color:blue">blue</span></strong> “M”. That “M” stands for “modified”</p>
-<p align="center">
-<img src="images/github_introduction/rstudio-commit_02-git.png" alt="Screen capture of RStudio's 'Git' pane with the README file listed next to blue capital 'M'" width="70%">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/rstudio-commit_02-git.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="images/github_introduction/rstudio-commit_02-git.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screen capture of RStudio's 'Git' pane with the README file listed next to blue capital 'M'"></a></p>
+</figure>
+</div>
 <p>Once you are there, <strong>check the box next to the README</strong> under the “Staged” heading. <em>Clicking that button is analogous to using the Git command, <code>git add README.md</code>, in the command line.</em></p>
 <p>After you check the box, you can <strong>click either of the two left-most buttons in the Git pane.</strong> In the resulting pop-up menu (which looks imilar to the history menu), you can now add a commit message and then click the “Commit” button when you’re ready to do so. <em>This is analogous to using the Git command, <code>git commit -m "my commit message"</code>, in the command line.</em></p>
-<p><a href="images/github_introduction/rstudio-commit_03-stage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/github_introduction/rstudio-commit_03-stage.png" class="img-fluid" alt="Screen capture of RStudio's commit menu with the README file staged and an informative commit message in the respective text field"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/rstudio-commit_03-stage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="images/github_introduction/rstudio-commit_03-stage.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Screen capture of RStudio's commit menu with the README file staged and an informative commit message in the respective text field"></a></p>
+</figure>
+</div>
 <p>Once you do that, you can <strong>close this menu</strong> and two things should become apparent:</p>
 <ul>
 <li>The README is <em>no longer</em> listed in the Git pane</li>
 <li>There is a new message just beneath the buttons of the Git pane saying something like <code>Your branch is ahead of 'origin/main' by 1 commit</code>.</li>
 </ul>
 <p>This means that your commit worked!</p>
-<p align="center">
-<img src="images/github_introduction/rstudio-commit_04-commit.png" alt="Screen capture of RStudio's 'Git' pane showing that the local repository is one commit ahead of the remote" width="70%">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/rstudio-commit_04-commit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="images/github_introduction/rstudio-commit_04-commit.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screen capture of RStudio's 'Git' pane showing that the local repository is one commit ahead of the remote"></a></p>
+</figure>
+</div>
 <p>Go ahead and <strong>click the Pull button</strong>; it is a downward-facing <strong><span style="color:blue">blue</span></strong> arrow (<span style="color:blue"><i class="fa-solid fa-down-long" aria-label="down-long"></i></span>). You should get a message that says <code>Already up to date</code>. This is because you’re working alone but <u>when collaborating <em>it is important to pull early and often</em> to ensure that you’re working on the latest version of all files</u>.</p>
 <p>Now that you’ve pulled, you can <strong>click the Push button</strong>; it is an upward-facing <strong><span style="color:green">green</span></strong> arrow (<span style="color:green"><i class="fa-solid fa-up-long" aria-label="up-long"></i></span>). This button will send your local commit ‘up’ to your remote repository.</p>
 </div>
 </div>
 </div>
 <p>If you navigate back to your remote repository on GitHub, you should see the edits to your README and the most recent commit will be the one you just made. Note that sometimes you have to refresh the page or wait a few seconds for those updates to be visible on GitHub.</p>
-<p><a href="images/github_introduction/positron-commit_06-updated-remote.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/github_introduction/positron-commit_06-updated-remote.png" class="img-fluid" alt="Screen capture of a GitHub repository's landing page with a new commit"></a></p>
+<p><a href="images/github_introduction/positron-commit_06-updated-remote.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="images/github_introduction/positron-commit_06-updated-remote.png" class="img-fluid" alt="Screen capture of a GitHub repository's landing page with a new commit"></a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1153,59 +1197,75 @@ Artwork by Allison Horst
 <section id="exercise-3-starting-git-on-an-existing-folder" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="exercise-3-starting-git-on-an-existing-folder"><span class="header-section-number">5</span> Exercise 3: Starting Git on an Existing Folder</h2>
 <p>There are a number of different workflows for creating version-controlled repositories that are stored on GitHub. We started with Exercise 1 and Exercise 2 using one common approach: create a remote repository on GitHub first, <em>then</em> clone that repository to your local computer. However, you may find yourself in the situation where you <strong>have an <em>existing</em> folder of content that you want to <em>start</em> tracking with Git and host in GitHub.</strong></p>
-<p>There are a few approaches for connecting an existing local folder to Git/GitHub but <strong>we’ll focus on how you can do this via the command line.</strong> This has the advantage of being both coding language agnostic and IDE software agnostic.</p>
-<p>While the tutorial below will be using the Terminal in Positron, you could use any command-line interface (e.g.&nbsp;RStudio Terminal, Mac Terminal, Git Bash, etc.) that allows for Git interactions. The advantage of using an IDE is that the Terminal is already ‘looking’ at your working directory while other command line interfaces would require you to navigate to the project directory (i.e., by using the <code>cd</code> command).</p>
-<section id="open-the-folder-in-your-ide" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="open-the-folder-in-your-ide"><span class="header-section-number">5.1</span> Open the Folder in Your IDE</h3>
-<p>In this last exercise, we will practice this workflow using your <code>training_{USERNAME}</code> folder. Switch to your <code>training_{USERNAME}</code> folder using the dropdown menu in the top right corner (<i class="fa-solid fa-p" aria-label="p"></i> Positron: “folder” / <i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio: “project”). Click the dropdown next to your current folder name (<code>{FIRSTNAME}_test</code>), and then select <code>training_{USERNAME}</code> from the list of recent folders you’ve opened in this IDE. If you’ve never opened the <code>training_{USERNAME}</code> folder with this IDE, click <strong>Open Folder…</strong> (in <i class="fa-solid fa-p" aria-label="p"></i> Positron) or <strong>Open Project…</strong> (in <i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio) instead and navigate to that folder.</p>
-<p>In my case, I have some scripts that are empty but their names reflect steps in my code workflow that I think are likely enough to warrant making placeholder scripts. If we use our IDE to look at the files in the current working directory, we can see those files are all just loose in the folder I’m using for this project.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction/folder-first-git_01-folder-positron.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/github_introduction/folder-first-git_01-folder-positron.png" class="img-fluid" alt="Screen capture of Positron's 'explorer' tab with three files"></a></p>
+<p>There are a few approaches for connecting an existing local folder to Git/GitHub but the folks at Posit have developed some useful tools to streamline this. The task is slightly different between RStudio and Positron IDEs.</p>
+<p>In this last exercise, we will practice this workflow using your <code>training_{USERNAME}</code> folder.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<p><strong>Open the Folder in Positron</strong></p>
+<p>Switch to your <code>training_{USERNAME}</code> folder using the dropdown menu in the top right corner (<i class="fa-solid fa-p" aria-label="p"></i> Positron: “folder”. Click the dropdown next to your current folder name (<code>{FIRSTNAME}_test</code>), and then select <code>training_{USERNAME}</code> from the list of recent folders you’ve opened in Positron. If you’ve never opened the <code>training_{USERNAME}</code> folder with Positron, click <strong>Open Folder…</strong>.</p>
+<p>In this example, there are some existing scripts whose names reflect steps in a typical code workflow. Your own project will likely look different, but have some files and maybe some folders.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/folder-first-git_01-folder-positron.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="images/github_introduction/folder-first-git_01-folder-positron.png" class="quarto-figure quarto-figure-center figure-img" style="height:2in" alt="Screen capture of Positron's 'explorer' tab with three files"></a></p>
+</figure>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction/folder-first-git_01-folder-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/github_introduction/folder-first-git_01-folder-rstudio.png" class="img-fluid" alt="Screen capture of RStudio's 'files' pane with three files and the .Rproj file"></a></p>
+<p><strong>Initialize Git</strong></p>
+<p>Now that we’re in the right folderin Positron, <strong>switch to the Terminal pane</strong> and run the following commands:</p>
+<ol type="1">
+<li><code>git init</code> - This initializes the current folder/directory to be Git-enabled (by creating a <code>.git</code> folder inside). It will return a message saying something like <code>Initialized empty Git repository in...</code> followed by the absolute path to your chosen folder.</li>
+<li><code>git add --all</code> or <code>git add .</code> - this stages all your current files in the folder so Git knows to take a snapshot of them.</li>
+<li><code>git commit -m "initial commit"</code> - this takes the snapshot of the current state of the files.</li>
+</ol>
+<p><strong>Connect local Git with remote GitHub</strong></p>
+<p>Here, go back to the Console pane - this next step is in R. We’ll use a tool from the <code>usethis</code> package to create a remote repository on GitHub (with the same name as the current folder) and push our initial commit out to GitHub.</p>
+<ol start="4" type="1">
+<li><code>usethis::use_github()</code> (note, <code>install.packages('usethis')</code> if you don’t already have it installed!)</li>
+<li>That’s it! You will see R go through a series of steps: create a GitHub repository, set remote origin, push main branch, and then optionally opening the URL to take you to your repository on GitHub.</li>
+</ol>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<p><strong>Open Project in RStudio</strong></p>
+<p>Switch to your <code>training_{USERNAME}</code> folder using the dropdown menu in the top right corner (<i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio: “folder”. Click the dropdown next to your current folder name (<code>{FIRSTNAME}_test</code>), and then select <code>training_{USERNAME}</code> from the list of recent folders you’ve opened. If you’ve never opened the <code>training_{USERNAME}</code> folder with RStudio, click <strong>New Project…</strong>. Alternately, from the top menu, choose File &gt; Open Project or File &gt; New Project.</p>
+<p>In this example, there are some existing scripts whose names reflect steps in a typical code workflow. Your own project will likely look different, but have some files and maybe some folders.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_introduction/folder-first-git_01-folder-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="images/github_introduction/folder-first-git_01-folder-rstudio.png" class="quarto-figure quarto-figure-center figure-img" style="height:2in" alt="Screen capture of RStudio's 'files' pane with three files and the .Rproj file"></a></p>
+</figure>
+</div>
+<p><strong>Initialize Git and Connect to Remote</strong></p>
+<p>Make sure you are in the Console pane - these nexts step are in R. We’ll use tools from the <code>usethis</code> package to initialize the folder as a Git repository, then create a remote repository on GitHub (with the same name as the current folder) and push our initial commit out to GitHub.</p>
+<ol type="1">
+<li><code>usethis::use_git()</code> (note, <code>install.packages('usethis')</code> if you don’t already have it installed!). This will walk through several steps, showing you the progress along the way:
+<ul>
+<li>set active project to the current project</li>
+<li>initialize the folder to be a Git repository (<code>git init</code> per the commands noted above)</li>
+<li>creates a <code>.gitignore</code> file (see more below) and adds a few file paths to that file.</li>
+<li>identifies whether there are any uncommited files and if so asks if you would like to commit them.</li>
+</ul></li>
+<li>When asked <code>Is it ok to commit them?</code> choose the correct number for a yes/absolutely/affirmative response. This will:
+<ul>
+<li>stage the files (<code>git add --all</code>)</li>
+<li>commit them with a message (<code>git commit -m "initial commit"</code>)</li>
+<li>ask if you’d like to restart.</li>
+</ul></li>
+<li>When asked <code>Restart now?</code> you can choose to restart (to see the Git pane) or not (it won’t break anything, you just won’t see the Git pane til you restart later)</li>
+<li><code>usethis::use_github()</code></li>
+<li>That’s it! You will see R go through a series of steps: create a GitHub repository, set remote origin, push main branch, and then optionally opening the URL to take you to your repository on GitHub.</li>
+</ol>
 </div>
 </div>
 </div>
-</section>
-<section id="start-git" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="start-git"><span class="header-section-number">5.2</span> Start Git</h3>
-<p>Now that we’re in the right folder, <strong>run <code>git init</code> <u>in the Terminal</u></strong>. This will return a message (also in the Terminal) saying something along the lines of <code>Initialized empty Git repository in...</code> followed by the absolute path to your chosen folder. Additionally, your IDE’s version control window should flag all of the files in the working directory as untracked.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio users may need to quit and re-open RStudio to get the “Git” pane to show up.</p>
-</div>
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction/folder-first-git_02-git-init-positron.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/github_introduction/folder-first-git_02-git-init-positron.png" class="img-fluid" alt="Screen capture of Positron's 'explorer' tab with three files that are registering as untracked by Git"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction/folder-first-git_02-git-init-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/github_introduction/folder-first-git_02-git-init-rstudio.png" class="img-fluid" alt="Screen capture of RStudio's 'git' pane with three scripts, the .gitignore, and a .Rproj file registering as untracked by Git"></a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="tell-git-what-to-ignore" class="level3" data-number="5.3">
-<h3 data-number="5.3" class="anchored" data-anchor-id="tell-git-what-to-ignore"><span class="header-section-number">5.3</span> Tell Git What to Ignore</h3>
+<section id="tell-git-what-to-ignore" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="tell-git-what-to-ignore"><span class="header-section-number">5.1</span> Tell Git What to Ignore</h3>
 <p>An absolutely critical component of version control with Git is what Git <em>doesn’t</em> track, not just what it <em>does</em> track. <strong>Git repositories each use a file called “.gitignore” to ‘decide’ what not to track.</strong> This is useful for many reasons but in particular the .gitignore will be a useful guardrail against tracking (A) large files or (B) files with sensitive information (e.g., passwords, private data).</p>
 <p>Any file or folder named in the .gitignore won’t show up in the version control window of any IDE. This means that you don’t need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!</p>
 <p>In our earlier exercises, we’ve started repositories in GitHub with the template “.gitignore” file for R users but there are some slight differences when adding Git tracking to an existing folder.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <p>Positron does not add a “.gitignore” when you create a Git repository in that folder. So we’ll need to create one manually.</p>
 <p>In the Terminal, follow the instructions below based on your computer’s operating system.</p>
 <ul>
@@ -1216,7 +1276,7 @@ Warning
 </ul></li>
 </ul>
 </div>
-<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
 <p>RStudio does create a “.gitignore” when you create a Git repository in a project but it is <em>very</em> limited relative to what we’d get from the GitHub template for R. So we’ll need to flesh it out.</p>
 </div>
 </div>
@@ -1253,8 +1313,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="double-check-gits-status" class="level3" data-number="5.4">
-<h3 data-number="5.4" class="anchored" data-anchor-id="double-check-gits-status"><span class="header-section-number">5.4</span> Double Check Git’s Status</h3>
+<section id="double-check-gits-status" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="double-check-gits-status"><span class="header-section-number">5.2</span> Double Check Git’s Status</h3>
 <p>Because we’re using the Terminal inside of Positron, we have some helpful visuals to know that things have been going smoothly. However, if you were following these instructions outside of an IDE, you wouldn’t have those handy <u>g</u>raphical <u>u</u>ser <u>i</u>nterface (GUI) elements.</p>
 <p>In that case you would want to <strong>run <code>git status</code> to make sure that the setup tasks you’ve taken so far are working as desired.</strong> If everything is going smoothly, you should get a message like the following:</p>
 <pre><code>On branch main
@@ -1270,17 +1330,17 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
 </section>
-<section id="stagecommit-your-files" class="level3" data-number="5.5">
-<h3 data-number="5.5" class="anchored" data-anchor-id="stagecommit-your-files"><span class="header-section-number">5.5</span> Stage/Commit Your Files</h3>
+<section id="stagecommit-your-files" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="stagecommit-your-files"><span class="header-section-number">5.3</span> Stage/Commit Your Files</h3>
 <p>Now that we’re confident Git is set up correctly, we want to start Git tracking on the files that are in our folder. In this case, because we want to track all the files, we can <strong>run <code>git add .</code></strong> to stage all the files. If we only wanted to stage certain files, we could instead run <code>git add 01_harmonize.r</code> to stage one file at a time.</p>
 <p>Without an IDE’s <u>G</u>raphical <u>U</u>ser <u>I</u>nterface (GUI), we could again run <code>git status</code> if we want to check whether staging worked as desired.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction/folder-first-git_04-stage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/github_introduction/folder-first-git_04-stage.png" class="img-fluid" alt="Screen capture of Positron's 'explorer' tab where all untracked files are staged"></a></p>
+<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction/folder-first-git_04-stage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img src="images/github_introduction/folder-first-git_04-stage.png" class="quarto-figure quarto-figure-center" style="height:2in" alt="Screen capture of Positron's 'explorer' tab where all untracked files are staged"></a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction/folder-first-git_02-git-init-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/github_introduction/folder-first-git_02-git-init-rstudio.png" class="img-fluid" alt="Screen capture of RStudio's 'git' pane with three scripts, the .gitignore, and a .Rproj file registering as untracked by Git"></a></p>
+<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction/folder-first-git_02-git-init-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img src="images/github_introduction/folder-first-git_02-git-init-rstudio.png" class="quarto-figure quarto-figure-center" style="height:2in" alt="Screen capture of RStudio's 'git' pane with three scripts, the .gitignore, and a .Rproj file registering as untracked by Git"></a></p>
 </div>
 </div>
 </div>
@@ -1291,32 +1351,6 @@ Author: njlyon0 &lt;{redacted}@gmail.com&gt;
 Date:   Fri Feb 13 15:52:44 2026 -0500
 
     feat: first commit of core scripts</code></pre>
-</section>
-<section id="connect-git-and-github" class="level3" data-number="5.6">
-<h3 data-number="5.6" class="anchored" data-anchor-id="connect-git-and-github"><span class="header-section-number">5.6</span> Connect Git and GitHub</h3>
-<p>Now that we’ve got our local Git repository all nicely set up, it’s time to lay the groundwork to get it talking with a remote repository hosted in GitHub. However, <strong>there is an important difference between this GitHub repository and the ones we made earlier: <span style="color:red"><u>it needs to be COMPLETELY EMPTY!</u></span></strong></p>
-<p>If you put anything in the GitHub repo when you make it, that counts as a commit. That means your local Git repository’s first commit and the first commit of the remote GitHub repository are different and will create a horrible conflict that is a pain to fix. So, when you create this GitHub repository <u><strong>do not</strong> include a README, .gitignore, or LICENSE file!</u></p>
-<p>If you create a completely empty GitHub repository the landing page will look something like the following:</p>
-<p><img src="images/github_introduction/folder-first-git_06-empty-gh-repo.png" alt="Screen capture of a GitHub repository when it is created with nothing in it" width="95%"></p>
-<p>Once you’ve made your <u>completely empty</u> GitHub repository:</p>
-<ol type="1">
-<li>Scroll down to the <strong>…or push an existing repository from the command line</strong> section</li>
-<li>Copy the whole code chunk beneath that heading</li>
-<li>Run that code in the Terminal</li>
-</ol>
-<p>After you’ve done that, if you refresh the page on the GitHub repository, you should see the files that you just committed!</p>
-<p><img src="images/github_introduction/folder-first-git_07-gh-repo.png" alt="Screen capture of a GitHub repository with a number of files added in a single commit" width="100%"></p>
-<p>Similarly, your IDE’s version control window will now look like it did in the previous exercises and will include the commit we made via the command line.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><i class="fa-solid fa-p" aria-label="p"></i> Positron <a href="images/github_introduction/folder-first-git_08-positron.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/github_introduction/folder-first-git_08-positron.png" class="img-fluid" alt="Screen capture of Positron's 'source control' tab with no files showing as being changed"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio <a href="images/github_introduction/folder-first-git_08-rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="images/github_introduction/folder-first-git_08-rstudio.png" class="img-fluid" alt="Screen capture of RStudio's 'git' pane with no files showing as being changed"></a></p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

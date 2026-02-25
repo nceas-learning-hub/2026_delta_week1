@@ -169,9 +169,9 @@ y <- 1 + 1
 
 :::
 
-Below the YAML header, let's add some content.  Type or copy/paste so your document looks like this:
+Below the YAML header, let's add some content.  Type or copy/paste so your document looks more or less like this:
 
-:::{.callout-note collapse="true"}
+:::{.callout-note collapse=true}
 
 ### Expand this block and add this code to your Quarto document
 
@@ -245,7 +245,7 @@ matters: `#` is the biggest header, `###` up to `######` are
 consecutively smaller and nested below it.
 :::
 
-::: callout-exercise
+::: {.callout-exercise collapse=true}
 Add some italic text, a numbered list, and a sub-header to your
 document. Try a few other Markdown syntax options. Re-render and check
 the output.
@@ -269,7 +269,7 @@ To toggle between Visual Editor and Source Editor mode:
 * RStudio: Click the "Visual" button (vs. "Source") at the top right of the editor pane.
 * Positron: Command-Shift-F4 (Mac) or Ctrl-Shift-F4 (Windows).
 
-::: callout-exercise
+::: {.callout-exercise collapse=true}
 Enable Visual Editor mode.
 
 Add a citation (e.g., DOI 10.1038/s41467-020-17726-z) into a section of
@@ -303,7 +303,7 @@ All the R code in your Quarto document will execute when you Render the document
 ::: {.panel-tabset}
 ##### RStudio
 
-Multiple options to run code; here are a few:
+Here are a few of the options to run code interactively:
 
 1.  Select the line (or simply put the cursor there), and click "Run".
     This is available from:
@@ -312,17 +312,20 @@ Multiple options to run code; here are a few:
     c.  keyboard shortcut: Command-Enter or Ctrl-Enter
 2.  Click the green arrow at the right of the code chunk to run the entire chunk.
 
+![](images/r_quarto_literate_analysis/execute_code_rstudio.png){height=2in .lightbox align="center"}
+
 ##### Positron
 
-Multiple options to run code; here are a few:
+Here are a few of the options to run code interactively:
 
 1.  Select the line (or simply put the cursor there), and use the keyboard shortcut: Command-Enter or Ctrl-Enter
 2.  Click the Run Cell arrow above the code chunk to run the entire chunk.
 
+![](images/r_quarto_literate_analysis/execute_code_positron.png){height=2in .lightbox align="center"}
 :::
 
-:::{.callout-exercise}
-Add a code chunk to your Quarto document:
+:::{.callout-exercise collapse=true}
+Add a code chunk to your Quarto document, with some calculations and variable assignments.  For example:
 
 ```{{r}}
 x <- 4 * 8

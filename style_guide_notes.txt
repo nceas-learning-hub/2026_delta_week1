@@ -16,4 +16,6 @@ Style guide preferences:
         * ```{{r}} to show code chunk header and footer
     * comments at end of line vs. footnotes?
 * Naming code chunks: good thing!
-
+* Tabsets: great for alternative IDE or methods
+    * Avoid putting headers inside the tabsets (aside from labeling the tabsets appropriately) - assuming section numbering is enabled, the numbering gets weird
+* Images: use ![](path) mode instead of <img src="path"> mode?  strengths? weaknesses?

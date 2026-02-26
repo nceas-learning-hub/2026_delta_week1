@@ -169,7 +169,7 @@ fatal: Need to specify how to reconcile divergent branches
 1. This is the Terminal code to set the "merge" strategy, though we recommend you set this globally using the `--global` option.
 :::
 
-## GitHub Authentication
+## Authenticate Your Computer with GitHub
 
 While you will use your GitHub password to log in to your account on a web browser, in order to actually send code you write from your local computer up to GitHub, you'll need to "authenticate" in a different, more secure way.
 

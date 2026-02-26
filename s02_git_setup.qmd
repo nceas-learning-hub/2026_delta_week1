@@ -12,6 +12,16 @@ While completing this session, you will accomplish the following tasks:
 - Create a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT) so your computer can communicate automatically with GitHub
 :::
 
+:::{.callout-tip}
+## Learning Objectives
+
+After completing this session, you will be able to:
+
+- Explain what the Terminal is and how it's relevant to Git setup tasks
+- Describe why it's important to set a defult merge strategy for Git
+- Paraphrase why a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT) is necessary to interact with GitHub from your computer
+:::
+
 ## Install Software First!
 
 :::{.callout-important}

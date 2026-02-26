@@ -618,7 +618,7 @@
     "href": "s02_git_setup.html",
     "title": "Git and GitHub Setup",
     "section": "",
-    "text": "TipTasks To Do\n\n\n\nWhile completing this session, you will accomplish the following tasks:\n\nSet Git defaults for your local computer\nTell Git how to reconcile differences between branches\nCreate a Personal Access Token (PAT) so your computer can communicate automatically with GitHub",
+    "text": "TipLearning Objectives\n\n\n\nAfter completing this session, you will be able to:\n\nExplain what the Terminal is and how it’s relevant to Git setup tasks\nDescribe why it’s important to set a defult merge strategy for Git\nParaphrase why a Personal Access Token (PAT) is necessary to interact with GitHub from your computer",
     "crumbs": [
       "Day 1",
       "Git and GitHub Setup"

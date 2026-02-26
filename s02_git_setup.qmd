@@ -3,16 +3,6 @@ title: Git and GitHub Setup
 ---
 
 :::{.callout-tip}
-#### Tasks To Do
-
-While completing this session, you will accomplish the following tasks:
-
-- Set Git defaults for your local computer
-- Tell Git how to reconcile differences between branches
-- Create a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT) so your computer can communicate automatically with GitHub
-:::
-
-:::{.callout-tip}
 ## Learning Objectives
 
 After completing this session, you will be able to:

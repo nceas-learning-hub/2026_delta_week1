@@ -7,15 +7,12 @@ title: Crafting Synthesis Project Ideas
 
 After completing this session, you will be able to:
 
--   {{< fa person-digging >}} Under construction; check back later
-
-- <u>Recognize</u> the stages of a participatory decision making process and the type of thinking required for each stage
 - <u>Identify</u> the value of and potential obstacles to emergent thinking in the "groan zone"
 - <u>Understand</u> the diamond model of participatory decision making as a framework for group process design
 - <u>Develop</u> strategies to support participation, innovative thinking, integration, and convergence / decision making in a team setting
-- <u>Describe</u> benefits of encouraging full, thoughtful, engaged participation
 - <u>Identify</u> methods for ensuring equitable access to participation in a team setting
 - <u>Identify</u> one activity that privileges each thinking style
+- <u>Describe</u> benefits of encouraging full, thoughtful, engaged participation
 
 :::
 

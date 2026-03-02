@@ -1,0 +1,391 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme:
+      - lh_slides_style.scss ### this lives in folder with slide qmd file
+execute:
+  echo: true
+  code-line-numbers: false
+---
+
+## {#title-slide data-menu-title="Title Slide"} 
+
+[The Four Player Model]{.custom-title}
+
+[Resolving "Stuck" Commmunication]{.custom-subtitle}
+
+<hr class="hr-red">
+
+## Background
+
+- Designed by David Kantor
+
+\
+
+. . .
+
+- Diagnoses & helps resolve "stuck" communication
+
+\
+
+. . .
+
+- Based on 30+ years of research on groups
+
+## Four Actions of Effective Communication
+
+:::{.body-text}
+The model identifies four actions of effective communication:
+
+:::
+
+## Four Actions of Effective Communication
+
+:::{.body-text}
+The model identifies four actions of effective communication:
+
+\
+
+- **Move** {{< fa  person-running >}} - Initiate an  idea, action, or direction for conversation
+
+:::
+
+## Four Actions of Effective Communication
+
+:::{.body-text}
+The model identifies four actions of effective communication:
+
+\
+
+- **Move** {{< fa  person-running >}} - Initiate an  idea, action, or direction for conversation
+- **Follow** {{< fa user-plus >}} - Continue the direction or flow of the conversation
+    - Either by agreeing or asking for more information
+
+:::
+
+## Four Actions of Effective Communication
+
+:::{.body-text}
+The model identifies four actions of effective communication:
+
+\
+
+- **Move** {{< fa  person-running >}} - Initiate an  idea, action, or direction for conversation
+- **Follow** {{< fa user-plus >}} - Continue the direction or flow of the conversation
+    - Either by agreeing or asking for more information
+- **Oppose** {{< fa handshake-slash >}} - Challenge or disagree with an idea, action, or suggested direction
+
+:::
+
+## Four Actions of Effective Communication
+
+:::{.body-text}
+The model identifies four actions of effective communication:
+
+\
+
+- **Move** {{< fa  person-running >}} - Initiate an  idea, action, or direction for conversation
+- **Follow** {{< fa user-plus >}} - Continue the direction or flow of the conversation
+    - Either by agreeing or asking for more information
+- **Oppose** {{< fa handshake-slash >}} - Challenge or disagree with an idea, action, or suggested direction
+- **Bystand** {{< fa eye >}} - Add a neutral perspective
+    - Articulate what's happening in a conversation
+
+:::
+
+## The Model
+
+<p align="center">
+<img src="four-player-model.png" alt="Figure of four modes of communication, arrayed on two axes - Move versus Oppose on the axis of Advocacy and Follow vs. Bystand on the axis of Inquiry." width="95%"/>
+</p>
+
+## Group Conversations
+
+- Each action in a discussion can be coded into this model
+    - Most of us default to one we're comfortable with
+
+\
+
+. . .
+
+- Effective conversations require **listening _&_ all four modes**
+
+\
+
+. . .
+
+- There are common "stuck" patterns when not doing this
+
+## Stuck - Serial Moves
+
+::::{.columns}
+:::{.column width="50%"}
+
+- Lots of idea generation
+
+\
+
+- May feel like a barrage
+
+\
+
+- No clear thread, decision, or follow through
+
+:::
+:::{.column width="50%"}
+
+<p align="center">
+<img src="stuck-pattern_serial-moves.png" alt="Four un-connected circles in a loose line, each with a capital letter 'M' in the interior" width="40%"/>
+</p>
+
+:::
+:::
+
+## 'Unstick' Serial Moves
+
+- **Follow** {{< fa user-plus >}} {{< fa arrow-right >}} Give momentum to a particular move
+
+\
+
+. . .
+
+For example:
+
+> Can we go back to the idea that Jose put on the table? That felt like a topic that could really use our attention. Shall we focus there?
+
+## 'Unstick' Serial Moves
+
+- **Oppose** {{< fa handshake-slash >}} {{< fa arrow-right >}} Offer an effective oppose to a move
+
+\
+
+. . .
+
+For example:
+
+> We've heard a lot of different ideas. I'd like to focus on the one Amelia laid out. I'm interested in the research question, but I don't think machine learning is going to be the most productive approach. Can we dig in to this one?
+
+## 'Unstick' Serial Moves
+
+- **Bystand** {{< fa eye >}} {{< fa arrow-right >}} Bring awareness to and disrupt the dynamic
+
+\
+
+. . .
+
+For example:
+
+> Hey gang, we're 20 minutes into our call and we've put a lot of different topics on the table. Where do we want to focus ourselves so we can walk away with some clear next steps?
+
+## Stuck - Polite Discussion
+
+::::{.columns}
+:::{.column width="50%"}
+
+- Moves are followed with little discussion or resistance
+
+\
+
+- A.k.a. "Courteous Compliance"
+
+:::
+:::{.column width="50%"}
+
+\
+\
+
+<p align="center">
+<img src="stuck-pattern_polite-discussion.png" alt="A circle with a capital letter 'M' in the interior is connected to three circles, each with a capital letter 'F'" width="60%"/>
+</p>
+
+:::
+:::
+
+## 'Unstick' Polite Discussion
+
+- **Oppose** {{< fa handshake-slash >}} {{< fa arrow-right >}} Prompt an effective oppose
+
+\
+
+. . . 
+
+For example: 
+
+> Who sees it differently? 
+
+> What's at risk here? 
+
+> What other angles should we consider?
+
+## 'Unstick' Polite Discussion 
+
+- **Bystand** {{< fa eye >}} {{< fa arrow-right >}} Invite a bystand
+
+\
+
+. . .
+
+For example: 
+
+> Where is the group right now? 
+
+> What are you noticing? 
+
+> Is there an elephant in the room that needs to be named?
+
+
+## Stuck - Debate
+
+::::{.columns}
+:::{.column width="50%"}
+
+- Individuals are locked in a back and forth
+    - May be just two people involved
+
+\
+
+- Each move is met with resistance / opposition
+
+:::
+:::{.column width="50%"}
+
+<p align="center">
+<img src="stuck-pattern_debate.png" alt="Four circles connected in a line with either a capital 'M' or capital 'O' (alternating) in the interior of each" width="25%"/>
+</p>
+
+:::
+:::
+
+## 'Unstick' Debate
+
+- **Follow** {{< fa user-plus >}} {{< fa arrow-right >}} Invite a follow on one of the moves
+
+\
+
+. . .
+
+For example:
+
+> What do you like about the proposal on the table? 
+
+> What do you agree with that we could build upon?
+
+## 'Unstick' Debate
+
+- **Oppose** {{< fa handshake-slash >}} {{< fa arrow-right >}} Coach for a more effective oppose
+
+\
+
+. . . 
+
+For example:
+
+> What elements of this do you agree with--or at least 2% agree with?
+
+> In your opinion, what would need to be changed to make this work?
+
+## 'Unstick' Debate
+
+- **Bystand** {{< fa eye >}} {{< fa arrow-right >}} - Invite a bystand from someone less involved in the point-counterpoint
+
+\
+
+. . . 
+
+For example:
+
+> In addition to the two viewpoints on the table, I'd love to hear from some other perspectives. 
+
+> What are you noticing? 
+
+> What might we be missing?
+
+## Stuck - Covert Opposition
+
+::::{.columns}
+:::{.column width="50%"}
+
+:::{.body-text}
+- Conversation _appears_ harmonious but people have unspoken reservations
+
+\
+
+- Opposition tends to be expressed outside of the conversation
+    - Or harbored as resentment
+
+\
+
+- Uneven power dynamics are often behind this pattern
+    - Group members defer to those with more power or seniority
+
+:::
+
+:::
+:::{.column width="50%"}
+
+\
+
+<p align="center">
+<img src="stuck-pattern_covert-opposition.png" alt="A circle with a capital 'M' is connected to three other circles (labeled, 'F', 'M', and 'B', respectively), but those other circles have a second, partially-hidden circle with an 'O'" width="50%"/>
+</p>
+
+:::
+:::
+
+## 'Unstick' Covert Opposition
+
+- **Oppose** {{< fa handshake-slash >}} {{< fa arrow-right >}} Prompt a <u>transparent</u> oppose
+
+\
+
+. . . 
+
+For example:
+
+> Who sees it differently? 
+
+> What's at risk here? 
+
+> Are there some cons to the proposed idea?
+
+## 'Unstick' Covert Opposition
+
+- **Oppose** {{< fa handshake-slash >}} {{< fa arrow-right >}} If others aren't comfortable, you can offer an oppose
+
+\
+
+. . .
+
+For example:
+
+> I'm not sure that collecting new data is feasible; just getting data for one state would take _hours_ and we have ten states in our study.
+
+## 'Unstick' Covert Opposition
+
+- **Bystand** {{< fa eye >}} {{< fa arrow-right >}} Offer a bystand on the 'covert' facet of the opposition
+
+\
+
+. . .
+
+:::{.body-text}
+For example:
+
+> I want to offer a reflection from another team I was part of. On that team, we kept having meetings where it seemed like everyone was in agreement, but then we would leave, and over and over again there would be little follow through and more than a little grousing. People's real opinions were only coming out in side conversations outside of the meeting. We lost a lot of time and forward momentum because people didn't feel like they could air their concerns in the larger group. Do you see that happening here? Does anyone have a suggestion for how to make this a safer space to critically discuss ideas?
+:::
+
+## 'Unstick' Covert Opposition
+
+- Invite those with more power to **follow** {{< fa user-plus >}} or **bystand** {{< fa eye >}} to open up space for other players to make a **move** {{< fa person-running >}}
+
+\
+
+. . .
+
+For example:
+
+> I think I see what you're saying, Ben. I'd be interested to hear what some of the graduate students think though; I know a number of them are using Bayesian methods in their dissertations and I'd like to hear from them how those tools might benefit this work

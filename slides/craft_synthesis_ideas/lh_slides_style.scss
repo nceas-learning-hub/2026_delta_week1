@@ -1,0 +1,192 @@
+// import fonts
+/*@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&family=Playfair+Display:wght@400;600;800&display=swap');*/
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Nunito:wght@200;400;700&family=Playfair+Display:wght@400;600;800&family=Rubik:wght@400;500&display=swap');
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+
+/*-- scss:defaults --*/
+
+// colors
+$lh-white: #FFFFFF;
+$lh-red: #A23923; // from LH style guide
+$lh-yellow: #DB9D26; // from LH style guide
+$lh-green: #167B62; // from NCEAS site LH header
+$lh-light-green: #a1cac0;
+$lh-purple: #4B0055; // viridis purple
+$lh-blue: #00588B; // viridis blue
+$lh-off-white: #F4F3EE;
+$lh-gray: #BCB8B1;
+$lh-black:  #08090A;
+
+// fonts
+$font-family-sans-serif: Figtree, Arial, sans-serif;
+$font-family-serif: Arvo, serif;
+$font-family-monospace: "Courier New", serif;
+
+// quarto vars
+$presentation-title-slide-text-align: "center";
+$presentation-font-size-root: 38px;
+$body-bg: $lh-white;
+$link-color: $lh-red;
+$body-color: $lh-black;
+$code-color: $lh-blue;
+$code-bg: $lh-white;
+$code-block-font-size: 0.6em;
+$code-block-bg: $lh-off-white;
+
+/*-- scss:rules --*/
+
+// element selectors //
+
+// horizontal line
+hr {
+  border: 5px solid $lh-yellow;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+// table header size
+th {
+font-size: 35px;
+}
+
+// table data cell size
+td {
+  font-size: 20px;
+}
+
+// class selectors //
+
+// red horizontal line
+.hr-red {
+  border: 5px solid $lh-red;
+  border-radius: 5px;
+}
+
+// see https://stackoverflow.com/questions/1734618/how-to-increase-the-gap-between-text-and-underlining-in-css
+.yellow-underline {
+  text-decoration: underline $lh-yellow;
+  text-underline-offset: 10px; // https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset
+  text-decoration-thickness: 4px;
+}
+
+// cover slide title
+.custom-title {
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  color: $lh-green;
+  font-size: 5rem;
+  left: 20px;
+}
+
+// cover slide subtitle
+.custom-subtitle {
+  font-family: $font-family-sans-serif;
+  color: $lh-yellow;
+  font-size: 3.3rem;
+  font-weight: 400;
+  left: 20px;
+}
+
+// cover slide subtitle (smaller)
+.custom-subtitle2 {
+  font-family: $font-family-sans-serif;
+  font-size: 2.5rem;
+  left: 20px;
+}
+
+// cover slide subtitle (smallest)
+.custom-subtitle3 {
+  font-family: $font-family-sans-serif;
+  font-size: 2rem;
+  left: 20px;
+}
+
+// slide title
+.slide-title {
+  font-family: $font-family-sans-serif;
+  color: $lh-green;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+// smaller slide title
+.slide-title-smaller {
+  font-family: $font-family-sans-serif;
+  color: $lh-green;
+  font-size: 3.1rem;
+  font-weight: 400;
+}
+
+// smallest slide title
+.slide-title-smallest {
+  font-family: $font-family-sans-serif;
+  color: $lh-green;
+  font-size: 2.9rem;
+  font-weight: 400;
+}
+
+// body text size
+.body-text {
+	font-size: 25px;
+	line-height: 1.7em;
+	margin-bottom: 1em;
+}
+
+// large body text size
+.large-body-text {
+	font-size: 30px;
+	line-height: 1.7em;
+	margin-bottom: 1em;
+}
+
+// white text
+.white-text {
+  color: $lh-white;
+}
+
+// center text
+.center-text {
+  text-align: center;
+}
+
+// center content on page
+.page-center {
+  line-height: 700px;
+  text-align: center;
+}
+
+// styled image caption text
+.caption-text {
+  font-size: 25px;
+  color: $lh-gray;
+}
+
+// styled image caption text (smaller)
+.smaller-caption-text {
+  font-size: 20px;
+  color: $lh-gray;
+}
+
+// add extra space above text
+ .topbr {
+    display: block;
+    margin-top: 1em;
+}
+
+// yellow box
+.important-text-bg {
+  background-color: rgba(233, 163, 0, 0.3);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 8px;
+  border-radius: 25px;
+}
+
+// adjust size of tabset text
+.panel-tabset {
+  font-size: 28px;
+}

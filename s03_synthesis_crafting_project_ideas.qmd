@@ -18,7 +18,7 @@ After completing this session, you will be able to:
 
 ## Collaborative Convergence
 
-At the beginning of a collaborative process, the most important initial outcome is getting convergence or group alignment on a set of shared goals and objectives and a plan for how to achieve them. If your team process is effective, this plan will be an _inclusive solution_--one that works for everyone in the group. Achieving this shared vision can be more difficult than one might expect. While you may expect that participants have already agreed to the vision in joining the group, agreement does not always equate to alignment. This module focuses on tools and resources to help your group navigate to convergent, inclusive solutions that everyone on the team can align around.
+At the beginning of a collaboration, <u>the first important outcome is getting group alignment (i.e., convergence) on a set of shared goals and a plan for how to achieve them</u>. If your team process is effective, this plan will be an _inclusive solution_--one that works for everyone in the group. Achieving this shared vision can be more difficult than one might expect. While you may expect that participants have already agreed to the vision in joining the group, agreement does not always equate to alignment. This lesson aims to help your group navigate to convergent, inclusive solutions that everyone on the team can align around.
 
 ## Embracing Divergent Thinking
 
@@ -26,23 +26,30 @@ The first stage of group decision making is divergent thinking (Kaner et al. 201
 
 <p align="center">
 <img src="images/synthesis_crafting_project_ideas/groan-zone.jpg" alt="Figure of Sam Kaner's Diamond Model of Participatory Decisionmaking, showing an increasing diversity of ideas on the left side of the diamond, created through divergent thinking, a period of emergent thinking in the middle known as the _groan zone_ and a narrowing set of ideas filtered down through convergent thinking to a final solution on the right side of the diamond." width="100%"/> 
-<figcaption> **Drawing of the 'Groan Zone' by Carrie Kappel, adapted from Sam Kaner's Facilitator's Guide to Participatory Decision making**</figcaption>
+<figcaption>Drawing of the 'Groan Zone' by Carrie Kappel, adapted from Sam Kaner's "Facilitator's Guide to Participatory Decisionmaking"</figcaption>
 </p>
 
-When a diverse group comes together to work on a complex problem, their views are likely to diverge widely across many dimensions from problem definition to priorities to methods/approaches to the definition of success. But you can tap that divergent thinking to generate entirely new ideas and options that emerge through the group's productive struggle for mutual understanding.
+When a diverse group comes together to work on a complex problem, their views are likely to diverge widely across many dimensions from problem definition to priorities to methods/approaches to the definition of success. But <u>you can leverage that divergent thinking to generate entirely new ideas and options that emerge through the group's productive struggle for mutual understanding</u>.
 
-While your working group is in the divergent thinking stage, it's critical to foster dialogue to surface different perspectives. Examine hidden assumptions. Create room for disagreement and questioning. Amplify diverse perspectives--and particularly, voices from the edge (e.g., junior members, new collaborators, people from different disciplines, non-scientists who may be affected by the research)--in order to expand the range of possibilities. Mirror and validate what you hear. Invite people who are good at bridging across disciplinary or other differences to help translate and build shared understanding of methods and ways of thinking. Suspend judgment and encourage full participation. 
+While your group is in the divergent thinking stage, it's critical to foster dialogue to surface different perspectives. Doing so will result in a host of benefits that expand the range of possibilities, including:
 
-Beware of the most common pitfall at this stage, which is to converge too quickly on an early conclusion, staying in the safe space of familiar opinions and status quo solutions. You can prepare for this stage and help to avoid that pitfall by reviewing prior work and synthesizing data and knowledge gaps, promising approaches, and critical questions. Your team can use that synthesis of the current state of the science as a jumping off point.
+- Examining hidden assumptions
+- Creating room for disagreement and questioning
+- Amplifing diverse perspectives--particularly, voices from the edge
+    - E.g., junior members, new collaborators, people from different disciplines, non-scientists who may be affected by the research
+
+Mirror and validate what you hear. Invite people who are good at bridging across disciplinary or other differences to help translate and build shared understanding of methods and ways of thinking. Suspend judgment and encourage full participation. 
+
+**Beware of the most common pitfall at this stage, which is to converge too quickly on an early conclusion**, staying in the safe space of familiar opinions and status quo solutions. You can prepare for this stage and help to avoid that pitfall by reviewing prior work and synthesizing data and knowledge gaps, promising approaches, and critical questions. Your team can use that synthesis of the current state of the science as a jumping off point.
 
 ## Making it Through the Groan Zone
 
-It's natural for groups to go through a period of confusion and frustration as they struggle to integrate their diverse perspectives into a shared framework of understanding (Kaner et al. 2014). The goal is to get the group across this no man's land between divergent thinking and convergence known as the ["groan zone"](https://i2insights.org/2019/05/28/collaboration-groan-zone/). In the groan zone, the group leader or facilitator's job is to keep the group from getting frustrated and shutting down.  
+It's natural for groups to go through a period of confusion and possibly even frustration as they struggle to integrate their diverse perspectives into a shared framework of understanding (Kaner et al. 2014). The goal is to get the group across this no man's land between divergent thinking and convergence known as the ["groan zone"](https://i2insights.org/2019/05/28/collaboration-groan-zone/). In the groan zone, the group leader or facilitator's job is to keep the group from getting frustrated and shutting down.  
 
-While the groan zone can be challenging, it can also be an extremely fruitful and creative stage. Here in the messy middle of a group process, an open and flexible mindset and a process that invites participants to engage in emergent thinking can enable true innovation. Emergent thinking builds upon ideas generated in the divergent thinking stage, recombining or adapting them in novel ways. It seeks to identify patterns and make meaning in the face of complexity and uncertainty. Done well, _emergent thinking enables a group to adapt, sense opportunities, and generate new and exciting ideas._
+While the groan zone can be challenging, it can also be an extremely fruitful and creative stage. Here in the 'messy middle' of a group process, an open and flexible mindset and a process that invites participants to engage in emergent thinking can enable true innovation. Emergent thinking builds upon ideas generated in the divergent thinking stage, recombining or adapting them in novel ways. It seeks to identify patterns and make meaning in the face of complexity and uncertainty. When done well, **emergent thinking enables a group to adapt, sense opportunities, and generate new and exciting ideas.**
 
-:::{.callout-note icon="false"}
-#### Activity: Rapid Brainstorm
+:::{.callout-exercise}
+### Rapid Brainstorm
 
 A variety of factors and dynamics can impede emergent thinking and make the groan zone especially challenging. What have you observed?
 
@@ -60,50 +67,57 @@ Some useful techniques for navigating the groan zone and fostering emergent thin
 - Creating categories to reveal structure and allow sorting and prioritization of ideas
 - Combining or recombining ideas or methods to yield new approaches
 - Working together to separate facts from opinions
-- Carefully examining language, e.g. by looking word by word at a key statement or question that is being debated and asking what questions each word raises
-- Capturing side issues in writing and reserving time to revisit these – taking the tangents seriously is a critical part of letting participants know you value their contributions
+- Carefully examining language
+    - E.g. by looking word by word at a key statement or question that is being debated and asking what questions each word raises
+- Capturing side issues _in writing_ and reserving time to revisit these
+    - Taking the tangents seriously is a critical part of letting participants know you value their contributions
 - Examining how proposed ideas might affect each individual in the group
 - Honoring objections to the process and asking for suggestions
-- Addressing power imbalances and elevating voices from the "edge" 
+- Addressing power imbalances and elevating voices from the edge 
 
 ### Common Barriers to Emergent Thinking
 
 Some typical obstacles to emergent thinking include:
  
-- Disciplinary differences in epistemology, vocabulary, and methods that impede understanding
+- Disciplinary differences that impede understanding
+    - May include any/all of epistemology, vocabulary, and methods
 - Analysis paralysis - getting lost in the weeds of endless analysis and detail
 - Polarization - opposite camps anchored in
-- Power dynamics that squelch creative contributions from the "edges"
-- Avoidance of a deeper issue impeding collaboration (e.g. lack of trust)
+- Power dynamics that squelch creative contributions from the edges
+- Avoidance of a deeper issue impeding collaboration (E.g., lack of trust)
 - Turf wars, competition
-- Risk aversion, perception management, fear of failure / getting it wrong
+- Risk aversion, perception management, fear of failure or of 'getting it wrong'
 - Confirmation bias and resistance to ideas that challenge group identity and beliefs
 
 :::
 
 If you find the conversation getting off track or the dynamics becoming difficult, useful techniques that allow you to remain committed to being supportive and respectful of all group members (including ones you might experience as "difficult") include:
  
-- Reminding individuals of the larger purpose of the group and reconnecting them to their own personal reasons for caring about and working on the issue, e.g. by inviting them to take a moment to reflect or to restate what success looks like
+- Reminding individuals of the larger purpose of the group and reconnecting them to their own personal reasons for caring about and working on the issue
+    - E.g., by inviting them to take a moment to reflect or to restate what success looks like
 - Focusing on common ground and areas of potential alignment
-- Inviting constructive opposition - ask the critic to say what they can support about a given proposal and what they would like to see changed or discussed further
-- Switching the participation format (e.g., going to breakout groups, brainstorming, a go-around, or individual writing)
-- Taking a break
+- Inviting constructive opposition
+    - Ask the critic(s) to say what they can support about a given proposal and what they would like to see changed or discussed further
+- Switching the participation format
+    - E.g., going to breakout groups, brainstorming, a go-around, or individual writing
+- **Taking a break**
 - Stepping out of the content and addressing the process
 - Educating members about group dynamics and asking them to reflect on how they are showing up
-- Encouraging more people to participate
-- Reframing the discussion, e.g. by surfacing underlying issues, and/or focusing on concrete actions that the group can take to resolve the conflict
- 
-Don't get discouraged by the groan zone. Misunderstanding and miscommunication are normal parts of the process of collaboration. And even more importantly, "the act of working through these misunderstandings is what builds the foundation for sustainable agreements [and]… meaningful collaboration" (Kaner et al. 2014).
+    - E.g., "Calling in" (as opposed to "calling out")
+- Encouraging/making space for more people to participate, particularly those who have not participated as much as others
+- Reframing the discussion
+    - E.g., By surfacing underlying issues, and/or focusing on concrete actions that the group can take to resolve the conflict
 
-
+**Don't get discouraged by the groan zone!** Misunderstanding and miscommunication are normal parts of the process of collaboration. And even more importantly, "the act of working through these misunderstandings is what builds the foundation for sustainable agreements... \[and\] meaningful collaboration" (Kaner et al. 2014).
 
 ## Moving from Debate to Dialogue
 
-Dialogue is a collaborative effort to understand and learn from each other. Debate, on the other hand, is an oppositional effort to convince the other side that you are right. Inclusive facilitation aims to support dialogue and skillful discussion. Dialogue allows groups to recognize the limits on their own and others' individual perspectives and to strive for more coherent thought. Dialogue becomes a container for collective thinking and exploration - a process that can take teams in directions not imagined or planned. In dialogue, all views are treated as equally valid, and different views are presented as a means toward discovering a new view. Participants listen to understand one another, not to win. Complex issues are explored and shared meaning is created. When it comes time to make a decision, skillful discussion is required. Both skillful discussion and dialogue are critical to the collaborative process, and the more artfully a group can move between these two forms of discourse (and out of less productive debate and polite discussion) according to what is needed, the more effective the group will be.
+There are a number of types of conversations that are likely to occur during any collaborative process. Dialog and skillful discussion are useful options that center questions, and mutual understanding. Debate and polite discussion on the other hand prioritize the personality and delivery of the person making a point rather than the content of their idea which is less useful in a collaborative context.
+
+Consider the tabs below for some characteristics of these four modes of discussion.
 
 :::{.panel-tabset}
-
-#### Debate
+### Debate
 
 - Intent to win
 - Listening to be understood
@@ -112,7 +126,7 @@ Dialogue is a collaborative effort to understand and learn from each other. Deba
 - Loudest wins
 - Ideas judged by who says them
 
-#### Polite Discussion
+### Polite Discussion
 
 - Intent to protect self, others
 - Surface friendly
@@ -121,7 +135,7 @@ Dialogue is a collaborative effort to understand and learn from each other. Deba
 - Influence occurs outside the meeting
 - Limited active or empathetic listening
 
-#### Skillful Discussion
+### Skillful Discussion
 
 - Intent is closure; informed decisions
 - Balance influence and inquiry
@@ -130,7 +144,7 @@ Dialogue is a collaborative effort to understand and learn from each other. Deba
 - Ask about assumptions without criticizing
 - Influence is based in logic and data
 
-#### Dialogue
+### Dialogue
 
 - Intent to build mutual understanding
 - Listening to understand thoughts and feelings
@@ -141,9 +155,7 @@ Dialogue is a collaborative effort to understand and learn from each other. Deba
 
 :::
 
-David Kantor's Four Player Model is a helpful tool for diagnosing "stuck" patterns of communication, (including entrenched debate and polite discussion), and interceding to help shift to a more productive pattern. 
-
-Based on over 30 years of observation and study of face-to-face communication in many groups, Kantor developed the Four Player Model and a broader theory of Structural Dynamics. The model identifies four actions of effective communication:
+David Kantor's Four Player Model is a helpful tool for diagnosing "stuck" patterns of communication, (including entrenched debate and polite discussion), and interceding to help shift to a more productive pattern. Based on over 30 years of observation and study of face-to-face communication in many groups, Kantor developed the Four Player Model and a broader theory of Structural Dynamics. The model identifies four actions of effective communication:
 
 - **Move** - Initiate an idea, action, or direction for conversation
 - **Follow** - Continue the direction or flow of the conversation; support a move, either by agreeing or asking for more information
@@ -270,24 +282,31 @@ Offer a **bystand**, e.g., "I want to offer a reflection from another team I was
 | Round robin / go around | DEC | Hear from everyone; get starting positions on the table | Everyone answers the same prompt. Alternatives to going in order: each speaker calls on someone else after they have shared; popcorn-style - people share in the order that they feel moved to speak | Do not allow discussion until everyone has responded to the initial prompt |
 
 
-::: {.callout-note icon="false"}
-#### Activity: Small Group Exercise #2 - Emergent thinking practice
+:::{.callout-exercise}
+### Emergent Thinking Practice
 
 **Part 1 - Team Discussion & Co-Production**
 
-- Assign a facilitator, notetaker and reporter
-- Read through the list of options and begin with the step that seems most useful for your team's current needs. Work your way through as many of the steps as you can during the allotted time.
-- _Create or refine a conceptual figure_ that captures how you are thinking about the system you are investigating
-- Once you are satisfied with your conceptual figure:
+With your synthesis project team:
+
+- Assign a facilitator, notetaker, and reporter
+- Read through the list of options and begin with the step that seems most useful for your team's current needs
+- Work your way through as many of the following steps as you can during the allotted time.
+1. _Create or refine a conceptual figure_ that captures how you are thinking about the system you are investigating
+2. Once you are satisfied with your conceptual figure:
     - Outline your key questions
     - Map your planned analyses to them
     - How are you going to answer each question with data?
     - If you were working with the tools we suggested last time to start outlining your analysis, this should build from there
-- What are the \~3 key figures that would best illustrate your results?
+3. What are the \~3 key figures that would best illustrate your results?
 
 **Part 2 - Report Out**
 
-- Share what you developed with the whole group!
-- After all groups have shared, offer suggestions to other groups and/or ask questions about the module.
+With all attendees:
+
+- Have the reporter share what you developed!
+- After all groups have shared
+    - Offer suggestions to other groups
+    - Invite questions or feedback about parts of your team's plan where those would be especially valuable
 
 :::

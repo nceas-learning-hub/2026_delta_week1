@@ -576,11 +576,11 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li>In your file manager (<i class="fa-brands fa-apple" aria-label="apple"></i> “Finder” | <i class="fa-brands fa-windows" aria-label="windows"></i> “File Explorer”), make a folder in your “Documents” folder
 <ul>
-<li>Name that folder <code>training_{surname}</code> (e.g., <code>training_ohara</code>)</li>
+<li>Name that folder <code>training_{username}</code> (e.g., <code>training_oharac</code> or <code>training_njlyon0</code>)</li>
 </ul></li>
 <li>In Positron, click the folder icon in the top right</li>
 <li>Click “Open Folder…”</li>
-<li>In the resulting pop-up, find your <code>training_{surname}</code> folder, select it, then click “Open”</li>
+<li>In the resulting pop-up, find your <code>training_{username}</code> folder, select it, then click “Open”</li>
 </ol>
 <p>Positron should open your folder automatically at this point. One way to check this is by looking at the top right corner and checking that your folder’s name is next to the folder icon.</p>
 </div>
@@ -603,7 +603,7 @@ ul.task-list li input[type="checkbox"] {
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:40%;">
-<p><i class="fa-solid fa-folder" aria-label="folder"></i> training_ohara<br>
+<p><i class="fa-solid fa-folder" aria-label="folder"></i> training_oharac<br>
 &nbsp;|–&nbsp; <i class="fa-solid fa-file" aria-label="file"></i> README.md<br>
 &nbsp;|–&nbsp; <i class="fa-solid fa-folder" aria-label="folder"></i> data<br>
 &nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|–&nbsp; <i class="fa-solid fa-folder" aria-label="folder"></i> raw<br>
@@ -629,7 +629,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For this week we are going to create 3 folders (a.k.a. “directories”) in our <code>training_{USERNAME}</code> folder.</p>
+<p>For this week we are going to create 3 folders (a.k.a. “directories”) in our <code>training_{username}</code> folder.</p>
 <ol type="1">
 <li>In your file manager (<i class="fa-brands fa-apple" aria-label="apple"></i> “Finder” | <i class="fa-brands fa-windows" aria-label="windows"></i> “File Explorer”), make three new folders: <code>data</code>, <code>plots</code>, <code>scripts</code></li>
 <li>Go to the “Explorer” tab of Positron (top left; has an icon like this: <i class="fa-solid fa-copy" aria-label="copy"></i>)</li>
@@ -647,24 +647,28 @@ ul.task-list li input[type="checkbox"] {
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Absolute Path</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Relative Path</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>An absolute path always starts with the root of your file system and locates files from there. <strong>No two users will have the same absolute file path!</strong></p>
+<p>An absolute path always starts with the root of your file system (<i class="fa-brands fa-apple" aria-label="apple"></i> something like <code>/Users</code> | <i class="fa-brands fa-windows" aria-label="windows"></i> something like <code>C:\</code>) and locates files from there. No two users will have the same absolute file path, so <strong>using an absolute file path is a recipe for a non-reproducible workflow!</strong></p>
 <p><u>Example:</u><br>
-<code>Users/lyon/Documents/iowa-state/ms-chap-01/data/raw-butterflies-2017.xlsx</code></p>
+<code>/Users/lyon/Documents/iowa-state/ms-chap-01/data/raw-butterflies-2017.xlsx</code></p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>A relative path starts from some location in your file system that is below the root (i.e., it is the file path <em>relative to</em> some folder in your computer). Relative paths are combined with the path to that location to locate files on your system. Some coding languages refer to the location where the relative path starts as our “<strong>working directory</strong>”.</p>
+<p>A relative path starts from some location in your file system that is below the root (i.e., it is the file path <em>relative to</em> some folder in your computer). Relative paths are combined with the path to that location to locate files on your system. Some coding languages refer to the location where the relative path starts as our “<strong>working directory</strong>”. Others working on the same project on their local computer will have the same relative file structure, so <strong>using relative file paths enables</strong> (but does not guarantee) <strong>a reproducible workflow!</strong></p>
 <p><u>Example:</u><br>
 <code>data/raw-butterflies-2017.xlsx</code></p>
 </div>
 </div>
 </div>
 <p><strong>Positron</strong> automatically sets the working directory to the folder you linked! This means that you can reference files from within the project without worrying about where the project directory itself is.</p>
-<p>For example, if I want to read in a file from the data directory within my training project, I can simply type <code>read.csv("data/samples.csv")</code> as opposed to <code>read.csv("Users/lyon/Documents/delta/training_ohara/data/samples.csv")</code>.</p>
+<p>For example, if I want to read in a file from the data directory within my training project, I can simply type <code>read.csv("data/samples.csv")</code> as opposed to <code>read.csv("/Users/lyon/Documents/delta/training_oharac/data/samples.csv")</code>.</p>
 <p>This is a time-saver for you when you work alone (because you’re not typing the absolute path every time) but when working in teams it is the key to the same code files being run-able by everyone in the project! For example, a collaborator with the same relative path can use <code>read.csv("data/samples.csv")</code> without editing the code while they would need to make several edits to the absolute path for it to work for them.</p>
 <section id="file-paths-across-operating-systems" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="file-paths-across-operating-systems"><span class="header-section-number">3.1</span> File Paths Across Operating Systems</h3>
-<p>If your team includes both Apple and Windows users, even relative paths will fail because the two operating systems use a different direction of slash to separate pieces of the file path.</p>
-<p>Fortunately, the <code>file.path()</code> function can automatically detect the computer’s operating system and insert the correct slash type for that computer! So your code would go from <code>read.csv("data/samples.csv")</code> to <code>read.csv(file.path("data", "samples.csv"))</code>.</p>
+<p>If your team includes both Mac/Linux and Windows users, even relative paths could potentially fail because the two operating systems use a different direction of slash to separate pieces of the file path (<i class="fa-brands fa-apple" aria-label="apple"></i> <code>data/samples.csv</code> | <i class="fa-brands fa-windows" aria-label="windows"></i> <code>data\samples.csv</code>). To complicate things, R has a special use for the backslash <code>\</code>. Fortunately, easy solutions exist to ensure cross platform compatibility:</p>
+<ul>
+<li>R for Windows understands both types of slashes, so you can always just use the forward slash <code>/</code>.<br>
+</li>
+<li>The <code>file.path()</code> function in R is useful for building and automating file paths, and automatically detects the computer’s operating system and insert the correct slash type for that computer.</li>
+</ul>
 </section>
 <section id="avoid-manually-setting-your-working-directory" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="avoid-manually-setting-your-working-directory"><span class="header-section-number">3.2</span> Avoid Manually Setting your Working Directory!</h3>

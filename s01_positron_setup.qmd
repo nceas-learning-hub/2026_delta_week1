@@ -25,10 +25,10 @@ Consider your current data analysis workflow. Where do you import you data? Wher
 ## Positron Folder Setup
 
 1. In your file manager ({{< fa brands apple >}} "Finder" | {{< fa brands windows >}} "File Explorer"), make a folder in your "Documents" folder
-    - Name that folder `training_{surname}` (e.g., `training_ohara`)
+    - Name that folder `training_{username}` (e.g., `training_oharac` or `training_njlyon0`)
 2. In Positron, click the folder icon in the top right
 3. Click "Open Folder..."
-4. In the resulting pop-up, find your `training_{surname}` folder, select it, then click "Open"
+4. In the resulting pop-up, find your `training_{username}` folder, select it, then click "Open"
 
 Positron should open your folder automatically at this point. One way to check this is by looking at the top right corner and checking that your folder's name is next to the folder icon.
 :::
@@ -54,7 +54,7 @@ Directory organization will vary from project to project, but **the ultimate goa
 
 ::: {.column width="40%"}
 
-{{< fa folder >}} training_ohara  
+{{< fa folder >}} training_oharac  
 &nbsp;|--&nbsp; {{< fa file >}} README.md  
 &nbsp;|--&nbsp; {{< fa folder >}} data  
 &nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa folder >}} raw  
@@ -74,7 +74,7 @@ Directory organization will vary from project to project, but **the ultimate goa
 
 ::: {.callout-tip}
 ## Project Sub-Directories
-For this week we are going to create 3 folders (a.k.a. "directories") in our `training_{USERNAME}` folder.
+For this week we are going to create 3 folders (a.k.a. "directories") in our `training_{username}` folder.
 
 1. In your file manager ({{< fa brands apple >}} "Finder" | {{< fa brands windows >}} "File Explorer"), make three new folders: `data`, `plots`, `scripts`
 2. Go to the "Explorer" tab of Positron (top left; has an icon like this: {{< fa copy >}})
@@ -91,14 +91,13 @@ In computing, there are two types of path: "**absolute**" and "**relative**".
 
 :::{.panel-tabset}
 #### Absolute Path
-An absolute path always starts with the root of your file system and locates files from there. **No two users will have the same absolute file path!**
+An absolute path always starts with the root of your file system ({{< fa brands apple >}} something like `/Users` | {{< fa brands windows >}} something like `C:\`) and locates files from there. No two users will have the same absolute file path, so **using an absolute file path is a recipe for a non-reproducible workflow!**
 
 <u>Example:</u>  
-`Users/lyon/Documents/iowa-state/ms-chap-01/data/raw-butterflies-2017.xlsx`
+`/Users/lyon/Documents/iowa-state/ms-chap-01/data/raw-butterflies-2017.xlsx`
 
 #### Relative Path
-A relative path starts from some location in your file system that is below the root (i.e., it is the file path _relative to_ some folder in your computer). Relative paths are combined with the path to that location to locate files on your system. Some coding languages refer to the location where the relative path starts as our "**working directory**".
-
+A relative path starts from some location in your file system that is below the root (i.e., it is the file path _relative to_ some folder in your computer). Relative paths are combined with the path to that location to locate files on your system. Some coding languages refer to the location where the relative path starts as our "**working directory**".  Others working on the same project on their local computer will have the same relative file structure, so **using relative file paths enables** (but does not guarantee) **a reproducible workflow!**
 
 <u>Example:</u>  
 `data/raw-butterflies-2017.xlsx`
@@ -107,15 +106,16 @@ A relative path starts from some location in your file system that is below the 
 
 **Positron** automatically sets the working directory to the folder you linked! This means that you can reference files from within the project without worrying about where the project directory itself is. 
 
-For example, if I want to read in a file from the data directory within my training project, I can simply type `read.csv("data/samples.csv")` as opposed to `read.csv("Users/lyon/Documents/delta/training_ohara/data/samples.csv")`.
+For example, if I want to read in a file from the data directory within my training project, I can simply type `read.csv("data/samples.csv")` as opposed to `read.csv("/Users/lyon/Documents/delta/training_oharac/data/samples.csv")`.
 
 This is a time-saver for you when you work alone (because you're not typing the absolute path every time) but when working in teams it is the key to the same code files being run-able by everyone in the project! For example, a collaborator with the same relative path can use `read.csv("data/samples.csv")` without editing the code while they would need to make several edits to the absolute path for it to work for them.
 
 ### File Paths Across Operating Systems
 
-If your team includes both Apple and Windows users, even relative paths will fail because the two operating systems use a different direction of slash to separate pieces of the file path.
+If your team includes both Mac/Linux and Windows users, even relative paths could potentially fail because the two operating systems use a different direction of slash to separate pieces of the file path ({{< fa brands apple >}} `data/samples.csv` | {{< fa brands windows >}} `data\samples.csv`).  To complicate things, R has a special use for the backslash `\`.  Fortunately, easy solutions exist to ensure cross platform compatibility:
 
-Fortunately, the `file.path()` function can automatically detect the computer's operating system and insert the correct slash type for that computer! So your code would go from `read.csv("data/samples.csv")` to `read.csv(file.path("data", "samples.csv"))`.
+* R for Windows understands both types of slashes, so you can always just use the forward slash `/`.  
+* The `file.path()` function in R is useful for building and automating file paths, and automatically detects the computer's operating system and insert the correct slash type for that computer.
 
 ### Avoid Manually Setting your Working Directory!
 

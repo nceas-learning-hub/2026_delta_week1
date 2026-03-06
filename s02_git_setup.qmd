@@ -8,7 +8,7 @@ title: Git and GitHub Setup
 After completing this session, you will be able to:
 
 - Explain what the Terminal is and how it's relevant to Git setup tasks
-- Describe why it's important to set a defult merge strategy for Git
+- Describe why it's important to set a default merge strategy for Git
 - Paraphrase why a <u>P</u>ersonal <u>A</u>ccess <u>T</u>oken (PAT) is necessary to interact with GitHub from your computer
 :::
 
@@ -57,8 +57,7 @@ Your `user.name` is not used for matching Git to GitHub - it is just for helping
 
 **Step 1:** Tell Git (1) your GitHub username, (2) your GitHub-associated email address.
 
-```{r}
-#| eval: false
+```r
 usethis::use_git_config(user.name = "my_user_name", # <1>
                         user.email = "my_email@nceas.ucsb.edu") # <2>
 ```
@@ -67,15 +66,13 @@ usethis::use_git_config(user.name = "my_user_name", # <1>
 
 **Step 2:** Define the default name for a branch that gets created when you make the first commit in a new Git repository (a.k.a. "repo").
 
-```{r}
-#| eval: false
+```r
 usethis::git_default_branch_configure(name = "main")
 ```
 
 **Step 3:** Check to make sure everything looks correct.
 
-```{r}
-#| eval: false
+```r
 usethis::git_sitrep()
 ```
 
@@ -125,8 +122,7 @@ There are three options, "merge," "rebase," and "fast forward." **We recommend t
 
 Set the default strategy for reconciling differences.
 
-```{r}
-#| eval: false
+```r
 usethis::use_git_config(pull.rebase = "false")
 ```
 

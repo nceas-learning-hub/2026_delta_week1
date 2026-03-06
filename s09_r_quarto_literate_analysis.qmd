@@ -73,12 +73,8 @@ When your entire analysis - data loading, cleaning, statistics, and figures - li
 
 Every Quarto document has three components:
 
--   **YAML header** - metadata at the very top of the file, enclosed in
-    `---`. It controls the document title, author, output format, and a
-    lot more.
+**YAML header** - metadata at the very top of the file, enclosed in `---`. It controls the document title, author, output format, and a lot more.
     
-:::{.callout-tip appearance="simple" icon=false}
-
 ``` yaml
 ---
 title: "My Analysis"
@@ -86,12 +82,10 @@ author: "Your Name"
 format: html
 ---
 ```
-:::
 
--   **Prose** - plain text written in Markdown (the white areas of the
-    document).
+**Prose** - plain text written in Markdown (the white areas of the document).
     
-:::{.callout-tip appearance="simple" icon=false}
+:::{.border}
 ```
 ## Introduction
 
@@ -105,18 +99,13 @@ In this literate analysis, we:
 ```
 :::
 
--   **Code chunks** - executable code blocks (the grey areas), opened
-    with ```` ```{r} ```` and closed with ```` ``` ````.
+**Code chunks** - executable code blocks (the grey areas), opened with ```` ```{r} ```` and closed with ```` ``` ````.
     
-:::{.callout-tip appearance="simple" icon=false}
-
 ```{{r}}
 x <- "Hello world!"
 y <- 1 + 1
 ```
-
 <!--NOTE: the double curly braces mean this will *display* as an R code chunk including header and footer, but not execute -->
-:::
 
 ## Let's Create A Quarto Document
 

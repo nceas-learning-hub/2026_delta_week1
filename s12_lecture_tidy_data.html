@@ -46,6 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-e631fe4e4ba653b14c35b310e15db931.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-3697dd4d56af9a751d85c836bcd41f3c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-e631fe4e4ba653b14c35b310e15db931.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -519,38 +522,36 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-tidy-data" id="toc-what-is-tidy-data" class="nav-link active" data-scroll-target="#what-is-tidy-data"><span class="header-section-number">1</span> What is tidy data?</a></li>
-  <li><a href="#values-variables-observations-and-entities" id="toc-values-variables-observations-and-entities" class="nav-link" data-scroll-target="#values-variables-observations-and-entities"><span class="header-section-number">2</span> Values, variables, observations, and entities</a></li>
-  <li><a href="#assessing-tidy-data-principles" id="toc-assessing-tidy-data-principles" class="nav-link" data-scroll-target="#assessing-tidy-data-principles"><span class="header-section-number">3</span> Assessing Tidy Data Principles</a></li>
-  <li><a href="#recognizing-untidy-data" id="toc-recognizing-untidy-data" class="nav-link" data-scroll-target="#recognizing-untidy-data"><span class="header-section-number">4</span> Recognizing untidy data</a>
+  <li><a href="#what-is-tidy-data" id="toc-what-is-tidy-data" class="nav-link active" data-scroll-target="#what-is-tidy-data"><span class="header-section-number">1</span> What is tidy data?</a>
   <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">4.1</span> Example 1</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">4.2</span> Example 2</a></li>
+  <li><a href="#values-variables-observations-and-entities" id="toc-values-variables-observations-and-entities" class="nav-link" data-scroll-target="#values-variables-observations-and-entities"><span class="header-section-number">1.1</span> Values, variables, observations, and entities</a></li>
+  <li><a href="#tidy-data-principles" id="toc-tidy-data-principles" class="nav-link" data-scroll-target="#tidy-data-principles"><span class="header-section-number">1.2</span> Tidy Data Principles</a></li>
   </ul></li>
-  <li><a href="#why-tidy-data" id="toc-why-tidy-data" class="nav-link" data-scroll-target="#why-tidy-data"><span class="header-section-number">5</span> Why Tidy Data?</a></li>
-  <li><a href="#data-normalization" id="toc-data-normalization" class="nav-link" data-scroll-target="#data-normalization"><span class="header-section-number">6</span> Data Normalization</a>
+  <li><a href="#recognizing-untidy-data" id="toc-recognizing-untidy-data" class="nav-link" data-scroll-target="#recognizing-untidy-data"><span class="header-section-number">2</span> Recognizing untidy data</a></li>
+  <li><a href="#why-tidy-data" id="toc-why-tidy-data" class="nav-link" data-scroll-target="#why-tidy-data"><span class="header-section-number">3</span> Why Tidy Data?</a></li>
+  <li><a href="#data-normalization" id="toc-data-normalization" class="nav-link" data-scroll-target="#data-normalization"><span class="header-section-number">4</span> Data Normalization</a>
   <ul class="collapse">
-  <li><a href="#what-is-data-normalization" id="toc-what-is-data-normalization" class="nav-link" data-scroll-target="#what-is-data-normalization"><span class="header-section-number">6.1</span> What is data normalization?</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">6.2</span> Example</a></li>
+  <li><a href="#what-is-data-normalization" id="toc-what-is-data-normalization" class="nav-link" data-scroll-target="#what-is-data-normalization"><span class="header-section-number">4.1</span> What is data normalization?</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">4.2</span> Example</a></li>
   </ul></li>
-  <li><a href="#relational-data-models" id="toc-relational-data-models" class="nav-link" data-scroll-target="#relational-data-models"><span class="header-section-number">7</span> Relational Data Models</a>
+  <li><a href="#relational-data-models" id="toc-relational-data-models" class="nav-link" data-scroll-target="#relational-data-models"><span class="header-section-number">5</span> Relational Data Models</a>
   <ul class="collapse">
-  <li><a href="#what-are-relational-data-models" id="toc-what-are-relational-data-models" class="nav-link" data-scroll-target="#what-are-relational-data-models"><span class="header-section-number">7.1</span> What are relational data models?</a></li>
-  <li><a href="#primary-and-foreign-keys" id="toc-primary-and-foreign-keys" class="nav-link" data-scroll-target="#primary-and-foreign-keys"><span class="header-section-number">7.2</span> Primary and foreign keys</a></li>
-  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3"><span class="header-section-number">7.3</span> Example</a></li>
-  <li><a href="#compound-keys" id="toc-compound-keys" class="nav-link" data-scroll-target="#compound-keys"><span class="header-section-number">7.4</span> Compound keys</a></li>
+  <li><a href="#what-are-relational-data-models" id="toc-what-are-relational-data-models" class="nav-link" data-scroll-target="#what-are-relational-data-models"><span class="header-section-number">5.1</span> What are relational data models?</a></li>
+  <li><a href="#primary-and-foreign-keys" id="toc-primary-and-foreign-keys" class="nav-link" data-scroll-target="#primary-and-foreign-keys"><span class="header-section-number">5.2</span> Primary and foreign keys</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">5.3</span> Example</a></li>
+  <li><a href="#compound-keys" id="toc-compound-keys" class="nav-link" data-scroll-target="#compound-keys"><span class="header-section-number">5.4</span> Compound keys</a></li>
   </ul></li>
-  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins"><span class="header-section-number">8</span> Joins</a>
+  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins"><span class="header-section-number">6</span> Joins</a>
   <ul class="collapse">
-  <li><a href="#inner-join" id="toc-inner-join" class="nav-link" data-scroll-target="#inner-join"><span class="header-section-number">8.1</span> Inner Join</a></li>
-  <li><a href="#left-join" id="toc-left-join" class="nav-link" data-scroll-target="#left-join"><span class="header-section-number">8.2</span> Left Join</a></li>
-  <li><a href="#right-join" id="toc-right-join" class="nav-link" data-scroll-target="#right-join"><span class="header-section-number">8.3</span> Right Join</a></li>
-  <li><a href="#full-outer-join" id="toc-full-outer-join" class="nav-link" data-scroll-target="#full-outer-join"><span class="header-section-number">8.4</span> Full Outer Join</a></li>
-  <li><a href="#entity-relationship-models" id="toc-entity-relationship-models" class="nav-link" data-scroll-target="#entity-relationship-models"><span class="header-section-number">8.5</span> Entity-Relationship models</a></li>
+  <li><a href="#inner-join" id="toc-inner-join" class="nav-link" data-scroll-target="#inner-join"><span class="header-section-number">6.1</span> Inner Join</a></li>
+  <li><a href="#left-join" id="toc-left-join" class="nav-link" data-scroll-target="#left-join"><span class="header-section-number">6.2</span> Left Join</a></li>
+  <li><a href="#right-join" id="toc-right-join" class="nav-link" data-scroll-target="#right-join"><span class="header-section-number">6.3</span> Right Join</a></li>
+  <li><a href="#full-outer-join" id="toc-full-outer-join" class="nav-link" data-scroll-target="#full-outer-join"><span class="header-section-number">6.4</span> Full Outer Join</a></li>
+  <li><a href="#entity-relationship-models" id="toc-entity-relationship-models" class="nav-link" data-scroll-target="#entity-relationship-models"><span class="header-section-number">6.5</span> Entity-Relationship models</a></li>
   </ul></li>
-  <li><a href="#best-practices-summary" id="toc-best-practices-summary" class="nav-link" data-scroll-target="#best-practices-summary"><span class="header-section-number">9</span> Best Practices Summary</a></li>
-  <li><a href="#more-on-data-management" id="toc-more-on-data-management" class="nav-link" data-scroll-target="#more-on-data-management"><span class="header-section-number">10</span> More on Data Management</a></li>
-  <li><a href="#activity" id="toc-activity" class="nav-link" data-scroll-target="#activity"><span class="header-section-number">11</span> Activity</a></li>
+  <li><a href="#best-practices-summary" id="toc-best-practices-summary" class="nav-link" data-scroll-target="#best-practices-summary"><span class="header-section-number">7</span> Best Practices Summary</a></li>
+  <li><a href="#more-on-data-management" id="toc-more-on-data-management" class="nav-link" data-scroll-target="#more-on-data-management"><span class="header-section-number">8</span> More on Data Management</a></li>
+  <li><a href="#activity" id="toc-activity" class="nav-link" data-scroll-target="#activity"><span class="header-section-number">9</span> Activity</a></li>
   </ul>
 </nav>
     </div>
@@ -572,9 +573,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Learn how to design and create effective data tables by:</p>
+<p>After completing this session, you will be able to:</p>
 <ul>
-<li>applying tidy and normalized data principles,</li>
+<li>Describe the three principles of tidy data in terms of variables, observations, and values</li>
+<li>Identify common violations of tidy data principles and how to fix them</li>
+<li>Explain the concept of data normalization and how it supports reproducible analysis</li>
 <li>following best practices to format data tables’ content,</li>
 <li>relating tables following relational data models principles, and</li>
 <li>understanding how to perform table joins.</li>
@@ -585,9 +588,9 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="1" class="anchored" data-anchor-id="what-is-tidy-data"><span class="header-section-number">1</span> What is tidy data?</h2>
 <p>Tidy data is a standardized way of organizing data tables that allows us to manage and analyze data efficiently, because it makes it straightforward to understand the corresponding variable and observation of each value. The <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html" target="_blank"> <strong>tidy data principles</strong> </a> are:</p>
 <ol type="1">
-<li>Every column is a variable.</li>
-<li>Every row is an observation.</li>
-<li>Every cell is a single value.</li>
+<li>Every <em>column</em> is a single <em>variable.</em></li>
+<li>Every <em>row</em> is a single <em>observation.</em></li>
+<li>Every <em>cell</em> is a single <em>value.</em></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -600,7 +603,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Tidy data is not a language or tool specific.</li>
+<li>Tidy data is not language or tool specific.</li>
 <li>Tidy data is not an R thing.</li>
 <li>Tidy data is not a <code>tidyverse</code> thing.</li>
 </ul>
@@ -608,120 +611,71 @@ ul.task-list li input[type="checkbox"] {
 <p>(Allison Horst &amp; Julia Lowndes)</p>
 </div>
 </div>
-</section>
-<section id="values-variables-observations-and-entities" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="values-variables-observations-and-entities"><span class="header-section-number">2</span> Values, variables, observations, and entities</h2>
+<section id="values-variables-observations-and-entities" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="values-variables-observations-and-entities"><span class="header-section-number">1.1</span> Values, variables, observations, and entities</h3>
 <p>First, let’s get acquainted with our building blocks.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 6%">
-<col style="width: 86%">
-<col style="width: 2%">
-<col style="width: 2%">
+<col style="width: 20%">
+<col style="width: 80%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Concept</th>
-<th>Definition</th>
-<th></th>
-<th></th>
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Definition</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Variables</td>
-<td><p>A characteristic the is being measured, counted or described with data.</p>
-<p>Example: car type, salinity, year, height, mass.</p></td>
-<td></td>
-<td></td>
+<td style="text-align: left;">Variable</td>
+<td style="text-align: left;">A characteristic that is being measured, counted or described with data. <strong>Example:</strong> car type, salinity, year, height, mass.</td>
 </tr>
 <tr class="even">
-<td>Observations</td>
-<td><p>A single “data point” for which the measure, count or description of one or more variables is recorded.</p>
-<p>Example: If you are collecting variables <em>height</em>, <em>species</em>, and <em>location</em> of plants, then <strong>each plant</strong> is an observation.</p></td>
-<td></td>
-<td></td>
+<td style="text-align: left;">Observation</td>
+<td style="text-align: left;">A single “data point” for which the measure, count or description of one or more variables is recorded. <strong>Example:</strong> If you are collecting variables <em>height</em>, <em>species</em>, and <em>location</em> of plants, then <strong>each plant</strong> is an observation.</td>
 </tr>
 <tr class="odd">
-<td>Value</td>
-<td><p>The record measured, count or description of a variable.</p>
-<p>Example: 3 ft</p></td>
-<td></td>
-<td></td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">The record measured, count or description of a variable. <strong>Example:</strong> 3 ft</td>
 </tr>
 <tr class="even">
-<td>Entity</td>
-<td><p>Each type of observation is an entity.</p>
-<p>Example: If you are collecting variables <em>height</em>, <em>species</em>, and <em>location</em> and <em>site name</em> of plants and where they are observed, then <strong>plants</strong> is an entity and <strong>site</strong> is an entity.</p></td>
-<td></td>
-<td></td>
+<td style="text-align: left;">Entity</td>
+<td style="text-align: left;">Each type of observation is an entity. <strong>Example:</strong> If you are collecting variables <em>height</em>, <em>species</em>, and <em>location</em> and <em>site name</em> of plants and where they are observed, then <strong>plants</strong> is an entity and <strong>site</strong> is an entity.</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="assessing-tidy-data-principles" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="assessing-tidy-data-principles"><span class="header-section-number">3</span> Assessing Tidy Data Principles</h2>
-<p>The following is an example of tidy data - it’s easy to see the three tidy data principles apply.</p>
-<p><img src="images/lecture_tidy_data/tidy_data.png" class="img-fluid"></p>
-<p><img src="images/lecture_tidy_data/tidy_variables.png" class="img-fluid"></p>
-<p><img src="images/lecture_tidy_data/tidy_observations.png" class="img-fluid"></p>
-<p><img src="images/lecture_tidy_data/tidy_values.png" class="img-fluid"></p>
-</section>
-<section id="recognizing-untidy-data" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="recognizing-untidy-data"><span class="header-section-number">4</span> Recognizing untidy data</h2>
-<p>Anything that does not follow the three tidy data principles is <strong>untidy data</strong>.</p>
-<p>There are <em>many</em> ways in which data can become untidy, some can be noticed right away, while others are more subtle. In this section we will look at some examples of common untidy data situations.</p>
-<section id="example-1" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">4.1</span> Example 1</h3>
-<p>The following is a screenshot of an actual dataset that came across NCEAS. We have all seen spreadsheets that look like this - and it is fairly obvious that whatever this is, it isn’t very tidy. Let’s dive deeper into why we consider it untidy data.</p>
-<p><img src="images/lecture_tidy_data/excel-org-01.png" class="img-fluid"></p>
-<section id="multiple-tables" class="level4" data-number="4.1.1">
-<h4 data-number="4.1.1" class="anchored" data-anchor-id="multiple-tables"><span class="header-section-number">4.1.1</span> Multiple tables</h4>
-<p>To begin with, notice there are actually three smaller tables within this table. Although for our human brain it is easy to see and interpret this, it is extremely difficult to get a computer to see it this way.</p>
-<p><img src="images/lecture_tidy_data/excel-org-02.png" class="img-fluid"></p>
-<p>Having multiple tables within the same table will create headaches down the road should you try to read in this information using R or another programming language. <strong>Having multiple tables immediately breaks the tidy data principles</strong>, as we will see next.</p>
-</section>
-<section id="inconsistent-columns" class="level4" data-number="4.1.2">
-<h4 data-number="4.1.2" class="anchored" data-anchor-id="inconsistent-columns"><span class="header-section-number">4.1.2</span> Inconsistent columns</h4>
-<p>In tidy data, <strong>each column corresponds to a single variable</strong>. If you look down a column, and see that multiple variables exist in the table, the data is not tidy. A good test for this can be to see if you think the column consists of only one unit type.</p>
-<p><img src="images/lecture_tidy_data/excel-org-04.png" class="img-fluid"></p>
-</section>
-<section id="inconsistent-rows" class="level4" data-number="4.1.3">
-<h4 data-number="4.1.3" class="anchored" data-anchor-id="inconsistent-rows"><span class="header-section-number">4.1.3</span> Inconsistent rows</h4>
-<p>The second principle of tidy data is: <strong>every column must be a single observation</strong>. If you look across a single row, and you notice that there are clearly multiple observations in one row, the data are likely not tidy.</p>
-<p><img src="images/lecture_tidy_data/excel-org-03.png" class="img-fluid"></p>
-</section>
-<section id="marginal-sums-and-statistics" class="level4" data-number="4.1.4">
-<h4 data-number="4.1.4" class="anchored" data-anchor-id="marginal-sums-and-statistics"><span class="header-section-number">4.1.4</span> Marginal sums and statistics</h4>
-<p><strong>Marginal sums and statistics are not considered tidy</strong>. They break principle one, “Every column is a variable”, because a marginal statistic does not represent the same variable as the values it is summarizing. They also break principle two, “Every row is an observation”, because they represent a combination of observations, rather than a single one.</p>
-<p><img src="images/lecture_tidy_data/excel-org-05.png" class="img-fluid"></p>
+<section id="tidy-data-principles" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="tidy-data-principles"><span class="header-section-number">1.2</span> Tidy Data Principles</h3>
+<p>How are tidy data principles evident in this simple example? <img src="images/lecture_tidy_data/tidy_data.png" class="img-fluid" style="width:100.0%"></p>
+<p><strong>Principle 1: Every column is a single variable.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/tidy_variables.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/lecture_tidy_data/tidy_variables.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
+<p><strong>Principle 2: Every row is a single observation.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/tidy_observations.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/lecture_tidy_data/tidy_observations.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
+<p><strong>Principle 3: Every cell is a single value.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/tidy_values.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/lecture_tidy_data/tidy_values.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
 </section>
 </section>
-<section id="example-2" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="example-2"><span class="header-section-number">4.2</span> Example 2</h3>
-<p>Consider the following table. It’s a single one this time! It shows data about species observed at a specific site and date. The column headers refer to the following:</p>
-<ul>
-<li><em>date</em>: date when a species was observed</li>
-<li><em>site</em>: site where a species was observed</li>
-<li><em>name</em>: site’s name</li>
-<li><em>altitude</em>: site’s altitude</li>
-<li><em>sp1code</em>, <em>sp2code</em>: species code for two plants observed</li>
-<li><em>sp1height</em>, <em>sp2height</em>: height of the plants observed</li>
-</ul>
-<p>Take a moment to see why this is not tidy data.</p>
-<p><img src="images/lecture_tidy_data/untidy_1.png" class="img-fluid"></p>
-<section id="multiple-observations" class="level4" data-number="4.2.1">
-<h4 data-number="4.2.1" class="anchored" data-anchor-id="multiple-observations"><span class="header-section-number">4.2.1</span> Multiple Observations</h4>
-<p>Remember that an observation is all the values measured for an individual <strong>entity</strong>.</p>
-<p>If our entity is a single observed plant, then the values we measured are date and site of observation, the altitude, and the species code and height. This table breaks the second tidy data principles: Every row is an observation.</p>
-<p><img src="images/lecture_tidy_data/untidy_2.png" class="img-fluid"></p>
-<p>People often refer to this as “<em>wide</em> format”, because the observations are spread across a wide number of columns. Note that, should one encounter a new species in the survey, we would have to add new columns to the table. This is difficult to analyze, understand, and maintain. To solve this problem, we can create a single column for species code and a single column for species height as in the following table.</p>
-<p><img src="images/lecture_tidy_data/tidy_not_normal.png" class="img-fluid"></p>
+<section id="recognizing-untidy-data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="recognizing-untidy-data"><span class="header-section-number">2</span> Recognizing untidy data</h2>
+<p>Anything that does not follow the three tidy data principles is <strong>untidy data</strong>. There are <em>many</em> ways in which data can become untidy, some can be noticed right away, while others are more subtle. In this slide deck we will look at some examples of common untidy data situations.</p>
+<p><a href="slides/lecture_tidy_data/slides1_recognizing_untidy.html" target="_blank">Full Screen</a></p>
+<iframe class="slide-deck" src="slides/lecture_tidy_data/slides1_recognizing_untidy.html" style="border: 1px solid #2e3846;"></iframe>
 </section>
-</section>
-</section>
-<section id="why-tidy-data" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="why-tidy-data"><span class="header-section-number">5</span> Why Tidy Data?</h2>
+<section id="why-tidy-data" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="why-tidy-data"><span class="header-section-number">3</span> Why Tidy Data?</h2>
 <ul>
 <li><strong>Efficiency:</strong> less re-creating the wheel. Easier to apply the same tools to different datasets.</li>
 <li><strong>Collaboration:</strong> Makes it easier to work with others as you can work with the same tools in the same ways.</li>
@@ -732,10 +686,10 @@ ul.task-list li input[type="checkbox"] {
 <p>“There is a specific advantage to placing varables in columns becasuse it allows R’s vectorized nature to shine. …most buit-in R functions work with vactors of values. That makes transforming tidy data feel particularly natural. (R for Data Science by Grolemund and Wickham)</p>
 </blockquote>
 </section>
-<section id="data-normalization" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="data-normalization"><span class="header-section-number">6</span> Data Normalization</h2>
-<section id="what-is-data-normalization" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="what-is-data-normalization"><span class="header-section-number">6.1</span> What is data normalization?</h3>
+<section id="data-normalization" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="data-normalization"><span class="header-section-number">4</span> Data Normalization</h2>
+<section id="what-is-data-normalization" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="what-is-data-normalization"><span class="header-section-number">4.1</span> What is data normalization?</h3>
 <p><strong>Data normalization</strong> is the process of creating <strong>normalized data</strong>, which are datasets free from data redundancy to simplify query, analysis, storing, and maintenance. In normalized data we organize data so that :</p>
 <ul>
 <li>Each table follows the tidy data principles</li>
@@ -745,8 +699,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>In <strong>denormalized data</strong> observations about different entities are combined. A good indication that a data table is denormalized and needs normalization is seeing the same column values repeated across multiple rows.</p>
 </section>
-<section id="example" class="level3" data-number="6.2">
-<h3 data-number="6.2" class="anchored" data-anchor-id="example"><span class="header-section-number">6.2</span> Example</h3>
+<section id="example" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="example"><span class="header-section-number">4.2</span> Example</h3>
 <p>In the previous data table the row values for the last three columns are repeated.</p>
 <p><img src="images/lecture_tidy_data/denormalized.png" class="img-fluid"></p>
 <p>This means the data is denormalized and it happens because each row has values about more than one entity:</p>
@@ -770,13 +724,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Normalizing data by separating it into multiple tables often makes researchers really uncomfortable. This is understandable! The person who designed this study collected all of these measurements for a reason - so that they could analyze the measurements together. Now that our site and plant information are in separate tables, how would we use site altitude as a predictor variable for species composition, for example? We will go over a solution in the next section.</p>
 </section>
 </section>
-<section id="relational-data-models" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="relational-data-models"><span class="header-section-number">7</span> Relational Data Models</h2>
+<section id="relational-data-models" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="relational-data-models"><span class="header-section-number">5</span> Relational Data Models</h2>
 <blockquote class="blockquote">
 <p>It’s rare that a data analysis involves only a single table of data. Typically you have many tables of data, and you must combine them to answer the questions that you’re interested in. Collectively, multiple tables of data are called relational data because it is the relations, not just the individual datasets, that are important. (R for Data Science <a href="https://r4ds.had.co.nz/relational-data.html">Chapter 13 Relational Data</a>)</p>
 </blockquote>
-<section id="what-are-relational-data-models" class="level3" data-number="7.1">
-<h3 data-number="7.1" class="anchored" data-anchor-id="what-are-relational-data-models"><span class="header-section-number">7.1</span> What are relational data models?</h3>
+<section id="what-are-relational-data-models" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="what-are-relational-data-models"><span class="header-section-number">5.1</span> What are relational data models?</h3>
 <p>A <strong>relational data model</strong> is a way of encoding links between multiple tables in a database. A database organized following a relational data model is a <strong>relational database</strong>. A few of the advantages of using a relational data model are:</p>
 <ul>
 <li>Enabling powerful search and filtering</li>
@@ -787,8 +741,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Relational data models are used by relational databases (like mySQL, MariaDB, Oracle, or Microsoft Access) to organize tables. However, you don’t have to be using a relational database or handling large and complex data to enjoy the benefits of using a relational data model.</p>
 <p>When working with relational data, we generally don’t work with tables separately. We will need to <strong>join</strong> the information from different tables to run our analysis. To join two or more tables we need to learn about keys.</p>
 </section>
-<section id="primary-and-foreign-keys" class="level3" data-number="7.2">
-<h3 data-number="7.2" class="anchored" data-anchor-id="primary-and-foreign-keys"><span class="header-section-number">7.2</span> Primary and foreign keys</h3>
+<section id="primary-and-foreign-keys" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="primary-and-foreign-keys"><span class="header-section-number">5.2</span> Primary and foreign keys</h3>
 <p>The main way in which relational data models encode relationships between different tables is by using keys. Keys are variables whose values uniquely identify observations. For tidy data, where variables and columns are equivalent, a column is a key if it has a different value in each row. This allows us to use keys as unique identifiers that reference particular observations and create links across tables.</p>
 <p>Two types of keys are common within relational data models:</p>
 <ul>
@@ -796,8 +750,8 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Foreign Key</strong>: reference to a primary key in another table, used to create links between tables.</li>
 </ul>
 </section>
-<section id="example-3" class="level3" data-number="7.3">
-<h3 data-number="7.3" class="anchored" data-anchor-id="example-3"><span class="header-section-number">7.3</span> Example</h3>
+<section id="example-1" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="example-1"><span class="header-section-number">5.3</span> Example</h3>
 <p>On our previously normalized data for plants and sites, let’s choose primary keys for these tables and then identify any foreign keys.</p>
 <p><strong>Primary keys</strong></p>
 <p>First, notice that the columns ‘date’, ‘site’ and ‘sp_code’ cannot be primary keys because they have repeated values across rows. The columns ‘sp_height’ and ‘id’ both have different values in each row, so both are candidates for primary keys. However, the decimal values of ‘sp_height’ don’t make it as useful to use it to reference observations. So we chose ‘id’ as the primary key for this table.</p>
@@ -810,8 +764,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="compound-keys" class="level3" data-number="7.4">
-<h3 data-number="7.4" class="anchored" data-anchor-id="compound-keys"><span class="header-section-number">7.4</span> Compound keys</h3>
+<section id="compound-keys" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="compound-keys"><span class="header-section-number">5.4</span> Compound keys</h3>
 <!-- ### Surrogate, natural, and compound keys
 
 In the sites data table from the previous example, we noticed that ‘site’ and ‘name’ are variables whose values uniquely identify the rows. In other words, ‘site’ and ‘name’ are keys. However, ‘site’ and ‘name’ are very different keys since the values in ‘site’ are “made up”, while ‘name’ has values that are used in the external world, unrelated to the table. This leads us to the following key types:
@@ -832,28 +786,28 @@ A surrogate key is often simpler, and can be a better choice than a natural key 
 <p>There are also other types of keys, like a natural key or a surrogate key. Each type of key has advantages and disadvantages. You can read more about this in <a href="https://www.databasestar.com/database-keys/" target="_blank"> this article</a>.</p>
 </section>
 </section>
-<section id="joins" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="joins"><span class="header-section-number">8</span> Joins</h2>
+<section id="joins" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="joins"><span class="header-section-number">6</span> Joins</h2>
 <p>Frequently, analysis of data will require merging these separately managed tables back together. There are multiple ways to join the observations in two tables, based on how the rows of one table are merged with the rows of the other. Regardless of the join we will perform, we need to start by identifying the primary key in each table and how these appear as foreign keys in other tables.</p>
 <p>When conceptualizing merges, one can think of two tables, one on the <em>left</em> and one on the <em>right</em>.</p>
 <p><img src="images/lecture_tidy_data/join-diagrams-separate.png" class="img-fluid"></p>
-<section id="inner-join" class="level3" data-number="8.1">
-<h3 data-number="8.1" class="anchored" data-anchor-id="inner-join"><span class="header-section-number">8.1</span> Inner Join</h3>
+<section id="inner-join" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="inner-join"><span class="header-section-number">6.1</span> Inner Join</h3>
 <p>An <em>INNER JOIN</em> is when you merge the subset of rows that have matches in both the left table and the right table.</p>
 <p><img src="images/lecture_tidy_data/join-diagrams-inner.png" class="img-fluid"></p>
 </section>
-<section id="left-join" class="level3" data-number="8.2">
-<h3 data-number="8.2" class="anchored" data-anchor-id="left-join"><span class="header-section-number">8.2</span> Left Join</h3>
+<section id="left-join" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="left-join"><span class="header-section-number">6.2</span> Left Join</h3>
 <p>A <em>LEFT JOIN</em> takes all of the rows from the left table, and merges on the data from matching rows in the right table. Keys that don’t match from the left table are still provided with a missing value (na) from the right table.</p>
 <p><img src="images/lecture_tidy_data/join-diagrams-left.png" class="img-fluid"></p>
 </section>
-<section id="right-join" class="level3" data-number="8.3">
-<h3 data-number="8.3" class="anchored" data-anchor-id="right-join"><span class="header-section-number">8.3</span> Right Join</h3>
+<section id="right-join" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="right-join"><span class="header-section-number">6.3</span> Right Join</h3>
 <p>A <em>RIGHT JOIN</em> is the same as a left join, except that all of the rows from the right table are included with matching data from the left, or a missing value. Notice that left and right joins can ultimately be the same depending on the positions of the tables</p>
 <p><img src="images/lecture_tidy_data/join-diagrams-right.png" class="img-fluid"></p>
 </section>
-<section id="full-outer-join" class="level3" data-number="8.4">
-<h3 data-number="8.4" class="anchored" data-anchor-id="full-outer-join"><span class="header-section-number">8.4</span> Full Outer Join</h3>
+<section id="full-outer-join" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="full-outer-join"><span class="header-section-number">6.4</span> Full Outer Join</h3>
 <p>Finally, a <em>FULL OUTER JOIN</em> includes all data from all rows in both tables, and includes missing values wherever necessary.</p>
 <p><img src="images/lecture_tidy_data/join-diagrams-full.png" class="img-fluid"></p>
 <p>Sometimes people represent joins as Venn diagrams, showing which parts of the left and right tables are included in the results for each join. This representation is useful, however, they miss part of the story related to where the missing value comes from in each result.</p>
@@ -865,8 +819,8 @@ A surrogate key is often simpler, and can be a better choice than a natural key 
 </div>
 <p>We suggest reading<a href="https://r4ds.had.co.nz/relational-data.html#join-problems" target="_blank"> the Relational Data chapter in the “R for Data Science” book </a> for more examples and best practices about joins.</p>
 </section>
-<section id="entity-relationship-models" class="level3" data-number="8.5">
-<h3 data-number="8.5" class="anchored" data-anchor-id="entity-relationship-models"><span class="header-section-number">8.5</span> Entity-Relationship models</h3>
+<section id="entity-relationship-models" class="level3" data-number="6.5">
+<h3 data-number="6.5" class="anchored" data-anchor-id="entity-relationship-models"><span class="header-section-number">6.5</span> Entity-Relationship models</h3>
 <p>An <strong>Entity-Relationship model (E-R model)</strong>, also known as an E-R diagram, is a way to draw a compact diagram that reflects the structure and relationships of the tables in a relational database. These can be particularly useful for big databases that have many tables and complex relationships between them.</p>
 <p>We will explain the steps to drawing a simplified E-R model with our previous plants and sites tables.</p>
 <p><em>Step 1: Identify the entities in the relational database and add each one in a box.</em> In our case, entities are [plants] and [sites], since we are gathering observations about both of these.</p>
@@ -909,8 +863,8 @@ A surrogate key is often simpler, and can be a better choice than a natural key 
 </figure>
 </div>
 <p>That’s it!</p>
-<section id="edr-crows-foot" class="level4" data-number="8.5.1">
-<h4 data-number="8.5.1" class="anchored" data-anchor-id="edr-crows-foot"><span class="header-section-number">8.5.1</span> EDR Crow’s Foot</h4>
+<section id="edr-crows-foot" class="level4" data-number="6.5.1">
+<h4 data-number="6.5.1" class="anchored" data-anchor-id="edr-crows-foot"><span class="header-section-number">6.5.1</span> EDR Crow’s Foot</h4>
 <p>The symbols we used at the end of the lines are called <strong>ERD “crow’s foot”</strong>. You can see all the existing ones together with an example in the next diagram.</p>
 <p><img src="images/lecture_tidy_data/ERD_Relationship_Symbols_Quick_Reference.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -929,8 +883,8 @@ Note
 </section>
 </section>
 </section>
-<section id="best-practices-summary" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="best-practices-summary"><span class="header-section-number">9</span> Best Practices Summary</h2>
+<section id="best-practices-summary" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="best-practices-summary"><span class="header-section-number">7</span> Best Practices Summary</h2>
 <p>This is a summary of what we have covered, and some extra advice!</p>
 <p>The <strong>tidy data principles</strong> are:</p>
 <ol type="1">
@@ -948,8 +902,8 @@ Note
 <p>Creating <strong>relational data models</strong> by assigning <strong>primary and foreign keys</strong> to each table allows us to maintain relationships between separate normalized tables. Choose the primary key for each table based on your understanding of the data and take efficiency into account. Once you choose a column as the primary key, make sure that all the values in that column are there!</p>
 <p>For a big relational database, an <strong>Entity-Relationship model</strong> can be an effective way to explain how different tables and their keys are related to each other. If we need to merge tables we can do it using different types of <strong>joins</strong>.</p>
 </section>
-<section id="more-on-data-management" class="level2" data-number="10">
-<h2 data-number="10" class="anchored" data-anchor-id="more-on-data-management"><span class="header-section-number">10</span> More on Data Management</h2>
+<section id="more-on-data-management" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="more-on-data-management"><span class="header-section-number">8</span> More on Data Management</h2>
 <p>Tidy data is one very important step to data management best practices. However there is more to consider. Here we provide some <strong>extra advice</strong> from a great paper called <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205" target="_blank"> ‘Some Simple Guidelines for Effective Data Management’</a>.</p>
 <ul>
 <li>Design tables to add rows, not columns</li>
@@ -962,8 +916,8 @@ Note
 </ul>
 <p>In the Cleaning &amp; Wrangling chapter we will cover more best practices for cleaning irregular and missing data and how to implement them using R.</p>
 </section>
-<section id="activity" class="level2" data-number="11">
-<h2 data-number="11" class="anchored" data-anchor-id="activity"><span class="header-section-number">11</span> Activity</h2>
+<section id="activity" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="activity"><span class="header-section-number">9</span> Activity</h2>
 <!-- In groups of 2-3 we will do two activities that will help us put into practice the concepts of tidy data, identifying keys and structuring relational data. -->
 <!-- ### Exercise 1:Identifying Tidy Data -->
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1480,6 +1434,38 @@ Note
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

@@ -677,73 +677,107 @@ ul.task-list li input[type="checkbox"] {
 <section id="why-tidy-data" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="why-tidy-data"><span class="header-section-number">3</span> Why Tidy Data?</h2>
 <ul>
-<li><strong>Efficiency:</strong> less re-creating the wheel. Easier to apply the same tools to different datasets.</li>
-<li><strong>Collaboration:</strong> Makes it easier to work with others as you can work with the same tools in the same ways.</li>
-<li><strong>Reuse:</strong> It makes it easier to apply similar techniques and analysis across different or new datasets.</li>
-<li><strong>Generalizability:</strong> Tools built for one tidy data set can be used to multiple other datasets. Opening posibilities of data you can work with.</li>
+<li><strong>Efficiency:</strong> A standardized format designed for computer readability means less effort in reshaping data, and reduced chance of introducing errors.</li>
+<li><strong>Generalizability:</strong> Tools and techniques built for preparing one tidy data set can readily be applied to other tidy datasets.</li>
+<li><strong>Scalability:</strong> Tidy datasets can easily be updated with new data, linked to other datasets, and managed as they scale in size.</li>
+<li><strong>Collaboration:</strong> Makes it easier to work with others through a shared understanding of tidy data best practices.</li>
 </ul>
 <blockquote class="blockquote">
-<p>“There is a specific advantage to placing varables in columns becasuse it allows R’s vectorized nature to shine. …most buit-in R functions work with vactors of values. That makes transforming tidy data feel particularly natural. (R for Data Science by Grolemund and Wickham)</p>
+<p>“There is a specific advantage to placing varables in columns becasuse it allows R’s vectorized nature to shine. …most buit-in R functions work with vectors of values. That makes transforming tidy data feel particularly natural. (R for Data Science by Grolemund and Wickham)</p>
 </blockquote>
 </section>
 <section id="data-normalization" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="data-normalization"><span class="header-section-number">4</span> Data Normalization</h2>
 <section id="what-is-data-normalization" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="what-is-data-normalization"><span class="header-section-number">4.1</span> What is data normalization?</h3>
-<p><strong>Data normalization</strong> is the process of creating <strong>normalized data</strong>, which are datasets free from data redundancy to simplify query, analysis, storing, and maintenance. In normalized data we organize data so that :</p>
+<p><strong>Data normalization</strong> is the process of eliminating redundancy in datasets to simplify query, analysis, storing, and maintenance.</p>
+<p>In such <strong>normalized data</strong> we organize data so that :</p>
 <ul>
 <li>Each table follows the tidy data principles</li>
 <li>We have separate tables for each type of entity measured</li>
 <li>Observations (rows) are all unique</li>
 <li>Each column represents either an identifying variable or a measured variable</li>
 </ul>
-<p>In <strong>denormalized data</strong> observations about different entities are combined. A good indication that a data table is denormalized and needs normalization is seeing the same column values repeated across multiple rows.</p>
+<p>In <strong>denormalized data</strong>, observations about different entities are combined. A good indication that a data table is denormalized and needs normalization is seeing the same column values repeated across multiple rows.</p>
 </section>
 <section id="example" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="example"><span class="header-section-number">4.2</span> Example</h3>
-<p>In the previous data table the row values for the last three columns are repeated.</p>
-<p><img src="images/lecture_tidy_data/denormalized.png" class="img-fluid"></p>
-<p>This means the data is denormalized and it happens because each row has values about more than one entity:</p>
+<p>Examine this sample of data. Do you see any repeated values or redundancy?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/tidy_not_normal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/lecture_tidy_data/tidy_not_normal.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Answer</span>Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/denormalized.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/lecture_tidy_data/denormalized.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
+<p>Repeated row values may indicate that observations for different entities are combined.</p>
 <ul>
-<li>1st entity: individual plants found at that site, and</li>
-<li>2nd entity: sites at which the plants were observed.</li>
+<li>1st entity: individual plants found at that site (<code>sp_code</code>, <code>sp_height</code>)</li>
+<li>2nd entity: sites at which the plants were observed (<code>site</code>, <code>name</code>, <code>altitude</code>)</li>
 </ul>
-<p><img src="images/lecture_tidy_data/two_entities.png" class="img-fluid"></p>
+<p>Once we know the <code>name</code>, <code>altitude</code> for one site for one species, it is redundant to repeat all that information for the next species. We can recreate that information just knowing the <code>site</code> ID number.</p>
+</div>
+</div>
+</div>
+</div>
+<p>We can <strong>normalize</strong> this data by separating the information for the two entities, plant species and site, into two different tables</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/two_entities.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/lecture_tidy_data/two_entities.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
 <p>If we use this information to normalize our data, we should end up with:</p>
 <ul>
 <li>one tidy table for each entity observed, and</li>
 <li>additional columns for identifying variables (such as site ID).</li>
 </ul>
-<p>Here’s how our normalized data would look like:</p>
+<p>Here’s how our normalized data would look; note the <code>site</code> identifying variable shows up in both tables:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lecture_tidy_data/normalized.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 <p>Notice that each table also satisfies the tidy data principles.</p>
-<p>Normalizing data by separating it into multiple tables often makes researchers really uncomfortable. This is understandable! The person who designed this study collected all of these measurements for a reason - so that they could analyze the measurements together. Now that our site and plant information are in separate tables, how would we use site altitude as a predictor variable for species composition, for example? We will go over a solution in the next section.</p>
+<p>Normalizing data by separating it into multiple tables often makes researchers really uncomfortable. This is understandable! The person who designed this study collected all of these measurements for a reason - so that they could analyze the measurements together. Now that our site and plant information are in separate tables, how would we use site altitude as a predictor variable for species composition, for example?</p>
 </section>
 </section>
 <section id="relational-data-models" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="relational-data-models"><span class="header-section-number">5</span> Relational Data Models</h2>
 <blockquote class="blockquote">
-<p>It’s rare that a data analysis involves only a single table of data. Typically you have many tables of data, and you must combine them to answer the questions that you’re interested in. Collectively, multiple tables of data are called relational data because it is the relations, not just the individual datasets, that are important. (R for Data Science <a href="https://r4ds.had.co.nz/relational-data.html">Chapter 13 Relational Data</a>)</p>
+<p>It’s rare that a data analysis involves only a single table of data. Typically you have many tables of data, and you must combine them to answer the questions that you’re interested in. Collectively, multiple tables of data are called <strong>relational data</strong> because it is the relations, not just the individual datasets, that are important.</p>
+<p>(R for Data Science <a href="https://r4ds.had.co.nz/relational-data.html">Chapter 13 Relational Data</a>)</p>
 </blockquote>
 <section id="what-are-relational-data-models" class="level3" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="what-are-relational-data-models"><span class="header-section-number">5.1</span> What are relational data models?</h3>
-<p>A <strong>relational data model</strong> is a way of encoding links between multiple tables in a database. A database organized following a relational data model is a <strong>relational database</strong>. A few of the advantages of using a relational data model are:</p>
+<p>A <strong>relational data model</strong> is a way of encoding links between multiple tables in a database. A database organized following a relational data model is a <strong>relational database</strong>. A few of the advantages of using a relational data model:</p>
 <ul>
-<li>Enabling powerful search and filtering</li>
-<li>Ability to handle large, complex data sets</li>
-<li>Enforcing data integrity</li>
-<li>Decreasing errors from redundant updates</li>
+<li>Enables powerful search and filtering methods</li>
+<li>Enables us to efficiently handle large, complex data sets</li>
+<li>Enforces data integrity</li>
+<li>Decreases errors from redundant updates</li>
 </ul>
 <p>Relational data models are used by relational databases (like mySQL, MariaDB, Oracle, or Microsoft Access) to organize tables. However, you don’t have to be using a relational database or handling large and complex data to enjoy the benefits of using a relational data model.</p>
-<p>When working with relational data, we generally don’t work with tables separately. We will need to <strong>join</strong> the information from different tables to run our analysis. To join two or more tables we need to learn about keys.</p>
+<p>When working with relational data, we generally don’t work with tables separately. We will need to <strong>join</strong> the information from different tables to run our analysis, using <strong>keys</strong> to make the connections.</p>
 </section>
 <section id="primary-and-foreign-keys" class="level3" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="primary-and-foreign-keys"><span class="header-section-number">5.2</span> Primary and foreign keys</h3>
-<p>The main way in which relational data models encode relationships between different tables is by using keys. Keys are variables whose values uniquely identify observations. For tidy data, where variables and columns are equivalent, a column is a key if it has a different value in each row. This allows us to use keys as unique identifiers that reference particular observations and create links across tables.</p>
+<p>The main way in which relational data models encode relationships between different tables is by using <strong>keys</strong>, variables whose values uniquely identify observations. For tidy data, where variables and columns are equivalent, a column is a key if it has a different value in each row. This allows us to use keys as unique identifiers that reference particular observations and create links across tables.</p>
 <p>Two types of keys are common within relational data models:</p>
 <ul>
 <li><strong>Primary Key</strong>: chosen key for a table, uniquely identifies each observation in the table,</li>
@@ -752,12 +786,23 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="example-1" class="level3" data-number="5.3">
 <h3 data-number="5.3" class="anchored" data-anchor-id="example-1"><span class="header-section-number">5.3</span> Example</h3>
-<p>On our previously normalized data for plants and sites, let’s choose primary keys for these tables and then identify any foreign keys.</p>
+<p>On our previously normalized data for <strong>plants</strong> and <strong>sites</strong>, let’s choose primary keys for these tables and then identify any foreign keys.</p>
 <p><strong>Primary keys</strong></p>
-<p>First, notice that the columns ‘date’, ‘site’ and ‘sp_code’ cannot be primary keys because they have repeated values across rows. The columns ‘sp_height’ and ‘id’ both have different values in each row, so both are candidates for primary keys. However, the decimal values of ‘sp_height’ don’t make it as useful to use it to reference observations. So we chose ‘id’ as the primary key for this table.</p>
-<p>For the sites table, all three columns could be keys. We chose ‘site’ as the primary key because it is the most succinct and it also allows us to link the sites table with the plants table.</p>
+<p>For the <strong>plants</strong> table:</p>
+<ul>
+<li>Notice that the columns <code>date</code>, <code>site</code> and <code>sp_code</code> have repeated values across rows, thus cannot be primary keys.<br>
+</li>
+<li>The columns <code>sp_height</code> and <code>id</code> both have different values in each row, so both are candidates for primary keys.</li>
+<li>However, the decimal values of <code>sp_height</code> don’t make it as useful to use it to reference observations
+<ul>
+<li>and logically: if we take more observations, we may end up with multiple plants with the same height!</li>
+</ul></li>
+<li>So we chose <code>id</code> as the primary key for this table.</li>
+</ul>
+<p>For the <strong>sites</strong> table, all three columns could technically be keys as each column is unique. We chose <code>site</code> as the primary key because it is the most succinct and it also allows us to link the sites table with the plants table. (and again, logically, as we add more sites, can we guarantee that no two sites would have the same altitude?)</p>
 <p><strong>Foreign keys</strong></p>
-<p>The ‘site’ column is the <em>primary key</em> of that table because it uniquely identifies each row of the table as a unique observation of a site. In the first table, however, the ‘site’ column is a <em>foreign key</em> that references the primary key from the second table. This linkage tells us that the first height measurement for the DAPU observation occurred at the site with the name Taku.</p>
+<p>The <code>site</code> column is the <em>primary key</em> of the <strong>sites</strong> table because it uniquely identifies each row of the table as a unique observation of a site. In the <strong>plants</strong> table, however, the <code>site</code> column is a <em>foreign key</em> that references the primary key from the <strong>sites</strong> table.</p>
+<p>This linkage tells us that the first height measurement for the DAPU observation occurred at the site with the name Taku.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lecture_tidy_data/primary_foreign_keys.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
@@ -777,13 +822,11 @@ A surrogate key is often simpler, and can be a better choice than a natural key 
 
 ![](images/lecture_tidy_data/surrogate_natural_keys.png){fig-align="center" width=70%} -->
 <!--Finally,-->
-<p>It can also be the case that a variable is not a key, but by combining it with a second variable we get that the combined values uniquely identify the rows. This is called a</p>
-<ul>
-<li><strong>Compound Key</strong>: a key that is made up of more than one variable.</li>
-</ul>
-<p>For example, the ‘site’ and ‘sp_code’ columns in the plants table cannot be keys on their own, since each has repeated values. However, when we look at their combined values (1-DAPU, 1-DAMA, 2-DAMA, 2-DAPU) we see each row has a unique value. So ‘site’ and ‘sp_code’ together form a compound key.</p>
+<p>It can also be the case that a variable is not a key, but by combining it with a second variable we get that the combined values uniquely identify the rows.</p>
+<p>This is called a <strong>Compound Key</strong>: a key that is made up of more than one variable.</p>
+<p>For example, the <code>site</code> and <code>sp_code</code> columns in the <strong>plants</strong> table cannot be keys on their own, since each has repeated values. However, when we look at their combined values (1-DAPU, 1-DAMA, 2-DAMA, 2-DAPU) we see each row has a unique value. So <code>site</code> and <code>sp_code</code> together form a compound key: one unique observation of a specific plant at a specific site.</p>
 <p><img src="images/lecture_tidy_data/compound_key.png" class="img-fluid"></p>
-<p>There are also other types of keys, like a natural key or a surrogate key. Each type of key has advantages and disadvantages. You can read more about this in <a href="https://www.databasestar.com/database-keys/" target="_blank"> this article</a>.</p>
+<p>There are also other types of keys, like a <em>natural key</em> or a <em>surrogate key</em>. Each type of key has advantages and disadvantages. You can read more about this in <a href="https://www.databasestar.com/database-keys/" class="external" target="_blank" rel="noopener">this article</a>.</p>
 </section>
 </section>
 <section id="joins" class="level2" data-number="6">

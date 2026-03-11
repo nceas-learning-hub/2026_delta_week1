@@ -13,7 +13,7 @@
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>2026 Delta Synthesis Working Groups week 1 (April 2026) – slides1_recognizing_untidy</title>
+  <title>2026 Delta Synthesis Working Groups week 1 (April 2026) – slides2_entity_relationship_models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -134,130 +134,104 @@
 
 <section id="title-slide" class="slide level2 center" data-menu-title="Title Slide">
 <h2></h2>
-<p><span class="custom-title">Recognizing Untidy Data</span></p>
+<span class="custom-subtitle">Entity-Relationship Diagrams</span>
+<hr>
 
-<img data-src="images/untidy_cartoon_ah.jpg" class="quarto-figure quarto-figure-center r-stretch" data-alt-text="Artwork by @allison_horst CC-BY 4.0.  There are two sets of anthropomorphized data tables. The top group of three tables are all rectangular and smiling, with a shared speech bubble reading 'our columns are variables and our rows are observations!'. Text to the left of that group reads 'The standard structure of tidy data means that 'tidy datasets are all alike…' The lower group of four tables are all different shapes, look ragged and concerned, and have different speech bubbles reading (from left to right) 'my column are values and my rows are variables', 'I have variables in columns AND in rows', 'I have multiple variables in a single column', and 'I don’t even KNOW what my deal is.' Next to the frazzled data tables is text '...but every messy dataset is messy in its own way. -Hadley Wickham.'"></section>
-<section id="example-1" class="slide level2">
-<h2>Example 1</h2>
+<img data-src="images/ERD_example.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%" data-alt-text="An example of an entity-relationship diagram. This relates entities involved in university education: student, university, class, instructor, classroom, chair. The student has two attributes: SSN and Student ID.  Relationships are depicted by lines with ending symbols. For example, the relationship between student and class is 'attends' and the symbol at the end of the line near student is 'one or many' while the symbol at the end of the line near student is 'zero or many'."></section>
+<section class="slide level2">
 
-<img data-src="images/excel-org-01.png" class="r-stretch"></section>
-<section id="example-1-1" class="slide level2">
-<h2>Example 1</h2>
-<div class="column" style="width:70%;">
-<p><a href="images/excel-org-01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/excel-org-01.png"></a></p>
-</div><div class="column" style="width:30%;">
-<div class="body-text">
-<p>Here is a screenshot of an actual dataset that came across NCEAS.</p>
-<p>We have all seen spreadsheets that look like this - whatever this is, it isn’t very tidy. Let’s dive deeper into why we consider it untidy data.</p>
-</div>
-</div></section>
-<section id="multiple-tables" class="slide level2">
-<h2>Multiple tables</h2>
-<div class="column" style="width:70%;">
-<p><a href="images/excel-org-02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="images/excel-org-02.png"></a></p>
-</div><div class="column" style="width:30%;">
-<div class="body-text">
-<p>To begin with, notice there are actually three smaller tables within this spreadsheet. Although for our human brain can interpret this easily, it is difficult to get a computer to see it this way.</p>
-</div>
-</div></section>
-<section id="multiple-tables-1" class="slide level2">
-<h2>Multiple tables</h2>
-<div class="column" style="width:70%;">
-<p><a href="images/excel-org-02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="images/excel-org-02.png"></a></p>
-</div><div class="column" style="width:30%;">
-<div class="body-text">
-<p>Having multiple tables within the same spreadsheet will create headaches down the road should you try to read in this information using R or another programming language.</p>
-<p><strong>Having multiple tables immediately breaks the tidy data principles</strong>, as we will see next.</p>
-</div>
-</div></section>
-<section id="inconsistent-columns" class="slide level2">
-<h2>Inconsistent columns</h2>
-<div class="column" style="width:70%;">
-<p><a href="images/excel-org-04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="images/excel-org-04.png"></a></p>
-</div><div class="column" style="width:30%;">
-<div class="body-text">
-<p>In tidy data, <strong>each column corresponds to a single variable</strong>. If you look down a column, and see that multiple variables exist in the table, the data is not tidy. A good test for this can be to see if you think the column consists of only one unit type.</p>
-</div>
-</div></section>
-<section id="inconsistent-rows" class="slide level2">
-<h2>Inconsistent rows</h2>
-<div class="column" style="width:70%;">
-<p><a href="images/excel-org-03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="images/excel-org-03.png"></a></p>
-</div><div class="column" style="width:30%;">
-<div class="body-text">
-<p>The second principle of tidy data is: <strong>every row must be a single observation</strong>. If you look across a single row, and you notice that there are clearly multiple observations in one row, the data is not tidy.</p>
-</div>
-</div></section>
-<section id="marginal-sums-and-stats-not-tidy" class="slide level2">
-<h2>Marginal sums and stats: not tidy!</h2>
-<div class="column" style="width:70%;">
-<p><a href="images/excel-org-05.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="images/excel-org-05.png"></a></p>
-</div><div class="column" style="width:30%;">
-<div class="body-text">
-<p>They break principle one, “Every column is a single variable”, because a marginal statistic does not represent the same variable as the values it is summarizing.</p>
-<p>They also break principle two, “Every row is a single observation”, because they represent a combination of observations, rather than a single one.</p>
-</div>
-</div></section>
-<section id="example-2" class="slide level2">
-<h2>Example 2</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="images/untidy_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="images/untidy_1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></a></p>
-</figure>
-</div>
+<strong>Step 1: Identify the entities in the relational database.</strong>
+<hr>
+
+<img data-src="images/ER_diagram_1.png" class="quarto-figure quarto-figure-center r-stretch"><p>In our case, entities are <strong>plants</strong> and <strong>sites</strong>, since we are gathering observations about both of these. Write each entity in a box of its own.</p>
 </section>
-<section id="example-2-1" class="slide level2">
-<h2>Example 2</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="images/untidy_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="images/untidy_1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></a></p>
-</figure>
-</div>
-<div class="body-text">
-<p>This table shows data about species observed at a specific site and date. The columns represent:</p>
+<section class="slide level2">
+
+<strong>Step 2: Add variables for each entity and identify keys.</strong>
+<hr>
+
+<img data-src="images/ER_diagram_2.png" class="quarto-figure quarto-figure-center r-stretch"><p>Add the variables as a list of attributes inside each box. Then, identify the primary and foreign keys in each of the boxes. To visualize this, we have indicated</p>
 <ul>
-<li><em>date</em>: date when a species was observed</li>
-<li><em>site</em>, <em>name</em>: site ID and name where a species was observed</li>
-<li><em>altitude</em>: site’s altitude</li>
-<li><em>sp1code</em>, <em>sp2code</em>: species code for two plants observed</li>
-<li><em>sp1height</em>, <em>sp2height</em>: height of the two plants observed</li>
+<li>the <font color="red"> primary key </font> (of each entity) in <font color="red"> red </font> and</li>
+<li>any <font color="blue"> foreign keys </font> in <font color="blue"> blue </font>.</li>
 </ul>
-<p>Which tidy data principle(s) does this table break?</p>
+</section>
+<section class="slide level2">
+
+<strong>Step 3: Add relationships between entities.</strong>
+<hr>
+
+<img data-src="images/ER_diagram_3.png" class="quarto-figure quarto-figure-center r-stretch"><ol type="a">
+<li>Draw a line between the boxes of each pair of entities that has a relationship.</li>
+</ol>
+<div class="body-text">
+<p>Here we only have two entities, and there is a relationship between them. If we had many entities, not all entities may have a direct relationship (through a primary/foreign key match), so would not be connected by a line.</p>
 </div>
 </section>
-<section id="multiple-observations" class="slide level2">
-<h2>Multiple Observations</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="images/untidy_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="images/untidy_2.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></a></p>
-</figure>
-</div>
+<section class="slide level2">
+
+<strong>Step 3: Add relationships between entities.</strong>
+<hr>
+
+<img data-src="images/ER_diagram_3.png" class="quarto-figure quarto-figure-center r-stretch"><ol start="2" type="a">
+<li>Identify which box has the primary key of the other as a foreign key. Let’s call the box that has the foreign key <strong>box1</strong> and the other box <strong>box2</strong>.</li>
+</ol>
 <div class="body-text">
-<p>This table breaks the second tidy data principle: “Every row is a single observation.” Remember that an observation is all the values measured for an individual <strong>entity</strong>.</p>
-<p>If our <strong>entity</strong> is a <strong>single observed plant</strong>, then the values we measured are date and site of observation, the altitude, and the species code and height.</p>
+<p>Using the previous diagram we can see that “site” is the primary key of <strong>sites</strong> and appears as a foreign key in <strong>plants</strong>. So <strong>plants</strong> is <strong>box1</strong> and <strong>sites</strong> is <strong>box2</strong>.</p>
 </div>
 </section>
-<section id="multiple-observations-1" class="slide level2">
-<h2>Multiple Observations</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="images/untidy_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img data-src="images/untidy_2.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></a></p>
-</figure>
-</div>
+<section class="slide level2">
+
+<strong>Step 3: Add relationships between entities.</strong>
+<hr>
+
+<img data-src="images/ER_diagram_3.png" class="quarto-figure quarto-figure-center r-stretch"><ol start="3" type="a">
+<li>Add a word describing how <strong>box1</strong> is related to <strong>box2</strong> above the line connecting the two boxes. So, for example, we need to describe how <strong>plants</strong> is related to <strong>sites</strong>.</li>
+</ol>
 <div class="body-text">
-<p>People often refer to this as “<em>wide</em> format”, because the observations are spread across a wide number of columns. Note that, should one encounter a new species in the survey, we would have to add new columns to the table. This is difficult to analyze, understand, and maintain.</p>
+<p>The relation between <strong>plants</strong> –&gt; <strong>sites</strong> is “a plant is located in a site”, so we write “located” above the line indicating the relationship between <strong>plants</strong> and <strong>sites</strong>.</p>
 </div>
 </section>
-<section id="multiple-observations-2" class="slide level2">
-<h2>Multiple Observations</h2>
+<section class="slide level2">
+
+<strong>Step 4: Add cardinality to every relationship in the diagram.</strong>
+<hr>
+
+<img data-src="images/ER_diagram_4.png" class="quarto-figure quarto-figure-center r-stretch"><p>Now let’s quantify how many items in an entity are related to another entity. This is easiest if we reuse the description we found in the previous step.</p>
+<div class="body-text">
+<p>In our description of the relationship of <strong>plants</strong> –&gt; <strong>sites</strong>, “a plant is located in one site”. Then we add the symbol for “one” at the end of the line going from <strong>plants</strong> to <strong>sites</strong>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<strong>Step 4: Add cardinality to every relationship in the diagram.</strong>
+<hr>
+
+<img data-src="images/ER_diagram_5.png" class="quarto-figure quarto-figure-center r-stretch"><p>We also need to indicate cardinality in the other direction of the relationship.</p>
+<div class="body-text">
+<p>Since the relationship between <strong>sites</strong> –&gt; <strong>plants</strong> is “a site has many plants”, we add the symbol for “many” at the end of the line going from <strong>sites</strong> to <strong>plants</strong></p>
+</div>
+<p>That’s it!</p>
+</section>
+<section class="slide level2">
+
+<strong>EDR Crow’s Foot</strong>
+<hr>
+<div class="column" style="width:40%;">
+<p>The symbols we used at the end of the lines are called <strong>ERD “crow’s foot”</strong>. This chart shows all the existing symbols:</p>
+</div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="images/tidy_not_normal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img data-src="images/tidy_not_normal.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></a></p>
+<p><a href="images/ERD_symbols.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/ERD_symbols.png" class="quarto-figure quarto-figure-center" data-alt-text="A diagram showing the different symbols used in ERD crow's foot notation. The symbols are 'one and only one', 'zero or one', 'zero or many', and 'one or many'. Each symbol is shown with an example of a relationship that would be represented by that symbol."></a></p>
 </figure>
 </div>
-<div class="body-text">
-<p>To solve this problem, we can create a single column for species code and a single column for species height. Each observation has been given its own row!</p>
-</div>
+</div></section>
+<section class="slide level2">
+
+<strong>EDR Crow’s Foot</strong>
+<hr>
+
+<img data-src="images/ERD_example.png" class="quarto-figure quarto-figure-center r-stretch" data-alt-text="A diagram showing the different symbols used in ERD crow's foot notation, using an example of a relationship that would be represented by that symbol."><p>Examine the relationships shown in this chart, including the crows foot symbols. Can you interpret the meaning of each relationship?</p>
 
 
 </section>

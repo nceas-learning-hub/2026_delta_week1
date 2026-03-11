@@ -532,26 +532,19 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#data-normalization" id="toc-data-normalization" class="nav-link" data-scroll-target="#data-normalization"><span class="header-section-number">4</span> Data Normalization</a>
   <ul class="collapse">
   <li><a href="#what-is-data-normalization" id="toc-what-is-data-normalization" class="nav-link" data-scroll-target="#what-is-data-normalization"><span class="header-section-number">4.1</span> What is data normalization?</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">4.2</span> Example</a></li>
   </ul></li>
   <li><a href="#relational-data-models" id="toc-relational-data-models" class="nav-link" data-scroll-target="#relational-data-models"><span class="header-section-number">5</span> Relational Data Models</a>
   <ul class="collapse">
   <li><a href="#what-are-relational-data-models" id="toc-what-are-relational-data-models" class="nav-link" data-scroll-target="#what-are-relational-data-models"><span class="header-section-number">5.1</span> What are relational data models?</a></li>
   <li><a href="#primary-and-foreign-keys" id="toc-primary-and-foreign-keys" class="nav-link" data-scroll-target="#primary-and-foreign-keys"><span class="header-section-number">5.2</span> Primary and foreign keys</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">5.3</span> Example</a></li>
-  <li><a href="#compound-keys" id="toc-compound-keys" class="nav-link" data-scroll-target="#compound-keys"><span class="header-section-number">5.4</span> Compound keys</a></li>
+  <li><a href="#compound-keys" id="toc-compound-keys" class="nav-link" data-scroll-target="#compound-keys"><span class="header-section-number">5.3</span> Compound keys</a></li>
   </ul></li>
   <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins"><span class="header-section-number">6</span> Joins</a>
   <ul class="collapse">
-  <li><a href="#inner-join" id="toc-inner-join" class="nav-link" data-scroll-target="#inner-join"><span class="header-section-number">6.1</span> Inner Join</a></li>
-  <li><a href="#left-join" id="toc-left-join" class="nav-link" data-scroll-target="#left-join"><span class="header-section-number">6.2</span> Left Join</a></li>
-  <li><a href="#right-join" id="toc-right-join" class="nav-link" data-scroll-target="#right-join"><span class="header-section-number">6.3</span> Right Join</a></li>
-  <li><a href="#full-outer-join" id="toc-full-outer-join" class="nav-link" data-scroll-target="#full-outer-join"><span class="header-section-number">6.4</span> Full Outer Join</a></li>
-  <li><a href="#entity-relationship-models" id="toc-entity-relationship-models" class="nav-link" data-scroll-target="#entity-relationship-models"><span class="header-section-number">6.5</span> Entity-Relationship models</a></li>
+  <li><a href="#entity-relationship-models" id="toc-entity-relationship-models" class="nav-link" data-scroll-target="#entity-relationship-models"><span class="header-section-number">6.1</span> Entity-Relationship models</a></li>
   </ul></li>
   <li><a href="#best-practices-summary" id="toc-best-practices-summary" class="nav-link" data-scroll-target="#best-practices-summary"><span class="header-section-number">7</span> Best Practices Summary</a></li>
-  <li><a href="#more-on-data-management" id="toc-more-on-data-management" class="nav-link" data-scroll-target="#more-on-data-management"><span class="header-section-number">8</span> More on Data Management</a></li>
-  <li><a href="#activity" id="toc-activity" class="nav-link" data-scroll-target="#activity"><span class="header-section-number">9</span> Activity</a></li>
+  <li><a href="#activity" id="toc-activity" class="nav-link" data-scroll-target="#activity"><span class="header-section-number">8</span> Activity</a></li>
   </ul>
 </nav>
     </div>
@@ -699,9 +692,19 @@ ul.task-list li input[type="checkbox"] {
 <li>Each column represents either an identifying variable or a measured variable</li>
 </ul>
 <p>In <strong>denormalized data</strong>, observations about different entities are combined. A good indication that a data table is denormalized and needs normalization is seeing the same column values repeated across multiple rows.</p>
-</section>
-<section id="example" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="example"><span class="header-section-number">4.2</span> Example</h3>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Example</span>Example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-example">
 <p>Examine this sample of data. Do you see any repeated values or redundancy?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -754,7 +757,25 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>Notice that each table also satisfies the tidy data principles.</p>
+</div>
+</div>
+</div>
+</div>
+<!--end example-->
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Normalizing data by separating it into multiple tables often makes researchers really uncomfortable. This is understandable! The person who designed this study collected all of these measurements for a reason - so that they could analyze the measurements together. Now that our site and plant information are in separate tables, how would we use site altitude as a predictor variable for species composition, for example?</p>
+</div>
+</div>
+<!--end note-->
 </section>
 </section>
 <section id="relational-data-models" class="level2" data-number="5">
@@ -783,11 +804,24 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Primary Key</strong>: chosen key for a table, uniquely identifies each observation in the table,</li>
 <li><strong>Foreign Key</strong>: reference to a primary key in another table, used to create links between tables.</li>
 </ul>
-</section>
-<section id="example-1" class="level3" data-number="5.3">
-<h3 data-number="5.3" class="anchored" data-anchor-id="example-1"><span class="header-section-number">5.3</span> Example</h3>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Example</span>Example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-example">
 <p>On our previously normalized data for <strong>plants</strong> and <strong>sites</strong>, let’s choose primary keys for these tables and then identify any foreign keys.</p>
-<p><strong>Primary keys</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Primary keys</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Foreign keys</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>For the <strong>plants</strong> table:</p>
 <ul>
 <li>Notice that the columns <code>date</code>, <code>site</code> and <code>sp_code</code> have repeated values across rows, thus cannot be primary keys.<br>
@@ -800,7 +834,8 @@ ul.task-list li input[type="checkbox"] {
 <li>So we chose <code>id</code> as the primary key for this table.</li>
 </ul>
 <p>For the <strong>sites</strong> table, all three columns could technically be keys as each column is unique. We chose <code>site</code> as the primary key because it is the most succinct and it also allows us to link the sites table with the plants table. (and again, logically, as we add more sites, can we guarantee that no two sites would have the same altitude?)</p>
-<p><strong>Foreign keys</strong></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>The <code>site</code> column is the <em>primary key</em> of the <strong>sites</strong> table because it uniquely identifies each row of the table as a unique observation of a site. In the <strong>plants</strong> table, however, the <code>site</code> column is a <em>foreign key</em> that references the primary key from the <strong>sites</strong> table.</p>
 <p>This linkage tells us that the first height measurement for the DAPU observation occurred at the site with the name Taku.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -808,51 +843,94 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/lecture_tidy_data/primary_foreign_keys.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
+</div>
+</div>
+</div>
+<!--end tabset-->
+</div>
+</div>
+</div>
+</div>
+<!--end example-->
 </section>
-<section id="compound-keys" class="level3" data-number="5.4">
-<h3 data-number="5.4" class="anchored" data-anchor-id="compound-keys"><span class="header-section-number">5.4</span> Compound keys</h3>
-<!-- ### Surrogate, natural, and compound keys
-
-In the sites data table from the previous example, we noticed that ‘site’ and ‘name’ are variables whose values uniquely identify the rows. In other words, ‘site’ and ‘name’ are keys. However, ‘site’ and ‘name’ are very different keys since the values in ‘site’ are “made up”, while ‘name’ has values that are used in the external world, unrelated to the table. This leads us to the following key types:
-
-- **Surrogate Key**:  a key whose values do not exist in the real world,
-- **Natural Key**: a key whose values exist in the real world.
-
-A surrogate key is often simpler, and can be a better choice than a natural key to become the primary key of a data table.
-
-![](images/lecture_tidy_data/surrogate_natural_keys.png){fig-align="center" width=70%} -->
-<!--Finally,-->
-<p>It can also be the case that a variable is not a key, but by combining it with a second variable we get that the combined values uniquely identify the rows.</p>
+<section id="compound-keys" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="compound-keys"><span class="header-section-number">5.3</span> Compound keys</h3>
+<p>It can also be the case that a single variable is not unique in itself so cannot be used as a key, but by combining it with a second variable, the combined values uniquely identify the rows.</p>
 <p>This is called a <strong>Compound Key</strong>: a key that is made up of more than one variable.</p>
 <p>For example, the <code>site</code> and <code>sp_code</code> columns in the <strong>plants</strong> table cannot be keys on their own, since each has repeated values. However, when we look at their combined values (1-DAPU, 1-DAMA, 2-DAMA, 2-DAPU) we see each row has a unique value. So <code>site</code> and <code>sp_code</code> together form a compound key: one unique observation of a specific plant at a specific site.</p>
-<p><img src="images/lecture_tidy_data/compound_key.png" class="img-fluid"></p>
-<p>There are also other types of keys, like a <em>natural key</em> or a <em>surrogate key</em>. Each type of key has advantages and disadvantages. You can read more about this in <a href="https://www.databasestar.com/database-keys/" class="external" target="_blank" rel="noopener">this article</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture_tidy_data/compound_key.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>So many keys!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Primary and foreign keys are the workhorses of relational data, but there are also other types of keys, like <em>natural keys</em> or <em>surrogate keys</em> that can help you understand and communicate the connections within and between your data tables.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture_tidy_data/surrogate_natural_keys.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="A diagram showing the difference between surrogate and natural keys. A surrogate key is an arbitrary value that is used as a primary key, such as an ID number. A natural key is a value that has meaning in the real world, such as a site name or a species code."></p>
+</figure>
+</div>
+<p>You can read more about this in <a href="https://www.databasestar.com/database-keys/" class="external" target="_blank" rel="noopener">this article</a>.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="joins" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="joins"><span class="header-section-number">6</span> Joins</h2>
 <p>Frequently, analysis of data will require merging these separately managed tables back together. There are multiple ways to join the observations in two tables, based on how the rows of one table are merged with the rows of the other. Regardless of the join we will perform, we need to start by identifying the primary key in each table and how these appear as foreign keys in other tables.</p>
 <p>When conceptualizing merges, one can think of two tables, one on the <em>left</em> and one on the <em>right</em>.</p>
-<p><img src="images/lecture_tidy_data/join-diagrams-separate.png" class="img-fluid"></p>
-<section id="inner-join" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="inner-join"><span class="header-section-number">6.1</span> Inner Join</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/join-diagrams-separate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/lecture_tidy_data/join-diagrams-separate.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Inner Join</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Left Join</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Right Join</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">Full Outer Join</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>An <em>INNER JOIN</em> is when you merge the subset of rows that have matches in both the left table and the right table.</p>
-<p><img src="images/lecture_tidy_data/join-diagrams-inner.png" class="img-fluid"></p>
-</section>
-<section id="left-join" class="level3" data-number="6.2">
-<h3 data-number="6.2" class="anchored" data-anchor-id="left-join"><span class="header-section-number">6.2</span> Left Join</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/join-diagrams-inner.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/lecture_tidy_data/join-diagrams-inner.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>A <em>LEFT JOIN</em> takes all of the rows from the left table, and merges on the data from matching rows in the right table. Keys that don’t match from the left table are still provided with a missing value (na) from the right table.</p>
-<p><img src="images/lecture_tidy_data/join-diagrams-left.png" class="img-fluid"></p>
-</section>
-<section id="right-join" class="level3" data-number="6.3">
-<h3 data-number="6.3" class="anchored" data-anchor-id="right-join"><span class="header-section-number">6.3</span> Right Join</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/join-diagrams-left.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/lecture_tidy_data/join-diagrams-left.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p>A <em>RIGHT JOIN</em> is the same as a left join, except that all of the rows from the right table are included with matching data from the left, or a missing value. Notice that left and right joins can ultimately be the same depending on the positions of the tables</p>
-<p><img src="images/lecture_tidy_data/join-diagrams-right.png" class="img-fluid"></p>
-</section>
-<section id="full-outer-join" class="level3" data-number="6.4">
-<h3 data-number="6.4" class="anchored" data-anchor-id="full-outer-join"><span class="header-section-number">6.4</span> Full Outer Join</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/join-diagrams-right.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/lecture_tidy_data/join-diagrams-right.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <p>Finally, a <em>FULL OUTER JOIN</em> includes all data from all rows in both tables, and includes missing values wherever necessary.</p>
-<p><img src="images/lecture_tidy_data/join-diagrams-full.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/lecture_tidy_data/join-diagrams-full.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/lecture_tidy_data/join-diagrams-full.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<!-- end tabset-->
 <p>Sometimes people represent joins as Venn diagrams, showing which parts of the left and right tables are included in the results for each join. This representation is useful, however, they miss part of the story related to where the missing value comes from in each result.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -861,93 +939,43 @@ A surrogate key is often simpler, and can be a better choice than a natural key 
 </figure>
 </div>
 <p>We suggest reading<a href="https://r4ds.had.co.nz/relational-data.html#join-problems" target="_blank"> the Relational Data chapter in the “R for Data Science” book </a> for more examples and best practices about joins.</p>
-</section>
-<section id="entity-relationship-models" class="level3" data-number="6.5">
-<h3 data-number="6.5" class="anchored" data-anchor-id="entity-relationship-models"><span class="header-section-number">6.5</span> Entity-Relationship models</h3>
+<section id="entity-relationship-models" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="entity-relationship-models"><span class="header-section-number">6.1</span> Entity-Relationship models</h3>
 <p>An <strong>Entity-Relationship model (E-R model)</strong>, also known as an E-R diagram, is a way to draw a compact diagram that reflects the structure and relationships of the tables in a relational database. These can be particularly useful for big databases that have many tables and complex relationships between them.</p>
-<p>We will explain the steps to drawing a simplified E-R model with our previous plants and sites tables.</p>
-<p><em>Step 1: Identify the entities in the relational database and add each one in a box.</em> In our case, entities are [plants] and [sites], since we are gathering observations about both of these.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/lecture_tidy_data/ER_diagram_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-<p><em>Step 2: Add variables for each entity and identify keys.</em> Add the variables as a list inside each box. Then, identify the primary and foreign keys in each of the boxes. To visualize this, we have indicated</p>
-<ul>
-<li>the <font color="red"> primary key </font> (of each entity) in <font color="red"> red </font> and</li>
-<li>any <font color="blue"> foreign keys </font> in <font color="blue"> blue </font>.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/lecture_tidy_data/ER_diagram_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-<p><em>Step 3: Add relationships between entities.</em></p>
-<ul>
-<li><p>Draw a line between the boxes of any two entities that have a relationship.</p></li>
-<li><p>Identify which box has the primary key of the other as a foreign key. Let’s call the box that has the foreign key [box1] and the other box [box2]. Using the previous diagram we can see that “site” is the primary key of [sites] and appears as a foreign key in [plants]. So [plants] is [box1] and [sites] is [box2].</p></li>
-<li><p>Add a word describing how [box1] is related to [box2] above the line connecting the two boxes. So, for example, we need to describe how [plants] is related to [sites]. The relation is “a plant is located in a site”, so we write “located” above the line indicating the relationship between [plants] and [sites].</p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/lecture_tidy_data/ER_diagram_3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-<p><em>Step 4: Add cardinality to every relationship in the diagram.</em> At this step we want to quantify how many items in an entity are related to another entity. This is easiest if we reuse the description we found in the previous step. For example, “a plant is located in one site”. Then we add the symbol for “one” at the end of the line going from [plants] to [sites].</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/lecture_tidy_data/ER_diagram_4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-<p>To finish, we also indicate how many plants are related to a single site. Since “a site has many plants”, we add the symbol for “many” at the end of the line going from [sites] to [plants]</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/lecture_tidy_data/ER_diagram_5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-<p>That’s it!</p>
-<section id="edr-crows-foot" class="level4" data-number="6.5.1">
-<h4 data-number="6.5.1" class="anchored" data-anchor-id="edr-crows-foot"><span class="header-section-number">6.5.1</span> EDR Crow’s Foot</h4>
-<p>The symbols we used at the end of the lines are called <strong>ERD “crow’s foot”</strong>. You can see all the existing ones together with an example in the next diagram.</p>
-<p><img src="images/lecture_tidy_data/ERD_Relationship_Symbols_Quick_Reference.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you need to produce a publishable E-R model such as the one above, <a href="https://mermaid.js.org/intro/" target="_blank"> Mermaid </a> is a great option. Read more about how to use this tool to create diagrams <a href="https://mermaid.js.org/syntax/entityRelationshipDiagram.html" target="_blank"> here </a>.</p>
-</div>
-</div>
-</section>
+<p>These slides walk us through a simple example using our plants-sites dataset.</p>
+<p><a href="slides/lecture_tidy_data/slides2_entity_relationship_models.html" target="_blank">Full Screen</a></p>
+<iframe class="slide-deck" src="slides/lecture_tidy_data/slides2_entity_relationship_models.html" style="border: 1px solid #2e3846;"></iframe>
 </section>
 </section>
 <section id="best-practices-summary" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="best-practices-summary"><span class="header-section-number">7</span> Best Practices Summary</h2>
-<p>This is a summary of what we have covered, and some extra advice!</p>
 <p>The <strong>tidy data principles</strong> are:</p>
 <ol type="1">
 <li>Every column is a variable.</li>
 <li>Every row is an observation.</li>
 <li>Every cell is a single value.</li>
 </ol>
-<p>In <strong>normalized data</strong> we organize data so that :</p>
+<p>In <strong>normalized data</strong> we organize data so that:</p>
 <ul>
-<li>We have separate tables for each type of entity measured</li>
+<li>Each type of entity measured has its own table</li>
 <li>Observations (rows) are all unique</li>
 <li>Each column represents either an identifying variable or a measured variable</li>
 <li>Each table follows the tidy data principles</li>
 </ul>
-<p>Creating <strong>relational data models</strong> by assigning <strong>primary and foreign keys</strong> to each table allows us to maintain relationships between separate normalized tables. Choose the primary key for each table based on your understanding of the data and take efficiency into account. Once you choose a column as the primary key, make sure that all the values in that column are there!</p>
-<p>For a big relational database, an <strong>Entity-Relationship model</strong> can be an effective way to explain how different tables and their keys are related to each other. If we need to merge tables we can do it using different types of <strong>joins</strong>.</p>
-</section>
-<section id="more-on-data-management" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="more-on-data-management"><span class="header-section-number">8</span> More on Data Management</h2>
-<p>Tidy data is one very important step to data management best practices. However there is more to consider. Here we provide some <strong>extra advice</strong> from a great paper called <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205" target="_blank"> ‘Some Simple Guidelines for Effective Data Management’</a>.</p>
+<p>Creating <strong>relational data models</strong> by assigning <strong>primary and foreign keys</strong> to each table allows us to maintain relationships between separate normalized tables. Choose the primary key for each table based on your understanding of the data, and take efficiency into account. Once you choose a column as the primary key, make sure that all the values in that column are there!</p>
+<p>For a big relational database, an <strong>Entity-Relationship model</strong> can be an effective way to explain how different tables and their keys are related to each other.</p>
+<p>If we need to merge tables we can do it using different types of <strong>joins</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>More on Data Management
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tidy data is one very important step to data management best practices. However there is more to consider! Here are several tips from a great paper called <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205" target="_blank">‘Some Simple Guidelines for Effective Data Management’</a>.</p>
 <ul>
 <li>Design tables to add rows, not columns</li>
 <li>Use a scripted program (like R!)</li>
@@ -957,27 +985,33 @@ Note
 <li>Include a header line in your tabular data files</li>
 <li>Use plain ASCII text</li>
 </ul>
-<p>In the Cleaning &amp; Wrangling chapter we will cover more best practices for cleaning irregular and missing data and how to implement them using R.</p>
+</div>
+</div>
 </section>
-<section id="activity" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="activity"><span class="header-section-number">9</span> Activity</h2>
+<section id="activity" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="activity"><span class="header-section-number">8</span> Activity</h2>
 <!-- In groups of 2-3 we will do two activities that will help us put into practice the concepts of tidy data, identifying keys and structuring relational data. -->
 <!-- ### Exercise 1:Identifying Tidy Data -->
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tidy data, keys and joins
+<span class="screen-reader-only">Exercise</span>Exercise 1 - Tidy data, keys and joins
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
+<div class="callout-exercise">
 <ul>
 <li>Get together in pairs or small groups</li>
 <li>Obtain materials from instructors including activity handout and blank paper(s).</li>
 <li>Follow instructions in activity handout.</li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 <!-- ### Excersice 2: Relational Databases -->

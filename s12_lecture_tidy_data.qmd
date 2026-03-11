@@ -24,7 +24,7 @@ The <a href=https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.ht
 2.  Every *row* is a single *observation.*
 3.  Every *cell* is a single *value.*
 
-::: callout-tip
+::: {.callout-tip}
 ## Tidy Data: A way of life
 
 -   Tidy data is not language or tool specific.
@@ -103,13 +103,13 @@ In such **normalized data** we organize data so that :
 In **denormalized data**, observations about different entities are combined.
 A good indication that a data table is denormalized and needs normalization is seeing the same column values repeated across multiple rows.
 
-### Example
+::: {.callout-example}
 
 Examine this sample of data.  Do you see any repeated values or redundancy?
 
 ![](images/lecture_tidy_data/tidy_not_normal.png){width="70%" fig-align="center" .lightbox}
 
-:::{.callout-answer}
+:::: {.callout-answer}
 
 ![](images/lecture_tidy_data/denormalized.png){width="70%" fig-align="center" .lightbox}
 
@@ -119,7 +119,7 @@ Repeated row values may indicate that observations for different entities are co
 -   2nd entity: sites at which the plants were observed (`site`, `name`, `altitude`)
 
 Once we know the `name`, `altitude` for one site for one species, it is redundant to repeat all that information for the next species.  We can recreate that information just knowing the `site` ID number.
-:::
+::::
 
 We can **normalize** this data by separating the information for the two entities, plant species and site, into two different tables
 
@@ -136,7 +136,15 @@ Here's how our normalized data would look; note the `site` identifying variable 
 
 Notice that each table also satisfies the tidy data principles.
 
+::: 
+<!--end example-->
+
+
+::: {.callout-note}
 Normalizing data by separating it into multiple tables often makes researchers really uncomfortable.  This is understandable!  The person who designed this study collected all of these measurements for a reason - so that they could analyze the measurements together.  Now that our site and plant information are in separate tables, how would we use site altitude as a predictor variable for species composition, for example?
+
+:::
+<!--end note-->
 
 ## Relational Data Models
 
@@ -166,11 +174,13 @@ Two types of keys are common within relational data models:
 -   **Primary Key**: chosen key for a table, uniquely identifies each observation in the table,
 -   **Foreign Key**: reference to a primary key in another table, used to create links between tables.
 
-### Example
+::: {.callout-example}
 
 On our previously normalized data for **plants** and **sites**, let's choose primary keys for these tables and then identify any foreign keys.
 
-**Primary keys**
+:::: {.panel-tabset}
+
+#### Primary keys
 
 For the **plants** table:
 
@@ -182,7 +192,7 @@ For the **plants** table:
 
 For the **sites** table, all three columns could technically be keys as each column is unique. We chose `site` as the primary key because it is the most succinct and it also allows us to link the sites table with the plants table. (and again, logically, as we add more sites, can we guarantee that no two sites would have the same altitude?)
 
-**Foreign keys**
+#### Foreign keys
 
 The `site` column is the *primary key* of the **sites** table because it uniquely identifies each row of the table as a unique observation of a site.
 In the **plants** table, however, the `site` column is a *foreign key* that references the primary key from the **sites** table.
@@ -191,23 +201,16 @@ This linkage tells us that the first height measurement for the DAPU observation
 
 ![](images/lecture_tidy_data/primary_foreign_keys.png){fig-align="center" width="70%"}
 
+:::: 
+<!--end tabset-->
+
+::: 
+<!--end example-->
+
+
 ### Compound keys
 
-```{=html}
-<!-- ### Surrogate, natural, and compound keys
-
-In the sites data table from the previous example, we noticed that ‘site’ and ‘name’ are variables whose values uniquely identify the rows. In other words, ‘site’ and ‘name’ are keys. However, ‘site’ and ‘name’ are very different keys since the values in ‘site’ are “made up”, while ‘name’ has values that are used in the external world, unrelated to the table. This leads us to the following key types:
-
-- **Surrogate Key**:  a key whose values do not exist in the real world,
-- **Natural Key**: a key whose values exist in the real world.
-
-A surrogate key is often simpler, and can be a better choice than a natural key to become the primary key of a data table.
-
-![](images/lecture_tidy_data/surrogate_natural_keys.png){fig-align="center" width=70%} -->
-```
-<!--Finally,-->
-
-It can also be the case that a variable is not a key, but by combining it with a second variable we get that the combined values uniquely identify the rows.
+It can also be the case that a single variable is not unique in itself so cannot be used as a key, but by combining it with a second variable, the combined values uniquely identify the rows.
 
 This is called a **Compound Key**: a key that is made up of more than one variable.
 
@@ -215,45 +218,55 @@ For example, the `site` and `sp_code` columns in the **plants** table cannot be 
 However, when we look at their combined values (1-DAPU, 1-DAMA, 2-DAMA, 2-DAPU) we see each row has a unique value.
 So `site` and `sp_code` together form a compound key:  one unique observation of a specific plant at a specific site.
 
-![](images/lecture_tidy_data/compound_key.png)
+![](images/lecture_tidy_data/compound_key.png){width="70%" fig-align="center"}
 
-There are also other types of keys, like a _natural key_ or a _surrogate key_.  Each type of key has advantages and disadvantages.  You can read more about this in [this article](https://www.databasestar.com/database-keys/){.external target="_blank" rel="noopener"}.
+:::{.callout-tip}
+#### So many keys!
+
+Primary and foreign keys are the workhorses of relational data, but there are also other types of keys, like _natural keys_ or _surrogate keys_ that can help you understand and communicate the connections within and between your data tables.  
+
+![](images/lecture_tidy_data/surrogate_natural_keys.png){width="70%" fig-align="center" fig-alt="A diagram showing the difference between surrogate and natural keys. A surrogate key is an arbitrary value that is used as a primary key, such as an ID number. A natural key is a value that has meaning in the real world, such as a site name or a species code."}
+
+You can read more about this in [this article](https://www.databasestar.com/database-keys/){.external target="_blank" rel="noopener"}.
+:::
 
 ## Joins
 
-Frequently, analysis of data will require merging these separately managed tables back together.
-There are multiple ways to join the observations in two tables, based on how the rows of one table are merged with the rows of the other.
-Regardless of the join we will perform, we need to start by identifying the primary key in each table and how these appear as foreign keys in other tables.
+Frequently, analysis of data will require merging these separately managed tables back together. There are multiple ways to join the observations in two tables, based on how the rows of one table are merged with the rows of the other. Regardless of the join we will perform, we need to start by identifying the primary key in each table and how these appear as foreign keys in other tables.
 
 When conceptualizing merges, one can think of two tables, one on the *left* and one on the *right*.
 
-![](images/lecture_tidy_data/join-diagrams-separate.png)
+![](images/lecture_tidy_data/join-diagrams-separate.png){width="70%" fig-align="center" .lightbox}
 
-### Inner Join
+:::{.panel-tabset}
+#### Inner Join
 
 An *INNER JOIN* is when you merge the subset of rows that have matches in both the left table and the right table.
 
-![](images/lecture_tidy_data/join-diagrams-inner.png)
+![](images/lecture_tidy_data/join-diagrams-inner.png){width="70%" fig-align="center" .lightbox}
 
-### Left Join
+#### Left Join
 
 A *LEFT JOIN* takes all of the rows from the left table, and merges on the data from matching rows in the right table.
 Keys that don't match from the left table are still provided with a missing value (na) from the right table.
 
-![](images/lecture_tidy_data/join-diagrams-left.png)
+![](images/lecture_tidy_data/join-diagrams-left.png){width="70%" fig-align="center" .lightbox}
 
-### Right Join
+#### Right Join
 
 A *RIGHT JOIN* is the same as a left join, except that all of the rows from the right table are included with matching data from the left, or a missing value.
 Notice that left and right joins can ultimately be the same depending on the positions of the tables
 
-![](images/lecture_tidy_data/join-diagrams-right.png)
+![](images/lecture_tidy_data/join-diagrams-right.png){width="70%" fig-align="center" .lightbox}
 
-### Full Outer Join
+#### Full Outer Join
 
 Finally, a *FULL OUTER JOIN* includes all data from all rows in both tables, and includes missing values wherever necessary.
 
-![](images/lecture_tidy_data/join-diagrams-full.png)
+![](images/lecture_tidy_data/join-diagrams-full.png){width="70%" fig-align="center" .lightbox}
+
+:::
+<!-- end tabset-->
 
 Sometimes people represent joins as Venn diagrams, showing which parts of the left and right tables are included in the results for each join.
 This representation is useful, however, they miss part of the story related to where the missing value comes from in each result.
@@ -264,68 +277,17 @@ We suggest reading<a href=https://r4ds.had.co.nz/relational-data.html#join-probl
 
 ### Entity-Relationship models
 
-An **Entity-Relationship model (E-R model)**, also known as an E-R diagram, is a way to draw a compact diagram that reflects the structure and relationships of the tables in a relational database.
-These can be particularly useful for big databases that have many tables and complex relationships between them.
+An **Entity-Relationship model (E-R model)**, also known as an E-R diagram, is a way to draw a compact diagram that reflects the structure and relationships of the tables in a relational database. These can be particularly useful for big databases that have many tables and complex relationships between them.
 
-We will explain the steps to drawing a simplified E-R model with our previous plants and sites tables.
+These slides walk us through a simple example using our plants-sites dataset.
 
-*Step 1: Identify the entities in the relational database and add each one in a box.* In our case, entities are \[plants\] and \[sites\], since we are gathering observations about both of these.
+[Full Screen](slides/lecture_tidy_data/slides2_entity_relationship_models.html){target="_blank"}
 
-![](images/lecture_tidy_data/ER_diagram_1.png){fig-align="center" width="50%"}
-
-*Step 2: Add variables for each entity and identify keys.* Add the variables as a list inside each box.
-Then, identify the primary and foreign keys in each of the boxes.
-To visualize this, we have indicated
-
--   the <font color="red"> primary key </font> (of each entity) in <font color="red"> red </font> and
--   any <font color="blue"> foreign keys </font> in <font color="blue"> blue </font>.
-
-![](images/lecture_tidy_data/ER_diagram_2.png){fig-align="center" width="50%"}
-
-*Step 3: Add relationships between entities.*
-
--   Draw a line between the boxes of any two entities that have a relationship.
-
--   Identify which box has the primary key of the other as a foreign key.
-    Let's call the box that has the foreign key \[box1\] and the other box \[box2\].
-    Using the previous diagram we can see that "site" is the primary key of \[sites\] and appears as a foreign key in \[plants\].
-    So \[plants\] is \[box1\] and \[sites\] is \[box2\].
-
--   Add a word describing how \[box1\] is related to \[box2\] above the line connecting the two boxes.
-    So, for example, we need to describe how \[plants\] is related to \[sites\].
-    The relation is "a plant is located in a site", so we write "located" above the line indicating the relationship between \[plants\] and \[sites\].
-
-![](images/lecture_tidy_data/ER_diagram_3.png){fig-align="center" width="50%"}
-
-*Step 4: Add cardinality to every relationship in the diagram.* At this step we want to quantify how many items in an entity are related to another entity.
-This is easiest if we reuse the description we found in the previous step.
-For example, "a plant is located in one site".
-Then we add the symbol for "one" at the end of the line going from \[plants\] to \[sites\].
-
-![](images/lecture_tidy_data/ER_diagram_4.png){fig-align="center" width="50%"}
-
-To finish, we also indicate how many plants are related to a single site.
-Since "a site has many plants", we add the symbol for "many" at the end of the line going from \[sites\] to \[plants\]
-
-![](images/lecture_tidy_data/ER_diagram_5.png){fig-align="center" width="50%"}
-
-That's it!
-
-#### EDR Crow's Foot
-
-The symbols we used at the end of the lines are called **ERD "crow's foot"**.
-You can see all the existing ones together with an example in the next diagram.
-
-![](images/lecture_tidy_data/ERD_Relationship_Symbols_Quick_Reference.png)
-
-::: callout-note
-If you need to produce a publishable E-R model such as the one above, <a href=https://mermaid.js.org/intro/ target="_blank"> Mermaid </a> is a great option.
-Read more about how to use this tool to create diagrams <a href=https://mermaid.js.org/syntax/entityRelationshipDiagram.html target="_blank"> here </a>.
-:::
+```{=html}
+<iframe class="slide-deck" src="slides/lecture_tidy_data/slides2_entity_relationship_models.html" style="border: 1px solid #2e3846;"></iframe>
+```
 
 ## Best Practices Summary
-
-This is a summary of what we have covered, and some extra advice!
 
 The **tidy data principles** are:
 
@@ -333,25 +295,25 @@ The **tidy data principles** are:
 2.  Every row is an observation.
 3.  Every cell is a single value.
 
-In **normalized data** we organize data so that :
+In **normalized data** we organize data so that:
 
--   We have separate tables for each type of entity measured
+-   Each type of entity measured has its own table
 -   Observations (rows) are all unique
 -   Each column represents either an identifying variable or a measured variable
 -   Each table follows the tidy data principles
 
-Creating **relational data models** by assigning **primary and foreign keys** to each table allows us to maintain relationships between separate normalized tables.
-Choose the primary key for each table based on your understanding of the data and take efficiency into account.
-Once you choose a column as the primary key, make sure that all the values in that column are there!
+Creating **relational data models** by assigning **primary and foreign keys** to each table allows us to maintain relationships between separate normalized tables.  Choose the primary key for each table based on your understanding of the data, and take efficiency into account.  Once you choose a column as the primary key, make sure that all the values in that column are there!
 
 For a big relational database, an **Entity-Relationship model** can be an effective way to explain how different tables and their keys are related to each other.
+
 If we need to merge tables we can do it using different types of **joins**.
 
-## More on Data Management
+::: {.callout-note}
+
+#### More on Data Management
 
 Tidy data is one very important step to data management best practices.
-However there is more to consider.
-Here we provide some **extra advice** from a great paper called <a href=https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205 target="_blank"> 'Some Simple Guidelines for Effective Data Management'</a>.
+However there is more to consider!  Here are several tips from a great paper called <a href=https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205 target="_blank">'Some Simple Guidelines for Effective Data Management'</a>.
 
 -   Design tables to add rows, not columns
 -   Use a scripted program (like R!)
@@ -361,7 +323,7 @@ Here we provide some **extra advice** from a great paper called <a href=https://
 -   Include a header line in your tabular data files
 -   Use plain ASCII text
 
-In the Cleaning & Wrangling chapter we will cover more best practices for cleaning irregular and missing data and how to implement them using R.
+:::
 
 ## Activity
 
@@ -369,8 +331,8 @@ In the Cleaning & Wrangling chapter we will cover more best practices for cleani
 
 <!-- ### Exercise 1:Identifying Tidy Data -->
 
-::: callout-tip
-## Tidy data, keys and joins
+::: {.callout-exercise}
+#### Tidy data, keys and joins
 -   Get together in pairs or small groups
 -   Obtain materials from instructors including activity handout and blank paper(s).
 - Follow instructions in activity handout.

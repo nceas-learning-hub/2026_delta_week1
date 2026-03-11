@@ -93,6 +93,7 @@ If you look across a single row, and you notice that there are clearly multiple 
 
 
 ## Marginal sums and stats: not tidy!
+
 :::{.column width="70%"}
 ![](images/excel-org-05.png){.lightbox}
 :::
@@ -106,9 +107,11 @@ They also break principle two, "Every row is a single observation", because they
 :::
 
 ## Example 2
+
 ![](images/untidy_1.png){width="100%" fig-align="center" .lightbox}
 
 ## Example 2
+
 ![](images/untidy_1.png){width="70%" fig-align="center" .lightbox}
 
 :::{.body-text}
@@ -149,6 +152,7 @@ This is difficult to analyze, understand, and maintain.
 ## Multiple Observations
 
 ![](images/tidy_not_normal.png){width="70%" fig-align="center" .lightbox}
+
 :::{.body-text}
 To solve this problem, we can create a single column for species code and a single column for species height.  Each observation has been given its own row!
 :::

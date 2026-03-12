@@ -18,7 +18,7 @@ After completing this session, you will be able to:
 ## What is tidy data?
 
 Tidy data is a standardized way of organizing data tables that allows us to manage and analyze data efficiently, because it makes it straightforward to understand the corresponding variable and observation of each value.
-The <a href=https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html target="_blank"> **tidy data principles** </a> are:
+The [**tidy data principles**](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html){.external target="_blank" rel="noopener"} are:
 
 1.  Every *column* is a single *variable.*
 2.  Every *row* is a single *observation.*
@@ -71,7 +71,7 @@ How are tidy data principles evident in this simple example?
 
 Anything that does not follow the three tidy data principles is **untidy data**.  There are *many* ways in which data can become untidy, some can be noticed right away, while others are more subtle.  In this slide deck we will look at some examples of common untidy data situations.
 
-[Full Screen](slides/lecture_tidy_data/slides1_recognizing_untidy.html){target="_blank"}
+[Full Screen](slides/lecture_tidy_data/slides1_recognizing_untidy.html){.external target="_blank" rel="noopener"}
 
 ```{=html}
 <iframe class="slide-deck" src="slides/lecture_tidy_data/slides1_recognizing_untidy.html" style="border: 1px solid #2e3846;"></iframe>
@@ -273,7 +273,7 @@ This representation is useful, however, they miss part of the story related to w
 
 ![Image source: R for Data Science, Wickham & Grolemund.](images/lecture_tidy_data/join-venn.png)
 
-We suggest reading<a href=https://r4ds.had.co.nz/relational-data.html#join-problems target="_blank"> the Relational Data chapter in the "R for Data Science" book </a> for more examples and best practices about joins.
+We suggest reading the [Relational Data chapter in the "R for Data Science" book](https://r4ds.had.co.nz/relational-data.html#join-problems){.external target="_blank" rel="noopener"} for more examples and best practices about joins.
 
 ### Entity-Relationship models
 
@@ -281,7 +281,7 @@ An **Entity-Relationship model (E-R model)**, also known as an E-R diagram, is a
 
 These slides walk us through a simple example using our plants-sites dataset.
 
-[Full Screen](slides/lecture_tidy_data/slides2_entity_relationship_models.html){target="_blank"}
+[Full Screen](slides/lecture_tidy_data/slides2_entity_relationship_models.html){.external target="_blank" rel="noopener"}
 
 ```{=html}
 <iframe class="slide-deck" src="slides/lecture_tidy_data/slides2_entity_relationship_models.html" style="border: 1px solid #2e3846;"></iframe>
@@ -289,11 +289,17 @@ These slides walk us through a simple example using our plants-sites dataset.
 
 ## Best Practices Summary
 
+:::{.panel-tabset}
+
+#### Tidy Data Principles
+
 The **tidy data principles** are:
 
 1.  Every column is a variable.
 2.  Every row is an observation.
 3.  Every cell is a single value.
+
+#### Normalized Data
 
 In **normalized data** we organize data so that:
 
@@ -302,18 +308,24 @@ In **normalized data** we organize data so that:
 -   Each column represents either an identifying variable or a measured variable
 -   Each table follows the tidy data principles
 
+#### Relational Data
+
 Creating **relational data models** by assigning **primary and foreign keys** to each table allows us to maintain relationships between separate normalized tables.  Choose the primary key for each table based on your understanding of the data, and take efficiency into account.  Once you choose a column as the primary key, make sure that all the values in that column are there!
 
 For a big relational database, an **Entity-Relationship model** can be an effective way to explain how different tables and their keys are related to each other.
 
 If we need to merge tables we can do it using different types of **joins**.
 
+:::
+<!-- end panel-tabset-->
+
+
 ::: {.callout-note}
 
 #### More on Data Management
 
 Tidy data is one very important step to data management best practices.
-However there is more to consider!  Here are several tips from a great paper called <a href=https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205 target="_blank">'Some Simple Guidelines for Effective Data Management'</a>.
+However there is more to consider!  Here are several tips from a great paper called ['Some Simple Guidelines for Effective Data Management'](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205){.external target="_blank" rel="noopener"}.
 
 -   Design tables to add rows, not columns
 -   Use a scripted program (like R!)
@@ -327,15 +339,17 @@ However there is more to consider!  Here are several tips from a great paper cal
 
 ## Activity
 
-<!-- In groups of 2-3 we will do two activities that will help us put into practice the concepts of tidy data, identifying keys and structuring relational data. -->
-
-<!-- ### Exercise 1:Identifying Tidy Data -->
-
 ::: {.callout-exercise}
 #### Tidy data, keys and joins
--   Get together in pairs or small groups
--   Obtain materials from instructors including activity handout and blank paper(s).
+
+- Get together in pairs or small groups
+- Obtain materials from instructors including [activity handout](images/lecture_tidy_data/tidy_data_activity.pdf){.external target="_blank" rel="noopener"} and blank paper(s).
 - Follow instructions in activity handout.
+
+::::{.callout-answer}
+[Answer key to the Tidy Data Activity](images/lecture_tidy_data/tidy_data_activity_key.pdf){.external target="_blank" rel="noopener"}
+
+::::
 
 :::
 

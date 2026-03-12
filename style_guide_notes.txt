@@ -19,3 +19,9 @@ Style guide preferences:
 * Tabsets: great for alternative IDE or methods
     * Avoid putting headers inside the tabsets (aside from labeling the tabsets appropriately) - assuming section numbering is enabled, the numbering gets weird
 * Images: use ![](path) mode instead of <img src="path"> mode?  strengths? weaknesses?
+    * ![]{fig-align="center" width="70%" .lightbox fig-alt="alternative text for accessibility"}
+    * use those options and others as you see fit!
+* External links: use {.external target="_blank" rel="noopener"}
+    * .external makes a little "leaving this site" icon by the link
+    * target="_blank" opens the link in a new tab, leaving the course page still easily available
+    * rel="noopener" (sometimes automatic with target="_blank") is for security reasons

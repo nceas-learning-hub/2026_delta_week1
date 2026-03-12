@@ -3,104 +3,197 @@ title: Logic Models and Synthesis Development
 ---
 
 :::{.callout-tip}
-### Learning Objectives
+#### Learning Objectives
 
--   bullet pointed learning objectives
+- Provide an overview of Logic Models
+- Apply the principles of Logic Models to synthesis development
+- Refine synthesis group challenges
 :::
 
+## Logic Models
 
-## Use level 2 headers for sections
+Logic models are a planning tool that are designed to support program development by depicting the flow of resources and processes leading to a desired result. They are also used for outcomes-based evaluation of a program and are often requested as part of an evaluation planning process by funders or stakeholders.
 
-## Images
+### Inputs, Outputs, Outcomes
 
-The file path for images in the final course will be `images/<folder with same base name as lesson>/<image file>`.  When you rename this blank placeholder, rename (or make a copy if you're using multiple placeholders) the folder in `images` from `blank_placeholder` to the base name of your lesson.
+A simplified logic models comprise three main parts: Inputs, Outputs and Outcomes.
 
-![Alt text](images/blank_placeholder/allison-horst-code-kitchen.png)
+![](images/synthesis_logic_models/LM1.png)
 
+Inputs reflect ***what is invested***, outputs are ***what is done*** and outcomes are the ***results of the program***.
 
-## Callouts
+In a more detailed logic model, outputs and outcomes are further broken down:
 
-Quarto offers some built-in [callout blocks](https://quarto.org/docs/authoring/callouts.html) to set content off against the normal body text.  Note that we've customized the colors of our callouts to better match our course styling (see the `lh_theme` extension).  
+* Outputs are often represented as 'Activities' and 'Participants'. By including participation (or participants), the logic model is explicitly considering the intended audience, or stakeholders, impacted by the program. Engagement of this audience is an output. 
+* In the case of outcomes, these can be split into short, medium and long-term outcomes. Some people may label this last category 'Impact.'
 
-### Standard callouts
+![](images/synthesis_logic_models/LM2.png)
 
-There are five built-in callouts signalling different levels of urgency:
+Defining the inputs, outputs and outcomes early in a planning process enables teams to visualize the workflow from activity to results and can help mitigate potential challenges. Logic models can be thought of as having an "**IF** this **THEN** that" structure where inputs {{< fa arrow-right >}} outputs {{< fa arrow-right >}} outcomes.
 
-* tip `{.callout-tip}`
-* note `{.callout-note}`
-* caution `{.callout-caution}`
-* warning `{.callout-warning}`
-* important `{.callout-important}`
+![](images/synthesis_logic_models/LM3.png)
 
-See the [callout reference](https://quarto.org/docs/authoring/callouts.html) for how to create these.
+In the example below we have constructed a simple logic model for a hypothetical project where training materials are being developed for a group of educators to implement at their respective institutions.
 
-Based on the color and icons, here are recommendations on when and how to use these, in descending order of urgency:
+![](images/synthesis_logic_models/LM4.png)
 
-::: {.callout-important}
-Use `{.callout-important}` to highlight things that the reader _must_ pay attention to, or essential ideas and concepts.
+### Linkages
+
+Linkages are not always sequential and can be within categories, bi-directional and/or include feedback loops. Detailing this complexity of relationships, or theory of action, can be time consuming but is a valuable part of the thought process for project planning. In exploring all relationships, logic modeling also allows for assessing program feasibility.
+
+![](images/synthesis_logic_models/LM5.png)
+
+:::{.callout-tip}
+#### Other variations
+
+The above graphics include two sections within Outputs - Activities and Participants - and this is quite common. There is variation in logic model templates, including versions with a third type of output - "Products'. Sometimes description of these products is contained within the Activities section - for example, 'develop curricula', 'produce a report' - however calling these out explicitly is beneficial for teams focused on product development.
 :::
 
-::: {.callout-warning}
-Use `{.callout-warning}` to highlight common "gotchas" such as common user errors or unexpected behavior.
-:::
+### Situations, Assumptions, External Factors
 
-::: {.callout-caution}
-Use `{.callout-caution}` to indicate materials under development; consider using `{.callout-warning}` for other cases.
-:::
+Program development (and logic modeling) occurs in response to a given 'Situation' or need, and exploring this is the first step in modeling. The situation defines the objective, or problem, that the program is designed to solve hence some logic models may omit the left-hand situation column but be framed with Problem and Solution statements. Finally, comprehensive logic modeling takes into consideration assumptions that are made with respect to the resources available, the people involved, or the way the program will work and also recognizes that there are external factors that can impact the program's success.
 
-::: {.callout-note}
-Use `{.callout-note}` to communicate deeper ideas or understandings that are not critical to understanding the lesson at hand.  The instructor might skip over these while teaching.  If the reader does not read this, they may miss out, but nothing bad will happen.
-:::
+![](images/synthesis_logic_models/LM6.png)
 
-::: {.callout-tip}
-Use `{.callout-tip}` to communicate learning objectives, key points, and helpful tips and tricks.
-:::
+:::{.callout-note}
 
+#### In Summary
 
-### Custom callouts
+Logic models support program development and evaluation and comprise three primary steps in the workflow:
 
-There are currently four custom callouts for different types of tasks:
-
-* exercise `{.callout-exercise}`
-* hint `{.callout-hint}`
-* answer `{.callout-answer}`
-* example `{.callout-example}`
-
-
-These custom callouts work thanks to [Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/](https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html).  Unfortunately, the title is not responsive to the `title` argument in the callout or to the header-style titling that the built-in callouts can use.  The collapse option also seems to be unresponsive currently.
-
-::: {.callout-exercise}
-Use `{.callout-exercise}` for exercises.  The current default numbers exercises within a given page.  Click on the _hint_ and _answer_ callouts below to reveal the information in them.
-
-::: {.callout-hint}
-Use `{.callout-hint}` for hints to the exercise - defaults to `collapse=true` for obvious reasons.  Note they can be nested within an exercise, or stand-alone.
-:::
-
-::: {.callout-answer}
-Use `{.callout-answer}` for answers to the exercise - defaults to `collapse=true` for obvious reasons.  Note they can be nested within an exercise, or stand-alone.
-:::
+-   **Inputs:** Resources, contributions, and investments required for a program;
+-   **Outputs:** Activities conducted, participants reached, and products produced; and
+-   **Outcomes:** Results or expected changes arising from the program structured as short-, medium- and long-term.
 
 :::
 
-::: {.callout-example}
-Use `{.callout-example}` for examples, e.g., example data or example.
+## Logic Models for Synthesis Development
+
+Logic models are one tool for program development and have sufficient flexibility for a variety of situations, including planning for a research collaboration. While some logic model categories may feel less relevant (can we scale up to a long-term outcome from a published synthesis?), the process of articulating the research objective, proposed outcome, associated resources and activities has value. Below are examples of questions that a typical logic model (**LM**) will ask, and how these might be reframed for a research collaboration (**RC**).
+
+:::{.callout-note title="Objective/Problem Statement" icon=false}
+<!--blue border to match graphic-->
+
+**LM:** What is the problem? Why is this a problem? Who does this impact?
+
+**RC:** What is the current state of knowledge? What gaps exists in understanding? Why is more information or synthesis important?
 :::
 
-## Slides
+:::{.callout-caution title="Inputs" icon=false}
+<!--yellow/orange border to sorta match graphic-->
 
-Slides should when possible be created as Quarto slide decks.  Slide decks for a lesson should be created in the folder `slides/<lesson base name>/<slide deck name.html>` folder as qmd files (note, the link in the lesson must point to the html, not the qmd).  When you create a new lesson, you should rename the `slides/blank_placeholder` folder to match the base name of your lesson.
 
-You can call your slide deck quarto docs whatever you like, and have multiple slide decks.  You can also include images in your deck, perhaps with an `images` folder in the `slides` folder (NOTE: this is separate from images that show up in the main site page), and images can be referenced with relative file paths.  E.g., `slides/blank_placeholder/slides1.qmd` might have an image at `slides/blank_placeholder/images/tidyverse_hex.jpg`, so in the qmd, you could just point to `![](images/tidyverse_hex.jpg)`.
+**LM:** What resources are needed for the program? Personnel, money, time, equipment, partnerships...
 
-There is a default .scss file in the slides folder, use it or modify it as you like.
+**RC:** What is needed to undertake the synthesis research? For personnel, think in terms of the roles that are needed - data manager, statistician, writer, editor etc. Consider the time frame. DATA - what data are needed and what already exists?
+:::
 
-[Full Screen](slides/blank_placeholder/slides1.html)
+:::{.callout-tip title="Outputs" icon=false}
+<!--green border to sorta match graphic-->
 
-```{=html}
-<iframe class="slide-deck" src="slides/blank_placeholder/slides1.html" style="border: 1px solid #2e3846;"></iframe>
+::::{.panel-tabset}
+
+##### Activities
+
+**LM:** What will be done? Development, design, workshops, conferences, counseling, outreach...
+
+**RC:** What activities are needed to conduct the research? This could be high level or it could be broken down into details such as the types of statistical approaches.
+
+##### Participants
+
+**LM:** Who will we reach? Clients, Participants, Customers...
+
+**RC:** Who is the target audience? Who will be impacted by this work? Who is positioned to leverage this work?
+
+##### Products
+
+**LM:** What will you create? Publications, websites, media communications...
+
+**RC:** What research products are planned / expected? Consider this in relation to the intended audience. Is a peer-reviewed publication, report or white paper most appropriate? How will derived data be handled? Will documentation, workflows, or code be published?
+::::
+<!--end tabset-->
+:::
+
+:::{.callout-important title="Outcomes" icon=false}
+<!--red border to sorta match graphic-->
+
+:::{.panel-tabset}
+
+##### Short-term
+
+**LM:** What short-term outcomes are anticipated among participants. These can include changes in awareness, knowledge, skills, attitudes, opinions and intent.
+
+**RC:** Will this work represent a significant contribution to current understanding?
+
+##### Medium-term
+
+**LM:** What medium-term outcomes are predicted among participants? These might include changes in behaviors, decision-making and actions.
+
+**RC:** Will this work promote increased research activity or open new avenues of inquiry?
+
+##### Long-term Outcomes
+
+**LM:** What long-term benefits, or impacts, are expected? Changes in social, economic, civic, and environmental conditions?
+
+**RC:** Will this work result in local, regional or national policy change? What will be the long-term impact of increased investment in the ecosystem?
+::::
+<!--end tabset-->
+:::
+
+## Breakout: Synthesis Planning
+
+Breakout groups will focus on refining ideas for synthesis topcis using the logic modeling tools described in this section. The goal for this session is to develop one or more high-level logic models that:
+
+1.  Summarize the synthesis challenge
+2.  Define the inputs needed to approach the synthesis
+3.  Define the outputs, including activities and products that would would be needed to address the issue
+4.  Define the short term outcomes and longer-term impacts of the work
+
+Often it is helpful to start with a brainstorming activity to list activities and products that might be used to address the synthesis challenge, then connect those in terms of outcomes and impacts, and then circle back to the resource and data inputs needed to feed the logic model. Thinking of the whole model as a workflow can help conceptualize the dependencies among steps.
+
+### Tools:
+
+- Powerpoint [logic model template](images/synthesis_logic_models/logic_model_template.pptx)
+    * [Logic model template on Google Drive](https://docs.google.com/presentation/d/1MBUy35QIAkA5FNCdRzWJM2aPaFXfUmGl/edit?usp=sharing&ouid=113328660159760492310&rtpof=true&sd=true){.external target="_blank"}
+- [Mermaid flowcharts](https://mermaid.js.org/syntax/flowchart.html){.external target="_blank"} embedded in [Quarto documents](https://quarto.org/docs/authoring/diagrams.html#mermaid){.external target="_blank"}
+
+#### Mermaid example
+
+Here is a simple example of a logic model flow chart for a hypothetical synthesis project, created using Mermaid, a tool for creating diagrams and flowcharts using text-based syntax.
+
+:::{.panel-tabset}
+##### Flow chart diagram
+
+```{mermaid}
+flowchart LR
+    INPUTS --> ACTIVITIES --> OUTPUTS --> OUTCOMES/IMPACTS
+
+    Scenario{{Accelerate synthesis via data science training}}
+
+    R1[Instructor] & R2[Classroom space] & R3[Projector] --> B{Data Science Workshop}
+    B --> C(Workshop Curriculum)
+    B --> D(Presentations and Practice)
+    
+    C & D --> E[/Improved Delta management/] & F[/Increased analytic efficiency/]
 ```
 
+##### Source code
 
-## Data
+```{{mermaid}}
+flowchart LR
+    INPUTS --> ACTIVITIES --> OUTPUTS --> OUTCOMES/IMPACTS
 
-If you have specific data that your lesson requires to knit successfully, put it in the `data/blank_placeholder` folder.  It is probably best to avoid this though, use data from packages or online if possible, or create toy datasets directly in the .qmd.
+    Scenario{{Accelerate synthesis via data science training}}
+
+    R1[Instructor] & R2[Classroom space] & R3[Projector] --> B{Data Science Workshop}
+    B --> C(Workshop Curriculum)
+    B --> D(Presentations and Practice)
+    
+    C & D --> E[/Improved Delta management/] & F[/Increased analytic efficiency/]
+```
+:::
+
+## Resources
+
+-   Powerpoint [logic model template](images/synthesis_logic_models/logic_model_template.pptx)
+    * [Same template on Google Drive](https://docs.google.com/presentation/d/1MBUy35QIAkA5FNCdRzWJM2aPaFXfUmGl/edit?usp=sharing&ouid=113328660159760492310&rtpof=true&sd=true){.external target="_blank"}

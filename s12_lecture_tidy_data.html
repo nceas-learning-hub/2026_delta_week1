@@ -579,7 +579,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="what-is-tidy-data" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="what-is-tidy-data"><span class="header-section-number">1</span> What is tidy data?</h2>
-<p>Tidy data is a standardized way of organizing data tables that allows us to manage and analyze data efficiently, because it makes it straightforward to understand the corresponding variable and observation of each value. The <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html" target="_blank"> <strong>tidy data principles</strong> </a> are:</p>
+<p>Tidy data is a standardized way of organizing data tables that allows us to manage and analyze data efficiently, because it makes it straightforward to understand the corresponding variable and observation of each value. The <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html" class="external" target="_blank" rel="noopener"><strong>tidy data principles</strong></a> are:</p>
 <ol type="1">
 <li>Every <em>column</em> is a single <em>variable.</em></li>
 <li>Every <em>row</em> is a single <em>observation.</em></li>
@@ -664,7 +664,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="recognizing-untidy-data" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="recognizing-untidy-data"><span class="header-section-number">2</span> Recognizing untidy data</h2>
 <p>Anything that does not follow the three tidy data principles is <strong>untidy data</strong>. There are <em>many</em> ways in which data can become untidy, some can be noticed right away, while others are more subtle. In this slide deck we will look at some examples of common untidy data situations.</p>
-<p><a href="slides/lecture_tidy_data/slides1_recognizing_untidy.html" target="_blank">Full Screen</a></p>
+<p><a href="slides/lecture_tidy_data/slides1_recognizing_untidy.html" class="external" target="_blank" rel="noopener">Full Screen</a></p>
 <iframe class="slide-deck" src="slides/lecture_tidy_data/slides1_recognizing_untidy.html" style="border: 1px solid #2e3846;"></iframe>
 </section>
 <section id="why-tidy-data" class="level2" data-number="3">
@@ -938,23 +938,29 @@ Note
 <figcaption>Image source: R for Data Science, Wickham &amp; Grolemund.</figcaption>
 </figure>
 </div>
-<p>We suggest reading<a href="https://r4ds.had.co.nz/relational-data.html#join-problems" target="_blank"> the Relational Data chapter in the “R for Data Science” book </a> for more examples and best practices about joins.</p>
+<p>We suggest reading the <a href="https://r4ds.had.co.nz/relational-data.html#join-problems" class="external" target="_blank" rel="noopener">Relational Data chapter in the “R for Data Science” book</a> for more examples and best practices about joins.</p>
 <section id="entity-relationship-models" class="level3" data-number="6.1">
 <h3 data-number="6.1" class="anchored" data-anchor-id="entity-relationship-models"><span class="header-section-number">6.1</span> Entity-Relationship models</h3>
 <p>An <strong>Entity-Relationship model (E-R model)</strong>, also known as an E-R diagram, is a way to draw a compact diagram that reflects the structure and relationships of the tables in a relational database. These can be particularly useful for big databases that have many tables and complex relationships between them.</p>
 <p>These slides walk us through a simple example using our plants-sites dataset.</p>
-<p><a href="slides/lecture_tidy_data/slides2_entity_relationship_models.html" target="_blank">Full Screen</a></p>
+<p><a href="slides/lecture_tidy_data/slides2_entity_relationship_models.html" class="external" target="_blank" rel="noopener">Full Screen</a></p>
 <iframe class="slide-deck" src="slides/lecture_tidy_data/slides2_entity_relationship_models.html" style="border: 1px solid #2e3846;"></iframe>
 </section>
 </section>
 <section id="best-practices-summary" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="best-practices-summary"><span class="header-section-number">7</span> Best Practices Summary</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Tidy Data Principles</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Normalized Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Relational Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>The <strong>tidy data principles</strong> are:</p>
 <ol type="1">
 <li>Every column is a variable.</li>
 <li>Every row is an observation.</li>
 <li>Every cell is a single value.</li>
 </ol>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <p>In <strong>normalized data</strong> we organize data so that:</p>
 <ul>
 <li>Each type of entity measured has its own table</li>
@@ -962,9 +968,15 @@ Note
 <li>Each column represents either an identifying variable or a measured variable</li>
 <li>Each table follows the tidy data principles</li>
 </ul>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <p>Creating <strong>relational data models</strong> by assigning <strong>primary and foreign keys</strong> to each table allows us to maintain relationships between separate normalized tables. Choose the primary key for each table based on your understanding of the data, and take efficiency into account. Once you choose a column as the primary key, make sure that all the values in that column are there!</p>
 <p>For a big relational database, an <strong>Entity-Relationship model</strong> can be an effective way to explain how different tables and their keys are related to each other.</p>
 <p>If we need to merge tables we can do it using different types of <strong>joins</strong>.</p>
+</div>
+</div>
+</div>
+<!-- end panel-tabset-->
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -975,7 +987,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Tidy data is one very important step to data management best practices. However there is more to consider! Here are several tips from a great paper called <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205" target="_blank">‘Some Simple Guidelines for Effective Data Management’</a>.</p>
+<p>Tidy data is one very important step to data management best practices. However there is more to consider! Here are several tips from a great paper called <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205" class="external" target="_blank" rel="noopener">‘Some Simple Guidelines for Effective Data Management’</a>.</p>
 <ul>
 <li>Design tables to add rows, not columns</li>
 <li>Use a scripted program (like R!)</li>
@@ -990,10 +1002,8 @@ Note
 </section>
 <section id="activity" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="activity"><span class="header-section-number">8</span> Activity</h2>
-<!-- In groups of 2-3 we will do two activities that will help us put into practice the concepts of tidy data, identifying keys and structuring relational data. -->
-<!-- ### Exercise 1:Identifying Tidy Data -->
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1002,14 +1012,32 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
 <ul>
 <li>Get together in pairs or small groups</li>
-<li>Obtain materials from instructors including activity handout and blank paper(s).</li>
+<li>Obtain materials from instructors including <a href="images/lecture_tidy_data/tidy_data_activity.pdf" class="external" target="_blank" rel="noopener">activity handout</a> and blank paper(s).</li>
 <li>Follow instructions in activity handout.</li>
 </ul>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Answer</span>Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-answer">
+<p><a href="images/lecture_tidy_data/tidy_data_activity_key.pdf" class="external" target="_blank" rel="noopener">Answer key to the Tidy Data Activity</a></p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

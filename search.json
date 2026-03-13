@@ -1499,7 +1499,7 @@
     "href": "s17_r_programming_introduction.html#r-resources",
     "title": "Working in R & RStudio",
     "section": "10 R Resources",
-    "text": "10 R Resources\n\nAwesome R Resources to Check out\n\n\n\n\n\n\n\nLearning R Resources\n\nIntroduction to R lesson in Data Carpentry’s R for data analysis course\nJenny Bryan’s Stat 545 course materials |\nJulie Lowndes’ Data Science Training for the Ocean Health Index |\nLearn R in the console with swirl |\nProgramming in R |\nR, RStudio, RMarkdown |\n\n\n\n\nCommunity Resources\n\nNCEAS’ EcoDataScience\nR-Ladies\nrOpenSci\nMinorities in R (MiR)\nTwitter - there is a lot here but some hashtags to start with are:\n\n#rstats\n#TidyTuesday\n#dataviz\n\n\n\n\n\nCheatsheets\n\nBase R Cheatsheet |\nLaTeX Equation Formatting |\nMATLAB/R Translation Cheatsheet |",
+    "text": "10 R Resources\n\nAwesome R Resources to Check out\n\n\n\n\n\n\nLearning R Resources\n\nR for Data Science\nIntroduction to R\nfrom Data Carpentry’s R for data analysis\nJenny Bryan’s Stat 545 course materials\nOcean Health Index Data Science Training.\nLearn R in the console with swirl\nProgramming in R\nR, RStudio, RMarkdown.\n\n\n\nCommunity Resources\n\nNCEAS’ EcoDataScience\nR-Ladies\nrOpenSci\nMinorities in R (MiR)\nTwitter - there is a lot here but some hashtags to start with are:\n\n#rstats\n#TidyTuesday\n#dataviz\n\n\n\n\nCheatsheets\n\nBase R Cheatsheet\nLaTeX Equation Formatting\nMATLAB/R Translation Cheatsheet",
     "crumbs": [
       "Additional Resources",
       "Intro to R Programming"

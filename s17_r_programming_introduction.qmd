@@ -534,27 +534,29 @@ To install a package, we use the syntax `install.packages("packge_name")`. A pac
 
 ## R Resources
 
-+----------------------+--------------------------------------------------------------------------+
-| Learning R Resources | -   [Introduction to R](http://www.datacarpentry.org/R-ecology-lesson/01-intro-to-r.html) lesson in [Data Carpentry's R for data analysis](http://www.datacarpentry.org/R-ecology-lesson/) course                                  |
-|                      | -   Jenny Bryan's Stat 545 [course materials](https://stat545.com/r-basics.html) |
-|                      | -   [Julie Lowndes' Data Science Training for the Ocean Health Index](http://ohi-science.org/data-science-training/) |
-|                      | -   Learn R in the console with [swirl](https://swirlstats.com/)         |
-|                      | -   [Programming in R](http://ohi-science.org/data-science-training/programming.html) |
-|                      | -   [R, RStudio, RMarkdown](http://ohi-science.org/data-science-training/rstudio.html) |
-+----------------------+--------------------------------------------------------------------------+
-| Community Resources  | -   [NCEAS' EcoDataScience](https://eco-data-science.github.io/)         |
-|                      | -   [R-Ladies](https://rladies.org/)                                     |
-|                      | -   [rOpenSci](https://ropensci.org/community/)                          |
-|                      | -   [Minorities in R (MiR)](https://mircommunity.com/)                   |
-|                      | -   Twitter - there is *a lot* here but some hashtags to start with are: |
-|                      |     -   #rstats                                                          |
-|                      |     -   #TidyTuesday                                                     |
-|                      |     -   #dataviz                                                         |
-+----------------------+--------------------------------------------------------------------------+
-| Cheatsheets          | -   [Base R Cheatsheet](https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf) |
-|                      | -   [LaTeX Equation Formatting](https://www.caam.rice.edu/~heinken/latex/symbols.pdf)         |
-|                      | -   [MATLAB/R Translation Cheatsheet](http://mathesaurus.sourceforge.net/octave-r.html)       |
-+----------------------+--------------------------------------------------------------------------+
++----------------------+-----------------------------------------------------------------------------------------------------+
+| Learning R Resources | -   [R for Data Science](https://r4ds.hadley.nz/data-visualize.html)                                |
+|                      | -   [Introduction to R](http://www.datacarpentry.org/R-ecology-lesson/01-intro-to-r.html)           | 
+|                      |    -   from [Data Carpentry's R for data analysis](http://www.datacarpentry.org/R-ecology-lesson/)  |
+|                      | -   Jenny Bryan's Stat 545 [course materials](https://stat545.com/r-basics.html)                    |
+|                      | -   [Ocean Health Index Data Science Training](http://ohi-science.org/data-science-training/).      |
+|                      | -   Learn R in the console with [swirl](https://swirlstats.com/)                                    |
+|                      | -   [Programming in R](http://ohi-science.org/data-science-training/programming.html)               |
+|                      | -   [R, RStudio, RMarkdown](http://ohi-science.org/data-science-training/rstudio.html).             |
++----------------------+-----------------------------------------------------------------------------------------------------+
+| Community Resources  | -   [NCEAS' EcoDataScience](https://eco-data-science.github.io/)                                    |
+|                      | -   [R-Ladies](https://rladies.org/)                                                                |
+|                      | -   [rOpenSci](https://ropensci.org/community/)                                                     |
+|                      | -   [Minorities in R (MiR)](https://mircommunity.com/)                                              |
+|                      | -   Twitter - there is *a lot* here but some hashtags to start with are:                            |
+|                      |     -   #rstats                                                                                     |
+|                      |     -   #TidyTuesday                                                                                |
+|                      |     -   #dataviz                                                                                    |
++----------------------+-----------------------------------------------------------------------------------------------------+
+| Cheatsheets          | -   [Base R Cheatsheet](https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf)       |
+|                      | -   [LaTeX Equation Formatting](https://www.caam.rice.edu/~heinken/latex/symbols.pdf)               |
+|                      | -   [MATLAB/R Translation Cheatsheet](http://mathesaurus.sourceforge.net/octave-r.html)             |
++----------------------+-----------------------------------------------------------------------------------------------------+
 
 : Awesome R Resources to Check out {tbl-colwidths="[20,80]"}
 

@@ -25,3 +25,10 @@ Style guide preferences:
     * .external makes a little "leaving this site" icon by the link
     * target="_blank" opens the link in a new tab, leaving the course page still easily available
     * rel="noopener" (sometimes automatic with target="_blank") is for security reasons
+* Customizing callouts
+    * Collapse long callouts using collapse=true, with maybe a note in header to expand it
+    * Create callouts with custom FA icons by icon=false and including icon as part of header
+    * E.g.:
+        :::{.callout-tip collapse=true icon=false}
+        ### {{< fa code >}} Expand for .gitignore template
+

@@ -51,10 +51,11 @@ website:
       - icon: github
         href: https://github.com/nceas-learning-hub/2026_delta_week1
     contents:
-      - index.qmd  # preface
-      - groups.qmd # additional preface page
+      - index.qmd      ### Landing page
+      - s00_prep.qmd   ### Pre-workshop prep
+      - s00_groups.qmd ### additional preface page
       - text: "Project Milestones"
-        href: benchmarks.qmd
+        href: s00_benchmarks.qmd
       # START SESSIONS
       - section: "Day 1"
         contents:
@@ -85,6 +86,10 @@ website:
         contents:
         - s15_github_project_management.qmd
         - s16_synthesis_next_steps.qmd
+      - section: "Additional Resources"
+        contents:
+        - text: "Intro to R Programming"
+          href: s17_r_programming_introduction.qmd
       # END SESSIONS
 
   page-footer:

@@ -233,7 +233,9 @@ For a full reference, see https://www.markdownguide.org/cheat-sheet/.
 The `#` symbol means something different in R code (a comment) vs. Markdown (a header). In Markdown, the number of `#` symbols you use matters: `#` is the biggest header, `###` up to `######` are consecutively smaller and nested below it.
 :::
 
-::: callout-exercise
+::: {.callout-exercise}
+#### Practice Markdown syntax
+
 Add some italic text, a numbered list, and a sub-header to your document. Try a few other Markdown syntax options. Re-render and check the output.
 :::
 
@@ -250,6 +252,8 @@ To toggle between Visual Editor and Source Editor mode:
 * {{< fa p >}} Positron: Command-Shift-F4 (Mac) or Ctrl-Shift-F4 (Windows).
 
 ::: {.callout-exercise collapse=true}
+#### Try the Visual Editor
+
 Enable Visual Editor mode.
 
 Add a citation (e.g., DOI 10.1038/s41467-020-17726-z) into a section of prose in your Quarto document, using the Visual Editor.
@@ -289,7 +293,7 @@ Here are a few of the options to run code interactively:
     c.  keyboard shortcut: Command-Enter or Ctrl-Enter
 2.  Click the green arrow at the right of the code chunk to run the entire chunk.
 
-![](images/r_quarto_literate_analysis/execute_code_rstudio.png){height=2in .lightbox align="center"}
+![](images/r_quarto_literate_analysis/execute_code_rstudio.png){width="70%" .lightbox align="center"}
 
 ##### {{< fa p >}} Positron
 
@@ -298,10 +302,12 @@ Here are a few of the options to run code interactively:
 1.  Select the line (or simply put the cursor there), and use the keyboard shortcut: Command-Enter or Ctrl-Enter
 2.  Click the Run Cell arrow above the code chunk to run the entire chunk.
 
-![](images/r_quarto_literate_analysis/execute_code_positron.png){height=2in .lightbox align="center"}
+![](images/r_quarto_literate_analysis/execute_code_positron.png){width="70%" .lightbox align="center"}
 :::
 
 :::{.callout-exercise collapse=true}
+#### Add and run a code chunk
+
 Add a code chunk to your Quarto document, with some calculations and variable assignments.  For example:
 
 ```{{r}}
@@ -376,6 +382,8 @@ Experienced R users sometimes struggle to transition to Quarto because writing p
 3. Fill in the actual code under each bullet, then convert the bullets to prose.
 
 :::{.callout-exercise}
+#### Create a Quarto document outline
+
 For this analysis, create a new Quarto document; delete anything below the YAML header and structure your document like this, using Markdown headers:
 
 * Introduction
@@ -430,6 +438,7 @@ bg_chem <- read_csv(here::here('data/r_quarto_literate_analysis/BGchem2008data.c
 ```
 
 :::{.callout-exercise}
+
 `read_csv()` prints a column specification message when it runs. How would you suppress this from appearing in your rendered output? 
 
 ::::{.callout-hint}
@@ -493,6 +502,8 @@ plot(bg_chem$P, bg_chem$NO2 + bg_chem$NO3 + bg_chem$NH4)
 ```
 
 :::{.callout-exercise}
+#### Finalize and render your Quarto document
+
 Decide whether you want the plot code to appear in the rendered output alongside the figure, and add the appropriate chunk option. Then render your document.
 :::
 

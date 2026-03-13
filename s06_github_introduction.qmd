@@ -192,7 +192,7 @@ This table includes terms for which there **are not specific Git commands.**
 
 1.  Login to [GitHub](https://github.com/)
 2.  Click the **New repository** button
-3.  Name it `{FIRSTNAME}_test`
+3.  Name it `{firstname}_test`
 4.  Add a short description
 5.  Check the box to add a `README.md` file
 6.  Add a `.gitignore` file using the `R` template
@@ -201,10 +201,8 @@ This table includes terms for which there **are not specific Git commands.**
 
 If you were successful, it should look something like this:
 
-<p align="center">
-<img src="images/github_introduction/new-repo_p1.png" alt="Screen capture of the top half of the page on GitHub that allows a user to create a new repository" width="80%"/>
-<img src="images/github_introduction/new-repo_p2.png" alt="Screen capture of the bottom half of the page on GitHub that allows a user to create a new repository" width="80%"/>
-</p>
+![](images/github_introduction/new-repo_p1.png){fig-alt="Screen capture of the top half of the page on GitHub that allows a user to create a new repository" width="70%" .lightbox fig-align="center"}
+![](images/github_introduction/new-repo_p2.png){fig-alt="Screen capture of the bottom half of the page on GitHub that allows a user to create a new repository"  width="70%" .lightbox fig-align="center"}
 
 You've now created your first repository! It has a couple of files that GitHub created for you: `README.md`, `LICENSE`, and `.gitignore`. 
 
@@ -213,21 +211,25 @@ You've now created your first repository! It has a couple of files that GitHub c
 You should always add a `README.md` to the root directory of your repository -- it is a markdown file that is rendered as HTML and displayed on the landing page of your repository. This is a common place to include any pertinent information about what your repository contains, how to use it, etc.
 :::
 
-<img src="images/github_introduction/new-repo_home.png" alt="Screen capture of the main landing page for a brand new GitHub repository" width="100%"/>
+![](images/github_introduction/new-repo_home.png){fig-alt="Screen capture of the main landing page for a brand new GitHub repository"  width="70%" .lightbox fig-align="center"}
+
+### Edit a File in Your Repository
 
 For simple changes to text files, such as the `README.md`, you can make edits directly in the GitHub web interface.
 
-::: callout-note
-## Challenge
+::: callout-exercise
+## Modify and commit a change on GitHub
 
 Navigate to the `README.md` file in the file listing, and edit it by clicking on the **pencil icon** (top right of file). This is a regular Markdown file, so you can add markdown text. Add a new level-2 header called "Purpose" and add some bullet points describing the purpose of the repo. When done, add a commit message, and hit the **Commit changes** button.
 :::
 
-<img src="images/github_introduction/new-repo_test-edit.png" alt="Screen capture of the page in GitHub that appears when you edit a file in a repository directly through GitHub's web interface" width="100%"/>
+![](images/github_introduction/new-repo_test-edit.png){fig-alt="Screen capture of the page in GitHub that appears when you edit a file in a repository directly through GitHub's web interface" width="70%" .lightbox fig-align="center"}
 
 Congratulations, you've now authored your first versioned commit! If you navigate back to the GitHub page for the repository, you'll see your commit listed there, as well as the rendered `README.md` file.
 
-<img src="images/github_introduction/new-repo_test-displayed.png" alt="Screen capture of the landing page of a GitHub repository after the README has been edited to include non-template content" width="100%"/>
+![](images/github_introduction/new-repo_test-displayed.png){fig-alt="Screen capture of the landing page of a GitHub repository after the README has been edited to include non-template content" width="70%" .lightbox fig-align="center"}
+
+### The GitHub Repository Landing Page
 
 The GitHub repository landing page provides us with lots of useful information. To start, we see: 
 
@@ -438,7 +440,7 @@ There are a number of different workflows for creating version-controlled reposi
 
 There are a few approaches for connecting an existing local folder to Git/GitHub but the folks at Posit have developed some useful tools to streamline this.  The task is slightly different between RStudio and Positron IDEs.
 
-In this last exercise, we will practice this workflow using your `training_{USERNAME}` folder.
+In this last exercise, we will practice this workflow using your `training_{username}` folder.
 
 ::: {.panel-tabset}
 
@@ -446,7 +448,7 @@ In this last exercise, we will practice this workflow using your `training_{USER
 
 **Open the Folder in Positron**
 
-Switch to your `training_{USERNAME}` folder using the dropdown menu in the top right corner ({{< fa p >}} Positron: "folder". Click the dropdown next to your current folder name (`{FIRSTNAME}_test`), and then select `training_{USERNAME}` from the list of recent folders you've opened in Positron. If you've never opened the `training_{USERNAME}` folder with Positron, click **Open Folder...**.
+Switch to your `training_{username}` folder using the dropdown menu in the top right corner ({{< fa p >}} Positron: "folder". Click the dropdown next to your current folder name (`{firstname}_test`), and then select `training_{username}` from the list of recent folders you've opened in Positron. If you've never opened the `training_{username}` folder with Positron, click **Open Folder...**.
 
 In this example, there are some existing scripts whose names reflect steps in a typical code workflow.  Your own project will likely look different, but have some files and maybe some folders.
 
@@ -454,7 +456,7 @@ In this example, there are some existing scripts whose names reflect steps in a 
 
 **Initialize Git**
 
-Now that we're in the right folderin Positron, **switch to the Terminal pane** and run the following commands:
+Now that we're in the right folder in Positron, **switch to the {{< fa code >}} Terminal pane** and run the following commands:
 
 1. `git init` - This initializes the current folder/directory to be Git-enabled (by creating a `.git` folder inside).  It will return a message saying something like `Initialized empty Git repository in...` followed by the absolute path to your chosen folder.
 2. `git add --all` or `git add .` - this stages all your current files in the folder so Git knows to take a snapshot of them.
@@ -462,7 +464,7 @@ Now that we're in the right folderin Positron, **switch to the Terminal pane** a
 
 **Connect local Git with remote GitHub**
 
-Here, go back to the Console pane - this next step is in R.  We'll use a tool from the `usethis` package to create a remote repository on GitHub (with the same name as the current folder) and push our initial commit out to GitHub.
+Here, go back to the **{{< fa brands r-project >}} Console pane** - this next step is in R.  We'll use a tool from the `usethis` package to create a remote repository on GitHub (with the same name as the current folder) and push our initial commit out to GitHub.
 
 4. `usethis::use_github()` (note, `install.packages('usethis')` if you don't already have it installed!)
 5. That's it!  You will see R go through a series of steps: create a GitHub repository, set remote origin, push main branch, and then optionally opening the URL to take you to your repository on GitHub.
@@ -471,7 +473,7 @@ Here, go back to the Console pane - this next step is in R.  We'll use a tool fr
 
 **Open Project in RStudio**
 
-Switch to your `training_{USERNAME}` folder using the dropdown menu in the top right corner ({{< fa  brands r-project >}} RStudio: "folder". Click the dropdown next to your current folder name (`{FIRSTNAME}_test`), and then select `training_{USERNAME}` from the list of recent folders you've opened. If you've never opened the `training_{USERNAME}` folder with RStudio, click **New Project...**.  Alternately, from the top menu, choose File > Open Project or File > New Project.
+Switch to your `training_{username}` folder using the dropdown menu in the top right corner ({{< fa  brands r-project >}} RStudio: "folder". Click the dropdown next to your current folder name (`{firstname}_test`), and then select `training_{username}` from the list of recent folders you've opened. If you've never opened the `training_{username}` folder with RStudio, click **New Project...**.  Alternately, from the top menu, choose File > Open Project or File > New Project.
 
 In this example, there are some existing scripts whose names reflect steps in a typical code workflow.  Your own project will likely look different, but have some files and maybe some folders.
 
@@ -500,9 +502,14 @@ Make sure you are in the Console pane - these nexts step are in R.  We'll use to
 
 ### Tell Git What to Ignore
 
-An absolutely critical component of version control with Git is what Git _doesn't_ track, not just what it _does_ track. **Git repositories each use a file called ".gitignore" to 'decide' what not to track.** This is useful for many reasons but in particular the .gitignore will be a useful guardrail against tracking (A) large files or (B) files with sensitive information (e.g., passwords, private data).
+An absolutely critical component of version control with Git is what Git _doesn't_ track, not just what it _does_ track. **Git repositories each use a file called ".gitignore" to 'decide' what not to track.** Most often, this is used to NOT track:
 
-Any file or folder named in the .gitignore won't show up in the version control window of any IDE. This means that you don't need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!
+* large files
+* files with sensitive information (e.g., passwords, private data).
+
+:::callout-tip
+Any file or folder named in the `.gitignore` won't show up in the version control window of any IDE. This means that you don't need to carefully avoid accidentally staging/committing a sensitive/large file, you can just have that file automatically be ignored by Git. Also, if you ever change your mind and do want to start tracking a file you had previously ignored, just delete the name of that file from the .gitignore and the previously ignored file will become available for staging/committing!
+:::
 
 In our earlier exercises, we've started repositories in GitHub with the template ".gitignore" file for R users but there are some slight differences when adding Git tracking to an existing folder.
 
@@ -536,6 +543,7 @@ Once you have a ".gitignore" file:
 
 :::{.callout-note}
 #### .gitignore Templates
+
 The .gitignore templates curated by GitHub are generally pretty good so copy/pasting that content will usually set you up for success. Note that as you work more with Git/GitHub, you may develop your own template for a .gitignore that ignores files or folders you consistently use across projects. In that case, feel free to copy that .gitignore's content instead of the generic GitHub template for your coding language.
 :::
 
@@ -589,7 +597,7 @@ Date:   Fri Feb 13 15:52:44 2026 -0500
 ```
 
 ::: {.callout-caution icon=false}
-## Challenge: Add a `README.md` file to `training_{USERNAME}`
+## Challenge: Add a `README.md` file to `training_{username}`
 
 GitHub provides a button on your repo's landing page for quickly adding a `README.md` file. Click the **Add a README** button and use markdown syntax to create a `README.md`. Commit the changes to your repository.
 

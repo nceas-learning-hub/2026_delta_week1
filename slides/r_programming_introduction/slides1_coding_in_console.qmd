@@ -1,0 +1,311 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme:
+      - lh_slides_style.scss ### this lives in folder with slide qmd file
+execute:
+  echo: true
+  code-line-numbers: false
+---
+
+## {#title-slide data-menu-title="Title Slide"} 
+
+[Welcome to R & RStudio]{.custom-title}
+
+[An introduction to programming in R]{.custom-subtitle}
+
+<hr class="hr-red">
+
+
+[**NCEAS Learning Hub**]{.custom-subtitle2}
+
+---
+
+##  {#rstudio-ide data-menu-title="RStudio IDE1"}
+
+[RStudio IDE interface]{.slide-title}
+
+
+::: {.columns}
+
+:::: {.column width="60%"}
+
+![](images/rstudio_ide.png){width=100%}
+:::: 
+<!-- end left column -->
+
+:::: {.column width="40%"}
+
+
+Let's take a tour of the RStudio interface!
+
+:::: 
+<!-- end right column -->
+
+::: 
+<!-- end .columns -->
+
+
+---
+
+##  {#rstudio-ide2 data-menu-title="RStudio IDE2"}
+
+[RStudio IDE interface]{.slide-title}
+
+::: {.columns}
+
+:::: {.column width="60%"}
+
+![](images/rstudio_ide.png){width=100%}
+:::: 
+<!-- end left column -->
+
+:::: {.column width="40%"}
+
+::::: {.body-text}
+
+Notice the default panes:
+
+-   Console (entire left)
+-   Environment/History (tabbed in upper right)
+-   Files/Plots/Packages/Help (tabbed in lower right)
+
+**NOTE:** New tabs may show up in different contexts (e.g., Git tab)
+
+:::::
+
+:::: 
+<!-- end right column -->
+
+::: 
+<!-- end .columns -->
+
+::: {.body-text}
+**Quick Tip:** You can change the default location of the panes, among many other things. More information [here](https://support.posit.co/hc/en-us/articles/200549016-Customizing-the-RStudio-IDE).
+:::
+
+---
+
+##  {#rstudio-console data-menu-title="RStudio Console"}
+
+[RStudio IDE interface]{.slide-title}
+
+::: {.columns}
+
+:::: {.column width="60%"}
+
+![](images/rstudio_ide_console.png){width=100%}
+:::: 
+<!-- end left column -->
+
+:::: {.column width="40%"}
+
+::::: {.body-text}
+
+The **Console pane** is where you can directly type R code, and R will interpret the code and return some value.  
+
+When you first start, you'll see some text including the version of R software currently installed (yours may not match the image!)
+:::::
+
+:::: 
+<!-- end right column -->
+
+::: 
+<!-- end .columns -->
+
+:::{.body-text}
+Note there are tabs for **Terminal** and **Background Jobs**.  **Terminal** is direct access to your computer's operating system (NOT R software).  We won't do anything with those for now.
+:::
+
+---
+
+##  {#rstudio-envir data-menu-title="RStudio Environment"}
+
+[RStudio IDE interface]{.slide-title}
+
+::: {.columns}
+
+:::: {.column width="60%"}
+
+![](images/rstudio_ide_envir.png){width=100%}
+:::: 
+<!-- end left column -->
+
+:::: {.column width="40%"}
+
+::::: {.body-text}
+
+The **Environment pane** is where R will display information it is holding in memory - "objects" that may contain individual values, lists or vectors containing multiple values, data frames containing tabular data, etc.
+
+When you first start up, if you have set things up as we prefer to set them, the Environment pane will say "Environment is empty."  Later, as we use R to make some simple calculations, you will see objects in this pane.
+:::::
+
+:::: 
+<!-- end right column -->
+
+::: 
+<!-- end .columns -->
+
+:::{.body-text}
+Note there is a tab for **History** and perhaps others.  **History** will show you the sequence of any commands you have typed or executed into R.  When we start writing **R scripts**, you will see that the History tab is not something we need for reproducible science.
+:::
+
+---
+
+##  {#rstudio-files data-menu-title="RStudio Files"}
+
+[RStudio IDE interface]{.slide-title}
+
+::: {.columns}
+
+:::: {.column width="60%"}
+
+![](images/rstudio_ide_files.png){width=100%}
+:::: 
+<!-- end left column -->
+
+:::: {.column width="40%"}
+
+::::: {.body-text}
+
+The **Files pane** displays files and folders where you might store R scripts, datasets, images, etc.
+
+You can navigate around these files just like you would normally browse on your computer, and open scripts, inspect data, etc.
+:::::
+
+:::: 
+<!-- end right column -->
+
+::: 
+<!-- end .columns -->
+
+:::{.body-text}
+Note the other tabs: when you create plots, this pane will switch to that tab and show you the plots.  You can see what packages (and versions) you have installed, get help on functions and packages, and view HTML or other outputs on these tabs.
+:::
+
+---
+
+[Coding in the Console]{.slide-title}
+
+:::{.body-text}
+We can run code in the Console window - direct access to the R application.  Let's start there, but later we'll generally not do much in the console, but instead in scripts.
+
+At its most basic, we can use R as a calculator.  Let's try a couple of examples in the console.
+:::
+
+```{r}
+3 * 4
+3 + 4
+3 - 4
+3 / 4
+```
+
+:::{.body-text}
+Notice when you hit "enter" after the calculation, R immediately evaluates the calculation for you and tells you the result.
+:::
+
+---
+
+[Coding in the Console]{.slide-title}
+
+<hr>
+
+::: {.callout-caution icon="false"}
+#### Quick Tip
+
+When you're in the console you'll see a greater than sign (`>`) at the start of a line. This is called the "prompt" and when we see it, it means R is ready to accept commands. If you see a plus sign (`+`) in the Console, it means R is waiting on additional information before running. You can always press escape (`esc`) to return to the prompt. Try practicing this by running `3*` (or any incomplete expression) in the console.
+:::
+
+---
+
+## {#example-code-slide data-menu-title="Example Code"}
+
+[Storing values in objects]{.slide-title}
+
+<hr>
+
+::: {.body-text}
+We can assign the value of some calculation to an "object" by giving it a name.
+For example, we can store the result of the calculation `3 * 4` and call it "result".
+Then we can call the name of the object to retrieve the value.
+:::
+
+```{r}
+result <- 3 * 4   ### assign the value
+
+result            ### retrieve the value
+```
+
+::: {.body-text}
+Technically, we are creating an object called "result" and assigning the value to that object.  Then we can call the *name* of the object to use the *value* in other calculations, and so on.
+:::
+
+---
+
+[Storing values in objects]{.slide-title}
+
+<hr>
+
+::: {.body-text}
+Here's a slightly more complicated example to calculate the volume of a cylinder.
+:::
+```{r}
+r <- 5            ### radius of cylinder is 5 units
+area <- pi * r^2  ### calculate the area, using r
+
+area              ### report the area
+
+h <- 7            ### height of cylinder is 7 units
+vol <- area * h   ### volume is area X height
+
+vol               ### report the volume
+```
+
+---
+
+##  {#rstudio-envir2 data-menu-title="RStudio Environment2"}
+
+[RStudio IDE interface]{.slide-title}
+
+::: {.columns}
+
+:::: {.column width="60%"}
+
+![](images/rstudio_ide_envir2.png){width=100%}
+:::: 
+<!-- end left column -->
+
+:::: {.column width="40%"}
+
+::::: {.body-text}
+
+Check the **Environment pane** again - it no longer says "Environment is empty" but instead contains the objects and values we created in our example.
+:::::
+
+:::: 
+<!-- end right column -->
+
+::: 
+<!-- end .columns -->
+
+---
+
+[R scripts vs. console]{.slide-title}
+
+<hr>
+
+::: {.body-text}
+While there are many cases where it makes sense to type code directly in to the the console, it is not a great place to write most of your code since you can't save what you ran. 
+:::
+
+**A better way is to create an R Script, and write your code there.** 
+
+::: {.body-text}
+Then when you run your code from the script, you can save it when you are done, and you can re-run it later to get the exact same result - a key to  **reproducible science**. We're going to work some more example code in the Console for now, but we'll code in an R Script later in this lesson.
+:::
+
+

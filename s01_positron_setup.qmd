@@ -2,9 +2,7 @@
 title: Positron Setup
 ---
 
-:::{.callout-tip}
-## Learning Objectives
-
+:::{.callout-learning}
 After completing this session, you will be able to:
 
 - Define critical Positron vocabulary (e.g., "absolute file path", "working directory")

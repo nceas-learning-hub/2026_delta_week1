@@ -15,7 +15,7 @@ $lh-grn-4: #0C4537;
 $lh-grn-3: #167B62; // from NCEAS LH header
 $lh-grn-2: #a1cac0;
 $lh-grn-1: #f3f8f7;
-$lh-grn-0: #0C453722; // semi-transparent
+$lh-grn-0: #0C653722; // semi-transparent
 $lh-pur-4: #4B0055; // viridis purple
 $lh-pur-3: #bc40d4;
 $lh-pur-2: #eb85ff;
@@ -207,6 +207,7 @@ div.callout-exercise.callout-style-default > .callout-header {
 .callout-exercise > .callout-header::before {
   font-family: "Font Awesome 5 Free";
   content: "\f303"; // pencil
+  color: $lh-blu-3;
   margin-right: 10px;
 }
 
@@ -214,6 +215,7 @@ div.callout-exercise.callout-style-default > .callout-header {
 .callout-answer > .callout-header::before {
   font-family: "Font Awesome 5 Free";
   content: "\f084"; // key
+  color: $lh-blu-2;
   margin-right: 10px;
 }
 
@@ -229,6 +231,7 @@ div.callout-answer.callout-style-default > .callout-header {
 .callout-hint > .callout-header::before {
   font-family: "Font Awesome 5 Free";
   content: "\f12e"; // puzzle
+  color: $lh-yel-4;
   margin-right: 10px;
 }
 
@@ -244,6 +247,7 @@ div.callout-hint.callout-style-default > .callout-header {
 .callout-example > .callout-header::before {
   font-family: "Font Awesome 5 Free";
   content: "\f002";
+  color: $lh-pur-4;
   margin-right: 10px;
 }
 
@@ -253,4 +257,20 @@ div.callout-example.callout {
 
 div.callout-example.callout-style-default > .callout-header {
   background-color: $lh-pur-0;
+}
+
+// Learning Objective callout styling
+.callout-learning > .callout-header::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f5dc";
+  color: $lh-grn-3;
+  margin-right: 10px;
+}
+
+div.callout-learning.callout {
+  border-left-color: $lh-grn-3;
+}
+
+div.callout-learning.callout-style-default > .callout-header {
+  background-color: $lh-grn-0;
 }

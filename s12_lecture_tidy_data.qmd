@@ -343,11 +343,11 @@ However there is more to consider!  Here are several tips from a great paper cal
 #### Tidy data, keys and joins
 
 - Get together in pairs or small groups
-- Obtain materials from instructors including [activity handout](images/lecture_tidy_data/tidy_data_activity.pdf){.external target="_blank" rel="noopener"} and blank paper(s).
+- Obtain materials from instructors including [activity handout](resources/lecture_tidy_data/tidy_data_activity.pdf){.external target="_blank" rel="noopener"} and blank paper(s).
 - Follow instructions in activity handout.
 
 ::::{.callout-answer}
-[Answer key to the Tidy Data Activity](images/lecture_tidy_data/tidy_data_activity_key.pdf){.external target="_blank" rel="noopener"}
+[Answer key to the Tidy Data Activity](resources/lecture_tidy_data/tidy_data_activity_key.pdf){.external target="_blank" rel="noopener"}
 
 ::::
 

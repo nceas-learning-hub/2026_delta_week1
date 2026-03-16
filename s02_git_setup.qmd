@@ -2,9 +2,7 @@
 title: Git and GitHub Setup
 ---
 
-:::{.callout-tip}
-## Learning Objectives
-
+:::{.callout-learning}
 After completing this session, you will be able to:
 
 - Explain what the Terminal is and how it's relevant to Git setup tasks

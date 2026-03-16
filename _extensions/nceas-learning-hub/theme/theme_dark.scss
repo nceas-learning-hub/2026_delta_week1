@@ -210,6 +210,7 @@ div.callout-exercise.callout-style-default > .callout-header {
 .callout-exercise > .callout-header::before {
   font-family: "Font Awesome 5 Free";
   content: "\f303"; // pencil
+  color: $lh-blu-3;
   margin-right: 10px;
 }
 
@@ -217,11 +218,12 @@ div.callout-exercise.callout-style-default > .callout-header {
 .callout-answer > .callout-header::before {
   font-family: "Font Awesome 5 Free";
   content: "\f084"; // key
+  color: $lh-blu-2;
   margin-right: 10px;
 }
 
 div.callout-answer.callout {
-  border-left-color: $lh-blu-4;
+  border-left-color: $lh-blu-2;
 }
 
 div.callout-answer.callout-style-default > .callout-header {
@@ -232,6 +234,7 @@ div.callout-answer.callout-style-default > .callout-header {
 .callout-hint > .callout-header::before {
   font-family: "Font Awesome 5 Free";
   content: "\f12e"; // puzzle
+  color: $lh-yel-4;
   margin-right: 10px;
 }
 
@@ -247,6 +250,7 @@ div.callout-hint.callout-style-default > .callout-header {
 .callout-example > .callout-header::before {
   font-family: "Font Awesome 5 Free";
   content: "\f002";
+  color: $lh-pur-4;
   margin-right: 10px;
 }
 
@@ -256,4 +260,20 @@ div.callout-example.callout {
 
 div.callout-example.callout-style-default > .callout-header {
   background-color: $lh-pur-0;
+}
+
+// Learning Objective callout styling
+.callout-learning > .callout-header::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f5dc";
+  color: $lh-grn-3;
+  margin-right: 10px;
+}
+
+div.callout-learning.callout {
+  border-left-color: $lh-grn-3;
+}
+
+div.callout-learning.callout-style-default > .callout-header {
+  background-color: $lh-grn-0;
 }

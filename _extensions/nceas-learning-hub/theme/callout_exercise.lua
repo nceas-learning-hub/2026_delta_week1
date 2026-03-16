@@ -106,6 +106,18 @@ function Div(div)
       collapse = true
     })
   end
+
+  -- Process callout-learning divs
+  if div.classes:includes("callout-learning") then
+    return quarto.Callout({
+      type = "learning",
+      content = { div },
+      title = "Learning Objectives",
+      icon = false,
+      collapse = false
+    })
+  end
+
 end
 
 -- Replace cross-references in Pandoc elements

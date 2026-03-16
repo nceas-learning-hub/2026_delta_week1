@@ -2,9 +2,7 @@
 title: Crafting Synthesis Project Ideas
 ---
 
-:::{.callout-tip}
-### Learning Objectives
-
+:::{.callout-learning}
 After completing this session, you will be able to:
 
 - Identify the value of and potential obstacles to emergent thinking in the "groan zone"

@@ -72,9 +72,10 @@ website:
         - s08_synthesis_logic_models.qmd
       - section: "Day 3"
         contents:
-        - s09_r_quarto_literate_analysis.qmd
-        - s10_lecture_data_mgmt_reproducibility.qmd
-        - s11_lecture_how_we_work_together.qmd
+        - s09_activity_reproducibility_lego.qmd
+        - s10_r_quarto_literate_analysis.qmd
+        # - s10_lecture_data_mgmt_reproducibility.qmd
+        # - s11_lecture_how_we_work_together.qmd
       - section: "Day 4"
         contents:
         - s12_lecture_tidy_data.qmd

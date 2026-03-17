@@ -2,8 +2,7 @@
 title: Logic Models and Synthesis Development
 ---
 
-:::{.callout-tip}
-#### Learning Objectives
+:::{.callout-learning}
 
 By the end of this session, you will be able to:
 
@@ -46,7 +45,7 @@ Linkages are not always sequential and can be within categories, bi-directional 
 ![](images/synthesis_logic_models/LM5.png){fig-alt="Multiple boxes, each representing an input, an output, or an outcome, are connected by grey arrows flowing mostly left-to-right but some are bi-directional or indicate loops back to previous steps" width="70%" fig-align="center"}
 
 :::{.callout-tip}
-#### Other variations
+## Other variations
 
 The above graphics include two sections within Outputs - Activities and Participants - and this is quite common. There is variation in logic model templates, including versions with a third type of output - "Products'. Sometimes description of these products is contained within the Activities section - for example, 'develop curricula', 'produce a report' - however calling these out explicitly is beneficial for teams focused on product development.
 :::
@@ -58,8 +57,7 @@ Program development (and logic modeling) occurs in response to a given 'Situatio
 ![](images/synthesis_logic_models/LM6.png){fig-alt="A blank template for a logic model, with boxes for inputs (resources), outputs (activities, participants, products), and outcomes (short, medium, long term); on the left side of the entire diagram is a box labeled 'situation'; below the diagram are two boxes labeled 'assumptions' and 'external factors'" width="70%" fig-align="center"}
 
 :::{.callout-note}
-
-#### In Summary
+## In Summary
 
 Logic models support program development and evaluation and comprise three primary steps in the workflow:
 
@@ -94,20 +92,19 @@ Logic models are one tool for program development and have sufficient flexibilit
 <!--green border to sorta match graphic-->
 
 ::::{.panel-tabset}
-
-##### Activities
+## Activities
 
 **LM:** What will be done? Development, design, workshops, conferences, counseling, outreach...
 
 **RC:** What activities are needed to conduct the research? This could be high level or it could be broken down into details such as the types of statistical approaches.
 
-##### Participants
+## Participants
 
 **LM:** Who will we reach? Clients, Participants, Customers...
 
 **RC:** Who is the target audience? Who will be impacted by this work? Who is positioned to leverage this work?
 
-##### Products
+## Products
 
 **LM:** What will you create? Publications, websites, media communications...
 
@@ -120,20 +117,19 @@ Logic models are one tool for program development and have sufficient flexibilit
 <!--red border to sorta match graphic-->
 
 :::{.panel-tabset}
-
-##### Short-term
+## Short-term
 
 **LM:** What short-term outcomes are anticipated among participants. These can include changes in awareness, knowledge, skills, attitudes, opinions and intent.
 
 **RC:** Will this work represent a significant contribution to current understanding?
 
-##### Medium-term
+## Medium-term
 
 **LM:** What medium-term outcomes are predicted among participants? These might include changes in behaviors, decision-making and actions.
 
 **RC:** Will this work promote increased research activity or open new avenues of inquiry?
 
-##### Long-term Outcomes
+## Long-term Outcomes
 
 **LM:** What long-term benefits, or impacts, are expected? Changes in social, economic, civic, and environmental conditions?
 
@@ -142,29 +138,26 @@ Logic models are one tool for program development and have sufficient flexibilit
 <!--end tabset-->
 :::
 
-## Breakout: Synthesis Planning
 
-Breakout groups will focus on refining ideas for synthesis topics using the logic modeling tools described in this section. The goal for this session is to develop one or more high-level logic models that:
+## Tools
 
-1.  Summarize the synthesis challenge
-2.  Define the inputs needed to approach the synthesis
-3.  Define the outputs, including activities and products that would would be needed to address the issue
-4.  Define the short term outcomes and longer-term impacts of the work
+### Slide Template
 
-Often it is helpful to start with a brainstorming activity to list activities and products that might be used to address the synthesis challenge, then connect those in terms of outcomes and impacts, and then circle back to the resource and data inputs needed to feed the logic model. Thinking of the whole model as a workflow can help conceptualize the dependencies among steps.
+A good starting point for drafting a logic model is a [logic model template](resources/synthesis_logic_models/logic_model_template.pptx)
 
-### Tools:
+* And here is the same [logic model template on Google Drive](https://docs.google.com/presentation/d/1MBUy35QIAkA5FNCdRzWJM2aPaFXfUmGl/edit?usp=sharing&ouid=113328660159760492310&rtpof=true&sd=true){.external target="_blank"}
+    
+<!--image is screenshot but links to the Google Doc-->
+[![](images/synthesis_logic_models/ppt_template.png){fig-alt="A blank logic model template in Powerpoint, with boxes for inputs (resources), outputs (activities, participants, products), and outcomes (short, medium, long term)" width="50%" fig-align="center"}](https://docs.google.com/presentation/d/1MBUy35QIAkA5FNCdRzWJM2aPaFXfUmGl/edit?usp=sharing&ouid=113328660159760492310&rtpof=true&sd=true){.external target="_blank"}
 
-- Powerpoint [logic model template](images/synthesis_logic_models/logic_model_template.pptx)
-    * [Logic model template on Google Drive](https://docs.google.com/presentation/d/1MBUy35QIAkA5FNCdRzWJM2aPaFXfUmGl/edit?usp=sharing&ouid=113328660159760492310&rtpof=true&sd=true){.external target="_blank"}
-- [Mermaid flowcharts](https://mermaid.js.org/syntax/flowchart.html){.external target="_blank"} embedded in [Quarto documents](https://quarto.org/docs/authoring/diagrams.html#mermaid){.external target="_blank"}
+### Mermaid Flowchart
 
-#### Mermaid example
+[Mermaid flowcharts](https://mermaid.js.org/syntax/flowchart.html){.external target="_blank"} are supported in [Quarto documents](https://quarto.org/docs/authoring/diagrams.html#mermaid){.external target="_blank"}.  Mermaid is a JavaScript-based tool for creating diagrams and flowcharts using text-based syntax.
 
-Here is a simple example of a logic model flow chart for a hypothetical synthesis project, created using Mermaid, a tool for creating diagrams and flowcharts using text-based syntax.
+Here is a simple example of a logic model Mermaid flow chart for a hypothetical synthesis project.
 
 :::{.panel-tabset}
-##### Flow chart diagram
+## Flow chart diagram
 
 ```{mermaid}
 flowchart LR
@@ -179,7 +172,7 @@ flowchart LR
     C & D --> E[/Improved Delta management/] & F[/Increased analytic efficiency/]
 ```
 
-##### Source code
+## Source code
 
 ```{{mermaid}}
 flowchart LR
@@ -195,7 +188,19 @@ flowchart LR
 ```
 :::
 
-## Resources
+## Breakout Exercise
 
--   Powerpoint [logic model template](images/synthesis_logic_models/logic_model_template.pptx)
-    * [Same template on Google Drive](https://docs.google.com/presentation/d/1MBUy35QIAkA5FNCdRzWJM2aPaFXfUmGl/edit?usp=sharing&ouid=113328660159760492310&rtpof=true&sd=true){.external target="_blank"}
+:::{.callout-exercise}
+## Synthesis Planning
+
+In breakout groups, focus on refining ideas for synthesis topics using the logic modeling tools described in this section. The goal for this session is to develop one or more high-level logic models that:
+
+1.  Summarize the synthesis challenge
+2.  Define the inputs needed to approach the synthesis
+3.  Define the outputs, including activities and products that would would be needed to address the issue
+4.  Define the short term outcomes and longer-term impacts of the work
+
+Often it is helpful to start with a brainstorming activity to list activities and products that might be used to address the synthesis challenge, then connect those in terms of outcomes and impacts, and then circle back to the resource and data inputs needed to feed the logic model. Thinking of the whole model as a workflow can help conceptualize the dependencies among steps.
+
+The tools in the following section may be helpful for this exercise, but feel free to use any tools that work for your group. 
+:::

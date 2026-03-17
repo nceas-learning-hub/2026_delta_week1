@@ -579,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#introduction-to-literate-programming" id="toc-introduction-to-literate-programming" class="nav-link active" data-scroll-target="#introduction-to-literate-programming"><span class="header-section-number">1</span> Introduction to Literate Programming</a></li>
   <li><a href="#quarto-and-literate-programming" id="toc-quarto-and-literate-programming" class="nav-link" data-scroll-target="#quarto-and-literate-programming"><span class="header-section-number">2</span> Quarto and Literate Programming</a>
   <ul class="collapse">
-  <li><a href="#why-does-this-matter-for-reproducibility" id="toc-why-does-this-matter-for-reproducibility" class="nav-link" data-scroll-target="#why-does-this-matter-for-reproducibility"><span class="header-section-number">2.1</span> Why does this matter for reproducibility?</a></li>
+  <li><a href="#why-does-this-matter-for-reproducibility" id="toc-why-does-this-matter-for-reproducibility" class="nav-link" data-scroll-target="#why-does-this-matter-for-reproducibility"><span class="header-section-number">2.1</span> Why Does This Matter for Reproducibility?</a></li>
   </ul></li>
   <li><a href="#structure-of-a-quarto-document" id="toc-structure-of-a-quarto-document" class="nav-link" data-scroll-target="#structure-of-a-quarto-document"><span class="header-section-number">3</span> Structure of a Quarto Document</a></li>
   <li><a href="#lets-create-a-quarto-document" id="toc-lets-create-a-quarto-document" class="nav-link" data-scroll-target="#lets-create-a-quarto-document"><span class="header-section-number">4</span> Let’s Create A Quarto Document</a>
@@ -596,9 +596,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#setup-loading-packages" id="toc-setup-loading-packages" class="nav-link" data-scroll-target="#setup-loading-packages"><span class="header-section-number">5.3</span> Setup: Loading Packages</a></li>
   <li><a href="#read-in-data" id="toc-read-in-data" class="nav-link" data-scroll-target="#read-in-data"><span class="header-section-number">5.4</span> Read In Data</a></li>
   <li><a href="#explore-your-data" id="toc-explore-your-data" class="nav-link" data-scroll-target="#explore-your-data"><span class="header-section-number">5.5</span> Explore Your Data</a></li>
-  <li><a href="#calculate-summary-statistics" id="toc-calculate-summary-statistics" class="nav-link" data-scroll-target="#calculate-summary-statistics"><span class="header-section-number">5.6</span> Calculate summary statistics</a></li>
+  <li><a href="#calculate-summary-statistics" id="toc-calculate-summary-statistics" class="nav-link" data-scroll-target="#calculate-summary-statistics"><span class="header-section-number">5.6</span> Calculate Summary Statistics</a></li>
   <li><a href="#report-result-with-inline-r-code" id="toc-report-result-with-inline-r-code" class="nav-link" data-scroll-target="#report-result-with-inline-r-code"><span class="header-section-number">5.7</span> Report Result with Inline R code</a></li>
-  <li><a href="#plot-the-data" id="toc-plot-the-data" class="nav-link" data-scroll-target="#plot-the-data"><span class="header-section-number">5.8</span> Plot the data</a></li>
+  <li><a href="#plot-the-data" id="toc-plot-the-data" class="nav-link" data-scroll-target="#plot-the-data"><span class="header-section-number">5.8</span> Plot the Data</a></li>
   </ul></li>
   <li><a href="#faquarto" id="toc-faquarto" class="nav-link" data-scroll-target="#faquarto"><span class="header-section-number">6</span> FAQuarto</a>
   <ul class="collapse">
@@ -659,7 +659,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We will focus on using Quarto with R code, but it is designed to work seamlessly with other coding languages as well, including Python, Julia, and Observable JavaScript. You can even use multiple languages in the same document.</p>
+<p>We will focus on using Quarto with its native support for <i class="fa-brands fa-r-project" aria-label="r-project"></i> R code, but it also has native support for <i class="fa-brands fa-python" aria-label="python"></i>Python, and supports many other languages such as <i class="fa-brands fa-julia" aria-label="julia"></i> Julia and <i class="fa-brands fa-js" aria-label="js"></i> JavaScript through extensions. You can even use multiple languages in the same document.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -676,7 +676,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <section id="why-does-this-matter-for-reproducibility" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="why-does-this-matter-for-reproducibility"><span class="header-section-number">2.1</span> Why does this matter for reproducibility?</h3>
+<h3 data-number="2.1" class="anchored" data-anchor-id="why-does-this-matter-for-reproducibility"><span class="header-section-number">2.1</span> Why Does This Matter for Reproducibility?</h3>
 <p>When your entire analysis - data loading, cleaning, statistics, and figures - lives in one Quarto document, you can re-run everything with a single click. If the data updates, so does your report. This eliminates error-prone copy-pasting between scripts, spreadsheets, and documents, and gives collaborators (and your future self!) a clear trail from raw data to final results.</p>
 <!-- ### Example: Literate Analysis From Quarto -->
 <!-- Let's look at an example of what a rendered literate analysis looks like using a real example. [Here is an -->
@@ -722,20 +722,20 @@ In this literate analysis, we:
 <section id="lets-create-a-quarto-document" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="lets-create-a-quarto-document"><span class="header-section-number">4</span> Let’s Create A Quarto Document</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<ol type="1">
-<li>In RStudio, go to <strong>File</strong> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>New File</strong> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>Quarto Document</strong>.</li>
-<li>Give it a title (e.g., “Introduction to Quarto”), leave the other options as-is, then click <strong>Create</strong>.</li>
-<li>Look at what you get: a YAML header at the top, with title and format, and perhaps some example content below.</li>
-</ol>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ol type="1">
 <li>In Positron, go to <strong>File</strong> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>New File</strong> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>Quarto Document</strong>.</li>
 <li>Look at what you get: a YAML header at the top for title and format, and perhaps some example content below.</li>
 <li>Fill in the title (e.g., “Introduction to Quarto”)</li>
+</ol>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ol type="1">
+<li>In RStudio, go to <strong>File</strong> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>New File</strong> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>Quarto Document</strong>.</li>
+<li>Give it a title (e.g., “Introduction to Quarto”), leave the other options as-is, then click <strong>Create</strong>.</li>
+<li>Look at what you get: a YAML header at the top, with title and format, and perhaps some example content below.</li>
 </ol>
 </div>
 </div>
@@ -945,7 +945,7 @@ Tip
 <div class="callout-body-container callout-body">
 <div class="callout-exercise" data-collapse="true">
 <p>Enable Visual Editor mode.</p>
-<p>Add a citation (e.g., DOI 10.1038/s41467-020-17726-z) into a section of prose in your Quarto document, using the Visual Editor.</p>
+<p>Add a citation (e.g., <a href="https://doi.org/10.1038/s41467-020-17726-z" class="external" target="_blank">DOI 10.1038/s41467-020-17726-z</a>) into a section of prose in your Quarto document, using the Visual Editor.</p>
 <p>Add a table into your Quarto document using the Visual Editor.</p>
 <p>Toggle back to Source Editor mode. Look at the raw Markdown and BibTeX that was generated for your citation and table.</p>
 <p>Render the document and check the differences in the output.</p>
@@ -973,9 +973,17 @@ Tip
 <h4 data-number="4.4.1" class="anchored" data-anchor-id="executing-code-chunks-in-interactive-mode"><span class="header-section-number">4.4.1</span> Executing Code Chunks in Interactive Mode</h4>
 <p>All the R code in your Quarto document will execute when you Render the document, but you can also run it on the fly (“interactive” mode) to test and debug it as you write.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><i class="fa-solid fa-p" aria-label="p"></i> Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Here are a few of the options to run code interactively:</p>
+<ol type="1">
+<li>Select the line (or simply put the cursor there), and use the keyboard shortcut: Command-Enter or Ctrl-Enter</li>
+<li>Click the Run Cell arrow above the code chunk to run the entire chunk.</li>
+</ol>
+<p><a href="images/r_quarto_literate_analysis/execute_code_positron.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/r_quarto_literate_analysis/execute_code_positron.png" class="img-fluid" style="width:70.0%" data-align="center"></a></p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>Here are a few of the options to run code interactively:</p>
 <ol type="1">
 <li>Select the line (or simply put the cursor there), and click “Run”. This is available from:
@@ -986,15 +994,7 @@ Tip
 </ol></li>
 <li>Click the green arrow at the right of the code chunk to run the entire chunk.</li>
 </ol>
-<p><a href="images/r_quarto_literate_analysis/execute_code_rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/r_quarto_literate_analysis/execute_code_rstudio.png" class="img-fluid" style="width:70.0%" data-align="center"></a></p>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Here are a few of the options to run code interactively:</p>
-<ol type="1">
-<li>Select the line (or simply put the cursor there), and use the keyboard shortcut: Command-Enter or Ctrl-Enter</li>
-<li>Click the Run Cell arrow above the code chunk to run the entire chunk.</li>
-</ol>
-<p><a href="images/r_quarto_literate_analysis/execute_code_positron.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/r_quarto_literate_analysis/execute_code_positron.png" class="img-fluid" style="width:70.0%" data-align="center"></a></p>
+<p><a href="images/r_quarto_literate_analysis/execute_code_rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/r_quarto_literate_analysis/execute_code_rstudio.png" class="img-fluid" style="width:70.0%" data-align="center"></a></p>
 </div>
 </div>
 </div>
@@ -1210,9 +1210,9 @@ Tip
 </section>
 <section id="read-in-data" class="level3" data-number="5.4">
 <h3 data-number="5.4" class="anchored" data-anchor-id="read-in-data"><span class="header-section-number">5.4</span> Read In Data</h3>
-<p>Create a new code chunk under “Read in data” (and give it a helpful name!). Use <code>read_csv()</code> with <code>here()</code> to load your data. The <code>here()</code> function builds file paths relative to your project root, which keeps things reproducible regardless of where your <code>.qmd</code> file lives within the project (including if you move it to a new location within the project!).</p>
+<p>Create a new code chunk under “Read in data” (and give it a helpful name!). Use <code>read_csv()</code> to load your data. Both RStudio and Positron will set your working directory to the project root, so you can (and should!) use a relative path to your data file.</p>
 <!-- This chunk displays to the reader to point toward their local copy: -->
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>bg_chem <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/BGchem2008data.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>bg_chem <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/BGchem2008data.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- This chunk reads the data from the right directory for tutorial purposes: -->
 <div class="cell">
 <div class="cell-output cell-output-stderr">
@@ -1264,6 +1264,24 @@ date  (1): Date
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><code>read_csv()</code> vs.&nbsp;<code>read.csv()</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The base R <code>read.csv()</code> function is a common way to read CSV files, but can be slow and makes certain assumptions about the data that can be challenging (e.g., <code>character</code> columns are read in as <code>factor</code> by default).<br>
+</li>
+<li>The <code>read_csv()</code> function (note the underscore instead of dot!) from the <code>readr</code> package is faster and chooses more sensible defaults (e.g., <code>character</code> columns are read in as <code>character</code> by default). But it prints column specifications, which while handy for troubleshooting, can clutter your Quarto output.</li>
+<li>Other fast options for reading CSV files include <code>vroom::vroom()</code> (part of the <code>tidyverse</code> metapackage) and <code>data.table::fread()</code>. The best choice depends on your specific needs and preferences.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="explore-your-data" class="level3" data-number="5.5">
 <h3 data-number="5.5" class="anchored" data-anchor-id="explore-your-data"><span class="header-section-number">5.5</span> Explore Your Data</h3>
@@ -1277,7 +1295,7 @@ date  (1): Date
 <p>You can also type <code>View(bg_chem)</code> directly in the console to browse the data in a table.</p>
 </section>
 <section id="calculate-summary-statistics" class="level3" data-number="5.6">
-<h3 data-number="5.6" class="anchored" data-anchor-id="calculate-summary-statistics"><span class="header-section-number">5.6</span> Calculate summary statistics</h3>
+<h3 data-number="5.6" class="anchored" data-anchor-id="calculate-summary-statistics"><span class="header-section-number">5.6</span> Calculate Summary Statistics</h3>
 <p>The <strong>Redfield ratio</strong> is the consistent 16:1 ratio of nitrogen to phosphorous found in marine phytoplankton. Let’s see how our Arctic data compare.</p>
 <p>First, calculate mean values for the key variables:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>nitrate <span class="ot">&lt;-</span> <span class="fu">mean</span>(bg_chem<span class="sc">$</span>NO3)</span>
@@ -1295,7 +1313,7 @@ date  (1): Date
 <p>This is much better than evaluating code, copying a number, and pasting it into your text - especially when data changes.</p>
 </section>
 <section id="plot-the-data" class="level3" data-number="5.8">
-<h3 data-number="5.8" class="anchored" data-anchor-id="plot-the-data"><span class="header-section-number">5.8</span> Plot the data</h3>
+<h3 data-number="5.8" class="anchored" data-anchor-id="plot-the-data"><span class="header-section-number">5.8</span> Plot the Data</h3>
 <p>Finally, create a simple plot of individual measurements:</p>
 <!-- This chunk relies on the loaded data from above -->
 <div class="cell">
@@ -1309,16 +1327,16 @@ date  (1): Date
 </div>
 </div>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 6 - Finalize and render your Quarto document
+<span class="screen-reader-only">Exercise</span>Exercise 6 - Finalize and Render Your Quarto Document
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
 <p>Decide whether you want the plot code to appear in the rendered output alongside the figure, and add the appropriate chunk option. Then render your document.</p>

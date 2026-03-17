@@ -40,7 +40,7 @@ human-readable and fully reproducible.
 ::: callout-tip
 ### Coding languages in Quarto
 
-We will focus on using Quarto with R code, but it is designed to work seamlessly with other coding languages as well, including Python, Julia, and Observable JavaScript. You can even use multiple languages in the same document.
+We will focus on using Quarto with its native support for {{< fa brands r-project >}} R code, but it also has native support for {{< fa brands python >}}Python, and supports many other languages such as {{< fa brands julia >}} Julia and {{< fa brands js >}} JavaScript through extensions. You can even use multiple languages in the same document.
 :::
 
 ::: callout-note
@@ -49,7 +49,7 @@ We will focus on using Quarto with R code, but it is designed to work seamlessly
 If you've used RMarkdown (`.Rmd`) before, Quarto (`.qmd`) will feel familiar. The main differences are that Quarto has richer multi-language support and improved formatting options. Both formats share the same three-part structure: YAML, prose, and code chunks.
 :::
 
-### Why does this matter for reproducibility?
+### Why Does This Matter for Reproducibility?
 
 When your entire analysis - data loading, cleaning, statistics, and figures - lives in one Quarto document, you can re-run everything with a single click. If the data updates, so does your report. This eliminates error-prone copy-pasting between scripts, spreadsheets, and documents, and gives collaborators (and your future self!) a clear trail from raw data to final results.
 
@@ -110,8 +110,15 @@ y <- 1 + 1
 ## Let's Create A Quarto Document
 
 :::{.panel-tabset}
+## {{< fa p >}} Positron
 
-#### {{< fa brands r-project >}} RStudio
+1.  In Positron, go to **File** {{< fa arrow-right >}} **New File**
+    {{< fa arrow-right >}} **Quarto Document**.
+2.  Look at what you get: a YAML header at the top for title and format, and perhaps some example content below.
+3.  Fill in the title (e.g., "Introduction to Quarto")
+
+
+## {{< fa brands r-project >}} RStudio
 
 1.  In RStudio, go to **File** {{< fa arrow-right >}} **New File**
     {{< fa arrow-right >}} **Quarto Document**.
@@ -119,13 +126,6 @@ y <- 1 + 1
     options as-is, then click **Create**.
 3.  Look at what you get: a YAML header at the top, with title and format, and perhaps some example content below.
     
-#### {{< fa p >}} Positron
-
-1.  In Positron, go to **File** {{< fa arrow-right >}} **New File**
-    {{< fa arrow-right >}} **Quarto Document**.
-2.  Look at what you get: a YAML header at the top for title and format, and perhaps some example content below.
-3.  Fill in the title (e.g., "Introduction to Quarto")
-
 :::
 
 Below the YAML header, if your default is a blank canvas, let's add some content.  Type or copy/paste so your document looks like more or less like this:
@@ -256,7 +256,7 @@ To toggle between Visual Editor and Source Editor mode:
 
 Enable Visual Editor mode.
 
-Add a citation (e.g., DOI 10.1038/s41467-020-17726-z) into a section of prose in your Quarto document, using the Visual Editor.
+Add a citation (e.g., [DOI 10.1038/s41467-020-17726-z](https://doi.org/10.1038/s41467-020-17726-z){.external target="_blank"}) into a section of prose in your Quarto document, using the Visual Editor.
 
 Add a table into your Quarto document using the Visual Editor.
 
@@ -283,7 +283,16 @@ Code chunks contain functional code to be executed.  Markdown syntax will not wo
 All the R code in your Quarto document will execute when you Render the document, but you can also run it on the fly ("interactive" mode) to test and debug it as you write.
 
 ::: {.panel-tabset}
-##### {{< fa brands r-project >}} RStudio
+## {{< fa p >}} Positron
+
+Here are a few of the options to run code interactively:
+
+1.  Select the line (or simply put the cursor there), and use the keyboard shortcut: Command-Enter or Ctrl-Enter
+2.  Click the Run Cell arrow above the code chunk to run the entire chunk.
+
+![](images/r_quarto_literate_analysis/execute_code_positron.png){width="70%" .lightbox align="center"}
+
+## {{< fa brands r-project >}} RStudio
 
 Here are a few of the options to run code interactively:
 
@@ -295,14 +304,7 @@ Here are a few of the options to run code interactively:
 
 ![](images/r_quarto_literate_analysis/execute_code_rstudio.png){width="70%" .lightbox align="center"}
 
-##### {{< fa p >}} Positron
 
-Here are a few of the options to run code interactively:
-
-1.  Select the line (or simply put the cursor there), and use the keyboard shortcut: Command-Enter or Ctrl-Enter
-2.  Click the Run Cell arrow above the code chunk to run the entire chunk.
-
-![](images/r_quarto_literate_analysis/execute_code_positron.png){width="70%" .lightbox align="center"}
 :::
 
 :::{.callout-exercise collapse=true}
@@ -424,17 +426,17 @@ Name your code chunks for easy searching (such as `{r setup}` above), and R will
 
 ### Read In Data
 
-Create a new code chunk under "Read in data" (and give it a helpful name!).  Use `read_csv()` with `here()` to load your data. The `here()` function builds file paths relative to your project root, which keeps things reproducible regardless of where your `.qmd` file lives within the project (including if you move it to a new location within the project!).
+Create a new code chunk under "Read in data" (and give it a helpful name!).  Use `read_csv()` to load your data.  Both RStudio and Positron will set your working directory to the project root, so you can (and should!) use a relative path to your data file.
 
 <!-- This chunk displays to the reader to point toward their local copy: -->
 ```r
-bg_chem <- read_csv(here::here("data/BGchem2008data.csv"))
+bg_chem <- read_csv("data/BGchem2008data.csv")
 ```
 <!-- This chunk reads the data from the right directory for tutorial purposes: -->
 ```{r}
 #| echo: false
 library(readr)
-bg_chem <- read_csv(here::here('data/r_quarto_literate_analysis/BGchem2008data.csv'))
+bg_chem <- read_csv('data/r_quarto_literate_analysis/BGchem2008data.csv')
 ```
 
 :::{.callout-exercise}
@@ -444,6 +446,14 @@ bg_chem <- read_csv(here::here('data/r_quarto_literate_analysis/BGchem2008data.c
 ::::{.callout-hint}
 Check the code chunk options above!  Alternately, check the documentation for `read_csv()` (i.e., `?read_csv`) to see an option for suppressing this behavior!
 ::::
+:::
+
+:::callout-tip
+### `read_csv()` vs. `read.csv()`
+
+* The base R `read.csv()` function is a common way to read CSV files, but can be slow and makes certain assumptions about the data that can be challenging (e.g., `character` columns are read in as `factor` by default).  
+* The `read_csv()` function (note the underscore instead of dot!) from the `readr` package is faster and chooses more sensible defaults (e.g., `character` columns are read in as `character` by default).  But it prints column specifications, which while handy for troubleshooting, can clutter your Quarto output.
+* Other fast options for reading CSV files include `vroom::vroom()` (part of the `tidyverse` metapackage) and `data.table::fread()`.  The best choice depends on your specific needs and preferences.
 :::
 
 ### Explore Your Data
@@ -461,7 +471,7 @@ summary(bg_chem)
 
 You can also type `View(bg_chem)` directly in the console to browse the data in a table.
 
-### Calculate summary statistics
+### Calculate Summary Statistics
 
 The **Redfield ratio** is the consistent 16:1 ratio of nitrogen to phosphorous found in marine phytoplankton. Let's see how our Arctic data compare.
 
@@ -492,7 +502,7 @@ It will render as: *The Redfield ratio for this dataset is approximately 6.*
 
 This is much better than evaluating code, copying a number, and pasting it into your text - especially when data changes.
 
-### Plot the data
+### Plot the Data
 
 Finally, create a simple plot of individual measurements:
 
@@ -502,7 +512,7 @@ plot(bg_chem$P, bg_chem$NO2 + bg_chem$NO3 + bg_chem$NH4)
 ```
 
 :::{.callout-exercise}
-#### Finalize and render your Quarto document
+#### Finalize and Render Your Quarto Document
 
 Decide whether you want the plot code to appear in the rendered output alongside the figure, and add the appropriate chunk option. Then render your document.
 :::

@@ -972,7 +972,7 @@
     "href": "s08_synthesis_logic_models.html",
     "title": "Logic Models and Synthesis Development",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\nBy the end of this session, you will be able to:\n\nDescribe the structure of Logic Models and how to interpret them\nExplain how logic model components (inputs, outputs, outcomes) can be reframed to be more relevant for a synthesis research collaboration\nApply the principles of Logic Models to the development and refinement of synthesis research questions",
+    "text": "LearningLearning Objectives\n\n\n\n\n\n\nBy the end of this session, you will be able to:\n\nDescribe the structure of Logic Models and how to interpret them\nExplain how logic model components (inputs, outputs, outcomes) can be reframed to be more relevant for a synthesis research collaboration\nApply the principles of Logic Models to the development and refinement of synthesis research questions",
     "crumbs": [
       "Day 2",
       "Logic Models and Synthesis Development"
@@ -1001,22 +1001,22 @@
     ]
   },
   {
-    "objectID": "s08_synthesis_logic_models.html#breakout-synthesis-planning",
-    "href": "s08_synthesis_logic_models.html#breakout-synthesis-planning",
+    "objectID": "s08_synthesis_logic_models.html#tools",
+    "href": "s08_synthesis_logic_models.html#tools",
     "title": "Logic Models and Synthesis Development",
-    "section": "3 Breakout: Synthesis Planning",
-    "text": "3 Breakout: Synthesis Planning\nBreakout groups will focus on refining ideas for synthesis topics using the logic modeling tools described in this section. The goal for this session is to develop one or more high-level logic models that:\n\nSummarize the synthesis challenge\nDefine the inputs needed to approach the synthesis\nDefine the outputs, including activities and products that would would be needed to address the issue\nDefine the short term outcomes and longer-term impacts of the work\n\nOften it is helpful to start with a brainstorming activity to list activities and products that might be used to address the synthesis challenge, then connect those in terms of outcomes and impacts, and then circle back to the resource and data inputs needed to feed the logic model. Thinking of the whole model as a workflow can help conceptualize the dependencies among steps.\n\n3.1 Tools:\n\nPowerpoint logic model template\n\nLogic model template on Google Drive\n\nMermaid flowcharts embedded in Quarto documents\n\n\n3.1.1 Mermaid example\nHere is a simple example of a logic model flow chart for a hypothetical synthesis project, created using Mermaid, a tool for creating diagrams and flowcharts using text-based syntax.\n\nFlow chart diagramSource code\n\n\n\n\n\n\n\nflowchart LR\n    INPUTS --&gt; ACTIVITIES --&gt; OUTPUTS --&gt; OUTCOMES/IMPACTS\n\n    Scenario{{Accelerate synthesis via data science training}}\n\n    R1[Instructor] & R2[Classroom space] & R3[Projector] --&gt; B{Data Science Workshop}\n    B --&gt; C(Workshop Curriculum)\n    B --&gt; D(Presentations and Practice)\n    \n    C & D --&gt; E[/Improved Delta management/] & F[/Increased analytic efficiency/]\n\n\n\n\n\n\n\n\n```{mermaid}\nflowchart LR\n    INPUTS --&gt; ACTIVITIES --&gt; OUTPUTS --&gt; OUTCOMES/IMPACTS\n\n    Scenario{{Accelerate synthesis via data science training}}\n\n    R1[Instructor] & R2[Classroom space] & R3[Projector] --&gt; B{Data Science Workshop}\n    B --&gt; C(Workshop Curriculum)\n    B --&gt; D(Presentations and Practice)\n    \n    C & D --&gt; E[/Improved Delta management/] & F[/Increased analytic efficiency/]\n```",
+    "section": "3 Tools",
+    "text": "3 Tools\n\n3.1 Slide Template\nA good starting point for drafting a logic model is a logic model template\n\nAnd here is the same logic model template on Google Drive\n\n\n\n\n\n\n\n\n\n3.2 Mermaid Flowchart\nMermaid flowcharts are supported in Quarto documents. Mermaid is a JavaScript-based tool for creating diagrams and flowcharts using text-based syntax.\nHere is a simple example of a logic model Mermaid flow chart for a hypothetical synthesis project.\n\nFlow chart diagramSource code\n\n\n\n\n\n\n\nflowchart LR\n    INPUTS --&gt; ACTIVITIES --&gt; OUTPUTS --&gt; OUTCOMES/IMPACTS\n\n    Scenario{{Accelerate synthesis via data science training}}\n\n    R1[Instructor] & R2[Classroom space] & R3[Projector] --&gt; B{Data Science Workshop}\n    B --&gt; C(Workshop Curriculum)\n    B --&gt; D(Presentations and Practice)\n    \n    C & D --&gt; E[/Improved Delta management/] & F[/Increased analytic efficiency/]\n\n\n\n\n\n\n\n\n```{mermaid}\nflowchart LR\n    INPUTS --&gt; ACTIVITIES --&gt; OUTPUTS --&gt; OUTCOMES/IMPACTS\n\n    Scenario{{Accelerate synthesis via data science training}}\n\n    R1[Instructor] & R2[Classroom space] & R3[Projector] --&gt; B{Data Science Workshop}\n    B --&gt; C(Workshop Curriculum)\n    B --&gt; D(Presentations and Practice)\n    \n    C & D --&gt; E[/Improved Delta management/] & F[/Increased analytic efficiency/]\n```",
     "crumbs": [
       "Day 2",
       "Logic Models and Synthesis Development"
     ]
   },
   {
-    "objectID": "s08_synthesis_logic_models.html#resources",
-    "href": "s08_synthesis_logic_models.html#resources",
+    "objectID": "s08_synthesis_logic_models.html#breakout-exercise",
+    "href": "s08_synthesis_logic_models.html#breakout-exercise",
     "title": "Logic Models and Synthesis Development",
-    "section": "4 Resources",
-    "text": "4 Resources\n\nPowerpoint logic model template\n\nSame template on Google Drive",
+    "section": "4 Breakout Exercise",
+    "text": "4 Breakout Exercise\n\n\n\n\n\n\nExerciseExercise 1 - Synthesis Planning\n\n\n\n\n\n\nIn breakout groups, focus on refining ideas for synthesis topics using the logic modeling tools described in this section. The goal for this session is to develop one or more high-level logic models that:\n\nSummarize the synthesis challenge\nDefine the inputs needed to approach the synthesis\nDefine the outputs, including activities and products that would would be needed to address the issue\nDefine the short term outcomes and longer-term impacts of the work\n\nOften it is helpful to start with a brainstorming activity to list activities and products that might be used to address the synthesis challenge, then connect those in terms of outcomes and impacts, and then circle back to the resource and data inputs needed to feed the logic model. Thinking of the whole model as a workflow can help conceptualize the dependencies among steps.\nThe tools in the following section may be helpful for this exercise, but feel free to use any tools that work for your group.",
     "crumbs": [
       "Day 2",
       "Logic Models and Synthesis Development"

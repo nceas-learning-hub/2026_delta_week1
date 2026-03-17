@@ -26,22 +26,15 @@ This activity is largely based on the [LEGO® Metadata for Reproducibility game 
 4.  Hand off materials and metadata to another team (2 min)
 5.  Follow <span style="background: #bbccff;">Replication phase instructions</span> (25-30 min)
 
-
-
 <span style="color: #88888888;">(instructor guide [here](resources/activity_reproducibility_lego/instructional_guide_reproducibility_activity.pdf))</span>
 
-At the end, we will discuss as a group.
+As you work, discuss the following questions within your small group.  At the end, we will share our thoughts and ideas with the larger group.
 
-## Discussion
+## Discussion Questions
 
-<details>
-
-<summary>Discussion Questions</summary>
-
--   Did you find this a simple way to document your process?
--   Was there anything you found difficult to capture?
--   Did those replicating the builds find it straightforward to follow?
--   Did you encounter any ambiguity in the instructions?
-
-</details>
-
+* Creation phase:
+    * Did you find this a simple way to document your process?  How would you document the process differently given more time or resources?
+    * Was there anything you found difficult to capture?  What information did you prioritize, what did you choose to leave out?
+* Replication phase   
+    * What did you find straightforward to follow?  What questions would you have liked to answer the creators?
+    * Did you encounter any ambiguity in the instructions?  How would you have revised the instructions to make them clearer?

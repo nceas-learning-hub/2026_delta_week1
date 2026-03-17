@@ -174,6 +174,8 @@ flowchart LR
 
 ## Source code
 
+To create the diagram, create a Mermaid code block in a Quarto document (note the `{mermaid}` in the header) and use [Mermaid syntax](https://mermaid.js.org/syntax/flowchart.html){.external target="_blank"} to define the flowchart.
+
 ```{{mermaid}}
 flowchart LR
     INPUTS --> ACTIVITIES --> OUTPUTS --> OUTCOMES/IMPACTS
@@ -193,14 +195,22 @@ flowchart LR
 :::{.callout-exercise}
 ## Synthesis Planning
 
-In breakout groups, focus on refining ideas for synthesis topics using the logic modeling tools described in this section. The goal for this session is to develop one or more high-level logic models that:
+In breakout groups, focus on refining ideas for synthesis topics using the logic modeling tools described in this section. 
 
-1.  Summarize the synthesis challenge
-2.  Define the inputs needed to approach the synthesis
-3.  Define the outputs, including activities and products that would would be needed to address the issue
-4.  Define the short term outcomes and longer-term impacts of the work
+**Step 1: Logic Model Template**
+
+As a breakout group, download (pptx) or make a copy (Google slides) of the logic model template and begin to flesh out a high-level logic model:
+
+* Summarize the synthesis challenge
+* Define the inputs needed to approach the synthesis
+* Define the outputs, including activities and products that would would be needed to address the issue
+* Define the short term outcomes and longer-term impacts of the work
 
 Often it is helpful to start with a brainstorming activity to list activities and products that might be used to address the synthesis challenge, then connect those in terms of outcomes and impacts, and then circle back to the resource and data inputs needed to feed the logic model. Thinking of the whole model as a workflow can help conceptualize the dependencies among steps.
 
-The tools in the following section may be helpful for this exercise, but feel free to use any tools that work for your group. 
+**Step 2: Logic Model Workflow**
+
+Once you have outlined a logic model, consider the workflow from inputs to outcomes. Are there any gaps in the flow? Are there any assumptions that need to be made explicit? Are there any external factors that could impact the success of the project?  
+
+Map out on paper, or using the Mermaid flowchart syntax, a workflow from inputs to outcomes. This can help identify potential challenges and areas where additional resources or planning may be needed.
 :::

@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -572,10 +592,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#about-the-data" id="toc-about-the-data" class="nav-link active" data-scroll-target="#about-the-data">About the data</a></li>
-  <li><a href="#explore-clean-and-wrangle-data" id="toc-explore-clean-and-wrangle-data" class="nav-link" data-scroll-target="#explore-clean-and-wrangle-data"><span class="header-section-number">1</span> Explore, clean and wrangle data</a></li>
-  <li><a href="#create-visually-appealing-and-informative-data-visualization" id="toc-create-visually-appealing-and-informative-data-visualization" class="nav-link" data-scroll-target="#create-visually-appealing-and-informative-data-visualization"><span class="header-section-number">2</span> Create visually appealing and informative data visualization</a></li>
-  <li><a href="#collaborate-on-a-report-and-publish-using-github-pages" id="toc-collaborate-on-a-report-and-publish-using-github-pages" class="nav-link" data-scroll-target="#collaborate-on-a-report-and-publish-using-github-pages"><span class="header-section-number">3</span> Collaborate on a report and publish using GitHub pages</a></li>
-  <li><a href="#bonus-add-marine-protected-area-mpa-designation-to-the-data" id="toc-bonus-add-marine-protected-area-mpa-designation-to-the-data" class="nav-link" data-scroll-target="#bonus-add-marine-protected-area-mpa-designation-to-the-data"><span class="header-section-number">4</span> Bonus: Add marine protected area (MPA) designation to the data</a></li>
+  <li><a href="#setup-collaborative-repository" id="toc-setup-collaborative-repository" class="nav-link" data-scroll-target="#setup-collaborative-repository"><span class="header-section-number">1</span> Setup Collaborative Repository</a>
+  <ul class="collapse">
+  <li><a href="#create-a-new-repository-with-a-partner" id="toc-create-a-new-repository-with-a-partner" class="nav-link" data-scroll-target="#create-a-new-repository-with-a-partner"><span class="header-section-number">1.1</span> Create a New Repository With a Partner</a></li>
+  <li><a href="#create-files-and-add-data" id="toc-create-files-and-add-data" class="nav-link" data-scroll-target="#create-files-and-add-data"><span class="header-section-number">1.2</span> Create Files and Add Data</a></li>
+  </ul></li>
+  <li><a href="#explore-clean-and-wrangle-data" id="toc-explore-clean-and-wrangle-data" class="nav-link" data-scroll-target="#explore-clean-and-wrangle-data"><span class="header-section-number">2</span> Explore, clean and wrangle data</a></li>
+  <li><a href="#create-visually-appealing-and-informative-data-visualization" id="toc-create-visually-appealing-and-informative-data-visualization" class="nav-link" data-scroll-target="#create-visually-appealing-and-informative-data-visualization"><span class="header-section-number">3</span> Create visually appealing and informative data visualization</a></li>
+  <li><a href="#customize-your-visualizations" id="toc-customize-your-visualizations" class="nav-link" data-scroll-target="#customize-your-visualizations"><span class="header-section-number">4</span> Customize your Visualizations</a></li>
+  <li><a href="#collaborate-on-a-report-and-publish-using-github-pages" id="toc-collaborate-on-a-report-and-publish-using-github-pages" class="nav-link" data-scroll-target="#collaborate-on-a-report-and-publish-using-github-pages"><span class="header-section-number">5</span> Collaborate on a report and publish using GitHub pages</a></li>
+  <li><a href="#bonus-add-marine-protected-area-mpa-designation-to-the-data" id="toc-bonus-add-marine-protected-area-mpa-designation-to-the-data" class="nav-link" data-scroll-target="#bonus-add-marine-protected-area-mpa-designation-to-the-data"><span class="header-section-number">6</span> Bonus: Add marine protected area (MPA) designation to the data</a></li>
   </ul>
 </nav>
     </div>
@@ -587,22 +613,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<!-- recommended prerequisites: 
+* github_introduction
+* lecture_tidy_data
+* r_tidyverse_clean_wrangle
+-->
+<div class="callout callout-style-default callout-learning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Learning Objectives
+<span class="screen-reader-only">Learning</span>Learning Objectives
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
+<div class="callout-learning">
+<p>During this practice session, you will be able to:</p>
 <ul>
-<li>Practice using common cleaning and wrangling functions</li>
-<li>Practice creating plots using common visualization functions in <code>ggplot</code></li>
-<li>Practice saving and sharing data visualizations</li>
-<li>Practice Git and GitHub workflow and collaborating with a collegue</li>
+<li>Effectively use common cleaning and wrangling functions</li>
+<li>Create amd customize plots using common visualization functions in <code>ggplot</code></li>
+<li>Save and share data visualizations</li>
+<li>Explain and demonstrate effective “lightweight” code review practices</li>
+<li>Apply Git and GitHub skills to publish a collaborative report to GitHub Pages</li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -611,7 +649,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Acknowledgements
+<span class="screen-reader-only">Note</span>Acknowledgments
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -620,127 +658,140 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="about-the-data" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="about-the-data">About the data</h2>
-<p>These exercises will be using data on abundance, size, and trap counts (fishing pressure) of California spiny lobster (<em>Panulirus interruptus</em>) and were collected along the mainland coast of the Santa Barbara Channel by Santa Barbara Coastal LTER researchers <span class="citation" data-cites="lter2022">[@lter2022]</span>.</p>
+<p>These exercises will be using data on abundance, size, and trap counts (fishing pressure) of California spiny lobster (<em>Panulirus interruptus</em>) and were collected along the mainland coast of the Santa Barbara Channel by Santa Barbara Coastal LTER researchers <span class="citation" data-cites="reed_2024">(<a href="#ref-reed_2024" role="doc-biblioref">Reed and Miller 2024</a>)</span>.</p>
 <p>Your task: Collaborate on an analysis and create a report to publish using GitHub Pages.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+</section>
+<section id="setup-collaborative-repository" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="setup-collaborative-repository"><span class="header-section-number">1</span> Setup Collaborative Repository</h2>
+<p>For this collaborative report, participants will be working in pairs. Each partner will focus on a different portion of the analysis, and the collaboration will bring the two sub-analyses together into a single collaborative report.</p>
+<section id="create-a-new-repository-with-a-partner" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="create-a-new-repository-with-a-partner"><span class="header-section-number">1.1</span> Create a New Repository With a Partner</h3>
+<ol type="1">
+<li>Select one partner to be the <span style="color: orange;"><strong>Owner</strong></span>; the other is the <span style="color: purple;"><strong>Collaborator</strong></span></li>
+<li>The <span style="color: orange;"><strong>Owner</strong></span> creates a repository on GitHub titled with both your names (e.g., If Casey and Camila were partners, and Casey is the <span style="color: orange;"><strong>Owner</strong></span>, he would create a repo called <code>casey_camila</code>). When creating the repository:
+<ul>
+<li>add a brief description (e.g., “R Practice Session: Collaborating on, Wrangling &amp; Visualizing Data”)</li>
+<li>keep the repo Public</li>
+<li>initialize the repo with a <code>README</code> file and an R <code>.gitignore</code> template.</li>
+</ul></li>
+<li>The <span style="color: orange;"><strong>Owner</strong></span> invites the <span style="color: purple;"><strong>Collaborator</strong></span> to the repo on GitHub
+<ul>
+<li>Settings –&gt; Collaborators –&gt; Manage Access –&gt; Invite a collaborator)</li>
+<li><span style="color: purple;"><strong>Collaborator</strong></span> accepts invitation</li>
+</ul></li>
+<li>Both the <span style="color: purple;"><strong>Collaborator</strong></span> and the <span style="color: orange;"><strong>Owner</strong></span> clone the repo into their local computer (e.g., through RStudio, Positron, or Terminal)</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Setup
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Create a new repository with a partner
-<ol type="a">
-<li>Determine who is the Owner and who is the Collaborator</li>
-<li>The Owner creates a repository on GitHub titled with both your names (i.e.&nbsp;If Casey and Camila were partners, and Casey is the Owner, she would create a repo called <code>casey-camila</code>)
-<ol type="i">
-<li>When creating the repository, add a brief description (i.e.&nbsp;R Practice Session: Collaborating on, Wrangling &amp; Visualizing Data), keep the repo Public, and Initialize the repo with a <code>README</code> file and an R <code>.gitignore</code> template.</li>
-</ol></li>
-<li>The Owner adds the Collaborator to the repo</li>
-<li>Both the Collaborator and the Owner clone the repo into their RStudio <!-- e.  Both the Collaborator and the Owner run ```git config pull.rebase false``` in the Terminal to set the `Git` default strategy for `Pull`ing --></li>
-</ol></li>
-</ol>
-<p>**Step 2 and Step 3 are meant <u>to be completed at the same time</u>. - Collaborator completes Step 2 - Owner completes Step 3</p>
-<ol start="2" type="1">
-<li><strong>Collaborator</strong> creates new files for exercise
-<ol type="a">
-<li>The Collaborator creates the following directory (folder):
-<ol type="i">
-<li><code>analysis</code></li>
-</ol></li>
-<li>After creating the directories, create the following Quarto Documents and store them in the listed folders:
-<ol type="i">
-<li>Title it: “Owner Analysis”, save it as: <code>owner-analysis.qmd</code>, and store in <code>analysis</code> folder</li>
-<li>Title it: “Collaborator Analysis”, save it as: <code>collaborator-analysis.qmd</code>, and store in <code>analysis</code> folder</li>
-<li>Title it: “Lobster Report” and save it as: <code>lobster-report.qmd</code> and store in <code>analysis</code> folder</li>
-</ol></li>
-<li>After creating the files, the Collaborator will <code>stage (add)</code>, <code>commit</code>, write a commit message, <code>pull</code>, and <code>push</code> the files to the remote repository (on GitHub)</li>
-<li>The Owner <code>pull</code>s the changes and Quarto Documents into their local repository (their workspace)</li>
-</ol></li>
-<li><strong>Owner</strong> downloads data from the EDI Data Portal <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-sbc.77.8">SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012</a>.
-<ol type="a">
-<li>Create two new directories one called <code>data</code> and one called <code>figs</code>
-<ol type="i">
-<li><em>Note: Git does not track empty directories, so you won’t see <code>figs</code> when you push to GitHub</em></li>
-</ol></li>
-<li>Download the following data and upload them to the <code>data</code> folder:
-<ol type="i">
-<li>Time-series of lobster abundance and size</li>
-<li>Time-series of lobster trap buoy counts</li>
-</ol></li>
-<li>After creating the <code>data</code> folder and adding the data, the Owner will <code>stage (add)</code>, <code>commit</code>, write a commit message,<code>pull</code>, and <code>push</code> the files to the remote repository (on GitHub)</li>
-<li>The Collaborator <code>pull</code>s the changes and data into their local repository (their workspace)</li>
-</ol></li>
-</ol>
+<p>Note, the repository was created as “public” so anyone can see and clone the repo, and make local changes, even without being added as a collaborator. However, non-collaborators will not have permissions to push changes back to the repository.</p>
 </div>
 </div>
 </section>
-<section id="explore-clean-and-wrangle-data" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="explore-clean-and-wrangle-data"><span class="header-section-number">1</span> Explore, clean and wrangle data</h2>
-<p>For this portion of the exercise, the - <u>Owner</u> will be working with the <strong>lobster abundance and size data</strong> - <u>Collaborator</u> will be working with the <strong>lobster trap buoy counts data</strong></p>
-<p>Questions 1-3 you will be working independently since you’re working with different data frames, but you’re welcome to check in with each other.</p>
+<section id="create-files-and-add-data" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="create-files-and-add-data"><span class="header-section-number">1.2</span> Create Files and Add Data</h3>
+<p>The <span style="color: purple;"><strong>Collaborator</strong></span> will set up new files for the analysis, while the <span style="color: orange;"><strong>Owner</strong></span> will download data and add it to the repository. Follow the instructions on the tab for your role:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Owner</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Collaborator</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href=""><span style="color: purple;"><strong>Collaborator</strong></span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><span style="color: orange;"><strong>Owner</strong></span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Setup
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p><span style="color: purple;"><strong>Collaborator</strong></span> creates new files for exercise</p>
 <ol type="1">
-<li>Open the Quarto Document <code>owner-analysis.qmd</code>
+<li>The <span style="color: purple;"><strong>Collaborator</strong></span> creates the following directory (folder):
+<ul>
+<li><code>analysis</code></li>
+</ul></li>
+<li>After creating the directories, create the following Quarto Documents and store them in the listed folders:
+<ol type="a">
+<li>Title: “Owner Analysis”, save as: <code>analysis/owner_analysis.qmd</code></li>
+<li>Title: “Collaborator Analysis”, save as: <code>analysis/collaborator_analysis.qmd</code></li>
+<li>Title: “Lobster Report” and save as: <code>analysis/lobster_report.qmd</code></li>
+</ol></li>
+<li>After creating the files, the <span style="color: purple;"><strong>Collaborator</strong></span> will <strong>stage (add)</strong> the changes, <strong>commit</strong>, and write a commit message. Then <strong>Sync</strong> (Positron) or <strong>Pull</strong> and <strong>Push</strong> (RStudio or Terminal) the files to the remote repository (on GitHub)</li>
+<li>The <span style="color: orange;"><strong>Owner</strong></span> <strong>Sync</strong>s or <strong>Pull</strong>s the changes and Quarto Documents into their local repository (their workspace)</li>
+</ol>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><span style="color: orange;"><strong>Owner</strong></span> downloads data from the EDI Data Portal <a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&amp;identifier=77&amp;revision=10">SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012</a>. a. Create two new directories one called <code>data</code> and one called <code>figs</code> i. <em>Note: Git does not track empty directories, so you won’t see <code>figs</code> when you push to GitHub</em> b. Download the following data and upload them to the <code>data</code> folder: i. Time-series of lobster abundance and size ii. Time-series of lobster trap buoy counts c.&nbsp;After creating the <code>data</code> folder and adding the data, the <span style="color: orange;"><strong>Owner</strong></span> will <strong>stage (add)</strong> the changes, <strong>commit</strong>, and write a commit message. Then <strong>Sync</strong> (Positron) or <strong>Pull</strong> and <strong>Push</strong> (RStudio or Terminal) the files to the remote repository (on GitHub) c.&nbsp;The <span style="color: purple;"><strong>Collaborator</strong></span> <strong>Sync</strong>s or <strong>Pull</strong>s the changes and data into their local repository (their workspace)</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="explore-clean-and-wrangle-data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="explore-clean-and-wrangle-data"><span class="header-section-number">2</span> Explore, clean and wrangle data</h2>
+<p>For this portion of the exercise, the - <span style="color: orange;"><strong>Owner</strong></span> will be working with the <strong>lobster abundance and size data</strong> - <span style="color: purple;"><strong>Collaborator</strong></span> will be working with the <strong>lobster trap buoy counts data</strong></p>
+<p>In these sections you will be working independently since you’re working with different data frames, but you’re welcome to check in with each other.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><span style="color: orange;"><strong>Owner</strong></span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><span style="color: purple;"><strong>Collaborator</strong></span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<section id="setup" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="setup">Setup</h3>
+<ol type="1">
+<li>Open the Quarto Document <code>owner_analysis.qmd</code>
 <ol type="a">
 <li>Check the <code>YAML</code> and add your name to the <code>author</code> field</li>
 <li>Create a new section with a level 2 header and title it “Exercise: Explore, Clean, and Wrangle Data”</li>
 </ol></li>
-<li>Load the following libraries at the top of your Quarto Document</li>
+<li>Load the following packages in a code chunk (optional: give the chunk a meaningful name like “setup” or “load packages”) at the top of your Quarto Document:</li>
 </ol>
-<!-- NOTE: since no code chunks are run to render, make them "dumb" but
-     display with r syntax coloring -->
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- NOTE: since no code chunks are run to render, make them "dumb" but
+     display with r syntax coloring -->
 <ol start="3" type="1">
-<li>Read in the data and store the data frame as <code>lobster_abundance</code></li>
+<li>Read in the data and store the data frame as <code>lobster_abundance</code>. Here we also use the <code>clean_names()</code> function from the helpful <code>janitor</code> package. This converts all variable names to <code>snake_case</code> by default. Having a consistent naming convention helps with collaboration!</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lobster_abundance <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/Lobster_Abundance_All_Years_20220829.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lobster_abundance <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Lobster_Abundance_All_Years_20240411.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
-<li><p>Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you’re working with.</p></li>
-<li><p>Use the Git workflow: <code>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</code></p>
+<li>Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you’re working with.</li>
+<li>Use the Git workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong>
 <ul>
-<li><strong>Note:</strong> You also want to <code>Pull</code> when you first open a project</li>
+<li><strong>Note:</strong> You also want to <code>Pull</code> every time you open a project, to make sure you retrieve any changes your collaborators have made.</li>
 </ul></li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Using <code>namespace::function()</code> syntax
 </div>
 </div>
-<section id="convert-missing-values-using-mutate-and-na_if" class="level4" data-number="1.0.1">
-<h4 data-number="1.0.1" class="anchored" data-anchor-id="convert-missing-values-using-mutate-and-na_if"><span class="header-section-number">1.0.1</span> Convert missing values using <code>mutate()</code> and <code>na_if()</code></h4>
+<div class="callout-body-container callout-body">
+<p>Because we used <code>namespace::function()</code> syntax to call <code>janitor::clean_names()</code>, we can access the function without explicitly loading it in our previous chunk! (i.e., no <code>library(janitor)</code> is necessary)</p>
+</div>
+</div>
+</section>
+<section id="modify-quarto-document-to-wrangle-data" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="modify-quarto-document-to-wrangle-data">Modify Quarto document to wrangle data</h3>
+<p>The following exercises challenge you to apply functions from <code>dplyr</code> and <code>tidyr</code> (in the <code>tidyverse</code> metapackage) to clean data, create subsets,</p>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 1 - Question 1
+<span class="screen-reader-only">Exercise</span>Convert missing values using mutate() and na_if()
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>The variable <code>SIZE_MM</code> uses -99999 as the code for missing values (see metadata or use <code>unique()</code>). This has the potential to cause conflicts with our analyses, so let’s convert -99999 to an <code>NA</code> value. Do this using <code>mutate()</code> and <code>na_if()</code>. Look up the help page to see how to use <code>na_if()</code>. Check your output data using <code>unique()</code>.</p>
+<p>The variable <code>size_mm</code> uses -99999 as the code for missing values (see metadata or use <code>unique()</code>). This has the potential to cause conflicts with our analyses, so let’s convert -99999 to an <code>NA</code> value. Do this using <code>mutate()</code> and <code>na_if()</code> or <code>ifelse()</code>. Look up the help page to see how to use <code>na_if()</code> and <code>ifelse()</code>. Check your output data using <code>unique()</code>.</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -755,7 +806,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lobster_abundance <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">SIZE_MM =</span> <span class="fu">na_if</span>(SIZE_MM, <span class="sc">-</span><span class="dv">99999</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">size_mm =</span> <span class="fu">na_if</span>(size_mm, <span class="sc">-</span><span class="dv">99999</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>lobster_abundance <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">size_mm =</span> <span class="fu">ifelse</span>(size_mm <span class="sc">==</span> <span class="sc">-</span><span class="dv">99999</span>, <span class="cn">NA</span>, size_mm))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>NOTE: If you know the <code>NA</code> values ahead of time, you can specify them when you read the data in!</p>
+<pre><code>lobster_abundance &lt;- read_csv("data/Lobster_Abundance_All_Years_20240411.csv", 
+                              na = "-99999")</code></pre>
 </div>
 </div>
 </div>
@@ -764,16 +821,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="filter-practice" class="level4" data-number="1.0.2">
-<h4 data-number="1.0.2" class="anchored" data-anchor-id="filter-practice"><span class="header-section-number">1.0.2</span> <code>filter()</code> practice</h4>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 2 - Question 2
+<span class="screen-reader-only">Exercise</span>Subset data using filter() to exclude observations
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -794,8 +848,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>not_napl <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(SITE <span class="sc">!=</span> <span class="st">"NAPL"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>not_napl <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(site <span class="sc">!=</span> <span class="st">"NAPL"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -810,7 +864,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 3 - Question 3
+<span class="screen-reader-only">Exercise</span>Subset data using filter() to meet multiple conditions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -831,8 +885,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>aque_70mm <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(SITE <span class="sc">==</span> <span class="st">"AQUE"</span> <span class="sc">&amp;</span> SIZE_MM <span class="sc">&gt;=</span> <span class="dv">70</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>aque_70mm <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(site <span class="sc">==</span> <span class="st">"AQUE"</span> <span class="sc">&amp;</span> size_mm <span class="sc">&gt;=</span> <span class="dv">70</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -847,14 +901,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 4 - Question 4
+<span class="screen-reader-only">Exercise</span>Calculate summary statistics using group_by() %&gt;% summarize()
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>Find the maximum carapace length using <code>max()</code> and group by <code>SITE</code> and <code>MONTH</code>. Think about how you want to treat the NA values in <code>SIZE_MM</code> (Hint: check the arguments in <code>max()</code>). Check your output.</p>
+<p>Find the maximum carapace length using <code>max()</code> and group by <code>site</code> and <code>month</code>. Think about how you want to treat the NA values in <code>size_mm</code> (Hint: check the arguments in <code>max()</code>). Check your output.</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -868,11 +922,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `group_by() %&gt;% summarize()` practice</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>max_lobster <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SITE, MONTH) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">MAX_LENGTH =</span> <span class="fu">max</span>(SIZE_MM, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>max_lobster <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, month) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">max_length =</span> <span class="fu">max</span>(size_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">'drop'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>NOTE: <code>.groups = "drop"</code> is an argument in <code>summarize()</code> that tells R to ungroup the data frame after summarizing (and suppresses an annoying warning!). If you don’t include this argument, the resulting data frame wmay still contain groups, which can lead to unexpected results in subsequent operations. You can also use <code>group_by() %&gt;% summarize() %&gt;% ungroup()</code> to accomplish the same basic idea.</p>
 </div>
 </div>
 </div>
@@ -891,64 +945,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <code>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</code></p>
+<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong></p>
 </div>
 </div>
 </section>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<!--new tab -->
+<section id="setup-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="setup-1">Setup</h3>
+<ol type="1">
+<li>Open the Quarto Document <code>collaborator_analysis.qmd</code>
+<ol type="a">
+<li>Check the <code>YAML</code> and add your name to the <code>author</code> field</li>
+<li>Create a new section with a level 2 header and title it “Exercise: Explore, Clean, and Wrangle Data”</li>
+</ol></li>
+<li>Load the following packages in a code chunk (optional: name it something meaningful, like “setup” or “load packages”) at the top of your Quarto Document.</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Read in the data and store the data frame as <code>lobster_traps</code>. Here we also use the <code>clean_names()</code> function from the helpful <code>janitor</code> package. This converts all variable names to <code>snake_case</code> by default. Having a consistent naming convention helps with collaboration!</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Lobster_Trap_Counts_All_Years_20210519.csv"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="1">
+<li>Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you’re working with.</li>
+<li>Use the Git workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong>
+<ul>
+<li><strong>Note:</strong> You also want to <strong>Sync/Pull</strong> when you first open a project</li>
+</ul></li>
+</ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Setup
+<span class="screen-reader-only">Tip</span>Using <code>namespace::function()</code> syntax
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Open the Quarto Document <code>collaborator-analysis.qmd</code>
-<ol type="a">
-<li>Check the <code>YAML</code> and add your name to the <code>author</code> field</li>
-<li>Create a new section with a level 2 header and title it “Exercise: Explore, Clean, and Wrangle Data”</li>
-</ol></li>
-<li>Load the following libraries at the top of your Quarto Document.</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li>Read in the data and store the data frame as <code>lobster_traps</code></li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/Lobster_Trap_Counts_All_Years_20210519.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="1">
-<li><p>Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you’re working with.</p></li>
-<li><p>Use the Git workflow: <code>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</code></p>
-<ul>
-<li><strong>Note:</strong> You also want to <code>Pull</code> when you first open a project</li>
-</ul></li>
-</ol>
+<p>Because we used <code>namespace::function()</code> syntax to call <code>janitor::clean_names()</code>, we can access the function without explicitly loading it in our previous chunk! (i.e., no <code>library(janitor)</code> is necessary)</p>
 </div>
 </div>
-<section id="convert-missing-values-using-mutate-and-na_if-1" class="level4" data-number="1.0.3">
-<h4 data-number="1.0.3" class="anchored" data-anchor-id="convert-missing-values-using-mutate-and-na_if-1"><span class="header-section-number">1.0.3</span> Convert missing values using <code>mutate()</code> and <code>na_if()</code></h4>
+</section>
+<section id="modify-quarto-document-to-wrangle-data-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="modify-quarto-document-to-wrangle-data-1">Modify Quarto document to wrangle data</h3>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 5 - Question 1
+<span class="screen-reader-only">Exercise</span>Convert missing values using mutate() and na_if()
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>The variable <code>TRAPS</code> uses -99999 as the code for missing values (see metadata or use <code>unique()</code>). This has the potential to cause conflicts with our analyses, so let’s convert -99999 to an <code>NA</code> value. Do this using <code>mutate()</code> and <code>na_if()</code>. Look up the help page to see how to use <code>na_if()</code>. Check your output data using <code>unique()</code>.</p>
+<p>The variable <code>traps</code> uses -99999 as the code for missing values (see metadata or use <code>unique()</code>). This has the potential to cause conflicts with our analyses, so let’s convert -99999 to an <code>NA</code> value. Do this using <code>mutate()</code> and <code>na_if()</code> or <code>ifelse()</code>. Look up the help page to see how to use <code>na_if()</code> and <code>ifelse()</code>. Check your output data using <code>unique()</code>.</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -962,8 +1021,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">TRAPS =</span> <span class="fu">na_if</span>(TRAPS, <span class="sc">-</span><span class="dv">99999</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">traps =</span> <span class="fu">na_if</span>(traps, <span class="sc">-</span><span class="dv">99999</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">traps =</span> <span class="fu">ifelse</span>(traps <span class="sc">==</span> <span class="sc">-</span><span class="dv">99999</span>, <span class="cn">NA</span>, traps))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>NOTE: If you know the <code>NA</code> values ahead of time, you can specify them when you read the data in!</p>
+<pre><code>lobster_abundance &lt;- read_csv("data/Lobster_Abundance_All_Years_20220829.csv", 
+                              na = "-99999")</code></pre>
 </div>
 </div>
 </div>
@@ -972,16 +1037,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="filter-practice-1" class="level4" data-number="1.0.4">
-<h4 data-number="1.0.4" class="anchored" data-anchor-id="filter-practice-1"><span class="header-section-number">1.0.4</span> <code>filter()</code> practice</h4>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 6 - Question 2
+<span class="screen-reader-only">Exercise</span>Subset data using filter() to exclude observations
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1002,8 +1064,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>not_napl <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(SITE <span class="sc">!=</span> <span class="st">"NAPL"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>not_napl <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(site <span class="sc">!=</span> <span class="st">"NAPL"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1018,7 +1080,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 7 - Question 3
+<span class="screen-reader-only">Exercise</span>Subset data using filter() to meet multiple conditions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1039,8 +1101,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>carp_20_traps <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(SITE <span class="sc">==</span> <span class="st">"CARP"</span> <span class="sc">&amp;</span> TRAPS <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>carp_20_traps <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(site <span class="sc">==</span> <span class="st">"CARP"</span> <span class="sc">&amp;</span> traps <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1055,14 +1117,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 8 - Question 4
+<span class="screen-reader-only">Exercise</span>Calculate summary statistics using group_by() %&gt;% summarize()
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>Find the maximum number of commercial trap floats using <code>max()</code> and group by <code>SITE</code> and <code>MONTH</code>. Think about how you want to treat the <code>NA</code> values in <code>TRAPS</code> (Hint: check the arguments in <code>max()</code>). Check your output.</p>
+<p>Find the maximum number of commercial trap floats using <code>max()</code> and group by <code>site</code> and <code>month</code>. Think about how you want to treat the <code>NA</code> values in <code>traps</code> (Hint: check the arguments in <code>max()</code>). Check your output.</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1076,10 +1138,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `group_by() %&gt;% summarize()` practice</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>max_lobster_traps <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(SITE, MONTH) <span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">MAX_TRAPS =</span> <span class="fu">max</span>(TRAPS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>max_lobster_traps <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(site, month) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">max_traps =</span> <span class="fu">max</span>(traps, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">.groups =</span> <span class="st">'drop'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>NOTE: <code>.groups = "drop"</code> is an argument in <code>summarize()</code> that tells R to ungroup the data frame after summarizing (and suppresses an annoying warning!). If you don’t include this argument, the resulting data frame wmay still contain groups, which can lead to unexpected results in subsequent operations. You can also use <code>group_by() %&gt;% summarize() %&gt;% ungroup()</code> to accomplish the same basic idea.</p>
 </div>
 </div>
 </div>
@@ -1098,66 +1161,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <code>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</code></p>
+<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong></p>
 </div>
 </div>
 </section>
 </div>
 </div>
 </div>
+<!-- end tabset -->
 </section>
-<section id="create-visually-appealing-and-informative-data-visualization" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="create-visually-appealing-and-informative-data-visualization"><span class="header-section-number">2</span> Create visually appealing and informative data visualization</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Owner</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Collaborator</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Setup
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Stay in the Quarto Document <code>owner-analysis.qmd</code> and create a new section with a level 2 header and title it “Exercise: Data Visualization”</li>
-</ol>
+<section id="create-visually-appealing-and-informative-data-visualization" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="create-visually-appealing-and-informative-data-visualization"><span class="header-section-number">3</span> Create visually appealing and informative data visualization</h2>
 <p><strong>Structure of the data visualization exercises:</strong></p>
-<ul>
-<li><p>In this section, you will first have you create the necessary subsets to create the data visualizations, as well as the basic code to create a visualization.</p></li>
-<li><p>The next step is to return to the data visualization code you’ve written and add styling code to it. For this exercise, only add styling code to the visualization you want to include in the <code>lobster-report.qmd</code> (start with just one plot and if there’s time add styling code to another plot).</p></li>
-<li><p>Lastly, save the final visualizations to the <code>figs</code> folder before collaborating on the <code>lobster-report.qmd</code>.</p></li>
-</ul>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Run this chunk to test exercises ##</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>lobster_abundance <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.8&amp;entityid=f32823fba432f58f66c06b589b7efac6"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">SIZE_MM =</span> <span class="fu">na_if</span>(SIZE_MM, <span class="sc">-</span><span class="dv">99999</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For this portion of the practice session, we will create basic data visualizations, to be later customized and included in the collaborative report.</p>
+<p>The <span style="color: orange;"><strong>Owner</strong></span> will continue to work with the <strong>lobster abundance and size data</strong>; the <span style="color: purple;"><strong>Collaborator</strong></span> will continue to work with the <strong>lobster trap buoy counts data</strong>.</p>
+<p>For each visualization, you may first have you create subsets and summary dataframes to be used in the data visualizations, as well as the basic code to create a visualization.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href=""><span style="color: orange;"><strong>Owner</strong></span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href=""><span style="color: purple;"><strong>Collaborator</strong></span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<section id="setup-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="setup-2">Setup</h3>
+<ol type="1">
+<li>Stay in the Quarto Document <code>owner_analysis.qmd</code> and create a new section with a level 2 header and title it “Exercise: Data Visualization”</li>
+<li>You should already have the <code>lobster_abundance</code> data frame in your environment from the previous exercises. If not, re-run the appropriate code chunk(s) to get the data frame back into your environment. Hooray reproducibility!</li>
+</ol>
+</section>
+<section id="visualization-exercises" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="visualization-exercises">Visualization Exercises</h3>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 9 - Question 5
+<span class="screen-reader-only">Exercise</span>Create a multi-panel histogram
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse show">
+<div id="callout-25" class="callout-25-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>Create a multi-panel plot of lobster carapace length (<code>SIZE_MM</code>) using <code>ggplot()</code>, <code>geom_histogram()</code>, and <code>facet_wrap()</code>. Use the variable <code>SITE</code> in <code>facet_wrap()</code>. Use the object <code>lobster_abundance</code>.</p>
+<p>Create a multi-panel plot of lobster carapace length (<code>size_mm</code>) using <code>ggplot()</code>, <code>geom_histogram()</code>, and <code>facet_wrap()</code>. Use the variable <code>site</code> in <code>facet_wrap()</code>. Use the object <code>lobster_abundance</code>.</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1166,19 +1213,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_abundance, </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> SIZE_MM)) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>SITE)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<details>
-<summary>
-Plots
-</summary>
-<img src="images/r_practice_clean_wrangle_visualize/lobster_size_hist.png" class="img-fluid quarto-figure quarto-figure-center" style="width:75.0%">
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_abundance, </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> size_mm)) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> site)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/r_practice_clean_wrangle_visualize/lobster_size_hist.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1188,21 +1234,21 @@ Plots
 </div>
 </div>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 10 - Question 6
+<span class="screen-reader-only">Exercise</span>Create a line graph with multiple groups
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse show">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>Create a line graph of the number of total lobsters observed (y-axis) by year (x-axis) in the study, grouped by <code>SITE</code>.</p>
+<p>Create a line graph of the number of total lobsters observed (y-axis) by year (x-axis) in the study, grouped by <code>site</code>.</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1211,30 +1257,26 @@ Plots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
 <p>First, you’ll need to create a new dataset subset called <code>lobsters_summarize</code>:</p>
 <ul>
-<li>Group the data by <code>SITE</code> AND <code>YEAR</code></li>
-<li>Calculate the total number of lobsters observed using <code>count()</code></li>
+<li>Group the data by <code>site</code> AND <code>year</code></li>
+<li>Calculate the total number of lobsters observed</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lobsters_summarize <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SITE, YEAR) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">COUNT =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Next, create a line graph using <code>ggplot()</code> and <code>geom_line()</code>. Use <code>geom_point()</code> to make the data points more distinct, but ultimately up to you if you want to use it or not. We also want <code>SITE</code> information on this graph, do this by specifying the variable in the <code>color</code> argument. Where should the <code>color</code> argument go? Inside or outside of <code>aes()</code>? Why or why not?</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># line plot</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobsters_summarize, <span class="fu">aes</span>(<span class="at">x =</span> YEAR, <span class="at">y =</span> COUNT)) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> SITE)) </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># line and point plot</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobsters_summarize, <span class="fu">aes</span>(<span class="at">x =</span> YEAR, <span class="at">y =</span> COUNT)) <span class="sc">+</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> SITE)) <span class="sc">+</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> SITE)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<details>
-<summary>
-Plots
-</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lobsters_summarize <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, year) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Next, create a line graph using <code>ggplot()</code> and <code>geom_line()</code>. Use <code>geom_point()</code> to make the data points more distinct, if you prefer. We also want <code>site</code> information on this graph, do this by specifying the variable in the <code>color</code> argument. Where should the <code>color</code> argument go? Inside or outside of <code>aes()</code>? Explain your reasoning.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># line plot</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobsters_summarize, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> count)) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> site)) </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># line and point plot</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobsters_summarize, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> count)) <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> site)) <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> site)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="lobster-line-plots" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -1255,7 +1297,6 @@ Plots
 </div>
 </div>
 </div>
-</details>
 </div>
 </div>
 </div>
@@ -1265,21 +1306,21 @@ Plots
 </div>
 </div>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 11 - Question 7
+<span class="screen-reader-only">Exercise</span>Create a bar plot with multiple groups
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse show">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>Create a bar graph that shows the amount of small and large sized carapace lobsters at each <code>SITE</code> from 2019-2021. <strong>Note:</strong> The small and large metrics are completely made up and are not based on any known facts.</p>
+<p>Create a bar graph that shows the amount of small and large sized carapace lobsters at each <code>site</code> from 2019-2021. <strong>Note:</strong> The small and large divisions are arbitrary here; the carapace size limit for catching and keeping lobster is 3.25 inches or about 82.5 mm.</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1288,40 +1329,36 @@ Plots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<p>First, you’ll need to create a new dataset subset called <code>lobster_size_lrg</code>:</p>
+<p>First, let’s create a new dataset subset called <code>lobster_size</code>:</p>
 <ul>
 <li><code>filter()</code> for the years 2019, 2020, and 2021</li>
-<li>Add a new column called <code>SIZE_BIN</code> that contains the values “small” or “large”. A “small” carapace size is &lt;= 70 mm, and a “large” carapace size is greater than 70 mm. Use <code>mutate()</code> and <code>if_else()</code>. Check your output</li>
+<li>Add a new column called <code>size_bin</code> that contains the values “small” or “large”. A “small” carapace size is &lt;= 70 mm, and a “large” carapace size is greater than 70 mm. Use <code>mutate()</code> and <code>if_else()</code>. Check your output</li>
 <li>Calculate the number of “small” and “large” sized lobsters using <code>group()</code> and <code>summarize()</code>. Check your output</li>
 <li>Remove the <code>NA</code> values from the subsetted data. Hint: check out <code>drop_na()</code>. Check your output</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lobster_size_lrg <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(YEAR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">2020</span>, <span class="dv">2021</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">SIZE_BIN =</span> <span class="fu">if_else</span>(SIZE_MM <span class="sc">&lt;=</span> <span class="dv">70</span>, <span class="at">true =</span> <span class="st">"small"</span>, <span class="at">false =</span> <span class="st">"large"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(SITE, SIZE_BIN) <span class="sc">%&gt;%</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">COUNT =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lobster_size <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">2020</span>, <span class="dv">2021</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">size_bin =</span> <span class="fu">if_else</span>(size_mm <span class="sc">&lt;=</span> <span class="dv">70</span>, <span class="at">true =</span> <span class="st">"small"</span>, <span class="at">false =</span> <span class="st">"large"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(site, size_bin) <span class="sc">%&gt;%</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Next, create a bar graph using <code>ggplot()</code> and <code>geom_bar()</code>. Note that <code>geom_bar()</code> automatically creates a stacked bar chart. Try using the argument <code>position = "dodge"</code> to make the bars side by side. Pick which bar position you like best.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bar plot</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_size_lrg, <span class="fu">aes</span>(<span class="at">x =</span> SITE, <span class="at">y =</span> COUNT, <span class="at">fill =</span> SIZE_BIN)) <span class="sc">+</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># dodged bar plot</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_size_lrg, <span class="fu">aes</span>(<span class="at">x =</span> SITE, <span class="at">y =</span> COUNT, <span class="at">fill =</span> SIZE_BIN)) <span class="sc">+</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<details>
-<summary>
-Plots
-</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bar plot</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_size, <span class="fu">aes</span>(<span class="at">x =</span> site, <span class="at">y =</span> n, <span class="at">fill =</span> size_bin)) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># dodged bar plot</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_size, <span class="fu">aes</span>(<span class="at">x =</span> site, <span class="at">y =</span> n, <span class="at">fill =</span> size_bin)) <span class="sc">+</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="lobster-bar-plots" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/r_practice_clean_wrangle_visualize/lobster_size_lrg_bar_plot.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="images/r_practice_clean_wrangle_visualize/lobster_size_bar_plot.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>Bar plot</figcaption>
 </figure>
 </div>
@@ -1329,14 +1366,13 @@ Plots
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/r_practice_clean_wrangle_visualize/lobster_size_lrg_dodged_plot.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="images/r_practice_clean_wrangle_visualize/lobster_size_dodged_plot.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>Dodged bar plot</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</details>
 </div>
 </div>
 </div>
@@ -1345,115 +1381,34 @@ Plots
 </div>
 </div>
 </div>
+</section>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<section id="setup-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="setup-3">Setup</h3>
+<ol type="1">
+<li>Stay in the Quarto Document <code>collaborator_analysis.qmd</code> and create a new section with a level 2 header and title it “Exercise: Data Visualization”</li>
+<li>You should already have the <code>lobster_traps</code> data frame in your environment from the previous exercises. If not, re-run the appropriate code chunk(s) to get the data frame back into your environment. Hooray reproducibility!</li>
+</ol>
+</section>
+<section id="visualization-exercises-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="visualization-exercises-1">Visualization Exercises</h3>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 12 - Question 8
+<span class="screen-reader-only">Exercise</span>Create a multi-panel histogram
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-31" class="callout-31-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<ol type="1">
-<li>Go back to your visualization code and add some styling code (aka make your plots pretty!). Again, start with one plot and if there’s time add styling code to additional plots. Here’s a list of functions to help you get started (this is not an exhaustive list!) or revisit the <a href="https://learning.nceas.ucsb.edu/2023-04-coreR/session_12.html">data visualization lesson</a>:</li>
-</ol>
-<ul>
-<li><code>labs()</code>: modifying axis, legend and plot labels</li>
-<li><code>theme_()</code>: add a complete theme to your plot (i.e.&nbsp;<code>theme_light()</code>)</li>
-<li><code>theme()</code>: use to customize non-data components of a plot. We’ve listed out some parameters here, but run <code>?theme</code> to see the full list (there’s a lot of customization you can do!)
-<ul>
-<li><code>axis.title.y</code></li>
-<li><code>panel.background</code></li>
-<li><code>plot.background</code></li>
-<li><code>panel.grid.major.*</code></li>
-<li><code>text</code></li>
-</ul></li>
-<li><code>scale_*_date()</code>: use with dates and update breaks, limits, and labels</li>
-<li><code>scale_*_continuous()</code>: use with continuous variables and update breaks, limits, and labels</li>
-<li><code>scale_*_discrete()</code>: use with discrete variables and update breaks, limits, and labels</li>
-<li><code>scales</code> package: use this within the above scale functions and you can do things like add percents to axes labels</li>
-<li><code>geom_()</code> within a geom function you can modify:
-<ul>
-<li><code>fill</code>: updates fill colors (e.g.&nbsp;column, density, violin, &amp; boxplot interior fill color)</li>
-<li><code>color</code>: updates point &amp; border line colors (generally)</li>
-<li><code>shape</code>: update point style</li>
-<li><code>alpha</code>: update transparency (0 = transparent, 1 = opaque)</li>
-<li><code>size</code>: point size or line width</li>
-<li><code>linetype</code>: update the line type (e.g.&nbsp;“dotted”, “dashed”, “dotdash”, etc.)</li>
-</ul></li>
-</ul>
-<ol start="2" type="1">
-<li>Once you’re happy with how your plot looks, assign it to an object, and save it to the <code>figs</code> directory using <code>ggsave()</code></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Save your work and Don’t forget the Git and GitHub workflow!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <code>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</code></p>
-</div>
-</div>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Setup
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Stay in the Quarto Document <code>collaborator-analysis.qmd</code> and create a new section with a level 2 header and title it “Exercise: Data Visualization”</li>
-</ol>
-<p><strong>Structure of the data visualization exercises:</strong></p>
-<ul>
-<li>First you will create the necessary subsets to create the data visualizations, as well as the basic code to create a visualization.</li>
-<li>Then, you will return to the data visualization code you’ve written and add styling code to it. For this exercise, only add styling code to the visualization you want to include in the <code>lobster-report.qmd</code> (start with just one plot and if there’s time add styling code to another plot).</li>
-<li>Lastly, save the final visualizations to the <code>figs</code> folder before collaborating on the <code>lobster-report.qmd</code>.</li>
-</ul>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Run this chunk to test exercises ##</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.8&amp;entityid=66dd61c75bda17c23a3bce458c56ed84"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">TRAPS =</span> <span class="fu">na_if</span>(TRAPS, <span class="sc">-</span><span class="dv">99999</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 13 - Question 5
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-35" class="callout-35-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<div class="callout-exercise">
-<p>Create a multi-panel plot of lobster commercial traps (<code>TRAPS</code>) grouped by year, using <code>ggplot()</code>, <code>geom_histogram()</code>, and <code>facet_wrap()</code>. Use the variable <code>YEAR</code> in <code>facet_wrap()</code>. Use the object <code>lobster_traps</code>.</p>
+<p>Create a multi-panel plot of lobster commercial traps (<code>traps</code>) grouped by year, using <code>ggplot()</code>, <code>geom_histogram()</code>, and <code>facet_wrap()</code>. Use the variable <code>year</code> in <code>facet_wrap()</code>. Use the object <code>lobster_traps</code>.</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1462,18 +1417,17 @@ Plots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_traps, <span class="fu">aes</span>(<span class="at">x =</span> TRAPS)) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_traps, <span class="fu">aes</span>(<span class="at">x =</span> traps)) <span class="sc">+</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>( <span class="sc">~</span> YEAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<details>
-<summary>
-Plots
-</summary>
-<img src="images/r_practice_clean_wrangle_visualize/lobster_traps_hist_plot.png" class="img-fluid quarto-figure quarto-figure-center" style="width:75.0%">
-</details>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>( <span class="sc">~</span> year)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/r_practice_clean_wrangle_visualize/lobster_traps_hist_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1483,21 +1437,21 @@ Plots
 </div>
 </div>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 14 - Question 6
+<span class="screen-reader-only">Exercise</span>Create a line graph with multiple groups
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-37" class="callout-37-contents callout-collapse collapse show">
+<div id="callout-33" class="callout-33-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>Create a line graph of the number of total lobster commercial traps observed (y-axis) by year (x-axis) in the study, grouped by <code>SITE</code>.</p>
+<p>Create a line graph of the number of total lobster commercial traps observed (y-axis) by year (x-axis) in the study, grouped by <code>site</code>.</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1506,30 +1460,27 @@ Plots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
 <p>First, you’ll need to create a new dataset subset called <code>lobsters_traps_summarize</code>:</p>
 <ul>
-<li>Group the data by <code>SITE</code> AND <code>YEAR</code></li>
-<li>Calculate the total number of lobster commercial traps observed using <code>sum()</code>. Look up <code>sum()</code> if you need to. Call the new column <code>TOTAL_TRAPS</code>. Don’t forget about <code>NAs</code> here!</li>
+<li>Group the data by <code>site</code> AND <code>year</code></li>
+<li>Calculate the total number of lobster commercial traps observed using <code>sum()</code>. Look up <code>sum()</code> if you need to. Call the new column <code>total_traps</code>. Don’t forget about <code>NAs</code> here!</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>lobsters_traps_summarize <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SITE, YEAR) <span class="sc">%&gt;%</span> </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">TOTAL_TRAPS =</span> <span class="fu">sum</span>(TRAPS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Next, create a line graph using <code>ggplot()</code> and <code>geom_line()</code>. Use <code>geom_point()</code> to make the data points more distinct, but ultimately up to you if you want to use it or not. We also want <code>SITE</code> information on this graph, do this by specifying the variable in the <code>color</code> argument. Where should the <code>color</code> argument go? Inside or outside of <code>aes()</code>? Why or why not?</p>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, year) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_traps =</span> <span class="fu">sum</span>(traps, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Next, create a line graph using <code>ggplot()</code> and <code>geom_line()</code>. Use <code>geom_point()</code> to make the data points more distinct, but ultimately up to you if you want to use it or not. We also want <code>site</code> information on this graph, do this by specifying the variable in the <code>color</code> argument. Where should the <code>color</code> argument go? Inside or outside of <code>aes()</code>? Why or why not?</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># line plot</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobsters_traps_summarize, <span class="fu">aes</span>(<span class="at">x =</span> YEAR, <span class="at">y =</span> TOTAL_TRAPS)) <span class="sc">+</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> SITE))</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobsters_traps_summarize, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> total_traps)) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> site))</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># line and point plot</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobsters_traps_summarize, <span class="fu">aes</span>(<span class="at">x =</span> YEAR, <span class="at">y =</span> TOTAL_TRAPS)) <span class="sc">+</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> SITE)) <span class="sc">+</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> SITE))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<details>
-<summary>
-Plots
-</summary>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobsters_traps_summarize, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> total_traps)) <span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> site)) <span class="sc">+</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> site))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="lobster-traps-line-plots" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -1550,7 +1501,6 @@ Plots
 </div>
 </div>
 </div>
-</details>
 </div>
 </div>
 </div>
@@ -1560,21 +1510,21 @@ Plots
 </div>
 </div>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 15 - Question 7
+<span class="screen-reader-only">Exercise</span>Create a bar graph with multiple groups
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-39" class="callout-39-contents callout-collapse collapse show">
+<div id="callout-35" class="callout-35-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>Create a bar graph that shows the amount of high and low fishing pressure of lobster commercial traps at each <code>SITE</code> from 2019-2021. <strong>Note:</strong> The high and low fishing pressure metrics are completely made up and are not based on any known facts.</p>
+<p>Create a bar graph that shows the amount of high and low fishing pressure of lobster commercial traps at each <code>site</code> from 2019-2021. <strong>Note:</strong> The high and low fishing pressure metrics are completely made up and are not based on any known facts.</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1583,34 +1533,30 @@ Plots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout-answer">
 <p>First, you’ll need to create a new dataset subset called <code>lobster_traps_fishing_pressure</code>:</p>
 <ul>
 <li><code>filter()</code> for the years 2019, 2020, and 2021</li>
-<li>Add a new column called <code>FISHING_PRESSURE</code> that contains the values “high” or “low”. A “high” fishing pressure has exactly or more than 8 traps, and a “low” fishing pressure has less than 8 traps. Use <code>mutate()</code> and <code>if_else()</code>. Check your output</li>
+<li>Add a new column called <code>fishing_pressure</code> that contains the values “high” or “low”. A “high” fishing pressure has exactly or more than 8 traps, and a “low” fishing pressure has less than 8 traps. Use <code>mutate()</code> and <code>if_else()</code>. Check your output</li>
 <li>Calculate the number of “high” and “low” observations using <code>group()</code> and <code>summarize()</code>. Check your output</li>
 <li>Remove the <code>NA</code> values from the subsetted data. Hint: check out <code>drop_na()</code>. Check your output</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>lobster_traps_fishing_pressure <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(YEAR <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">2020</span>, <span class="dv">2021</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">FISHING_PRESSURE =</span> <span class="fu">if_else</span>(TRAPS <span class="sc">&gt;=</span> <span class="dv">8</span>, <span class="at">true =</span> <span class="st">"high"</span>, <span class="at">false =</span> <span class="st">"low"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(SITE, FISHING_PRESSURE) <span class="sc">%&gt;%</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">COUNT =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">2020</span>, <span class="dv">2021</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">fishing_pressure =</span> <span class="fu">if_else</span>(traps <span class="sc">&gt;=</span> <span class="dv">8</span>, <span class="at">true =</span> <span class="st">"high"</span>, <span class="at">false =</span> <span class="st">"low"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(site, fishing_pressure) <span class="sc">%&gt;%</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Next, create a bar graph using <code>ggplot()</code> and <code>geom_bar()</code>. Note that <code>geom_bar()</code> automatically creates a stacked bar chart. Try using the argument <code>position = "dodge"</code> to make the bars side by side. Pick which bar position you like best.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bar plot</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_traps_fishing_pressure, <span class="fu">aes</span>(<span class="at">x =</span> SITE, <span class="at">y =</span> COUNT, <span class="at">fill =</span> FISHING_PRESSURE)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_traps_fishing_pressure, <span class="fu">aes</span>(<span class="at">x =</span> site, <span class="at">y =</span> count, <span class="at">fill =</span> fishing_pressure)) <span class="sc">+</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># dodged bar plot</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_traps_fishing_pressure, <span class="fu">aes</span>(<span class="at">x =</span> SITE, <span class="at">y =</span> COUNT, <span class="at">fill =</span> FISHING_PRESSURE)) <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lobster_traps_fishing_pressure, <span class="fu">aes</span>(<span class="at">x =</span> site, <span class="at">y =</span> count, <span class="at">fill =</span> fishing_pressure)) <span class="sc">+</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<details>
-<summary>
-Plots
-</summary>
 <div id="lobster-bar-plots" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -1631,7 +1577,6 @@ Plots
 </div>
 </div>
 </div>
-</details>
 </div>
 </div>
 </div>
@@ -1640,34 +1585,36 @@ Plots
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="true" aria-label="Toggle callout">
+</section>
+</div>
+</div>
+</div>
+<!--end tabset-->
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Exercise</span>Exercise 16 - Question 8
+<span class="screen-reader-only">Important</span>Save your work and Don’t forget the Git and GitHub workflow!
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-40" class="callout-40-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<div class="callout-exercise">
-<ol type="1">
-<li>Go back to your visualization code and add some styling code (aka make your plots pretty!). Again, start with one plot and if there’s time add styling code to additional plots. Here’s a list of functions to help you get started (this is not an exhaustive list!) or revisit the <a href="https://learning.nceas.ucsb.edu/2023-04-coreR/session_12.html">data visualization lesson</a>:</li>
-</ol>
+<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong></p>
+</div>
+</div>
+</section>
+<section id="customize-your-visualizations" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="customize-your-visualizations"><span class="header-section-number">4</span> Customize your Visualizations</h2>
+<p>Now that you’ve created some basic data visualizations, let’s choose one plot to revisit your code and add styling code to it. For this exercise, only add styling code to the visualization you want to include in the <code>lobster_report.qmd</code> (if there’s time, feel free to add styling code to another plot). Explore the two tabs to find ways to customize the way data is displayed on your plot and the aesthetics/theme of the plot.</p>
+<p>When you have customized your plot(s), save the final visualization(s) to the <code>figs</code> folder before collaborating on the <code>lobster_report.qmd</code>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Customizing the info</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Customizing the theme</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>Some <code>ggplot2</code> functions grant you control over the information displayed on your plot - labels, axis controls, and geometry arguments. This is far from a complete list!</p>
 <ul>
 <li><code>labs()</code>: modifying axis, legend and plot labels</li>
-<li><code>theme_()</code>: add a complete theme to your plot (i.e.&nbsp;<code>theme_light()</code>)</li>
-<li><code>theme()</code>: use to customize non-data components of a plot. We’ve listed out some parameters here, but run <code>?theme</code> to see the full list (there’s a lot of customization you can do!)
-<ul>
-<li><code>axis.title.y</code></li>
-<li><code>panel.background</code></li>
-<li><code>plot.background</code></li>
-<li><code>panel.grid.major.*</code></li>
-<li><code>text</code></li>
-</ul></li>
-<li><code>scale_*_date()</code>: use with dates and update breaks, limits, and labels</li>
 <li><code>scale_*_continuous()</code>: use with continuous variables and update breaks, limits, and labels</li>
 <li><code>scale_*_discrete()</code>: use with discrete variables and update breaks, limits, and labels</li>
 <li><code>scales</code> package: use this within the above scale functions and you can do things like add percents to axes labels</li>
@@ -1681,13 +1628,74 @@ Plots
 <li><code>linetype</code>: update the line type (e.g.&nbsp;“dotted”, “dashed”, “dotdash”, etc.)</li>
 </ul></li>
 </ul>
-<ol start="2" type="1">
-<li>Once you’re happy with how your plot looks, assign it to an object, and save it to the <code>figs</code> directory using <code>ggsave()</code></li>
-</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><code>aes()</code> vs non-<code>aes()</code> arguments
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>If you specify a variable name inside an <code>aes()</code> call (e.g., <code>geom_line(aes(color = lobster_count))</code>) maps that variable to an aesthetic (e.g.&nbsp;color, shape, size), and the legend is automatically generated.<br>
+</li>
+<li>If you specify a color, shape, or size outside of <code>aes()</code> (e.g., <code>geom_line(color = 'red')</code>), it will apply that style to all points/geoms and no legend will be generated.</li>
+<li>If you specify a variable name outside of <code>aes()</code> (e.g., <code>geom_line(color = lobster_count)</code>), R will look for an object with that name in your environment and will likely throw an error if it doesn’t find it!</li>
+</ul>
 </div>
 </div>
 </div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>The <code>ggplot2</code> package includes some built-in themes (e.g., <code>theme_minimal()</code>) as well as many options for fine-tuning specific elements of the plot (e.g., changing the color and linewidth of the grid lines). Here are a few options and examples:</p>
+<ul>
+<li><code>theme_()</code>: add a complete theme to your plot (e.g., <code>theme_light()</code>, <code>theme_minimal()</code>, <code>theme_void()</code>)</li>
+<li><code>theme()</code>: call specific elements to customize non-data components of a plot. A few examples:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-26"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-26-1"><a href="#annotated-cell-26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(...) <span class="sc">+</span></span>
+<span id="annotated-cell-26-2"><a href="#annotated-cell-26-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_xxx</span>(...) <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-26" data-target-annotation="1">1</button><span id="annotated-cell-26-3" class="code-annotation-target"><a href="#annotated-cell-26-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-26" data-target-annotation="2">2</button><span id="annotated-cell-26-4" class="code-annotation-target"><a href="#annotated-cell-26-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-26" data-target-annotation="3">3</button><span id="annotated-cell-26-5" class="code-annotation-target"><a href="#annotated-cell-26-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-26" data-target-annotation="4">4</button><span id="annotated-cell-26-6" class="code-annotation-target"><a href="#annotated-cell-26-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">'red'</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-26" data-target-annotation="5">5</button><span id="annotated-cell-26-7" class="code-annotation-target"><a href="#annotated-cell-26-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="fl">0.5</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-26" data-target-annotation="6">6</button><span id="annotated-cell-26-8" class="code-annotation-target"><a href="#annotated-cell-26-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Times New Roman"</span>))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-26" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-26" data-code-lines="3" data-code-annotation="1">Change the axis title text color and size for both x and y</span>
+</dd>
+<dt data-target-cell="annotated-cell-26" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-26" data-code-lines="4" data-code-annotation="2">Change the angle of the y-axis title text (note the hierarchical structure)</span>
+</dd>
+<dt data-target-cell="annotated-cell-26" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-26" data-code-lines="5" data-code-annotation="3">Remove x-axis text - <code>element_blank()</code> will cancel any theme element</span>
+</dd>
+<dt data-target-cell="annotated-cell-26" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-26" data-code-lines="6" data-code-annotation="4">Change the panel background color and border</span>
+</dd>
+<dt data-target-cell="annotated-cell-26" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-26" data-code-lines="7" data-code-annotation="5">Change the major grid lines on just the y axis</span>
+</dd>
+<dt data-target-cell="annotated-cell-26" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-26" data-code-lines="8" data-code-annotation="6">Change the font family for all text in the plot</span>
+</dd>
+</dl>
+<p>For a comprehensive list of all theme options, visit this reference: https://ggplot2.tidyverse.org/reference/theme.html</p>
 </div>
+</div>
+</div>
+<p>Once you’re happy with how your plot looks, assign it to an object, and save it to the <code>figs</code> directory using <code>ggsave()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(...) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_xxx</span>() <span class="sc">+</span> ...</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"figs/final_plot.png"</span>, <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1698,16 +1706,13 @@ Plots
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <code>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</code></p>
-</div>
-</div>
-</div>
+<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong></p>
 </div>
 </div>
 </section>
-<section id="collaborate-on-a-report-and-publish-using-github-pages" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="collaborate-on-a-report-and-publish-using-github-pages"><span class="header-section-number">3</span> Collaborate on a report and publish using GitHub pages</h2>
-<p>The final step! Time to work together again. Collaborate with your partner in <code>lobster-report.qmd</code> to create a report to publish to GitHub pages.</p>
+<section id="collaborate-on-a-report-and-publish-using-github-pages" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="collaborate-on-a-report-and-publish-using-github-pages"><span class="header-section-number">5</span> Collaborate on a report and publish using GitHub pages</h2>
+<p>The final step! Time to work together again. Collaborate with your partner in <code>lobster_report.qmd</code> to create a report to publish to GitHub pages.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1718,10 +1723,10 @@ Plots
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As you’re working on the <code>lobster-report.qmd</code> you will be conducting <a href="https://en.wikibooks.org/wiki/Introduction_to_Software_Engineering/Quality/Code_Review#:~:text=Code%20review%20practices%20fall%20into,review%20and%20lightweight%20code%20review">two types of code reviews</a>: (1) pair programming and (2) lightweight code review.</p>
+<p>As you’re working on the <code>lobster_report.qmd</code> you will be conducting <a href="https://en.wikibooks.org/wiki/Introduction_to_Software_Engineering/Quality/Code_Review#:~:text=Code%20review%20practices%20fall%20into,review%20and%20lightweight%20code%20review">two types of code reviews</a>: (1) pair programming and (2) lightweight code review.</p>
 <ul>
-<li><p><strong>Pair programming</strong> is where two people develop code together at the same workstation. One person is the “driver” and one person is the “navigator”. The driver writes the code while the navigator observes the code being typed, points out any immediate quick fixes, and will also Google / troubleshoot if errors occur. Both the Owner and the Collaborator should experience both roles, so switch halfway through or at a meaningful stopping point.</p></li>
-<li><p>A <strong>lightweight code review</strong> is brief and you will be giving feedback on code readability and code logic as you’re adding Owner and Collaborator code from their respective <code>analysis.qmd</code>s to the <code>lobster-report.qmd</code>. Think of it as a walk through of your the code for the data visualizations you plan to include in the report (this includes the code you wrote to create the subset for the plot and the code to create the plot) and give quick feedback.</p></li>
+<li><p><strong>Pair programming</strong> is where two people develop code together at the same workstation. One person is the “driver” and one person is the “navigator”. The driver writes the code while the navigator observes the code being typed, points out any immediate quick fixes, and will also Google / troubleshoot if errors occur. Both the <span style="color: orange;"><strong>Owner</strong></span> and the <span style="color: purple;"><strong>Collaborator</strong></span> should experience both roles, so switch halfway through or at a meaningful stopping point.</p></li>
+<li><p>A <strong>lightweight code review</strong> is brief and you will be giving feedback on code readability and code logic as you’re adding <span style="color: orange;"><strong>Owner</strong></span> and <span style="color: purple;"><strong>Collaborator</strong></span> code from their respective <code>analysis.qmd</code>s to the <code>lobster_report.qmd</code>. Think of it as a walk through of your the code for the data visualizations you plan to include in the report (this includes the code you wrote to create the subset for the plot and the code to create the plot) and give quick feedback.</p></li>
 </ul>
 </div>
 </div>
@@ -1729,49 +1734,54 @@ Plots
 <ul>
 <li>citation of the data</li>
 <li>brief summary of the abstract (i.e.&nbsp;1-2 sentences) from the <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-sbc.77.8">EDI Portal</a></li>
-<li>Owner analysis and visualizations (you choose which plots you want to include)
+<li><span style="color: orange;"><strong>Owner</strong></span> analysis and visualizations (you choose which plots you want to include)
 <ul>
 <li>Try adding alternative text to your plots (See <a href="https://quarto.org/docs/authoring/figures.html#alt-text">Quarto Documentation</a>)</li>
 <li>Plots can be added either with the data visualization code or with Markdown syntax (calling a saved image) - it’s up to you if you want to include the code or not.</li>
 </ul></li>
-<li>Collaborator analysis and visualizations (you choose which plots you want to include)
+<li><span style="color: purple;"><strong>Collaborator</strong></span> analysis and visualizations (you choose which plots you want to include)
 <ul>
 <li>Try adding alternative text to your plots (See <a href="https://quarto.org/docs/authoring/figures.html#alt-text">Quarto Documentation</a>)</li>
 <li>plots can be added either with the data visualization code or with Markdown syntax (calling a saved image) - it’s up to you if you want to include the code or not.</li>
 </ul></li>
 </ul>
-<p>Finally, publish on GitHub pages (from Owner’s repository). Refer back to <a href="https://learning.nceas.ucsb.edu/2024-10-coreR/session_12.html">Chapter 12</a> for steps on how to publish using GitHub pages.</p>
+<p>Finally, publish on GitHub pages (from <span style="color: orange;"><strong>Owner</strong></span>’s repository). Refer back to <a href="https://learning.nceas.ucsb.edu/2024-10-coreR/session_12.html">Chapter 12</a> for steps on how to publish using GitHub pages.</p>
 </section>
-<section id="bonus-add-marine-protected-area-mpa-designation-to-the-data" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="bonus-add-marine-protected-area-mpa-designation-to-the-data"><span class="header-section-number">4</span> Bonus: Add marine protected area (MPA) designation to the data</h2>
+<section id="bonus-add-marine-protected-area-mpa-designation-to-the-data" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="bonus-add-marine-protected-area-mpa-designation-to-the-data"><span class="header-section-number">6</span> Bonus: Add marine protected area (MPA) designation to the data</h2>
 <p>The sites <code>IVEE</code> and <code>NAPL</code> are marine protected areas (MPAs). Add this designation to your data set using a new function called <code>case_when()</code>. Then create some new plots using this new variable. Does it change how you think about the data? What new plots or analysis can you do with this new variable?</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Lobster Abundance &amp; Size Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Lobster Trap Buoy Counts Data</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Lobster Abundance &amp; Size Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">Lobster Trap Buoy Counts Data</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <p>Use the object <code>lobster_abundance</code> and add a new column called <code>DESIGNATION</code> that contains “MPA” if the site is <code>IVEE</code> or <code>NAPL</code>, and “not MPA” for all other values.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>lobster_mpa <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">DESIGNATION =</span> <span class="fu">case_when</span>(</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    SITE <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"IVEE"</span>, <span class="st">"NAPL"</span>) <span class="sc">~</span> <span class="st">"MPA"</span>,</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    SITE <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"AQUE"</span>, <span class="st">"CARP"</span>, <span class="st">"MOHK"</span>) <span class="sc">~</span> <span class="st">"not MPA"</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p>Use the object <code>lobster_traps</code> and add a new column called <code>DESIGNATION</code> that contains “MPA” if the site is <code>IVEE</code> or <code>NAPL</code>, and “not MPA” for all other values.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>lobster_traps_mpa <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>lobster_mpa <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">DESIGNATION =</span> <span class="fu">case_when</span>(</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    SITE <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"IVEE"</span>, <span class="st">"NAPL"</span>) <span class="sc">~</span> <span class="st">"MPA"</span>,</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    SITE <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"AQUE"</span>, <span class="st">"CARP"</span>, <span class="st">"MOHK"</span>) <span class="sc">~</span> <span class="st">"not MPA"</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    site <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"IVEE"</span>, <span class="st">"NAPL"</span>) <span class="sc">~</span> <span class="st">"MPA"</span>,</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    site <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"AQUE"</span>, <span class="st">"CARP"</span>, <span class="st">"MOHK"</span>) <span class="sc">~</span> <span class="st">"not MPA"</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>Use the object <code>lobster_traps</code> and add a new column called <code>designation</code> that contains “MPA” if the site is <code>IVEE</code> or <code>NAPL</code>, and “not MPA” for all other values.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>lobster_traps_mpa <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">designation =</span> <span class="fu">case_when</span>(</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    site <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"IVEE"</span>, <span class="st">"NAPL"</span>) <span class="sc">~</span> <span class="st">"MPA"</span>,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    site <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"AQUE"</span>, <span class="st">"CARP"</span>, <span class="st">"MOHK"</span>) <span class="sc">~</span> <span class="st">"not MPA"</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-reed_2024" class="csl-entry" role="listitem">
+Reed, Daniel C, and Robert J Miller. 2024. <span>“SBC LTER: Reef: Abundance, Size and Fishing Effort for California Spiny Lobster (Panulirus Interruptus), Ongoing Since 2012 Ver 10.”</span> Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/63eca8e267cdaf016709e5c1b3d746d4">https://doi.org/10.6073/pasta/63eca8e267cdaf016709e5c1b3d746d4</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

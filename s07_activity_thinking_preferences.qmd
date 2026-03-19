@@ -25,9 +25,7 @@ Facilitating equitable participation also helps to unleash the full capacity of 
 
 Finally, when the time comes for decision making, effective facilitation can ensure that the full range of questions, opinions, and concerns has been surfaced and weighed before the group makes a decision. This is critical. If you move forward with surface-level agreement, but without true alignment, commitment to the decision is likely to erode over time. 
 
-<p align="center">
-<img src="images/thinking_preferences/agreement-alignment.png" alt="Figure of two right-facing arrows filled with smaller arrows. The small arrows filling the large 'agreement' arrow mostly face right but there is a lot of variation. The small arrows filling the large 'alignment' arrow all face the same way as the larger arrow" width="50%"/>
-</p>
+![](images/thinking_preferences/agreement-alignment.png){fig-alt="Figure of two right-facing arrows filled with smaller arrows. The small arrows filling the large 'agreement' arrow mostly face right but there is a lot of variation. The small arrows filling the large 'alignment' arrow all face the same way as the larger arrow" width="50%" fig-align="center"}
 
 ::::{.callout-exercise}
 ## Exercise: Rapid Assessment
@@ -67,9 +65,10 @@ As a whole class, let's discuss your answers to the following questions:
 As we learned earlier in the course, people have different thinking preferences which influence what they expect and enjoy in group processes (see Ned Herrmann's Whole Brain Model below).
 
 :::{layout-ncol=2 layout-valign="center"}
-<img src="images/thinking_preferences/whole-brain-model.png" alt="Top-down image of a circle divided into four sections. Top left is blue, labeled 'analytical' in the circle. Top right is yellow, labeled 'experimental' in the circle. Bottom right is red and labeled 'relational' in circle. Bottom left is green and is labeled 'practical' in the circle. The circle also labels the lines separating each pair of adjacent quadrants as follows: analytical and experimental is 'intellectual', experimental and relational is 'intuitive', relational and practical is 'instinctive', and practical and analytical is 'rational'." width="100%"/>
 
-<img src="images/thinking_preferences/thinking-style-expects.png" alt="Circle divided into same quadrants as previous image where each quadrant contains the expectations and enjoyments of that thinking style. Top left expects clear/concise info, well articulated ideas, accuracy, and certainty and enjoys a good debate, critical analysis, and readings. Top right expects an overview, a conceptual framework, freedom to explore, analogies/metaphors, and visuals and enjoys initiative and imagination, connections to other approaches, newness and 'fun'. Bottom right expects involvement with others, personal anecdotes, experimental approach, and feelings to be considered and enjoys the personal touch, group discussion and harmony. Bottom left expects step-by-step unfolding, detailed program, punctuality, and an explanation of how and enjoys a structured approach, low risk, and concrete examples" width="120%"/>
+![](images/thinking_preferences/whole-brain-model.png){fig-alt="Top-down image of a circle divided into four sections. Top left is blue, labeled 'analytical' in the circle. Top right is yellow, labeled 'experimental' in the circle. Bottom right is red and labeled 'relational' in circle. Bottom left is green and is labeled 'practical' in the circle. The circle also labels the lines separating each pair of adjacent quadrants as follows: analytical and experimental is 'intellectual', experimental and relational is 'intuitive', relational and practical is 'instinctive', and practical and analytical is 'rational'" width="80%" fig-align="center" .lightbox}
+
+![](images/thinking_preferences/thinking-style-expects.png){fig-alt="Circle divided into same quadrants as previous image where each quadrant contains the expectations and enjoyments of that thinking style. Top left expects clear/concise info, well articulated ideas, accuracy, and certainty and enjoys a good debate, critical analysis, and readings. Top right expects an overview, a conceptual framework, freedom to explore, analogies/metaphors, and visuals and enjoys initiative and imagination, connections to other approaches, newness and 'fun'. Bottom right expects involvement with others, personal anecdotes, experimental approach, and feelings to be considered and enjoys the personal touch, group discussion and harmony. Bottom left expects step-by-step unfolding, detailed program, punctuality, and an explanation of how and enjoys a structured approach, low risk, and concrete examples" width="100%" fig-align="center" .lightbox}
 
 :::
 
@@ -121,9 +120,7 @@ Good meeting design starts with understanding your purpose and objectives, as we
 
 A good rule of thumb is to allow 2-3x as much time to plan a meeting as its duration. 
 
-<p align="center">
-<img src="images/thinking_preferences/meeting-design-questions.png" alt="Figure separating meeting planning into 'why, what, how, and who' facets" width="95%"/>
-</p>
+![](images/thinking_preferences/meeting-design-questions.png){fig-alt="Figure separating meeting planning into 'why, what, how, and who' facets" width="100%" .lightbox}
 
 ## Online Meetings
 
@@ -179,9 +176,7 @@ Here are a few microstructures that work well for small group virtual meetings. 
 | Polling | **<span style="color:blue">Analytical</span>**, **<span style="color:green">Practical</span>** | Rank alternatives | Before you start - clarify how you will use the results - are you gathering information or taking a vote to make a decision?; Decide how many votes per person; In person - use sticky dots; Virtually - use +1s in a google doc or a digital polling tool (e.g., Zoom, Mural, slido) |
 | Feasibility-Impact Matrix (see figure below) | **<span style="color:blue">Analytical</span>**, **<span style="color:green">Practical</span>**, **<span style="color:gold">Experimental</span>** | Compare alternatives | Discuss and agree on definitions for two criteria for evaluating ideas: feasibility of implementation and impact potential; Rate each idea against these two axes and map onto 2x2 grid |
 
-<p align="center">
-<img src="images/thinking_preferences/project-impact-vs-feasibility.png" alt="Graph of impact versus feasibility where both axes range from low to high and the plot area is divided into four equal sections" width="70%"/>
-</p>
+![](images/thinking_preferences/project-impact-vs-feasibility.png){fig-alt="Graph of impact versus feasibility where both axes range from low to high and the plot area is divided into four equal sections" width="70%" fig-align="center" .lightbox}
 
 ## Harvesting Content
 

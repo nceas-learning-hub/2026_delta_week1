@@ -1,106 +1,158 @@
 ---
-title: Project Management & Team Science Facilitation
+title: Project Management & Team Facilitation
 ---
 
-:::{.callout-tip}
-### Learning Objectives
+:::{.callout-learning}
+After completing this session, you will be able to:
 
--   bullet pointed learning objectives
-:::
+- Articulate key principles of project management
+- Define common approaches for defining project scope
+- Identify and make explicit internal logical leaps
+- Develop (or refine) the project management framework for your team project
 
-
-## Use level 2 headers for sections
-
-## Images
-
-The file path for images in the final course will be `images/<folder with same base name as lesson>/<image file>`.  When you rename this blank placeholder, rename (or make a copy if you're using multiple placeholders) the folder in `images` from `blank_placeholder` to the base name of your lesson.
-
-![Alt text](images/blank_placeholder/allison-horst-code-kitchen.png)
-
-
-## Callouts
-
-Quarto offers some built-in [callout blocks](https://quarto.org/docs/authoring/callouts.html) to set content off against the normal body text.  Note that we've customized the colors of our callouts to better match our course styling (see the `lh_theme` extension).  
-
-### Standard callouts
-
-There are five built-in callouts signalling different levels of urgency:
-
-* tip `{.callout-tip}`
-* note `{.callout-note}`
-* caution `{.callout-caution}`
-* warning `{.callout-warning}`
-* important `{.callout-important}`
-
-See the [callout reference](https://quarto.org/docs/authoring/callouts.html) for how to create these.
-
-Based on the color and icons, here are recommendations on when and how to use these, in descending order of urgency:
-
-::: {.callout-important}
-Use `{.callout-important}` to highlight things that the reader _must_ pay attention to, or essential ideas and concepts.
-:::
-
-::: {.callout-warning}
-Use `{.callout-warning}` to highlight common "gotchas" such as common user errors or unexpected behavior.
-:::
-
-::: {.callout-caution}
-Use `{.callout-caution}` to indicate materials under development; consider using `{.callout-warning}` for other cases.
 :::
 
 ::: {.callout-note}
-Use `{.callout-note}` to communicate deeper ideas or understandings that are not critical to understanding the lesson at hand.  The instructor might skip over these while teaching.  If the reader does not read this, they may miss out, but nothing bad will happen.
+## Acknowledgments
+
+The content in this page was adapted from the Long Term Ecological Research (LTER) Network's course "Synthesis Skills for Early Career Researchers" (SSECR). Those materials can be found at [lter.github.io/ssecr](https://lter.github.io/ssecr/)
 :::
 
-::: {.callout-tip}
-Use `{.callout-tip}` to communicate learning objectives, key points, and helpful tips and tricks.
+## What is Project Management?
+
+There are dozens of formal project management frameworks/approaches, most of which come out of industries (such as software development, construction, and manufacturing) that require teams of people to work together with efficiency and accountability. You've probably heard the names tossed around: Agile, Scrum, Lean Sigma Six, Kanban, etc. There are whole industries devoted to training project managers and developing apps to support them.
+
+The trick, for scientific research projects, is to identify the approaches that also allow questions and goals to evolve along the way – and that don't require a full-time project manager to implement.
+
+| PM Activity | Industry Outcome | Science Outcome |
+|:---------------------|:-----------------------|:-----------------------|
+| Build a logical sequence of steps | Ensure needed resources/people tools are available when needed | Know which skills are needed when; know what form the output of each script/analysis needs to take |
+| Identify dependencies | Avoid supply chain lags | Know what data you need and when you need them |
+| Clarify responsibilities/accountabilities | Document productivity and responsibility | Avoid duplication of effort; keep the project moving; support authorship/credit agreements |
+| Identify and mitigate risks | Know when to abort or revise project goals | Assess threats to project success early and make a plan B |
+: **Some common elements of project management schemes** {.striped .hover .bordered}
+
+## How to Start
+
+Like outlining a paper, there are a few basic steps to developing a solid project management plan.
+And it's easy to think you can skip over the first steps because they seem so obvious.
+The trouble is, they may be obvious to each team member in different ways.
+Taking the time to make sure you all see them the same way can save worlds of headache down the road.
+
+1. Define the project
+2. Agree on the goal and the timeline
+3. If the timeline is determined externally (as for SSECR or for most grants), you'll need to start with the timeline (possibly budget) and scope the project to fit the time and funds you have available.
+4. Develop a list of the steps needed to get from where you are to where you need to be.
+5. Place the steps in order and define the inputs and outputs of each step.
+6. Identify the people responsible for each step and an approximate timeline for its completion.
+7. Identify time points for check-in and re-evaluation
+
+Honestly, you could do all of this in a spreadsheet, but there are a few types of visualizations that a lot of people find helpful, which we'll discuss later today.
+First, though, we'll remind ourselves of _why_ the investment in planning time is so valuable.
+
+::::{.callout-exercise}
+
+Anyone who has completed a moderately complex task has stories about planning failures: critical tools left back at the lab when doing field work; key recipe ingredients not purchased before the guests arrive; logistical questions un-asked and un-planned for; mismatched assumptions revealed only at the last moment...
+
+:::{.panel-tabset}
+### Part 1
+
+- Reflect silently on one of your own project management "fails"
+    - What went wrong?
+    - How could planning have prevented or improved the situation?
+
+### Part 2
+
+- Share your project management "fails"
+- If time allows, consider what aspects of planning are most likely to be skipped or overlooked
+
 :::
+::::
 
+## Defining the Project
 
-### Custom callouts
+For defining the project and agreeing on the goals, mind maps are useful individual or group exercises.
+Mind maps offer a lightly-structured way of exploring a focus area.
+The graphical approach helps to surface unexpected connections and reveal gaps in understanding.
+Tools for developing them can be as simple as pen and paper, basic drawing apps, a zoom whiteboard, or online collaboration and project planning tools such as Miro, Mural, and FigJam.
 
-There are currently four custom callouts for different types of tasks:
+Start with a general topic or question, then expand to the precedents and implications.
+Then expand from there to the assumptions, modifying conditions, or follow-on implications related to each of your precedents or implications.
+Often, looking at a problem head-on reveals little new, but surfacing and testing the underlying assumptions can open up fresh territory.
 
-* exercise `{.callout-exercise}`
-* hint `{.callout-hint}`
-* answer `{.callout-answer}`
-* example `{.callout-example}`
+<p align="center">
+<img src="images/figure_mind-map.png" alt="Bubble with a central concept or question, surrounded, at the first level, by inputs, outputs or modifiers and at the second level by question, concerns, or implications" width="90%"/>
+</p>
 
+The mind map will likely surface many relevant and un-answered questions, but time is limited.
+You'll need to choose one on which to focus.
+One way to prioritize them is to place them on a two-by-two matrix of payoff v. feasibility.
+The most important payoff for a particular team may be scientific novelty, practical importance, or whether it's a fun and engaging question for the group.
+Often, the most interesting questions will also require the most effort and the group will need to determine what trade-offs they are willing to accept.
+But sometimes, a question emerges that is both interesting and feasible--perhaps because a new source of data has just become available or simply because no one saw the question from that angle before.
 
-These custom callouts work thanks to [Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/](https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html).  Unfortunately, the title is not responsive to the `title` argument in the callout or to the header-style titling that the built-in callouts can use.  The collapse option also seems to be unresponsive currently.
+<p align="center">
+<img src="images/figure_feasibility-matrix.png" alt="x and y axes, labelled with novelty/importance (Y) and feasibility (x), with project ideas distributed across the resulting space" width="90%"/>
+</p>
 
-::: {.callout-exercise}
-Use `{.callout-exercise}` for exercises.  The current default numbers exercises within a given page.  Click on the _hint_ and _answer_ callouts below to reveal the information in them.
+## Outline Your Analysis
 
-::: {.callout-hint}
-Use `{.callout-hint}` for hints to the exercise - defaults to `collapse=true` for obvious reasons.  Note they can be nested within an exercise, or stand-alone.
-:::
+Once the team has settled on a question and specific set of processes to explore or test, it's worth sketching out the steps in your analysis.
+By making the inputs, processing, and outputs of each step explicit, you'll identify needed data sooner and avoid (some) backtracking.
 
-::: {.callout-answer}
-Use `{.callout-answer}` for answers to the exercise - defaults to `collapse=true` for obvious reasons.  Note they can be nested within an exercise, or stand-alone.
-:::
+The process of building an explicit analysis description as a team can quickly reveal mismatches in team members' mental models and uncover hidden assumptions.
+Making those (often disciplinary) differences visible early can mitigate some of the biggest risks of interdisciplinary research and also offer a way into the most novel insights.
+A well-structured analysis plan can also be a touchstone to return to throughout the life of your project, keeping the team on-track and avoiding mission creep.
 
-:::
+<p align="center">
+<img src="images/figure_analysis-flow.png" alt="rectangular boxes containing data sources (Si concentration, streamflow, watershed geometry and land use, watershed precipitation), linked to diamond-shaped boxed describing processing steps, linked to more rectangles with outputs" width="90%"/>
+<figcaption>Analysis flowchart for a (relatively) straightforward test of controls on Silica exports in streamflow.</figcaption>
+</p>
 
-::: {.callout-example}
-Use `{.callout-example}` for examples, e.g., example data or example.
-:::
+## Plan the Work
 
-## Slides
+Once your team goals and the necessary steps are agreed on, it becomes much easier to build a project plan that clarifies the timeline and team member responsibilities.
+Especially with limited-term projects such as ours, a Gantt chart can be a particularly valuable way to map out project dependencies and responsibilities.
+With each task arranged on a timeline, it becomes easier to spot potential dependencies that could otherwise hold up the project.
+With simultaneous tasks stacked vertically, it becomes apparent when the planned workload is unrealistic.
 
-Slides should when possible be created as Quarto slide decks.  Slide decks for a lesson should be created in the folder `slides/<lesson base name>/<slide deck name.html>` folder as qmd files (note, the link in the lesson must point to the html, not the qmd).  When you create a new lesson, you should rename the `slides/blank_placeholder` folder to match the base name of your lesson.
+- Before diving into any specific tool, start by making a list of your goal and the steps necessary to get there.
+- Place them into an outline in the order they must proceed.
+    - Some steps cannot start until others are finished, while others can proceed simultaneously.
+    - Sequential steps get a new number, while steps that can be done in parallel get the same number with different letters.
+- Attach an estimated time frame to each step and identify a responsible team member (tentative at this point).
+- Arrange the steps in colored bars along a horizontal timeline.
+- Use the visualization to assess which steps are likely to be bottlenecks and when the team may be relying too heavily on one individual for mission-critical work.
 
-You can call your slide deck quarto docs whatever you like, and have multiple slide decks.  You can also include images in your deck, perhaps with an `images` folder in the `slides` folder (NOTE: this is separate from images that show up in the main site page), and images can be referenced with relative file paths.  E.g., `slides/blank_placeholder/slides1.qmd` might have an image at `slides/blank_placeholder/images/tidyverse_hex.jpg`, so in the qmd, you could just point to `![](images/tidyverse_hex.jpg)`.
+A robust support infrastructure exists for the project management profession -- including formal training and a multitude of (often pricey) apps.
+But for the job of managing research collaborations, we've found that the single most important factor is whether your collaborators will use the system.
+For that to happen, they must have easy access to it, ideally without setting up a new account and as part of something they already do every day.
 
-There is a default .scss file in the slides folder, use it or modify it as you like.
+For non-coders, we've included a [Google sheet template](https://docs.google.com/spreadsheets/d/1VtbsyTtJE-clviTAjtDnXM1GvXP6JusDq06AVm8WOUI/edit?usp=sharing) of a Gantt chart, pictured below.
 
-[Full Screen](slides/blank_placeholder/slides1.html)
+<p align="center">
+<img src="images/image_gantt-image.png" alt="a series of overlapping horizontal colored bars represents the active work periods for several critical project tasks" width="100%"/>
+</p>
 
-```{=html}
-<iframe class="slide-deck" src="slides/blank_placeholder/slides1.html" style="border: 1px solid #2e3846;"></iframe>
-```
+But if you're already working in GitHub or GitLab to collaborate on code, why not take advantage of GitHub's project management capabilities?
+In GitHub, issues from your repos can be assigned to projects (which sit at a level above repos), allowing an overarching view of all the tasks associated with a project.
+Issues can also be created in the project itself.
+Both kinds of issues can be assigned to individuals, marked with topical tags, and assigned start and due dates.
+The examples below draw from the repository we are using to organize the first iteration of this course.
 
+<p align="center">
+<img src="images/image_github-project.png" alt="a series of vertical boards labelled back burner, inqueue, active progress, waiting, and done, with cards for specific tasks and individuals and due dates assigned" width="100%"/>
+<figcaption>Organizing with GitHub Projects</figcaption>
+</p>
 
-## Data
+Two additional views make it even easier to track overall progress and individual workloads.
+The "roadmap" view in GitHub functions like an interactive Gantt chart, once start and target dates are assigned to an issue.
+In the roadmap view, issues can by dragged forward and back in time and the issue's start or end date will adjust accordingly.
+The stack of issues can be sorted by start date, target date, topic tags or assigned collaborator.
 
-If you have specific data that your lesson requires to knit successfully, put it in the `data/blank_placeholder` folder.  It is probably best to avoid this though, use data from packages or online if possible, or create toy datasets directly in the .qmd.
+The "sliced tasks view" also allows each collaborator to see only their own assigned tasks.
+
+<p align="center">
+<img src="images/image_github-gantt.png" alt="a series of overlapping horizontal colored bars represents the active work periods for several critical project tasks" width="100%"/>
+<figcaption>Gantt Chart Example using GitHub Projects</figcaption>
+</p>

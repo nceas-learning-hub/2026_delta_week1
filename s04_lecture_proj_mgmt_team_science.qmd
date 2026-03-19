@@ -80,9 +80,7 @@ Start with a general topic or question, then expand to the precedents and implic
 Then expand from there to the assumptions, modifying conditions, or follow-on implications related to each of your precedents or implications.
 Often, looking at a problem head-on reveals little new, but surfacing and testing the underlying assumptions can open up fresh territory.
 
-<p align="center">
-<img src="images/proj_mgmt_team_science/mind-map.png" alt="Bubble with a central concept or question, surrounded, at the first level, by inputs, outputs or modifiers and at the second level by question, concerns, or implications" width="90%"/>
-</p>
+![](images/proj_mgmt_team_science/mind-map.png){fig-alt="Bubble with a central concept or question, surrounded, at the first level, by inputs, outputs or modifiers and at the second level by question, concerns, or implications" width="90%" fig-align="center" .lightbox}
 
 The mind map will likely surface many relevant and un-answered questions, but time is limited.
 You'll need to choose one on which to focus.
@@ -91,9 +89,7 @@ The most important payoff for a particular team may be scientific novelty, pract
 Often, the most interesting questions will also require the most effort and the group will need to determine what trade-offs they are willing to accept.
 But sometimes, a question emerges that is both interesting and feasible--perhaps because a new source of data has just become available or simply because no one saw the question from that angle before.
 
-<p align="center">
-<img src="images/proj_mgmt_team_science/feasibility-matrix.png" alt="x and y axes, labelled with novelty/importance (Y) and feasibility (x), with project ideas distributed across the resulting space" width="90%"/>
-</p>
+![](images/proj_mgmt_team_science/feasibility-matrix.png){fig-alt="x and y axes, labelled with novelty/importance (Y) and feasibility (x), with project ideas distributed across the resulting space" width="90%" fig-align="center" .lightbox}
 
 ## Outline Your Analysis
 
@@ -104,10 +100,7 @@ The process of building an explicit analysis description as a team can quickly r
 Making those (often disciplinary) differences visible early can mitigate some of the biggest risks of interdisciplinary research and also offer a way into the most novel insights.
 A well-structured analysis plan can also be a touchstone to return to throughout the life of your project, keeping the team on-track and avoiding mission creep.
 
-<p align="center">
-<img src="images/proj_mgmt_team_science/analysis-flow.png" alt="rectangular boxes containing data sources (Si concentration, streamflow, watershed geometry and land use, watershed precipitation), linked to diamond-shaped boxed describing processing steps, linked to more rectangles with outputs" width="90%"/>
-<figcaption>Analysis flowchart for a (relatively) straightforward test of controls on Silica exports in streamflow.</figcaption>
-</p>
+![Analysis flowchart for a (relatively) straightforward test of controls on Silica exports in streamflow](images/proj_mgmt_team_science/analysis-flow.png){fig-alt="rectangular boxes containing data sources (Si concentration, streamflow, watershed geometry and land use, watershed precipitation), linked to diamond-shaped boxed describing processing steps, linked to more rectangles with outputs" width="90%" fig-align="center" .lightbox}
 
 ## Plan the Work
 
@@ -135,9 +128,7 @@ Let's focus on two tangible modalities for managing a project.
 
 For non-coders, we've included a [Google sheet template](https://docs.google.com/spreadsheets/d/1VtbsyTtJE-clviTAjtDnXM1GvXP6JusDq06AVm8WOUI/edit?usp=sharing) of a Gantt chart, pictured below.
 
-<p align="center">
-<img src="images/proj_mgmt_team_science/gantt-image.png" alt="a series of overlapping horizontal colored bars represents the active work periods for several critical project tasks" width="100%"/>
-</p>
+![](images/proj_mgmt_team_science/gantt-image.png){fig-alt="a series of overlapping horizontal colored bars represents the active work periods for several critical project tasks" .lightbox}
 
 ### GitHub 
 
@@ -147,10 +138,7 @@ Issues can also be created in the project itself.
 Both kinds of issues can be assigned to individuals, marked with topical tags, and assigned start and due dates.
 The examples below draw from the repository we are using to organize the first iteration of this course.
 
-<p align="center">
-<img src="images/proj_mgmt_team_science/github-project.png" alt="a series of vertical boards labelled back burner, inqueue, active progress, waiting, and done, with cards for specific tasks and individuals and due dates assigned" width="100%"/>
-<figcaption>Organizing with GitHub Projects</figcaption>
-</p>
+![](images/proj_mgmt_team_science/github-project.png){fig-alt="a series of vertical boards labelled back burner, inqueue, active progress, waiting, and done, with cards for specific tasks and individuals and due dates assigned" .lightbox}
 
 Two additional views make it even easier to track overall progress and individual workloads.
 The "roadmap" view in GitHub functions like an interactive Gantt chart, once start and target dates are assigned to an issue.
@@ -159,9 +147,6 @@ The stack of issues can be sorted by start date, target date, topic tags or assi
 
 The "sliced tasks view" also allows each collaborator to see only their own assigned tasks.
 
-<p align="center">
-<img src="images/proj_mgmt_team_science/github-gantt.png" alt="a series of overlapping horizontal colored bars represents the active work periods for several critical project tasks" width="100%"/>
-<figcaption>Gantt Chart Example using GitHub Projects</figcaption>
-</p>
+![Gantt Chart Example using GitHub Projects](images/proj_mgmt_team_science/github-gantt.png){fig-alt="a series of overlapping horizontal colored bars represents the active work periods for several critical project tasks" .lightbox}
 
 :::

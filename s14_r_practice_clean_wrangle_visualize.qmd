@@ -41,16 +41,16 @@ Your task: Collaborate on an analysis and create a report to publish using GitHu
 
 1. Select one partner to be the [**Owner**]{style="color: orange;"}; the other is the [**Collaborator**]{style="color: purple;"}
 2. The [**Owner**]{style="color: orange;"} creates a repository on GitHub titled `lobster_analysis` (or similar).  When creating the repository: ([**Collaborator**]{style="color: purple;"} help follow these directions!)
-    * add a brief description (e.g., "R Practice Session: Collaborating on, Wrangling & Visualizing Data")
-    * keep the repo Public
-    * initialize the repo with a `README` file and an R `.gitignore` template.
+    - Add a brief description (e.g., "R Practice Session: Collaborating on, Wrangling & Visualizing Data")
+    - Keep the repo Public
+    - Initialize the repo with a `README` file and an R `.gitignore` template.
 3. The [**Owner**]{style="color: orange;"} invites the [**Collaborator**]{style="color: purple;"} to the repo on GitHub 
-    * Settings --> Collaborators --> Manage Access --> Invite a collaborator)
-    * [**Collaborator**]{style="color: purple;"} accepts invitation
+    - Settings {{< fa arrow-right >}} Collaborators {{< fa arrow-right >}} Manage Access  {{< fa arrow-right >}} Invite a collaborator
+    - [**Collaborator**]{style="color: purple;"} accepts invitation
 4. Both the [**Collaborator**]{style="color: purple;"} and the [**Owner**]{style="color: orange;"} clone the repo into their local computer (e.g., through RStudio, Positron, or Terminal)
 
 :::{.callout-warning}
-Note, the repository was created as "public" so anyone can see and clone the repo, and make local changes, even without being added as a collaborator.  However, non-collaborators will not have permissions to push changes back to the repository.
+Note, the repository was created as "public" so anyone can see and clone the repo, and make local changes, even without being added as a collaborator.  However, non-collaborators will not have permissions to push changes back to the remote repository.
 :::
 
 ### Create Files and Add Data

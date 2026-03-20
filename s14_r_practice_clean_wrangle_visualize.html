@@ -602,7 +602,7 @@ div.csl-indent {
   <li><a href="#create-a-new-repository-with-a-partner" id="toc-create-a-new-repository-with-a-partner" class="nav-link" data-scroll-target="#create-a-new-repository-with-a-partner"><span class="header-section-number">1.1</span> Create a New Repository With a Partner</a></li>
   <li><a href="#create-files-and-add-data" id="toc-create-files-and-add-data" class="nav-link" data-scroll-target="#create-files-and-add-data"><span class="header-section-number">1.2</span> Create Files and Add Data</a></li>
   </ul></li>
-  <li><a href="#explore-clean-and-wrangle-data" id="toc-explore-clean-and-wrangle-data" class="nav-link" data-scroll-target="#explore-clean-and-wrangle-data"><span class="header-section-number">2</span> Explore, clean and wrangle data</a></li>
+  <li><a href="#explore-clean-and-wrangle-data" id="toc-explore-clean-and-wrangle-data" class="nav-link" data-scroll-target="#explore-clean-and-wrangle-data"><span class="header-section-number">2</span> Explore, Clean, and Wrangle Data</a></li>
   <li><a href="#create-visually-appealing-and-informative-data-visualization" id="toc-create-visually-appealing-and-informative-data-visualization" class="nav-link" data-scroll-target="#create-visually-appealing-and-informative-data-visualization"><span class="header-section-number">3</span> Create visually appealing and informative data visualization</a></li>
   <li><a href="#customize-your-visualizations" id="toc-customize-your-visualizations" class="nav-link" data-scroll-target="#customize-your-visualizations"><span class="header-section-number">4</span> Customize your Visualizations</a></li>
   <li><a href="#challenge-yourself-mpas-optional" id="toc-challenge-yourself-mpas-optional" class="nav-link" data-scroll-target="#challenge-yourself-mpas-optional"><span class="header-section-number">5</span> Challenge yourself: MPAs! (optional)</a>
@@ -677,20 +677,20 @@ div.csl-indent {
 </section>
 <section id="setup-collaborative-repository" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="setup-collaborative-repository"><span class="header-section-number">1</span> Setup Collaborative Repository</h2>
-<p>For this collaborative report, participants will be working in pairs. Each partner will focus on a different portion of the analysis, and the collaboration will bring the two sub-analyses together into a single collaborative report.</p>
+<p><strong>For this collaborative report, participants will be working in pairs.</strong> Each partner will focus on a different portion of the analysis, and the collaboration will bring the two sub-analyses together into a single collaborative report.</p>
 <section id="create-a-new-repository-with-a-partner" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="create-a-new-repository-with-a-partner"><span class="header-section-number">1.1</span> Create a New Repository With a Partner</h3>
 <ol type="1">
 <li>Select one partner to be the <span style="color: orange;"><strong>Owner</strong></span>; the other is the <span style="color: purple;"><strong>Collaborator</strong></span></li>
 <li>The <span style="color: orange;"><strong>Owner</strong></span> creates a repository on GitHub titled <code>lobster_analysis</code> (or similar). When creating the repository: (<span style="color: purple;"><strong>Collaborator</strong></span> help follow these directions!)
 <ul>
-<li>add a brief description (e.g., “R Practice Session: Collaborating on, Wrangling &amp; Visualizing Data”)</li>
-<li>keep the repo Public</li>
-<li>initialize the repo with a <code>README</code> file and an R <code>.gitignore</code> template.</li>
+<li>Add a brief description (e.g., “R Practice Session: Collaborating on, Wrangling &amp; Visualizing Data”)</li>
+<li>Keep the repo Public</li>
+<li>Initialize the repo with a <code>README</code> file and an R <code>.gitignore</code> template.</li>
 </ul></li>
 <li>The <span style="color: orange;"><strong>Owner</strong></span> invites the <span style="color: purple;"><strong>Collaborator</strong></span> to the repo on GitHub
 <ul>
-<li>Settings –&gt; Collaborators –&gt; Manage Access –&gt; Invite a collaborator)</li>
+<li>Settings <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Collaborators <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Manage Access <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Invite a collaborator</li>
 <li><span style="color: purple;"><strong>Collaborator</strong></span> accepts invitation</li>
 </ul></li>
 <li>Both the <span style="color: purple;"><strong>Collaborator</strong></span> and the <span style="color: orange;"><strong>Owner</strong></span> clone the repo into their local computer (e.g., through RStudio, Positron, or Terminal)</li>
@@ -705,7 +705,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Note, the repository was created as “public” so anyone can see and clone the repo, and make local changes, even without being added as a collaborator. However, non-collaborators will not have permissions to push changes back to the repository.</p>
+<p>Note, the repository was created as “public” so anyone can see and clone the repo, and make local changes, even without being added as a collaborator. However, non-collaborators will not have permissions to push changes back to the remote repository.</p>
 </div>
 </div>
 </section>
@@ -733,15 +733,33 @@ Warning
 </ol>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><span style="color: orange;"><strong>Owner</strong></span> downloads data from the EDI Data Portal <a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&amp;identifier=77&amp;revision=10">SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012</a>. a. Create two new directories one called <code>data</code> and one called <code>figs</code> i. <em>Note: Git does not track empty directories, so you won’t see <code>figs</code> when you push to GitHub</em> b. Download the following data and upload them to the <code>data</code> folder: i. Time-series of lobster abundance and size ii. Time-series of lobster trap buoy counts c.&nbsp;After creating the <code>data</code> folder and adding the data, the <span style="color: orange;"><strong>Owner</strong></span> will <strong>stage (add)</strong> the changes, <strong>commit</strong>, and write a commit message. Then <strong>Sync</strong> (Positron) or <strong>Pull</strong> and <strong>Push</strong> (RStudio or Terminal) the files to the remote repository (on GitHub) c.&nbsp;The <span style="color: purple;"><strong>Collaborator</strong></span> <strong>Sync</strong>s or <strong>Pull</strong>s the changes and data into their local repository (their workspace)</p>
+<p><span style="color: orange;"><strong>Owner</strong></span> downloads data for the exercise from the EDI Data Portal</p>
+<ol type="1">
+<li>Go to this data product on EDI: <a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&amp;identifier=77&amp;revision=10">SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012</a>.</li>
+<li>Create two new directories one called <code>data</code> and one called <code>figs</code>
+<ul>
+<li><em>Note: Git does not track empty directories, so you won’t see <code>figs</code> when you push to GitHub</em></li>
+</ul></li>
+<li>Download the following data and upload them to the <code>data</code> folder:
+<ul>
+<li>Time-series of lobster abundance and size</li>
+<li>Time-series of lobster trap buoy counts</li>
+</ul></li>
+<li>After creating the <code>data</code> folder and adding the data, the <span style="color: orange;"><strong>Owner</strong></span> will <strong>stage (add)</strong> the changes, <strong>commit</strong>, and write a commit message. Then <strong>Sync</strong> (Positron) or <strong>Pull</strong> and <strong>Push</strong> (RStudio or Terminal) the files to the remote repository (on GitHub)</li>
+<li>The <span style="color: purple;"><strong>Collaborator</strong></span> <strong>Sync</strong>s or <strong>Pull</strong>s the changes and data into their local repository (their workspace)</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 </section>
 <section id="explore-clean-and-wrangle-data" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="explore-clean-and-wrangle-data"><span class="header-section-number">2</span> Explore, clean and wrangle data</h2>
-<p>For this portion of the exercise, the - <span style="color: orange;"><strong>Owner</strong></span> will be working with the <strong>lobster abundance and size data</strong> - <span style="color: purple;"><strong>Collaborator</strong></span> will be working with the <strong>lobster trap buoy counts data</strong></p>
+<h2 data-number="2" class="anchored" data-anchor-id="explore-clean-and-wrangle-data"><span class="header-section-number">2</span> Explore, Clean, and Wrangle Data</h2>
+<p>For this portion of the exercise, the</p>
+<ul>
+<li><span style="color: orange;"><strong>Owner</strong></span> will be working with the <strong>lobster abundance and size data</strong></li>
+<li><span style="color: purple;"><strong>Collaborator</strong></span> will be working with the <strong>lobster trap buoy counts data</strong></li>
+</ul>
 <p>In these sections you will be working independently since you’re working with different data frames, but you’re welcome to check in with each other.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><span style="color: orange;"><strong>Owner</strong></span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><span style="color: purple;"><strong>Collaborator</strong></span></a></li></ul>
@@ -766,13 +784,13 @@ Warning
 <ol start="3" type="1">
 <li>Read in the data and store the data frame as <code>lobster_abundance</code>. Here we also use the <code>clean_names()</code> function from the helpful <code>janitor</code> package. This converts all variable names to <code>snake_case</code> by default. Having a consistent naming convention helps with collaboration!</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lobster_abundance <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Lobster_Abundance_All_Years_20240411.csv"</span>) <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lobster_abundance <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">file.path</span>(<span class="st">"data"</span>, <span class="st">"Lobster_Abundance_All_Years_20240411.csv"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
 <li>Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you’re working with.</li>
-<li>Use the Git workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong> (and then make sure both partners sync with GitHub).
+<li>Use the Git workflow: <strong>Stage (add) <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Commit <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Pull <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Push</strong> (and then make sure both partners sync with GitHub).
 <ul>
-<li><strong>Note:</strong> You also want to <code>Pull</code> every time you open a project, to make sure you retrieve any changes your collaborators have made.</li>
+<li><strong>Note:</strong> You also want to pull every time you open a project, to make sure you retrieve any changes your collaborators have made.</li>
 </ul></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -790,7 +808,7 @@ Warning
 </div>
 </section>
 <section id="modify-quarto-document-to-wrangle-data" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="modify-quarto-document-to-wrangle-data">Modify Quarto document to wrangle data</h3>
+<h3 class="unnumbered anchored" data-anchor-id="modify-quarto-document-to-wrangle-data">Modify Quarto Document to Wrangle Data</h3>
 <p>The following exercises challenge you to apply functions from <code>dplyr</code> and <code>tidyr</code> (in the <code>tidyverse</code> metapackage) to clean data, create subsets,</p>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
@@ -959,7 +977,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong> (and then make sure both partners sync with GitHub).</p>
+<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Commit <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Pull <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Push</strong> (and then make sure both partners sync with GitHub).</p>
 </div>
 </div>
 </section>
@@ -987,7 +1005,7 @@ Warning
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
 <li>Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you’re working with.</li>
-<li>Use the Git workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong> (and then make sure both partners sync with GitHub).
+<li>Use the Git workflow: <strong>Stage (add) <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Commit <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Pull <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Push</strong> (and then make sure both partners sync with GitHub).
 <ul>
 <li><strong>Note:</strong> You also want to <strong>Sync/Pull</strong> when you first open a project</li>
 </ul></li>
@@ -1175,7 +1193,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong> (and then make sure both partners sync with GitHub).</p>
+<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Commit <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Pull <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Push</strong> (and then make sure both partners sync with GitHub).</p>
 </div>
 </div>
 </section>
@@ -1614,7 +1632,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong> (and then make sure both partners sync with GitHub).</p>
+<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Commit <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Pull <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Push</strong> (and then make sure both partners sync with GitHub).</p>
 </div>
 </div>
 </section>
@@ -1754,7 +1772,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong> (and then make sure both partners sync with GitHub).</p>
+<p>After you’ve completed the exercises or reached a significant stopping point, use the workflow: <strong>Stage (add) <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Commit <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Pull <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Push</strong> (and then make sure both partners sync with GitHub).</p>
 </div>
 </div>
 </section>
@@ -1892,7 +1910,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After you’ve completed and successfully rendered your report, use the workflow: <strong>Stage (add) -&gt; Commit -&gt; Pull -&gt; Push</strong> (and then make sure both partners sync with GitHub).</p>
+<p>After you’ve completed and successfully rendered your report, use the workflow: <strong>Stage (add) <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Commit <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Pull <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Push</strong> (and then make sure both partners sync with GitHub).</p>
 </div>
 </div>
 </section>

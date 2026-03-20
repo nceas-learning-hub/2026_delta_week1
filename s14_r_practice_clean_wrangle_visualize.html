@@ -603,17 +603,17 @@ div.csl-indent {
   <li><a href="#create-files-and-add-data" id="toc-create-files-and-add-data" class="nav-link" data-scroll-target="#create-files-and-add-data"><span class="header-section-number">1.2</span> Create Files and Add Data</a></li>
   </ul></li>
   <li><a href="#explore-clean-and-wrangle-data" id="toc-explore-clean-and-wrangle-data" class="nav-link" data-scroll-target="#explore-clean-and-wrangle-data"><span class="header-section-number">2</span> Explore, Clean, and Wrangle Data</a></li>
-  <li><a href="#create-visually-appealing-and-informative-data-visualization" id="toc-create-visually-appealing-and-informative-data-visualization" class="nav-link" data-scroll-target="#create-visually-appealing-and-informative-data-visualization"><span class="header-section-number">3</span> Create visually appealing and informative data visualization</a></li>
+  <li><a href="#create-visually-appealing-and-informative-data-visualizations" id="toc-create-visually-appealing-and-informative-data-visualizations" class="nav-link" data-scroll-target="#create-visually-appealing-and-informative-data-visualizations"><span class="header-section-number">3</span> Create Visually-Appealing and Informative Data Visualizations</a></li>
   <li><a href="#customize-your-visualizations" id="toc-customize-your-visualizations" class="nav-link" data-scroll-target="#customize-your-visualizations"><span class="header-section-number">4</span> Customize your Visualizations</a></li>
-  <li><a href="#challenge-yourself-mpas-optional" id="toc-challenge-yourself-mpas-optional" class="nav-link" data-scroll-target="#challenge-yourself-mpas-optional"><span class="header-section-number">5</span> Challenge yourself: MPAs! (optional)</a>
+  <li><a href="#challenge-yourself-mpas-optional" id="toc-challenge-yourself-mpas-optional" class="nav-link" data-scroll-target="#challenge-yourself-mpas-optional"><span class="header-section-number">5</span> Challenge Yourself: MPAs! (optional)</a>
   <ul class="collapse">
-  <li><a href="#revisit-plots" id="toc-revisit-plots" class="nav-link" data-scroll-target="#revisit-plots"><span class="header-section-number">5.1</span> Revisit plots</a></li>
+  <li><a href="#revisit-plots" id="toc-revisit-plots" class="nav-link" data-scroll-target="#revisit-plots"><span class="header-section-number">5.1</span> Revisit Plots</a></li>
   </ul></li>
   <li><a href="#collaborate-on-a-report" id="toc-collaborate-on-a-report" class="nav-link" data-scroll-target="#collaborate-on-a-report"><span class="header-section-number">6</span> Collaborate on a Report</a>
   <ul class="collapse">
-  <li><a href="#report-elements" id="toc-report-elements" class="nav-link" data-scroll-target="#report-elements"><span class="header-section-number">6.1</span> Report elements</a></li>
-  <li><a href="#options-for-collaboration" id="toc-options-for-collaboration" class="nav-link" data-scroll-target="#options-for-collaboration"><span class="header-section-number">6.2</span> Options for collaboration</a></li>
-  <li><a href="#wrapping-up" id="toc-wrapping-up" class="nav-link" data-scroll-target="#wrapping-up"><span class="header-section-number">6.3</span> Wrapping up</a></li>
+  <li><a href="#report-elements" id="toc-report-elements" class="nav-link" data-scroll-target="#report-elements"><span class="header-section-number">6.1</span> Report Elements</a></li>
+  <li><a href="#options-for-collaboration" id="toc-options-for-collaboration" class="nav-link" data-scroll-target="#options-for-collaboration"><span class="header-section-number">6.2</span> Options for Collaboration</a></li>
+  <li><a href="#wrapping-up" id="toc-wrapping-up" class="nav-link" data-scroll-target="#wrapping-up"><span class="header-section-number">6.3</span> Wrapping Up</a></li>
   </ul></li>
   <li><a href="#bonus-optional-publish-using-github-pages" id="toc-bonus-optional-publish-using-github-pages" class="nav-link" data-scroll-target="#bonus-optional-publish-using-github-pages"><span class="header-section-number">7</span> Bonus (optional): Publish using GitHub Pages</a></li>
   </ul>
@@ -1001,7 +1001,7 @@ Warning
 <ol start="3" type="1">
 <li>Read in the data and store the data frame as <code>lobster_traps</code>. Here we also use the <code>clean_names()</code> function from the helpful <code>janitor</code> package. This converts all variable names to <code>snake_case</code> by default. Having a consistent naming convention helps with collaboration!</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Lobster_Trap_Counts_All_Years_20210519.csv"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">file.path</span>(<span class="st">"data"</span>, <span class="st">"Lobster_Trap_Counts_All_Years_20210519.csv"</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
 <li>Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you’re working with.</li>
@@ -1025,7 +1025,7 @@ Warning
 </div>
 </section>
 <section id="modify-quarto-document-to-wrangle-data-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="modify-quarto-document-to-wrangle-data-1">Modify Quarto document to wrangle data</h3>
+<h3 class="unnumbered anchored" data-anchor-id="modify-quarto-document-to-wrangle-data-1">Modify Quarto Document to Wrangle Data</h3>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1202,12 +1202,13 @@ Warning
 </div>
 <!-- end tabset -->
 </section>
-<section id="create-visually-appealing-and-informative-data-visualization" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="create-visually-appealing-and-informative-data-visualization"><span class="header-section-number">3</span> Create visually appealing and informative data visualization</h2>
-<p><strong>Structure of the data visualization exercises:</strong></p>
-<p>For this portion of the practice session, we will create basic data visualizations, to be later customized and included in the collaborative report.</p>
-<p>The <span style="color: orange;"><strong>Owner</strong></span> will continue to work with the <strong>lobster abundance and size data</strong>; the <span style="color: purple;"><strong>Collaborator</strong></span> will continue to work with the <strong>lobster trap buoy counts data</strong>.</p>
-<p>For each visualization, you may first have you create subsets and summary dataframes to be used in the data visualizations, as well as the basic code to create a visualization.</p>
+<section id="create-visually-appealing-and-informative-data-visualizations" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="create-visually-appealing-and-informative-data-visualizations"><span class="header-section-number">3</span> Create Visually-Appealing and Informative Data Visualizations</h2>
+<p>For this portion of the practice session, we will create basic data visualizations, to be later customized and included in the collaborative report. For each visualization, you may first have to create subsets and summary dataframes to be used in the data visualizations, as well as the basic code to create a visualization.</p>
+<ul>
+<li>The <span style="color: orange;"><strong>Owner</strong></span> will continue to work with the <strong>lobster abundance and size data</strong></li>
+<li>The <span style="color: purple;"><strong>Collaborator</strong></span> will continue to work with the <strong>lobster trap buoy counts data</strong>.</li>
+</ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href=""><span style="color: orange;"><strong>Owner</strong></span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href=""><span style="color: purple;"><strong>Collaborator</strong></span></a></li></ul>
 <div class="tab-content">
@@ -1777,7 +1778,7 @@ Warning
 </div>
 </section>
 <section id="challenge-yourself-mpas-optional" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="challenge-yourself-mpas-optional"><span class="header-section-number">5</span> Challenge yourself: MPAs! (optional)</h2>
+<h2 data-number="5" class="anchored" data-anchor-id="challenge-yourself-mpas-optional"><span class="header-section-number">5</span> Challenge Yourself: MPAs! (optional)</h2>
 <p>Time permitting, we can add a new level of analysis by incorporating marine protected area (MPA) status.</p>
 <p>The sites <code>IVEE</code> and <code>NAPL</code> are marine protected areas (MPAs). Add this status to your data set using a new function called <code>dplyr::case_when()</code>, which is like a multi-level <code>if_else()</code>. Then create some new plots using this new variable. Does it change how you think about the data? What new plots or analysis can you do with this new variable?</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -1816,7 +1817,7 @@ Warning
 </div>
 </div>
 <section id="revisit-plots" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="revisit-plots"><span class="header-section-number">5.1</span> Revisit plots</h3>
+<h3 data-number="5.1" class="anchored" data-anchor-id="revisit-plots"><span class="header-section-number">5.1</span> Revisit Plots</h3>
 <p>Based on this new level of analysis, try to add <code>status</code> to your plots in some meaningful way. Consider using <code>facet_wrap</code> or adding <code>status</code> to one of the aesthetics using <code>aes()</code>.</p>
 </section>
 </section>
@@ -1824,7 +1825,7 @@ Warning
 <h2 data-number="6" class="anchored" data-anchor-id="collaborate-on-a-report"><span class="header-section-number">6</span> Collaborate on a Report</h2>
 <p>The final step! Time to work together again. Collaborate with your partner in <code>lobster_report.qmd</code> to create a report to publish to GitHub pages.</p>
 <section id="report-elements" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="report-elements"><span class="header-section-number">6.1</span> Report elements</h3>
+<h3 data-number="6.1" class="anchored" data-anchor-id="report-elements"><span class="header-section-number">6.1</span> Report Elements</h3>
 <p>Make sure your Quarto Document is well organized and includes the following elements:</p>
 <ul>
 <li>Data summary
@@ -1844,7 +1845,7 @@ Warning
 </ul>
 </section>
 <section id="options-for-collaboration" class="level3" data-number="6.2">
-<h3 data-number="6.2" class="anchored" data-anchor-id="options-for-collaboration"><span class="header-section-number">6.2</span> Options for collaboration</h3>
+<h3 data-number="6.2" class="anchored" data-anchor-id="options-for-collaboration"><span class="header-section-number">6.2</span> Options for Collaboration</h3>
 <p>There are several ways to collaborate effectively here:</p>
 <ol type="1">
 <li>Work together on a shared screen and talk through the code as you develop your <code>lobster_report.qmd</code>
@@ -1885,7 +1886,7 @@ Warning
 </div>
 </section>
 <section id="wrapping-up" class="level3" data-number="6.3">
-<h3 data-number="6.3" class="anchored" data-anchor-id="wrapping-up"><span class="header-section-number">6.3</span> Wrapping up</h3>
+<h3 data-number="6.3" class="anchored" data-anchor-id="wrapping-up"><span class="header-section-number">6.3</span> Wrapping Up</h3>
 <p>When the report is complete, make sure to Render the Quarto document. Rendering will run all the code in the document, in a clean environment (critical to ensure reproducibility!), and generate the formatted text and images for your report.</p>
 <ul>
 <li>If it renders successfully, you will see a new HTML file in the same directory as your <code>lobster_report.qmd</code> file.

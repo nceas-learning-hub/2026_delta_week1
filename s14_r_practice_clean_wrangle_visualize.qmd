@@ -73,14 +73,16 @@ The [**Collaborator**]{style="color: purple;"} will set up new files for the ana
 
 ## [**Owner**]{style="color: orange;"}
 
-[**Owner**]{style="color: orange;"} downloads data from the EDI Data Portal [SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77&revision=10).
-    a.  Create two new directories one called `data` and one called `figs`
-        i. *Note: Git does not track empty directories, so you won't see `figs` when you push to GitHub*
-    b.  Download the following data and upload them to the `data` folder:
-        i.  Time-series of lobster abundance and size
-        ii. Time-series of lobster trap buoy counts
-    c.  After creating the `data` folder and adding the data, the [**Owner**]{style="color: orange;"} will **stage (add)** the changes, **commit**, and write a commit message.  Then **Sync** (Positron) or **Pull** and **Push** (RStudio or Terminal) the files to the remote repository (on GitHub)
-    c.  The [**Collaborator**]{style="color: purple;"} **Sync**s or **Pull**s the changes and data into their local repository (their workspace)
+[**Owner**]{style="color: orange;"} downloads data for the exercise from the EDI Data Portal
+
+1. Go to this data product on EDI: [SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77&revision=10).
+2. Create two new directories one called `data` and one called `figs`
+    - *Note: Git does not track empty directories, so you won't see `figs` when you push to GitHub*
+3. Download the following data and upload them to the `data` folder:
+    - Time-series of lobster abundance and size
+    - Time-series of lobster trap buoy counts
+4. After creating the `data` folder and adding the data, the [**Owner**]{style="color: orange;"} will **stage (add)** the changes, **commit**, and write a commit message.  Then **Sync** (Positron) or **Pull** and **Push** (RStudio or Terminal) the files to the remote repository (on GitHub)
+5. The [**Collaborator**]{style="color: purple;"} **Sync**s or **Pull**s the changes and data into their local repository (their workspace)
 :::
 
 ## Explore, clean and wrangle data

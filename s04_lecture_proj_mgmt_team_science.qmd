@@ -138,7 +138,7 @@ Issues can also be created in the project itself.
 Both kinds of issues can be assigned to individuals, marked with topical tags, and assigned start and due dates.
 The examples below draw from the repository we are using to organize the first iteration of this course.
 
-![](images/proj_mgmt_team_science/github-project.png){fig-alt="a series of vertical boards labelled back burner, inqueue, active progress, waiting, and done, with cards for specific tasks and individuals and due dates assigned" .lightbox}
+![Kanban board example using GitHub Projects](images/proj_mgmt_team_science/github-project.png){fig-alt="a series of vertical boards labelled back burner, in queue, active progress, waiting, and done, with cards for specific tasks and individuals and due dates assigned" .lightbox}
 
 Two additional views make it even easier to track overall progress and individual workloads.
 The "roadmap" view in GitHub functions like an interactive Gantt chart, once start and target dates are assigned to an issue.

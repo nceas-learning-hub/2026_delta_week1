@@ -40,7 +40,7 @@ For this collaborative report, participants will be working in pairs.  Each part
 ### Create a New Repository With a Partner
 
 1. Select one partner to be the [**Owner**]{style="color: orange;"}; the other is the [**Collaborator**]{style="color: purple;"}
-2. The [**Owner**]{style="color: orange;"} creates a repository on GitHub titled with both your names (e.g., If Casey and Camila were partners, and Casey is the [**Owner**]{style="color: orange;"}, he would create a repo called `casey_camila`).  When creating the repository:
+2. The [**Owner**]{style="color: orange;"} creates a repository on GitHub titled `lobster_analysis` (or similar).  When creating the repository: ([**Collaborator**]{style="color: purple;"} help follow these directions!)
     * add a brief description (e.g., "R Practice Session: Collaborating on, Wrangling & Visualizing Data")
     * keep the repo Public
     * initialize the repo with a `README` file and an R `.gitignore` template.
@@ -118,7 +118,7 @@ lobster_abundance <- read_csv("data/Lobster_Abundance_All_Years_20240411.csv") %
 ```
 
 4. Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you're working with.
-5. Use the Git workflow: **Stage (add) -> Commit -> Pull -> Push**
+5. Use the Git workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
     - **Note:** You also want to `Pull` every time you open a project, to make sure you retrieve any changes your collaborators have made.
     
 :::{.callout-tip}
@@ -134,7 +134,7 @@ The following exercises challenge you to apply functions from `dplyr` and `tidyr
 ::: {.callout-exercise}
 ## Convert missing values using `mutate()` and `na_if()`
 
-The variable `size_mm` uses -99999 as the code for missing values (see metadata or use `unique()`). This has the potential to cause conflicts with our analyses, so let's convert -99999 to an `NA` value. Do this using `mutate()` and `na_if()` or `ifelse()`. Look up the help page to see how to use `na_if()` and `ifelse()`. Check your output data using `unique()`.
+The variable `size_mm` uses -99999 as the code for missing values (see metadata or use `unique()`). This has the potential to cause conflicts with our analyses, so let's convert -99999 to an `NA` value. Do this using `dplyr::mutate()` and `dplyr::na_if()` (or `dplyr::if_else()`). Look up the help page to see how to use `na_if()` and `if_else()`. Check your output data using `unique()`.
 
 :::: {.callout-answer}
 
@@ -143,7 +143,7 @@ lobster_abundance <- lobster_abundance %>%
     mutate(size_mm = na_if(size_mm, -99999))
 
 lobster_abundance <- lobster_abundance %>% 
-    mutate(size_mm = ifelse(size_mm == -99999, NA, size_mm))
+    mutate(size_mm = if_else(condition = (size_mm == -99999), true = NA, false = size_mm))
 ```
 
 NOTE: If you know the `NA` values ahead of time, you can specify them when you read the data in!
@@ -160,7 +160,7 @@ lobster_abundance <- read_csv("data/Lobster_Abundance_All_Years_20240411.csv",
 ::: {.callout-exercise}
 ## Subset data using `filter()` to exclude observations
 
-Create and store a subset that does NOT include observations from Naples Reef (`NAPL`). Check your output data frame to ensure that `NAPL` is NOT in the data frame.
+Create and store a subset that does NOT include observations from Naples Reef (`NAPL`) using `dplyr::filter()`. Check your output data frame to ensure that `NAPL` is NOT in the data frame.
 
 ::::{.callout-answer}
 
@@ -190,7 +190,7 @@ aque_70mm <- lobster_abundance %>%
 ::: {.callout-exercise}
 ## Calculate summary statistics using `group_by() %>% summarize()` 
 
-Find the maximum carapace length using `max()` and group by `site` and `month`. Think about how you want to treat the NA values in `size_mm` (Hint: check the arguments in `max()`). Check your output.
+Use `dplyr::group_by()` and `dplyr::summarize()` to find the maximum carapace length, using `max()` and grouping by `site` and `month`. Think about how you want to treat the NA values in `size_mm` (Hint: check the arguments in `max()`). Check your output.
 
 ::::{.callout-answer}
 
@@ -207,7 +207,7 @@ NOTE: `.groups = "drop"` is an argument in `summarize()` that tells R to ungroup
 
 ::: callout-important
 ## Save your work and don't forget the Git and GitHub workflow!
-After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push**
+After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push**  (and then make sure both partners sync with GitHub).
 :::
 
 
@@ -237,7 +237,7 @@ lobster_traps <- read_csv("data/Lobster_Trap_Counts_All_Years_20210519.csv")
 ```
 
 4. Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you're working with.
-5. Use the Git workflow: **Stage (add) -> Commit -> Pull -> Push**
+5. Use the Git workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
     - **Note:** You also want to **Sync/Pull** when you first open a project
     
 :::{.callout-tip}
@@ -251,7 +251,7 @@ Because we used `namespace::function()` syntax to call `janitor::clean_names()`,
 ::: {.callout-exercise}
 ## Convert missing values using `mutate()` and `na_if()`
 
-The variable `traps` uses -99999 as the code for missing values (see metadata or use `unique()`). This has the potential to cause conflicts with our analyses, so let's convert -99999 to an `NA` value. Do this using `mutate()` and `na_if()` or `ifelse()`. Look up the help page to see how to use `na_if()` and `ifelse()`. Check your output data using `unique()`.
+The variable `traps` uses -99999 as the code for missing values (see metadata or use `unique()`). This has the potential to cause conflicts with our analyses, so let's convert -99999 to an `NA` value. Do this using `dplyr::mutate()` and `dplyr::na_if()` or `dplyr::if_else()`. Look up the help pages to see how to use `na_if()` and `if_else()`. Check your output data using `unique()`.
 
 ::::{.callout-answer}
 
@@ -260,7 +260,7 @@ lobster_traps <- lobster_traps %>%
     mutate(traps = na_if(traps, -99999))
 
 lobster_traps <- lobster_traps %>% 
-    mutate(traps = ifelse(traps == -99999, NA, traps))
+    mutate(traps = if_else(condition = (traps == -99999), true = NA, false = traps))
 ```
 
 NOTE: If you know the `NA` values ahead of time, you can specify them when you read the data in!
@@ -276,7 +276,7 @@ lobster_abundance <- read_csv("data/Lobster_Abundance_All_Years_20220829.csv",
 
 ::: {.callout-exercise}
 ## Subset data using `filter()` to exclude observations
-Create and store a subset that does NOT include observations from Naples Reef (`NAPL`). Check your output data frame to ensure that `NAPL` is NOT in the data frame.
+Create and store a subset that does NOT include observations from Naples Reef (`NAPL`) using `dplyr::filter()`. Check your output data frame to ensure that `NAPL` is NOT in the data frame.
 
 ::::{.callout-answer}
 
@@ -306,7 +306,7 @@ carp_20_traps <- lobster_traps %>%
 ::: {.callout-exercise}
 ## Calculate summary statistics using `group_by() %>% summarize()`
 
-Find the maximum number of commercial trap floats using `max()` and group by `site` and `month`. Think about how you want to treat the `NA` values in `traps` (Hint: check the arguments in `max()`). Check your output.
+Use `dplyr::group_by()` and `dplyr::summarize()` to find the maximum number of commercial trap floats, using `max()` and grouping by `site` and `month`. Think about how you want to treat the `NA` values in `traps` (Hint: check the arguments in `max()`). Check your output.
 
 ::::{.callout-answer}
 
@@ -321,8 +321,8 @@ NOTE: `.groups = "drop"` is an argument in `summarize()` that tells R to ungroup
 :::
 
 ::: callout-important
-### Save your work and Don't forget the Git and GitHub workflow!
-After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push**
+### Save your work and apply the Git and GitHub workflow!
+After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
 :::
 
 ::: 
@@ -353,7 +353,7 @@ For each visualization, you may first have you create subsets and summary datafr
 ::: {.callout-exercise}
 ### Create a multi-panel histogram
 
-Create a multi-panel plot of lobster carapace length (`size_mm`) using `ggplot()`, `geom_histogram()`, and `facet_wrap()`. Use the variable `site` in `facet_wrap()`. Use the object `lobster_abundance`.
+Create a multi-panel plot of lobster carapace length (`size_mm`) using `ggplot2::ggplot()`, `ggplot2::geom_histogram()`, and `ggplot2::facet_wrap()`. Use the variable `site` in `facet_wrap()`. Use the object `lobster_abundance`.
 
 :::: {.callout-answer}
 
@@ -387,7 +387,7 @@ lobsters_summarize <- lobster_abundance %>%
   summarize(count = n(), .groups = 'drop')
 ```
 
-Next, create a line graph using `ggplot()` and `geom_line()`. Use `geom_point()` to make the data points more distinct, if you prefer.  We also want `site` information on this graph, do this by specifying the variable in the `color` argument. Where should the `color` argument go? Inside or outside of `aes()`? Explain your reasoning.
+Next, create a line graph using `ggplot2::ggplot()` and `ggplot2::geom_line()`. Use `ggplot2::geom_point()` to make the data points more distinct, if you prefer.  We also want `site` information on this graph, do this by specifying the variable in the `color` argument. Where should the `color` argument go? Inside or outside of `aes()`? Explain your reasoning.
 
 ```r
 # line plot
@@ -421,7 +421,7 @@ First, let's create a new dataset subset called `lobster_size`:
 - `filter()` for the years 2019, 2020, and 2021
 - Add a new column called `size_bin` that contains the values "small" or "large".  A "small" carapace size is <= 70 mm, and a "large" carapace size is greater than 70 mm. Use `mutate()` and `if_else()`. Check your output
 - Calculate the number of "small" and "large" sized lobsters using `group()` and `summarize()`. Check your output
-- Remove the `NA` values from the subsetted data. Hint: check out `drop_na()`. Check your output
+- Remove the `NA` values from the subsetted data. Hint: check out `tidyr::drop_na()`. Check your output
 
 ```r
 lobster_size <- lobster_abundance %>%
@@ -432,7 +432,7 @@ lobster_size <- lobster_abundance %>%
     drop_na()
 ```
 
-Next, create a bar graph using `ggplot()` and `geom_bar()`. Note that `geom_bar()` automatically creates a stacked bar chart. Try using the argument `position = "dodge"` to make the bars side by side. Pick which bar position you like best.
+Next, create a bar graph using `ggplot2::ggplot()` and `ggplot2::geom_bar()`. Note that `geom_bar()` automatically creates a stacked bar chart. Try using the argument `position = "dodge"` to make the bars side by side. Pick which bar position you like best.
 
 ```r
 # bar plot
@@ -467,7 +467,7 @@ ggplot(data = lobster_size, aes(x = site, y = n, fill = size_bin)) +
 ::: {.callout-exercise}
 ### Create a multi-panel histogram
 
-Create a multi-panel plot of lobster commercial traps (`traps`) grouped by year, using `ggplot()`, `geom_histogram()`, and `facet_wrap()`. Use the variable `year` in `facet_wrap()`. Use the object `lobster_traps`.
+Create a multi-panel plot of lobster commercial traps (`traps`) grouped by year, using `ggplot2::ggplot()`, `ggplot2::geom_histogram()`, and `ggplot2::facet_wrap()`. Use the variable `year` in `facet_wrap()`. Use the object `lobster_traps`.
 
 :::: {.callout-answer}
 
@@ -501,7 +501,7 @@ lobsters_traps_summarize <- lobster_traps %>%
             .groups = "drop")
 ```
 
-Next, create a line graph using `ggplot()` and `geom_line()`. Use `geom_point()` to make the data points more distinct, but ultimately up to you if you want to use it or not. We also want `site` information on this graph, do this by specifying the variable in the `color` argument. Where should the `color` argument go? Inside or outside of `aes()`? Why or why not?
+Next, create a line graph using `ggplot2::ggplot()` and `ggplot2::geom_line()`. Use `ggplot2::geom_point()` to make the data points more distinct, but ultimately up to you if you want to use it or not. We also want `site` information on this graph, do this by specifying the variable in the `color` argument. Where should the `color` argument go? Inside or outside of `aes()`? Why or why not?
 
 
 ```r
@@ -538,7 +538,7 @@ First, you'll need to create a new dataset subset called `lobster_traps_fishing_
 - `filter()` for the years 2019, 2020, and 2021
 - Add a new column called `fishing_pressure` that contains the values "high" or "low". A "high" fishing pressure has exactly or more than 8 traps, and a "low" fishing pressure has less than 8 traps. Use `mutate()` and `if_else()`. Check your output
 - Calculate the number of "high" and "low" observations using `group()` and `summarize()`. Check your output 
-- Remove the `NA` values from the subsetted data. Hint: check out `drop_na()`. Check your output
+- Remove the `NA` values from the subsetted data. Hint: check out `tidyr::drop_na()`. Check your output
 
 ```r
 lobster_traps_fishing_pressure <- lobster_traps %>% 
@@ -549,7 +549,7 @@ lobster_traps_fishing_pressure <- lobster_traps %>%
     drop_na()
 ```
 
-Next, create a bar graph using `ggplot()` and `geom_bar()`. Note that `geom_bar()` automatically creates a stacked bar chart. Try using the argument `position = "dodge"` to make the bars side by side. Pick which bar position you like best.
+Next, create a bar graph using `ggplot2::ggplot()` and `ggplot2::geom_bar()`. Note that `geom_bar()` automatically creates a stacked bar chart. Try using the argument `position = "dodge"` to make the bars side by side. Pick which bar position you like best.
 
 ```r
 # bar plot
@@ -575,8 +575,8 @@ ggplot(data = lobster_traps_fishing_pressure, aes(x = site, y = count, fill = fi
 <!--end tabset-->
 
 ::: callout-important
-### Save your work and Don't forget the Git and GitHub workflow!
-After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push**
+### Save your work and apply the Git and GitHub workflow!
+After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
 :::
 
 
@@ -616,7 +616,8 @@ Some `ggplot2` functions grant you control over the information displayed on you
 
 The `ggplot2` package includes some built-in themes (e.g., `theme_minimal()`) as well as many options for fine-tuning specific elements of the plot (e.g., changing the color and linewidth of the grid lines).  Here are a few options and examples:
 
-- `theme_()`: add a complete theme to your plot (e.g., `theme_light()`, `theme_minimal()`, `theme_void()`)
+- `theme_xxx()`: add a complete theme to your plot (e.g., `theme_light()`, `theme_minimal()`, `theme_void()`)
+    - Note there are also several theme utility functions that might pop up with autocomplete, e.g., `theme_get()`, `theme_set()`, `theme_update()`, `theme_replace()` - these are **not** complete themes... if it sounds like a verb, not an adjective, it's likely a theme utility function!
 - `theme()`: call specific elements to customize non-data components of a plot.  A few examples:
 
 ```r
@@ -640,81 +641,168 @@ For a comprehensive list of all theme options, visit this reference: https://ggp
 
 :::
 
-Once you're happy with how your plot looks, assign it to an object, and save it to the `figs` directory using `ggsave()`:
+Once you're happy with how your plot looks, assign it to an object, and save it to the `figs` directory using `ggsave()`, for example:
 
 ```r
 final_plot <- ggplot(...) +
     geom_xxx() + ...
     
-ggsave(filename = "figs/final_plot.png", plot = final_plot, width = 6, height = 4)
+ggsave(filename = "figs/final_plot.png", # <1>
+       plot = final_plot,                # <2>
+       width = 6, height = 4, dpi = 300) # <3>
 ```
+1. `ggsave` will use the filename to determine the file type (e.g., .png, .jpg)
+2. `ggsave` defaults to saving the most recently-generated plot, so you don't necessarily need to specify the `plot` argument
+3. options to specify the dimensions, resolution, units, etc. of the saved plot
+
+::: callout-tip
+## Displaying a plot in a Quarto document
+
+Notice when you assign a plot to an object, Quarto will not display the generated plot in the rendered document unless you explicitly print it (e.g., `print(final_plot)` or just call the object itself (e.g., `final_plot`).
+
+If you save the plot, you can display the saved image in your Quarto document using Markdown syntax (in a Markdown section of the document):
+```markdown
+![Alternative text for accessibility](figs/final_plot.png)
+```
+:::
 
 
 ::: callout-important
-### Save your work and Don't forget the Git and GitHub workflow!
-After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push**
+### Save your work and apply the Git and GitHub workflow!
+After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
 :::
 
-## Collaborate on a report and publish using GitHub pages
+## Challenge yourself: MPAs! (optional)
 
-The final step! Time to work together again. Collaborate with your partner in `lobster_report.qmd` to create a report to publish to GitHub pages.
+Time permitting, we can add a new level of analysis by incorporating marine protected area (MPA) status.
 
-::: {.callout-note}
-### Code Review
-As you're working on the `lobster_report.qmd` you will be conducting [two types of code reviews](https://en.wikibooks.org/wiki/Introduction_to_Software_Engineering/Quality/Code_Review#:~:text=Code%20review%20practices%20fall%20into,review%20and%20lightweight%20code%20review): (1) pair programming and (2) lightweight code review.
-
-- **Pair programming** is where two people develop code together at the same workstation. One person is the "driver" and one person is the "navigator". The driver writes the code while the navigator observes the code being typed, points out any immediate quick fixes, and will also Google / troubleshoot if errors occur. Both the [**Owner**]{style="color: orange;"} and the [**Collaborator**]{style="color: purple;"} should experience both roles, so switch halfway through or at a meaningful stopping point.
-
-- A **lightweight code review** is brief and you will be giving feedback on code readability and code logic as you're adding [**Owner**]{style="color: orange;"} and [**Collaborator**]{style="color: purple;"} code from their respective `analysis.qmd`s to the `lobster_report.qmd`. Think of it as a walk through of your the code for the data visualizations you plan to include in the report (this includes the code you wrote to create the subset for the plot and the code to create the plot) and give quick feedback.
-:::
-
-
-Make sure your Quarto Document is well organized and includes the following elements:
-
--   citation of the data
--   brief summary of the abstract (i.e. 1-2 sentences) from the [EDI Portal](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-sbc.77.8)
--   [**Owner**]{style="color: orange;"} analysis and visualizations (you choose which plots you want to include)
-    - Try adding alternative text to your plots (See [Quarto Documentation](https://quarto.org/docs/authoring/figures.html#alt-text))
-    - Plots can be added either with the data visualization code or with Markdown syntax (calling a saved image) - it's up to you if you want to include the code or not. 
--   [**Collaborator**]{style="color: purple;"} analysis and visualizations (you choose which plots you want to include)
-    - Try adding alternative text to your plots (See [Quarto Documentation](https://quarto.org/docs/authoring/figures.html#alt-text))
-    - plots can be added either with the data visualization code or with Markdown syntax (calling a saved image) - it's up to you if you want to include the code or not. 
-
-Finally, publish on GitHub pages (from [**Owner**]{style="color: orange;"}'s repository). Refer back to [Chapter 12](https://learning.nceas.ucsb.edu/2024-10-coreR/session_12.html) for steps on how to publish using GitHub pages.
-
-
-## Bonus: Add marine protected area (MPA) designation to the data
-
-The sites `IVEE` and `NAPL` are marine protected areas (MPAs). Add this designation to your data set using a new function called `case_when()`. Then create some new plots using this new variable. Does it change how you think about the data? What new plots or analysis can you do with this new variable? 
+The sites `IVEE` and `NAPL` are marine protected areas (MPAs). Add this status to your data set using a new function called `dplyr::case_when()`, which is like a multi-level `if_else()`. Then create some new plots using this new variable. Does it change how you think about the data? What new plots or analysis can you do with this new variable? 
 
 ::: panel-tabset
 
 ### Lobster Abundance & Size Data
 
-Use the object `lobster_abundance` and add a new column called `DESIGNATION` that contains "MPA" if the site is `IVEE` or `NAPL`, and "not MPA" for all other values.
+Use the object `lobster_abundance` and add a new column called `status` that contains "MPA" if the site is `IVEE` or `NAPL`, and "not MPA" for all other values.
 
 ```r
 lobster_mpa <- lobster_abundance %>% 
-    mutate(DESIGNATION = case_when(
-    site %in% c("IVEE", "NAPL") ~ "MPA",
-    site %in% c("AQUE", "CARP", "MOHK") ~ "not MPA"
-  ))
-    
+    mutate(status = case_when(site %in% c("IVEE", "NAPL") ~ "MPA", # <1>
+                              site %in% c("AQUE", "CARP", "MOHK") ~ "not MPA",
+                              TRUE ~ 'unknown')) # <2>
 ```
+1. The format for `case_when` is `case_when(condition1 ~ value1, condition2 ~ value2, ...)`.  Conditions are evaluated in order, so a value will be assigned based on the first condition that is `TRUE`.
+2. Adding a final `TRUE` test ensures that anything that slips by the previous tests gets caught and assigned a value.  Does it make a difference here?
 
 
 ### Lobster Trap Buoy Counts Data
 
-Use the object `lobster_traps` and add a new column called `designation` that contains "MPA" if the site is `IVEE` or `NAPL`, and "not MPA" for all other values.
+Use the object `lobster_traps` and add a new column called `status` that contains "MPA" if the site is `IVEE` or `NAPL`, and "not MPA" for all other values.
 
 ```r
 lobster_traps_mpa <- lobster_traps %>%
-    mutate(designation = case_when(
-    site %in% c("IVEE", "NAPL") ~ "MPA",
-    site %in% c("AQUE", "CARP", "MOHK") ~ "not MPA"
-  ))
+    mutate(status = case_when(site %in% c("IVEE", "NAPL") ~ "MPA",
+                              site %in% c("AQUE", "CARP", "MOHK") ~ "not MPA",
+                              TRUE ~ "unknown")) # <1>
 ```
+1. Again, we add a final `TRUE` test to catch any values that slip by the previous tests.  Does it make a difference here?
 
 :::
 
+### Revisit plots
 
+Based on this new level of analysis, try to add `status` to your plots in some meaningful way.  Consider using `facet_wrap` or adding `status` to one of the aesthetics using `aes()`.
+
+
+## Collaborate on a Report
+
+The final step! Time to work together again. Collaborate with your partner in `lobster_report.qmd` to create a report to publish to GitHub pages.
+
+### Report elements
+
+Make sure your Quarto Document is well organized and includes the following elements:
+
+-   Data summary
+    -   Citation of the data
+    -   Brief summary of the abstract (i.e. 1-2 sentences) from the [EDI Portal](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-sbc.77.8)
+-   Lobster abundance analysis and visualizations ([**Owner**]{style="color: orange;"} analysis)
+-   Lobster traps analysis and visualizations ([**Collaborator**]{style="color: purple;"} analysis)
+-   For each section of the analysis, choose one or more plots to include.
+    - Add plot(s) either with the data visualization code (including any subsetting code) or with Markdown syntax
+    - Decide whether you want to include the code or not, using code chunk options (e.g., `#| echo`).
+    - Add alternative text to your plots (See [Quarto Documentation](https://quarto.org/docs/authoring/figures.html#alt-text))
+    - Include a paragraph describing the takeaways from the plot(s) you created.
+
+### Options for collaboration
+
+There are several ways to collaborate effectively here:
+
+1. Work together on a shared screen and talk through the code as you develop your `lobster_report.qmd` 
+    * see **pair programming** below
+2. Work separately on your respective sections and then sync your work using Git and GitHub
+    * see **lightweight code review** below
+    * note, for this option, it might be helpful if one person outlines the structure using section headers, then both partners sync with Git/GitHub, to avoid both partners working in the same section and possibly creating a merge conflict.
+3. A combination of both! You can work together on the code for one portion of the report and then split out to work separately on other parts of the report.
+
+::: {.callout-note}
+### Code Review
+
+As you're working on the `lobster_report.qmd` consider [two types of code reviews](https://en.wikibooks.org/wiki/Introduction_to_Software_Engineering/Quality/Code_Review#:~:text=Code%20review%20practices%20fall%20into,review%20and%20lightweight%20code%20review): (1) pair programming and (2) lightweight code review.
+
+::::{.panel-tabset}
+### Pair Programming
+
+In **pair programming,** two people develop code together at the same workstation. One person is the "driver" and one person is the "navigator". The driver writes the code while the navigator observes the code being typed, points out any immediate quick fixes, and will also Google / troubleshoot if errors occur. For this exercise, both the [**Owner**]{style="color: orange;"} and the [**Collaborator**]{style="color: purple;"} should experience both roles, so switch halfway through or at a meaningful stopping point.
+
+### Lightweight Code Review
+
+In **lightweight code review,** the coder talks through the code they've developed, explaining the functionality to the collaborator.  The collaborator provides feedback on code readability and logic and suggestions for improvement where applicable.  For this exercise, the [**Owner**]{style="color: orange;"} and [**Collaborator**]{style="color: purple;"} should take turns explaining their code from their respective `analysis.qmd` as they add it to the `lobster_report.qmd`.
+
+If you don't have a collaborator, try explaining your code line by line to yourself or to an inanimate object (traditionally, a rubber duck - thus the term "rubber duck debugging" 🦆).  You'll be surprised at how much you can catch and improve just by talking through your code!
+
+::::
+:::
+
+### Wrapping up
+
+When the report is complete, make sure to Render the Quarto document.  Rendering will run all the code in the document, in a clean environment (critical to ensure reproducibility!), and generate the formatted text and images for your report.  
+
+* If it renders successfully, you will see a new HTML file in the same directory as your `lobster_report.qmd` file.  
+    * Check that the report looks how you want it to look and that all the text, code, and visualization elements are there.  
+    * If you need to make any changes, edit the .qmd and re-render until you're happy with how it looks.
+* If it **doesn't** render successfully, you should get an error message that explains where the error is happening in your code.
+    * Use one of the code review strategies above to troubleshoot and fix the error.
+    * When you think have fixed the error, re-render the document and check that it looks how you want it to look.
+    
+::: callout-important
+### Save your work and apply the Git and GitHub workflow!
+
+After you've completed and successfully rendered your report, use the workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
+:::
+
+## Bonus (optional): Publish using GitHub Pages
+
+Finally, publish your beautiful report on GitHub pages (from [**Owner**]{style="color: orange;"}'s repository). 
+
+[**Owner**]{style="color: orange;"} navigates to the repository on GitHub (Note, collaborator may not have appropriate permissions).  Then:
+
+:::panel-tabset
+### Access Pages tab
+
+Choose **Settings** (upper right) and then **Pages** (lower left) to access the Pages tab.
+
+![](images/r_practice_clean_wrangle_visualize/gh_pages_tab.png){width="50%" .lightbox fig-align="center"}
+
+### Choose branch
+
+Under **branch**, click the button that says "None" and instead select "main".  A new button shows up reading **{{< fa folder >}}/(root)**  - leave this default.  Then click "Save".
+
+![](images/r_practice_clean_wrangle_visualize/gh_pages_branch.png){width="50%" .lightbox fig-align="center"}
+
+### Access your published page!
+
+It takes a minute or two for the page to publish (or update, whenever you push changes).  Refresh your browser window, and you should see a message saying "Your site is live at `https://<github_username>.github.io/<repository_name>/`" and a link to your page should be available: **{{< fa external-link >}} Visit site**.
+
+If you created a README in the initial setup of the repository, you should see that when you visit the site.  To see your lobster report, you need to manually type it in: `https://<github_username>.github.io/<repository_name>/lobster_report.html`.
+:::
+
+Together, Quarto and GitHub Pages make it super easy to share your work - we've only barely scratched the surface here!

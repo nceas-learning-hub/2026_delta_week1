@@ -53,21 +53,6 @@ If you've used RMarkdown (`.Rmd`) before, Quarto (`.qmd`) will feel familiar. Th
 
 When your entire analysis - data loading, cleaning, statistics, and figures - lives in one Quarto document, you can re-run everything with a single click. If the data updates, so does your report. This eliminates error-prone copy-pasting between scripts, spreadsheets, and documents, and gives collaborators (and your future self!) a clear trail from raw data to final results.
 
-<!-- ### Example: Literate Analysis From Quarto -->
-
-<!-- Let's look at an example of what a rendered literate analysis looks like using a real example. [Here is an -->
-<!-- example](https://nceas.github.io/sasap-training/materials/reproducible_research_in_r_fairbanks/example-brood-table-analysis.html) of an analysis workflow written using RMarkdown. Note that if this analysis would be in Quarto, the render version it would be similar, except for formatting and layout (eg: the default font in Quarto is -->
-<!-- different). -->
-
-<!-- There are a few things to notice about this document, which assembles a set of similar data sources on salmon brood tables with different formatting into a single data source. -->
-
-<!-- -   It introduces the data sources using in-line images, links,  interactive tables, and interactive maps. -->
-<!-- -   An example of data formatting from one source using R is shown. -->
-<!-- -   The document executes a set of formatting scripts in a directory to  generate a single merged file. -->
-<!-- -   Some simple quality checks are performed (and their output shown) on  the merged data. -->
-<!-- -   Simple analysis and plots are shown. -->
-
-<!-- In addition to achieving literate analysis, this document also represents a **reproducible analysis**. Because the entire merging and quality control of the data is done using the R code in the Quarto file, if a new data source and formatting script are added, the document can be run all at once with a single click to re-generate the quality control, plots, and analysis of the updated data. -->
 
 ## Structure of a Quarto Document
 
@@ -85,19 +70,17 @@ format: html
 
 **Prose** - plain text written in Markdown (the white areas of the document).
     
-:::{.border}
-```
+```markdown
 ## Introduction
 
 In this literate analysis, we:
 
-*  Load the data
-*  Calculate summary statistics
-*  Plot the results
+1.  **Load** the data
+2.  **Calculate** summary statistics
+3.  **Plot** the results
 
 ... etc
 ```
-:::
 
 **Code chunks** - executable code blocks (the grey areas), opened with ```` ```{r} ```` and closed with ```` ``` ````.
     

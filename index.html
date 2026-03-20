@@ -48,6 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-b09ee2aa35c34d050ee720919320f44d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -389,14 +392,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./s03_synthesis_crafting_project_ideas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Crafting Synthesis Project Ideas</span></a>
+  <a href="./s07_activity_thinking_preferences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Thinking Preferences &amp; Meeting Design</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./s04_lecture_proj_mgmt_team_science.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project Management &amp; Team Facilitation</span></a>
+  <a href="./s03_synthesis_crafting_project_ideas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Crafting Synthesis Project Ideas</span></a>
   </div>
 </li>
       </ul>
@@ -412,6 +415,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./s04_lecture_proj_mgmt_team_science.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Management &amp; Team Facilitation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./s05_lecture_data_mgmt_discovery.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Management &amp; Data Discovery</span></a>
   </div>
@@ -420,12 +429,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./s06_github_introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git and GitHub Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./s07_activity_thinking_preferences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Thinking Preferences &amp; Meeting Design</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -552,16 +555,20 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="learning-objectives" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2</span> Learning Objectives</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-learning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Learning Objectives
+<span class="screen-reader-only">Learning</span>Learning Objectives
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
+<div class="callout-learning">
+<p>After completing this workshop, you will be able to:</p>
 <ul>
 <li>Use tidy data practices to effectively manage data</li>
 <li>Identify best practices and tools for optimizing collaboration (like Git &amp; GitHub)</li>
@@ -570,10 +577,331 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </div>
+</div>
+</div>
 </section>
 <section id="course-schedule" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="course-schedule"><span class="header-section-number">3</span> Course Schedule</h2>
-<p><i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> TBD; check back later!</p>
+<p><em>Table Color Legend:</em> <span style="color:#6a994e"><i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> Technical Topic</span>; <span style="color:#118ab2"><i class="fa-solid fa-people-group" aria-label="people-group"></i> Non-Technical Topic</span>; <span style="color:#ef476f">Synthesis Work</span></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Week Visual</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Day 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Day 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Day 3</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">Day 4</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">Day 5</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><a href="images/2026_delta_week1_schedule.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/2026_delta_week1_schedule.png" class="img-fluid" alt="Screenshot of visual version of schedule. All information is also included in the table version of the schedule"></a></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 19%">
+<col style="width: 43%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Time</th>
+<th style="text-align: left;">Module Name</th>
+<th style="text-align: left;">Primary Instructor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">8:30 - 9a</td>
+<td style="text-align: left;"><strong>Welcome &amp; Intro to Week</strong></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">9 - 10a</td>
+<td style="text-align: left;"><span style="color:#6a994e"><i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> <strong>R, Positron, Git, <br> and GitHub Setup</strong></span></td>
+<td style="text-align: left;">Jim Regetz; Casey O’Hara, Nick Lyon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">10 - 10:30a</td>
+<td style="text-align: left;"><em>Break</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">10:30 - 12p</td>
+<td style="text-align: left;"><span style="color:#118ab2"><i class="fa-solid fa-people-group" aria-label="people-group"></i> <strong>Thinking Preferences &amp; <br> Meeting Design</strong></span></td>
+<td style="text-align: left;">Nick Lyon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">12 - 1p</td>
+<td style="text-align: left;"><em>Lunch</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1 - 2:30p</td>
+<td style="text-align: left;"><span style="color:#118ab2"><i class="fa-solid fa-people-group" aria-label="people-group"></i> <strong>Crafting Synthesis Project Ideas</strong></span></td>
+<td style="text-align: left;">Nick Lyon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2:30 - 3p</td>
+<td style="text-align: left;"><em>Break</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3 - 4:30p</td>
+<td style="text-align: left;"><span style="color:#ef476f"><strong>Free Synthesis Work <br> (Now Go Do It!)</strong></span></td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 19%">
+<col style="width: 43%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Time</th>
+<th style="text-align: left;">Module Name</th>
+<th style="text-align: left;">Primary Instructor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8:30 - 10a</td>
+<td style="text-align: left;"><span style="color:#118ab2"><i class="fa-solid fa-people-group" aria-label="people-group"></i> <strong>Project Management &amp; <br> Team Facilitation</strong></span></td>
+<td style="text-align: left;">Jim Regetz</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">10 - 10:30a</td>
+<td style="text-align: left;"><em>Break</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">10:30 - 12p</td>
+<td style="text-align: left;"><span style="color:#118ab2"><i class="fa-solid fa-people-group" aria-label="people-group"></i> <strong>Data Management &amp; <br> Data Discovery</strong></span></td>
+<td style="text-align: left;">TBD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">12 - 1p</td>
+<td style="text-align: left;"><em>Lunch</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1 - 2:30p</td>
+<td style="text-align: left;"><span style="color:#6a994e"><i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> <strong>Introduction to Git and GitHub</strong></span></td>
+<td style="text-align: left;">TBD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2:30 - 3p</td>
+<td style="text-align: left;"><em>Break</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3 - 4:30p</td>
+<td style="text-align: left;"><span style="color:#118ab2"><i class="fa-solid fa-people-group" aria-label="people-group"></i> <strong>Logic Models &amp; <br> Synthesis Development</strong></span></td>
+<td style="text-align: left;">TBD</td>
+</tr>
+</tbody>
+</table>
+<p><sup>*</sup> <em>Tentatively choose your group by EoD</em></p>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 19%">
+<col style="width: 43%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Time</th>
+<th style="text-align: left;">Module Name</th>
+<th style="text-align: left;">Primary Instructor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">8:30 - 10a</td>
+<td style="text-align: left;"><span style="color:#118ab2"><i class="fa-solid fa-people-group" aria-label="people-group"></i> <strong>LEGO Reproducibility Activity</strong></span></td>
+<td style="text-align: left;">Casey O’Hara</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">10 - 10:30a</td>
+<td style="text-align: left;"><em>Break</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">10:30 - 12p</td>
+<td style="text-align: left;"><span style="color:#6a994e"><i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> <strong>Literate Analysis with Quarto</strong></span></td>
+<td style="text-align: left;">Casey O’Hara</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">12 - 1p</td>
+<td style="text-align: left;"><em>Lunch</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1 - 2:30p</td>
+<td style="text-align: left;"><span style="color:#ef476f"><strong>Free Synthesis Work</strong></span></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2:30 - 3p</td>
+<td style="text-align: left;"><em>Break</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3 - 4:30p</td>
+<td style="text-align: left;"><span style="color:#ef476f"><strong>Free Synthesis Work</strong></span></td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 19%">
+<col style="width: 43%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Time</th>
+<th style="text-align: left;">Module Name</th>
+<th style="text-align: left;">Primary Instructor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">8:30 - 10a</td>
+<td style="text-align: left;"><span style="color:#118ab2"><i class="fa-solid fa-people-group" aria-label="people-group"></i> <strong>Tidy Data</strong></span></td>
+<td style="text-align: left;">TBD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">10 - 10:30a</td>
+<td style="text-align: left;"><em>Break</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">10:30 - 12p</td>
+<td style="text-align: left;"><span style="color:#6a994e"><i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> <strong>Cleaning and Wrangling Data</strong></span></td>
+<td style="text-align: left;">TBD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">12 - 1p</td>
+<td style="text-align: left;"><em>Lunch</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1 - 2:30p</td>
+<td style="text-align: left;"><span style="color:#6a994e"><i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> <strong>Cleaning and Wrangling Data<br> <em>Practice Session</em></strong></span></td>
+<td style="text-align: left;">TBD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2:30 - 3p</td>
+<td style="text-align: left;"><em>Break</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3 - 4:30p</td>
+<td style="text-align: left;"><span style="color:#ef476f"><strong>Free Synthesis Work</strong></span></td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 15%">
+<col style="width: 52%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Time</th>
+<th style="text-align: left;">Module Name</th>
+<th style="text-align: left;">Primary Instructor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">8:30 - 10a</td>
+<td style="text-align: left;"><span style="color:#6a994e"><i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> <strong>GitHub for Project Management</strong></span></td>
+<td style="text-align: left;">Jim Regetz</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">10 - 10:30a</td>
+<td style="text-align: left;"><em>Break</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">10:30 - 12p</td>
+<td style="text-align: left;"><span style="color:#ef476f"><strong>Free Synthesis Work</strong></span></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">12 - 1p</td>
+<td style="text-align: left;"><em>Lunch</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1 - 2:30p</td>
+<td style="text-align: left;"><span style="color:#ef476f"><strong>Synthesis Work: Planning Next Steps</strong></span></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2:30 - 3p</td>
+<td style="text-align: left;"><em>Adjourn</em></td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </section>
 <section id="pre-workshop-preparation" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="pre-workshop-preparation"><span class="header-section-number">4</span> Pre-Workshop Preparation</h2>
@@ -1066,6 +1394,38 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

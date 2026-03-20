@@ -35,7 +35,7 @@ Your task: Collaborate on an analysis and create a report to publish using GitHu
 
 ## Setup Collaborative Repository
 
-For this collaborative report, participants will be working in pairs.  Each partner will focus on a different portion of the analysis, and the collaboration will bring the two sub-analyses together into a single collaborative report.
+**For this collaborative report, participants will be working in pairs.** Each partner will focus on a different portion of the analysis, and the collaboration will bring the two sub-analyses together into a single collaborative report.
 
 ### Create a New Repository With a Partner
 

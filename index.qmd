@@ -14,8 +14,10 @@ The [Delta Science Program](https://deltacouncil.ca.gov/delta-science-program/) 
 
 ## Learning Objectives
 
-:::{.callout-tip}
-### Learning Objectives
+:::{.callout-learning}
+
+After completing this workshop, you will be able to:
+
 - Use tidy data practices to effectively manage data
 - Identify best practices and tools for optimizing collaboration (like Git & GitHub)
 - Implement reproducible scientific workflows throughout all aspects of a project

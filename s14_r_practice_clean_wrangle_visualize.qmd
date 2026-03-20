@@ -235,7 +235,7 @@ library(tidyr)
 3.  Read in the data and store the data frame as `lobster_traps`. Here we also use the `clean_names()` function from the helpful `janitor` package.  This converts all variable names to `snake_case` by default.  Having a consistent naming convention helps with collaboration!
 
 ```r
-lobster_traps <- read_csv("data/Lobster_Trap_Counts_All_Years_20210519.csv")
+lobster_traps <- readr::read_csv(file.path("data", "Lobster_Trap_Counts_All_Years_20210519.csv"))
     janitor::clean_names()
 ```
 
@@ -249,7 +249,7 @@ lobster_traps <- read_csv("data/Lobster_Trap_Counts_All_Years_20210519.csv")
 Because we used `namespace::function()` syntax to call `janitor::clean_names()`, we can access the function without explicitly loading it in our previous chunk! (i.e., no `library(janitor)` is necessary)
 :::
 
-### Modify Quarto document to wrangle data{.unnumbered}
+### Modify Quarto Document to Wrangle Data{.unnumbered}
 
 ::: {.callout-exercise}
 ## Convert missing values using `mutate()` and `na_if()`
@@ -332,15 +332,12 @@ After you've completed the exercises or reached a significant stopping point, us
 <!-- end tabset -->
 
 
-## Create visually appealing and informative data visualization
+## Create Visually-Appealing and Informative Data Visualizations
 
-**Structure of the data visualization exercises:** 
+For this portion of the practice session, we will create basic data visualizations, to be later customized and included in the collaborative report. For each visualization, you may first have to create subsets and summary dataframes to be used in the data visualizations, as well as the basic code to create a visualization. 
 
-For this portion of the practice session, we will create basic data visualizations, to be later customized and included in the collaborative report.  
-
-The [**Owner**]{style="color: orange;"} will continue to work with the **lobster abundance and size data**; the [**Collaborator**]{style="color: purple;"} will continue to work with the **lobster trap buoy counts data**.
-
-For each visualization, you may first have you create subsets and summary dataframes to be used in the data visualizations, as well as the basic code to create a visualization. 
+- The [**Owner**]{style="color: orange;"} will continue to work with the **lobster abundance and size data**
+- The [**Collaborator**]{style="color: purple;"} will continue to work with the **lobster trap buoy counts data**.
 
 ::: panel-tabset
 
@@ -675,7 +672,7 @@ If you save the plot, you can display the saved image in your Quarto document us
 After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) {{< fa arrow-right >}} Commit {{< fa arrow-right >}} Pull {{< fa arrow-right >}} Push** (and then make sure both partners sync with GitHub).
 :::
 
-## Challenge yourself: MPAs! (optional)
+## Challenge Yourself: MPAs! (optional)
 
 Time permitting, we can add a new level of analysis by incorporating marine protected area (MPA) status.
 
@@ -711,16 +708,15 @@ lobster_traps_mpa <- lobster_traps %>%
 
 :::
 
-### Revisit plots
+### Revisit Plots
 
 Based on this new level of analysis, try to add `status` to your plots in some meaningful way.  Consider using `facet_wrap` or adding `status` to one of the aesthetics using `aes()`.
-
 
 ## Collaborate on a Report
 
 The final step! Time to work together again. Collaborate with your partner in `lobster_report.qmd` to create a report to publish to GitHub pages.
 
-### Report elements
+### Report Elements
 
 Make sure your Quarto Document is well organized and includes the following elements:
 
@@ -735,7 +731,7 @@ Make sure your Quarto Document is well organized and includes the following elem
     - Add alternative text to your plots (See [Quarto Documentation](https://quarto.org/docs/authoring/figures.html#alt-text))
     - Include a paragraph describing the takeaways from the plot(s) you created.
 
-### Options for collaboration
+### Options for Collaboration
 
 There are several ways to collaborate effectively here:
 
@@ -765,7 +761,7 @@ If you don't have a collaborator, try explaining your code line by line to yours
 ::::
 :::
 
-### Wrapping up
+### Wrapping Up
 
 When the report is complete, make sure to Render the Quarto document.  Rendering will run all the code in the document, in a clean environment (critical to ensure reproducibility!), and generate the formatted text and images for your report.  
 

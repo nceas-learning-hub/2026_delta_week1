@@ -55,34 +55,64 @@ Note, the repository was created as "public" so anyone can see and clone the rep
 
 ### Create Files and Add Data
 
-The [**Collaborator**]{style="color: purple;"} will set up new files for the analysis, while the [**Owner**]{style="color: orange;"} will download data and add it to the repository.  Follow the instructions on the tab for your role:
+The [**Collaborator**]{style="color: purple;"} will set up new files for the analysis, while the [**Owner**]{style="color: orange;"} will download data and add it to the repository.  Follow the instructions on the tab for your role.
+
+:::callout-tip
+## What is the "Correct" Way to Set Up a Repository?
+
+For this exercise, we are creating folders for `scripts`, `data`, and `figs`, and allowing Git/GitHub to track our data, figures, and rendered HTML files along with our scripts.  This is one common way of structuring a repository, but there is no "correct" way: other structures may work better for your collaboration, and there are valid reasons why you may want to exclude script inputs and outputs (e.g., adding data, figs, HTML outputs to `.gitignore`).
+
+The important thing is to thoughtfully consider the needs of your project and to establish a clear, consistent structure that makes sense to you and your collaborators.
+:::
 
 :::{.panel-tabset}
-## [**Collaborator**]{style="color: purple;"}
-
-[**Collaborator**]{style="color: purple;"} creates new files for exercise
-
-1. The [**Collaborator**]{style="color: purple;"} creates the following directory (folder):
-    * `analysis` 
-2. After creating the directories, create the following Quarto Documents and store them in the listed folders:
-    a. Title: "Owner Analysis", save as: `analysis/owner_analysis.qmd`
-    b. Title: "Collaborator Analysis", save as: `analysis/collaborator_analysis.qmd`
-    c. Title: "Lobster Report" and save as: `analysis/lobster_report.qmd`
-3.  After creating the files, the [**Collaborator**]{style="color: purple;"} will **stage (add)** the changes, **commit**, and write a commit message.  Then **Sync** (Positron) or **Pull** and **Push** (RStudio or Terminal) the files to the remote repository (on GitHub)
-4.  The [**Owner**]{style="color: orange;"} **Sync**s or **Pull**s the changes and Quarto Documents into their local repository (their workspace)
-
 ## [**Owner**]{style="color: orange;"}
 
-[**Owner**]{style="color: orange;"} downloads data for the exercise from the EDI Data Portal
+[**Owner**]{style="color: orange;"} downloads data for the exercise from the EDI Data Portal. The structure should look something like this (new files/folders in bold):
+
+<div style="font-family: monospace;">
+{{< fa brands github >}} Repository: lobster_analysis  
+&nbsp;|--&nbsp;{{< fa file-lines >}} README.md  
+&nbsp;|--&nbsp;{{< fa file-lines >}} .gitignore  
+&nbsp;|--&nbsp;{{< fa folder >}} **data**  
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa file-lines >}} **Lobster_Abundance_All_Years_20240411.csv**  
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;└--&nbsp; {{< fa file-lines >}} **Lobster_Trap_Counts_All_Years_20210519.csv**  
+&nbsp;└--&nbsp;{{< fa folder >}} **figs**  
+</div>
 
 1. Go to this data product on EDI: [SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77&revision=10).
-2. Create two new directories one called `data` and one called `figs`
+2. Create two new directories, one called `data` and one called `figs`
     - *Note: Git does not track empty directories, so you won't see `figs` when you push to GitHub*
 3. Download the following data and upload them to the `data` folder:
     - Time-series of lobster abundance and size
     - Time-series of lobster trap buoy counts
 4. After creating the `data` folder and adding the data, the [**Owner**]{style="color: orange;"} will **stage (add)** the changes, **commit**, and write a commit message.  Then **Sync** (Positron) or **Pull** and **Push** (RStudio or Terminal) the files to the remote repository (on GitHub)
 5. The [**Collaborator**]{style="color: purple;"} **Sync**s or **Pull**s the changes and data into their local repository (their workspace)
+
+## [**Collaborator**]{style="color: purple;"}
+
+[**Collaborator**]{style="color: purple;"} creates new files for analysis.  The structure should look something like this (new files/folders in bold):
+
+<div style="font-family: monospace;">
+{{< fa brands github >}} Repository: lobster_analysis  
+&nbsp;|--&nbsp;{{< fa file-lines >}} README.md  
+&nbsp;|--&nbsp;{{< fa file-lines >}} .gitignore  
+&nbsp;└--&nbsp;{{< fa folder >}} **scripts**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa file-code >}} **collaborator_analysis.qmd**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa file-code >}} **lobster_report.qmd**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└--&nbsp; {{< fa file-code >}} **owner_analysis.qmd**
+</div>
+
+1. The [**Collaborator**]{style="color: purple;"} creates the following directory (folder):
+    * `scripts` 
+2. After creating the directories, create the following Quarto Documents and store them in the listed folders:
+    a. Title: "Owner Analysis", save as: `scripts/owner_analysis.qmd`
+    b. Title: "Collaborator Analysis", save as: `scripts/collaborator_analysis.qmd`
+    c. Title: "Lobster Report" and save as: `scripts/lobster_report.qmd`
+3.  After creating the files, the [**Collaborator**]{style="color: purple;"} will **stage (add)** the changes, **commit**, and write a commit message.  Then **Sync** (Positron) or **Pull** and **Push** (RStudio or Terminal) the files to the remote repository (on GitHub)
+4.  The [**Owner**]{style="color: orange;"} **Sync**s or **Pull**s the changes and Quarto Documents into their local repository (their workspace)
+
+
 :::
 
 ## Explore, Clean, and Wrangle Data

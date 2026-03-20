@@ -85,9 +85,10 @@ The [**Collaborator**]{style="color: purple;"} will set up new files for the ana
 5. The [**Collaborator**]{style="color: purple;"} **Sync**s or **Pull**s the changes and data into their local repository (their workspace)
 :::
 
-## Explore, clean and wrangle data
+## Explore, Clean, and Wrangle Data
 
 For this portion of the exercise, the 
+
 - [**Owner**]{style="color: orange;"} will be working with the **lobster abundance and size data**
 - [**Collaborator**]{style="color: purple;"} will be working with the **lobster trap buoy counts data**
 
@@ -115,13 +116,13 @@ library(tidyr)
 3.  Read in the data and store the data frame as `lobster_abundance`.  Here we also use the `clean_names()` function from the helpful `janitor` package.  This converts all variable names to `snake_case` by default.  Having a consistent naming convention helps with collaboration!
 
 ```r
-lobster_abundance <- read_csv("data/Lobster_Abundance_All_Years_20240411.csv") %>%
+lobster_abundance <- readr::read_csv(file.path("data", "Lobster_Abundance_All_Years_20240411.csv")) %>%
     janitor::clean_names()
 ```
 
 4. Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you're working with.
-5. Use the Git workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
-    - **Note:** You also want to `Pull` every time you open a project, to make sure you retrieve any changes your collaborators have made.
+5. Use the Git workflow: **Stage (add) {{< fa arrow-right >}} Commit {{< fa arrow-right >}} Pull {{< fa arrow-right >}} Push** (and then make sure both partners sync with GitHub).
+    - **Note:** You also want to pull every time you open a project, to make sure you retrieve any changes your collaborators have made.
     
 :::{.callout-tip}
 ### Using `namespace::function()` syntax
@@ -129,7 +130,7 @@ lobster_abundance <- read_csv("data/Lobster_Abundance_All_Years_20240411.csv") %
 Because we used `namespace::function()` syntax to call `janitor::clean_names()`, we can access the function without explicitly loading it in our previous chunk! (i.e., no `library(janitor)` is necessary)
 :::
 
-### Modify Quarto document to wrangle data{.unnumbered}
+### Modify Quarto Document to Wrangle Data{.unnumbered}
 
 The following exercises challenge you to apply functions from `dplyr` and `tidyr` (in the `tidyverse` metapackage) to clean data, create subsets, 
 
@@ -209,7 +210,7 @@ NOTE: `.groups = "drop"` is an argument in `summarize()` that tells R to ungroup
 
 ::: callout-important
 ## Save your work and don't forget the Git and GitHub workflow!
-After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push**  (and then make sure both partners sync with GitHub).
+After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) {{< fa arrow-right >}} Commit {{< fa arrow-right >}} Pull {{< fa arrow-right >}} Push**  (and then make sure both partners sync with GitHub).
 :::
 
 
@@ -239,7 +240,7 @@ lobster_traps <- read_csv("data/Lobster_Trap_Counts_All_Years_20210519.csv")
 ```
 
 4. Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you're working with.
-5. Use the Git workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
+5. Use the Git workflow: **Stage (add) {{< fa arrow-right >}} Commit {{< fa arrow-right >}} Pull {{< fa arrow-right >}} Push** (and then make sure both partners sync with GitHub).
     - **Note:** You also want to **Sync/Pull** when you first open a project
     
 :::{.callout-tip}
@@ -324,7 +325,7 @@ NOTE: `.groups = "drop"` is an argument in `summarize()` that tells R to ungroup
 
 ::: callout-important
 ### Save your work and apply the Git and GitHub workflow!
-After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
+After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) {{< fa arrow-right >}} Commit {{< fa arrow-right >}} Pull {{< fa arrow-right >}} Push** (and then make sure both partners sync with GitHub).
 :::
 
 ::: 
@@ -578,7 +579,7 @@ ggplot(data = lobster_traps_fishing_pressure, aes(x = site, y = count, fill = fi
 
 ::: callout-important
 ### Save your work and apply the Git and GitHub workflow!
-After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
+After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) {{< fa arrow-right >}} Commit {{< fa arrow-right >}} Pull {{< fa arrow-right >}} Push** (and then make sure both partners sync with GitHub).
 :::
 
 
@@ -671,7 +672,7 @@ If you save the plot, you can display the saved image in your Quarto document us
 
 ::: callout-important
 ### Save your work and apply the Git and GitHub workflow!
-After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
+After you've completed the exercises or reached a significant stopping point, use the workflow: **Stage (add) {{< fa arrow-right >}} Commit {{< fa arrow-right >}} Pull {{< fa arrow-right >}} Push** (and then make sure both partners sync with GitHub).
 :::
 
 ## Challenge yourself: MPAs! (optional)
@@ -778,7 +779,7 @@ When the report is complete, make sure to Render the Quarto document.  Rendering
 ::: callout-important
 ### Save your work and apply the Git and GitHub workflow!
 
-After you've completed and successfully rendered your report, use the workflow: **Stage (add) -> Commit -> Pull -> Push** (and then make sure both partners sync with GitHub).
+After you've completed and successfully rendered your report, use the workflow: **Stage (add) {{< fa arrow-right >}} Commit {{< fa arrow-right >}} Pull {{< fa arrow-right >}} Push** (and then make sure both partners sync with GitHub).
 :::
 
 ## Bonus (optional): Publish using GitHub Pages

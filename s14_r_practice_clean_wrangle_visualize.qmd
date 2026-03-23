@@ -72,10 +72,10 @@ The important thing is to thoughtfully consider the needs of your project and to
 
 <div style="font-family: monospace;">
 {{< fa brands github >}} Repository: lobster_analysis  
-|--&nbsp;{{< fa file-lines >}} README.md  
-|--&nbsp;{{< fa file-lines >}} .gitignore  
-|--&nbsp;{{< fa folder >}} **data**  
-|&nbsp;&nbsp;|--&nbsp; {{< fa file-lines >}} **Lobster_Abundance_All_Years_20240411.csv**  
+├--&nbsp;{{< fa file-lines >}} README.md  
+├--&nbsp;{{< fa file-lines >}} .gitignore  
+├--&nbsp;{{< fa folder >}} **data**  
+|&nbsp;&nbsp;├--&nbsp; {{< fa file-lines >}} **Lobster_Abundance_All_Years_20240411.csv**  
 |&nbsp;&nbsp;└--&nbsp; {{< fa file-lines >}} **Lobster_Trap_Counts_All_Years_20210519.csv**  
 └--&nbsp;{{< fa folder >}} **figs**  
 </div>
@@ -95,11 +95,11 @@ The important thing is to thoughtfully consider the needs of your project and to
 
 <div style="font-family: monospace;">
 {{< fa brands github >}} Repository: lobster_analysis  
-|--&nbsp;{{< fa file-lines >}} README.md  
-|--&nbsp;{{< fa file-lines >}} .gitignore  
+├--&nbsp;{{< fa file-lines >}} README.md  
+├--&nbsp;{{< fa file-lines >}} .gitignore  
 └--&nbsp;{{< fa folder >}} **scripts**  
-&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa file-code >}} **collaborator_analysis.qmd**  
-&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa file-code >}} **owner_analysis**  
+&nbsp;&nbsp;&nbsp;├--&nbsp; {{< fa file-code >}} **collaborator_analysis.qmd**  
+&nbsp;&nbsp;&nbsp;├--&nbsp; {{< fa file-code >}} **owner_analysis**  
 &nbsp;&nbsp;&nbsp;└--&nbsp; {{< fa file-code >}} **lobster_report.qmd**
 </div>
 

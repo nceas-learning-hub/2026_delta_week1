@@ -543,19 +543,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
-  <li><a href="#github-issues" id="toc-github-issues" class="nav-link" data-scroll-target="#github-issues"><span class="header-section-number">2</span> GitHub Issues</a>
+  <li><a href="#github-issues" id="toc-github-issues" class="nav-link active" data-scroll-target="#github-issues"><span class="header-section-number">1</span> GitHub Issues</a>
   <ul class="collapse">
-  <li><a href="#creating-an-issue" id="toc-creating-an-issue" class="nav-link" data-scroll-target="#creating-an-issue"><span class="header-section-number">2.1</span> Creating an Issue</a></li>
-  <li><a href="#issues-as-a-communication-tool" id="toc-issues-as-a-communication-tool" class="nav-link" data-scroll-target="#issues-as-a-communication-tool"><span class="header-section-number">2.2</span> Issues as a Communication Tool</a></li>
-  <li><a href="#closing-an-issue" id="toc-closing-an-issue" class="nav-link" data-scroll-target="#closing-an-issue"><span class="header-section-number">2.3</span> Closing an Issue</a></li>
+  <li><a href="#creating-an-issue" id="toc-creating-an-issue" class="nav-link" data-scroll-target="#creating-an-issue"><span class="header-section-number">1.1</span> Creating an Issue</a></li>
+  <li><a href="#issues-as-a-communication-tool" id="toc-issues-as-a-communication-tool" class="nav-link" data-scroll-target="#issues-as-a-communication-tool"><span class="header-section-number">1.2</span> Issues as a Communication Tool</a></li>
+  <li><a href="#closing-an-issue" id="toc-closing-an-issue" class="nav-link" data-scroll-target="#closing-an-issue"><span class="header-section-number">1.3</span> Closing an Issue</a></li>
   </ul></li>
-  <li><a href="#issues-for-project-management" id="toc-issues-for-project-management" class="nav-link" data-scroll-target="#issues-for-project-management"><span class="header-section-number">3</span> Issues for Project Management</a>
+  <li><a href="#github-issues-for-project-management" id="toc-github-issues-for-project-management" class="nav-link" data-scroll-target="#github-issues-for-project-management"><span class="header-section-number">2</span> GitHub Issues for Project Management</a>
   <ul class="collapse">
-  <li><a href="#reference-issues-by-issue-number" id="toc-reference-issues-by-issue-number" class="nav-link" data-scroll-target="#reference-issues-by-issue-number"><span class="header-section-number">3.1</span> Reference Issues by Issue Number</a></li>
-  <li><a href="#sub-issues-three-ways" id="toc-sub-issues-three-ways" class="nav-link" data-scroll-target="#sub-issues-three-ways"><span class="header-section-number">3.2</span> Sub-Issues, Three Ways</a></li>
+  <li><a href="#reference-issues-by-issue-number" id="toc-reference-issues-by-issue-number" class="nav-link" data-scroll-target="#reference-issues-by-issue-number"><span class="header-section-number">2.1</span> Reference Issues by Issue Number</a></li>
+  <li><a href="#sub-issues-three-ways" id="toc-sub-issues-three-ways" class="nav-link" data-scroll-target="#sub-issues-three-ways"><span class="header-section-number">2.2</span> Sub-Issues, Three Ways</a></li>
+  <li><a href="#issue-scope" id="toc-issue-scope" class="nav-link" data-scroll-target="#issue-scope"><span class="header-section-number">2.3</span> Issue Scope</a></li>
   </ul></li>
-  <li><a href="#exercise-practice-creating-informative-readmes" id="toc-exercise-practice-creating-informative-readmes" class="nav-link" data-scroll-target="#exercise-practice-creating-informative-readmes"><span class="header-section-number">4</span> Exercise: Practice creating informative READMEs</a></li>
+  <li><a href="#github-projects-for-project-management" id="toc-github-projects-for-project-management" class="nav-link" data-scroll-target="#github-projects-for-project-management"><span class="header-section-number">3</span> GitHub Projects for Project Management</a>
+  <ul class="collapse">
+  <li><a href="#creating-a-project" id="toc-creating-a-project" class="nav-link" data-scroll-target="#creating-a-project"><span class="header-section-number">3.1</span> Creating a Project</a></li>
+  <li><a href="#project-views-and-templates" id="toc-project-views-and-templates" class="nav-link" data-scroll-target="#project-views-and-templates"><span class="header-section-number">3.2</span> Project Views and Templates</a></li>
+  <li><a href="#managing-a-project" id="toc-managing-a-project" class="nav-link" data-scroll-target="#managing-a-project"><span class="header-section-number">3.3</span> Managing a Project</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -579,23 +584,21 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <p>After completing this session, you will be able to:</p>
 <ul>
-<li>Utilize GitHub’s project management tools to organize and manage projects</li>
 <li>Create issues in GitHub for documentation and to track specific, actionable tasks</li>
-<li>Craft informative READMEs for Git repositories</li>
+<li>Utilize GitHub Issues and Sub-issues to manage and track project tasks</li>
+<li>Explain in what contexts GitHub Projects are useful</li>
+<li>Compare the benefits the three available project view options</li>
+<li>Explain how GitHub Issues and GitHub Projects relate to each other <!-- - Craft informative READMEs for Git repositories --></li>
 </ul>
 </div>
 </div>
-<section id="overview" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
-<ul>
-<li>Several levels of project management tools exist, and GitHub provides a suite of tools to help you manage your projects.</li>
-<li>Issues</li>
-<li>Projects</li>
-<li>READMEs</li>
-</ul>
-</section>
-<section id="github-issues" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="github-issues"><span class="header-section-number">2</span> GitHub Issues</h2>
+<!-- ## Overview -->
+<!-- - Several levels of project management tools exist, and GitHub provides a suite of tools to help you manage your projects. -->
+<!-- - Issues -->
+<!-- - Projects -->
+<!-- - READMEs -->
+<section id="github-issues" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="github-issues"><span class="header-section-number">1</span> GitHub Issues</h2>
 <p>GitHub Issues are a way of identifying, delegating, and documenting tasks within a single repository, or even across repositories. Think of them as a structured, searchable to-do list that lives right next to your code - complete with a comment thread, assignees, labels, and a permanent record even after a task is finished.</p>
 <p>They can also serve as a digital lab notebook: a place to brainstorm, preserve important links, or distribute supplementary material across a team.</p>
 <p>An additional use (common in open-source projects) is letting people <em>outside</em> your team flag problems or request features. If you’ve ever filed a bug report on an R package hosted on GitHub, you’ve already opened an issue.</p>
@@ -650,8 +653,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="creating-an-issue" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="creating-an-issue"><span class="header-section-number">2.1</span> Creating an Issue</h3>
+<section id="creating-an-issue" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="creating-an-issue"><span class="header-section-number">1.1</span> Creating an Issue</h3>
 <p>For this set of exercises, choose a partner with whom you’ve already collaborated on a GitHub repository. If you haven’t yet collaborated on a repo, have one partner create a new repository and add the other as a collaborator (<em>Settings</em> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <em>Collaborators</em> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <em>Manage Access</em> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <em>Invite a collaborator</em>).</p>
 <p>Both the repo owner and collaborator should navigate to the repository’s Issues tab and follow along with the steps below, in parallel. For inspiration for writing your issue, consider a higher-level task for a project you are currently working on, or for our examples, we’ll use a hypothetical project involving salmon data.</p>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
@@ -809,8 +812,8 @@ Tip
 </div>
 <!-- end issue metadata exercise -->
 </section>
-<section id="issues-as-a-communication-tool" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="issues-as-a-communication-tool"><span class="header-section-number">2.2</span> Issues as a Communication Tool</h3>
+<section id="issues-as-a-communication-tool" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="issues-as-a-communication-tool"><span class="header-section-number">1.2</span> Issues as a Communication Tool</h3>
 <p>The comment thread of an issue can be used to document the progress of a task, and to have discussions about how to approach it. This is especially helpful for asynchronous communication across time zones or schedules.</p>
 <p>You and collaborators can respond directly on GitHub, including changing labels, adding links, checking off checkboxes, and updating assignees.</p>
 <p>If you write an issue or are an assignee, or you have set your status to “watching” the repository, you will also get email notifications for all activity on that issue. You can open the issue in GitHub from your email, or better yet, respond directly from your inbox just like a regular email. This is helpful for managers and non-coders who want to stay in the loop without needing to log into GitHub.</p>
@@ -856,17 +859,17 @@ Tip
 </div>
 <!-- end exercise -->
 </section>
-<section id="closing-an-issue" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="closing-an-issue"><span class="header-section-number">2.3</span> Closing an Issue</h3>
+<section id="closing-an-issue" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="closing-an-issue"><span class="header-section-number">1.3</span> Closing an Issue</h3>
 <p>When all questions and tasks connected to a specific issue have been answered and resolved, you can close the issue to remove it from the “open” issues list. Click the <span style="background-color: #f0f0f0;">&nbsp;<i class="fa-regular fa-circle-check" aria-label="circle-check"></i>&nbsp;<strong>Close&nbsp;issue</strong>&nbsp;</span> button at the bottom; best practice is to include an optional final comment explaining the reasons for closure.</p>
 <p>All documentation is preserved in the closed issue, and you can always reopen it if needed.</p>
 </section>
 </section>
-<section id="issues-for-project-management" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="issues-for-project-management"><span class="header-section-number">3</span> Issues for Project Management</h2>
+<section id="github-issues-for-project-management" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="github-issues-for-project-management"><span class="header-section-number">2</span> GitHub Issues for Project Management</h2>
 <p>GitHub has features to link issues together to track dependencies (e.g., issue A needs to be complete before issue B can start) and nest sub-issues within larger issues (e.g., issues C and D are sub-tasks required to complete issue A).</p>
-<section id="reference-issues-by-issue-number" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="reference-issues-by-issue-number"><span class="header-section-number">3.1</span> Reference Issues by Issue Number</h3>
+<section id="reference-issues-by-issue-number" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="reference-issues-by-issue-number"><span class="header-section-number">2.1</span> Reference Issues by Issue Number</h3>
 <p>Each issue is assigned a unique number that is permanent and repository-specific. You can reference this issue number in other issues, commit messages, and pull requests to easily create links between them.</p>
 <ul>
 <li>To reference an existing issue from an issue or comment thread, simply type <code>#</code> followed by the issue number (e.g., <code>#2</code> - that’s it!). This creates a link to the referenced issue, and on that issue, creates a back-reference in the comment thread.</li>
@@ -874,9 +877,9 @@ Tip
 <li>The <code>#</code> syntax works for issues within the current repository. To reference an issue from another repository, use the syntax <code>owner/repo#issue_number</code> (e.g., <code>oharac/salmon_report#2</code>).</li>
 </ul>
 </section>
-<section id="sub-issues-three-ways" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="sub-issues-three-ways"><span class="header-section-number">3.2</span> Sub-Issues, Three Ways</h3>
-<p><strong>Sub-issues</strong> are simply regular issues that are linked to a <strong>parent</strong> issue (and a parent issue is simply a regular issue that has sub-issues!). They can be used to break down a larger task into smaller, more manageable pieces, each with its own assignees, metadata, and comment thread. A sub-issue can have only one parent issue, but a parent can have many sub-issues.</p>
+<section id="sub-issues-three-ways" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="sub-issues-three-ways"><span class="header-section-number">2.2</span> Sub-Issues, Three Ways</h3>
+<p><strong>Sub-issues</strong> can be used to break down a larger task into smaller, more manageable pieces, each with its own assignees, metadata, and comment thread. A sub-issue is simply a regular issue that is linked to a <strong>parent</strong> issue (and a parent issue is simply a regular issue that has sub-issues!). A sub-issue can have only one parent issue, but a parent can have many sub-issues.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">From Issue Body</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">From Checklist</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">From Relationships</a></li></ul>
 <div class="tab-content">
@@ -913,38 +916,218 @@ Tip
 </div>
 </div>
 <!-- end tabset -->
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Exercise</span>Create an Issue Hierarchy
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p>Using your newly created issue, create at least two sub-issues using any of the three methods described above. Add assignees and metadata as you see fit.</p>
+<p>Explore the parent issue and the subissues to see all the ways they are linked together.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_project_management/issues06_issue_hierarchy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/github_project_management/issues06_issue_hierarchy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Screenshot of GitHub issue page, showing a parent issue with sub-issues"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-</section>
-<section id="exercise-practice-creating-informative-readmes" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="exercise-practice-creating-informative-readmes"><span class="header-section-number">4</span> Exercise: Practice creating informative READMEs</h2>
-<p>You can do this either for the <code>training_&lt;username&gt;</code> repo, or the Lobster Report repo (make sure just one of you edits this one) or edit a personal repo from one of your projects. Make sure to include the 6 core elements:</p>
-<ul class="task-list">
-<li><label><input type="checkbox">A short, but descriptive title</label></li>
-<li><label><input type="checkbox">A brief explanation of the repository’s purpose</label></li>
-<li><label><input type="checkbox">A concise description of what’s housed in the repository</label></li>
-<li><label><input type="checkbox">Details regarding data access</label></li>
-<li><label><input type="checkbox">A list of authors or contributors (for collaborative work)</label></li>
-<li><label><input type="checkbox">References / acknowledgements</label></li>
+<section id="issue-scope" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="issue-scope"><span class="header-section-number">2.3</span> Issue Scope</h3>
+<p>“Issue Scope” describes the size and complexity of a task that is represented by an issue. The scope of an issue can vary from small, specific tasks (e.g., “Fix typo in README”) to large, complex projects (e.g., “Create a report comparing salmon fish ladder counts over time”).</p>
+<p>A good approach is to make sure every issue corresponds to a small, independent, measurable task or decision (see SMART Goals). If an issue is too large or complex, it can be difficult to manage and may lead to confusion about what needs to be done. It is not always possible to predict how projects can evolve at the outset, so you may start with issues that end up spanning multiple tasks. As the project progresses, you can edit issues to be more focused, and add sub-issues to break them into smaller pieces, making delegation and tracking of task completion that much easier.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>SMART Goals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>SMART</strong> is a popular mnemonic to remember criteria for effective goal-setting:</p>
+<ul>
+<li><strong>S</strong>pecific: a clearly focused task or decision to be completed</li>
+<li><strong>M</strong>easurable: a clear metric or indicator to determine when the task is complete</li>
+<li><strong>A</strong>ttainable: a realistic task that can be completed by the assignee(s) within the time frame</li>
+<li><strong>R</strong>elevant: a clear connection to the overall project</li>
+<li><strong>T</strong>ime-specific: a clear deadline or time frame for completion</li>
 </ul>
+<p>As you write an issue or break a large task into sub-issues, keep these criteria in mind to ensure your issues have a well defined scope!</p>
+</div>
+</div>
+</section>
+</section>
+<section id="github-projects-for-project-management" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="github-projects-for-project-management"><span class="header-section-number">3</span> GitHub Projects for Project Management</h2>
+<p>Projects are GitHub’s primary <em>strategic</em> project management tool. While GitHub Issues can be very useful for particular tasks at a <em>tactical</em>, on-the-ground level, they are less valuable for making larger-scale plans and tracking evolving priorities. <strong>A GitHub Project acts as an umbrella that includes many issues</strong> and tracks their inter-relationships within a bigger-picture view of a project.</p>
+<p>This lesson is just a quick introduction to GitHub Projects, showing a few key features and management tips. As you work with collaborators within a project, you can develop your own style and approach to using Projects, and you can also explore the <a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects">GitHub documentation</a> for more details and tips.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Using Projects vs.&nbsp;Issues
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For many research collaborations and working groups, using issues and issue metadata can be enough for the scale of their project. GitHub Projects can be super useful, but they also include a non-trivial amount of setup and maintenance. Consider using a GitHub Project if some of the following applies to you:</p>
+<ul>
+<li>You create and manage issues extensively</li>
+<li>You apply many metadata features within issues, E.g., assignees, labels, sub-issues, issue relationships</li>
+<li>You work across multiple repositories, all with their own issues</li>
+<li>Project management is interesting or exciting to you! 🤓</li>
+</ul>
+</div>
+</div>
+<section id="creating-a-project" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="creating-a-project"><span class="header-section-number">3.1</span> Creating a Project</h3>
+<p>You can create a project from your GitHub user profile page, an organization page, or from a repository page on which you are owner or have appropriate permissions. In any case, click on the <strong>Projects</strong> tab, then click the <span style="background-color: green; color: white">&amp;160;<strong>+ New project</strong>&amp;160;</span> button.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">User/org profile</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Repo page</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_project_management/projects01a_tab_profile.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/github_project_management/projects01a_tab_profile.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Screenshot of GitHub user profile page, with the Projects tab highlighted"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_project_management/projects01b_tab_repo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/github_project_management/projects01b_tab_repo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Screenshot of GitHub repository landing page, with the Projects tab highlighted"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>README Examples
+<span class="screen-reader-only">Note</span>Who Owns the Project?
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>The project owner is the <strong>user</strong> or <strong>organization</strong> under which the project is created. This determines who has access to the project and where it lives within GitHub.</p>
+<p>A project does <strong>not</strong> belong to a particular repository, and a project can pull issues and info from multiple repositories even across multiple owners!</p>
+</div>
+</div>
+</section>
+<section id="project-views-and-templates" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="project-views-and-templates"><span class="header-section-number">3.2</span> Project Views and Templates</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_project_management/projects02a_create1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/github_project_management/projects02a_create1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Screenshot of GitHub project creation page, showing the view options and template options"></a></p>
+</figure>
+</div>
+<p>When you create a project, you can choose from several pre-defined templates: <strong>Team planning</strong>, <strong>Kanban</strong>, <strong>Feature release</strong>, <strong>Bug tracker</strong>. These templates provide a starting point with pre-defined metadata, automation, and views, but you can customize them as much as you like. For your first project, it might be less intimidating to start from scratch by choosing a simple view. Here we have chosen a new “board” view, which is a flexible, visual, intuitive way to organize and track issues.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github_project_management/projects02b_create2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/github_project_management/projects02b_create2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Screenshot of GitHub project creation page for a new Board, with an example image of a board view"></a></p>
+</figure>
+</div>
+<p>Here you can name the project and optionally choose to import issues from an existing repository! Thanks GitHub!</p>
+<p>You can add multiple Views to a project, each organizing and visualizing the project’s issues in a different way.</p>
 <ul>
-<li><p><a href="https://github.com/samanthacsik/strava-dashboard?tab=readme-ov-file#a-shiny-dashboard-for-exploring-my-personal-strava-data">A shiny dashboard for exploring my personal Strava data, by Sam Csik</a></p></li>
-<li><p><a href="https://github.com/annaramji/thomas-fire?tab=readme-ov-file#thomas-fire-data-analysis">Thomas Fire Data Analysis by Anna Ramji</a></p></li>
-<li><p><a href="https://github.com/hackergrrl/art-of-readme?tab=readme-ov-file#readme">Art of README by Kira Oakley</a></p></li>
+<li><strong>Table view</strong>: a spreadsheet-like interface to view and edit issue metadata in bulk.</li>
+<li><strong>Board view</strong> (e.g., Kanban board): a visual, intuitive, drag-and-drop interface to organize issues into columns that represent different stages of completion, categories, or any other grouping that makes sense for your project.</li>
+<li><strong>Roadmap view</strong> (e.g., Gantt chart): a chronological view of all activity on the project’s issues, including comments. Requires a bit more information than the Board view (e.g., start/stop dates, dependencies), but provides a powerful way to track the timeline and dependencies of a project.</li>
+</ul>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Exercise</span>Set up a project!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p>From your profile or repository page, create a new project. Choose a “board” view (recommended) or if you feel adventurous, choose a different view or template. Change the name of the project. Let GitHub import issues from your repository.</p>
+<ul>
+<li>Explore your current view, add new views, and see how the imported issues are represented in the project.</li>
+<li>In board view, drag and drop an issue and see how the metadata changes, and how these changes are represented in the issue comment thread!</li>
 </ul>
 </div>
 </div>
+</div>
+</div>
+</section>
+<section id="managing-a-project" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="managing-a-project"><span class="header-section-number">3.3</span> Managing a Project</h3>
+<p>Just as you can customize metadata for issues, you can manage and customize many options for a project. In board view, you can add new columns, rename columns, and drag and drop issues between columns. You can also customize the metadata that is displayed on the cards, and you can filter the view to show only certain issues based on their metadata.</p>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Exercise</span>Manage board view
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p>Add a new column (click <strong>+</strong> on far right side of all columns) called “Back Burner” for issues that are not a current priority but may be relevant later (choose a color and write a description). Move it to the left of “To Do”.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-exercise no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Exercise</span>Add a new issue to board view
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="callout-exercise">
+<p>Add a new issue to that column (click <strong>+</strong> in top right of that column), something like “Present report at ESA Conference”. This shows up at the bottom of the browser window. Select the option to create this as a new issue (click the <strong>+</strong> next to the issue title if necessary). (You can also create as a draft that can later be converted to a full issue, or link to an existing issue.)</p>
+<p><a href="images/github_project_management/projects03_manage_board.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/github_project_management/projects03_manage_board.png" class="img-fluid quarto-figure quarto-figure-center" style="width:80.0%" alt="Screenshot of GitHub project board view, showing the option to add a new issue to a column"></a>)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- ## Exercise: Practice creating informative READMEs -->
+<!-- You can do this either for the `training_<username>` repo, or the Lobster Report repo (make sure just one of you edits this one) or edit a personal repo from one of your projects. Make sure to include the 6 core elements: -->
+<!-- - [ ] A short, but descriptive title -->
+<!-- - [ ] A brief explanation of the repository’s purpose -->
+<!-- - [ ] A concise description of what’s housed in the repository -->
+<!-- - [ ] Details regarding data access -->
+<!-- - [ ] A list of authors or contributors (for collaborative work) -->
+<!-- - [ ] References / acknowledgements -->
+<!-- ::: {.callout-note} -->
+<!-- ### README Examples -->
+<!-- -  [A shiny dashboard for exploring my personal Strava data, by Sam Csik](https://github.com/samanthacsik/strava-dashboard?tab=readme-ov-file#a-shiny-dashboard-for-exploring-my-personal-strava-data) -->
+<!-- - [Thomas Fire Data Analysis by Anna Ramji](https://github.com/annaramji/thomas-fire?tab=readme-ov-file#thomas-fire-data-analysis) -->
+<!-- - [Art of README by Kira Oakley](https://github.com/hackergrrl/art-of-readme?tab=readme-ov-file#readme) -->
+<!-- ::: -->
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

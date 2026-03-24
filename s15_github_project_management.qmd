@@ -280,7 +280,7 @@ For many research collaborations and working groups, using issues and issue meta
 
 ### Creating a Project
 
-You can create a project from your GitHub user profile page, an organization page, or from a repository page on which you are owner or have appropriate permissions.  In any case, click on the **Projects** tab, then click the [&160;**+ New project**&160;]{style="background-color: green; color: white"} button.
+You can create a project from your GitHub user profile page, an organization page, or from a repository page on which you are owner or have appropriate permissions.  In any case, click on the **Projects** tab, then click the [&nbsp;**+&nbsp;New project**&nbsp;]{style="background-color: green; color: white"} button.
 
 :::panel-tabset
 ### User/org profile

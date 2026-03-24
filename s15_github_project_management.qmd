@@ -7,18 +7,21 @@ title: GitHub for Project Management
 
 After completing this session, you will be able to:
 
-- Utilize GitHub's project management tools to organize and manage projects
 - Create issues in GitHub for documentation and to track specific, actionable tasks
-- Craft informative READMEs for Git repositories
+- Utilize GitHub Issues and Sub-issues to manage and track project tasks
+- Explain in what contexts GitHub Projects are useful
+- Compare the benefits the three available project view options
+- Explain how GitHub Issues and GitHub Projects relate to each other
+<!-- - Craft informative READMEs for Git repositories -->
 :::
 
 
-## Overview
+<!-- ## Overview -->
 
-- Several levels of project management tools exist, and GitHub provides a suite of tools to help you manage your projects.
-- Issues
-- Projects
-- READMEs
+<!-- - Several levels of project management tools exist, and GitHub provides a suite of tools to help you manage your projects. -->
+<!-- - Issues -->
+<!-- - Projects -->
+<!-- - READMEs -->
 
 ## GitHub Issues
 
@@ -174,7 +177,7 @@ When all questions and tasks connected to a specific issue have been answered an
 
 All documentation is preserved in the closed issue, and you can always reopen it if needed.
 
-## Issues for Project Management
+## GitHub Issues for Project Management
 
 GitHub has features to link issues together to track dependencies (e.g., issue A needs to be complete before issue B can start) and nest sub-issues within larger issues (e.g., issues C and D are sub-tasks required to complete issue A).
 
@@ -188,7 +191,7 @@ Each issue is assigned a unique number that is permanent and repository-specific
 
 ### Sub-Issues, Three Ways
 
-**Sub-issues** are simply regular issues that are linked to a **parent** issue (and a parent issue is simply a regular issue that has sub-issues!).  They can be used to break down a larger task into smaller, more manageable pieces, each with its own assignees, metadata, and comment thread.  A sub-issue can have only one parent issue, but a parent can have many sub-issues.
+**Sub-issues** can be used to break down a larger task into smaller, more manageable pieces, each with its own assignees, metadata, and comment thread.  A sub-issue is simply a regular issue that is linked to a **parent** issue (and a parent issue is simply a regular issue that has sub-issues!).  A sub-issue can have only one parent issue, but a parent can have many sub-issues.
 
 ::: panel-tabset
 
@@ -222,28 +225,140 @@ Click the Relationships button at the bottom of the right-hand sidebar, and choo
 :::
 <!-- end tabset -->
 
+:::callout-exercise
+### Create an Issue Hierarchy
+
+Using your newly created issue, create at least two sub-issues using any of the three methods described above.  Add assignees and metadata as you see fit.  
+
+Explore the parent issue and the subissues to see all the ways they are linked together.
+
+![](images/github_project_management/issues06_issue_hierarchy.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing a parent issue with sub-issues"}
+:::
+
+### Issue Scope
+
+"Issue Scope" describes the size and complexity of a task that is represented by an issue.  The scope of an issue can vary from small, specific tasks (e.g., "Fix typo in README") to large, complex projects (e.g., "Create a report comparing salmon fish ladder counts over time").
+
+A good approach is to make sure every issue corresponds to a small, independent, measurable task or decision (see SMART Goals).  If an issue is too large or complex, it can be difficult to manage and may lead to confusion about what needs to be done. It is not always possible to predict how projects can evolve at the outset, so you may start with issues that end up spanning multiple tasks.  As the project progresses, you can edit issues to be more focused, and add sub-issues to break them into smaller pieces, making delegation and tracking of task completion that much easier.
+
+::: callout-tip
+### SMART Goals 
+
+**SMART** is a popular mnemonic to remember criteria for effective goal-setting:
+
+* **S**pecific: a clearly focused task or decision to be completed
+* **M**easurable: a clear metric or indicator to determine when the task is complete
+* **A**ttainable: a realistic task that can be completed by the assignee(s) within the time frame
+* **R**elevant: a clear connection to the overall project
+* **T**ime-specific: a clear deadline or time frame for completion
+
+As you write an issue or break a large task into sub-issues, keep these criteria in mind to ensure your issues have a well defined scope!
+:::
 
 
+## GitHub Projects for Project Management
 
-## Exercise: Practice creating informative READMEs
+Projects are GitHub’s primary *strategic* project management tool. While GitHub Issues can be very useful for particular tasks at a *tactical*, on-the-ground level, they are less valuable for making larger-scale plans and tracking evolving priorities. **A GitHub Project acts as an umbrella that includes many issues** and tracks their inter-relationships within a bigger-picture view of a project.
 
-You can do this either for the `training_<username>` repo, or the Lobster Report repo (make sure just one of you edits this one) or edit a personal repo from one of your projects. Make sure to include the 6 core elements:
+This lesson is just a quick introduction to GitHub Projects, showing a few key features and management tips.  As you work with collaborators within a project, you can develop your own style and approach to using Projects, and you can also explore the [GitHub documentation](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) for more details and tips.
 
-- [ ] A short, but descriptive title
-- [ ] A brief explanation of the repository’s purpose
-- [ ] A concise description of what’s housed in the repository
-- [ ] Details regarding data access
-- [ ] A list of authors or contributors (for collaborative work)
-- [ ] References / acknowledgements
+:::callout-warning
+### Using Projects vs. Issues
 
-::: {.callout-note}
-### README Examples
+For many research collaborations and working groups, using issues and issue metadata can be enough for the scale of their project.  GitHub Projects can be super useful, but they also include a non-trivial amount of setup and maintenance. Consider using a GitHub Project if some of the following applies to you:
 
--  [A shiny dashboard for exploring my personal Strava data, by Sam Csik](https://github.com/samanthacsik/strava-dashboard?tab=readme-ov-file#a-shiny-dashboard-for-exploring-my-personal-strava-data)
-
-- [Thomas Fire Data Analysis by Anna Ramji](https://github.com/annaramji/thomas-fire?tab=readme-ov-file#thomas-fire-data-analysis)
-
-- [Art of README by Kira Oakley](https://github.com/hackergrrl/art-of-readme?tab=readme-ov-file#readme)
+* You create and manage issues extensively
+* You apply many metadata features within issues, E.g., assignees, labels, sub-issues, issue relationships
+* You work across multiple repositories, all with their own issues
+* Project management is interesting or exciting to you! &#x1F913;
 
 :::
+
+### Creating a Project
+
+You can create a project from your GitHub user profile page, an organization page, or from a repository page on which you are owner or have appropriate permissions.  In any case, click on the **Projects** tab, then click the [&160;**+ New project**&160;]{style="background-color: green; color: white"} button.
+
+:::panel-tabset
+### User/org profile
+
+![](images/github_project_management/projects01a_tab_profile.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub user profile page, with the Projects tab highlighted"}
+
+### Repo page
+
+![](images/github_project_management/projects01b_tab_repo.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub repository landing page, with the Projects tab highlighted"}
+
+:::
+
+:::callout-note
+### Who Owns the Project?
+
+The project owner is the **user** or **organization** under which the project is created.  This determines who has access to the project and where it lives within GitHub.
+
+A project does **not** belong to a particular repository, and a project can pull issues and info from multiple repositories even across multiple owners!
+:::
+
+### Project Views and Templates
+
+![](images/github_project_management/projects02a_create1.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub project creation page, showing the view options and template options"}
+
+When you create a project, you can choose from several pre-defined templates: **Team planning**, **Kanban**, **Feature release**, **Bug tracker**.  These templates provide a starting point with pre-defined metadata, automation, and views, but you can customize them as much as you like.  For your first project, it might be less intimidating to start from scratch by choosing a simple view.  Here we have chosen a new "board" view, which is a flexible, visual, intuitive way to organize and track issues.
+
+![](images/github_project_management/projects02b_create2.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub project creation page for a new Board, with an example image of a board view"}
+
+Here you can name the project and optionally choose to import issues from an existing repository!  Thanks GitHub!
+
+You can add multiple Views to a project, each organizing and visualizing the project's issues in a different way.
+
+* **Table view**: a spreadsheet-like interface to view and edit issue metadata in bulk.
+* **Board view** (e.g., Kanban board): a visual, intuitive, drag-and-drop interface to organize issues into columns that represent different stages of completion, categories, or any other grouping that makes sense for your project.
+* **Roadmap view** (e.g., Gantt chart): a chronological view of all activity on the project's issues, including comments.  Requires a bit more information than the Board view (e.g., start/stop dates, dependencies), but provides a powerful way to track the timeline and dependencies of a project.
+
+:::callout-exercise
+### Set up a project!
+
+From your profile or repository page, create a new project.  Choose a "board" view (recommended) or if you feel adventurous, choose a different view or template.  Change the name of the project.  Let GitHub import issues from your repository.
+
+* Explore your current view, add new views, and see how the imported issues are represented in the project.
+* In board view, drag and drop an issue and see how the metadata changes, and how these changes are represented in the issue comment thread!
+:::
+
+### Managing a Project
+
+Just as you can customize metadata for issues, you can manage and customize many options for a project.  In board view, you can add new columns, rename columns, and drag and drop issues between columns.  You can also customize the metadata that is displayed on the cards, and you can filter the view to show only certain issues based on their metadata.
+
+:::callout-exercise
+### Manage board view
+
+Add a new column (click **+** on far right side of all columns) called "Back Burner" for issues that are not a current priority but may be relevant later (choose a color and write a description).  Move it to the left of "To Do".  
+
+:::
+
+:::callout-exercise
+### Add a new issue to board view
+
+Add a new issue to that column (click **+** in top right of that column), something like "Present report at ESA Conference". This shows up at the bottom of the browser window.  Select the option to create this as a new issue (click the **+** next to the issue title if necessary).  (You can also create as a draft that can later be converted to a full issue, or link to an existing issue.)
+
+![](images/github_project_management/projects03_manage_board.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub project board view, showing the option to add a new issue to a column"})
+:::
+<!-- ## Exercise: Practice creating informative READMEs -->
+
+<!-- You can do this either for the `training_<username>` repo, or the Lobster Report repo (make sure just one of you edits this one) or edit a personal repo from one of your projects. Make sure to include the 6 core elements: -->
+
+<!-- - [ ] A short, but descriptive title -->
+<!-- - [ ] A brief explanation of the repository’s purpose -->
+<!-- - [ ] A concise description of what’s housed in the repository -->
+<!-- - [ ] Details regarding data access -->
+<!-- - [ ] A list of authors or contributors (for collaborative work) -->
+<!-- - [ ] References / acknowledgements -->
+
+<!-- ::: {.callout-note} -->
+<!-- ### README Examples -->
+
+<!-- -  [A shiny dashboard for exploring my personal Strava data, by Sam Csik](https://github.com/samanthacsik/strava-dashboard?tab=readme-ov-file#a-shiny-dashboard-for-exploring-my-personal-strava-data) -->
+
+<!-- - [Thomas Fire Data Analysis by Anna Ramji](https://github.com/annaramji/thomas-fire?tab=readme-ov-file#thomas-fire-data-analysis) -->
+
+<!-- - [Art of README by Kira Oakley](https://github.com/hackergrrl/art-of-readme?tab=readme-ov-file#readme) -->
+
+<!-- ::: -->
 

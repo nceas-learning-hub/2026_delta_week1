@@ -23,6 +23,10 @@ After completing this session, you will be able to:
 <!-- - Projects -->
 <!-- - READMEs -->
 
+## GitHub for Project Management: Intro
+
+
+
 ## GitHub Issues
 
 GitHub Issues are a way of identifying, delegating, and documenting tasks within a single repository, or even across repositories. Think of them as a structured, searchable to-do list that lives right next to your code - complete with a comment thread, assignees, labels, and a permanent record even after a task is finished.
@@ -299,9 +303,11 @@ A project does **not** belong to a particular repository, and a project can pull
 
 ### Project Views and Templates
 
+When you create a project, you can choose from several pre-defined templates: **Team planning**, **Kanban**, **Feature release**, **Bug tracker**.  These templates provide a starting point with pre-defined metadata, automation, and views, but you can customize them as much as you like.  
+
 ![](images/github_project_management/projects02a_create1.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub project creation page, showing the view options and template options"}
 
-When you create a project, you can choose from several pre-defined templates: **Team planning**, **Kanban**, **Feature release**, **Bug tracker**.  These templates provide a starting point with pre-defined metadata, automation, and views, but you can customize them as much as you like.  For your first project, it might be less intimidating to start from scratch by choosing a simple view.  Here we have chosen a new "board" view, which is a flexible, visual, intuitive way to organize and track issues.
+For your first project, it might be less intimidating to start from scratch by choosing a simple view.  Here we have chosen a new "board" view, which is a flexible, visual, intuitive way to organize and track issues.
 
 ![](images/github_project_management/projects02b_create2.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub project creation page for a new Board, with an example image of a board view"}
 

@@ -23,7 +23,13 @@ After completing this session, you will be able to:
 <!-- - Projects -->
 <!-- - READMEs -->
 
-## GitHub for Project Management: Intro
+## GitHub for Project Management: Many Options!
+
+In addition to version control and collaboration, GitHub provides a suite of tools to help you manage your projects.  These tools can be used in combination to track tasks, document decisions, and communicate with your team.  Here we'll focus on three strategies for project management within GitHub, from easy to complex:
+
+* GitHub Issues: a way to identify, delegate, and document specific, actionable tasks within a repository
+* GitHub Issues + Sub-issues: a way to track dependencies among tasks and break larger tasks into smaller, more manageable pieces
+* GitHub Projects: a way to organize, track, and communicate issues, sub-issues, tasks, and collaborators within a larger collaboration
 
 
 
@@ -181,17 +187,27 @@ When all questions and tasks connected to a specific issue have been answered an
 
 All documentation is preserved in the closed issue, and you can always reopen it if needed.
 
-## GitHub Issues for Project Management
+## GitHub Issues with Sub-Issues and Dependencies
 
 GitHub has features to link issues together to track dependencies (e.g., issue A needs to be complete before issue B can start) and nest sub-issues within larger issues (e.g., issues C and D are sub-tasks required to complete issue A).
 
-### Reference Issues by Issue Number
+### Reference by Issue Number, Three Ways
 
-Each issue is assigned a unique number that is permanent and repository-specific.  You can reference this issue number in other issues, commit messages, and pull requests to easily create links between them.
+The quickest way to communicate a connection between two issues is simply to reference one issue in the text of another.  Each issue is assigned a unique number that is permanent and repository-specific.  You can reference this issue number in other issues, commit messages, and pull requests to easily create links between them, even across multiple repositories!
 
-* To reference an existing issue from an issue or comment thread, simply type `#` followed by the issue number (e.g., `#2` - that's it!).  This creates a link to the referenced issue, and on that issue, creates a back-reference in the comment thread.
-* To reference an issue from a commit message, use the same syntax (`#` followed by the issue number).  If you include keywords like "fixes" or "closes" before the reference (e.g., "fixes #2"), GitHub will automatically close the referenced issue when that commit is merged into the default branch!
-* The `#` syntax works for issues within the current repository.  To reference an issue from another repository, use the syntax `owner/repo#issue_number` (e.g., `oharac/salmon_report#2`).
+:::panel-tabset
+### From issue thread
+
+To reference an existing issue from an issue or comment thread, simply type `#` followed by the issue number (e.g., `#2` - that's it!).  This creates a link to the referenced issue, and on that issue, creates a back-reference in the comment thread.
+
+### From commit message
+
+To reference an issue from a commit message, use the same syntax (`#` followed by the issue number).  If you include keywords like "fixes" or "closes" before the reference (e.g., "fixes #2"), GitHub will automatically close the referenced issue when that commit is merged into the default branch!
+
+### From another repo
+
+The `#`-plus-issue-number syntax works for issues within the current repository.  To reference an issue from another repository, you just need to provide info on the repo owner and name where the referenced issue lives: use the syntax `owner/repo#issue_number` (e.g., `oharac/salmon_report#2`).
+:::
 
 ### Sub-Issues, Three Ways
 
@@ -229,6 +245,12 @@ Click the Relationships button at the bottom of the right-hand sidebar, and choo
 :::
 <!-- end tabset -->
 
+### Blocking Relationships
+
+A "blocking" relationship between two issues indicates that one issue (the "blocked" issue) cannot be completed until another issue (the "blocking" issue) is complete.  To set this up, click the Relationships button at the bottom of the metadata sidebar (same as for "Add Parent"), and choose "Mark as blocked by" or "Mark as blocking" - you'll see a searchable list of potential blocking or blocked issues from which you can choose.  One issue can block or be blocked by multiple other issues.
+
+![](images/github_project_management/issues06_blocking.png){width='50%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing the option to mark an issue as blocking or blocked by another issue in the Relationships menu in the right-hand sidebar"}
+
 :::callout-exercise
 ### Create an Issue Hierarchy
 
@@ -236,7 +258,7 @@ Using your newly created issue, create at least two sub-issues using any of the 
 
 Explore the parent issue and the subissues to see all the ways they are linked together.
 
-![](images/github_project_management/issues06_issue_hierarchy.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing a parent issue with sub-issues"}
+![](images/github_project_management/issues07_issue_hierarchy.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing a parent issue with sub-issues"}
 :::
 
 ### Issue Scope

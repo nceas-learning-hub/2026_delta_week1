@@ -217,28 +217,41 @@ The `#`-plus-issue-number syntax works for issues within the current repository.
 
 ### From Issue Body
 
-From the top level of the issue description, you can click on the [&nbsp;**Create&nbsp;sub-issue**&nbsp;]{style="background-color: #f0f0f0;"} button to create a new issue that is automatically linked as a sub-issue to the parent issue.
+:::columns
+::::{.column width="70%"}
+![](images/github_project_management/issues05a_subissues.png){width='95%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing the Create sub-issue button at the bottom of the issue description"}
+::::
 
-![](images/github_project_management/issues05a_subissues.png){width='70%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing the Create sub-issue button at the bottom of the issue description"}
+::::{.column width="30%"}
+From the top level of the issue description, you can click on the [&nbsp;**Create&nbsp;sub-issue**&nbsp;]{style="background-color: #f0f0f0;"} button to create a new issue that is automatically linked as a sub-issue to the parent issue.
+::::
+:::
+<!-- end columns -->
 
 ### From Checklist
 
-If you have a checklist in the issue description, you can click on the **ellipsis (...)** and choose "Convert to issue" to create a new issue for that checklist item.  The checklist item will automatically become a link to that sub-issue!
+:::columns
+::::{.column width="70%"}
+![](images/github_project_management/issues05b_subissues.png){width='95%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing the Convert to issue option in the ellipsis menu for a checklist item"}
+::::
 
-![](images/github_project_management/issues05b_subissues.png){width='70%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing the Convert to issue option in the ellipsis menu for a checklist item"}
+::::{.column width="30%"}
+If you have a checklist in the issue description, you can click on the **ellipsis (...)** next to an item, and choose "Convert to issue" to create a new issue for that checklist item.  The checklist item will automatically become a link to that sub-issue!
+::::
+:::
+<!-- end columns -->
 
 ### From Relationships
 
 :::columns
-::::{.column width="30%"}
-![](images/github_project_management/issues05c_subissues.png){width='100%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing the Add Parent option in the Relationships menu in the right-hand sidebar"}
-::::
-<!-- end column 1 -->
-
 ::::{.column width="70%"}
-Click the Relationships button at the bottom of the right-hand sidebar, and choose "Add Parent" - it will display a searchable list of potential parent issues from which you can choose.
+<br>
+Click the Relationships button at the bottom of the **right-hand metadata sidebar**, and choose "Add Parent" - it will display a searchable list of potential parent issues from which you can choose.
 ::::
-<!-- end column 2 -->
+
+::::{.column width="30%"}
+![](images/github_project_management/issues05c_subissues.png){width='95%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing the Add Parent option in the Relationships menu in the right-hand sidebar"}
+::::
 :::
 <!-- end columns -->
 
@@ -329,7 +342,7 @@ When you create a project, you can choose from several pre-defined templates: **
 
 ![](images/github_project_management/projects02a_create1.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub project creation page, showing the view options and template options"}
 
-For your first project, it might be less intimidating to start from scratch by choosing a simple view.  Here we have chosen a new "board" view, which is a flexible, visual, intuitive way to organize and track issues.
+For your first project, it might be less intimidating to "start from scratch" by choosing a simple view.  Here we have chosen a new "board" view, which is a flexible, visual, intuitive way to organize and track issues.
 
 ![](images/github_project_management/projects02b_create2.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub project creation page for a new Board, with an example image of a board view"}
 

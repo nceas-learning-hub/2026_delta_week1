@@ -27,9 +27,9 @@ After completing this session, you will be able to:
 
 In addition to version control and collaboration, GitHub provides a suite of tools to help you manage your projects.  These tools can be used in combination to track tasks, document decisions, and communicate with your team.  Here we'll focus on three strategies for project management within GitHub, from easy to complex:
 
-* GitHub Issues: a way to identify, delegate, and document specific, actionable tasks within a repository
-* GitHub Issues + Sub-issues: a way to track dependencies among tasks and break larger tasks into smaller, more manageable pieces
-* GitHub Projects: a way to organize, track, and communicate issues, sub-issues, tasks, and collaborators within a larger collaboration
+* **GitHub Issues:** a way to identify, delegate, and document specific, actionable tasks within a repository
+* **GitHub Issues + Sub-issues:** a way to track dependencies among tasks and break larger tasks into smaller, more manageable pieces
+* **GitHub Projects:** a way to organize, track, and communicate issues, sub-issues, tasks, and collaborators within a larger collaboration
 
 
 
@@ -245,7 +245,6 @@ If you have a checklist in the issue description, you can click on the **ellipsi
 
 :::columns
 ::::{.column width="70%"}
-<br>
 Click the Relationships button at the bottom of the **right-hand metadata sidebar**, and choose "Add Parent" - it will display a searchable list of potential parent issues from which you can choose.
 ::::
 

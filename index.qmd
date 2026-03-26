@@ -116,10 +116,4 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 
 **Content contributors:** Ben Bolker, Amber E. Budden, Julien Brun, Angel Chen, Samantha Csik, Halina Do-Linh, Natasha Haycock-Chavez, S. Jeanette Clark, Julie Lowndes, Stephanie Hampton, Matt Jones, Samantha Katz, Nick J. Lyon, Erin McLean, Bryce Mecum, Casey O'Hara, Deanna Pennington, Karthik Ram, Jim Regetz, Tracy Teal, Camila Vargas Poulsen, Daphne Virlar-Knight, Leah Wasser.
 
-
-
 This is a Quarto book. To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-
-
-

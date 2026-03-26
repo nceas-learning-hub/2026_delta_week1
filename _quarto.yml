@@ -15,7 +15,7 @@ execute:
 
 format:
   theme-html:
-    code-annotations: hover
+    code-annotations: hover ### tool tip style footnotes for code
 
 website:
   title: "2026 Delta Synthesis Working Groups week 1 (April 2026)"
@@ -89,7 +89,7 @@ website:
       # END SESSIONS
 
   page-footer:
-    center: "Copyright \u00a9 2025, NCEAS"
+    center: "Copyright \u00a9 2026, NCEAS"
     ### NCEAS main website footer:
     # center: "\u00a9 The Regents of the University of California, All Rights Reserved"
     # could also include license info?

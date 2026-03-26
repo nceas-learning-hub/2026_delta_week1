@@ -26,7 +26,7 @@ After completing this workshop, you will be able to:
 
 ## Course Schedule
 
-_Table Color Legend:_ <span style="color:#6a994e">{{<fa screwdriver-wrench >}} Technical Topic</span>; <span style="color:#118ab2">{{<fa people-group >}} Non-Technical Topic</span>; <span style="color:#ef476f">Synthesis Work</span>
+_Table Color Legend:_ <span style="color:#6a994e">{{<fa screwdriver-wrench >}} Technical Topic</span>; <span style="color:#118ab2">{{<fa people-group >}} Non-Technical Topic</span>; <span style="color:#ef476f">{{< fa rocket >}} Synthesis Work</span>
 
 :::{.panel-tabset}
 ### Week Visual
@@ -44,13 +44,13 @@ _Table Color Legend:_ <span style="color:#6a994e">{{<fa screwdriver-wrench >}} T
 | 1 | 12 - 1p | _Lunch_ | - |
 | 1 | 1 - 2:30p | <span style="color:#118ab2">{{<fa people-group >}} **Crafting Synthesis Project Ideas**</span> | Nick Lyon |
 | 1 | 2:30 - 3p | _Break_ | - |
-| 1 | 3 - 4:30p | <span style="color:#ef476f">**Free Synthesis Work <br> (Now Go Do It!)**</span> | - |
+| 1 | 3 - 4:30p | <span style="color:#ef476f">{{< fa rocket >}} **Free Synthesis Work <br> (Now Go Do It!)**</span> | - |
 
 ### Day 2
 
 | Day | Time | Module Name | Primary Instructor |
 |:--:|:-------:|:-------------------|:------------|
-| 2 | 8:30 - 10a | <span style="color:#118ab2">{{<fa people-group >}} **Project Management & <br> Team Facilitation**</span> | Jim Regetz |
+| 2 | 8:30 - 10a | <span style="color:#118ab2">{{<fa people-group >}} **Project Management & <br> Team Facilitation**</span> | Nick Lyon |
 | 2 | 10 - 10:30a | _Break_ | - |
 | 2 | 10:30 - 12p |  <span style="color:#118ab2">{{<fa people-group >}} **Data Management & <br> Data Discovery**</span> | TBD |
 | 2 | 12 - 1p | _Lunch_ | - |
@@ -68,9 +68,9 @@ _Table Color Legend:_ <span style="color:#6a994e">{{<fa screwdriver-wrench >}} T
 | 3 | 10 - 10:30a | _Break_ | - |
 | 3 | 10:30 - 12p | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **Literate Analysis with Quarto**</span> | Casey O'Hara |
 | 3 | 12 - 1p | _Lunch_ | - |
-| 3 | 1 - 2:30p | <span style="color:#ef476f">**Free Synthesis Work**</span> | - |
+| 3 | 1 - 2:30p | <span style="color:#ef476f">{{< fa rocket >}} **Free Synthesis Work**</span> | - |
 | 3 | 2:30 - 3p | _Break_ | - |
-| 3 | 3 - 4:30p | <span style="color:#ef476f">**Free Synthesis Work**</span> | - |
+| 3 | 3 - 4:30p | <span style="color:#ef476f">{{< fa rocket >}} **Free Synthesis Work**</span> | - |
 
 ### Day 4
 
@@ -82,7 +82,7 @@ _Table Color Legend:_ <span style="color:#6a994e">{{<fa screwdriver-wrench >}} T
 | 4 | 12 - 1p | _Lunch_ | - |
 | 4 | 1 - 2:30p | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **Cleaning and Wrangling Data<br> _Practice Session_**</span> | TBD |
 | 4 | 2:30 - 3p | _Break_ | - |
-| 4 | 3 - 4:30p | <span style="color:#ef476f">**Free Synthesis Work**</span> | - |
+| 4 | 3 - 4:30p | <span style="color:#ef476f">{{< fa rocket >}} **Free Synthesis Work**</span> | - |
 
 ### Day 5
 
@@ -90,9 +90,9 @@ _Table Color Legend:_ <span style="color:#6a994e">{{<fa screwdriver-wrench >}} T
 |:--:|:-----:|:----------------------|:---------|
 | 5 | 8:30 - 10a | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **GitHub for Project Management**</span> | Jim Regetz |
 | 5 | 10 - 10:30a | _Break_ | - |
-| 5 | 10:30 - 12p | <span style="color:#ef476f">**Free Synthesis Work**</span> | - |
+| 5 | 10:30 - 12p | <span style="color:#ef476f">{{< fa rocket >}} **Free Synthesis Work**</span> | - |
 | 5 | 12 - 1p | _Lunch_ | - |
-| 5 | 1 - 2:30p | <span style="color:#ef476f">**Synthesis Work: Planning Next Steps**</span> | - |
+| 5 | 1 - 2:30p | <span style="color:#ef476f">{{< fa rocket >}} **Synthesis Work: Planning Next Steps**</span> | - |
 | 5 | 2:30 - 3p | _Adjourn_ | - |
 
 :::

@@ -38,7 +38,7 @@ _Table Color Legend:_ <span style="color:#6a994e">{{<fa screwdriver-wrench >}} T
 | Day | Time | Module Name | Primary Instructor |
 |:--:|:-------:|:-------------------|:------------|
 | 1 | 8:30 - 9a | **Welcome & Intro to Week** | - |
-| 1 | 9 - 10a | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **R, Positron, Git, <br> and GitHub Setup**</span> | Jim Regetz; Casey O'Hara, Nick Lyon |
+| 1 | 9 - 10a | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **R, Positron, Git, <br> and GitHub Setup**</span> | Jim Regetz; Casey O'Hara; Nick Lyon |
 | 1 | 10 - 10:30a | _Break_ | - |
 | 1 | 10:30 - 12p | <span style="color:#118ab2">{{<fa people-group >}} **Thinking Preferences & <br> Meeting Design**</span> | Nick Lyon |
 | 1 | 12 - 1p | _Lunch_ | - |
@@ -52,11 +52,11 @@ _Table Color Legend:_ <span style="color:#6a994e">{{<fa screwdriver-wrench >}} T
 |:--:|:-------:|:-------------------|:------------|
 | 2 | 8:30 - 10a | <span style="color:#118ab2">{{<fa people-group >}} **Project Management & <br> Team Facilitation**</span> | Nick Lyon |
 | 2 | 10 - 10:30a | _Break_ | - |
-| 2 | 10:30 - 12p |  <span style="color:#118ab2">{{<fa people-group >}} **Data Management & <br> Data Discovery**</span> | TBD |
+| 2 | 10:30 - 12p |  <span style="color:#118ab2">{{<fa people-group >}} **Data Management & <br> Data Discovery**</span> | Jim Regetz |
 | 2 | 12 - 1p | _Lunch_ | - |
-| 2 | 1 - 2:30p | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **Introduction to Git and GitHub**</span> | TBD |
+| 2 | 1 - 2:30p | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **Introduction to Git and GitHub**</span> | Casey O'Hara |
 | 2 | 2:30 - 3p | _Break_ | - |
-| 2 | 3 - 4:30p | <span style="color:#118ab2">{{<fa people-group >}} **Logic Models & <br> Synthesis Development**</span> | TBD |
+| 2 | 3 - 4:30p | <span style="color:#118ab2">{{<fa people-group >}} **Logic Models & <br> Synthesis Development**</span> | Casey O'Hara |
 
 ^\*^ _Tentatively choose your group by EoD_
 
@@ -64,7 +64,7 @@ _Table Color Legend:_ <span style="color:#6a994e">{{<fa screwdriver-wrench >}} T
 
 | Day | Time | Module Name | Primary Instructor |
 |:--:|:-------:|:-------------------|:------------|
-| 3 | 8:30 - 10a | <span style="color:#118ab2">{{<fa people-group >}} **LEGO Reproducibility Activity**</span> | Casey O'Hara |
+| 3 | 8:30 - 10a | <span style="color:#118ab2">{{<fa people-group >}} **LEGO Reproducibility Activity**</span> |Jim Regetz; Casey O'Hara; Nick Lyon |
 | 3 | 10 - 10:30a | _Break_ | - |
 | 3 | 10:30 - 12p | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **Literate Analysis with Quarto**</span> | Casey O'Hara |
 | 3 | 12 - 1p | _Lunch_ | - |
@@ -76,11 +76,11 @@ _Table Color Legend:_ <span style="color:#6a994e">{{<fa screwdriver-wrench >}} T
 
 | Day | Time | Module Name | Primary Instructor |
 |:--:|:-------:|:-------------------|:------------|
-| 4 | 8:30 - 10a | <span style="color:#118ab2">{{<fa people-group >}} **Tidy Data**</span> | TBD |
+| 4 | 8:30 - 10a | <span style="color:#118ab2">{{<fa people-group >}} **Tidy Data**</span> | Jim Regetz |
 | 4 | 10 - 10:30a | _Break_ | - |
-| 4 | 10:30 - 12p | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **Cleaning and Wrangling Data**</span> | TBD |
+| 4 | 10:30 - 12p | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **Cleaning and Wrangling Data**</span> | Jim Regetz |
 | 4 | 12 - 1p | _Lunch_ | - |
-| 4 | 1 - 2:30p | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **Cleaning and Wrangling Data<br> _Practice Session_**</span> | TBD |
+| 4 | 1 - 2:30p | <span style="color:#6a994e">{{<fa screwdriver-wrench >}} **Cleaning and Wrangling Data<br> _Practice Session_**</span> | Jim Regetz; Casey O'Hara; Nick Lyon |
 | 4 | 2:30 - 3p | _Break_ | - |
 | 4 | 3 - 4:30p | <span style="color:#ef476f">{{< fa rocket >}} **Free Synthesis Work**</span> | - |
 

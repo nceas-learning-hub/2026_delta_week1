@@ -259,16 +259,23 @@ Click the Relationships button at the bottom of the **right-hand metadata sideba
 
 ### Blocking Relationships
 
-A "blocking" relationship between two issues indicates that one issue (the "blocked" issue) cannot be completed until another issue (the "blocking" issue) is complete.  To set this up, click the Relationships button at the bottom of the metadata sidebar (same as for "Add Parent"), and choose "Mark as blocked by" or "Mark as blocking" - you'll see a searchable list of potential blocking or blocked issues from which you can choose.  One issue can block or be blocked by multiple other issues.
+:::columns
+::::{.column width="70%"}
 
+A "blocking" relationship between two issues indicates that one issue (the "blocked" issue) cannot be completed until another issue (the "blocking" issue) is complete.  To set this up, click the Relationships button at the bottom of the metadata sidebar (same as for "Add Parent"), and choose "Mark as blocked by" or "Mark as blocking" - you'll see a searchable list of potential blocking or blocked issues from which you can choose.  One issue can block or be blocked by multiple other issues.
+::::
+::::{.column width="30%"}
 ![](images/github_project_management/issues06_blocking.png){width='50%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing the option to mark an issue as blocking or blocked by another issue in the Relationships menu in the right-hand sidebar"}
+::::
+:::
+<!-- end columns -->
 
 :::callout-exercise
 ### Create an Issue Hierarchy
 
 Using your newly created issue, create at least two sub-issues using any of the three methods described above.  Add assignees and metadata as you see fit.  
 
-Explore the parent issue and the subissues to see all the ways they are linked together.
+Explore the parent issue and the subissues and identify five ways they are linked together.
 
 ![](images/github_project_management/issues07_issue_hierarchy.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing a parent issue with sub-issues"}
 :::

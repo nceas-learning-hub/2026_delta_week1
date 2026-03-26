@@ -10,7 +10,7 @@ format:
 
 ## Overview
 
-The [Delta Science Program](https://deltacouncil.ca.gov/delta-science-program/) is once again partnering with the [National Center for Ecological Analysis and Synthesis](https://www.nceas.ucsb.edu/) (NCEAS) to convene a collaborative data synthesis working group in the spring of 2026. Delta Synthesis Working Groups receive advanced data science and statistics training with immediate opportunities to use those newly acquired skills to analyze available data and produce relevant research and data products. The upcoming working group will be the third cohort held through this partnership.
+The [Delta Science Program](https://deltacouncil.ca.gov/delta-science-program/){.external target="_blank"} is once again partnering with the [National Center for Ecological Analysis and Synthesis](https://www.nceas.ucsb.edu/){.external target="_blank"} (NCEAS) to convene a collaborative data synthesis working group in the spring of 2026. Delta Synthesis Working Groups receive advanced data science and statistics training with immediate opportunities to use those newly acquired skills to analyze available data and produce relevant research and data products. The upcoming working group will be the third cohort held through this partnership.
 
 ## Learning Objectives
 
@@ -104,16 +104,16 @@ If you are participating in this workshop series, we are so excited to help you 
 
 ## Code of Conduct
 
-By participating in this activity you agree to abide by the [NCEAS Code of Conduct](https://www.nceas.ucsb.edu/sites/default/files/2021-11/NCEAS_Code-of-Conduct_Nov2021_0.pdf).
+By participating in this activity you agree to abide by the [NCEAS Code of Conduct](https://www.nceas.ucsb.edu/sites/default/files/2021-11/NCEAS_Code-of-Conduct_Nov2021_0.pdf){.external target="_blank"}.
 
 ## About this book
 
 These written materials are the result of a continuous and collaborative effort at NCEAS to help researchers make their work more transparent and reproducible. This work began in the early 2000's, and reflects the expertise and diligence of many, many individuals. The primary authors are listed in the citation below, with additional contributors recognized for their role in developing previous iterations of these or similar materials.
 
-This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/){.external target="_blank"}.
 
-**Citation:** Casey O'Hara, Nick J. Lyon & Jim Regetz (2026), NCEAS Synthesis Skills Training for the Delta Science Program, April 2026, NCEAS Learning Hub. [nceas-learning-hub.github.io/2026_delta_week1](https://nceas-learning-hub.github.io/2026_delta_week1/).
+**Citation:** Casey O'Hara, Nick J. Lyon & Jim Regetz (2026), NCEAS Synthesis Skills Training for the Delta Science Program, April 2026, NCEAS Learning Hub. [nceas-learning-hub.github.io/2026_delta_week1](https://nceas-learning-hub.github.io/2026_delta_week1/){.external target="_blank"}.
 
 **Content contributors:** Ben Bolker, Amber E. Budden, Julien Brun, Angel Chen, Samantha Csik, Halina Do-Linh, Natasha Haycock-Chavez, S. Jeanette Clark, Julie Lowndes, Stephanie Hampton, Matt Jones, Samantha Katz, Nick J. Lyon, Erin McLean, Bryce Mecum, Casey O'Hara, Deanna Pennington, Karthik Ram, Jim Regetz, Tracy Teal, Camila Vargas Poulsen, Daphne Virlar-Knight, Leah Wasser.
 
-This is a Quarto book. To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This is a Quarto-built website. To learn more about Quarto sites visit [https://quarto.org/docs/websites/](https://quarto.org/docs/websites){.external target="_blank"}.

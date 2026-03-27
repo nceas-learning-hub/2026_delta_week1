@@ -13,3 +13,15 @@ Downs, M., Lyon, N., Kappel, C., Kui, L., Elmendorf, S., Maurer, G. E., & De La 
 ## Repository Explanation
 
 This repository creates the Quarto website that contains the majority of the instructional materials used in this course. If you have been invited to contribute to these materials, please see our contributing guide and reach out to the relevant person/people if anything is unclear in that document.
+
+## Getting Started
+
+To preview the website locally, ensure you have [Quarto](https://quarto.org/docs/get-started/) installed, then run the following commands in your terminal:
+
+```bash
+# Install dependencies
+npm install
+
+# Render and preview the site
+quarto preview
+```

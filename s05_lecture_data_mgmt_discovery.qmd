@@ -5,102 +5,97 @@ title: Data Management & Data Discovery
 :::{.callout-learning}
 After completing this session, you will be able to:
 
--   bullet pointed learning objectives
+- Identify repositories "known for" a particular type of data
+- Explain how to effectively search for data outside of specialized repositories
+- Create a data inventory for identified data that allows for easy re-finding of those data products
+- Plan how to download data in a reproducible way
+- Perform checks of the fundamental structure of a dataset
 :::
 
+## Data Repositories
 
-## Use level 2 headers for sections
+There are _a lot_ of specialized data repositories out there. These organizations are either primarily dedicated to storing and managing data or those operations constitute a substantive proportion of their efforts. In synthesis work, you may already have some datasets in-hand at the outset but it likely that **you will need to find more data to test your hypotheses**. Data repositories are a great way of finding/accessing data that are relevant to your questions.
 
-## Images
+You'll become familiar with many of these when you need a particular type of data and go searching for it but to help speed you along, see the list below for a non-exhaustive set of some that have proved useful to other synthesis projects in the past. They are in alphabetical order. If the "{{< fa brands r-project >}} Package" column contains the GitHub logo ({{< fa brands github >}}) then the package is available on GitHub but is not available on CRAN (or not available at time of writing).
 
-The file path for images in the final course will be `images/<folder with same base name as lesson>/<image file>`.  When you rename this blank placeholder, rename (or make a copy if you're using multiple placeholders) the folder in `images` from `blank_placeholder` to the base name of your lesson.
+| **Name** | **Description** | {{< fa brands r-project >}} **Package** |
+|:---:|:---|:---:|
+| [AmeriFlux](https://ameriflux.lbl.gov/data/data-policy/) | Provides data on carbon, water, and energy fluxes in ecosystems across the Americas, aiding in climate change and carbon cycle research. | [`amerifluxr`](https://cran.r-project.org/web/packages/amerifluxr/index.html) |
+| [DataONE](https://www.dataone.org/) | Aggregates environmental and ecological data from global sources, focusing on biodiversity, climate, and ecosystem research. | [`dataone`](https://cran.r-project.org/web/packages/dataone/index.html) |
+| [EDI](https://edirepository.org/) | Contains a wide range of ecological and environmental datasets, including long-term observational data, experimental results, and field studies from diverse ecosystems. | [`EDIutils`](https://cran.r-project.org/web/packages/EDIutils/index.html) |
+| [EES-DIVE](https://ess-dive.lbl.gov/) | The Environmental System Science Data Infrastructure for a Virtual Ecosystem (ESS-DIVE) includes a variety of observational, experimental, modeling and other data products from a wide range of ecological and urban systems. | -- |
+| [GBIF](https://www.gbif.org/) | The Global Biodiversity Information Facility (GBIF) aggregates global species occurrence data and biodiversity records, supporting research in species distribution and conservation. | [`rgbif`](https://cran.r-project.org/web/packages/rgbif/index.html) |
+| [Google Earth Engine](https://earthengine.google.com/) | Google Earth Engine is a cloud-based geospatial analysis platform that provides access to vast amounts of satellite imagery and environmental data for monitoring and understanding changes in the Earth's surface. | {{< fa brands github >}} [`rgee`](https://github.com/r-spatial/rgee) |
+| [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/) | The Microsoft Planetary Computer is a cloud-based platform that combines global environmental datasets with advanced analytical tools to support sustainability and ecological research. | {{< fa brands github >}} [`rstac`](https://github.com/brazil-data-cube/rstac) |
+| [NASA](https://data.nasa.gov/) | Provides data on earth science, space exploration, and climate, including satellite imagery and observational data for both terrestrial and extraterrestrial studies. Nice GUI-based data download via [AppEEARS](https://appeears.earthdatacloud.nasa.gov/). | [`nasadata`](https://cran.r-project.org/web/packages/nasadata/index.html) |
+| [NCBI](https://www.ncbi.nlm.nih.gov/) | Hosts genomic and biological data, including DNA, RNA, and protein sequences, supporting genomics and molecular biology research. | [`rentrez`](https://cran.r-project.org/web/packages/rentrez/index.html) |
+| [NEON](https://data.neonscience.org/) | Provides ecological data from U.S. field sites, covering biodiversity, ecosystems, and environmental changes, supporting large-scale ecological research. | [`neonUtilities`](https://cran.r-project.org/web/packages/neonUtilities/index.html) |
+| [NOAA](https://data.noaa.gov/onestop/) | Offers meteorological, oceanographic, and climate data, essential for understanding atmospheric conditions, marine environments, and long-term climate trends. | {{< fa brands github >}} [`EpiNOAA-R`](https://github.com/NOAA-Big-Data-Program/EpiNOAA-R) |
+| [Open Traits Network](https://opentraits.org/datasets.html) | While not a repository _per se_, the Open Traits Network has compiled an extensive lists of repositories for trait data. Check out their repository inventory for trait data | -- |
+| [USGS](https://www.usgs.gov/products/data/all-data) | Hosts data on geology, hydrology, biology, and geography, including topographical maps and natural resource assessments. | [`dataRetrieval`](https://cran.r-project.org/web/packages/dataRetrieval/index.html) |
 
-![Alt text](images/blank_placeholder/allison-horst-code-kitchen.png)
+## General Data Searches
 
+If you don't find what you're looking for in a particular data repository (or want to look for data not included in one of those platforms), you might want to consider a broader search. For instance, [Google](https://www.google.com) is a surprisingly good resource for finding data and--for those familiar with Google Scholar for peer reviewed literature-specific Googling--there is a dataset-specific variant of Google called [Google Dataset Search](https://datasetsearch.research.google.com/).
 
-## Callouts
+### Search Operators
 
-Quarto offers some built-in [callout blocks](https://quarto.org/docs/authoring/callouts.html) to set content off against the normal body text.  Note that we've customized the colors of our callouts to better match our course styling (see the `lh_theme` extension).  
+Virtually all search engines support "operators" to create more effective queries (i.e., search parameters). If you don't use operators, most systems will just return results that have any of the words in your search which is non-ideal, especially when you're looking for very specific criteria in candidate datasets.
 
-### Standard callouts
+See the tabs below for some useful operators that might help narrow your dataset search even when using more general platforms.
 
-There are five built-in callouts signalling different levels of urgency:
+:::{.panel-tabset}
+#### Quotes
 
-* tip `{.callout-tip}`
-* note `{.callout-note}`
-* caution `{.callout-caution}`
-* warning `{.callout-warning}`
-* important `{.callout-important}`
+Use quotation marks (`""`) to **search for an exact phrase**. This is particularly useful when you need specific data points or exact wording.
 
-See the [callout reference](https://quarto.org/docs/authoring/callouts.html) for how to create these.
+Example: `"reef biodiversity"`
 
-Based on the color and icons, here are recommendations on when and how to use these, in descending order of urgency:
+#### Wildcard
 
-::: {.callout-important}
-Use `{.callout-important}` to highlight things that the reader _must_ pay attention to, or essential ideas and concepts.
+Use an asterisk (`*`) to **search using a placeholder for any word or phrase in the query**. This is useful for finding variations of a term.
+
+Example: `Pinus * data`
+
+#### Plus
+
+Use a plus sign (`+`) to **search using more than one query *at the same time***. This is useful when you need combinations of criteria to be met.
+
+Example: `bat + cactus`
+
+#### OR
+
+Use the 'or' operator (`OR`) operator to **search for either one term *or* another**. It broadens your search to include multiple terms.
+
+Example: `"prairie pollinator" OR "grassland pollinator"`
+
+#### Minus
+
+Use a minus sign (`-`; a.k.a. "hyphen") to **exclude certain words from your search**. Useful to filter out irrelevant results.
+
+Example: `marine biodiversity data -fishery`
+
+#### Site
+
+Use the site operator (`site:`) to **search within a specific website or domain**. This is helpful when you're looking for data from a particular source.
+
+Example: `site:.gov bird data`
+
+#### File Type
+
+Use the file type operator (`filetype:`) to **search for data with a specific file extension**. Useful to make sure the data you find is already in a format you can interact with.
+
+Example: `filetype:tif precipitation data`
+
+#### In Title
+
+Use the 'in title' operator (`intitle:`) to **search for pages that have a specific word in the title**. This can narrow down your results to more relevant pages.
+
+Example: `intitle:"lithology"`
+
+#### In URL
+
+Use the 'in URL' operator (`inurl:`) to **search for pages that have a specific word in the URL**. This can help locate data repositories or specific datasets.
+
+Example: `inurl:data soil chemistry`
 :::
-
-::: {.callout-warning}
-Use `{.callout-warning}` to highlight common "gotchas" such as common user errors or unexpected behavior.
-:::
-
-::: {.callout-caution}
-Use `{.callout-caution}` to indicate materials under development; consider using `{.callout-warning}` for other cases.
-:::
-
-::: {.callout-note}
-Use `{.callout-note}` to communicate deeper ideas or understandings that are not critical to understanding the lesson at hand.  The instructor might skip over these while teaching.  If the reader does not read this, they may miss out, but nothing bad will happen.
-:::
-
-::: {.callout-tip}
-Use `{.callout-tip}` to communicate learning objectives, key points, and helpful tips and tricks.
-:::
-
-
-### Custom callouts
-
-There are currently four custom callouts for different types of tasks:
-
-* exercise `{.callout-exercise}`
-* hint `{.callout-hint}`
-* answer `{.callout-answer}`
-* example `{.callout-example}`
-
-
-These custom callouts work thanks to [Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/](https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html).  Unfortunately, the title is not responsive to the `title` argument in the callout or to the header-style titling that the built-in callouts can use.  The collapse option also seems to be unresponsive currently.
-
-::: {.callout-exercise}
-Use `{.callout-exercise}` for exercises.  The current default numbers exercises within a given page.  Click on the _hint_ and _answer_ callouts below to reveal the information in them.
-
-::: {.callout-hint}
-Use `{.callout-hint}` for hints to the exercise - defaults to `collapse=true` for obvious reasons.  Note they can be nested within an exercise, or stand-alone.
-:::
-
-::: {.callout-answer}
-Use `{.callout-answer}` for answers to the exercise - defaults to `collapse=true` for obvious reasons.  Note they can be nested within an exercise, or stand-alone.
-:::
-
-:::
-
-::: {.callout-example}
-Use `{.callout-example}` for examples, e.g., example data or example.
-:::
-
-## Slides
-
-Slides should when possible be created as Quarto slide decks.  Slide decks for a lesson should be created in the folder `slides/<lesson base name>/<slide deck name.html>` folder as qmd files (note, the link in the lesson must point to the html, not the qmd).  When you create a new lesson, you should rename the `slides/blank_placeholder` folder to match the base name of your lesson.
-
-You can call your slide deck quarto docs whatever you like, and have multiple slide decks.  You can also include images in your deck, perhaps with an `images` folder in the `slides` folder (NOTE: this is separate from images that show up in the main site page), and images can be referenced with relative file paths.  E.g., `slides/blank_placeholder/slides1.qmd` might have an image at `slides/blank_placeholder/images/tidyverse_hex.jpg`, so in the qmd, you could just point to `![](images/tidyverse_hex.jpg)`.
-
-There is a default .scss file in the slides folder, use it or modify it as you like.
-
-[Full Screen](slides/blank_placeholder/slides1.html)
-
-```{=html}
-<iframe class="slide-deck" src="slides/blank_placeholder/slides1.html" style="border: 1px solid #2e3846;"></iframe>
-```
-
-
-## Data
-
-If you have specific data that your lesson requires to knit successfully, put it in the `data/blank_placeholder` folder.  It is probably best to avoid this though, use data from packages or online if possible, or create toy datasets directly in the .qmd.

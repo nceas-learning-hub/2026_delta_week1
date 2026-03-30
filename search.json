@@ -46,7 +46,7 @@
     "href": "s16_synthesis_next_steps.html",
     "title": "Synthesis Work: Planning Next Steps",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\n\nbullet pointed learning objectives",
+    "text": "LearningLearning Objectives\n\n\n\n\n\n\n\nbullet pointed learning objectives",
     "crumbs": [
       "Day 5",
       "Synthesis Work: Planning Next Steps"
@@ -211,7 +211,7 @@
     "href": "s12_lecture_tidy_data.html",
     "title": "Tidy Data",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\nAfter completing this session, you will be able to:\n\nDescribe the three principles of tidy data in terms of variables, observations, and values\nIdentify common violations of tidy data principles and how to fix them\nExplain the concept of data normalization and how it supports reproducible analysis\nfollowing best practices to format data tables’ content,\nrelating tables following relational data models principles, and\nunderstanding how to perform table joins.",
+    "text": "LearningLearning Objectives\n\n\n\n\n\n\nAfter completing this session, you will be able to:\n\nDescribe the three principles of tidy data in terms of variables, observations, and values\nIdentify common violations of tidy data principles and how to fix them\nExplain the concept of data normalization and how it supports reproducible analysis\nfollowing best practices to format data tables’ content,\nrelating tables following relational data models principles, and\nunderstanding how to perform table joins.",
     "crumbs": [
       "Day 4",
       "Tidy Data"
@@ -453,7 +453,7 @@
     "href": "s05_lecture_data_mgmt_discovery.html",
     "title": "Data Management & Data Discovery",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\n\nbullet pointed learning objectives",
+    "text": "LearningLearning Objectives\n\n\n\n\n\n\nAfter completing this session, you will be able to:\n\nbullet pointed learning objectives",
     "crumbs": [
       "Day 2",
       "Data Management & Data Discovery"
@@ -1072,7 +1072,7 @@
     "href": "s10_r_quarto_literate_analysis.html",
     "title": "Literate Analysis with Quarto",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\nAfter completing this session, you will be able to:\n\nDescribe the concept of literate analysis and how it supports reproducible data science\nFormat prose (non-code) text in a Quarto document using Markdown syntax\nIncorporate functional code chunks into a Quarto document and customize their output\nBuild and render a complete example analysis",
+    "text": "LearningLearning Objectives\n\n\n\n\n\n\nAfter completing this session, you will be able to:\n\nDescribe the concept of literate analysis and how it supports reproducible data science\nFormat prose (non-code) text in a Quarto document using Markdown syntax\nIncorporate functional code chunks into a Quarto document and customize their output\nBuild and render a complete example analysis",
     "crumbs": [
       "Day 3",
       "Literate Analysis with Quarto"
@@ -1149,7 +1149,7 @@
     "href": "s13_r_tidyverse_clean_wrangle.html",
     "title": "Cleaning & Wrangling Data",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\nAfter completing this session, you will be able to:\n\nIdentify some common dplyr and tidyr functions\nDefine “namespace” in the context of R functions\nExplain how the pipe operator (%&gt;%) can be used to streamline code operations\nParaphrase how mutate() can be used to do quality control operations\nExplain what “shape” means in the context of data and how data of one shape can be converted to another\nDescribe how defensive coding strategies benefit you in the long run and how rename() is a good example of such strategies\nExplain how group_by() and summarize() relate to the “Split-Apply-Combine” strategy",
+    "text": "LearningLearning Objectives\n\n\n\n\n\n\nAfter completing this session, you will be able to:\n\nIdentify some common dplyr and tidyr functions\nDefine “namespace” in the context of R functions\nExplain how the pipe operator (%&gt;%) can be used to streamline code operations\nParaphrase how mutate() can be used to do quality control operations\nExplain what “shape” means in the context of data and how data of one shape can be converted to another\nDescribe how defensive coding strategies benefit you in the long run and how rename() is a good example of such strategies\nExplain how group_by() and summarize() relate to the “Split-Apply-Combine” strategy",
     "crumbs": [
       "Day 4",
       "Cleaning & Wrangling Data"
@@ -1336,7 +1336,7 @@
     "href": "s15_github_project_management.html",
     "title": "GitHub for Project Management",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\nAfter completing this session, you will be able to:\n\nCreate issues in GitHub for documentation and to track specific, actionable tasks\nUtilize GitHub Issues and Sub-issues to manage and track project tasks\nExplain in what contexts GitHub Projects are useful\nCompare the benefits the three available project view options\nExplain how GitHub Issues and GitHub Projects relate to each other",
+    "text": "LearningLearning Objectives\n\n\n\n\n\n\nAfter completing this session, you will be able to:\n\nCreate issues in GitHub for documentation and to track specific, actionable tasks\nUtilize GitHub Issues and Sub-issues to manage and track project tasks\nExplain in what contexts GitHub Projects are useful\nCompare the benefits the three available project view options\nExplain how GitHub Issues and GitHub Projects relate to each other",
     "crumbs": [
       "Day 5",
       "GitHub for Project Management"
@@ -1391,7 +1391,7 @@
     "href": "s17_r_programming_introduction.html",
     "title": "Working in R & RStudio",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nNavigate the basics of the RStudio interface\nRun code and basic arithmetic in the Console\nExplain how and why to write code in an R Script\nApply built-in R functions and assign values to objects\nUse the Help pages to look up function documentation",
+    "text": "LearningLearning Objectives\n\n\n\n\n\n\nBy the end of this lesson, you will be able to:\n\nNavigate the basics of the RStudio interface\nRun code and basic arithmetic in the Console\nExplain how and why to write code in an R Script\nApply built-in R functions and assign values to objects\nUse the Help pages to look up function documentation",
     "crumbs": [
       "Additional Resources",
       "Intro to R Programming"

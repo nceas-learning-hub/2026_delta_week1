@@ -12,6 +12,12 @@ After completing this session, you will be able to:
 - Perform checks of the fundamental structure of a dataset
 :::
 
+::: {.callout-note}
+## Acknowledgments
+
+Some of the content in this page was adapted from the Long Term Ecological Research (LTER) Network's course "Synthesis Skills for Early Career Researchers" (SSECR). Those materials can be found at [lter.github.io/ssecr](https://lter.github.io/ssecr/)
+:::
+
 ## Data Repositories
 
 There are _a lot_ of specialized data repositories out there. These organizations are either primarily dedicated to storing and managing data or those operations constitute a substantive proportion of their efforts. In synthesis work, you may already have some datasets in-hand at the outset but it likely that **you will need to find more data to test your hypotheses**. Data repositories are a great way of finding/accessing data that are relevant to your questions.

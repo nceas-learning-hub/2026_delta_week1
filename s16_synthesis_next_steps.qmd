@@ -2,8 +2,7 @@
 title: "Synthesis Work: Planning Next Steps"
 ---
 
-:::{.callout-tip}
-### Learning Objectives
+:::{.callout-learning}
 
 -   bullet pointed learning objectives
 :::

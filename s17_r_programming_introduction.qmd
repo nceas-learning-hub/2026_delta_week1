@@ -2,8 +2,7 @@
 title: Working in R & RStudio
 ---
 
-:::{.callout-tip}
-## Learning Objectives
+:::{.callout-learning}
 
 By the end of this lesson, you will be able to:
 

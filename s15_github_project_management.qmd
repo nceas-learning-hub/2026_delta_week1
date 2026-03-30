@@ -2,8 +2,7 @@
 title: GitHub for Project Management
 ---
 
-:::{.callout-tip}
-## Learning Objectives
+:::{.callout-learning}
 
 After completing this session, you will be able to:
 

@@ -2,8 +2,8 @@
 title: Data Management & Data Discovery
 ---
 
-:::{.callout-tip}
-### Learning Objectives
+:::{.callout-learning}
+After completing this session, you will be able to:
 
 -   bullet pointed learning objectives
 :::

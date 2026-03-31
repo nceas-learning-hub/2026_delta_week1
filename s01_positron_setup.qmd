@@ -52,21 +52,22 @@ Directory organization will vary from project to project, but **the ultimate goa
 
 ::: {.column width="40%"}
 
+<div style="font-family: monospace;">
 {{< fa folder >}} training_oharac  
-&nbsp;|--&nbsp; {{< fa file >}} README.md  
-&nbsp;|--&nbsp; {{< fa folder >}} data  
-&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa folder >}} raw  
-&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; {{< fa folder >}} processed  
-&nbsp;|--&nbsp; {{< fa folder >}} plots   
-&nbsp;|--&nbsp; {{< fa folder >}} scripts   
-&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa file-code >}} 01_harmonize.r  
-&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp; {{< fa file-code >}} 02_wrangle.r  
-&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; {{< fa file-code >}} 03_analyze.r  
-&nbsp;|--&nbsp; {{< fa folder >}} docs   
-&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; {{< fa file-pdf >}} 2026-04_results.pdf  
-&nbsp;L&nbsp;&nbsp; {{< fa folder >}} tools   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp; {{< fa file-code >}} calc-diversity.r
-
+├-- {{< fa file >}} README.md  
+├-- {{< fa folder >}} data  
+|&nbsp;&nbsp;├-- {{< fa folder >}} raw  
+|&nbsp;&nbsp;└-- {{< fa folder >}} processed  
+├-- {{< fa folder >}} plots   
+├-- {{< fa folder >}} scripts   
+|&nbsp;&nbsp;├-- {{< fa file-code >}} 01_harmonize.r  
+|&nbsp;&nbsp;├-- {{< fa file-code >}} 02_wrangle.r  
+|&nbsp;&nbsp;└-- {{< fa file-code >}} 03_analyze.r  
+├-- {{< fa folder >}} docs   
+|&nbsp;&nbsp;└-- {{< fa file-pdf >}} 2026_04_results.pdf  
+└-- {{< fa folder >}} tools   
+&nbsp;&nbsp;&nbsp;└-- {{< fa file-code >}} calc_diversity.r
+</div>
 :::
 ::::
 

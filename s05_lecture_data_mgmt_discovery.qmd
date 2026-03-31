@@ -213,7 +213,9 @@ Another way to think about metadata is to answer the following questions with th
 -   Who should get credit for this data (researcher AND funding agency)?
 -   How can this data be reused (licensing)?
 
-### Bibliographic Guidelines
+
+:::{.panel-tabset}
+### Bibliography
 
 The details that will help your data be cited correctly are:
 
@@ -223,7 +225,7 @@ The details that will help your data be cited correctly are:
 -   **Funding information** like the award number and the sponsor
 -   **People and organizations** like the creator of the dataset (i.e. who should be cited), the person to **contact** about the dataset (if different than the creator), and the contributors to the dataset
 
-### Discovery Guidelines
+### Findability
 
 The details that will help your data be discovered correctly are:
 
@@ -232,7 +234,7 @@ The details that will help your data be discovered correctly are:
 -   **Taxonomic coverage** of the data, including what species were measured and what taxonomy standards and procedures were followed
 -   Any other **contextual information** as needed
 
-### Interpretation Guidelines
+### Interpretable
 
 The details that will help your data be interpreted correctly are:
 
@@ -243,7 +245,7 @@ The details that will help your data be interpreted correctly are:
 -   Information about the **hardware and software** used to process your data, including the make, model, and version
 -   **Computing quality control** procedures like testing or code review
 
-### Data Structure and Contents
+### Data Structure
 
 -   **Everything needs a description**: the data model, the data objects (like tables, images, matrices, spatial layers, etc), and the variables all need to be described so that there is no room for misinterpretation.
 -   **Variable information** includes the definition of a variable, a standardized unit of measurement, definitions of any coded values (i.e. 0 = not collected), and any missing values (i.e. 999 = NA).
@@ -252,7 +254,7 @@ Not only is this information helpful to you and any other researcher in the futu
 
 For example, if you were to search for the character string "carbon dioxide flux" in a data repository, not all relevant results will be shown due to varying vocabulary conventions (i.e., "CO2 flux" instead of "carbon dioxide flux") across disciplines --- only datasets containing the exact words "carbon dioxide flux" are returned. With correct semantic annotation of the variables, your dataset that includes information about carbon dioxide flux but that calls it CO2 flux WOULD be included in that search.
 
-### Rights and Attribution
+### Attribution
 
 Correctly **assigning a way for your datasets to be cited** and reused is the last piece of a complete metadata document. This section sets the scientific rights and expectations for the future on your data, like:
 
@@ -277,6 +279,7 @@ So, **how does a computer organize all this information?** There are a number of
 
 *Note this is not an exhaustive list.*
 
+
 ### Data Identifiers
 
 Many journals require a DOI (a digital object identifier) be assigned to the published data before the paper can be accepted for publication. The reason for that is so that the data can easily be found and easily linked to.
@@ -286,6 +289,8 @@ Some data repositories assign a DOI for each dataset you publish on their reposi
 ### Data Citation
 
 Researchers should get in the habit of citing the data that they use (even if it's their own data!) in each publication that uses that data.
+
+:::
 
 ## Data Sharing & Preservation
 

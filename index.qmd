@@ -114,6 +114,6 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 
 **Citation:** Casey O'Hara, Nick J. Lyon & Jim Regetz (2026), NCEAS Synthesis Skills Training for the Delta Science Program, April 2026, NCEAS Learning Hub. [nceas-learning-hub.github.io/2026_delta_week1](https://nceas-learning-hub.github.io/2026_delta_week1/){.external target="_blank"}.
 
-**Content contributors:** Ben Bolker, Amber E. Budden, Julien Brun, Angel Chen, Samantha Csik, Halina Do-Linh, Natasha Haycock-Chavez, S. Jeanette Clark, Julie Lowndes, Stephanie Hampton, Matt Jones, Samantha Katz, Nick J. Lyon, Erin McLean, Bryce Mecum, Casey O'Hara, Deanna Pennington, Karthik Ram, Jim Regetz, Tracy Teal, Camila Vargas Poulsen, Daphne Virlar-Knight, Leah Wasser.
+**Content contributors:** Ben Bolker, Amber E. Budden, Julien Brun, Angel Chen, Samantha Csik, Halina Do-Linh, Marty Downs, Sarah Elmendorf, Natasha Haycock-Chavez, S. Jeanette Clark, Carrie Kappel, Li Kui, Julie Lowndes, Stephanie Hampton, Matt Jones, Samantha Katz, Nick J. Lyon, Gregory Maurer, Erin McLean, Bryce Mecum, Casey O'Hara, Deanna Pennington, Karthik Ram, Jim Regetz, Tracy Teal, Camila Vargas Poulsen, Daphne Virlar-Knight, Leah Wasser.
 
 This is a Quarto-built website. To learn more about Quarto sites visit [https://quarto.org/docs/websites/](https://quarto.org/docs/websites){.external target="_blank"}.

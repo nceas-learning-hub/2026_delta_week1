@@ -48,59 +48,6 @@ DataOne's [Data Management Skillbuilding Hub](https://dataoneorg.github.io/Educa
 
 No matter how your data life cycle looks like, *Plan* should be at the top of the cycle. It is advisable to initiate your data management planning at the beginning of your research process before any data has been collected or discovered. The following section will discuss more in-depth data management and how to plan accordingly
 
-
-## Managing Your Data
-
-Successfully managing your data throughout a research project helps ensures its preservation for future use.
-
-### Why Manage Your Data?
-
-:::{.panel-tabset}
-### Personal Benefits
-
--   Keep yourself organized -- be able to find your files (data inputs, analytic scripts, outputs at various stages of the analytic process, etc.)
--   Track your science processes for reproducibility -- be able to match up your outputs with exact inputs and transformations that produced them
--   Better control versions of data -- easily identify versions that can be periodically purged
--   Quality control your data more efficiently
--   To avoid data loss (e.g. making backups)
--   Format your data for re-use (by yourself or others)
--   Be prepared: Document your data for your own recollection, accountability, and re-use (by yourself or others)
--   Gain credibility and recognition for your science efforts through data sharing!
-
-### Advancement of Science
-
--   Data is a valuable asset -- it is expensive and time consuming to collect
--   Maximize the effective use and value of data and information assets
--   Continually improve the quality including: data accuracy, integrity, integration, timeliness of data capture and presentation, relevance, and usefulness
--   Ensure appropriate use of data and information
--   Facilitate data sharing
--   Ensure sustainability and accessibility in long term for re-use in science
-
-:::
-
-### Tools to Manage your Data
-
-A Data Management Plan (DMP) is a document that describes how you will use your data during a research project, as well as what you will do with your data long after the project ends. DMPs are living documents and should be updated as research plans change to ensure new data management practices are captured ([Environmental Data Initiative](https://edirepository.org/resources/data-management-planning)).
-
-A well-thought-out plan means you are more likely to:
-
-- Stay organized
-- Work efficiently
-- Truly share data
-- Engage your team
-- Meet funder requirements
-    - DMPs are becoming common in the submission process for proposals
-
-A DMP is both a straightforward blueprint for how you manage your data, *and* provides guidelines for your and your team on policies, access, roles, and more. While it is important to plan, it is equally important to recognize that no plan is perfect as change is inevitable. To make your DMP as robust as possible, treat it as a "living document" that you periodically review with your team and adjust as the needs of the project change.
-
-### How to Plan
-
--   **Plan early:** research shows that over time, information is lost and this is inevitable so it's important to think about long-term plans for your research at the beginning before you're deep in your project. And ultimately, you'll save more time.
--   **Plan in collaboration:** high engagement of your team and other important contributors is not only a benefit to your project, but it also makes your DMP more resilient. When you include diverse expertise and perspectives to the planning stages, you're more likely to overcome obstacles in the future.
--   **Utilize existing resources:** don't reinvent the wheel! There are many great DMP resources out there. Consider the article *Ten Simple Rules for Creating a Good Data Management Plan* [@michener_2015], which has succinct guidelines on what to include in a DMP. Or use an online tool like [DMPTool](https://dmptool.org/){.external target="_blank"}, which provides official DMP templates from funders like NSF, example answers, and allows for collaboration.
--   **Make revising part of the process:** Don't let your DMP collect dust after your initially write it. Make revising the DMP part of your research project and use it as a guide to ensure you're keeping on track.
--   **Include tidy and ethical lenses:** It is important to start thinking through these lenses during the planning process of your DMP, it will make it easier to include and maintain tidy and ethical principles throughout the entire project. We will discuss in depth about tidy data and FAIR principles and we can point you to some useful resources on data ethics though the CARE principles.
-
 ## Finding Data
 
 ### Useful Data Repositories
@@ -191,15 +138,135 @@ Use the 'in URL' operator (`inurl:`) to **search for pages that have a specific 
 Example: `inurl:data soil chemistry`
 :::
 
+## Making a Data Inventory
+
+As you find data, it will become necessary to--somehow--record what data your group has on hand. A **data inventory** is an extremely useful tool in this effort! A data inventory can take many forms but at its simplest, it should be a **table where each dataset you find gets one row and critical information about that dataset is recorded in each column.** It can be difficult to know which columns to include but keep in mind that it is always easiest to record information that you don't wind up using than it is to go hunt through all of your datasets for some piece of information you didn't record in the first place.
+
+We've grouped some recommendations for useful data inventory components below into some loose categories but these are _guidelines_ and your team likely will come up with useful additions--or may not need some of these pieces of information!
+
+:::{.panel-tabset}
+### Source
+
+First and foremost, you'll want to record **where you found the data and where you can find it again if needed.**
+
+- What is the URL to the data?
+- When did you last download or otherwise receive the data?
+- Who owns the data (either a person or an institution)?
+- What is the contact info for the data owner?
+- What is the name of the data file when you originally download it?
+- Is there a paper or report that may provide context that isn't included in the official metadata? If so, what's the link/citation info for that document?
+    - Sometimes a peer-reviewed paper's Methods section might include valuable context that isn't actually included in the data!
+- If the data have a license, how are you allowed to use the data? How must you cite the data owner/data maintainer?
+
+### Explanatory Variables
+
+Sometimes a data inventory can be a **useful source of explanatory variables for your analysis!**
+
+- What are the coordinates (i.e., latitude & longitude) of the data?
+    - Remember to enter these in decimal degrees if you want to use them in analysis!
+- What country/state/county/locality is the data from?
+    - Include all of these that might vary across your datasets!
+- What habitat or ecosystem is the data from?
+- What's the focal taxonomic group?
+- What's the taxonomic granularity?
+    - I.e., is there information about different species or only at a higher level?
+- Are the data experimental or observational?
+    - If experimental, what treatments were applied? When? How frequently?
+- What is the time range of the data?
+- What is the temporal granularity of the data?
+    - Relatedly, what are the first and last years/time points in the data?
+- How big was the study area/experimental plot?
+
+### Team Delegation
+
+If you start relying on a data inventory, **it can become a valuable place to assign or delegate tasks within your group.** This can also be helpful at the end of the project when you're trying to remember who deserves credit for finding data/metadata.
+
+- Who--in your group--is responsible for filling out the other columns in the data?
+    - I.e., whose 'homework' is it to flesh out this row of the data inventory?
+- Who is responsible for double-checking the metadata entered by the first team member?
+- Who is the primary point of contact with the original data owner/maintainer?
+
+### Data Use
+
+One _critical_ use of a data inevntory that is often overlooked: **are the data useful to your question?**
+
+If you found the data before, your later data searches will likely also turn it up even if it's not useful! You can save other group members' a headache by noting not applicable data so they can disregard it from their searches. 
+
+If a particular dataset is not useful, **why is it not useful?** If your questions or in/exclusion criteria evolve, maybe it will become useful later!
+
+:::
+
+:::{.callout-exercise}
+### Exercise - Draft a Data Inventory
+
+In your project groups:
+
+1. Create a spreadsheet to serve as your data inventory
+2. Add the name of each dataset you've already found
+3. **Discuss** what columns would be useful in your data inventory
+    - Remember to re-visit the recommendations above!
+4. Add the agreed-upon columns to your data inventory
+5. Add information for each dataset in the new columns
+
+:::
+
+## Managing Your Data
+
+Successfully managing your data throughout a research project helps ensures its preservation for future use.
+
+### Why Manage Your Data?
+
+:::{.panel-tabset}
+### Personal Benefits
+
+-   Keep yourself organized -- be able to find your files (data inputs, analytic scripts, outputs at various stages of the analytic process, etc.)
+-   Track your science processes for reproducibility -- be able to match up your outputs with exact inputs and transformations that produced them
+-   Better control versions of data -- easily identify versions that can be periodically purged
+-   Quality control your data more efficiently
+-   To avoid data loss (e.g. making backups)
+-   Format your data for re-use (by yourself or others)
+-   Be prepared: Document your data for your own recollection, accountability, and re-use (by yourself or others)
+-   Gain credibility and recognition for your science efforts through data sharing!
+
+### Advancement of Science
+
+-   Data is a valuable asset -- it is expensive and time consuming to collect
+-   Maximize the effective use and value of data and information assets
+-   Continually improve the quality including: data accuracy, integrity, integration, timeliness of data capture and presentation, relevance, and usefulness
+-   Ensure appropriate use of data and information
+-   Facilitate data sharing
+-   Ensure sustainability and accessibility in long term for re-use in science
+
+:::
+
+### Tools to Manage your Data
+
+A Data Management Plan (DMP) is a document that describes how you will use your data during a research project, as well as what you will do with your data long after the project ends. DMPs are living documents and should be updated as research plans change to ensure new data management practices are captured ([Environmental Data Initiative](https://edirepository.org/resources/data-management-planning)).
+
+A well-thought-out plan means you are more likely to:
+
+- Stay organized
+- Work efficiently
+- Truly share data
+- Engage your team
+- Meet funder requirements
+    - DMPs are becoming common in the submission process for proposals
+
+A DMP is both a straightforward blueprint for how you manage your data, *and* provides guidelines for your and your team on policies, access, roles, and more. While it is important to plan, it is equally important to recognize that no plan is perfect as change is inevitable. To make your DMP as robust as possible, treat it as a "living document" that you periodically review with your team and adjust as the needs of the project change.
+
+### How to Plan
+
+-   **Plan early:** research shows that over time, information is lost and this is inevitable so it's important to think about long-term plans for your research at the beginning before you're deep in your project. And ultimately, you'll save more time.
+-   **Plan in collaboration:** high engagement of your team and other important contributors is not only a benefit to your project, but it also makes your DMP more resilient. When you include diverse expertise and perspectives to the planning stages, you're more likely to overcome obstacles in the future.
+-   **Utilize existing resources:** don't reinvent the wheel! There are many great DMP resources out there. Consider the article *Ten Simple Rules for Creating a Good Data Management Plan* [@michener_2015], which has succinct guidelines on what to include in a DMP. Or use an online tool like [DMPTool](https://dmptool.org/){.external target="_blank"}, which provides official DMP templates from funders like NSF, example answers, and allows for collaboration.
+-   **Make revising part of the process:** Don't let your DMP collect dust after your initially write it. Make revising the DMP part of your research project and use it as a guide to ensure you're keeping on track.
+-   **Include tidy and ethical lenses:** It is important to start thinking through these lenses during the planning process of your DMP, it will make it easier to include and maintain tidy and ethical principles throughout the entire project. We will discuss in depth about tidy data and FAIR principles and we can point you to some useful resources on data ethics though the CARE principles.
+
 ## Metadata Best Practices
 
 Within the data life cycle you can be collecting data (creating new data) or integrating data that has all ready been collected. Either way, **metadata** plays plays a major role to successfully spin around the cycle because it enables data reuse long after the original collection.
 
-Imagine that you're writing your metadata for a typical researcher (who might even be you!) 30+ years from now - what will they need to understand what's inside your data files?
-
-The goal is to have enough information for the researcher to **understand the data**, **interpret the data**, and then **reuse the data** in another study.
-
-### Overall Guidelines
+Imagine that you're writing your metadata for a typical researcher (who might even be you!) 30+ years from now - what will they need to understand what's inside your data files? The goal is to have enough information for the researcher to **understand the data**, **interpret the data**, and then **reuse the data** in another study.
 
 Another way to think about metadata is to answer the following questions with the documentation:
 
@@ -213,7 +280,8 @@ Another way to think about metadata is to answer the following questions with th
 -   Who should get credit for this data (researcher AND funding agency)?
 -   How can this data be reused (licensing)?
 
-### Bibliographic Guidelines
+:::{.panel-tabset}
+### Bibliography
 
 The details that will help your data be cited correctly are:
 
@@ -223,7 +291,7 @@ The details that will help your data be cited correctly are:
 -   **Funding information** like the award number and the sponsor
 -   **People and organizations** like the creator of the dataset (i.e. who should be cited), the person to **contact** about the dataset (if different than the creator), and the contributors to the dataset
 
-### Discovery Guidelines
+### Findability
 
 The details that will help your data be discovered correctly are:
 
@@ -232,7 +300,7 @@ The details that will help your data be discovered correctly are:
 -   **Taxonomic coverage** of the data, including what species were measured and what taxonomy standards and procedures were followed
 -   Any other **contextual information** as needed
 
-### Interpretation Guidelines
+### Interpretable
 
 The details that will help your data be interpreted correctly are:
 
@@ -243,7 +311,7 @@ The details that will help your data be interpreted correctly are:
 -   Information about the **hardware and software** used to process your data, including the make, model, and version
 -   **Computing quality control** procedures like testing or code review
 
-### Data Structure and Contents
+### Data Structure
 
 -   **Everything needs a description**: the data model, the data objects (like tables, images, matrices, spatial layers, etc), and the variables all need to be described so that there is no room for misinterpretation.
 -   **Variable information** includes the definition of a variable, a standardized unit of measurement, definitions of any coded values (i.e. 0 = not collected), and any missing values (i.e. 999 = NA).
@@ -252,7 +320,7 @@ Not only is this information helpful to you and any other researcher in the futu
 
 For example, if you were to search for the character string "carbon dioxide flux" in a data repository, not all relevant results will be shown due to varying vocabulary conventions (i.e., "CO2 flux" instead of "carbon dioxide flux") across disciplines --- only datasets containing the exact words "carbon dioxide flux" are returned. With correct semantic annotation of the variables, your dataset that includes information about carbon dioxide flux but that calls it CO2 flux WOULD be included in that search.
 
-### Rights and Attribution
+### Attribution
 
 Correctly **assigning a way for your datasets to be cited** and reused is the last piece of a complete metadata document. This section sets the scientific rights and expectations for the future on your data, like:
 
@@ -277,6 +345,7 @@ So, **how does a computer organize all this information?** There are a number of
 
 *Note this is not an exhaustive list.*
 
+
 ### Data Identifiers
 
 Many journals require a DOI (a digital object identifier) be assigned to the published data before the paper can be accepted for publication. The reason for that is so that the data can easily be found and easily linked to.
@@ -286,6 +355,8 @@ Some data repositories assign a DOI for each dataset you publish on their reposi
 ### Data Citation
 
 Researchers should get in the habit of citing the data that they use (even if it's their own data!) in each publication that uses that data.
+
+:::
 
 ## Data Sharing & Preservation
 

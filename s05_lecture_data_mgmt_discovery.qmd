@@ -195,11 +195,7 @@ Example: `inurl:data soil chemistry`
 
 Within the data life cycle you can be collecting data (creating new data) or integrating data that has all ready been collected. Either way, **metadata** plays plays a major role to successfully spin around the cycle because it enables data reuse long after the original collection.
 
-Imagine that you're writing your metadata for a typical researcher (who might even be you!) 30+ years from now - what will they need to understand what's inside your data files?
-
-The goal is to have enough information for the researcher to **understand the data**, **interpret the data**, and then **reuse the data** in another study.
-
-### Overall Guidelines
+Imagine that you're writing your metadata for a typical researcher (who might even be you!) 30+ years from now - what will they need to understand what's inside your data files? The goal is to have enough information for the researcher to **understand the data**, **interpret the data**, and then **reuse the data** in another study.
 
 Another way to think about metadata is to answer the following questions with the documentation:
 

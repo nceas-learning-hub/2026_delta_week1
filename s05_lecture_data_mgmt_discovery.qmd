@@ -202,7 +202,7 @@ If a particular dataset is not useful, **why is it not useful?** If your questio
 In your project groups:
 
 1. Create a spreadsheet to serve as your data inventory
-2. Add the name of each datasets you've already found
+2. Add the name of each dataset you've already found
 3. **Discuss** what columns would be useful in your data inventory
     - Remember to re-visit the recommendations above!
 4. Add the agreed-upon columns to your data inventory

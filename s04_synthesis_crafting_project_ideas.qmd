@@ -220,10 +220,10 @@ Check out the tabs below for tools that are particularly-well suited to differen
 
 :::
 
-:::{.callout-exercise}
-### Emergent Thinking Practice
-
-**Part 1 - Team Discussion & Co-Production**
+::::{.callout-exercise}
+### Exercise: Emergent Thinking Practice
+:::{.panel-tabset}
+### Part 1 - Team Discussion
 
 With your synthesis project team:
 
@@ -238,7 +238,7 @@ With your synthesis project team:
     - If you were working with the tools we suggested last time to start outlining your analysis, this should build from there
 3. What are the \~3 key figures that would best illustrate your results?
 
-**Part 2 - Report Out**
+### Part 2 - Report Out
 
 With all attendees:
 
@@ -248,3 +248,4 @@ With all attendees:
     - Invite questions or feedback about parts of your team's plan where those would be especially valuable
 
 :::
+::::

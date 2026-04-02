@@ -19,9 +19,9 @@ After completing this session, you will be able to:
 Tidy data is a standardized way of organizing data tables that allows us to manage and analyze data efficiently, because it makes it straightforward to understand the corresponding variable and observation of each value.
 The [**tidy data principles**](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html){.external target="_blank" rel="noopener"} are:
 
-1.  Every *column* is a single *variable.*
-2.  Every *row* is a single *observation.*
-3.  Every *cell* is a single *value.*
+1. Each *variable* is a *column*; each *column* is a *variable.*
+2. Each *observation* is a *row*; each *row* is an *observation.*
+3. Each *value* is a *cell*; each *cell* is a single *value.*
 
 ::: {.callout-tip}
 ## Tidy Data: A way of life

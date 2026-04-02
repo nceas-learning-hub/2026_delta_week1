@@ -248,7 +248,7 @@ Consider using:
 When capturing notes, try to use people's own words; if necessary ask them to distill long or complex points into a headline you can capture. Invite them to offer corrections if the notetaker didn't capture what they meant.
 
 ::::{.callout-exercise}
-#### Activity: Team Planning
+#### Exercise: Team Planning
 
 :::{.panel-tabset}
 ### Part 1 - Solo
@@ -259,7 +259,6 @@ On your own, think about an upcoming team meeting that hasn't yet been planned
 - What do you think should be the purpose of that meeting?
 
 ### Part 2 - Project Groups
-
 
 In your project team:
 

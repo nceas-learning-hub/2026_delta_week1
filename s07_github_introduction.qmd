@@ -272,7 +272,7 @@ To clone our remote repository, we'll use an IDE (<u>I</u>ntegrated <u>D</u>evel
 Positron makes working with Git and version-controlled files easy! To do so, you'll need to **tell Positron the folder in which you want it to clone your origin repository**.
 
 1. Start by copying the link to your GitHub repository from the address bar of your web browser
-    - Should be something like "https://github.com/`github-username`/`repository-name`"
+    - Should be something like `https://github.com/github-username/repository-name`
 2. Click the folder icon in the top right corner of Positron
 3. Select **New Folder from Git...**
 4. In the **Git repository URL** field, paste in the link you copied in step 1
@@ -284,7 +284,7 @@ Positron makes working with Git and version-controlled files easy! To do so, you
 
 Once you click **OK**, your Positron window will refresh and the "Explorer" tab (in the left sidebar) will show that all files from the remote repository have been copied locally. Note that the folder icon in the top right corner will now have the name of your repository from GitHub.
 
-![](images/github_introduction/positron-clone_02-ide.png){.lightbox fig-alt="Screen capture of Positron after successfully cloning a new repository from GitHub"}
+![](images/github_introduction/positron-clone_02-ide.png){.lightbox fig-alight="center" fig-alt="Screen capture of Positron after successfully cloning a new repository from GitHub"}
 
 If you click the "Source Control" tab (its symbol looks like this: {{< fa code-branch >}}) you will see that there are no changes because we haven't done anything to the local copy yet! However, both the commits (the initial commit and the test edit made directly in GitHub) are shown in the bottom left corner in reverse chronological order (i.e., most recent at the top).
 
@@ -292,7 +292,7 @@ If you click the "Source Control" tab (its symbol looks like this: {{< fa code-b
 
 We can actually interact with particular commits to get more detailed information on what was changed directly through Positron! Click the top commit to expand it and see the files that were changed as part of that commit. Now click the README file (the only one edited as part of that commit). A file will now open in the main window of Positron showing the README file with new lines highlighted in green and deleted lines highlighted in red.
 
-![](images/github_introduction/positron-clone_04-history.png){.lightbox fig-alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened"}
+![](images/github_introduction/positron-clone_04-history.png){.lightbox fig-alight="center" fig-alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened"}
 
 ### {{< fa brands r-project >}} RStudio
 
@@ -359,10 +359,10 @@ Recall that headers are any line that starts with at least one `#`.
 ::: {layout-nrow=2}
 
 {{< fa p >}} Positron
-![](images/github_introduction/positron-commit_01-edit.png){.lightbox fig-alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified"}
+![](images/github_introduction/positron-commit_01-edit.png){.lightbox fig-alight="center" fig-alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified"}
 
 {{< fa brands r-project >}} RStudio
-![](images/github_introduction/rstudio-commit_01-edit.png){.lightbox fig-alt="Screen capture of RSTudio with the README file opened"}
+![](images/github_introduction/rstudio-commit_01-edit.png){.lightbox fig-alight="center" fig-alt="Screen capture of RSTudio with the README file opened"}
 
 :::
 
@@ -423,7 +423,7 @@ Now that you've pulled, you can **click the Push button**; it is an upward-facin
 
 If you navigate back to your remote repository on GitHub, you should see the edits to your README and the most recent commit will be the one you just made. Note that sometimes you have to refresh the page or wait a few seconds for those updates to be visible on GitHub.
 
-![](images/github_introduction/positron-commit_06-updated-remote.png){.lightbox fig-alt="Screen capture of a GitHub repository's landing page with a new commit"}
+![](images/github_introduction/positron-commit_06-updated-remote.png){.lightbox fig-alight="center" fig-alt="Screen capture of a GitHub repository's landing page with a new commit"}
 
 ::: callout-note
 ## Challenge

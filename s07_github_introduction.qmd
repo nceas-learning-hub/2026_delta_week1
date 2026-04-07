@@ -12,9 +12,7 @@ After completing this session, you will be able to:
 
 ## Introduction to Version Control
 
-<p align="center">
-<img src="images/github_introduction/phd_comics_final.png" alt="Comic of a grad student naming a document 'final' before needing to iteratively revise resulting in a series of progressively less interpretable 'final' filenames" width="70%"/>
-</p>
+![](images/github_introduction/phd_comics_final.png){fig-alt="Comic of a grad student naming a document 'final' before needing to iteratively revise resulting in a series of progressively less interpretable 'final' filenames" width="70%" fig-align="center" .lightbox}
 
 Every file changes throughout the scientific process. Manuscripts are edited. Figures get revised. Code gets fixed when bugs are discovered. Sometimes those fixes lead to even more bugs, leading to more changes in the code base. Data files get combined. Those same files are split and combined again. In just one research project, we can expect thousands of changes!
 

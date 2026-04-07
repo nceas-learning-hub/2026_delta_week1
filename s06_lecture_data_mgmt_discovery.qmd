@@ -48,6 +48,20 @@ DataOne's [Data Management Skillbuilding Hub](https://dataoneorg.github.io/Educa
 
 No matter how your data life cycle looks like, *Plan* should be at the top of the cycle. It is advisable to initiate your data management planning at the beginning of your research process before any data has been collected or discovered. The following section will discuss more in-depth data management and how to plan accordingly
 
+## Data Workflows
+
+Whereas the Data Life Cycle provides a strategic perspective on how to manage data over its full lifespan, a Data Workflow focuses on the operational process of acquiring data in some raw state, transforming it via a series of steps, and ultimately producing one or more derived research products. The diagram below depicts a generalized workflow that tends to be applicable to most projects involving data, although each project is unique in terms of the details underlying each step.
+
+![Adapted from [Faundeen et al., 2013](https://pubs.usgs.gov/of/2013/1265/pdf/of2013-1265.pdf) and DataONE](images/data_mgmt_discovery/data-workflow.png){fig-alt="Data workflow graphic with each stage following the next to form a pipeline" fig-align="center" .lightbox}
+
+In the ideal case, this workflow can be fully automated, from the acquisition of raw data to the production of derived outputs (including analytical results, model predictions, visualizations, and more). Imagine being able to run this on-demand as a repeatable process, effectively enabling a pipeline in which data is "moved" from its starting point through a series of transformations performed by executable code, yielding whatever final outputs are desired. In practice, we often can't achieve full automation, but our goal should be to come as close as we can.
+
+Across the entire workflow, three additional elements are key to ensuring that the pipeline is robust, reliable, and repeatable:
+
+- **Describe**: Thorough documentation and metadata detailing each step, and its inputs and outputs; well-written and documented code itself is hugely beneficial!
+- **Manage Quality**: Use well-vetted tools and technology, and build validation steps into the process.
+- **Backup and Secure**: Adopt practices and services that provide redundant storage and version control, with sufficient assurances around data integrity and security.
+
 ## Finding Data
 
 ### Useful Data Repositories

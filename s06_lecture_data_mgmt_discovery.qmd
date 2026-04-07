@@ -215,7 +215,7 @@ If a particular dataset is not useful, **why is it not useful?** If your questio
 
 In your project groups:
 
-1. Create a spreadsheet to serve as your data inventory
+1. Create a spreadsheet to serve as your data inventory (or adapt [this template](https://docs.google.com/spreadsheets/d/1uxNsB2GAh0UB_WAbl0Onv60lMHZiaMzf0hoWRDqgydQ/view))
 2. Add the name of each dataset you've already found
 3. **Discuss** what columns would be useful in your data inventory
     - Remember to re-visit the recommendations above!

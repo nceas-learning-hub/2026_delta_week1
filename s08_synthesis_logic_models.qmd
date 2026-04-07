@@ -19,7 +19,7 @@ Logic models are a planning tool that are designed to support program developmen
 
 A simplified logic models comprise three main parts: Inputs, Outputs and Outcomes.
 
-![](images/synthesis_logic_models/LM1.png){fig-alt="A diagram of three boxes lined horizontally, labeled 'inputs,' 'outputs,' and 'outcomes' from left to right" width="70%" fig-align="center"}
+![](images/synthesis_logic_models/LM1.png){fig-alt="A diagram of three boxes lined horizontally, labeled 'inputs,' 'outputs,' and 'outcomes' from left to right" width="70%" fig-align="center" .lightbox}
 
 Inputs reflect ***what is invested***, outputs are ***what is done*** and outcomes are the ***results of the program***.
 
@@ -28,21 +28,21 @@ In a more detailed logic model, outputs and outcomes are further broken down:
 * Outputs are often represented as 'Activities' and 'Participants'. By including participation (or participants), the logic model is explicitly considering the intended audience, or stakeholders, impacted by the program. Engagement of this audience is an output. 
 * In the case of outcomes, these can be split into short, medium and long-term outcomes. Some people may label this last category 'Impact.'
 
-![](images/synthesis_logic_models/LM2.png){fig-alt="The three-box model above is expanded to include resources under inputs, activities and participants under outputs, and short, medium, long term under outcomes." width="70%" fig-align="center"}
+![](images/synthesis_logic_models/LM2.png){fig-alt="The three-box model above is expanded to include resources under inputs, activities and participants under outputs, and short, medium, long term under outcomes." width="70%" fig-align="center" .lightbox}
 
 Defining the inputs, outputs and outcomes early in a planning process enables teams to visualize the workflow from activity to results and can help mitigate potential challenges. Logic models can be thought of as having an "**IF** this **THEN** that" structure where inputs {{< fa arrow-right >}} outputs {{< fa arrow-right >}} outcomes.
 
-![](images/synthesis_logic_models/LM3.png){fig-alt="The figure above is modified to include grey arrows pointing right to left between each box, with each box labeled 'if' and each arrow labeled 'then', for example IF resource condition is met THEN activities can result, IF activities THEN participants, etc" width="70%" fig-align="center"}
+![](images/synthesis_logic_models/LM3.png){fig-alt="The figure above is modified to include grey arrows pointing right to left between each box, with each box labeled 'if' and each arrow labeled 'then', for example IF resource condition is met THEN activities can result, IF activities THEN participants, etc" width="70%" fig-align="center" .lightbox}
 
 In the example below we have constructed a simple logic model for a hypothetical project where training materials are being developed for a group of educators to implement at their respective institutions.
 
-![](images/synthesis_logic_models/LM4.png){fig-alt="The figure above is modified to include specifics for each box: resources: 'We have sufficient money, cycles, expertise', outputs: 'We can develop online data science curricula for educators', outcomes: short term, 'Educators can access material and learn about data science,' medium term, 'They can implement instruction in data science fundamentals', and long term 'Widespread data literacy across broad populations of students'" width="70%" fig-align="center"}
+![](images/synthesis_logic_models/LM4.png){fig-alt="The figure above is modified to include specifics for each box: resources: 'We have sufficient money, cycles, expertise', outputs: 'We can develop online data science curricula for educators', outcomes: short term, 'Educators can access material and learn about data science,' medium term, 'They can implement instruction in data science fundamentals', and long term 'Widespread data literacy across broad populations of students'" width="70%" fig-align="center" .lightbox}
 
 ### Linkages
 
 Linkages are not always sequential and can be within categories, bi-directional and/or include feedback loops. Detailing this complexity of relationships, or theory of action, can be time consuming but is a valuable part of the thought process for project planning. In exploring all relationships, logic modeling also allows for assessing program feasibility.
 
-![](images/synthesis_logic_models/LM5.png){fig-alt="Multiple boxes, each representing an input, an output, or an outcome, are connected by grey arrows flowing mostly left-to-right but some are bi-directional or indicate loops back to previous steps" width="70%" fig-align="center"}
+![](images/synthesis_logic_models/LM5.png){fig-alt="Multiple boxes, each representing an input, an output, or an outcome, are connected by grey arrows flowing mostly left-to-right but some are bi-directional or indicate loops back to previous steps" width="70%" fig-align="center" .lightbox}
 
 :::{.callout-tip}
 ## Other variations
@@ -54,7 +54,7 @@ The above graphics include two sections within Outputs - Activities and Particip
 
 Program development (and logic modeling) occurs in response to a given 'Situation' or need, and exploring this is the first step in modeling. The situation defines the objective, or problem, that the program is designed to solve hence some logic models may omit the left-hand situation column but be framed with Problem and Solution statements. Finally, comprehensive logic modeling takes into consideration assumptions that are made with respect to the resources available, the people involved, or the way the program will work and also recognizes that there are external factors that can impact the program's success.
 
-![](images/synthesis_logic_models/LM6.png){fig-alt="A blank template for a logic model, with boxes for inputs (resources), outputs (activities, participants, products), and outcomes (short, medium, long term); on the left side of the entire diagram is a box labeled 'situation'; below the diagram are two boxes labeled 'assumptions' and 'external factors'" width="70%" fig-align="center"}
+![](images/synthesis_logic_models/LM6.png){fig-alt="A blank template for a logic model, with boxes for inputs (resources), outputs (activities, participants, products), and outcomes (short, medium, long term); on the left side of the entire diagram is a box labeled 'situation'; below the diagram are two boxes labeled 'assumptions' and 'external factors'" width="70%" fig-align="center" .lightbox}
 
 :::{.callout-note}
 ## In Summary

@@ -1256,15 +1256,15 @@ BOX_CLIENT_SECRET = &lt;your_client_secret&gt;</code></pre>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># List the contents of the 'Training' folder</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> response <span class="ot">&lt;-</span> <span class="fu">box_ls</span>(<span class="dv">375386190471</span>)</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">as.data.frame</span>(response)[<span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"type"</span>, <span class="st">"size"</span>, <span class="st">"id"</span>)]</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#      name type size            id</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">#  iris.csv file 3716 2188497409481</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#            name type size            id</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">#  airquality.csv file 2802 2190747337891</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Finally, let’s get some data from Box! The <code>boxr</code> package provides multiple ways of retrieving data – including both downloading files to your computer, and reading data into R. We’ll do the latter here, using the <code>box_read_csv()</code> function that downloads a CSV and reads it into R as a data frame, all in one step.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read iris.csv into R as a data frame</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read airquality.csv into R as a data frame</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll also pass the `stringsAsFactors` argument to make this match</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># the same data frame that was used to create this file in the first place!</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> iris_from_box <span class="ot">&lt;-</span> <span class="fu">box_read_csv</span>(<span class="dv">2188497409481</span>, <span class="at">stringsAsFactors=</span><span class="cn">TRUE</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> airquality_from_box <span class="ot">&lt;-</span> <span class="fu">box_read_csv</span>(<span class="dv">2190747337891</span>, <span class="at">stringsAsFactors=</span><span class="cn">TRUE</span>)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">identical</span>(iris, iris_from_box)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">identical</span>(airquality, airquality_from_box)</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- Holding until later in the course
 ## Practice Evaluating a Data Package

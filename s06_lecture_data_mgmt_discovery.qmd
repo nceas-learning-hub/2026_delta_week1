@@ -407,6 +407,7 @@ In the graphic to the side, the package can be cited with the DOI `doi:10.5063/F
 
 ![](images/data_mgmt_discovery/data-package.png){fig-alt="Diagram of a data package where a single metadata box is connected to a stacked set of boxes labeled 'data granule 1', both of these are connected to boxes labeled 'software' and 'figures'" fig-align="center"}
 
+<!-- Holding until later in the course
 ## Practice Evaluating a Data Package
 
 Explore data packages published on EDI assess the quality of their metadata. Imagine you are planning on using this data for a synthesis project.
@@ -445,3 +446,4 @@ Elect someone to share back to the group the following:
 - Do you feel like you understand the research project enough to use the data yourself (aka reproducibility?
 :::
 ::::
+-->

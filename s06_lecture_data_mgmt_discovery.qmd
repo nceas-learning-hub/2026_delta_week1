@@ -21,7 +21,7 @@ The "Finding Data" section in this page was adapted from the Long Term Ecologica
 
 ## The Big Idea
 
-The ultimate goal of this lesson is to provide an overview of a reproducible open science framework for your research, when either you are accessing published data (data user) to -- for example use it for synthesis or you want to publish your own data (data author). To achieve this, we are going to talk about the following topics.
+The ultimate goal of this lesson is to provide an overview of a reproducible open science framework for your research, applicable both when you are accessing published data as a _data user_ -- for example, to use it for synthesis -- and when you want to publish your own data as a _data author_. To achieve this, we are going to talk about the following topics.
 
 -   The Data Life Cycle
 -   The importance of data management
@@ -36,7 +36,7 @@ The Data Life Cycle gives you an overview of meaningful steps in a research proj
 
 [![Source: DataOne](images/data_mgmt_discovery/data-life-cycle.png){fig-alt="Data Life Cycle graphic with each stage following the next to create a circle." fig-align="center"}](https://dataoneorg.github.io/Education/bestpractices/)
 
-The first step to working with data is identifying where my project is starting in the Data Life Cycle. Using the data life cycle stages, create your own cycle that best fits your project needs.
+The first step to working with data is identifying where your project is starting in the Data Life Cycle. Using the data life cycle stages, create your own cycle that best fits your project needs.
 
 **A way to use the Data Life Cycle in practice is to:**
 
@@ -202,7 +202,7 @@ If you start relying on a data inventory, **it can become a valuable place to as
 
 ### Data Use
 
-One _critical_ use of a data inevntory that is often overlooked: **are the data useful to your question?**
+One _critical_ use of a data inventory that is often overlooked: **are the data useful to your question?**
 
 If you found the data before, your later data searches will likely also turn it up even if it's not useful! You can save other group members' a headache by noting not applicable data so they can disregard it from their searches. 
 

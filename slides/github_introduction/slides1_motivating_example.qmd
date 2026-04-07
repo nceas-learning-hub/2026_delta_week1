@@ -89,7 +89,7 @@ The next day, you have an email from your boss, "Hey, you know what this model n
 
 ---
 
-[Version control!]{.custom-subtitle}
+[Version control to the rescue!]{.custom-subtitle}
 
 ![](git-intro-slide04.png){fig-alt="Cartoon graphic of two versions of a script called 'analysis.r' containing a more simple and more complicated linear model respectively with the Git commit message used when the second version was committed" width="85%" fig-align="center"}
 
@@ -97,7 +97,7 @@ The next day, you have an email from your boss, "Hey, you know what this model n
 
 ---
 
-[Version control!]{.custom-subtitle}
+[Version control to the rescue!]{.custom-subtitle}
 
 ![](git-intro-slide04.png){fig-alt="Cartoon graphic of two versions of a script called 'analysis.r' containing a more simple and more complicated linear model respectively with the Git commit message used when the second version was committed" width="85%" fig-align="center"}
 

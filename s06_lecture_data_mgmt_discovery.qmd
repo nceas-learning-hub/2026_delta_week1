@@ -217,25 +217,44 @@ Successfully managing your data throughout a research project helps ensures its 
 ### Why Manage Your Data?
 
 :::{.panel-tabset}
+
 ### Personal Benefits
 
--   Keep yourself organized -- be able to find your files (data inputs, analytic scripts, outputs at various stages of the analytic process, etc.)
--   Track your science processes for reproducibility -- be able to match up your outputs with exact inputs and transformations that produced them
--   Better control versions of data -- easily identify versions that can be periodically purged
--   Quality control your data more efficiently
--   To avoid data loss (e.g. making backups)
--   Format your data for re-use (by yourself or others)
--   Be prepared: Document your data for your own recollection, accountability, and re-use (by yourself or others)
--   Gain credibility and recognition for your science efforts through data sharing!
+These practices help you stay organized, protect your work, and keep your science reproducible (or at least traceable) and defensible over time.
+
+-   **Keep yourself organized**. Develop a consistent system for naming, storing, and retrieving files (data inputs, analytic scripts, outputs at various stages) so you're don't lose things later.
+-   **Build reproducibility into your research process**. Prefer coded workflows, and carefully document your work, so you can match any output to the exact inputs and transformations that produced it, whether days or years later.
+-   **Control versions of your data**. Maintain a clear versioning system so you can identify what changed, when, and why -- and confidently purge outdated files without fear.
+-   **Quality control your data more efficiently**. Structured data management makes it easier to spot errors, inconsistencies, and gaps early on, before they propagate through your analysis.
+-   **Protect against data loss**. Implement regular backups and redundant storage so that hardware failure, accidental deletion, or software corruption doesn't cost you irreplaceable work.
+-   **Format your data for re-use**. Use open, well-documented formats and structures that will still be readable and usable years from now, by you or anyone else.
+-   **Document your data proactively**. Write documentation while the details are fresh, not after; your future self will not remember why that variable was coded that way.
+-   **Build credibility through transparency**. Well-managed, shareable data signals rigor and invites constructive scrutiny.
+
+### Better Collaboration
+
+These practices support efficiency, consistency, and shared accountability across contributor.
+
+-   **Standardize naming conventions, formats, and folder structures**. What seems obvious to one collaborator may be opaque to another.
+-   **Agree on a merge/integration protocol**. When combining datasets from different sources or institutions, document how conflicts, mismatches, and duplicates were resolved.
+-   **Maintain a clear data provenance log**. In multi-contributor contexts, it must always be traceable which person/pipeline produced which dataset or transformation.
+-   **Define a single source of truth**. Avoid the confusion and errors that can occur when multiple "current" versions of a dataset circulate simultaneously across collaborators.
+-   **Ensure all collaborators have access to shared data**. Designate a shared repository or platform that every team member can reach, so no one is working from a stale local copy or blocked from the data they need to contribute effectively.
+-   **Prefer shared, version-controlled repositories**. Avoid email attachments. This is where collaborative data management most visibly breaks down in practice.
+-   **Establish shared data governance _early_**. Agree on who owns, can modify, and can release data.
+-   **Coordinate on embargo and publication timing**. Clarify who can publish what, and when, to avoid disputes over priority or premature release.
+-   **Plan for contributor turnover**. Over time, some collaborators may come and go; documentation and handoff protocols protect the group's work.
 
 ### Advancement of Science
 
--   Data is a valuable asset -- it is expensive and time consuming to collect
--   Maximize the effective use and value of data and information assets
--   Continually improve the quality including: data accuracy, integrity, integration, timeliness of data capture and presentation, relevance, and usefulness
--   Ensure appropriate use of data and information
--   Facilitate data sharing
--   Ensure sustainability and accessibility in long term for re-use in science
+These practices protect the long-term value, integrity, and accessibility of data as a shared scientific resource.
+
+-   **Treat data as the valuable asset it is**. Data is expensive and time-consuming to collect; poor management squanders that investment and may make the work unrepeatable.
+-   **Maximize the utility of existing data**. Well-managed data can be reanalyzed, combined with new datasets, and repurposed for questions beyond the original study, extending its scientific return.
+-   **Continually improve data quality**. Establish practices that support accuracy, integrity, consistency, and timeliness from the point of capture through to publication and archiving.
+-   **Ensure data is used appropriately**. Clear documentation of provenance, consent, and access restrictions helps prevent misuse and protects both participants and researchers.
+-   **Facilitate data sharing**. Data that is well-organized, documented, and formatted is far more likely to actually be shared and used; good management is what makes sharing feasible, not just aspirational.
+-   **Ensure long-term sustainability and accessibility**. Archive data in formats and repositories that will remain accessible as technology changes, so future researchers can build on your work rather than starting from scratch.
 
 :::
 

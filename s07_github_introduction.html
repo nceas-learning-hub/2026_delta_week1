@@ -488,7 +488,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./s09_activity_reproducibility_lego.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reproducibility: a Lego Activity</span></a>
+ <span class="menu-text">Reproducibility: a LEGO Activity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1030,7 +1030,7 @@ Artwork by Allison Horst
 <li><strong>Be descriptive and concise</strong>: Provide a clear and concise summary of the changes made in the commit. Aim to convey the purpose and impact of the commit in a few words.</li>
 <li><strong>Use imperative tense</strong>: Write commit messages in the imperative tense, as if giving a command. For example, use “Add feature” instead of “Added feature” or “Adding feature.” This convention aligns with other Git commands and makes the messages more actionable.</li>
 <li><strong>Separate subject and body</strong>: Start with a subject line, followed by a blank line, and then provide a more detailed explanation in the body if necessary. The subject line should be a short, one-line summary, while the body can provide additional context, motivation, or details about the changes.</li>
-<li><strong>Limit the subject line length</strong>: Keep the subject line within 50 characters or less. This ensures that the commit messages are easily scannable and fit well in tools like Git logs.</li>
+<li><strong>Limit the subject line length</strong>: Keep the subject line within 50 characters or less. This ensures that the commit messages are easily scan-able and fit well in tools like Git logs.</li>
 <li><strong>Capitalize and punctuate properly</strong>: Begin the subject line with a capital letter and use proper punctuation. This adds clarity and consistency to the commit messages.</li>
 <li><strong>Focus on the “what” and “why”</strong>: Explain what changes were made and why they were made. Understanding the motivation behind a commit helps future researchers and collaborators (including you!) comprehend its purpose.</li>
 <li><strong>Use present tense for subject, past tense for body</strong>: Write the subject line in present tense as it represents the current state of the codebase. Use past tense in the body to describe what has been done.</li>
@@ -1133,7 +1133,7 @@ Artwork by Allison Horst
 <p><a href="images/github_introduction/rstudio-clone_04-ide.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="images/github_introduction/rstudio-clone_04-ide.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Screen capture of the RStudio when in a project that is version-controlled"></a></p>
 </figure>
 </div>
-<p>You may also notice that you have a new tab in RStudio labeled Git. <strong>Click that tab.</strong> You’ll see that you have your .Rproj file listed with two <strong><span style="color:gold">yellow</span></strong> question marks. RStudio uses this file to define an RProject but because it isn’t in your remote repository, Git is flagging it for your attention as a file that is in the tracked folder but is not itself tracked. <em>Ignore this for now</em> as we’ll get to more on it later.</p>
+<p>You may also notice that you have a new tab in RStudio labeled Git. <strong>Click that tab.</strong> You’ll see that you have your .Rproj file listed with two <strong><span style="color:gold">yellow</span></strong> question marks. RStudio uses this file to define an R Project but because it isn’t in your remote repository, Git is flagging it for your attention as a file that is in the tracked folder but is not itself tracked. <em>Ignore this for now</em> as we’ll get to more on it later.</p>
 <p align="center">
 <img src="images/github_introduction/rstudio-clone_05-git-pane.png" alt="Screen capture of the Git pane in RStudio" width="50%">
 </p>
@@ -1321,14 +1321,14 @@ Artwork by Allison Horst
 </figure>
 </div>
 <p><strong>Initialize Git and Connect to Remote</strong></p>
-<p>Make sure you are in the Console pane - these nexts step are in R. We’ll use tools from the <code>usethis</code> package to initialize the folder as a Git repository, then create a remote repository on GitHub (with the same name as the current folder) and push our initial commit out to GitHub.</p>
+<p>Make sure you are in the Console pane - these next step are in R. We’ll use tools from the <code>usethis</code> package to initialize the folder as a Git repository, then create a remote repository on GitHub (with the same name as the current folder) and push our initial commit out to GitHub.</p>
 <ol type="1">
 <li><code>usethis::use_git()</code> (note, <code>install.packages('usethis')</code> if you don’t already have it installed!). This will walk through several steps, showing you the progress along the way:
 <ul>
 <li>set active project to the current project</li>
 <li>initialize the folder to be a Git repository (<code>git init</code> per the commands noted above)</li>
 <li>creates a <code>.gitignore</code> file (see more below) and adds a few file paths to that file.</li>
-<li>identifies whether there are any uncommited files and if so asks if you would like to commit them.</li>
+<li>identifies whether there are any uncommitted files and if so asks if you would like to commit them.</li>
 </ul></li>
 <li>When asked <code>Is it ok to commit them?</code> choose the correct number for a yes/absolutely/affirmative response. This will:
 <ul>

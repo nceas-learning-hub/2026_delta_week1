@@ -488,7 +488,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./s09_activity_reproducibility_lego.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reproducibility: a Lego Activity</span></a>
+ <span class="menu-text">Reproducibility: a LEGO Activity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1316,7 +1316,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p><strong>DON’T SAVE!</strong></p>
 <p>By default, when ever you close or switch projects, R studio will prompt you: Do you want to save your workspace image to /“current-project”/ .RData?</p>
 <p>RStudio by default wants to save the state of your environment (the objects you have in your environment pane) into the .RData file so that when you open the project again you have the same environment. However, it is <strong>NOT</strong> a good practice to rely on the state of your environment for your script to run and work. If you are coding reproducibly, your script should be able to recreate the state of your environment (all the necessary objects) every time you run it. It is much better to rely on your code recreating the environment than saving the workspace status.</p>
-<p>To make sure you’re always working reproducibly, change the Global Options configuration for the default to be NEVER SAVE MY WORKSPACE. Go to Tools <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Global Options. Under the General menu, select <strong>Never</strong> next to “Save workspace to .RData on exit” (and uncheck “Restore .RData into workspace at startup”). This way you won’t get asked every time you close a project, instead RStudio knows not to save.</p>
+<p>To make sure you’re always working reproducibly, change the Global Options configuration for the default to be NEVER SAVE MY WORKSPACE. Go to Tools <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> Global Options. Under the General menu, select <strong>Never</strong> next to “Save workspace to .RData on exit” (and un-check “Restore .RData into workspace at startup”). This way you won’t get asked every time you close a project, instead RStudio knows not to save.</p>
 <p><a href="images/r_programming_introduction/save-workspace-global-options.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/r_programming_introduction/save-workspace-global-options.png" class="img-fluid" style="width:70.0%" data-align="center"></a></p>
 </section>
 <section id="clearing-the-environment" class="level3" data-number="8.2">

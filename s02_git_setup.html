@@ -485,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./s09_activity_reproducibility_lego.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reproducibility: a Lego Activity</span></a>
+ <span class="menu-text">Reproducibility: a LEGO Activity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -730,7 +730,7 @@ Important
 </section>
 <section id="configure-strategy-for-integrating-changes-across-branches" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="configure-strategy-for-integrating-changes-across-branches"><span class="header-section-number">2.2</span> Configure Strategy for Integrating Changes Across Branches</h3>
-<p>When you’re working on the same GitHub repository as the rest of your team, what happens when you and a teammate edit the same file at the same time? How does Git ‘know’ how to reconcile those differences? Simply put, we tell Git how we want it to make that judgement call!</p>
+<p>When you’re working on the same GitHub repository as the rest of your team, what happens when you and a teammate edit the same file at the same time? How does Git ‘know’ how to reconcile those differences? Simply put, we tell Git how we want it to make that judgment call!</p>
 <p>There are three options, “merge,” “rebase,” and “fast forward.” <strong>We recommend that you choose the “merge” strategy</strong> as it will seamlessly handle easy situations where human oversight isn’t needed but will flag more nuanced problems (called “merge conflicts”) for you to resolve manually. For more information on “merge” versus “rebase”, see <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">here</a>. You can always revisit this decision later using essentially the same code below!</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Console <i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Terminal <i class="fa-solid fa-terminal" aria-label="terminal"></i></a></li></ul>
@@ -742,7 +742,7 @@ Important
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>Set the default strategy for reconciling differences.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> pull.rebase false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Note: The <code>--global</code> option will set this as default for all repos on your computer. If you forget this, it will only set for the current repo.</p>
+<p>Note: The <code>--global</code> option will set this as default for all repositories on your computer. If you forget this, it will only set for the current repo.</p>
 </div>
 </div>
 </div>

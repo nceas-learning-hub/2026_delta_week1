@@ -507,7 +507,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./s09_activity_reproducibility_lego.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reproducibility: a Lego Activity</span></a>
+ <span class="menu-text">Reproducibility: a LEGO Activity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -991,7 +991,7 @@ Warning
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, month) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">max_length =</span> <span class="fu">max</span>(size_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">'drop'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>NOTE: <code>.groups = "drop"</code> is an argument in <code>summarize()</code> that tells R to ungroup the data frame after summarizing (and suppresses an annoying warning!). If you don’t include this argument, the resulting data frame wmay still contain groups, which can lead to unexpected results in subsequent operations. You can also use <code>group_by() %&gt;% summarize() %&gt;% ungroup()</code> to accomplish the same basic idea.</p>
+<p>NOTE: <code>.groups = "drop"</code> is an argument in <code>summarize()</code> that tells R to ungroup the data frame after summarizing (and suppresses an annoying warning!). If you don’t include this argument, the resulting data frame may still contain groups, which can lead to unexpected results in subsequent operations. You can also use <code>group_by() %&gt;% summarize() %&gt;% ungroup()</code> to accomplish the same basic idea.</p>
 </div>
 </div>
 </div>
@@ -1718,7 +1718,7 @@ Warning
 <ul>
 <li><code>theme_xxx()</code>: add a complete theme to your plot (e.g., <code>theme_light()</code>, <code>theme_minimal()</code>, <code>theme_void()</code>)
 <ul>
-<li>Note there are also several theme utility functions that might pop up with autocomplete, e.g., <code>theme_get()</code>, <code>theme_set()</code>, <code>theme_update()</code>, <code>theme_replace()</code> - these are <strong>not</strong> complete themes… if it sounds like a verb, not an adjective, it’s likely a theme utility function!</li>
+<li>Note there are also several theme utility functions that might pop up with auto-complete, e.g., <code>theme_get()</code>, <code>theme_set()</code>, <code>theme_update()</code>, <code>theme_replace()</code> - these are <strong>not</strong> complete themes… if it sounds like a verb, not an adjective, it’s likely a theme utility function!</li>
 </ul></li>
 <li><code>theme()</code>: call specific elements to customize non-data components of a plot. A few examples:</li>
 </ul>

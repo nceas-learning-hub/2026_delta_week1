@@ -16,7 +16,7 @@ After completing this session, you will be able to:
 This activity is largely based on the [LEGO® Metadata for Reproducibility game pack](http://eprints.gla.ac.uk/196477/), which was developed by [Mary Donaldson](https://orcid.org/0000-0002-1936-3499) and [Matt Mahon](https://orcid.org/0000-0001-8950-8422).
 :::
 
-## Getting started
+## Instructions
 
 1.  Gather into small groups
 2.  Get LEGO® blocks and worksheets 
@@ -30,11 +30,22 @@ This activity is largely based on the [LEGO® Metadata for Reproducibility game 
 
 As you work, discuss the following questions within your small group.  At the end, we will share our thoughts and ideas with the larger group.
 
-## Discussion Questions
+## Debrief Discussion
 
-* Creation phase:
-    * Did you find this a simple way to document your process?  How would you document the process differently given more time or resources?
-    * Was there anything you found difficult to capture?  What information did you prioritize, what did you choose to leave out?
-* Replication phase   
-    * What did you find straightforward to follow?  What questions would you have liked to ask the creators?
-    * Did you encounter any ambiguity in the instructions?  How would you have revised the instructions to make them clearer?
+:::{.panel-tabset}
+### Creation Phase
+
+- Did you find this a simple way to document your process?
+    - How would you document the process differently given more time or resources?
+- Was there anything you found difficult to capture?
+    - What information did you prioritize?
+    - What did you choose to leave out?
+
+### Replication Phase   
+
+- What did you find straightforward to follow?
+    - What questions would you have liked to ask the creators?
+- Did you encounter any ambiguity in the instructions?
+    - How would you have revised the instructions to make them clearer?
+
+:::

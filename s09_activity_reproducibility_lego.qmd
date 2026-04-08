@@ -1,5 +1,5 @@
 ---
-title: "Reproducibility: a Lego Activity"
+title: "Reproducibility: a LEGO Activity"
 ---
 
 ## Reproducibility activity using LEGO®
@@ -36,5 +36,5 @@ As you work, discuss the following questions within your small group.  At the en
     * Did you find this a simple way to document your process?  How would you document the process differently given more time or resources?
     * Was there anything you found difficult to capture?  What information did you prioritize, what did you choose to leave out?
 * Replication phase   
-    * What did you find straightforward to follow?  What questions would you have liked to answer the creators?
+    * What did you find straightforward to follow?  What questions would you have liked to ask the creators?
     * Did you encounter any ambiguity in the instructions?  How would you have revised the instructions to make them clearer?

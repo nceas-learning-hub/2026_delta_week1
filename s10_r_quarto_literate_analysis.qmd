@@ -408,17 +408,17 @@ Name your code chunks for easy searching (such as `{r setup}` above), and R will
 
 ### Read In Data
 
-Create a new code chunk under "Read in data" (and give it a helpful name!).  Use `read_csv()` to load your data.  Both RStudio and Positron will set your working directory to the project root, so you can (and should!) use a relative path to your data file.
+Create a new code chunk under "Read in data" (and give it a helpful name!).  Use `read_csv()` to load your data.  RStudio and Positron will set your working directory to the project root if you're working in the Console, but if you're in a script or Quarto code chunk, they will set your working directory to the location of that script.  So you can (and should!) use a relative path to your data file, using `here::here()` to ensure that relative path is to a fixed location (the project root) regardless of where you're working.
 
 <!-- This chunk displays to the reader to point toward their local copy: -->
 ```r
-bg_chem <- read_csv("data/BGchem2008data.csv")
+bg_chem <- read_csv(here::here("data/BGchem2008data.csv"))
 ```
 <!-- This chunk reads the data from the right directory for tutorial purposes: -->
 ```{r}
 #| echo: false
 library(readr)
-bg_chem <- read_csv('data/r_quarto_literate_analysis/BGchem2008data.csv')
+bg_chem <- read_csv(here::here('data/r_quarto_literate_analysis/BGchem2008data.csv'))
 ```
 
 :::{.callout-exercise}

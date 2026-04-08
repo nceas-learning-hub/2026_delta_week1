@@ -193,7 +193,7 @@ Now that we have introduced some data wrangling packages, let's get the data tha
 1. Go to KNB Data Package for Alaska commercial salmon catches by management region (1886-1997)
     -  The link is here: [knb.ecoinformatics.org/view/df35b.304.2](https://knb.ecoinformatics.org/view/df35b.304.2)
 2. Find the data file "byerlySalmonByRegion.csv". Right click the "Download" button and select "Copy Link Address"
-3. Create a new code chunk (call it "read data" or similar).  Paste the copied URL into the `read_csv()` function in quotes.
+3. Create a new code chunk (call it "read data" or similar).  Paste the copied URL into the `read_csv()` function in quotes.  Note, because we're reading from a URL, we don't need to worry about relative file paths (i.e., file is not on our local computer!).
 
 ::: {.callout-answer}
 

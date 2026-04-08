@@ -143,10 +143,10 @@ library(tidyr)
 <!-- NOTE: since no code chunks are run to render, make them "dumb" but
      display with r syntax coloring -->
 
-3.  Read in the data and store the data frame as `lobster_abundance`.  Here we also use the `clean_names()` function from the helpful `janitor` package.  This converts all variable names to `snake_case` by default.  Having a consistent naming convention helps with collaboration!
+3.  Read in the data and store the data frame as `lobster_abundance` (use the `here` package to ensure a consistent starting point for relative file paths!).  Here we also use the `clean_names()` function from the helpful `janitor` package.  This converts all variable names to `snake_case` by default.  Having a consistent naming convention helps with collaboration!
 
 ```r
-lobster_abundance <- readr::read_csv(file.path("data", "Lobster_Abundance_All_Years_20240411.csv")) %>%
+lobster_abundance <- readr::read_csv(here::here("data", "Lobster_Abundance_All_Years_20240411.csv")) %>%
     janitor::clean_names()
 ```
 
@@ -182,8 +182,8 @@ lobster_abundance <- lobster_abundance %>%
 NOTE: If you know the `NA` values ahead of time, you can specify them when you read the data in!
 
 ```
-lobster_abundance <- read_csv("data/Lobster_Abundance_All_Years_20240411.csv", 
-                              na = "-99999")
+lobster_abundance <- read_csv(here::here("data/Lobster_Abundance_All_Years_20240411.csv", 
+                              na = "-99999"))
 ```
 
 ::::
@@ -265,7 +265,7 @@ library(tidyr)
 3.  Read in the data and store the data frame as `lobster_traps`. Here we also use the `clean_names()` function from the helpful `janitor` package.  This converts all variable names to `snake_case` by default.  Having a consistent naming convention helps with collaboration!
 
 ```r
-lobster_traps <- readr::read_csv(file.path("data", "Lobster_Trap_Counts_All_Years_20210519.csv"))
+lobster_traps <- readr::read_csv(here::here("data", "Lobster_Trap_Counts_All_Years_20210519.csv"))
     janitor::clean_names()
 ```
 
@@ -299,8 +299,8 @@ lobster_traps <- lobster_traps %>%
 NOTE: If you know the `NA` values ahead of time, you can specify them when you read the data in!
 
 ```
-lobster_abundance <- read_csv("data/Lobster_Abundance_All_Years_20220829.csv", 
-                              na = "-99999")
+lobster_abundance <- read_csv(here::here("data/Lobster_Abundance_All_Years_20220829.csv", 
+                              na = "-99999"))
 ```
 
 ::::

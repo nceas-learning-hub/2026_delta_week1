@@ -1204,9 +1204,9 @@ Tip
 </section>
 <section id="read-in-data" class="level3" data-number="5.4">
 <h3 data-number="5.4" class="anchored" data-anchor-id="read-in-data"><span class="header-section-number">5.4</span> Read In Data</h3>
-<p>Create a new code chunk under “Read in data” (and give it a helpful name!). Use <code>read_csv()</code> to load your data. Both RStudio and Positron will set your working directory to the project root, so you can (and should!) use a relative path to your data file.</p>
+<p>Create a new code chunk under “Read in data” (and give it a helpful name!). Use <code>read_csv()</code> to load your data. RStudio and Positron will set your working directory to the project root if you’re working in the Console, but if you’re in a script or Quarto code chunk, they will set your working directory to the location of that script. So you can (and should!) use a relative path to your data file, using <code>here::here()</code> to ensure that relative path is to a fixed location (the project root) regardless of where you’re working.</p>
 <!-- This chunk displays to the reader to point toward their local copy: -->
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>bg_chem <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/BGchem2008data.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>bg_chem <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/BGchem2008data.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- This chunk reads the data from the right directory for tutorial purposes: -->
 <div class="cell">
 <div class="cell-output cell-output-stderr">

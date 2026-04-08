@@ -815,9 +815,9 @@ Warning
 <!-- NOTE: since no code chunks are run to render, make them "dumb" but
      display with r syntax coloring -->
 <ol start="3" type="1">
-<li>Read in the data and store the data frame as <code>lobster_abundance</code>. Here we also use the <code>clean_names()</code> function from the helpful <code>janitor</code> package. This converts all variable names to <code>snake_case</code> by default. Having a consistent naming convention helps with collaboration!</li>
+<li>Read in the data and store the data frame as <code>lobster_abundance</code> (use the <code>here</code> package to ensure a consistent starting point for relative file paths!). Here we also use the <code>clean_names()</code> function from the helpful <code>janitor</code> package. This converts all variable names to <code>snake_case</code> by default. Having a consistent naming convention helps with collaboration!</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lobster_abundance <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">file.path</span>(<span class="st">"data"</span>, <span class="st">"Lobster_Abundance_All_Years_20240411.csv"</span>)) <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lobster_abundance <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"Lobster_Abundance_All_Years_20240411.csv"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
 <li>Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you’re working with.</li>
@@ -876,8 +876,8 @@ Warning
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>lobster_abundance <span class="ot">&lt;-</span> lobster_abundance <span class="sc">%&gt;%</span> </span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">size_mm =</span> <span class="fu">if_else</span>(<span class="at">condition =</span> (size_mm <span class="sc">==</span> <span class="sc">-</span><span class="dv">99999</span>), <span class="at">true =</span> <span class="cn">NA</span>, <span class="at">false =</span> size_mm))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>NOTE: If you know the <code>NA</code> values ahead of time, you can specify them when you read the data in!</p>
-<pre><code>lobster_abundance &lt;- read_csv("data/Lobster_Abundance_All_Years_20240411.csv", 
-                              na = "-99999")</code></pre>
+<pre><code>lobster_abundance &lt;- read_csv(here::here("data/Lobster_Abundance_All_Years_20240411.csv", 
+                              na = "-99999"))</code></pre>
 </div>
 </div>
 </div>
@@ -1034,7 +1034,7 @@ Warning
 <ol start="3" type="1">
 <li>Read in the data and store the data frame as <code>lobster_traps</code>. Here we also use the <code>clean_names()</code> function from the helpful <code>janitor</code> package. This converts all variable names to <code>snake_case</code> by default. Having a consistent naming convention helps with collaboration!</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">file.path</span>(<span class="st">"data"</span>, <span class="st">"Lobster_Trap_Counts_All_Years_20210519.csv"</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"Lobster_Trap_Counts_All_Years_20210519.csv"</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
 <li>Look at your data. Take a minute to explore what your data structure looks like, what data types are in the data frame, or use a function to get a high-level summary of the data you’re working with.</li>
@@ -1092,8 +1092,8 @@ Warning
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>lobster_traps <span class="ot">&lt;-</span> lobster_traps <span class="sc">%&gt;%</span> </span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">traps =</span> <span class="fu">if_else</span>(<span class="at">condition =</span> (traps <span class="sc">==</span> <span class="sc">-</span><span class="dv">99999</span>), <span class="at">true =</span> <span class="cn">NA</span>, <span class="at">false =</span> traps))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>NOTE: If you know the <code>NA</code> values ahead of time, you can specify them when you read the data in!</p>
-<pre><code>lobster_abundance &lt;- read_csv("data/Lobster_Abundance_All_Years_20220829.csv", 
-                              na = "-99999")</code></pre>
+<pre><code>lobster_abundance &lt;- read_csv(here::here("data/Lobster_Abundance_All_Years_20220829.csv", 
+                              na = "-99999"))</code></pre>
 </div>
 </div>
 </div>

@@ -111,7 +111,7 @@ Previously, the default branch name was "master" and this terminology for Git br
 
 ### Configure Strategy for Integrating Changes Across Branches
 
-When you're working on the same GitHub repository as the rest of your team, what happens when you and a teammate edit the same file at the same time? How does Git 'know' how to reconcile those differences? Simply put, we tell Git how we want it to make that judgement call!
+When you're working on the same GitHub repository as the rest of your team, what happens when you and a teammate edit the same file at the same time? How does Git 'know' how to reconcile those differences? Simply put, we tell Git how we want it to make that judgment call!
 
 There are three options, "merge," "rebase," and "fast forward." **We recommend that you choose the "merge" strategy** as it will seamlessly handle easy situations where human oversight isn't needed but will flag more nuanced problems (called "merge conflicts") for you to resolve manually. For more information on "merge" versus "rebase", see [here](https://www.atlassian.com/git/tutorials/merging-vs-rebasing).  You can always revisit this decision later using essentially the same code below!
 
@@ -132,7 +132,7 @@ Set the default strategy for reconciling differences.
 git config --global pull.rebase false
 ```
 
-Note: The `--global` option will set this as default for all repos on your computer.  If you forget this, it will only set for the current repo.
+Note: The `--global` option will set this as default for all repositories on your computer.  If you forget this, it will only set for the current repo.
 :::
 
 <!-- It is important to highlight too that this configuration can be repository specific. This means you can configure how you want Git to reconcile two branches at a repository level instead of doing so for all repositories in which you work. This allows you to control how Git weaves things in when collaborating with others in a project-specific fashion. -->

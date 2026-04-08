@@ -32,7 +32,7 @@ In a more detailed logic model, outputs and outcomes are further broken down:
 
 Defining the inputs, outputs and outcomes early in a planning process enables teams to visualize the workflow from activity to results and can help mitigate potential challenges. Logic models can be thought of as having an "**IF** this **THEN** that" structure where inputs {{< fa arrow-right >}} outputs {{< fa arrow-right >}} outcomes.
 
-![](images/synthesis_logic_models/LM3.png){fig-alt="The figure above is modified to include grey arrows pointing right to left between each box, with each box labeled 'if' and each arrow labeled 'then', for example IF resource condition is met THEN activities can result, IF activities THEN participants, etc" width="70%" fig-align="center" .lightbox}
+![](images/synthesis_logic_models/LM3.png){fig-alt="The figure above is modified to include gray arrows pointing right to left between each box, with each box labeled 'if' and each arrow labeled 'then', for example IF resource condition is met THEN activities can result, IF activities THEN participants, etc" width="70%" fig-align="center" .lightbox}
 
 In the example below we have constructed a simple logic model for a hypothetical project where training materials are being developed for a group of educators to implement at their respective institutions.
 
@@ -42,7 +42,7 @@ In the example below we have constructed a simple logic model for a hypothetical
 
 Linkages are not always sequential and can be within categories, bi-directional and/or include feedback loops. Detailing this complexity of relationships, or theory of action, can be time consuming but is a valuable part of the thought process for project planning. In exploring all relationships, logic modeling also allows for assessing program feasibility.
 
-![](images/synthesis_logic_models/LM5.png){fig-alt="Multiple boxes, each representing an input, an output, or an outcome, are connected by grey arrows flowing mostly left-to-right but some are bi-directional or indicate loops back to previous steps" width="70%" fig-align="center" .lightbox}
+![](images/synthesis_logic_models/LM5.png){fig-alt="Multiple boxes, each representing an input, an output, or an outcome, are connected by gray arrows flowing mostly left-to-right but some are bi-directional or indicate loops back to previous steps" width="70%" fig-align="center" .lightbox}
 
 :::{.callout-tip}
 ## Other variations
@@ -148,7 +148,7 @@ A good starting point for drafting a logic model is a [logic model template](res
 * And here is the same [logic model template on Google Drive](https://docs.google.com/presentation/d/1MBUy35QIAkA5FNCdRzWJM2aPaFXfUmGl/edit?usp=sharing&ouid=113328660159760492310&rtpof=true&sd=true){.external target="_blank"}
     
 <!--image is screenshot but links to the Google Doc-->
-[![](images/synthesis_logic_models/ppt_template.png){fig-alt="A blank logic model template in Powerpoint, with boxes for inputs (resources), outputs (activities, participants, products), and outcomes (short, medium, long term)" width="50%" fig-align="center"}](https://docs.google.com/presentation/d/1MBUy35QIAkA5FNCdRzWJM2aPaFXfUmGl/edit?usp=sharing&ouid=113328660159760492310&rtpof=true&sd=true){.external target="_blank"}
+[![](images/synthesis_logic_models/ppt_template.png){fig-alt="A blank logic model template in PowerPoint, with boxes for inputs (resources), outputs (activities, participants, products), and outcomes (short, medium, long term)" width="50%" fig-align="center"}](https://docs.google.com/presentation/d/1MBUy35QIAkA5FNCdRzWJM2aPaFXfUmGl/edit?usp=sharing&ouid=113328660159760492310&rtpof=true&sd=true){.external target="_blank"}
 
 ### Mermaid Flowchart
 

@@ -84,7 +84,7 @@ Anything that does not follow the three tidy data principles is **untidy data**.
 -   **Collaboration:** Makes it easier to work with others through a shared understanding of tidy data best practices.
 
 
-> "There is a specific advantage to placing varables in columns becasuse it allows R's vectorized nature to shine. ...most buit-in R functions work with vectors of values. That makes transforming tidy data feel particularly natural. (R for Data Science by Grolemund and Wickham)
+> "There is a specific advantage to placing variables in columns because it allows R's vectorized nature to shine. ...most built-in R functions work with vectors of values. That makes transforming tidy data feel particularly natural. (R for Data Science by Grolemund and Wickham)
 
 ## Data Normalization
 

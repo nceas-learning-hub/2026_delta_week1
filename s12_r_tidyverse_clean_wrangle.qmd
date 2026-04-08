@@ -756,7 +756,7 @@ That is a pretty complicated series of operations, but with piping, clearly name
 
 ## Wrap up: Git workflow
 
-Let's wrap up this lesson by commiting and syncing our changes using our Git workflow.
+Let's wrap up this lesson by committing and syncing our changes using our Git workflow.
 
 ::: {.callout-exercise}
 1. Render the Quarto file

@@ -245,7 +245,7 @@ Here are some guidelines for writing effective Git commit messages:
 1. **Be descriptive and concise**: Provide a clear and concise summary of the changes made in the commit. Aim to convey the purpose and impact of the commit in a few words.
 2. **Use imperative tense**: Write commit messages in the imperative tense, as if giving a command. For example, use "Add feature" instead of "Added feature" or "Adding feature." This convention aligns with other Git commands and makes the messages more actionable.
 3. **Separate subject and body**: Start with a subject line, followed by a blank line, and then provide a more detailed explanation in the body if necessary. The subject line should be a short, one-line summary, while the body can provide additional context, motivation, or details about the changes.
-4. **Limit the subject line length**: Keep the subject line within 50 characters or less. This ensures that the commit messages are easily scannable and fit well in tools like Git logs.
+4. **Limit the subject line length**: Keep the subject line within 50 characters or less. This ensures that the commit messages are easily scan-able and fit well in tools like Git logs.
 5. **Capitalize and punctuate properly**: Begin the subject line with a capital letter and use proper punctuation. This adds clarity and consistency to the commit messages.
 6. **Focus on the "what" and "why"**: Explain what changes were made and why they were made. Understanding the motivation behind a commit helps future researchers and collaborators (including you!) comprehend its purpose.
 7. **Use present tense for subject, past tense for body**: Write the subject line in present tense as it represents the current state of the codebase. Use past tense in the body to describe what has been done.
@@ -322,7 +322,7 @@ After a moment, your RStudio will refresh and you'll see the name you gave to yo
 
 ![](images/github_introduction/rstudio-clone_04-ide.png){.lightbox fig-alt="Screen capture of the RStudio when in a project that is version-controlled" fig-align="center"}
 
-You may also notice that you have a new tab in RStudio labeled Git. **Click that tab.** You'll see that you have your .Rproj file listed with two **<span style="color:gold">yellow</span>** question marks. RStudio uses this file to define an RProject but because it isn't in your remote repository, Git is flagging it for your attention as a file that is in the tracked folder but is not itself tracked. _Ignore this for now_ as we'll get to more on it later.
+You may also notice that you have a new tab in RStudio labeled Git. **Click that tab.** You'll see that you have your .Rproj file listed with two **<span style="color:gold">yellow</span>** question marks. RStudio uses this file to define an R Project but because it isn't in your remote repository, Git is flagging it for your attention as a file that is in the tracked folder but is not itself tracked. _Ignore this for now_ as we'll get to more on it later.
 
 <p align="center">
 <img src="images/github_introduction/rstudio-clone_05-git-pane.png" alt="Screen capture of the Git pane in RStudio" width="50%"/>
@@ -477,13 +477,13 @@ In this example, there are some existing scripts whose names reflect steps in a 
 
 **Initialize Git and Connect to Remote**
 
-Make sure you are in the Console pane - these nexts step are in R.  We'll use tools from the `usethis` package to initialize the folder as a Git repository, then create a remote repository on GitHub (with the same name as the current folder) and push our initial commit out to GitHub.
+Make sure you are in the Console pane - these next step are in R.  We'll use tools from the `usethis` package to initialize the folder as a Git repository, then create a remote repository on GitHub (with the same name as the current folder) and push our initial commit out to GitHub.
 
 1. `usethis::use_git()` (note, `install.packages('usethis')` if you don't already have it installed!).  This will walk through several steps, showing you the progress along the way:
     * set active project to the current project
     * initialize the folder to be a Git repository (`git init` per the commands noted above)
     * creates a `.gitignore` file (see more below) and adds a few file paths to that file.
-    * identifies whether there are any uncommited files and if so asks if you would like to commit them.
+    * identifies whether there are any uncommitted files and if so asks if you would like to commit them.
 2. When asked `Is it ok to commit them?` choose the correct number for a yes/absolutely/affirmative response.  This will:
     * stage the files (`git add --all`)
     * commit them with a message (`git commit -m "initial commit"`)

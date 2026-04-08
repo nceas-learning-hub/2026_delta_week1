@@ -233,7 +233,7 @@ max_lobster <- lobster_abundance %>%
   summarize(max_length = max(size_mm, na.rm = TRUE),
             .groups = 'drop')
 ```
-NOTE: `.groups = "drop"` is an argument in `summarize()` that tells R to ungroup the data frame after summarizing (and suppresses an annoying warning!). If you don't include this argument, the resulting data frame wmay still contain groups, which can lead to unexpected results in subsequent operations.  You can also use `group_by() %>% summarize() %>% ungroup()` to accomplish the same basic idea.
+NOTE: `.groups = "drop"` is an argument in `summarize()` that tells R to ungroup the data frame after summarizing (and suppresses an annoying warning!). If you don't include this argument, the resulting data frame may still contain groups, which can lead to unexpected results in subsequent operations.  You can also use `group_by() %>% summarize() %>% ungroup()` to accomplish the same basic idea.
 ::::
 :::
 
@@ -647,7 +647,7 @@ Some `ggplot2` functions grant you control over the information displayed on you
 The `ggplot2` package includes some built-in themes (e.g., `theme_minimal()`) as well as many options for fine-tuning specific elements of the plot (e.g., changing the color and linewidth of the grid lines).  Here are a few options and examples:
 
 - `theme_xxx()`: add a complete theme to your plot (e.g., `theme_light()`, `theme_minimal()`, `theme_void()`)
-    - Note there are also several theme utility functions that might pop up with autocomplete, e.g., `theme_get()`, `theme_set()`, `theme_update()`, `theme_replace()` - these are **not** complete themes... if it sounds like a verb, not an adjective, it's likely a theme utility function!
+    - Note there are also several theme utility functions that might pop up with auto-complete, e.g., `theme_get()`, `theme_set()`, `theme_update()`, `theme_replace()` - these are **not** complete themes... if it sounds like a verb, not an adjective, it's likely a theme utility function!
 - `theme()`: call specific elements to customize non-data components of a plot.  A few examples:
 
 ```r

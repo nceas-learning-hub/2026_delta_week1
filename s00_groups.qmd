@@ -31,7 +31,7 @@ For more information, see the following:
 ## Cyanobacteria Harmful Algal Bloom (CHAB) Monitoring Strategy
 
 The CHAB Monitoring Strategy for the Sacramento-San Joaquin Delta and various
-other interagency efforts are addressing CHAB monitoring, prediction, and management in
+other inter-agency efforts are addressing CHAB monitoring, prediction, and management in
 the Delta. One key barrier to addressing CHAB in the Delta are the many different CHAB
 data streams. An example effort for the Delta Synthesis Working Group could be to start
 integrating some different data streams together to inform the development of a CHAB

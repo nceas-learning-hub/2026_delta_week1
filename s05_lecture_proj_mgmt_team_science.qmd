@@ -90,7 +90,7 @@ The most important payoff for a particular team may be scientific novelty, pract
 Often, the most interesting questions will also require the most effort and the group will need to determine what trade-offs they are willing to accept.
 But sometimes, a question emerges that is both interesting and feasible--perhaps because a new source of data has just become available or simply because no one saw the question from that angle before.
 
-![](images/proj_mgmt_team_science/feasibility-matrix.png){fig-alt="x and y axes, labelled with novelty/importance (Y) and feasibility (x), with project ideas distributed across the resulting space" width="90%" fig-align="center" .lightbox}
+![](images/proj_mgmt_team_science/feasibility-matrix.png){fig-alt="x and y axes, labeled with novelty/importance (Y) and feasibility (x), with project ideas distributed across the resulting space" width="90%" fig-align="center" .lightbox}
 
 ## Outline Your Analysis
 
@@ -134,12 +134,12 @@ For non-coders, we've included a [Google sheet template](https://docs.google.com
 ### GitHub 
 
 If you're already working in GitHub or GitLab to collaborate on code, why not take advantage of GitHub's project management capabilities?
-In GitHub, issues from your repos can be assigned to projects (which sit at a level above repos), allowing an overarching view of all the tasks associated with a project.
+In GitHub, issues from your repositories can be assigned to projects (which sit at a level above repositories), allowing an overarching view of all the tasks associated with a project.
 Issues can also be created in the project itself.
 Both kinds of issues can be assigned to individuals, marked with topical tags, and assigned start and due dates.
 The examples below draw from the repository we are using to organize the first iteration of this course.
 
-![Kanban board example using GitHub Projects](images/proj_mgmt_team_science/github-project.png){fig-alt="a series of vertical boards labelled back burner, in queue, active progress, waiting, and done, with cards for specific tasks and individuals and due dates assigned" .lightbox}
+![Kanban board example using GitHub Projects](images/proj_mgmt_team_science/github-project.png){fig-alt="a series of vertical boards labeled back burner, in queue, active progress, waiting, and done, with cards for specific tasks and individuals and due dates assigned" .lightbox}
 
 Two additional views make it even easier to track overall progress and individual workloads.
 The "roadmap" view in GitHub functions like an interactive Gantt chart, once start and target dates are assigned to an issue.

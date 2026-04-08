@@ -34,7 +34,7 @@ We will discuss how these topics relate to each other and why they are the build
 
 The Data Life Cycle gives you an overview of meaningful steps in a research project. This step-by-step breakdown facilitates successful management and preservation of data throughout a project. Some research activities might use only part of the life cycle. For example, a meta-analysis might focus on the Discover, Integrate, and Analyze steps, while a project focused on primary data collection and analysis might bypass the Discover and Integrate steps.
 
-[![Source: DataOne](images/data_mgmt_discovery/data-life-cycle.png){fig-alt="Data Life Cycle graphic with each stage following the next to create a circle." fig-align="center"}](https://dataoneorg.github.io/Education/bestpractices/)
+[![Source: DataONE](images/data_mgmt_discovery/data-life-cycle.png){fig-alt="Data Life Cycle graphic with each stage following the next to create a circle." fig-align="center"}](https://dataoneorg.github.io/Education/bestpractices/)
 
 The first step to working with data is identifying where your project is starting in the Data Life Cycle. Using the data life cycle stages, create your own cycle that best fits your project needs.
 
@@ -44,7 +44,7 @@ The first step to working with data is identifying where your project is startin
 -   Think and decide steps in the Data Life Cycle you need to include in your project
 -   Review [DataONE's best practices](https://dataoneorg.github.io/Education/bestpractices/) for that step in the cycle and start outlining action items in each of those steps.
 
-DataOne's [Data Management Skillbuilding Hub](https://dataoneorg.github.io/Education/bestpractices/) offers several best practices on how to effectively work with your data throughout all stages of the data life cycle.
+DataONE's [Data Management Skillbuilding Hub](https://dataoneorg.github.io/Education/bestpractices/) offers several best practices on how to effectively work with your data throughout all stages of the data life cycle.
 
 No matter how your data life cycle looks like, *Plan* should be at the top of the cycle. It is advisable to initiate your data management planning at the beginning of your research process before any data has been collected or discovered. The following section will discuss more in-depth data management and how to plan accordingly
 
@@ -340,7 +340,7 @@ The details that will help your data be interpreted correctly are:
 -   **Collection methods** for both field and laboratory data the full experimental and project design as well as how the data in the dataset fits into the overall project
 -   **Processing methods** for both field and laboratory samples
 -   All sample **quality control procedures**
--   **Provenance** information to support your analysis and modelling methods
+-   **Provenance** information to support your analysis and modeling methods
 -   Information about the **hardware and software** used to process your data, including the make, model, and version
 -   **Computing quality control** procedures like testing or code review
 
@@ -373,7 +373,7 @@ So, **how does a computer organize all this information?** There are a number of
 -   [Biological Data Profile (BDP)](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.fgdc.gov/standards/projects/FGDC-standards-projects/metadata/biometadata/biodatap.pdf)
 -   [Dublin Core](https://www.dublincore.org/)
 -   [Darwin Core](https://dwc.tdwg.org/)
--   [PREservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/)
+-   [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/)
 -   [Metadata Encoding Transmission Standard (METS)](https://www.loc.gov/standards/mets/)
 
 *Note this is not an exhaustive list.*

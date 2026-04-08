@@ -482,7 +482,7 @@ By default, when ever you close or switch projects, R studio will prompt you: Do
 
 RStudio by default wants to save the state of your environment (the objects you have in your environment pane) into the .RData file so that when you open the project again you have the same environment. However, it is **NOT** a good practice to rely on the state of your environment for your script to run and work. If you are coding reproducibly, your script should be able to recreate the state of your environment (all the necessary objects) every time you run it. It is much better to rely on your code recreating the environment than saving the workspace status.
 
-To make sure you're always working reproducibly, change the Global Options configuration for the default to be NEVER SAVE MY WORKSPACE. Go to Tools {{< fa arrow-right >}} Global Options. Under the General menu, select **Never** next to "Save workspace to .RData on exit" (and uncheck "Restore .RData into workspace at startup"). This way you won't get asked every time you close a project, instead RStudio knows not to save.
+To make sure you're always working reproducibly, change the Global Options configuration for the default to be NEVER SAVE MY WORKSPACE. Go to Tools {{< fa arrow-right >}} Global Options. Under the General menu, select **Never** next to "Save workspace to .RData on exit" (and un-check "Restore .RData into workspace at startup"). This way you won't get asked every time you close a project, instead RStudio knows not to save.
 
 ![](images/r_programming_introduction/save-workspace-global-options.png){width="70%" .lightbox align="center"}
 

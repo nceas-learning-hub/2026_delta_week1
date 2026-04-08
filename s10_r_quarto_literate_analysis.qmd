@@ -81,7 +81,7 @@ In this literate analysis, we:
 ... etc
 ```
 
-**Code chunks** - executable code blocks (the grey areas), opened with ```` ```{r} ```` and closed with ```` ``` ````.
+**Code chunks** - executable code blocks (the gray areas), opened with ```` ```{r} ```` and closed with ```` ``` ````.
     
 ```{{r}}
 x <- "Hello world!"

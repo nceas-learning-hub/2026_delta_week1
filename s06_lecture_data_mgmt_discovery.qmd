@@ -509,19 +509,19 @@ Note that we could combine these into one expression rather than separating the 
 # List the contents of the 'Training' folder
 > response <- box_ls(375386190471)
 > as.data.frame(response)[c("name", "type", "size", "id")]
-#      name type size            id
-#  iris.csv file 3716 2188497409481
+#            name type size            id
+#  airquality.csv file 2802 2190747337891
 ```
 
 Finally, let's get some data from Box! The `boxr` package provides multiple ways of retrieving data -- including both downloading files to your computer, and reading data into R. We'll do the latter here, using the `box_read_csv()` function that downloads a CSV and reads it into R as a data frame, all in one step.
 
 ```r
-# Read iris.csv into R as a data frame
+# Read airquality.csv into R as a data frame
 # We'll also pass the `stringsAsFactors` argument to make this match
 # the same data frame that was used to create this file in the first place!
-> iris_from_box <- box_read_csv(2188497409481, stringsAsFactors=TRUE)
+> airquality_from_box <- box_read_csv(2190747337891, stringsAsFactors=TRUE)
 
-> identical(iris, iris_from_box)
+> identical(airquality, airquality_from_box)
 # [1] TRUE
 ```
 

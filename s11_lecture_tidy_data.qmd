@@ -6,12 +6,11 @@ title: Tidy Data
 
 After completing this session, you will be able to:
 
+-   Appreciate general concepts around representing the real world in data form
 -   Describe the three principles of tidy data in terms of variables, observations, and values
 -   Identify common violations of tidy data principles and how to fix them
--   Explain the concept of data normalization and how it supports reproducible analysis
--   following best practices to format data tables' content,
--   relating tables following relational data models principles, and
--   understanding how to perform table joins.
+-   Understand the concept of data normalization and how it supports efficient data modeling
+-   Confidently join information across separate but related tables
 :::
 
 ## What is tidy data?

@@ -461,8 +461,8 @@ Note that--just like with `select()`--the `cols` argument of `pivot_longer()` ca
 The opposite of `pivot_longer()` is the `pivot_wider()` function. It works in a similar declarative fashion:
 
 ```{r pivot-wide-ex}
+# Pivot the data back into wide format
 catch_wide <- catch_long %>%
-    # Pivot the data back into wide format
     tidyr::pivot_wider(names_from = species, # <1>
         values_from = catch_thousands,
         values_fill = 0) # <2>

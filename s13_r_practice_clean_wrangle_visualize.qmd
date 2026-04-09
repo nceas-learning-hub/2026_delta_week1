@@ -265,7 +265,7 @@ library(tidyr)
 3.  Read in the data and store the data frame as `lobster_traps`. Here we also use the `clean_names()` function from the helpful `janitor` package.  This converts all variable names to `snake_case` by default.  Having a consistent naming convention helps with collaboration!
 
 ```r
-lobster_traps <- readr::read_csv(here::here("data", "Lobster_Trap_Counts_All_Years_20210519.csv"))
+lobster_traps <- readr::read_csv(here::here("data", "Lobster_Trap_Counts_All_Years_20210519.csv")) %>%
     janitor::clean_names()
 ```
 

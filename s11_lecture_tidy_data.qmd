@@ -44,7 +44,7 @@ First, let's get acquainted with our building blocks.
 | Variable    | A characteristic that is being measured, counted or described with data. **Example:** car type, salinity, year, height, mass. |
 | Observation | A single "data point" for which the measure, count or description of one or more variables is recorded.   **Example:** If you are collecting variables *height*, *species*, and *location* of plants, then **each plant** is an observation.    |
 | Value        | The record measured, count or description of a variable.   **Example:** 3 ft   |
-| Entity       | Each type of observation is an entity. **Example:** If you are collecting variables *height*, *species*, and *location* and *site name* of plants and where they are observed, then **plants** is an entity and **site** is an entity. |
+| Entity       | The real-world thing, concept, or phenomenon described by an observation. **Example:** If you are collecting variables *height*, *species*, and *location* and *site name* of plants and where they are observed, then **plants** is an entity and **site** is an entity. |
 
 :  {tbl-colwidths="[20,80]"}
 

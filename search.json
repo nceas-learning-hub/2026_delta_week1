@@ -211,7 +211,7 @@
     "href": "s11_lecture_tidy_data.html",
     "title": "Tidy Data",
     "section": "",
-    "text": "LearningLearning Objectives\n\n\n\n\n\n\nAfter completing this session, you will be able to:\n\nDescribe the three principles of tidy data in terms of variables, observations, and values\nIdentify common violations of tidy data principles and how to fix them\nExplain the concept of data normalization and how it supports reproducible analysis\nfollowing best practices to format data tables’ content,\nrelating tables following relational data models principles, and\nunderstanding how to perform table joins.",
+    "text": "LearningLearning Objectives\n\n\n\n\n\n\nAfter completing this session, you will be able to:\n\nAppreciate general concepts around representing the real world in data form\nDescribe the three principles of tidy data in terms of variables, observations, and values\nIdentify common violations of tidy data principles and how to fix them\nUnderstand the concept of data normalization and how it supports efficient data modeling\nConfidently join information across separate but related tables",
     "crumbs": [
       "Day 4",
       "Tidy Data"

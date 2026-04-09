@@ -237,19 +237,20 @@ Recall that you can use `#` to create headings in a Quarto doc (more `#` for a _
 It is always good practice to examine the data you just read in. Doing so is important to make sure the data is read as you were expecting and to familiarize yourself with the data. Some simple ways to explore your data include:
 
 ```r
-### Return the column names of my data frame
+# Return the column names of my data frame
 colnames(catch_original) # <1>
 
-### Return first (or last) few lines of the data frame
+# Return first (or last) few lines of the data frame
 head(catch_original); tail(catch_original, n = 10)
 
-### Print a summary of each column of data
+# Print a summary of each column of data
 summary(catch_original)
 
-### Return unique values in a column (in this case, the region)
+# Return unique values in a column (in this case, the region)
 unique(catch_original$Region)
 
-### Open data frame in its own tab to see each row and column of the data (do in console)
+# Open data frame in its own tab to see each row and column
+# of the data (do in console)
 View(catch_original) # <2>
 ```
 1. The `names()` function will return the same result (in this case)
@@ -323,10 +324,22 @@ The `select()` function also lets you rename columns as you select them, using t
 
 ```r
 catch_data3 <- catch_original %>%
-    dplyr::select(Region, Year, Chinook, Sockeye, Coho, Pink, Chum, total = All, notes = notesRegCode)
+    dplyr::select(Region,
+                  Year,
+                  Chinook,
+                  Sockeye,
+                  Coho,
+                  Pink,
+                  Chum,
+                  total = All,
+                  notes = notesRegCode)
+
 catch_data4 <- catch_original %>%
-    dplyr::rename(total = All, notes = notesRegCode)
+    dplyr::rename(total = All,
+                  notes = notesRegCode)
 ```
+
+Notice in the code above we used a different code formatting style whereby we put each selected column on its own line, with aligned indentation. It doesn't make a difference to R, but as you write your code, thoughtfully consider how your formatting decisions can improve (or degrade!) human readability and comprehension.
 
 ::: {.callout-warning}
 In each use of `select()`, you can choose **either** which columns to include **or** which to exclude! R won't complain if you try to do both in the same `select()` call, but it does not make logical sense and your results may not be what you expect.
@@ -338,8 +351,8 @@ In each use of `select()`, you can choose **either** which columns to include **
 In base R, many people use "column indexing" (based on the column number, not name) to select columns or rename them, for example:
 
 ```r
-coho_year <- catch_data[ , c(2, 5)] ### year is column 2, Coho is column 5
-names(catch_data)[5] <- "Oncorhynchus_kisutch" ### rename Coho column to scientific name
+coho_year <- catch_data[ , c(2, 5)]  # year is column 2, Coho is column 5
+names(catch_data)[5] <- "Oncorhynchus_kisutch"  # rename Coho column to scientific name
 ```
 
 Although these methods work just fine in many cases, they do have one major drawback: they rely on you knowing the _exact_ order of columns in the data.
@@ -408,16 +421,15 @@ The problem value in `Chinook` is the letter `I`. It turns out that this data se
 Let's fix it by incorporating the `if_else()` function (also from `dplyr`) to our `mutate()` call, which will change the value of the `Chinook` column to 1 if the value is equal to `I`. Once we've done that, we can use `as.numeric()` to turn the character representations of numbers into numeric values without coercing anything to `NA`.
 
 ```{r mutate-ex_fix-bad-row}
+# Use a conditional to fix the bad value, then make the column numeric
 catch_clean <- catch_data %>%
     dplyr::mutate(
-        ### Use a conditional to fix the bad value
         Chinook = dplyr::if_else(condition = Chinook == "I", 
             true = "1",                                       # <1>
             false = Chinook),                                 # <2>
-        ### Make the fixed column numeric
         Chinook = as.numeric(Chinook))
 
-### Check the result
+# Check the result
 catch_clean[i, ]
 ```
 1. What to return if the condition _is_ true; here, replace "I" with the character "1"
@@ -433,8 +445,8 @@ The function `pivot_longer()` from the `tidyr` package helps us do  this convers
 If you do not remember all the arguments that go into `pivot_longer()` you can always check out the help page by typing `?tidyr::pivot_longer` in the Console.
 
 ```{r pivot-long-ex}
+# Pivot all columns except Region and Year into long format
 catch_long <- catch_clean %>% 
-    # Pivot all columns except Region and Year into long format
     tidyr::pivot_longer(cols = -c(Region, Year),
         names_to = "species", # <1>
         values_to = "catch_thousands") # <2>
@@ -468,10 +480,9 @@ As before, if you need to remind yourself of what goes to what argument (or even
 Now let's use `mutate()` again to create a new column called `catch` with units of fish (instead of thousands of fish). While we're at it, let's also use `select()` to remove the column with catch in thousands because we're not necessarily interested in it at this point. This further highlights how we can take advantage of the pipe operator to group together a similar set of statements, which all aim to clean up the `catch_clean` data frame.
 
 ```{r mutate-ex_add-col}
+# Convert to actual fish numbers, then remove the superseded column
 catch_long <- catch_long %>%
-    # Convert to actual fish numbers
     dplyr::mutate(catch = catch_thousands * 1000) %>% 
-    # Remove the superseded column
     dplyr::select(-catch_thousands)
 
 # Check the result
@@ -506,10 +517,9 @@ Analyses like this conform to what is known as the **Split-Apply-Combine strateg
 The `dplyr` library lets us easily employ the Split-Apply-Combine strategy by using the `group_by()` and `summarize()` functions!
 
 ```{r summarize-ex_average}
+# Group by region, then calculate averages within the established groups
 mean_region <- catch_long %>%
-    # Group by region
     dplyr::group_by(Region) %>%
-    # Calculate averages within the established groups
     dplyr::summarize(mean_catch = mean(catch, na.rm = TRUE),
         .groups = "drop")# <1>
 
@@ -531,9 +541,9 @@ Let's see how the previous code implements the Split-Apply-Combine strategy:
 Another common use of `group_by()` followed by `summarize()` is to count the number of rows in each group. We have to use the `n()` function from `dplyr`.
 
 ```{r summarize-ex_count}
+# Count rows per region
 n_region <- catch_long %>%
     dplyr::group_by(Region) %>%
-    # Count rows per region
     dplyr::summarize(count = dplyr::n(), 
         .groups = "drop")
 
@@ -550,7 +560,7 @@ For example:
 ```r
 catch_year_sp <- catch_long %>%
     dplyr::group_by(Year, species) %>%
-    dplyr::summarize(total_year = sum(catch, na.rm = T),
+    dplyr::summarize(total_year = sum(catch, na.rm = TRUE),
         .groups = "drop")
 ```
 :::
@@ -576,6 +586,7 @@ If you need a quick reminder of some core "conditional operators" in R, look bel
 :::
 
 ```{r filter-ex-01}
+# Limit catch to the SSE region
 sse_catch <- catch_long %>%
     dplyr::filter(Region == "SSE")
 
@@ -590,12 +601,10 @@ unique(sse_catch$Region)
 
 ::: {.callout-answer}
 ```r
+# Filter by catch, region, and species
 catch_sub <- catch_long %>%
-    ### Filter by catch
     dplyr::filter(catch > 10^6) # <1>
-    ### Filter by region
     dplyr::filter(Region == "SSE") %>% 
-    ### Filter by species
     dplyr::filter(species == "Chinook")
 ```
 1. Using exponents for big numbers can be a nice way of making sure you don't have typos in the number of zeros.
@@ -616,12 +625,11 @@ The `arrange()` function can be used to sort the rows of a data set. For a lot o
 Let's re-calculate mean catch by region, and then use `arrange()` to sort the output by mean catch.
 
 ```{r arrange-ex_default}
+# Calculate mean catch by region and sort by catch
 mean_region <- catch_long %>%
-    ### Summarize by region
     dplyr::group_by(Region) %>%
-    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+    dplyr::summarize(mean_catch = mean(catch, na.rm = TRUE),
         .groups = "drop") %>%
-    ### Order by the mean catch
     dplyr::arrange(mean_catch)
 
 # Check the result
@@ -631,12 +639,11 @@ head(mean_region)
 The default sorting order of `arrange()` is to sort in ascending order. To reverse the sort order, wrap the column name inside `dplyr`'s `desc()` function:
 
 ```{r arrange-ex_desc}
+# Calculate mean catch by region and sort *descending* by catch
 mean_region <- catch_long %>%
-    # Summarize by region
     dplyr::group_by(Region) %>%
-    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+    dplyr::summarize(mean_catch = mean(catch, na.rm = TRUE),
         .groups = "drop") %>%
-    # Order by descending mean catch
     dplyr::arrange(dplyr::desc(mean_catch))
 
 # Check the result
@@ -664,7 +671,7 @@ head(sites_df)
 # Split site by the dash between the site letters and its code
 sites_df %>%
     tidyr::separate_wider_delim(cols = site, delim = "-",
-        names = c("island", "site_number"), cols_remove = F)
+        names = c("island", "site_number"), cols_remove = FALSE)
 ```
 
 Note that `separate_wider_delim()` has _a lot_ of arguments you may want to use in some circumstances. Run `?tidyr::separate_wider_delim` in the Console to check them out.
@@ -712,7 +719,7 @@ dates_df %>%
     tidyr::unite(col = date, 
         year, month, day,  # <1>
         sep = "-", 
-        remove = F) # <2>
+        remove = FALSE) # <2>
 ```
 1. Note that you don't specify an argument for the columns that you want to combine with `unite()`!
 2. This specifies whether you want to remove the original columns
@@ -722,30 +729,26 @@ dates_df %>%
 We just ran through the various things we can do with `dplyr`, `tidyr`, and the pipe but if you're wondering how this might look in a real analysis. Let's look at that now:
 
 ```{r all-together-ex}
-### Grab the data
+# Grab the data
 catch_original <- readr::read_csv(file = "https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1",
-    show_col_types = F)
+    show_col_types = FALSE)
 
-### Do desired wrangling
+# Drop unwanted columns, fix "I" typo, reshape to long, transform catch
+# into individual fish count, calculate mean catch by region, and sort
+# in descending order
 mean_region <- catch_original %>%
-    ### Drop unwanted columns
     dplyr::select(-All, -notesRegCode) %>% 
-    ### Fix the typo in the Chinook data
     dplyr::mutate(
         Chinook = dplyr::if_else(Chinook == "I", 
             true = "1", false = Chinook),
         Chinook = as.numeric(Chinook)) %>% 
-    ### Reshape to long format
     tidyr::pivot_longer(-c(Region, Year), 
         names_to = "species", 
         values_to = "catch") %>%
-    ### Transform catch into number of fish
     dplyr::mutate(catch = catch*1000) %>% 
-    ### Summarize within region
     dplyr::group_by(Region) %>% 
-    dplyr::summarize(mean_catch = mean(catch, na.rm = T),
+    dplyr::summarize(mean_catch = mean(catch, na.rm = TRUE),
         .groups = "drop") %>% 
-    ### Sort by mean catch in descending order
     dplyr::arrange(dplyr::desc(mean_catch))
 
 # Check the result

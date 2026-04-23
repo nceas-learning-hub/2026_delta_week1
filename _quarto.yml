@@ -27,6 +27,12 @@ website:
   bread-crumbs: false
   navbar:
     right:
+      - text: "Training Series"
+        menu:
+          - text: "Week 1"
+            href: https://nceas-learning-hub.github.io/2026_delta_week1/
+          - text: "Week 2"
+            href: https://nceas-learning-hub.github.io/2026_delta_week2/
       - text: "Instructors"
         menu:
           - text: "Nick Lyon"

@@ -23,7 +23,7 @@ Quarto offers some built-in [callout blocks](https://quarto.org/docs/authoring/c
 
 ### Standard callouts
 
-There are five built-in callouts signalling different levels of urgency:
+There are five built-in callouts signaling different levels of urgency:
 
 * tip `{.callout-tip}`
 * note `{.callout-note}`

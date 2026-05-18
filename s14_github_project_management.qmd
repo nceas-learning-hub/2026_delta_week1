@@ -274,7 +274,7 @@ A "blocking" relationship between two issues indicates that one issue (the "bloc
 
 Using your newly created issue, create at least two sub-issues using any of the three methods described above.  Add assignees and metadata as you see fit.  
 
-Explore the parent issue and the subissues and identify five ways they are linked together.
+Explore the parent issue and the sub-issues and identify five ways they are linked together.
 
 ![](images/github_project_management/issues07_issue_hierarchy.png){width='80%' .lightbox fig-align="center" fig-alt="Screenshot of GitHub issue page, showing a parent issue with sub-issues"}
 :::

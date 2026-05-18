@@ -44,7 +44,7 @@ Between the first and second weeks of the workshop, <u>your group</u> should hav
     - Harmonize at least 5 datasets
     - Perform quality control on the harmonized dataset
     - Perform preliminary visualization of individual or synthesized datasets
-- Documented scientific judgement calls made up to this point in a clear, human-readable manner
+- Documented scientific judgment calls made up to this point in a clear, human-readable manner
     - E.g., data in/exclusion criteria, data transformation(s), project question or scope changes
 - Updated your project management system with specific, actionable tasks that _have not yet been done_ but need to be completed in the near future
 - Identified areas of confusion (e.g., scientific, code-related) to discuss with workshop instructors and/or project mentors during week 2

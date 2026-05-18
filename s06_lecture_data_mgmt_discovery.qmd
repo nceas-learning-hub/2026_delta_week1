@@ -21,7 +21,7 @@ The "Finding Data" section in this page was adapted from the Long Term Ecologica
 
 ## The Big Idea
 
-The ultimate goal of this lesson is to provide an overview of a reproducible open science framework for your research, when either you are accessing published data (data user) to -- for example use it for synthesis or you want to publish your own data (data author). To achieve this, we are going to talk about the following topics.
+The ultimate goal of this lesson is to provide an overview of a reproducible open science framework for your research, applicable both when you are accessing published data as a _data user_ -- for example, to use it for synthesis -- and when you want to publish your own data as a _data author_. To achieve this, we are going to talk about the following topics.
 
 -   The Data Life Cycle
 -   The importance of data management
@@ -34,9 +34,9 @@ We will discuss how these topics relate to each other and why they are the build
 
 The Data Life Cycle gives you an overview of meaningful steps in a research project. This step-by-step breakdown facilitates successful management and preservation of data throughout a project. Some research activities might use only part of the life cycle. For example, a meta-analysis might focus on the Discover, Integrate, and Analyze steps, while a project focused on primary data collection and analysis might bypass the Discover and Integrate steps.
 
-[![Source: DataOne](images/data_mgmt_discovery/data-life-cycle.png){fig-alt="Data Life Cycle graphic with each stage following the next to create a circle." fig-align="center"}](https://dataoneorg.github.io/Education/bestpractices/)
+[![Source: DataONE](images/data_mgmt_discovery/data-life-cycle.png){fig-alt="Data Life Cycle graphic with each stage following the next to create a circle." fig-align="center"}](https://dataoneorg.github.io/Education/bestpractices/)
 
-The first step to working with data is identifying where my project is starting in the Data Life Cycle. Using the data life cycle stages, create your own cycle that best fits your project needs.
+The first step to working with data is identifying where your project is starting in the Data Life Cycle. Using the data life cycle stages, create your own cycle that best fits your project needs.
 
 **A way to use the Data Life Cycle in practice is to:**
 
@@ -44,9 +44,23 @@ The first step to working with data is identifying where my project is starting 
 -   Think and decide steps in the Data Life Cycle you need to include in your project
 -   Review [DataONE's best practices](https://dataoneorg.github.io/Education/bestpractices/) for that step in the cycle and start outlining action items in each of those steps.
 
-DataOne's [Data Management Skillbuilding Hub](https://dataoneorg.github.io/Education/bestpractices/) offers several best practices on how to effectively work with your data throughout all stages of the data life cycle.
+DataONE's [Data Management Skillbuilding Hub](https://dataoneorg.github.io/Education/bestpractices/) offers several best practices on how to effectively work with your data throughout all stages of the data life cycle.
 
 No matter how your data life cycle looks like, *Plan* should be at the top of the cycle. It is advisable to initiate your data management planning at the beginning of your research process before any data has been collected or discovered. The following section will discuss more in-depth data management and how to plan accordingly
+
+## Data Workflows
+
+Whereas the Data Life Cycle provides a strategic perspective on how to manage data over its full lifespan, a Data Workflow focuses on the operational process of acquiring data in some raw state, transforming it via a series of steps, and ultimately producing one or more derived research products. The diagram below depicts a generalized workflow that tends to be applicable to most projects involving data, although each project is unique in terms of the details underlying each step.
+
+![Adapted from [Faundeen et al., 2013](https://pubs.usgs.gov/of/2013/1265/pdf/of2013-1265.pdf) and DataONE](images/data_mgmt_discovery/data-workflow.png){fig-alt="Data workflow graphic with each stage following the next to form a pipeline" fig-align="center" .lightbox}
+
+In the ideal case, this workflow can be fully automated, from the acquisition of raw data to the production of derived outputs (including analytical results, model predictions, visualizations, and more). Imagine being able to run this on-demand as a repeatable process, effectively enabling a pipeline in which data is "moved" from its starting point through a series of transformations performed by executable code, yielding whatever final outputs are desired. In practice, we often can't achieve full automation, but our goal should be to come as close as we can.
+
+Across the entire workflow, three additional elements are key to ensuring that the pipeline is robust, reliable, and repeatable:
+
+- **Describe**: Thorough documentation and metadata detailing each step, and its inputs and outputs; well-written and documented code itself is hugely beneficial!
+- **Manage Quality**: Use well-vetted tools and technology, and build validation steps into the process.
+- **Backup and Secure**: Adopt practices and services that provide redundant storage and version control, with sufficient assurances around data integrity and security.
 
 ## Finding Data
 
@@ -188,7 +202,7 @@ If you start relying on a data inventory, **it can become a valuable place to as
 
 ### Data Use
 
-One _critical_ use of a data inevntory that is often overlooked: **are the data useful to your question?**
+One _critical_ use of a data inventory that is often overlooked: **are the data useful to your question?**
 
 If you found the data before, your later data searches will likely also turn it up even if it's not useful! You can save other group members' a headache by noting not applicable data so they can disregard it from their searches. 
 
@@ -201,7 +215,7 @@ If a particular dataset is not useful, **why is it not useful?** If your questio
 
 In your project groups:
 
-1. Create a spreadsheet to serve as your data inventory
+1. Create a spreadsheet to serve as your data inventory (or adapt [this template](https://docs.google.com/spreadsheets/d/1uxNsB2GAh0UB_WAbl0Onv60lMHZiaMzf0hoWRDqgydQ/view))
 2. Add the name of each dataset you've already found
 3. **Discuss** what columns would be useful in your data inventory
     - Remember to re-visit the recommendations above!
@@ -217,25 +231,44 @@ Successfully managing your data throughout a research project helps ensures its 
 ### Why Manage Your Data?
 
 :::{.panel-tabset}
+
 ### Personal Benefits
 
--   Keep yourself organized -- be able to find your files (data inputs, analytic scripts, outputs at various stages of the analytic process, etc.)
--   Track your science processes for reproducibility -- be able to match up your outputs with exact inputs and transformations that produced them
--   Better control versions of data -- easily identify versions that can be periodically purged
--   Quality control your data more efficiently
--   To avoid data loss (e.g. making backups)
--   Format your data for re-use (by yourself or others)
--   Be prepared: Document your data for your own recollection, accountability, and re-use (by yourself or others)
--   Gain credibility and recognition for your science efforts through data sharing!
+These practices help you stay organized, protect your work, and keep your science reproducible (or at least traceable) and defensible over time.
+
+-   **Keep yourself organized**. Develop a consistent system for naming, storing, and retrieving files (data inputs, analytic scripts, outputs at various stages) so you're don't lose things later.
+-   **Build reproducibility into your research process**. Prefer coded workflows, and carefully document your work, so you can match any output to the exact inputs and transformations that produced it, whether days or years later.
+-   **Control versions of your data**. Maintain a clear versioning system so you can identify what changed, when, and why -- and confidently purge outdated files without fear.
+-   **Quality control your data more efficiently**. Structured data management makes it easier to spot errors, inconsistencies, and gaps early on, before they propagate through your analysis.
+-   **Protect against data loss**. Implement regular backups and redundant storage so that hardware failure, accidental deletion, or software corruption doesn't cost you irreplaceable work.
+-   **Format your data for re-use**. Use open, well-documented formats and structures that will still be readable and usable years from now, by you or anyone else.
+-   **Document your data proactively**. Write documentation while the details are fresh, not after; your future self will not remember why that variable was coded that way.
+-   **Build credibility through transparency**. Well-managed, shareable data signals rigor and invites constructive scrutiny.
+
+### Better Collaboration
+
+These practices support efficiency, consistency, and shared accountability across contributor.
+
+-   **Standardize naming conventions, formats, and folder structures**. What seems obvious to one collaborator may be opaque to another.
+-   **Agree on a merge/integration protocol**. When combining datasets from different sources or institutions, document how conflicts, mismatches, and duplicates were resolved.
+-   **Maintain a clear data provenance log**. In multi-contributor contexts, it must always be traceable which person/pipeline produced which dataset or transformation.
+-   **Define a single source of truth**. Avoid the confusion and errors that can occur when multiple "current" versions of a dataset circulate simultaneously across collaborators.
+-   **Ensure all collaborators have access to shared data**. Designate a shared repository or platform that every team member can reach, so no one is working from a stale local copy or blocked from the data they need to contribute effectively.
+-   **Prefer shared, version-controlled repositories**. Avoid email attachments. This is where collaborative data management most visibly breaks down in practice.
+-   **Establish shared data governance _early_**. Agree on who owns, can modify, and can release data.
+-   **Coordinate on embargo and publication timing**. Clarify who can publish what, and when, to avoid disputes over priority or premature release.
+-   **Plan for contributor turnover**. Over time, some collaborators may come and go; documentation and handoff protocols protect the group's work.
 
 ### Advancement of Science
 
--   Data is a valuable asset -- it is expensive and time consuming to collect
--   Maximize the effective use and value of data and information assets
--   Continually improve the quality including: data accuracy, integrity, integration, timeliness of data capture and presentation, relevance, and usefulness
--   Ensure appropriate use of data and information
--   Facilitate data sharing
--   Ensure sustainability and accessibility in long term for re-use in science
+These practices protect the long-term value, integrity, and accessibility of data as a shared scientific resource.
+
+-   **Treat data as the valuable asset it is**. Data is expensive and time-consuming to collect; poor management squanders that investment and may make the work unrepeatable.
+-   **Maximize the utility of existing data**. Well-managed data can be reanalyzed, combined with new datasets, and repurposed for questions beyond the original study, extending its scientific return.
+-   **Continually improve data quality**. Establish practices that support accuracy, integrity, consistency, and timeliness from the point of capture through to publication and archiving.
+-   **Ensure data is used appropriately**. Clear documentation of provenance, consent, and access restrictions helps prevent misuse and protects both participants and researchers.
+-   **Facilitate data sharing**. Data that is well-organized, documented, and formatted is far more likely to actually be shared and used; good management is what makes sharing feasible, not just aspirational.
+-   **Ensure long-term sustainability and accessibility**. Archive data in formats and repositories that will remain accessible as technology changes, so future researchers can build on your work rather than starting from scratch.
 
 :::
 
@@ -307,7 +340,7 @@ The details that will help your data be interpreted correctly are:
 -   **Collection methods** for both field and laboratory data the full experimental and project design as well as how the data in the dataset fits into the overall project
 -   **Processing methods** for both field and laboratory samples
 -   All sample **quality control procedures**
--   **Provenance** information to support your analysis and modelling methods
+-   **Provenance** information to support your analysis and modeling methods
 -   Information about the **hardware and software** used to process your data, including the make, model, and version
 -   **Computing quality control** procedures like testing or code review
 
@@ -340,7 +373,7 @@ So, **how does a computer organize all this information?** There are a number of
 -   [Biological Data Profile (BDP)](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.fgdc.gov/standards/projects/FGDC-standards-projects/metadata/biometadata/biodatap.pdf)
 -   [Dublin Core](https://www.dublincore.org/)
 -   [Darwin Core](https://dwc.tdwg.org/)
--   [PREservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/)
+-   [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/)
 -   [Metadata Encoding Transmission Standard (METS)](https://www.loc.gov/standards/mets/)
 
 *Note this is not an exhaustive list.*
@@ -374,6 +407,125 @@ In the graphic to the side, the package can be cited with the DOI `doi:10.5063/F
 
 ![](images/data_mgmt_discovery/data-package.png){fig-alt="Diagram of a data package where a single metadata box is connected to a stacked set of boxes labeled 'data granule 1', both of these are connected to boxes labeled 'software' and 'figures'" fig-align="center"}
 
+## Bonus: Load data from Box into R
+
+The `boxr` package provides a convenient R interface to the Box API, allowing you to read, write, and manage files stored in Box directly from your R environment — no manual downloading required.
+
+Working with Box through the API keeps your workflow reproducible and collaborative. Your R scripts can reference shared Box files directly, making it easy for your team to work from a single source of truth without emailing files or managing local copies.
+
+In this activity, we will see how to:
+
+- Authenticate with the Box API using OAuth2 via `box_auth()`
+- Navigate your Box directory structure with `box_search()` and `box_ls()`
+- Read data directly into R using `box_read()` for common formats like .csv
+
+:::callout-exercise
+### Setup, Part 1: Enable API access within Box
+
+In order to access Box from R, you first need to set up an "application" that opens a gateway for you to interact with the Box API, and creates credentials for you. **This is an initial setup activity that you will only need to do once.**
+
+**Step 1:** After logging into Box in your web browser, manually go to the [Box Developers Console](https://app.box.com/developers/console)
+
+**Step 2:** Locate and click the **New App +** button in the upper right to create a new Box API application.
+
+- **App Name**: Choose whatever you want, e.g. "Boxr"
+- **App Type**: Choose **OAuth 2.0**
+
+![](images/data_mgmt_discovery/box-new-app.png){fig-alt="Box new app interface" fig-align="center" width="80%"}
+
+You should now see your application listed in the developer console.
+
+![](images/data_mgmt_discovery/box-app-created.png){fig-alt="Box app listed in developer console" fig-align="center" width="80%"}
+
+**Step 3:** Click on the application to open the app settings interface, and select the **Configuration** tab. Scroll down to the **Redirect URI** section, and add this address: `http://localhost:1410/`
+
+![](images/data_mgmt_discovery/box-redirect-uri.png){fig-alt="Box configuration section for redirect URI" fig-align="center" width="80%"}
+
+Be sure to click **Add** and the **Save Changes**!
+
+**Step 4:** Get your credentials! Scroll to the **OAuth 2.0 Credentials** section in the same **Configuration** panel to locate your Client ID and Client Secret. We will pass them to R in the next section.
+
+![](images/data_mgmt_discovery/box-credentials.png){fig-alt="Box configuration section for redirect URI" fig-align="center" width="80%"}
+:::
+
+:::callout-exercise
+### Setup, Part 2: Install and configure the `boxr` package
+
+**Step 1:** Install `boxr`, an R package for interacting with the Box API.
+
+```r
+> install.packages("boxr")
+```
+
+**Step 2:** In the base folder of your R project (Positron folder), create a `.Renviron` file. Add the following two lines, replacing your actual credentials from the Box Developers Console in the previous section.
+
+```
+BOX_CLIENT_ID = <your_client_id>
+BOX_CLIENT_SECRET = <your_client_secret>
+```
+:::
+
+After completing the setup steps above, you can use the `boxr` package to log into Box, explore your Box workspace, locate a particular CSV file, and read it!
+
+Let's start out by loading `boxr` package.
+```r
+library(boxr)
+```
+
+First we need to log in. The first time you do this, it should open a browser for authentication. If successful, you'll see console output indicating that authentication is complete, and reporting your identity.
+
+```r
+> box_auth()
+# Using `BOX_CLIENT_ID` from environment
+# Using `BOX_CLIENT_SECRET` from environment
+# Waiting for authentication in browser...
+# Press Esc/Ctrl + C to abort
+# Authentication complete.
+# boxr: Authenticated using OAuth2 as <Your name>(<Your email address>, id: <Your box ID>)
+```
+
+After authenticating, we can explore our Box workspace. Two key functions are `box_ls()`, which lists the contents of a folder, and `box_search()`, which allows you to search for content. In the code sample below, we'll first search for a folder by name, then list the contents of that folder, then list the contents of a particular sub-folder.
+
+You'll notice that each code segment follows the same pattern:
+
+1. Call a `boxr` function that sends a request to the Box API and returns a response.
+2. Coerce that response to an R data frame, and display a subset of columns.
+
+Note that we could combine these into one expression rather than separating the code into two steps, but here we keep them separate to make it clearer what's going on, and also to demonstrate the common API interaction pattern of `Send request -> Get response -> Process response`.
+
+```r
+# Search for the base project folder, and return it as a data frame
+> response <- box_search_folders("2026_DELTA_SYNTHESIS_WORKGROUP")
+> base_folder <- as.data.frame(response)[c("name", "type", "size", "id")]
+#                            name   type     size           id
+#  2026_DELTA_SYNTHESIS_WORKGROUP folder 58719301 xxxxxxxxxxxx
+
+# Using the base folder id, list the contents of that folder
+> response <- box_ls(base_folder$id)
+> as.data.frame(response)[c("name", "type", "size", "id")]
+#      name   type     size           id
+#  Training folder     3716 375386190471
+
+# List the contents of the 'Training' folder
+> response <- box_ls(375386190471)
+> as.data.frame(response)[c("name", "type", "size", "id")]
+#            name type size            id
+#  airquality.csv file 2802 2190747337891
+```
+
+Finally, let's get some data from Box! The `boxr` package provides multiple ways of retrieving data -- including both downloading files to your computer, and reading data into R. We'll do the latter here, using the `box_read_csv()` function that downloads a CSV and reads it into R as a data frame, all in one step.
+
+```r
+# Read airquality.csv into R as a data frame
+# We'll also pass the `stringsAsFactors` argument to make this match
+# the same data frame that was used to create this file in the first place!
+> airquality_from_box <- box_read_csv(2190747337891, stringsAsFactors=TRUE)
+
+> identical(airquality, airquality_from_box)
+# [1] TRUE
+```
+
+<!-- Holding until later in the course
 ## Practice Evaluating a Data Package
 
 Explore data packages published on EDI assess the quality of their metadata. Imagine you are planning on using this data for a synthesis project.
@@ -412,3 +564,4 @@ Elect someone to share back to the group the following:
 - Do you feel like you understand the research project enough to use the data yourself (aka reproducibility?
 :::
 ::::
+-->

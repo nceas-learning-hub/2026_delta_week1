@@ -41,8 +41,9 @@ vignettes/*.pdf
 # .DS_Store (Mac file)
 .DS_Store
 
-# Secret Quarto directory
+# Quarto-specific stuff
 /.quarto/
+**/*.quarto_ipynb
 
 # R project file
 *.Rproj

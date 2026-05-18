@@ -22,11 +22,17 @@ website:
   reader-mode: false
   repo-url: https://github.com/nceas-learning-hub/2026_delta_week1
 
-  favicon: _extensions/nceas-learning-hub/theme/banner/logo_lh_hex.png # learning hub logo on browser tab
+  favicon: _extensions/nceas-learning-hub/theme/banner/logo_delta_favicon.png # learning hub logo on browser tab
 
   bread-crumbs: false
   navbar:
     right:
+      - text: "Training Series"
+        menu:
+          - text: "Week 1"
+            href: https://nceas-learning-hub.github.io/2026_delta_week1/
+          - text: "Week 2"
+            href: https://nceas-learning-hub.github.io/2026_delta_week2/
       - text: "Instructors"
         menu:
           - text: "Nick Lyon"

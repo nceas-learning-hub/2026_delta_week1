@@ -12,9 +12,7 @@ After completing this session, you will be able to:
 
 ## Introduction to Version Control
 
-<p align="center">
-<img src="images/github_introduction/phd_comics_final.png" alt="Comic of a grad student naming a document 'final' before needing to iteratively revise resulting in a series of progressively less interpretable 'final' filenames" width="70%"/>
-</p>
+![](images/github_introduction/phd_comics_final.png){fig-alt="Comic of a grad student naming a document 'final' before needing to iteratively revise resulting in a series of progressively less interpretable 'final' filenames" width="70%" fig-align="center" .lightbox}
 
 Every file changes throughout the scientific process. Manuscripts are edited. Figures get revised. Code gets fixed when bugs are discovered. Sometimes those fixes lead to even more bugs, leading to more changes in the code base. Data files get combined. Those same files are split and combined again. In just one research project, we can expect thousands of changes!
 
@@ -247,7 +245,7 @@ Here are some guidelines for writing effective Git commit messages:
 1. **Be descriptive and concise**: Provide a clear and concise summary of the changes made in the commit. Aim to convey the purpose and impact of the commit in a few words.
 2. **Use imperative tense**: Write commit messages in the imperative tense, as if giving a command. For example, use "Add feature" instead of "Added feature" or "Adding feature." This convention aligns with other Git commands and makes the messages more actionable.
 3. **Separate subject and body**: Start with a subject line, followed by a blank line, and then provide a more detailed explanation in the body if necessary. The subject line should be a short, one-line summary, while the body can provide additional context, motivation, or details about the changes.
-4. **Limit the subject line length**: Keep the subject line within 50 characters or less. This ensures that the commit messages are easily scannable and fit well in tools like Git logs.
+4. **Limit the subject line length**: Keep the subject line within 50 characters or less. This ensures that the commit messages are easily scan-able and fit well in tools like Git logs.
 5. **Capitalize and punctuate properly**: Begin the subject line with a capital letter and use proper punctuation. This adds clarity and consistency to the commit messages.
 6. **Focus on the "what" and "why"**: Explain what changes were made and why they were made. Understanding the motivation behind a commit helps future researchers and collaborators (including you!) comprehend its purpose.
 7. **Use present tense for subject, past tense for body**: Write the subject line in present tense as it represents the current state of the codebase. Use past tense in the body to describe what has been done.
@@ -272,7 +270,7 @@ To clone our remote repository, we'll use an IDE (<u>I</u>ntegrated <u>D</u>evel
 Positron makes working with Git and version-controlled files easy! To do so, you'll need to **tell Positron the folder in which you want it to clone your origin repository**.
 
 1. Start by copying the link to your GitHub repository from the address bar of your web browser
-    - Should be something like "https://github.com/`github-username`/`repository-name`"
+    - Should be something like `https://github.com/github-username/repository-name`
 2. Click the folder icon in the top right corner of Positron
 3. Select **New Folder from Git...**
 4. In the **Git repository URL** field, paste in the link you copied in step 1
@@ -284,7 +282,7 @@ Positron makes working with Git and version-controlled files easy! To do so, you
 
 Once you click **OK**, your Positron window will refresh and the "Explorer" tab (in the left sidebar) will show that all files from the remote repository have been copied locally. Note that the folder icon in the top right corner will now have the name of your repository from GitHub.
 
-![](images/github_introduction/positron-clone_02-ide.png){.lightbox fig-alt="Screen capture of Positron after successfully cloning a new repository from GitHub"}
+![](images/github_introduction/positron-clone_02-ide.png){.lightbox fig-alight="center" fig-alt="Screen capture of Positron after successfully cloning a new repository from GitHub"}
 
 If you click the "Source Control" tab (its symbol looks like this: {{< fa code-branch >}}) you will see that there are no changes because we haven't done anything to the local copy yet! However, both the commits (the initial commit and the test edit made directly in GitHub) are shown in the bottom left corner in reverse chronological order (i.e., most recent at the top).
 
@@ -292,7 +290,7 @@ If you click the "Source Control" tab (its symbol looks like this: {{< fa code-b
 
 We can actually interact with particular commits to get more detailed information on what was changed directly through Positron! Click the top commit to expand it and see the files that were changed as part of that commit. Now click the README file (the only one edited as part of that commit). A file will now open in the main window of Positron showing the README file with new lines highlighted in green and deleted lines highlighted in red.
 
-![](images/github_introduction/positron-clone_04-history.png){.lightbox fig-alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened"}
+![](images/github_introduction/positron-clone_04-history.png){.lightbox fig-alight="center" fig-alt="Screen capture of Positron's 'source control' pane with the 'diff' of the README from a particular commit opened"}
 
 ### {{< fa brands r-project >}} RStudio
 
@@ -324,7 +322,7 @@ After a moment, your RStudio will refresh and you'll see the name you gave to yo
 
 ![](images/github_introduction/rstudio-clone_04-ide.png){.lightbox fig-alt="Screen capture of the RStudio when in a project that is version-controlled" fig-align="center"}
 
-You may also notice that you have a new tab in RStudio labeled Git. **Click that tab.** You'll see that you have your .Rproj file listed with two **<span style="color:gold">yellow</span>** question marks. RStudio uses this file to define an RProject but because it isn't in your remote repository, Git is flagging it for your attention as a file that is in the tracked folder but is not itself tracked. _Ignore this for now_ as we'll get to more on it later.
+You may also notice that you have a new tab in RStudio labeled Git. **Click that tab.** You'll see that you have your .Rproj file listed with two **<span style="color:gold">yellow</span>** question marks. RStudio uses this file to define an R Project but because it isn't in your remote repository, Git is flagging it for your attention as a file that is in the tracked folder but is not itself tracked. _Ignore this for now_ as we'll get to more on it later.
 
 <p align="center">
 <img src="images/github_introduction/rstudio-clone_05-git-pane.png" alt="Screen capture of the Git pane in RStudio" width="50%"/>
@@ -359,10 +357,10 @@ Recall that headers are any line that starts with at least one `#`.
 ::: {layout-nrow=2}
 
 {{< fa p >}} Positron
-![](images/github_introduction/positron-commit_01-edit.png){.lightbox fig-alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified"}
+![](images/github_introduction/positron-commit_01-edit.png){.lightbox fig-alight="center" fig-alt="Screen capture of Positron with the README file opened and Git it is flagging it as having been modified"}
 
 {{< fa brands r-project >}} RStudio
-![](images/github_introduction/rstudio-commit_01-edit.png){.lightbox fig-alt="Screen capture of RSTudio with the README file opened"}
+![](images/github_introduction/rstudio-commit_01-edit.png){.lightbox fig-alight="center" fig-alt="Screen capture of RSTudio with the README file opened"}
 
 :::
 
@@ -423,7 +421,7 @@ Now that you've pulled, you can **click the Push button**; it is an upward-facin
 
 If you navigate back to your remote repository on GitHub, you should see the edits to your README and the most recent commit will be the one you just made. Note that sometimes you have to refresh the page or wait a few seconds for those updates to be visible on GitHub.
 
-![](images/github_introduction/positron-commit_06-updated-remote.png){.lightbox fig-alt="Screen capture of a GitHub repository's landing page with a new commit"}
+![](images/github_introduction/positron-commit_06-updated-remote.png){.lightbox fig-alight="center" fig-alt="Screen capture of a GitHub repository's landing page with a new commit"}
 
 ::: callout-note
 ## Challenge
@@ -479,13 +477,13 @@ In this example, there are some existing scripts whose names reflect steps in a 
 
 **Initialize Git and Connect to Remote**
 
-Make sure you are in the Console pane - these nexts step are in R.  We'll use tools from the `usethis` package to initialize the folder as a Git repository, then create a remote repository on GitHub (with the same name as the current folder) and push our initial commit out to GitHub.
+Make sure you are in the Console pane - these next step are in R.  We'll use tools from the `usethis` package to initialize the folder as a Git repository, then create a remote repository on GitHub (with the same name as the current folder) and push our initial commit out to GitHub.
 
 1. `usethis::use_git()` (note, `install.packages('usethis')` if you don't already have it installed!).  This will walk through several steps, showing you the progress along the way:
     * set active project to the current project
     * initialize the folder to be a Git repository (`git init` per the commands noted above)
     * creates a `.gitignore` file (see more below) and adds a few file paths to that file.
-    * identifies whether there are any uncommited files and if so asks if you would like to commit them.
+    * identifies whether there are any uncommitted files and if so asks if you would like to commit them.
 2. When asked `Is it ok to commit them?` choose the correct number for a yes/absolutely/affirmative response.  This will:
     * stage the files (`git add --all`)
     * commit them with a message (`git commit -m "initial commit"`)

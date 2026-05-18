@@ -6,12 +6,11 @@ title: Tidy Data
 
 After completing this session, you will be able to:
 
+-   Appreciate general concepts around representing the real world in data form
 -   Describe the three principles of tidy data in terms of variables, observations, and values
 -   Identify common violations of tidy data principles and how to fix them
--   Explain the concept of data normalization and how it supports reproducible analysis
--   following best practices to format data tables' content,
--   relating tables following relational data models principles, and
--   understanding how to perform table joins.
+-   Understand the concept of data normalization and how it supports efficient data modeling
+-   Confidently join information across separate but related tables
 :::
 
 ## What is tidy data?
@@ -44,7 +43,7 @@ First, let's get acquainted with our building blocks.
 | Variable    | A characteristic that is being measured, counted or described with data. **Example:** car type, salinity, year, height, mass. |
 | Observation | A single "data point" for which the measure, count or description of one or more variables is recorded.   **Example:** If you are collecting variables *height*, *species*, and *location* of plants, then **each plant** is an observation.    |
 | Value        | The record measured, count or description of a variable.   **Example:** 3 ft   |
-| Entity       | Each type of observation is an entity. **Example:** If you are collecting variables *height*, *species*, and *location* and *site name* of plants and where they are observed, then **plants** is an entity and **site** is an entity. |
+| Entity       | The real-world thing, concept, or phenomenon described by an observation. **Example:** If you are collecting variables *height*, *species*, and *location* and *site name* of plants and where they are observed, then **plants** is an entity and **site** is an entity. |
 
 :  {tbl-colwidths="[20,80]"}
 
@@ -84,7 +83,7 @@ Anything that does not follow the three tidy data principles is **untidy data**.
 -   **Collaboration:** Makes it easier to work with others through a shared understanding of tidy data best practices.
 
 
-> "There is a specific advantage to placing varables in columns becasuse it allows R's vectorized nature to shine. ...most buit-in R functions work with vectors of values. That makes transforming tidy data feel particularly natural. (R for Data Science by Grolemund and Wickham)
+> "There is a specific advantage to placing variables in columns because it allows R's vectorized nature to shine. ...most built-in R functions work with vectors of values. That makes transforming tidy data feel particularly natural. (R for Data Science by Grolemund and Wickham)
 
 ## Data Normalization
 

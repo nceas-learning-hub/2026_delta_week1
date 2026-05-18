@@ -39,7 +39,7 @@ While your group is in the divergent thinking stage, it's critical to foster dia
 
 - Examining hidden assumptions
 - Creating room for disagreement and questioning
-- Amplifing diverse perspectives--particularly, voices from the edge
+- Amplifying diverse perspectives--particularly, voices from the edge
     - E.g., junior members, new collaborators, people from different disciplines, non-scientists who may be affected by the research
 
 Mirror and validate what you hear. Invite people who are good at bridging across disciplinary or other differences to help translate and build shared understanding of methods and ways of thinking. Suspend judgment and encourage full participation. 
@@ -66,7 +66,7 @@ Some useful techniques for navigating the groan zone and fostering emergent thin
 
 - Cultivating presence and patience 
 - Active listening
-- Building shared understanding via translation (e.g. across disciplines), metacognition (thinking about how you are thinking), and inquiry 
+- Building shared understanding via translation (e.g. across disciplines), meta-cognition (thinking about how you are thinking), and inquiry 
 - Exploring new data, models, and ways of presenting information
 - Creating categories to reveal structure and allow sorting and prioritization of ideas
 - Combining or recombining ideas or methods to yield new approaches
@@ -109,7 +109,7 @@ If you find the conversation getting off track or the dynamics becoming difficul
 - Educating members about group dynamics and asking them to reflect on how they are showing up
     - E.g., "Calling in" (as opposed to "calling out")
 - Encouraging/making space for more people to participate, particularly those who have not participated as much as others
-- Reframing the discussion
+- Re-framing the discussion
     - E.g., By surfacing underlying issues, and/or focusing on concrete actions that the group can take to resolve the conflict
 
 **Don't get discouraged by the groan zone!** Misunderstanding and miscommunication are normal parts of the process of collaboration. And even more importantly, "the act of working through these misunderstandings is what builds the foundation for sustainable agreements... \[and\] meaningful collaboration" (Kaner et al. 2014).
@@ -212,7 +212,7 @@ Check out the tabs below for tools that are particularly-well suited to differen
 
 | **Microstructure** | **Purpose** | **How It Works** | **Tips & Traps** |
 |:---|:------------|:--------------------|:---------------|
-| Open discussion | Group inquiry, sensemaking, and/or decision-making | Clearly define the scope; set agreements for inclusive discussion; invite discussion about the topic at hand; capture ideas and questions; listen for when the group is ready to converge | Keep track of side topics (e.g. in a "bike rack") and make time to come back to them, but don't let them derail |
+| Open discussion | Group inquiry, sense-making, and/or decision-making | Clearly define the scope; set agreements for inclusive discussion; invite discussion about the topic at hand; capture ideas and questions; listen for when the group is ready to converge | Keep track of side topics (e.g. in a "bike rack") and make time to come back to them, but don't let them derail |
 | Breakout groups | Engage everyone deeply; avoid groupthink | Define the scope and intended outcomes; set a time limit; assign roles (facilitator, notetaker, reporter); model what you want in the report out | Consider whether all groups should work with the same prompts or different aspects of the problem |
 | Chart writing or whiteboarding | Reflect participant's viewpoints back to the group | On a virtual or physical chart or whiteboard, capture key points in the discussion so everyone can see them | Use speakers' own words; if the comment is long or complex, ask the speaker to give you a headline you can capture |
 | [1,2,4,all](https://www.liberatingstructures.com/1-1-2-4-all/) | Engage everyone in generating questions, ideas, and suggestions | Individual reflection; Pair share; Two pairs combine and share as a group of 4; Small groups share highlights with whole group | Emphasize novel ideas and distinctions for divergence; common themes and emerging insights for emergence and convergence |

@@ -143,10 +143,10 @@ library(tidyr)
 <!-- NOTE: since no code chunks are run to render, make them "dumb" but
      display with r syntax coloring -->
 
-3.  Read in the data and store the data frame as `lobster_abundance`.  Here we also use the `clean_names()` function from the helpful `janitor` package.  This converts all variable names to `snake_case` by default.  Having a consistent naming convention helps with collaboration!
+3.  Read in the data and store the data frame as `lobster_abundance` (use the `here` package to ensure a consistent starting point for relative file paths!).  Here we also use the `clean_names()` function from the helpful `janitor` package.  This converts all variable names to `snake_case` by default.  Having a consistent naming convention helps with collaboration!
 
 ```r
-lobster_abundance <- readr::read_csv(file.path("data", "Lobster_Abundance_All_Years_20240411.csv")) %>%
+lobster_abundance <- readr::read_csv(here::here("data", "Lobster_Abundance_All_Years_20240411.csv")) %>%
     janitor::clean_names()
 ```
 
@@ -182,8 +182,8 @@ lobster_abundance <- lobster_abundance %>%
 NOTE: If you know the `NA` values ahead of time, you can specify them when you read the data in!
 
 ```
-lobster_abundance <- read_csv("data/Lobster_Abundance_All_Years_20240411.csv", 
-                              na = "-99999")
+lobster_abundance <- read_csv(here::here("data/Lobster_Abundance_All_Years_20240411.csv", 
+                              na = "-99999"))
 ```
 
 ::::
@@ -233,7 +233,7 @@ max_lobster <- lobster_abundance %>%
   summarize(max_length = max(size_mm, na.rm = TRUE),
             .groups = 'drop')
 ```
-NOTE: `.groups = "drop"` is an argument in `summarize()` that tells R to ungroup the data frame after summarizing (and suppresses an annoying warning!). If you don't include this argument, the resulting data frame wmay still contain groups, which can lead to unexpected results in subsequent operations.  You can also use `group_by() %>% summarize() %>% ungroup()` to accomplish the same basic idea.
+NOTE: `.groups = "drop"` is an argument in `summarize()` that tells R to ungroup the data frame after summarizing (and suppresses an annoying warning!). If you don't include this argument, the resulting data frame may still contain groups, which can lead to unexpected results in subsequent operations.  You can also use `group_by() %>% summarize() %>% ungroup()` to accomplish the same basic idea.
 ::::
 :::
 
@@ -265,7 +265,7 @@ library(tidyr)
 3.  Read in the data and store the data frame as `lobster_traps`. Here we also use the `clean_names()` function from the helpful `janitor` package.  This converts all variable names to `snake_case` by default.  Having a consistent naming convention helps with collaboration!
 
 ```r
-lobster_traps <- readr::read_csv(file.path("data", "Lobster_Trap_Counts_All_Years_20210519.csv"))
+lobster_traps <- readr::read_csv(here::here("data", "Lobster_Trap_Counts_All_Years_20210519.csv")) %>%
     janitor::clean_names()
 ```
 
@@ -299,8 +299,8 @@ lobster_traps <- lobster_traps %>%
 NOTE: If you know the `NA` values ahead of time, you can specify them when you read the data in!
 
 ```
-lobster_abundance <- read_csv("data/Lobster_Abundance_All_Years_20220829.csv", 
-                              na = "-99999")
+lobster_abundance <- read_csv(here::here("data/Lobster_Abundance_All_Years_20220829.csv", 
+                              na = "-99999"))
 ```
 
 ::::
@@ -647,7 +647,7 @@ Some `ggplot2` functions grant you control over the information displayed on you
 The `ggplot2` package includes some built-in themes (e.g., `theme_minimal()`) as well as many options for fine-tuning specific elements of the plot (e.g., changing the color and linewidth of the grid lines).  Here are a few options and examples:
 
 - `theme_xxx()`: add a complete theme to your plot (e.g., `theme_light()`, `theme_minimal()`, `theme_void()`)
-    - Note there are also several theme utility functions that might pop up with autocomplete, e.g., `theme_get()`, `theme_set()`, `theme_update()`, `theme_replace()` - these are **not** complete themes... if it sounds like a verb, not an adjective, it's likely a theme utility function!
+    - Note there are also several theme utility functions that might pop up with auto-complete, e.g., `theme_get()`, `theme_set()`, `theme_update()`, `theme_replace()` - these are **not** complete themes... if it sounds like a verb, not an adjective, it's likely a theme utility function!
 - `theme()`: call specific elements to customize non-data components of a plot.  A few examples:
 
 ```r

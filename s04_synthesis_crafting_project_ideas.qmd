@@ -161,10 +161,10 @@ Consider the tabs below for some characteristics of these four modes of discussi
 
 ### The Four Player Model
 
-[Full Screen](slides/craft_synthesis_ideas/slides1_four_player_model.html){target="_blank"}
+[Full Screen](slides/synthesis_crafting_project_ideas/slides1_four_player_model.html){target="_blank"}
 
 ```{=html}
-<iframe class="slide-deck" src="slides/craft_synthesis_ideas/slides1_four_player_model.html" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src="slides/synthesis_crafting_project_ideas/slides1_four_player_model.html" style="border: 1px solid #2e3846;"></iframe>
 ```
 
 ## Tools to Support the Thinking You Need 

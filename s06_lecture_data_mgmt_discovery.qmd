@@ -34,7 +34,7 @@ We will discuss how these topics relate to each other and why they are the build
 
 The Data Life Cycle gives you an overview of meaningful steps in a research project. This step-by-step breakdown facilitates successful management and preservation of data throughout a project. Some research activities might use only part of the life cycle. For example, a meta-analysis might focus on the Discover, Integrate, and Analyze steps, while a project focused on primary data collection and analysis might bypass the Discover and Integrate steps.
 
-[![Source: DataONE](images/data_mgmt_discovery/data-life-cycle.png){fig-alt="Data Life Cycle graphic with each stage following the next to create a circle." fig-align="center"}](https://dataoneorg.github.io/Education/bestpractices/)
+[![Source: DataONE](images/lecture_data_mgmt_discovery/data-life-cycle.png){fig-alt="Data Life Cycle graphic with each stage following the next to create a circle." fig-align="center"}](https://dataoneorg.github.io/Education/bestpractices/)
 
 The first step to working with data is identifying where your project is starting in the Data Life Cycle. Using the data life cycle stages, create your own cycle that best fits your project needs.
 
@@ -52,7 +52,7 @@ No matter how your data life cycle looks like, *Plan* should be at the top of th
 
 Whereas the Data Life Cycle provides a strategic perspective on how to manage data over its full lifespan, a Data Workflow focuses on the operational process of acquiring data in some raw state, transforming it via a series of steps, and ultimately producing one or more derived research products. The diagram below depicts a generalized workflow that tends to be applicable to most projects involving data, although each project is unique in terms of the details underlying each step.
 
-![Adapted from [Faundeen et al., 2013](https://pubs.usgs.gov/of/2013/1265/pdf/of2013-1265.pdf) and DataONE](images/data_mgmt_discovery/data-workflow.png){fig-alt="Data workflow graphic with each stage following the next to form a pipeline" fig-align="center" .lightbox}
+![Adapted from [Faundeen et al., 2013](https://pubs.usgs.gov/of/2013/1265/pdf/of2013-1265.pdf) and DataONE](images/lecture_data_mgmt_discovery/data-workflow.png){fig-alt="Data workflow graphic with each stage following the next to form a pipeline" fig-align="center" .lightbox}
 
 In the ideal case, this workflow can be fully automated, from the acquisition of raw data to the production of derived outputs (including analytical results, model predictions, visualizations, and more). Imagine being able to run this on-demand as a repeatable process, effectively enabling a pipeline in which data is "moved" from its starting point through a series of transformations performed by executable code, yielding whatever final outputs are desired. In practice, we often can't achieve full automation, but our goal should be to come as close as we can.
 
@@ -393,7 +393,7 @@ Researchers should get in the habit of citing the data that they use (even if it
 
 ## Data Sharing & Preservation
 
-![](images/data_mgmt_discovery/why-manage-small.png){fig-alt="Small diagram of three boxes connected by two, one-way arrows. The boxes (from first in the path to last) are labeled 'Data Management', 'Data Sharing', and 'Data Reuse', respectively" fig-align="center" width="40%"}
+![](images/lecture_data_mgmt_discovery/why-manage-small.png){fig-alt="Small diagram of three boxes connected by two, one-way arrows. The boxes (from first in the path to last) are labeled 'Data Management', 'Data Sharing', and 'Data Reuse', respectively" fig-align="center" width="40%"}
 
 ### Data Packages
 
@@ -405,7 +405,7 @@ Many data repositories assign a unique identifier to every version of every data
 
 In the graphic to the side, the package can be cited with the DOI `doi:10.5063/F1Z1899CZ`,and each of the individual files have their own identifiers as well.
 
-![](images/data_mgmt_discovery/data-package.png){fig-alt="Diagram of a data package where a single metadata box is connected to a stacked set of boxes labeled 'data granule 1', both of these are connected to boxes labeled 'software' and 'figures'" fig-align="center"}
+![](images/lecture_data_mgmt_discovery/data-package.png){fig-alt="Diagram of a data package where a single metadata box is connected to a stacked set of boxes labeled 'data granule 1', both of these are connected to boxes labeled 'software' and 'figures'" fig-align="center"}
 
 ## Bonus: Load data from Box into R
 
@@ -431,21 +431,21 @@ In order to access Box from R, you first need to set up an "application" that op
 - **App Name**: Choose whatever you want, e.g. "Boxr"
 - **App Type**: Choose **OAuth 2.0**
 
-![](images/data_mgmt_discovery/box-new-app.png){fig-alt="Box new app interface" fig-align="center" width="80%"}
+![](images/lecture_data_mgmt_discovery/box-new-app.png){fig-alt="Box new app interface" fig-align="center" width="80%"}
 
 You should now see your application listed in the developer console.
 
-![](images/data_mgmt_discovery/box-app-created.png){fig-alt="Box app listed in developer console" fig-align="center" width="80%"}
+![](images/lecture_data_mgmt_discovery/box-app-created.png){fig-alt="Box app listed in developer console" fig-align="center" width="80%"}
 
 **Step 3:** Click on the application to open the app settings interface, and select the **Configuration** tab. Scroll down to the **Redirect URI** section, and add this address: `http://localhost:1410/`
 
-![](images/data_mgmt_discovery/box-redirect-uri.png){fig-alt="Box configuration section for redirect URI" fig-align="center" width="80%"}
+![](images/lecture_data_mgmt_discovery/box-redirect-uri.png){fig-alt="Box configuration section for redirect URI" fig-align="center" width="80%"}
 
 Be sure to click **Add** and the **Save Changes**!
 
 **Step 4:** Get your credentials! Scroll to the **OAuth 2.0 Credentials** section in the same **Configuration** panel to locate your Client ID and Client Secret. We will pass them to R in the next section.
 
-![](images/data_mgmt_discovery/box-credentials.png){fig-alt="Box configuration section for redirect URI" fig-align="center" width="80%"}
+![](images/lecture_data_mgmt_discovery/box-credentials.png){fig-alt="Box configuration section for redirect URI" fig-align="center" width="80%"}
 :::
 
 :::callout-exercise

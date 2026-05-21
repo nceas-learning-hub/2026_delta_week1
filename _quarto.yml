@@ -33,6 +33,8 @@ website:
             href: https://nceas-learning-hub.github.io/2026_delta_week1/
           - text: "Week 2"
             href: https://nceas-learning-hub.github.io/2026_delta_week2/
+          - text: "Week 3"
+            href: https://nceas-learning-hub.github.io/2026_delta_week3/
       - text: "Instructors"
         menu:
           - text: "Nick Lyon"

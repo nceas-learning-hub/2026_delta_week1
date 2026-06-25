@@ -1,0 +1,9 @@
+---
+title: "404"
+---
+
+## Page Not Found
+
+Please click the title of the training in the navbar at the top (left) of this page in order to find your page of interest.
+
+**If you feel you have found this page due to an error,** please click the {{< fa brands github >}} GitHub logo in the top right of the navbar at the top of this page and open a GitHub Issue.
